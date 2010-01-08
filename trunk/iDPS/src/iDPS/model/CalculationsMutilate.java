@@ -68,13 +68,7 @@ public class CalculationsMutilate extends Calculations {
 		avgCpFin = 4*cFin4+5*cFin5;
 		mutPerFin = 0*cMut0 + 1*cMut1 + 2*cMut2;
 		
-		float eRegenFA, eLossHFB, eLossTOT;
-		eRegenFA = calcWhiteCritsPerSec()*2;
-		eLossHFB = 0.5F;
-		eLossTOT = 0.5F;
-		if (gear.getTier10()>=2)
-			eLossTOT = -0.5F;
-		float eRegen = super.eRegen + eRegenFA - eLossHFB - eLossTOT;
+		float eRegen = calcERegen();
 		
 		float eCostMut, eCostEnv;
 		eCostMut = 55 *(0.8F+0.2F/(mod.getHtMut().getContacts()));

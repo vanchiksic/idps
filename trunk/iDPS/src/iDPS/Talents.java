@@ -17,8 +17,8 @@ public class Talents {
 	private Spec spec;
 	private Calculations.ModelType model;
 	
-	private int lethality, vilepoisons, improvedpoisons, hfb, murder, fweakness;
-	private int cqc, hns, mace, lightref, ar, bf, vitality, expertise, sattacks, potw, ks;
+	private int lethality, vilepoisons, improvedpoisons, hfb, murder, fa, fweakness;
+	private int cqc, hns, mace, lightref, ar, compot, bf, vitality, expertise, sattacks, potw, ks;
 	private int rstrikes, opportunity;
 	
 	public Talents() {
@@ -37,6 +37,7 @@ public class Talents {
 				improvedpoisons = 5;
 				murder = 2;
 				fweakness = 3;
+				fa = 3;
 				hfb = 1;
 				cqc = 3;
 				rstrikes = 5;
@@ -49,6 +50,7 @@ public class Talents {
 				improvedpoisons = 5;
 				murder = 2;
 				fweakness = 3;
+				fa = 3;
 				hfb = 1;
 				cqc = 5;
 				lightref = 3;
@@ -62,6 +64,7 @@ public class Talents {
 				lightref = 3;
 				bf = 1;
 				ar = 1;
+				compot = 5;
 				vitality = 3;
 				expertise = 2;
 				sattacks = 1;
@@ -77,6 +80,7 @@ public class Talents {
 				lightref = 3;
 				bf = 1;
 				ar = 1;
+				compot = 5;
 				vitality = 3;
 				expertise = 2;
 				sattacks = 1;
@@ -92,6 +96,7 @@ public class Talents {
 				lightref = 3;
 				bf = 1;
 				ar = 1;
+				compot = 5;
 				vitality = 3;
 				expertise = 2;
 				sattacks = 1;
@@ -231,6 +236,19 @@ public class Talents {
 				return 2.5F;
 		}
 	}
+	
+	public float getFocusedAttacks() {
+		switch (fa) {
+			default:
+				return 0;
+			case 1:
+				return .33F;
+			case 2:
+				return .66F;
+			case 3:
+				return 1F;
+		}
+	}
 
 	public int getImprovedPoisons() {
 		return improvedpoisons;
@@ -246,6 +264,10 @@ public class Talents {
 
 	public boolean getBf() {
 		return bf>0;
+	}
+
+	public int getCombatPotency() {
+		return compot*3;
 	}
 	
 }

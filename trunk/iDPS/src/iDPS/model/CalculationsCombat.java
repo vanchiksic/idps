@@ -1,7 +1,5 @@
 package iDPS.model;
 
-import iDPS.gear.Gear;
-
 public class CalculationsCombat extends Calculations {
 	
 	private float dpsSS, dpsEvi, dpsKS;
@@ -75,11 +73,7 @@ public class CalculationsCombat extends Calculations {
 			+ 4*(c0ss4cp+c1ss4cp+c2ss4cp+c3ss4cp+c4ss4cp);
 		float ssPerFin = 4*(c4ss4cp+c4ss5cp) + 3*(c3ss4cp+c3ss5cp) + 2*(c2ss4cp+c2ss5cp) + (c1ss4cp+c1ss5cp);
 		
-		float eLossTOT = 0.5F;
-		if (gear.getTier10()>=2)
-			eLossTOT = -0.5F;
-		float eRegen = super.eRegen - eLossTOT;
-		eRegen += combatPotencyPPS(gear, mod)*15;
+		float eRegen = calcERegen();
 		
 		float eCostSS, eCostEvi;
 		eCostSS = 40 *(0.8F+0.2F/(mod.getHtSS().getContacts()));
@@ -115,14 +109,6 @@ public class CalculationsCombat extends Calculations {
 		dmg *= mod.getModArmorMH();
 		dmg *= 1+bbIncrease;
 		return dmg;
-	}
-	
-	private float combatPotencyPPS(Gear gear, Modifiers mod) {
-		float pps;
-		pps = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100);
-		pps *= (mod.getHtOH().getContacts());
-		pps *= 0.2F;
-		return pps;
 	}
 	
 	private float calcKillingSpreeDPS() {

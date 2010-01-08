@@ -19,7 +19,6 @@ public abstract class Calculations {
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
-	protected float eRegen;
 	protected Gear gear;
 	protected float mhSPS, ohSPS;
 	protected Modifiers mod;
@@ -54,25 +53,22 @@ public abstract class Calculations {
 		return atp;
 	}
 	
-	protected float calcBerserking() {
-		float attacksPerSec, uptime, atp;
-		atp = 0;
+	protected void calcBerserking() {
+		float attacksPerSec, uptime;
 		
 		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==59621) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
 			uptime = gear.getWeapon1().getZerkUptime(attacksPerSec);
-			atp += uptime * 400 * 1.1F;
+			totalATP += uptime * 400;
 		}
 		
 		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==59621) {
 			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
 			uptime = gear.getWeapon2().getZerkUptime(attacksPerSec);
-			atp += uptime * 400 * 1.1F;
+			totalATP += uptime * 400;
 		}
-
-		return atp;
 	}
 	
 	protected abstract void calcCycle();
@@ -188,8 +184,8 @@ public abstract class Calculations {
 		return procsPerSec * damage;
 	}
 	
-	protected float calcMongoose() {
-		float attacksPerSec, uptimeMH = 0, uptimeOH = 0, atp = 0;
+	protected void calcMongoose() {
+		float attacksPerSec, uptimeMH = 0, uptimeOH = 0;
 		if (gear.isEnchanted(16) && gear.getEnchant(16).getId()==27984) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
@@ -206,21 +202,21 @@ public abstract class Calculations {
 			float uptimeS = uptimeMH+uptimeOH-uptimeD;
 			mod.registerPhysCritProc(146, uptimeD);
 			mod.registerStaticHasteProc(0.04F, uptimeD);
-			atp += 264*uptimeD;
+			totalATP += 264*uptimeD;
 			mod.registerPhysCritProc(73, uptimeS);
 			mod.registerStaticHasteProc(0.02F, uptimeS);
-			atp += 132*uptimeS;
+			totalATP += 132*uptimeS;
 		}
-		return atp;
 	}
 	
-	protected float calcProcs() {
-		float atp = 0;
-		
+	protected void calcProcs() {		
 		// Note: Apply Kings to these Buffs, but not the 10% AP buff
 		
 		// Mongoose
-		atp += calcMongoose();
+		calcMongoose();
+		
+		// Berserking
+		calcBerserking();
 		
 		// Hyperspeed Accelerators
 		if (gear.isEnchanted(8) && gear.getEnchant(8).getId()==54999)
@@ -228,11 +224,11 @@ public abstract class Calculations {
 		
 		// Swordguard Embroidery
 		if (gear.isEnchanted(3) && gear.getEnchant(3).getId()==55777)
-			atp += 400F*15F/62F;
+			totalATP += 400F*15F/62F;
 		
 		// Orc Racial
 		if (Player.getInstance().getRace().getType() == Race.Type.Orc)
-			atp += 40.25F;
+			totalATP += 40.25F;
 		
 		// Tears of Bitter Anguish
 		if (gear.contains(43573)>0) {
@@ -242,18 +238,18 @@ public abstract class Calculations {
 		// Darkmoon Card: Greatness
 		if (gear.contains(44253)>0) {
 			// 330 Agi = 181 cri + 330 atp
-			atp += 330F*15F/48F;
+			totalATP += 330F*15F/48F;
 			mod.registerPhysCritProc(181, 15F/48F);
 		}
 		
 		// Pyrite Infuser
 		if (gear.contains(45286)>0) {
-			atp += 1234F*10F/51F;
+			totalATP += 1234F*10F/51F;
 		}
 		
 		// Blood of the Old God
 		if (gear.contains(45522)>0) {
-			atp += 1284F*10F/51F;
+			totalATP += 1284F*10F/51F;
 		}
 		
 		// Comet's Trail
@@ -273,38 +269,38 @@ public abstract class Calculations {
 		
 		// Banner of Victory
 		if (gear.contains(47214)>0) {
-			atp += 1008F*10F/49F;
+			totalATP += 1008F*10F/49F;
 		}
 		
 		// Death's Choice
 		if (gear.containsAny(47303,47115)) {
 			// 495 Agi = 273 cri + 459 atp
-			atp += 495F*15F/48F;
+			totalATP += 495F*15F/48F;
 			mod.registerPhysCritProc(273, 15F/48F);
 		}
 		
 		// Death's Choice Heroic
 		if (gear.containsAny(47464,47131)) {
 			// 561 Agi = 309 cri + 561 atp
-			atp += 561F*15F/48F;
+			totalATP += 561F*15F/48F;
 			mod.registerPhysCritProc(309, 15F/48F);
 		}
 		
 		// Mark of Supremacy
 		if (gear.contains(47734)>0) {
-			atp += 1024F*20F/120F;
+			totalATP += 1024F*20F/120F;
 		}
 		
 		// Vengeance of the Forsaken
 		if (gear.containsAny(47881,47725)) {
 			// proc average ~914AP for 20 sec every 120 sec
-			atp += 914F*20F/120F;
+			totalATP += 914F*20F/120F;
 		}
 		
 		// Vengeance of the Forsaken
 		if (gear.containsAny(48020,47948)) {
 			// proc average ~1063AP for 20 sec every 120 sec
-			atp += 1063F*20F/120F;
+			totalATP += 1063F*20F/120F;
 		}
 		
 		// Shard of the Crystal Heart
@@ -327,18 +323,18 @@ public abstract class Calculations {
 		// Whispering Fanged Skull
 		if (gear.contains(50342)>0) {
 			// proc 1100AP for 15 sec every 45 sec
-			atp += 1100*15F/48F;
+			totalATP += 1100*15F/48F;
 		}
 		
 		// Whispering Fanged Skull Heroic
 		if (gear.contains(50343)>0) {
 			// proc 1100AP for 15 sec every 45 sec
-			atp += 1250*15F/48F;
+			totalATP += 1250*15F/48F;
 		}
 		
 		// Herkuml War Token
 		if (gear.contains(50355)>0) {
-			atp += 340;
+			totalATP += 340;
 		}
 		
 		// Deathbringer's Will
@@ -347,7 +343,7 @@ public abstract class Calculations {
 			// 1200 ap
 			// 600 arp
 			// 660 Agi = 364 cri + 660 atp
-			atp += 1860*30F/415F;
+			totalATP += 1860*30F/415F;
 			mod.registerHasteProc(600, 30F/318F);
 			mod.registerPhysCritProc(364, 30F/318F);
 		}
@@ -358,17 +354,15 @@ public abstract class Calculations {
 			// 1400 atp
 			// 700 arp
 			// 770 Agi = 424 cri + 770 atp
-			atp += 2170*30F/415F;
+			totalATP += 2170*30F/415F;
 			mod.registerHasteProc(700, 30F/318F);
 			mod.registerPhysCritProc(424, 30F/318F);
 		}
 		
 		// Ashen Band of ...
 		if (gear.containsAny(50401,50402)) {
-			atp += 410F*10F/75F;
+			totalATP += 410F*10F/75F;
 		}
-		
-		return atp*1.1F;
 	}
 	
 	protected float calcHeartpierceRegen() {
@@ -435,26 +429,54 @@ public abstract class Calculations {
 		attrTotal.add(gear.getAttributes());
 		mod = new Modifiers(attrTotal, talents, gear);
 		
-		eRegen = 10 + talents.getVitality();
-		if (Player.getInstance().getRace().getType() == Race.Type.BloodElf)
-			eRegen += 15F/120F;
-		if (talents.getAr())
-			eRegen += 150F/180F;
-		
-		calcCycle();
-		
-		// Heartpierce
-		if (gear.containsAny(49982,50641))
-			eRegen += calcHeartpierceRegen();
-
 		calcCycle();
 		
 		totalATP = 0F;
 		totalATP += calcAtp(attrTotal);
-		totalATP += calcProcs();
-		totalATP += calcBerserking();
+		calcProcs();
+
+		calcCycle();
+		
+		totalATP *= 1.1F;
 		
 		calcDPS();
+	}
+	
+	protected float calcERegen() {
+		float eRegen = 10;
+		
+		// Racial
+		if (Player.getInstance().getRace().getType() == Race.Type.BloodElf)
+			eRegen += 15F/120F;
+		
+		// Talents
+		eRegen += talents.getVitality();
+		if (talents.getAr())
+			eRegen += 150F/180F;
+		if (talents.getCombatPotency()>0)
+			eRegen += combatPotencyRegen();
+		if (talents.getFocusedAttacks()>0)
+			eRegen += calcWhiteCritsPerSec()*2F*talents.getFocusedAttacks();
+		
+		// ToTT every 32 sec
+		float eLossTOT = 15F/32F;
+		if (gear.getTier10()>=2)
+			eLossTOT *= -1F;
+		eRegen += eLossTOT;
+		
+		// Heartpierce
+		if (gear.containsAny(49982,50641))
+			eRegen += calcHeartpierceRegen();
+		
+		return eRegen;
+	}
+	
+	private float combatPotencyRegen() {
+		float pps;
+		pps = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100);
+		pps *= (mod.getHtOH().getContacts());
+		pps *= 0.2F;
+		return pps*((float) talents.getCombatPotency());
 	}
 	
 	protected float calcWhiteCritsPerSec() {
