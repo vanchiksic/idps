@@ -14,7 +14,8 @@ class RatingPanel extends JPanel {
 	private float fill;
 	
 	public RatingPanel(Rateable item, float maxDPS) {
-		dps = item.getComparedDPS();
+		if (item != null)
+			dps = item.getComparedDPS();
 		fill = dps/maxDPS;
 		setSize(new Dimension(300,10));
 		setPreferredSize(new Dimension(300,10));

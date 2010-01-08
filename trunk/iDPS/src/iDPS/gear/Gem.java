@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -22,8 +20,10 @@ public class Gem implements Comparable<Gem>, Rateable {
 	public enum GemColor { Orange, Red, Yellow, Purple, Blue, Green, Prismatic, Meta };
 	
 	private static HashMap<Integer,Gem> map = null;
+	private static HashMap<Integer,Gem> fullmap = null;
 	
 	private int id;
+	private Profession profession;
 	private Attributes attr;
 	private GemColor color;
 	private float comparedDPS;
@@ -34,11 +34,10 @@ public class Gem implements Comparable<Gem>, Rateable {
 		this();
 		id = Integer.parseInt(element.getAttributeValue("id"));
 		
-		if (element.getAttribute("profession") != null) {
-			Profession p = Profession.valueOf(element.getAttributeValue("profession"));
-			if (!Player.getInstance().hasProfession(p))
-				id = 0;
-		}
+		if (element.getAttribute("profession") != null)
+			profession = Profession.valueOf(element.getAttributeValue("profession"));
+		else
+			profession = null;
 
 		List<Element> childs = element.getChildren();
 		Iterator<Element> i = childs.iterator();
@@ -144,9 +143,7 @@ public class Gem implements Comparable<Gem>, Rateable {
 	}
 
 	public static Gem find(int id) {
-		if (map == null)
-			load();
-		return map.get(id);
+		return fullmap.get(id);
 	}
 	
 	public static ArrayList<Gem> findSocket(Socket s) {
@@ -159,31 +156,28 @@ public class Gem implements Comparable<Gem>, Rateable {
 	}
 
 	public static ArrayList<Gem> getAll() {
-		if (map == null)
-			load();
 		return new ArrayList<Gem>(map.values());
 	}
 	
 	@SuppressWarnings("unchecked")
 	public static void load() {
-		if (map == null)
-			map = new HashMap<Integer,Gem>();
-		Set<Integer> keys = new TreeSet<Integer>();
+		fullmap = new HashMap<Integer,Gem>();
 		Document doc = Persistency.openXML(Persistency.FileType.Gems);
 		Gem gem;
 		Element root = doc.getRootElement();
 		for (Element e: (List<Element>) root.getChildren()) {
 			gem = new Gem(e);
-			if (gem.getId()>0) {
-				keys.add(gem.getId());
-				if (!map.containsKey(gem.getId()))
-					map.put(gem.getId(), gem);
-			}
+			if (gem.getId()>0)
+				fullmap.put(gem.getId(), gem);
 		}
-		Set<Integer> diff = new TreeSet<Integer>(map.keySet());
-		diff.removeAll(keys);
-		for (int i: diff)
-			map.remove(i);
+	}
+	
+	public static void limit() {
+		map = new HashMap<Integer,Gem>();
+		for (Gem g: fullmap.values()) {
+			if (g.profession == null || Player.getInstance().hasProfession(g.profession))
+				map.put(g.id, g);
+		}
 	}
 
 }

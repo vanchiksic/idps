@@ -294,10 +294,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			case Inscription:
 			case Leatherworking:
 			case Tailoring:
-				Enchant.load();
+				Enchant.limit();
 				break;
 			case Jewelcrafting:
-				Gem.load();
+				Gem.limit();
 				break;
 			case Alchemy:
 			case Skinning:

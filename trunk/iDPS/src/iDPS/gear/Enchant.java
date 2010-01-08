@@ -11,8 +11,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -20,8 +18,12 @@ import org.jdom.Element;
 public class Enchant implements Comparable<Enchant>, Rateable {
 	
 	private static HashMap<Integer,Enchant> map = null;
+	private static HashMap<Integer,Enchant> fullmap = null;
+	private static HashMap<Integer,Enchant> spellmap = null;
 	
 	private int id;
+	private int spellid;
+	private Profession profession;
 	private SlotType slot;
 	private String name;
 	private Attributes attr;
@@ -32,12 +34,12 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 	private Enchant(Element element) {
 		this();
 		id = Integer.parseInt(element.getAttributeValue("id"));
+		spellid = Integer.parseInt(element.getAttributeValue("spellid"));
 		
-		if (element.getAttribute("profession") != null) {
-			Profession p = Profession.valueOf(element.getAttributeValue("profession"));
-			if (!Player.getInstance().hasProfession(p))
-				id = 0;
-		}
+		if (element.getAttribute("profession") != null)
+			profession = Profession.valueOf(element.getAttributeValue("profession"));
+		else
+			profession = null;
 		
 		List<Element> childs = element.getChildren();
 		Iterator<Element> i = childs.iterator();
@@ -75,32 +77,36 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 	
 	@SuppressWarnings("unchecked")
 	public static void load() {
-		if (map == null)
-			map = new HashMap<Integer,Enchant>();
-		Set<Integer> keys = new TreeSet<Integer>();
+		fullmap = new HashMap<Integer,Enchant>();
+		spellmap = new HashMap<Integer,Enchant>();
 		Document doc = Persistency.openXML(Persistency.FileType.Enchants);
 		Element root = doc.getRootElement();
 		for (Element e: (List<Element>) root.getChildren()) {
 			Enchant en = new Enchant(e);
-			if (en.getId()>0) {
-				keys.add(en.getId());
-				if (!map.containsKey(en.getId()))
-					map.put(en.getId(), en);
-			}
+			if (en.getId()>0)
+				fullmap.put(en.getId(), en);
+			if (en.getSpellId()>0)
+				spellmap.put(en.getSpellId(), en);
 		}
-		Set<Integer> diff = new TreeSet<Integer>(map.keySet());
-		diff.removeAll(keys);
-		for (int i: diff)
-			map.remove(i);
+		limit();
+	}
+	
+	public static void limit() {
+		map = new HashMap<Integer,Enchant>();
+		for (Enchant e: fullmap.values()) {
+			if (e.profession == null || Player.getInstance().hasProfession(e.profession))
+				map.put(e.id, e);
+		}
 	}
 	
 	public static Enchant find(int id) {
-		return map.get(id);
+		if (fullmap.containsKey(id))
+			return fullmap.get(id);
+		else
+			return spellmap.get(id);
 	}
 	
 	public static ArrayList<Enchant> findSlot(SlotType slotType) {
-		if (map == null)
-			Enchant.load();
 		ArrayList<Enchant> matches = new ArrayList<Enchant>();
 		Collection<Enchant> enchants = map.values();
 		for (Enchant e: enchants) {
@@ -131,6 +137,10 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 
 	public Attributes getAttributes() {
 		return attr;
+	}
+
+	public int getSpellId() {
+		return spellid;
 	}
 
 }
