@@ -89,6 +89,30 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 mRealms.addItem(realm);
             }
         }
+        else if (region == "CN") {
+            String realms[] = {
+                "Abyssal Maw", "Aerie Peak", "Aessina", "Agamaggan", "Aggramar", "Ahn'Qiraj", "Akama", "Al'Akir", "Al'ar", "Alexstrasza", "Alleria", "Alonsus", "Altar of Storms", "Alterac Mountains", "Anachronos", "Andorhal", "Anetheron", "Antonidas", "Anub'arak", "Anvilmar", "Arathi", "Arathor", "Archaedas", "Archimonde", "Argus", "Arthas", "Arygos", "Ashenvale", "Astranaar", "Aszune", "Aviana", "Azgalor", "Azjol-Nerub", "Azshara", "Azuregos", "Baelgun", "Balnazzar", "Barthilas", "Black Dragonflight", "Blackhand", "Blackmoore", "Blackrock", "Blackwing Lair", "Bladefist", "Blanchard", "Bleeding Hollow", "Blood Furnace", "Bloodfeather", "Bloodhoof", "Bloodmaul", "Bloodscalp", "Blue Dragonflight", "Booty Bay", "Boulderfist", "Brann", "Bronze Dragonflight", "Bronzebeard", "Burning Blade", "Burning Legion", "Burning Steppes", "C'Thun", "Cassandra", "Cenarius", "Chillwind Point", "Cho'gall", "Chromaggus", "Claw of the Shadowmancer", "Crushridge", "Crystalpine Stinger", "Daggerspine", "Dalvengyr", "Danath Trollbane", "Dark Iron", "Dark Phantom", "Dark Portal", "Darkspear", "Darrowmere", "Dath'Remar", "Death's Door", "Deathforge", "Deathwing", "Deepfury", "Deephome", "Demon Fall Canyon", "Demon Soul", "Demonslayer", "Dentarg", "Destromath", "Detheroc", "Direwing", "Doomhammer", "Dor'Danil", "Draenor", "Dragonblight", "Dragonmaw", "Drakkari", "Dreadmaul", "Dreadmist Peak", "Dream Bough", "Dreamwalker", "Dun Modr", "Dunemaul", "Durotan", "Duskwood", "Dustbelcher", "Dustwind Gulch", "Echo Isles", "Echo Ridge", "Eldre'Thalas", "Emerald Dream", "Emeriss", "Eonar", "Eranikus", "Eredar", "Executus", "Explorer's League", "Falathim", "Feathermoon", "Fel Rock", "Fenris", "Feralas", "Fire Plume Ridge", "Firegut", "Firelands", "Firetree", "Fist of the Titans", "Flame Crest", "Force of Elemental", "Fray Island", "Freewind", "Frostmane", "Frostmourne", "Frostreaver Crown", "Frostwhisper", "Frostwolf", "Gadgetzan", "Galardell", "Garithos", "Garona", "Gazlowe", "Gnomeregan", "Gold Road", "Gordunni", "Gorefiend", "Gorgonnash", "Greymane", "Grim Batol", "Grimtotem", "Guardian Blade", "Gul'dan", "Gurubashi", "Hakkar", "Hectae", "Hellscream", "Holy Chanter", "Hydraxis", "Hyjal", "Icecrown", "Illidan", "Immol'thar", "Ironaya", "Isillien", "Itharius", "Jaedenar", "Jammal'an", "Jin'do", "Kael'thas", "Kaleidoscope Star", "Karazhan", "Kargath", "Kel'Thuzad", "Khadgar", "Khardros", "Khaz'goroth", "Kil'jaeden", "Kilrogg", "Kul Tiras", "Kurdran", "Laughing Skull", "Lethon", "Lich King", "Lightning's Blade", "Lord Kazzak", "Lordaeron", "Lothar", "Lushwater Oasis", "Madoran", "Maelstrom", "Magatha", "Magtheridon", "Maiev Shadowsong", "Mal'Ganis", "Malfurion", "Malygos", "Mannoroth", "Medivh", "Menethil", "Midnight Scythe", "Modgud", "Mograine", "Molten Core", "Moonglade", "Mosh'Ogg", "Mossflayer", "Mug'thol", "Murmur", "Naxxramas", "Nazjatar", "Nefarian", "Nekros", "Neltharion", "Neptulon", "Ner'zhul", "Nighthaven", "Northrend", "Nozdormu", "Onyxia", "Ossirian", "Outland", "Pandaren", "Perenolde", "Poison-tipped Bone Spear", "Prestor", "Proudmoore", "Quel'Thalas", "Ragnaros", "Rajaxx", "Rangers", "Ravencrest", "Ravenholdt", "Razorwind Canyon", "Red Cloud Mesa", "Red Dragonflight", "Rend", "Rexxar", "Rhonin", "Ring of Trials", "Rivendare", "River Pride", "Runetotem", "Sapphiron", "Sargeras", "Scarlet Crusade", "Scholomance", "Searinox", "Sen'jin", "Sethekk", "Shadow Council", "Shadowfang Keep", "Shadowmoon", "Shattered Halls", "Shattered Hand", "Shrine of the Dormant Flame", "Silver Hand", "Silvermoon", "Silverpine Forest", "Skullcrusher", "Skywall", "Smolderthorn", "Soulflayer", "Spirestone", "Splinter Fist", "Staghelm", "Stonetalon Peak", "Storm Eye", "Stormrage", "Stormreaver", "Stormscale", "Stranglethorn", "Stratholme", "Stromgarde Keep", "Sun Rock Retreat", "Sundown Marsh", "Sunstrider", "Sutarn", "Swiftwind", "Sylvanas", "Taerar", "Tanaris", "Tarren Mill", "Temple of Elune", "Thaurissan", "The Forgotten Coast", "The Golden Plains", "The Great Sea", "The Master's Glaive", "The Underbog", "The Veiled Sea", "Theradras", "Theramore", "Therazane", "Thermaplugg", "Thoradin", "Thousand Needles", "Thrall", "Thunder Axe Fortress", "Thunder Bluff", "Thunderaan", "Thunderhorn", "Thunderlord", "Tirisfal Glades", "Tortheldrin", "Turalyon", "Twisting Nether", "Tyr's Hand", "Tyrande", "Uldaman", "Uldum", "Un'Goro", "Vaelastrasz", "Valley of Kings", "VanCleef", "Varimathras", "Vek'lor", "Vek'nilash", "Vilebranch", "Vol'jin", "Warsong", "Well of Eternity", "Whispering Shore", "Whisperwind", "Whitemane", "Windrunner", "Windshear Crag", "Wing of the Whelping", "Winterspring", "World Tree", "Xavian", "Ysera", "Ysondre", "Zalazane", "Zealot Blade", "Zul'jin", "Zuluhed"
+            };
+            for (String realm : realms) {
+                mRealms.addItem(realm);
+            }
+        }
+        else if (region == "KR") {
+            String realms[] = {
+                "아레나 토너먼트 1", "아레나 토너먼트 2", "아레나 토너먼트 3", "Aegwynn", "Al'ar", "Alexstrasza", "Alleria", "Arena Tournament 1", "Arena Tournament 2", "Arena Tournament 3", "Azshara", "Blackmoore", "Burning Legion", "Cenarius", "Dalaran", "Deathwing", "Durotan", "Elune", "Eonar", "Eye of the Storm", "Garona", "Gul'dan", "Hellscream", "Hyjal", "Karazhan", "Kargath", "Kul Tiras", "Llane", "Malfurion", "Malygos", "Medivh", "Norgannon", "Ragnaros", "Rexxar", "Sartharion", "Stormrage", "Tirion", "Uther", "Wildhammer", "Windrunner", "Zul'jin"
+            };
+            for (String realm : realms) {
+                mRealms.addItem(realm);
+            }
+        }
+        else if (region == "TW") {
+            String realms[] = {
+                "Altar of Storms", "Arena Tournament 1", "Arena Tournament 2", "Arena Tournament 3", "Arthas", "Arygos", "Balnazzar", "Black Dragonflight", "Bleeding Hollow", "Chillwind Point", "Crystalpine Stinger", "Deathwing", "Demon Fall Canyon", "Demon Soul", "Dragonmaw", "Dreadmist Peak", "Frenzyheart", "Frostmane", "Gnomeregan", "Hellscream", "Howling Fjord", "Icecrown", "Kel'Thuzad", "Light's Hope", "Menethil", "Nesingwary", "Nightsong", "Onyxia", "Quel'dorei", "Sartharion", "Shadowmoon", "Silverwing Hold", "Skywall", "Spirestone", "Stormscale", "Strand of the Ancients", "Sundown Marsh", "Warsong", "Whisperwind", "World Tree", "Wrathbringer", "Zealot Blade"
+            };
+            for (String realm : realms) {
+                mRealms.addItem(realm);
+            }
+        }
     }
     
     private void importCharacter() {
@@ -115,6 +139,9 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             Document document = builder.build(reader);
             Element root = document.getRootElement();
             Element characterInfo = root.getChild("characterInfo");
+            if (characterInfo.getChild("character").getAttributeValue("class").compareTo("Rogue") != 0) {
+                throw new Exception("Dear sir, I don't believe you are a Rogue at all!\r\n\"There's an old saying in Tennessee — I know it's in Texas, probably in Tennessee — that says, fool me once, shame on — shame on you. Fool me — you can't get fooled again.\"");
+            }
             Element characterTab = characterInfo.getChild("characterTab");
             Element items = characterTab.getChild("items");
 
@@ -125,6 +152,9 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 Element element = elementIter.next();
                 int id = Integer.parseInt(element.getAttributeValue("id"));
                 int rawSlot = Integer.parseInt(element.getAttributeValue("slot"));
+                if (rawSlot < 0 || rawSlot >= chackifyBlizzardItemSlotId.length) {
+                    return;
+                }
                 int slot = chackifyBlizzardItemSlotId[rawSlot];
                 Vector<Integer> gemIds = new Vector<Integer>(3);
                 gemIds.add(Integer.parseInt(element.getAttributeValue("gem0Id")));
@@ -157,7 +187,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(MainFrame.getInstance(), "HELP ME! OH GOD, THE BEARS, THEY ARE VISCIOUS! THEY ARE RAPING THE ARMORY!"); 
+            JOptionPane.showMessageDialog(MainFrame.getInstance(), "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
             return;
         }
 
