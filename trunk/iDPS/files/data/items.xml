@@ -1,0 +1,5873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item id="40403">
+    <name><![CDATA[Drape of the Deadly Foe]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>42</agi>
+      <cri>49</cri>
+      <hst>31</hst>
+    </attributes>
+    <lvl>226</lvl>
+    <icon>inv_misc_cape_naxxramas_03</icon>
+  </item>
+  <item id="43573">
+    <name><![CDATA[Tears of Bitter Anguish]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hst>73</hst>
+    </attributes>
+    <lvl>200</lvl>
+    <icon>inv_elemental_crystal_water</icon>
+  </item>
+  <item id="44253">
+    <name><![CDATA[Darkmoon Card: Greatness]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <agi>90</agi>
+    </attributes>
+    <lvl>200</lvl>
+    <icon>inv_inscription_tarotgreatness</icon>
+  </item>
+  <item id="45224">
+    <name><![CDATA[Drape of the Lithe]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>63</agi>
+      <atp>84</atp>
+      <hit>36</hit>
+      <hst>46</hst>
+    </attributes>
+    <lvl>226</lvl>
+    <icon>inv_misc_cape_02</icon>
+  </item>
+  <item id="45286">
+    <name><![CDATA[Pyrite Infuser]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>95</hit>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>flameleviathan-10</tag>
+    <icon>spell_frost_fireresistancetotem</icon>
+  </item>
+  <item id="45461">
+    <name><![CDATA[Drape of Icy Intent]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>64</agi>
+      <atp>102</atp>
+      <hit>40</hit>
+      <hst>41</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>239</lvl>
+    <tag>hodir-25-hard</tag>
+    <icon>inv_misc_cape_05</icon>
+  </item>
+  <item id="45517">
+    <name><![CDATA[Pendulum of Infinity]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>64</agi>
+      <atp>86</atp>
+      <cri>48</cri>
+      <hst>41</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>239</lvl>
+    <tag>generalvezax-25-hard</tag>
+    <icon>inv_jewelry_necklace_45</icon>
+  </item>
+  <item id="45522">
+    <name><![CDATA[Blood of the Old God]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>108</hit>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>yogsaron-25</tag>
+    <icon>inv_misc_gem_bloodstone_03</icon>
+  </item>
+  <item id="45555">
+    <name><![CDATA[Death-warmed Belt]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>69</agi>
+      <atp>112</atp>
+      <hit>40</hit>
+      <cri>56</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <tag>tier8-craft</tag>
+    <icon>inv_belt_37b</icon>
+  </item>
+  <item id="45564">
+    <name><![CDATA[Footpads of Silence]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>69</agi>
+      <atp>114</atp>
+      <hit>48</hit>
+      <cri>56</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <tag>tier8-craft</tag>
+    <icon>inv_boots_leather01</icon>
+  </item>
+  <item id="45609">
+    <name><![CDATA[Comet's Trail]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>240</atp>
+    </attributes>
+    <lvl>239</lvl>
+    <tag>algalon-25</tag>
+    <icon>spell_arcane_starfire</icon>
+  </item>
+  <item id="45829">
+    <name><![CDATA[Belt of the Twilight Assassin]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>84</agi>
+      <atp>124</atp>
+      <hit>49</hit>
+      <exp>57</exp>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>emblems-conquest</tag>
+    <icon>inv_belt_15</icon>
+  </item>
+  <item id="45838">
+    <name><![CDATA[Gloves of the Blind Stalker]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>120</atp>
+      <cri>49</cri>
+      <hst>57</hst>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>emblems-conquest</tag>
+    <icon>inv_gauntlets_22</icon>
+  </item>
+  <item id="45846">
+    <name><![CDATA[Leggings of Wavering Shadow]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>136</atp>
+      <hit>68</hit>
+      <hst>75</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <tag>emblems-conquest</tag>
+    <icon>inv_pants_mail_25</icon>
+  </item>
+  <item id="45931">
+    <name><![CDATA[Mjolnir Runestone]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <cri>102</cri>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>thorim-10-hard</tag>
+    <icon>inv_misc_rune_11</icon>
+  </item>
+  <item id="46032">
+    <name><![CDATA[Drape of the Faceless General]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>53</agi>
+      <atp>92</atp>
+      <cri>40</cri>
+      <arp>30</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <icon>inv_misc_cape_14</icon>
+  </item>
+  <item id="46038">
+    <name><![CDATA[Dark Matter]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>222</atp>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>algalon-10</tag>
+    <icon>spell_shadow_seedofdestruction</icon>
+  </item>
+  <item id="46958">
+    <name><![CDATA[Steel Bladebreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>89</atp>
+      <cri>44</cri>
+      <arp>30</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="46969">
+    <name><![CDATA[Steel Bladebreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>216.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>84</atp>
+      <cri>50</cri>
+      <arp>33</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-hard</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="46970">
+    <name><![CDATA[Drape of the Untamed Predator]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>50</cri>
+      <hst>50</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="46971">
+    <name><![CDATA[Drape of the Untamed Predator]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>57</cri>
+      <hst>57</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="46974">
+    <name><![CDATA[Leggings of the Broken Beast]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>128</agi>
+      <atp>165</atp>
+      <hit>74</hit>
+      <hst>90</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_pants_leather_28</icon>
+  </item>
+  <item id="46975">
+    <name><![CDATA[Leggings of the Broken Beast]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <hit>86</hit>
+      <hst>102</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Yellow</socket>
+      <bonus>
+        <atp>16</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_pants_leather_28</icon>
+  </item>
+  <item id="46994">
+    <name><![CDATA[Talonstrike]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>57</atp>
+      <hst>28</hst>
+      <arp>28</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_crossbow_34</icon>
+  </item>
+  <item id="46995">
+    <name><![CDATA[Talonstrike]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>240.7</dps>
+    <attributes>
+      <agi>40</agi>
+      <atp>49</atp>
+      <hst>32</hst>
+      <arp>32</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_crossbow_34</icon>
+  </item>
+  <item id="46996">
+    <name><![CDATA[Lionhead Slasher]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>78</atp>
+      <cri>39</cri>
+      <arp>39</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47000">
+    <name><![CDATA[Cuirass of Calamitous Fate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>149</atp>
+      <cri>90</cri>
+      <hst>90</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="47001">
+    <name><![CDATA[Lionhead Slasher]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>216.7</dps>
+    <attributes>
+      <agi>66</agi>
+      <atp>72</atp>
+      <cri>36</cri>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-hard</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47004">
+    <name><![CDATA[Cuirass of Calamitous Fate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <cri>86</cri>
+      <hst>102</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="47043">
+    <name><![CDATA[Charge of the Demon Lord]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>54</cri>
+      <hst>44</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_necklace_34</icon>
+  </item>
+  <item id="47060">
+    <name><![CDATA[Charge of the Demon Lord]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>61</cri>
+      <hst>50</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_necklace_34</icon>
+  </item>
+  <item id="47070">
+    <name><![CDATA[Ring of Callous Aggression]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>54</cri>
+      <hst>44</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>factionchampions-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_ring_65</icon>
+  </item>
+  <item id="47071">
+    <name><![CDATA[Treads of the Icewalker]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <hit>67</hit>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>factionchampions-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_boots_leather_02</icon>
+  </item>
+  <item id="47075">
+    <name><![CDATA[Ring of Callous Aggression]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>61</cri>
+      <hst>50</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>factionchampions-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_ring_65</icon>
+  </item>
+  <item id="47077">
+    <name><![CDATA[Treads of the Icewalker]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>135</atp>
+      <hit>76</hit>
+      <arp>68</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>factionchampions-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_boots_leather_02</icon>
+  </item>
+  <item id="47104">
+    <name><![CDATA[Twin Spike]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>89</atp>
+      <hit>39</hit>
+      <hst>39</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47107">
+    <name><![CDATA[Belt of the Merciless Killer]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <hit>59</hit>
+      <hst>67</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_belt_37c</icon>
+  </item>
+  <item id="47112">
+    <name><![CDATA[Belt of the Merciless Killer]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>135</atp>
+      <hit>68</hit>
+      <hst>76</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_belt_37c</icon>
+  </item>
+  <item id="47113">
+    <name><![CDATA[Twin Spike]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>84</atp>
+      <hit>44</hit>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47115">
+    <name><![CDATA[Death's Verdict]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>256</atp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="47131">
+    <name><![CDATA[Death's Verdict]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>288</atp>
+    </attributes>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="47148">
+    <name><![CDATA[Stormpike Cleaver]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>78</atp>
+      <hit>39</hit>
+      <hst>39</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>anubarak-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47151">
+    <name><![CDATA[Bracers of Dark Determination]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <hit>50</hit>
+      <cri>50</cri>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>anubarak-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_bracer_23b</icon>
+  </item>
+  <item id="47155">
+    <name><![CDATA[Bracers of Dark Determination]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>69</agi>
+      <atp>98</atp>
+      <hit>49</hit>
+      <cri>57</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>anubarak-25-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_bracer_23b</icon>
+  </item>
+  <item id="47156">
+    <name><![CDATA[Stormpike Cleaver]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>72</atp>
+      <hit>44</hit>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>anubarak-25-hard</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47214">
+    <name><![CDATA[Banner of Victory]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <arp>84</arp>
+    </attributes>
+    <lvl>200</lvl>
+    <icon>inv_bannerpvp_03</icon>
+  </item>
+  <item id="47251">
+    <name><![CDATA[Cuirass of Cruel Intent]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>74</agi>
+      <atp>255</atp>
+      <cri>82</cri>
+      <hst>71</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_mail_03</icon>
+  </item>
+  <item id="47255">
+    <name><![CDATA[Stygian Bladebreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>89</atp>
+      <cri>44</cri>
+      <arp>30</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="47257">
+    <name><![CDATA[Cloak of the Untamed Predator]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>50</cri>
+      <hst>50</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_cape_18</icon>
+  </item>
+  <item id="47259">
+    <name><![CDATA[Legwraps of the Broken Beast]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>128</agi>
+      <atp>165</atp>
+      <hit>74</hit>
+      <hst>90</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="47266">
+    <name><![CDATA[Blood Fury]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>78</atp>
+      <cri>39</cri>
+      <arp>39</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="47267">
+    <name><![CDATA[Death's Head Crossbow]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>57</atp>
+      <hst>28</hst>
+      <arp>28</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_crossbow_35</icon>
+  </item>
+  <item id="47270">
+    <name><![CDATA[Vest of Calamitous Fate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>149</atp>
+      <cri>90</cri>
+      <hst>90</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="47272">
+    <name><![CDATA[Charge of the Eredar]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>54</cri>
+      <hst>44</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>jaraxxus-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_necklace_34</icon>
+  </item>
+  <item id="47282">
+    <name><![CDATA[Band of Callous Aggression]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <cri>54</cri>
+      <hst>44</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>factionchampions-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_ring_65</icon>
+  </item>
+  <item id="47284">
+    <name><![CDATA[Icewalker Treads]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <hit>67</hit>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>factionchampions-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_boots_leather_04a</icon>
+  </item>
+  <item id="47299">
+    <name><![CDATA[Belt of the Pitiless Killer]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <hit>59</hit>
+      <hst>67</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_belt_38b</icon>
+  </item>
+  <item id="47300">
+    <name><![CDATA[Gouge of the Frigid Heart]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>89</atp>
+      <hit>39</hit>
+      <hst>39</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="47303">
+    <name><![CDATA[Death's Choice]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>256</atp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-25</tag>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="47313">
+    <name><![CDATA[Armbands of Dark Determination]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <hit>50</hit>
+      <cri>50</cri>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>anubarak-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_bracer_36a</icon>
+  </item>
+  <item id="47314">
+    <name><![CDATA[Hellscream Slicer]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>78</atp>
+      <hit>39</hit>
+      <hst>39</hst>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>anubarak-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="47416">
+    <name><![CDATA[Stygian Bladebreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>216.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>84</atp>
+      <cri>50</cri>
+      <arp>33</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="47418">
+    <name><![CDATA[Cloak of the Untamed Predator]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>57</cri>
+      <hst>57</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_cape_18</icon>
+  </item>
+  <item id="47420">
+    <name><![CDATA[Legwraps of the Broken Beast]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <hit>86</hit>
+      <hst>102</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Yellow</socket>
+      <bonus>
+        <atp>16</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>northrendbeasts-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="47427">
+    <name><![CDATA[Blood Fury]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>216.7</dps>
+    <attributes>
+      <agi>66</agi>
+      <atp>72</atp>
+      <cri>36</cri>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="47428">
+    <name><![CDATA[Death's Head Crossbow]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>240.7</dps>
+    <attributes>
+      <agi>40</agi>
+      <atp>49</atp>
+      <hst>32</hst>
+      <arp>32</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_crossbow_35</icon>
+  </item>
+  <item id="47431">
+    <name><![CDATA[Vest of Calamitous Fate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <cri>86</cri>
+      <hst>102</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="47433">
+    <name><![CDATA[Charge of the Eredar]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>61</cri>
+      <hst>50</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>jaraxxus-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_necklace_34</icon>
+  </item>
+  <item id="47443">
+    <name><![CDATA[Band of Callous Aggression]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>77</agi>
+      <atp>98</atp>
+      <cri>61</cri>
+      <hst>50</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>factionchampions-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_ring_65</icon>
+  </item>
+  <item id="47445">
+    <name><![CDATA[Icewalker Treads]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>135</atp>
+      <hit>76</hit>
+      <arp>68</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>factionchampions-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_boots_leather_04a</icon>
+  </item>
+  <item id="47460">
+    <name><![CDATA[Belt of the Pitiless Killer]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>135</atp>
+      <hit>68</hit>
+      <hst>76</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_belt_38b</icon>
+  </item>
+  <item id="47461">
+    <name><![CDATA[Gouge of the Frigid Heart]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>84</atp>
+      <hit>44</hit>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="47464">
+    <name><![CDATA[Death's Choice]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <atp>288</atp>
+    </attributes>
+    <lvl>258</lvl>
+    <tag>twinvalkyrs-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="47474">
+    <name><![CDATA[Armbands of Dark Determination]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>69</agi>
+      <atp>98</atp>
+      <hit>49</hit>
+      <cri>57</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>anubarak-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_bracer_36a</icon>
+  </item>
+  <item id="47475">
+    <name><![CDATA[Hellscream Slicer]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>72</atp>
+      <hit>44</hit>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>anubarak-25-hard</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="47521">
+    <name><![CDATA[BRK-1000]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>240.7</dps>
+    <attributes>
+      <agi>48</agi>
+      <atp>49</atp>
+      <cri>32</cri>
+      <hst>24</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_rifle_35</icon>
+  </item>
+  <item id="47523">
+    <name><![CDATA[Fezzik's Autocannon]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>240.7</dps>
+    <attributes>
+      <agi>48</agi>
+      <atp>49</atp>
+      <cri>32</cri>
+      <hst>24</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_rifle_36</icon>
+  </item>
+  <item id="47526">
+    <name><![CDATA[Remorseless]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>88</atp>
+      <cri>44</cri>
+      <hst>36</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_mace_105</icon>
+  </item>
+  <item id="47528">
+    <name><![CDATA[Cudgel of the Damned]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>88</atp>
+      <cri>44</cri>
+      <hst>36</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_mace_101</icon>
+  </item>
+  <item id="47545">
+    <name><![CDATA[Vereesa's Dexterity]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>97</agi>
+      <atp>114</atp>
+      <cri>65</cri>
+      <arp>57</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>272</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="47546">
+    <name><![CDATA[Sylvanas' Cunning]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>97</agi>
+      <atp>114</atp>
+      <cri>65</cri>
+      <arp>57</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>272</lvl>
+    <tag>tributechest-25</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_cape_18</icon>
+  </item>
+  <item id="47581">
+    <name><![CDATA[Bracers of Swift Death]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>68</agi>
+      <atp>101</atp>
+      <hst>50</hst>
+      <arp>42</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tier9-craft</tag>
+    <faction>Alliance</faction>
+    <icon>inv_bracer_23b</icon>
+  </item>
+  <item id="47582">
+    <name><![CDATA[Bracers of Swift Death]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>68</agi>
+      <atp>101</atp>
+      <hst>50</hst>
+      <arp>42</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tier9-craft</tag>
+    <faction>Horde</faction>
+    <icon>inv_bracer_36a</icon>
+  </item>
+  <item id="47599">
+    <name><![CDATA[Knightbane Carapace]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>112</agi>
+      <atp>181</atp>
+      <hit>82</hit>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <atp>16</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tier9-craft</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="47600">
+    <name><![CDATA[Knightbane Carapace]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>112</agi>
+      <atp>181</atp>
+      <hit>82</hit>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <atp>16</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tier9-craft</tag>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="47607">
+    <name><![CDATA[Collar of Ceaseless Torment]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>67</agi>
+      <atp>97</atp>
+      <cri>46</cri>
+      <arp>42</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>northrendbeasts-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
+  </item>
+  <item id="47608">
+    <name><![CDATA[Acidmaw Boots]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>118</atp>
+      <hit>63</hit>
+      <exp>48</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <cri>4</cri>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>northrendbeasts-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_boots_leather_02</icon>
+  </item>
+  <item id="47659">
+    <name><![CDATA[Crimson Star]]></name>
+    <slot>Ranged</slot>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>255.6</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>57</atp>
+      <arp>28</arp>
+      <exp>28</exp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <icon>inv_throwingknife_07</icon>
+  </item>
+  <item id="47676">
+    <name><![CDATA[Dirk of the Night Watch]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>62</atp>
+      <hit>37</hit>
+      <hst>22</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>jaraxxus-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47688">
+    <name><![CDATA[Mask of Lethal Intent]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>82</hit>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <faction>Horde</faction>
+    <icon>inv_helmet_145a</icon>
+  </item>
+  <item id="47689">
+    <name><![CDATA[Hood of Lethal Intent]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>82</hit>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <faction>Alliance</faction>
+    <icon>inv_helmet_139</icon>
+  </item>
+  <item id="47703">
+    <name><![CDATA[Planestalker Signet]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>61</agi>
+      <atp>102</atp>
+      <hit>38</hit>
+      <arp>39</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>jaraxxus-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_ring_61</icon>
+  </item>
+  <item id="47708">
+    <name><![CDATA[Duskstalker Shoulderpads]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <cri>67</cri>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="47709">
+    <name><![CDATA[Duskstalker Pauldrons]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>135</atp>
+      <cri>67</cri>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="47719">
+    <name><![CDATA[Gloves of the Silver Assassin]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>139</atp>
+      <cri>54</cri>
+      <arp>54</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>factionchampions-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_gauntlets_77a</icon>
+  </item>
+  <item id="47725">
+    <name><![CDATA[Victor's Call]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <exp>83</exp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>factionchampions-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_horn_04</icon>
+  </item>
+  <item id="47730">
+    <name><![CDATA[Dexterous Brightstone Ring]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>101</atp>
+      <hst>50</hst>
+      <arp>50</arp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <icon>inv_jewelry_ring_ahnqiraj_01</icon>
+  </item>
+  <item id="47734">
+    <name><![CDATA[Mark of Supremacy]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>128</hit>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <icon>inv_misc_gem_bloodstone_03</icon>
+  </item>
+  <item id="47736">
+    <name><![CDATA[Icefall Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>83</atp>
+      <cri>36</cri>
+      <arp>32</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47739">
+    <name><![CDATA[Armor of Shifting Shadows]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>118</agi>
+      <atp>140</atp>
+      <cri>81</cri>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="47740">
+    <name><![CDATA[The Diplomat]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>187.1</dps>
+    <attributes>
+      <agi>35</agi>
+      <atp>59</atp>
+      <hit>15</hit>
+      <cri>26</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_rifle_35</icon>
+  </item>
+  <item id="47741">
+    <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>187.2</dps>
+    <attributes>
+      <agi>38</agi>
+      <atp>50</atp>
+      <cri>26</cri>
+      <hst>23</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_crossbow_34</icon>
+  </item>
+  <item id="47808">
+    <name><![CDATA[The Lion's Maw]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>78</atp>
+      <cri>38</cri>
+      <hst>29</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47814">
+    <name><![CDATA[Westfall Saber]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>74</atp>
+      <cri>29</cri>
+      <arp>38</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_sword_145</icon>
+  </item>
+  <item id="47816">
+    <name><![CDATA[The Grinder]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>48</agi>
+      <atp>61</atp>
+      <cri>35</cri>
+      <hst>30</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_mace_105</icon>
+  </item>
+  <item id="47832">
+    <name><![CDATA[Spaulders of the Snow Bandit]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>84</agi>
+      <atp>124</atp>
+      <cri>51</cri>
+      <hst>61</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <hst>4</hst>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="47849">
+    <name><![CDATA[Collar of Unending Torment]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>67</agi>
+      <atp>97</atp>
+      <cri>46</cri>
+      <arp>42</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>northrendbeasts-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
+  </item>
+  <item id="47853">
+    <name><![CDATA[Acidmaw Treads]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>118</atp>
+      <hit>63</hit>
+      <exp>48</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <cri>4</cri>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_boots_leather_03a</icon>
+  </item>
+  <item id="47868">
+    <name><![CDATA[Planestalker Band]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>61</agi>
+      <atp>102</atp>
+      <hit>38</hit>
+      <arp>39</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>jaraxxus-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_ring_61</icon>
+  </item>
+  <item id="47871">
+    <name><![CDATA[Orcish Deathblade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>62</atp>
+      <hit>37</hit>
+      <hst>22</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>jaraxxus-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_93</icon>
+  </item>
+  <item id="47878">
+    <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>139</atp>
+      <cri>54</cri>
+      <arp>54</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>factionchampions-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_gauntlets_78a</icon>
+  </item>
+  <item id="47881">
+    <name><![CDATA[Vengeance of the Forsaken]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <exp>83</exp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>factionchampions-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_horn_04</icon>
+  </item>
+  <item id="47883">
+    <name><![CDATA[Widebarrel Flintlock]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>187.1</dps>
+    <attributes>
+      <agi>35</agi>
+      <atp>59</atp>
+      <hit>15</hit>
+      <cri>26</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_rifle_36</icon>
+  </item>
+  <item id="47886">
+    <name><![CDATA[Nemesis Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>83</atp>
+      <cri>36</cri>
+      <arp>32</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="47887">
+    <name><![CDATA[Vest of Shifting Shadows]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>118</agi>
+      <atp>140</atp>
+      <cri>81</cri>
+      <arp>59</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>twinvalkyrs-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="47898">
+    <name><![CDATA[Frostblade Hatchet]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>78</atp>
+      <cri>38</cri>
+      <hst>29</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="47903">
+    <name><![CDATA[Forsaken Bonecarver]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>74</atp>
+      <cri>29</cri>
+      <arp>38</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_sword_138</icon>
+  </item>
+  <item id="47904">
+    <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>84</agi>
+      <atp>124</atp>
+      <cri>51</cri>
+      <hst>61</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <hst>4</hst>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="47905">
+    <name><![CDATA[Blackhorn Bludgeon]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>48</agi>
+      <atp>61</atp>
+      <cri>35</cri>
+      <hst>30</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>anubarak-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_mace_101</icon>
+  </item>
+  <item id="47915">
+    <name><![CDATA[Collar of Ceaseless Torment]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>70</agi>
+      <atp>106</atp>
+      <cri>52</cri>
+      <arp>40</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
+  </item>
+  <item id="47919">
+    <name><![CDATA[Acidmaw Boots]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>127</atp>
+      <hit>69</hit>
+      <exp>51</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <cri>6</cri>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_boots_leather_02</icon>
+  </item>
+  <item id="47934">
+    <name><![CDATA[Planestalker Signet]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>70</agi>
+      <atp>115</atp>
+      <hit>44</hit>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_jewelry_ring_61</icon>
+  </item>
+  <item id="47938">
+    <name><![CDATA[Dirk of the Night Watch]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>73</atp>
+      <hit>42</hit>
+      <hst>26</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47945">
+    <name><![CDATA[Gloves of the Silver Assassin]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>97</agi>
+      <atp>145</atp>
+      <cri>61</cri>
+      <arp>61</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>factionchampions-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_gauntlets_77a</icon>
+  </item>
+  <item id="47948">
+    <name><![CDATA[Victor's Call]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <exp>83</exp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>factionchampions-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_horn_04</icon>
+  </item>
+  <item id="47950">
+    <name><![CDATA[The Diplomat]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>40</agi>
+      <atp>66</atp>
+      <hit>18</hit>
+      <cri>30</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_rifle_35</icon>
+  </item>
+  <item id="47953">
+    <name><![CDATA[Icefall Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>74</atp>
+      <cri>41</cri>
+      <arp>36</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_shortblade_95</icon>
+  </item>
+  <item id="47954">
+    <name><![CDATA[Armor of Shifting Shadows]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>126</agi>
+      <atp>162</atp>
+      <cri>93</cri>
+      <arp>67</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="47966">
+    <name><![CDATA[The Lion's Maw]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>50</agi>
+      <atp>89</atp>
+      <cri>43</cri>
+      <hst>24</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_axe_105</icon>
+  </item>
+  <item id="47971">
+    <name><![CDATA[Westfall Saber]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>67</atp>
+      <cri>24</cri>
+      <arp>43</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_sword_145</icon>
+  </item>
+  <item id="47972">
+    <name><![CDATA[Spaulders of the Snow Bandit]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>91</agi>
+      <atp>132</atp>
+      <cri>52</cri>
+      <hst>69</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <hst>6</hst>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="47973">
+    <name><![CDATA[The Grinder]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>54</agi>
+      <atp>70</atp>
+      <cri>40</cri>
+      <hst>35</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_mace_105</icon>
+  </item>
+  <item id="47975">
+    <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>212.1</dps>
+    <attributes>
+      <agi>35</agi>
+      <atp>57</atp>
+      <cri>30</cri>
+      <hst>18</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_crossbow_34</icon>
+  </item>
+  <item id="47988">
+    <name><![CDATA[Collar of Unending Torment]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>70</agi>
+      <atp>106</atp>
+      <cri>52</cri>
+      <arp>40</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
+  </item>
+  <item id="47992">
+    <name><![CDATA[Acidmaw Treads]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>93</agi>
+      <atp>127</atp>
+      <hit>69</hit>
+      <exp>51</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <cri>6</cri>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>northrendbeasts-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_boots_leather_03a</icon>
+  </item>
+  <item id="48007">
+    <name><![CDATA[Planestalker Band]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>70</agi>
+      <atp>115</atp>
+      <hit>44</hit>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_jewelry_ring_61</icon>
+  </item>
+  <item id="48010">
+    <name><![CDATA[Orcish Deathblade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>73</atp>
+      <hit>42</hit>
+      <hst>26</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_93</icon>
+  </item>
+  <item id="48017">
+    <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>97</agi>
+      <atp>145</atp>
+      <cri>61</cri>
+      <arp>61</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>factionchampions-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_gauntlets_78a</icon>
+  </item>
+  <item id="48020">
+    <name><![CDATA[Vengeance of the Forsaken]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <exp>83</exp>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>factionchampions-10-heroic</tag>
+    <icon>inv_misc_horn_04</icon>
+  </item>
+  <item id="48022">
+    <name><![CDATA[Widebarrel Flintlock]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>40</agi>
+      <atp>66</atp>
+      <hit>18</hit>
+      <cri>30</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_rifle_36</icon>
+  </item>
+  <item id="48025">
+    <name><![CDATA[Nemesis Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>74</atp>
+      <cri>41</cri>
+      <arp>36</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>twinvalkyrs-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="48026">
+    <name><![CDATA[Vest of Shifting Shadows]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>126</agi>
+      <atp>162</atp>
+      <cri>93</cri>
+      <arp>67</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>jaraxxus-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="48043">
+    <name><![CDATA[Frostblade Hatchet]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>50</agi>
+      <atp>89</atp>
+      <cri>43</cri>
+      <hst>24</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_axe_104</icon>
+  </item>
+  <item id="48048">
+    <name><![CDATA[Forsaken Bonecarver]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>67</atp>
+      <cri>24</cri>
+      <arp>43</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_sword_138</icon>
+  </item>
+  <item id="48049">
+    <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>91</agi>
+      <atp>132</atp>
+      <cri>52</cri>
+      <hst>69</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <hst>6</hst>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="48050">
+    <name><![CDATA[Blackhorn Bludgeon]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
+    <attributes>
+      <agi>54</agi>
+      <atp>70</atp>
+      <cri>40</cri>
+      <hst>35</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_mace_101</icon>
+  </item>
+  <item id="48052">
+    <name><![CDATA[Darkmaw Crossbow]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>212.1</dps>
+    <attributes>
+      <agi>35</agi>
+      <atp>57</atp>
+      <cri>30</cri>
+      <hst>18</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_crossbow_35</icon>
+  </item>
+  <item id="48218">
+    <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>129</atp>
+      <cri>80</cri>
+      <exp>64</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_helmet_139</icon>
+  </item>
+  <item id="48219">
+    <name><![CDATA[VanCleef's Breastplate of Conquest]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>145</atp>
+      <hit>72</hit>
+      <cri>80</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="48220">
+    <name><![CDATA[VanCleef's Legplates of Conquest]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>145</atp>
+      <hit>64</hit>
+      <arp>72</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_pants_leather_28</icon>
+  </item>
+  <item id="48221">
+    <name><![CDATA[VanCleef's Pauldrons of Conquest]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>103</atp>
+      <arp>60</arp>
+      <exp>52</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="48222">
+    <name><![CDATA[VanCleef's Gauntlets of Conquest]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>103</atp>
+      <hit>52</hit>
+      <cri>60</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_gauntlets_77a</icon>
+  </item>
+  <item id="48223">
+    <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>82</hit>
+      <cri>90</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="48224">
+    <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>101</agi>
+      <atp>119</atp>
+      <hit>59</hit>
+      <cri>67</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_gauntlets_77a</icon>
+  </item>
+  <item id="48225">
+    <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>149</atp>
+      <cri>90</cri>
+      <exp>74</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_helmet_139</icon>
+  </item>
+  <item id="48226">
+    <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>74</hit>
+      <arp>82</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_pants_leather_28</icon>
+  </item>
+  <item id="48227">
+    <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>101</agi>
+      <atp>119</atp>
+      <arp>67</arp>
+      <exp>59</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="48228">
+    <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>114</agi>
+      <atp>135</atp>
+      <arp>76</arp>
+      <exp>68</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_shoulder_89</icon>
+  </item>
+  <item id="48229">
+    <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>188</atp>
+      <hit>86</hit>
+      <arp>94</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_pants_leather_28</icon>
+  </item>
+  <item id="48230">
+    <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <cri>102</cri>
+      <exp>86</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_helmet_139</icon>
+  </item>
+  <item id="48231">
+    <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>114</agi>
+      <atp>135</atp>
+      <hit>68</hit>
+      <cri>76</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_gauntlets_77a</icon>
+  </item>
+  <item id="48232">
+    <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>188</atp>
+      <hit>94</hit>
+      <cri>102</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Alliance</faction>
+    <icon>inv_chest_leather_14</icon>
+  </item>
+  <item id="48233">
+    <name><![CDATA[Garona's Breastplate of Triumph]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>188</atp>
+      <hit>94</hit>
+      <cri>102</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="48234">
+    <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>114</agi>
+      <atp>135</atp>
+      <hit>68</hit>
+      <cri>76</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Horde</faction>
+    <icon>inv_gauntlets_78a</icon>
+  </item>
+  <item id="48235">
+    <name><![CDATA[Garona's Helmet of Triumph]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>172</atp>
+      <cri>102</cri>
+      <exp>86</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Horde</faction>
+    <icon>inv_helmet_145a</icon>
+  </item>
+  <item id="48236">
+    <name><![CDATA[Garona's Legplates of Triumph]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>137</agi>
+      <atp>188</atp>
+      <hit>86</hit>
+      <arp>94</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Horde</faction>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="48237">
+    <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>114</agi>
+      <atp>135</atp>
+      <arp>76</arp>
+      <exp>68</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="48238">
+    <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>101</agi>
+      <atp>119</atp>
+      <arp>67</arp>
+      <exp>59</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="48239">
+    <name><![CDATA[Garona's Legplates of Triumph]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>74</hit>
+      <arp>82</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Horde</faction>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="48240">
+    <name><![CDATA[Garona's Helmet of Triumph]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>149</atp>
+      <cri>90</cri>
+      <exp>74</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Horde</faction>
+    <icon>inv_helmet_145a</icon>
+  </item>
+  <item id="48241">
+    <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>101</agi>
+      <atp>119</atp>
+      <hit>59</hit>
+      <cri>67</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Horde</faction>
+    <icon>inv_gauntlets_78a</icon>
+  </item>
+  <item id="48242">
+    <name><![CDATA[Garona's Breastplate of Triumph]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>165</atp>
+      <hit>82</hit>
+      <cri>90</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="48243">
+    <name><![CDATA[Garona's Breastplate of Conquest]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>145</atp>
+      <hit>72</hit>
+      <cri>80</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_chest_leather_18a</icon>
+  </item>
+  <item id="48244">
+    <name><![CDATA[Garona's Gauntlets of Conquest]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>103</atp>
+      <hit>52</hit>
+      <cri>60</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_gauntlets_78a</icon>
+  </item>
+  <item id="48245">
+    <name><![CDATA[Garona's Helmet of Conquest]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>129</atp>
+      <cri>80</cri>
+      <exp>64</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_helmet_145a</icon>
+  </item>
+  <item id="48246">
+    <name><![CDATA[Garona's Legplates of Conquest]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>145</atp>
+      <hit>64</hit>
+      <arp>72</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="48247">
+    <name><![CDATA[Garona's Pauldrons of Conquest]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>103</atp>
+      <arp>60</arp>
+      <exp>52</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <faction>Horde</faction>
+    <icon>inv_shoulder_109a</icon>
+  </item>
+  <item id="48668">
+    <name><![CDATA[Cloak of Serrated Blades]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>98</atp>
+      <cri>57</cri>
+      <arp>49</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_misc_cape_18</icon>
+  </item>
+  <item id="48673">
+    <name><![CDATA[Cloak of the Silver Covenant]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>98</atp>
+      <cri>57</cri>
+      <arp>49</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>258</lvl>
+    <tag>tributechest-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="48697">
+    <name><![CDATA[Frenzystrike Longbow]]></name>
+    <slot>Ranged</slot>
+    <type>Bow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>39</agi>
+      <atp>57</atp>
+      <hit>24</hit>
+      <arp>24</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <hit>4</hit>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tributechest-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_bow_51</icon>
+  </item>
+  <item id="48703">
+    <name><![CDATA[The Facebreaker]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>73</atp>
+      <cri>39</cri>
+      <arp>31</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>triumphchest-10</tag>
+    <faction>Horde</faction>
+    <icon>inv_weapon_hand_30</icon>
+  </item>
+  <item id="48711">
+    <name><![CDATA[Rhok'shalla, the Shadow's Bane]]></name>
+    <slot>Ranged</slot>
+    <type>Bow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
+    <attributes>
+      <agi>39</agi>
+      <atp>57</atp>
+      <hit>24</hit>
+      <arp>24</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <hit>4</hit>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>tributechest-10</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_bow_52</icon>
+  </item>
+  <item id="48712">
+    <name><![CDATA[The Spinebreaker]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>196.7</dps>
+    <attributes>
+      <agi>58</agi>
+      <atp>73</atp>
+      <cri>39</cri>
+      <arp>31</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>anubarak-10-heroic</tag>
+    <faction>Alliance</faction>
+    <icon>inv_weapon_hand_29</icon>
+  </item>
+  <item id="48722">
+    <name><![CDATA[Shard of the Crystal Heart]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>128</hit>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>emblems-triumph</tag>
+    <icon>inv_spiritshard_01</icon>
+  </item>
+  <item id="49477">
+    <name><![CDATA[Bloodfang Hood]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>128</agi>
+      <atp>190</atp>
+      <cri>68</cri>
+      <arp>86</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <arp>8</arp>
+      </bonus>
+    </sockets>
+    <lvl>245</lvl>
+    <tag>onyxia-25</tag>
+    <icon>inv_helmet_41</icon>
+  </item>
+  <item id="49485">
+    <name><![CDATA[Sparkling Onyxia Tooth Pendant]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>76</agi>
+      <atp>96</atp>
+      <hit>48</hit>
+      <cri>52</cri>
+    </attributes>
+    <lvl>245</lvl>
+    <tag>onyxia</tag>
+    <icon>inv_jewelry_necklace_09</icon>
+  </item>
+  <item id="49895">
+    <name><![CDATA[Footpads of Impending Death]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>129</atp>
+      <cri>80</cri>
+      <exp>64</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>tier10-craft</tag>
+    <icon>inv_boots_leather_07</icon>
+  </item>
+  <item id="49899">
+    <name><![CDATA[Bladeborn Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>168</atp>
+      <cri>92</cri>
+      <arp>100</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <socket index="2">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>tier10-craft</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="49949">
+    <name><![CDATA[Band of the Bone Colossus]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <hit>54</hit>
+      <hst>57</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>marrowgar-25</tag>
+    <icon>inv_jewelry_ring_83</icon>
+  </item>
+  <item id="49950">
+    <name><![CDATA[Frostbitten Fur Boots]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>161</atp>
+      <cri>80</cri>
+      <arp>64</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>marrowgar-25</tag>
+    <icon>inv_boots_leather_07</icon>
+  </item>
+  <item id="49982">
+    <name><![CDATA[Heartpierce]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <atp>93</atp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>deathwhisper-25</tag>
+    <icon>inv_weapon_shortblade_103</icon>
+  </item>
+  <item id="49987">
+    <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>112</agi>
+      <atp>145</atp>
+      <cri>80</cri>
+      <hst>64</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>deathwhisper-25</tag>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="49998">
+    <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <cri>52</cri>
+      <hst>60</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>gunship-25</tag>
+    <icon>item_icecrowncloak</icon>
+  </item>
+  <item id="50001">
+    <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>146</agi>
+      <atp>200</atp>
+      <hit>100</hit>
+      <exp>92</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Yellow</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>gunship-25</tag>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50016">
+    <name><![CDATA[Rib Spreader]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <agi>69</agi>
+      <atp>93</atp>
+      <cri>46</cri>
+      <hst>46</hst>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>rotface-25</tag>
+    <icon>inv_weapon_shortblade_105</icon>
+  </item>
+  <item id="50021">
+    <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>112</agi>
+      <atp>145</atp>
+      <hst>64</hst>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>rotface-25</tag>
+    <icon>inv_gauntlets_79</icon>
+  </item>
+  <item id="50025">
+    <name><![CDATA[Seal of Many Mouths]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <cri>60</cri>
+      <exp>52</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus/>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>rotface-25</tag>
+    <icon>item_icecrownringc</icon>
+  </item>
+  <item id="50035">
+    <name><![CDATA[Black Bruise]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <atp>93</atp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>festergut-25</tag>
+    <icon>inv_weapon_hand_33</icon>
+  </item>
+  <item id="50042">
+    <name><![CDATA[Gangrenous Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>146</agi>
+      <atp>200</atp>
+      <hit>84</hit>
+      <cri>108</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>festergut-25</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="50046">
+    <name><![CDATA[Quel'Delar, Cunning of the Shadows]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.7</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>88</atp>
+      <cri>42</cri>
+      <arp>39</arp>
+    </attributes>
+    <lvl>251</lvl>
+    <icon>inv_sword_155</icon>
+  </item>
+  <item id="50050">
+    <name><![CDATA[Cudgel of Furious Justice]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>83</atp>
+      <cri>42</cri>
+      <hst>40</hst>
+    </attributes>
+    <lvl>251</lvl>
+    <icon>inv_mace_48</icon>
+  </item>
+  <item id="50067">
+    <name><![CDATA[Astrylian's Sutured Cinch]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>161</atp>
+      <cri>80</cri>
+      <arp>64</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>professorputricide-25</tag>
+    <icon>inv_belt_61</icon>
+  </item>
+  <item id="50073">
+    <name><![CDATA[Geistlord's Punishment Sack]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>138</agi>
+      <atp>216</atp>
+      <hit>84</hit>
+      <cri>108</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>bloodprince-25</tag>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="50087">
+    <name><![CDATA[Shadowblade Breastplate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>144</agi>
+      <atp>159</atp>
+      <cri>96</cri>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50088">
+    <name><![CDATA[Shadowblade Gauntlets]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>107</agi>
+      <atp>126</atp>
+      <cri>71</cri>
+      <hst>63</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <icon>inv_gauntlets_85</icon>
+  </item>
+  <item id="50089">
+    <name><![CDATA[Shadowblade Helmet]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>144</agi>
+      <atp>143</atp>
+      <cri>88</cri>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="50090">
+    <name><![CDATA[Shadowblade Legplates]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>144</agi>
+      <atp>159</atp>
+      <cri>96</cri>
+      <exp>80</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="50105">
+    <name><![CDATA[Shadowblade Pauldrons]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>107</agi>
+      <atp>126</atp>
+      <hit>63</hit>
+      <cri>71</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="50169">
+    <name><![CDATA[Papa's Brand New Knife]]></name>
+    <slot>Ranged</slot>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>232.8</dps>
+    <attributes>
+      <agi>38</agi>
+      <atp>54</atp>
+      <cri>26</cri>
+      <hst>23</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>bronjahm-heroic</tag>
+    <icon>inv_throwingknife_02</icon>
+  </item>
+  <item id="50183">
+    <name><![CDATA[Lungbreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>226.8</dps>
+    <attributes>
+      <agi>69</agi>
+      <atp>93</atp>
+      <cri>46</cri>
+      <arp>46</arp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>valithria-25</tag>
+    <icon>inv_weapon_shortblade_105</icon>
+  </item>
+  <item id="50186">
+    <name><![CDATA[Frostbrood Sapphire Ring]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <cri>52</cri>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>valithria-25</tag>
+    <icon>item_icecrownringa</icon>
+  </item>
+  <item id="50191">
+    <name><![CDATA[Nighttime]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>78</atp>
+      <hst>34</hst>
+      <arp>34</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>bronjahm-heroic</tag>
+    <icon>inv_axe_91</icon>
+  </item>
+  <item id="50198">
+    <name><![CDATA[Needle-Encrusted Scorpion]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <cri>114</cri>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>devourerofsouls-heroic</tag>
+    <icon>inv_qirajidol_onyx</icon>
+  </item>
+  <item id="50203">
+    <name><![CDATA[Blood Weeper]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>78</atp>
+      <cri>30</cri>
+      <hst>37</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>forgeofsouls-heroic</tag>
+    <icon>inv_weapon_shortblade_77</icon>
+  </item>
+  <item id="50206">
+    <name><![CDATA[Frayed Scoundrel's Cap]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>167</atp>
+      <cri>47</cri>
+      <hst>90</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <hst>8</hst>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>devourerofsouls-heroic</tag>
+    <icon>inv_helmet_153</icon>
+  </item>
+  <item id="50228">
+    <name><![CDATA[Barbed Ymirheim Choker]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>67</agi>
+      <atp>99</atp>
+      <cri>39</cri>
+      <hst>48</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>pitofsaron-heroic</tag>
+    <icon>inv_jewelry_necklace_22</icon>
+  </item>
+  <item id="50264">
+    <name><![CDATA[Chewed Leather Wristguards]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>67</agi>
+      <atp>102</atp>
+      <hit>46</hit>
+      <arp>41</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>pitofsaron-heroic</tag>
+    <icon>inv_bracer_23a</icon>
+  </item>
+  <item id="50269">
+    <name><![CDATA[Fleshwerk Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>183</atp>
+      <cri>80</cri>
+      <hst>80</hst>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>tyrannus-heroic</tag>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="50271">
+    <name><![CDATA[Band of Stained Souls]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>67</agi>
+      <atp>89</atp>
+      <cri>50</cri>
+      <arp>36</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <icon>inv_jewelry_ring_12</icon>
+  </item>
+  <item id="50293">
+    <name><![CDATA[Spaulders of Black Betrayal]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>128</atp>
+      <hit>57</hit>
+      <cri>61</cri>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>falric-heroic</tag>
+    <icon>inv_shoulder_115</icon>
+  </item>
+  <item id="50300">
+    <name><![CDATA[Choking Hauberk]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>112</agi>
+      <atp>172</atp>
+      <hit>59</hit>
+      <arp>89</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <hit>4</hit>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>marwyn-heroic</tag>
+    <icon>inv_chest_leather_23</icon>
+  </item>
+  <item id="50302">
+    <name><![CDATA[Liar's Tongue]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>77</atp>
+      <cri>34</cri>
+      <exp>34</exp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>hallschest-heroic</tag>
+    <icon>inv_sword_118</icon>
+  </item>
+  <item id="50303">
+    <name><![CDATA[Black Icicle]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>39</agi>
+      <atp>103</atp>
+      <hit>29</hit>
+      <cri>38</cri>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>hallschest-heroic</tag>
+    <icon>inv_mace_78</icon>
+  </item>
+  <item id="50308">
+    <name><![CDATA[Blighted Leather Footpads]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>136</atp>
+      <cri>54</cri>
+      <arp>63</arp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>hallschest-heroic</tag>
+    <icon>inv_boots_leather_8</icon>
+  </item>
+  <item id="50319">
+    <name><![CDATA[Unsharpened Ice Razor]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>74</atp>
+      <arp>37</arp>
+      <exp>30</exp>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>icc5-heroic</tag>
+    <icon>inv_weapon_shortblade_61</icon>
+  </item>
+  <item id="50333">
+    <name><![CDATA[Toskk's Maximized Wristguards]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <cri>52</cri>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>saurfang-25</tag>
+    <icon>inv_bracer_41</icon>
+  </item>
+  <item id="50342">
+    <name><![CDATA[Whispering Fanged Skull]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <cri>131</cri>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>deathwhisper-10</tag>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="50343">
+    <name><![CDATA[Whispering Fanged Skull]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <cri>148</cri>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>deathwhisper-10-heroic</tag>
+    <icon>inv_misc_bone_skull_02</icon>
+  </item>
+  <item id="50351">
+    <name><![CDATA[Tiny Abomination in a Jar]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>85</hit>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>professorputricide-25</tag>
+    <icon>inv_alchemy_enchantedvial</icon>
+  </item>
+  <item id="50355">
+    <name><![CDATA[Herkuml War Token]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hst>153</hst>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_misc_rune_12</icon>
+  </item>
+  <item id="50362">
+    <name><![CDATA[Deathbringer's Will]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <arp>155</arp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>saurfang-25</tag>
+    <icon>inv_jewelry_trinket_04</icon>
+  </item>
+  <item id="50363">
+    <name><![CDATA[Deathbringer's Will]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <arp>167</arp>
+    </attributes>
+    <lvl>277</lvl>
+    <tag>saurfang-25-heroic</tag>
+    <icon>inv_jewelry_trinket_04</icon>
+  </item>
+  <item id="50376">
+    <name><![CDATA[Ashen Band of Vengeance]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>80</agi>
+      <atp>114</atp>
+      <hit>53</hit>
+      <cri>53</cri>
+    </attributes>
+    <lvl>251</lvl>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="50387">
+    <name><![CDATA[Ashen Band of Greater Vengeance]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>86</agi>
+      <atp>123</atp>
+      <hit>57</hit>
+      <cri>57</cri>
+    </attributes>
+    <lvl>259</lvl>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="50401">
+    <name><![CDATA[Ashen Band of Unmatched Vengeance]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>88</agi>
+      <atp>123</atp>
+      <hit>57</hit>
+      <cri>57</cri>
+    </attributes>
+    <lvl>268</lvl>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="50402">
+    <name><![CDATA[Ashen Band of Endless Vengeance]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>88</agi>
+      <atp>135</atp>
+      <hit>59</hit>
+      <cri>59</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="50411">
+    <name><![CDATA[Scourgeborne Waraxe]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <agi>69</agi>
+      <atp>93</atp>
+      <cri>46</cri>
+      <arp>46</arp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>gunship-25</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+  <item id="50412">
+    <name><![CDATA[Bloodvenom Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <agi>69</agi>
+      <atp>93</atp>
+      <hit>46</hit>
+      <arp>46</arp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>saurfang-25</tag>
+    <icon>inv_sword_154</icon>
+  </item>
+  <item id="50421">
+    <name><![CDATA[Sindragosa's Cruel Claw]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <hst>52</hst>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>sindragosa-25</tag>
+    <icon>inv_misc_monsterhorn_03</icon>
+  </item>
+  <item id="50452">
+    <name><![CDATA[Wodin's Lucky Necklace]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <hit>38</hit>
+      <cri>69</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>icctrash-25</tag>
+    <icon>inv_misc_pelt_wolf_ruin_01</icon>
+  </item>
+  <item id="50470">
+    <name><![CDATA[Recovered Scarlet Onslaught Cape]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>105</atp>
+      <cri>60</cri>
+      <arp>52</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_misc_cape_14</icon>
+  </item>
+  <item id="50474">
+    <name><![CDATA[Shrapnel Star]]></name>
+    <slot>Ranged</slot>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>294.7</dps>
+    <attributes>
+      <agi>51</agi>
+      <atp>68</atp>
+      <cri>34</cri>
+      <hst>34</hst>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_throwingknife_07</icon>
+  </item>
+  <item id="50604">
+    <name><![CDATA[Band of the Bone Colossus]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <hit>62</hit>
+      <hst>65</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>morrowgar-25-heroic</tag>
+    <icon>inv_jewelry_ring_83</icon>
+  </item>
+  <item id="50607">
+    <name><![CDATA[Frostbitten Fur Boots]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>181</atp>
+      <cri>90</cri>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>marrowgar-25-heroic</tag>
+    <icon>inv_boots_leather_07</icon>
+  </item>
+  <item id="50618">
+    <name><![CDATA[Frostbrood Sapphire Ring]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <cri>60</cri>
+      <arp>68</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <cri>4</cri>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>valithria-25-heroic</tag>
+    <icon>item_icecrownringa</icon>
+  </item>
+  <item id="50621">
+    <name><![CDATA[Lungbreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>250.4</dps>
+    <attributes>
+      <agi>78</agi>
+      <atp>88</atp>
+      <cri>52</cri>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>valithria-25-heroic</tag>
+    <icon>inv_weapon_shortblade_105</icon>
+  </item>
+  <item id="50633">
+    <name><![CDATA[Sindragosa's Cruel Claw]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <hst>60</hst>
+      <arp>68</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>sindragosa-25-heroic</tag>
+    <icon>inv_misc_monsterhorn_03</icon>
+  </item>
+  <item id="50641">
+    <name><![CDATA[Heartpierce]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>250.3</dps>
+    <attributes>
+      <atp>125</atp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>deathwhisper-25-heroic</tag>
+    <icon>inv_weapon_shortblade_103</icon>
+  </item>
+  <item id="50646">
+    <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>128</agi>
+      <atp>165</atp>
+      <cri>90</cri>
+      <hst>74</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>deathwhisper-25-heroic</tag>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="50653">
+    <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <cri>60</cri>
+      <hst>68</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>gunship-25-heroic</tag>
+    <icon>item_icecrowncloak</icon>
+  </item>
+  <item id="50654">
+    <name><![CDATA[Scourgeborne Waraxe]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>250.7</dps>
+    <attributes>
+      <agi>78</agi>
+      <atp>88</atp>
+      <cri>52</cri>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>gunship-25-heroic</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+  <item id="50656">
+    <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>167</agi>
+      <atp>228</atp>
+      <hit>114</hit>
+      <exp>106</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Blue</socket>
+      <socket index="2">Yellow</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>gunship-25-heroic</tag>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50670">
+    <name><![CDATA[Toskk's Maximized Wristguards]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <cri>60</cri>
+      <arp>68</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>saurfang-25-heroic</tag>
+    <icon>inv_bracer_41</icon>
+  </item>
+  <item id="50672">
+    <name><![CDATA[Bloodvenom Blade]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>250.6</dps>
+    <attributes>
+      <agi>70</agi>
+      <atp>104</atp>
+      <hit>52</hit>
+      <arp>44</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <tag>saurfang-25-heroic</tag>
+    <icon>inv_sword_154</icon>
+  </item>
+  <item id="50675">
+    <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>128</agi>
+      <atp>165</atp>
+      <hst>74</hst>
+      <arp>90</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>rotface-25-heroic</tag>
+    <icon>inv_gauntlets_79</icon>
+  </item>
+  <item id="50676">
+    <name><![CDATA[Rib Spreader]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>250.3</dps>
+    <attributes>
+      <agi>78</agi>
+      <atp>88</atp>
+      <cri>52</cri>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>rotface-25-heroic</tag>
+    <icon>inv_weapon_shortblade_105</icon>
+  </item>
+  <item id="50678">
+    <name><![CDATA[Seal of Many Mouths]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>102</agi>
+      <atp>120</atp>
+      <cri>68</cri>
+      <exp>60</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>rotface-25-heroic</tag>
+    <icon>item_icecrownringc</icon>
+  </item>
+  <item id="50697">
+    <name><![CDATA[Gangrenous Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>167</agi>
+      <atp>228</atp>
+      <hit>98</hit>
+      <cri>122</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>festergut-25-heroic</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="50706">
+    <name><![CDATA[Tiny Abomination in a Jar]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>85</hit>
+    </attributes>
+    <lvl>277</lvl>
+    <tag>professorputricide-25-heroic</tag>
+    <icon>inv_alchemy_enchantedvial</icon>
+  </item>
+  <item id="50707">
+    <name><![CDATA[Astrylian's Sutured Cinch]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>181</atp>
+      <cri>90</cri>
+      <arp>74</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>professorputricide-25-heroic</tag>
+    <icon>inv_belt_61</icon>
+  </item>
+  <item id="50713">
+    <name><![CDATA[Geistlord's Punishment Sack]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>159</agi>
+      <atp>244</atp>
+      <hit>98</hit>
+      <cri>122</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>blodprince-25-heroic</tag>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="50759">
+    <name><![CDATA[Bone Warden's Splitter]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>205.3</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>82</atp>
+      <hst>41</hst>
+      <arp>41</arp>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>marrowgar-10</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+  <item id="50764">
+    <name><![CDATA[Shawl of Nerubian Silk]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>72</agi>
+      <atp>122</atp>
+      <hit>41</hit>
+      <exp>56</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>marrowgar-10</tag>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="50776">
+    <name><![CDATA[Njordnar Bone Bow]]></name>
+    <slot>Ranged</slot>
+    <type>Bow</type>
+    <speed>2.9</speed>
+    <dps>224.9</dps>
+    <attributes>
+      <agi>45</agi>
+      <atp>69</atp>
+      <hit>28</hit>
+      <cri>31</cri>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>deathwhisper-10</tag>
+    <icon>inv_weapon_bow_56</icon>
+  </item>
+  <item id="50778">
+    <name><![CDATA[Soulthief's Braided Belt]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>91</agi>
+      <atp>162</atp>
+      <hit>46</hit>
+      <cri>76</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>deathwhisper-10</tag>
+    <icon>inv_belt_61</icon>
+  </item>
+  <item id="50780">
+    <name><![CDATA[Chestguard of the Frigid Noose]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>132</agi>
+      <atp>200</atp>
+      <hst>99</hst>
+      <arp>79</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>deathwhisper-10</tag>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50787">
+    <name><![CDATA[Frost Giant's Cleaver]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>94</atp>
+      <cri>45</cri>
+      <arp>35</arp>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>gunship-10</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+  <item id="50799">
+    <name><![CDATA[Scourge Stranglers]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>107</agi>
+      <atp>134</atp>
+      <cri>63</cri>
+      <arp>63</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>saurfang-10</tag>
+    <icon>inv_gauntlets_79</icon>
+  </item>
+  <item id="50803">
+    <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>72</agi>
+      <atp>114</atp>
+      <hst>45</hst>
+      <arp>53</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>saurfang-10</tag>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="50810">
+    <name><![CDATA[Gutbuster]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>47</agi>
+      <atp>123</atp>
+      <hit>39</hit>
+      <cri>42</cri>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>festergut-10</tag>
+    <icon>inv_mace_114</icon>
+  </item>
+  <item id="50852">
+    <name><![CDATA[Precious's Putrid Collar]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>72</agi>
+      <atp>119</atp>
+      <hit>55</hit>
+      <hst>43</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>festergut-10</tag>
+    <icon>inv_jewelry_ring_78</icon>
+  </item>
+  <item id="50858">
+    <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>144</agi>
+      <atp>143</atp>
+      <cri>72</cri>
+      <hst>96</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <hst>8</hst>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>festergut-10</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="50972">
+    <name><![CDATA[Shadow Seeker's Tunic]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>184</atp>
+      <cri>108</cri>
+      <exp>92</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <socket index="2">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50982">
+    <name><![CDATA[Cat Burglar's Grips]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>129</atp>
+      <cri>80</cri>
+      <arp>64</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_gauntlets_79</icon>
+  </item>
+  <item id="50995">
+    <name><![CDATA[Vengeful Noose]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>129</atp>
+      <hst>64</hst>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>emblems-frost</tag>
+    <icon>inv_misc_noose_01</icon>
+  </item>
+  <item id="50999">
+    <name><![CDATA[Gluth's Fetching Knife]]></name>
+    <slot>Ranged</slot>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>266.9</dps>
+    <attributes>
+      <agi>45</agi>
+      <atp>64</atp>
+      <hit>28</hit>
+      <cri>31</cri>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>rotface-10</tag>
+    <icon>inv_throwingknife_01</icon>
+  </item>
+  <item id="51003">
+    <name><![CDATA[Abomination Knuckles]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>94</atp>
+      <hst>44</hst>
+      <arp>36</arp>
+    </attributes>
+    <lvl>264</lvl>
+    <tag>rotface-10</tag>
+    <icon>inv_weapon_hand_34</icon>
+  </item>
+  <item id="51011">
+    <name><![CDATA[Flesh-Carving Scalpel]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>205.4</dps>
+    <attributes>
+      <agi>44</agi>
+      <atp>123</atp>
+      <hst>36</hst>
+      <arp>44</arp>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>putricide-10</tag>
+    <icon>inv_weapon_shortblade_102</icon>
+  </item>
+  <item id="51013">
+    <name><![CDATA[Discarded Bag of Entrails]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>136</agi>
+      <atp>202</atp>
+      <hst>80</hst>
+      <arp>88</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>professorputricide-10</tag>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="51021">
+    <name><![CDATA[Soulbreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>94</atp>
+      <cri>43</cri>
+      <hst>38</hst>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>valanar-10</tag>
+    <icon>inv_sword_151</icon>
+  </item>
+  <item id="51023">
+    <name><![CDATA[Taldaram's Soft Slippers]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>91</agi>
+      <atp>153</atp>
+      <cri>55</cri>
+      <arp>71</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>princevalanar-10</tag>
+    <icon>inv_boots_leather_07</icon>
+  </item>
+  <item id="51185">
+    <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>145</atp>
+      <hit>72</hit>
+      <cri>80</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="51186">
+    <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>184</atp>
+      <cri>108</cri>
+      <exp>92</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="51187">
+    <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>168</atp>
+      <cri>100</cri>
+      <arp>92</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="51188">
+    <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>145</atp>
+      <cri>80</cri>
+      <hst>72</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_gauntlets_85</icon>
+  </item>
+  <item id="51189">
+    <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>184</atp>
+      <cri>108</cri>
+      <arp>92</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="51250">
+    <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>183</agi>
+      <atp>212</atp>
+      <cri>122</cri>
+      <arp>106</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="51251">
+    <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>136</agi>
+      <atp>165</atp>
+      <cri>90</cri>
+      <hst>82</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_gauntlets_85</icon>
+  </item>
+  <item id="51252">
+    <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>183</agi>
+      <atp>196</atp>
+      <cri>114</cri>
+      <arp>106</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="51253">
+    <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>183</agi>
+      <atp>212</atp>
+      <cri>122</cri>
+      <exp>106</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Yellow</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="51254">
+    <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>136</agi>
+      <atp>165</atp>
+      <hit>82</hit>
+      <cri>90</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>277</lvl>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="51384">
+    <name><![CDATA[Bloodsipper]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>205.6</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>94</atp>
+      <cri>42</cri>
+      <hst>39</hst>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>queenlanathel-10</tag>
+    <icon>inv_weapon_shortblade_102</icon>
+  </item>
+  <item id="51385">
+    <name><![CDATA[Stakethrower]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>222.7</dps>
+    <attributes>
+      <agi>45</agi>
+      <atp>70</atp>
+      <hst>28</hst>
+      <arp>31</arp>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>queenlanathel-10</tag>
+    <icon>inv_weapon_rifle_39</icon>
+  </item>
+  <item id="51387">
+    <name><![CDATA[Seal of the Twilight Queen]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>72</agi>
+      <atp>114</atp>
+      <cri>45</cri>
+      <hst>53</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>queenlanathel-10</tag>
+    <icon>inv_jewelry_ring_70</icon>
+  </item>
+  <item id="51550">
+    <name><![CDATA[Ivory-Inlaid Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>206</atp>
+      <cri>103</cri>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>queenlanathel-10</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="51560">
+    <name><![CDATA[Runed Band of the Kirin Tor]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>80</agi>
+      <atp>107</atp>
+      <cri>55</cri>
+      <hst>51</hst>
+    </attributes>
+    <lvl>251</lvl>
+    <icon>inv_jewelry_ring_74</icon>
+  </item>
+  <item id="51565">
+    <name><![CDATA[Skinned Whelp Shoulders]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>91</agi>
+      <atp>162</atp>
+      <cri>55</cri>
+      <arp>71</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <arp>6</arp>
+      </bonus>
+    </sockets>
+    <lvl>251</lvl>
+    <tag>valithria-10</tag>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="51779">
+    <name><![CDATA[Rimetooth Pendant]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>80</agi>
+      <atp>98</atp>
+      <cri>45</cri>
+      <arp>53</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>sindragosa-10</tag>
+    <icon>inv_jewelry_amulet_06</icon>
+  </item>
+  <item id="51822">
+    <name><![CDATA[Rimetooth Pendant]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>113</atp>
+      <cri>52</cri>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>sindragosa-10-heroic</tag>
+    <icon>inv_jewelry_amulet_06</icon>
+  </item>
+  <item id="51830">
+    <name><![CDATA[Skinned Whelp Shoulders]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>183</atp>
+      <cri>64</cri>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>valithria-10-heroic</tag>
+    <icon>inv_shoulder_112</icon>
+  </item>
+  <item id="51841">
+    <name><![CDATA[Ivory-Inlaid Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>138</agi>
+      <atp>232</atp>
+      <cri>116</cri>
+      <arp>71</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>queenlanathel-10-heroic</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="51843">
+    <name><![CDATA[Seal of the Twilight Queen]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>82</agi>
+      <atp>129</atp>
+      <cri>52</cri>
+      <hst>60</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>queenlanathel-10-heroic</tag>
+    <icon>inv_jewelry_ring_70</icon>
+  </item>
+  <item id="51845">
+    <name><![CDATA[Stakethrower]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>253.3</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>79</atp>
+      <hst>23</hst>
+      <arp>36</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>queenlanathel-10-heroic</tag>
+    <icon>inv_weapon_rifle_39</icon>
+  </item>
+  <item id="51846">
+    <name><![CDATA[Bloodsipper]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <agi>69</agi>
+      <atp>90</atp>
+      <cri>40</cri>
+      <hst>44</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>queenlanathel-10-heroic</tag>
+    <icon>inv_weapon_shortblade_102</icon>
+  </item>
+  <item id="51856">
+    <name><![CDATA[Taldaram's Soft Slippers]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>172</atp>
+      <cri>64</cri>
+      <arp>80</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>princevalanar-10-heroic</tag>
+    <icon>inv_boots_leather_07</icon>
+  </item>
+  <item id="51858">
+    <name><![CDATA[Soulbreaker]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <agi>61</agi>
+      <atp>106</atp>
+      <cri>40</cri>
+      <hst>43</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>valanar-10-heroic</tag>
+    <icon>inv_sword_151</icon>
+  </item>
+  <item id="51866">
+    <name><![CDATA[Discarded Bag of Entrails]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>154</agi>
+      <atp>230</atp>
+      <hst>92</hst>
+      <arp>100</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>professorputricide-10-heroic</tag>
+    <icon>inv_helmet_149</icon>
+  </item>
+  <item id="51868">
+    <name><![CDATA[Flesh-Carving Scalpel]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>226.4</dps>
+    <attributes>
+      <agi>42</agi>
+      <atp>139</atp>
+      <hst>33</hst>
+      <arp>50</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>putricide-10-heroic</tag>
+    <icon>inv_weapon_shortblade_102</icon>
+  </item>
+  <item id="51876">
+    <name><![CDATA[Abomination Knuckles]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <agi>61</agi>
+      <atp>106</atp>
+      <hst>50</hst>
+      <arp>33</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>rotface-10-hard</tag>
+    <icon>inv_weapon_hand_34</icon>
+  </item>
+  <item id="51880">
+    <name><![CDATA[Gluth's Fetching Knife]]></name>
+    <slot>Ranged</slot>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>294.7</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>72</atp>
+      <hit>31</hit>
+      <cri>28</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>rotface-10-heroic</tag>
+    <icon>inv_throwingknife_01</icon>
+  </item>
+  <item id="51889">
+    <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>162</agi>
+      <atp>168</atp>
+      <cri>84</cri>
+      <hst>108</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Red</socket>
+      <bonus>
+        <hst>8</hst>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>festergut-10-heroic</tag>
+    <icon>inv_pants_leather_34</icon>
+  </item>
+  <item id="51890">
+    <name><![CDATA[Precious's Putrid Collar]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>82</agi>
+      <atp>134</atp>
+      <hit>62</hit>
+      <hst>49</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>festergut-10-heroic</tag>
+    <icon>inv_jewelry_ring_78</icon>
+  </item>
+  <item id="51893">
+    <name><![CDATA[Gutbuster]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <agi>45</agi>
+      <atp>139</atp>
+      <hit>36</hit>
+      <cri>48</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <icon>inv_mace_114</icon>
+  </item>
+  <item id="51900">
+    <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>82</agi>
+      <atp>129</atp>
+      <hst>52</hst>
+      <arp>60</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>saurfang-10-heroic</tag>
+    <icon>inv_jewelry_ring_81</icon>
+  </item>
+  <item id="51904">
+    <name><![CDATA[Scourge Stranglers]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>120</agi>
+      <atp>155</atp>
+      <cri>72</cri>
+      <arp>72</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>6</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>saurfang-10-heroic</tag>
+    <icon>inv_gauntlets_79</icon>
+  </item>
+  <item id="51916">
+    <name><![CDATA[Frost Giant's Cleaver]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
+    <attributes>
+      <agi>61</agi>
+      <atp>106</atp>
+      <cri>50</cri>
+      <arp>31</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>gunship-10-heroic</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+  <item id="51923">
+    <name><![CDATA[Chestguard of the Frigid Noose]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>150</agi>
+      <atp>228</atp>
+      <hst>111</hst>
+      <arp>91</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>264</lvl>
+    <tag>deathwhisper-10-heroic</tag>
+    <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="51925">
+    <name><![CDATA[Soulthief's Braided Belt]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>104</agi>
+      <atp>183</atp>
+      <hit>54</hit>
+      <cri>86</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <socket index="1">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>deathwhisper-10-heroic</tag>
+    <icon>inv_belt_61</icon>
+  </item>
+  <item id="51927">
+    <name><![CDATA[Njordnar Bone Bow]]></name>
+    <slot>Ranged</slot>
+    <type>Bow</type>
+    <speed>2.9</speed>
+    <dps>253.1</dps>
+    <attributes>
+      <agi>43</agi>
+      <atp>78</atp>
+      <hit>23</hit>
+      <cri>36</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>deathwhisper-10-heroic</tag>
+    <icon>inv_weapon_bow_55</icon>
+  </item>
+  <item id="51933">
+    <name><![CDATA[Shawl of Nerubian Silk]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>82</agi>
+      <atp>137</atp>
+      <hit>48</hit>
+      <exp>63</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>marrowgar-10-heroic</tag>
+    <icon>inv_misc_cape_16</icon>
+  </item>
+  <item id="51938">
+    <name><![CDATA[Bone Warden's Splitter]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <agi>61</agi>
+      <atp>93</atp>
+      <hst>46</hst>
+      <arp>38</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>morrowgar-10-heroic</tag>
+    <icon>inv_axe_113</icon>
+  </item>
+</items>
+

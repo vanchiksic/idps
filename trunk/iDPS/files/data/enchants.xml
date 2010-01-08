@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<enchants>
+  <enchant id="59954">
+    <name>Arcanum of Torment</name>
+    <slot>Head</slot>
+    <attributes>
+      <atp>50</atp>
+      <cri>20</cri>
+    </attributes>
+  </enchant>
+  <enchant id="59934">
+    <name>Greater Inscription of the Axe</name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <atp>40</atp>
+      <cri>15</cri>
+    </attributes>
+  </enchant>
+  <enchant id="61117" profession="Inscription">
+    <name>Master's Inscription of the Axe</name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <atp>120</atp>
+      <cri>15</cri>
+    </attributes>
+  </enchant>
+  <enchant id="47898">
+    <name>Enchant Cloak - Greater Speed</name>
+    <slot>Back</slot>
+    <attributes>
+      <hst>23</hst>
+    </attributes>
+  </enchant>
+  <enchant id="60663">
+    <name>Enchant Cloak - Major Agility</name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>22</agi>
+    </attributes>
+  </enchant>
+  <enchant id="55777" profession="Tailoring">
+    <name>Swordguard Embroidery</name>
+    <slot>Back</slot>
+    <attributes/>
+  </enchant>
+  <enchant id="60692">
+    <name>Enchant Chest - Powerful Stats</name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>10</agi>
+      <str>10</str>
+    </attributes>
+  </enchant>
+  <enchant id="44575">
+    <name>Enchant Bracers - Greater Assault</name>
+    <slot>Wrist</slot>
+    <attributes>
+      <atp>50</atp>
+    </attributes>
+  </enchant>
+  <enchant id="57683" profession="Leatherworking">
+    <name>Fur Lining - Attack Power</name>
+    <slot>Wrist</slot>
+    <attributes>
+      <atp>130</atp>
+    </attributes>
+  </enchant>
+  <enchant id="60668">
+    <name>Enchant Gloves - Crusher</name>
+    <slot>Hands</slot>
+    <attributes>
+      <atp>44</atp>
+    </attributes>
+  </enchant>
+  <enchant id="44529">
+    <name>Enchant Gloves - Major Agility</name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>20</agi>
+    </attributes>
+  </enchant>
+  <enchant id="44488">
+    <name>Enchant Gloves - Precision</name>
+    <slot>Hands</slot>
+    <attributes>
+      <hit>20</hit>
+    </attributes>
+  </enchant>
+  <enchant id="54999" profession="Engineering">
+    <name>Hyperspeed Accelerators</name>
+    <slot>Hands</slot>
+    <attributes/>
+  </enchant>
+  <enchant id="60582">
+    <name>Icescale Leg Armor</name>
+    <slot>Legs</slot>
+    <attributes>
+      <atp>75</atp>
+      <cri>22</cri>
+    </attributes>
+  </enchant>
+  <enchant id="44589">
+    <name>Enchant Boots - Superior Agility</name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>16</agi>
+    </attributes>
+  </enchant>
+  <enchant id="60763">
+    <name>Enchant Boots - Greater Assault</name>
+    <slot>Feet</slot>
+    <attributes>
+      <atp>32</atp>
+    </attributes>
+  </enchant>
+  <enchant id="60623">
+    <name>Enchant Boots - Icewalker</name>
+    <slot>Feet</slot>
+    <attributes>
+      <hit>12</hit>
+      <cri>12</cri>
+    </attributes>
+  </enchant>
+  <enchant id="34007">
+    <name>Enchant Boots - Cat's Swiftness</name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>6</agi>
+    </attributes>
+  </enchant>
+  <enchant id="44645" profession="Enchanting">
+    <name>Enchant Ring - Assault</name>
+    <slot>Finger</slot>
+    <attributes>
+      <atp>40</atp>
+    </attributes>
+  </enchant>
+  <enchant id="59621">
+    <name>Enchant Weapon - Berserking</name>
+    <slot>OneHand</slot>
+    <attributes/>
+  </enchant>
+  <enchant id="59619">
+    <name>Enchant Weapon - Accuracy</name>
+    <slot>OneHand</slot>
+    <attributes>
+      <hit>25</hit>
+      <cri>25</cri>
+    </attributes>
+  </enchant>
+  <enchant id="60707">
+    <name>Enchant Weapon - Superior Potency</name>
+    <slot>OneHand</slot>
+    <attributes>
+      <atp>65</atp>
+    </attributes>
+  </enchant>
+  <enchant id="27984">
+    <name>Enchant Weapon - Mongoose</name>
+    <slot>OneHand</slot>
+    <attributes/>
+  </enchant>
+</enchants>

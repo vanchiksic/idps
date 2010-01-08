@@ -1,0 +1,110 @@
+<gems>
+  <gem id="42143" profession="Jewelcrafting">
+    <name>Delicate Dragon's Eye</name>
+    <agi>34</agi>
+    <color>Red</color>
+  </gem>
+  <gem id="36766" profession="Jewelcrafting">
+    <name>Bright Dragon's Eye</name>
+    <atp>68</atp>
+    <color>Red</color>
+  </gem>
+  <gem id="42154" profession="Jewelcrafting">
+    <name>Precise Dragon's Eye</name>
+    <exp>34</exp>
+    <color>Red</color>
+  </gem>
+  <gem id="42153" profession="Jewelcrafting">
+    <name>Fractured Dragon's Eye</name>
+    <arp>34</arp>
+    <color>Red</color>
+  </gem>
+  <gem id="40112">
+    <name>Delicate Cardinal Ruby</name>
+    <agi>20</agi>
+    <color>Red</color>
+  </gem>
+  <gem id="40114">
+    <name>Bright Cardinal Ruby</name>
+    <atp>40</atp>
+    <color>Red</color>
+  </gem>
+  <gem id="40118">
+    <name>Precise Cardinal Ruby</name>
+    <exp>20</exp>
+    <color>Red</color>
+  </gem>
+  <gem id="40117">
+    <name>Fractured Cardinal Ruby</name>
+    <arp>20</arp>
+    <color>Red</color>
+  </gem>
+  <gem id="40162">
+    <name>Accurate Ametrine</name>
+    <hit>10</hit>
+    <exp>10</exp>
+    <color>Orange</color>
+  </gem>
+  <gem id="40147">
+    <name>Deadly Ametrine</name>
+    <agi>10</agi>
+    <cri>10</cri>
+    <color>Orange</color>
+  </gem>
+  <gem id="40150">
+    <name>Deft Ametrine</name>
+    <agi>10</agi>
+    <hst>10</hst>
+    <color>Orange</color>
+  </gem>
+  <gem id="40108">
+    <name>Glinting Ametrine</name>
+    <agi>10</agi>
+    <hit>10</hit>
+    <color>Orange</color>
+  </gem>
+  <gem id="40157">
+    <name>Pristine Ametrine</name>
+    <atp>20</atp>
+    <hit>10</hit>
+    <color>Orange</color>
+  </gem>
+  <gem id="40159">
+    <name>Stark Ametrine</name>
+    <atp>20</atp>
+    <hst>10</hst>
+    <color>Orange</color>
+  </gem>
+  <gem id="40156">
+    <name>Wicked Ametrine</name>
+    <atp>20</atp>
+    <cri>10</cri>
+    <color>Orange</color>
+  </gem>
+  <gem id="40124">
+    <name>Smooth King's Amber</name>
+    <cri>20</cri>
+    <color>Yellow</color>
+  </gem>
+  <gem id="40125">
+    <name>Rigid King's Amber</name>
+    <hit>20</hit>
+    <color>Yellow</color>
+  </gem>
+  <gem id="40128">
+    <name>Quick King's Amber</name>
+    <hst>20</hst>
+    <color>Yellow</color>
+  </gem>
+  <gem id="49110">
+    <name>Nightmare Tear</name>
+    <agi>10</agi>
+    <str>10</str>
+    <color>Prismatic</color>
+  </gem>
+   <gem id="41398">
+    <name>Relentless Earthsiege Diamond</name>
+    <agi>21</agi>
+    <color>Meta</color>
+  </gem>
+</gems>
