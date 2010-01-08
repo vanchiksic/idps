@@ -25,8 +25,8 @@ import javax.swing.JRadioButtonMenuItem;
 
 public class MenuBar extends JMenuBar implements ActionListener {
 	
-	private JMenu mGear;
-	private JMenuItem iGearNew, iGearRename, iGearDup, iGearSave, iGearDel;
+	private JMenu mGear, mArmory;
+	private JMenuItem iGearNew, iGearRename, iGearDup, iGearSave, iGearDel, iImportArmory;
 	
 	private JMenu mTalents, mRaces, mProfessions;
 	
@@ -43,6 +43,9 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mProfessions = new JMenu("Professions");
 		createProfessionsMenu();
 		add(mProfessions);
+		mArmory = new JMenu("Armory");
+		createArmoryMenu();
+		add(mArmory);
 	}
 	
 	private void createGearMenu() {
@@ -126,6 +129,14 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 	}
 	
+	private void createArmoryMenu() {
+	    mArmory.removeAll();
+	    
+	    iImportArmory = new JMenuItem("Import");
+	    iImportArmory.addActionListener(this);
+	    mArmory.add(iImportArmory);	    
+	}
+	
 	private void selectGearSetup(Gear setup) {
 		Player.getInstance().equipGear(setup);
 		MainFrame.getInstance().showGear(setup);
@@ -147,14 +158,14 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == iGearSave)
 			Gear.save();
-		if (e.getSource() == iGearDup) {
+		else if (e.getSource() == iGearDup) {
 			Gear g = new Gear(Player.getInstance().getEquipped());
 			g.setName(g.getName()+" Copy");
 			Gear.add(g);
 			createGearMenu();
 			revalidate();
 		}
-		if (e.getSource() == iGearDel) {
+		else if (e.getSource() == iGearDel) {
 			int really = JOptionPane.showConfirmDialog(
 					MainFrame.getInstance(),
 					null,
@@ -169,7 +180,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 				selectGearSetup(gears.get(0));
 			}
 		}
-		if (e.getSource() == iGearNew) {
+		else if (e.getSource() == iGearNew) {
 			String s = (String) JOptionPane.showInputDialog(
           MainFrame.getInstance(),
           null,
@@ -182,7 +193,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			createGearMenu();
 			revalidate();
 		}
-		if (e.getSource() == iGearRename) {
+		else if (e.getSource() == iGearRename) {
 			String s = (String) JOptionPane.showInputDialog(
           MainFrame.getInstance(),
           null,
@@ -197,6 +208,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			createGearMenu();
 			revalidate();
 		}
+		else if (e.getSource() == iImportArmory) {
+		    ImportProfileDialog dialog = new ImportProfileDialog();
+		    dialog.setVisible(true);
+		    }
 	}
 	
 	public class ItemSelectGear extends JRadioButtonMenuItem implements ActionListener {
