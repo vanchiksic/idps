@@ -1,0 +1,21 @@
+#labels Featured
+= FAQ =
+
+== My item X is missing ==
+
+I generally only added items with item level 232+. Only exceptions are very common/popular/easy to obtain items like DMC:G, Mjolnir Runstone, Badge Items etc.
+
+
+== How can I add item X? ==
+
+Rename the file from .jar to .zip. Decompress the archive. Look for a file names items.xml. Add your item. Save the file. Zip the folder again and rename it to .jar. If you did everything right it should work, if you did something wrong the application will most likely not start.
+
+
+== How can I enchant my items? ==
+
+Right click them.
+
+
+== My profession specific Enchant/Gem is missing ==
+
+Enable that profession in the menu bar.
