@@ -19,6 +19,11 @@
     <arp>34</arp>
     <color>Red</color>
   </gem>
+  <gem id="42150" profession="Jewelcrafting">
+    <name>Quick Dragon's Eye</name>
+    <hst>34</hst>
+    <color>Yellow</color>
+  </gem>
   <gem id="40112">
     <name>Delicate Cardinal Ruby</name>
     <agi>20</agi>

@@ -43,6 +43,13 @@
     <slot>Back</slot>
     <attributes/>
   </enchant>
+  <enchant id="55002" profession="Engineering">
+    <name>Flexweave Underlay</name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>23</agi>
+    </attributes>
+  </enchant>
   <enchant id="60692">
     <name>Enchant Chest - Powerful Stats</name>
     <slot>Chest</slot>
@@ -126,6 +133,13 @@
     <slot>Feet</slot>
     <attributes>
       <agi>6</agi>
+    </attributes>
+  </enchant>
+  <enchant id="55016" profession="Engineering">
+    <name>Nitro Boots</name>
+    <slot>Feet</slot>
+    <attributes>
+      <cri>24</cri>
     </attributes>
   </enchant>
   <enchant id="44645" profession="Enchanting">
