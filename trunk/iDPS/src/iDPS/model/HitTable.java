@@ -31,7 +31,7 @@ public class HitTable {
 				if (talents.getSupriseattacks())
 					this.dodge = 0;
 				this.glance = 0;
-				this.crit = Math.min((1-this.miss-this.dodge),cri);
+				this.crit = Math.min((1-this.miss-this.dodge),(cri-0.048F));
 				this.crit0 = this.crit;
 				this.hit = 1-this.miss-this.dodge-this.crit;
 				this.hit0 = this.hit;
