@@ -170,6 +170,7 @@ public class Gem implements Comparable<Gem>, Rateable {
 			if (gem.getId()>0)
 				fullmap.put(gem.getId(), gem);
 		}
+		limit();
 	}
 	
 	public static void limit() {
