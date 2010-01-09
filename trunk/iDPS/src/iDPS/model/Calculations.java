@@ -462,7 +462,7 @@ public abstract class Calculations {
 		float eLossTOT = 15F/32F;
 		if (gear.getTier10()>=2)
 			eLossTOT *= -1F;
-		eRegen += eLossTOT;
+		eRegen -= eLossTOT;
 		
 		// Heartpierce
 		if (gear.containsAny(49982,50641))
