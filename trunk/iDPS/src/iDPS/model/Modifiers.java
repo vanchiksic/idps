@@ -169,16 +169,16 @@ public class Modifiers {
 	
 	public void registerCritProc(int cri, float uptime) {
 		registerPhysCritProc(cri, uptime);
-		mCri += cri/4591F*uptime;
+		mCri += cri/cCRIT*uptime;
 	}
 	
 	public void registerPhysCritProc(int cri, float uptime) {
-		htMH.registerCritProc(cri, uptime);
-		htOH.registerCritProc(cri, uptime);
-		htMHS.registerCritProc(cri, uptime);
-		htOHS.registerCritProc(cri, uptime);
-		htSS.registerCritProc(cri, uptime);
-		htMut.registerCritProc(cri, uptime);
+		htMH.registerCritProc(cri/cCRIT, uptime);
+		htOH.registerCritProc(cri/cCRIT, uptime);
+		htMHS.registerCritProc(cri/cCRIT, uptime);
+		htOHS.registerCritProc(cri/cCRIT, uptime);
+		htSS.registerCritProc(cri/cCRIT, uptime);
+		htMut.registerCritProc(cri/cCRIT, uptime);
 	}
 
 	public float getHastePercent() {

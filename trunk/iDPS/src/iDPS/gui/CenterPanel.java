@@ -164,11 +164,13 @@ public class CenterPanel extends JPanel {
 			fields[8].setForeground(Color.BLACK);
 		fields[9].setText(String.format("%.2f", mod.getHtMH().getDodge()*100));
 		fields[10].setText(String.format("%.2f", mod.getHtMH().getCrit0()*100));
-		if (mod.getHtMH().getCritExceeded()==2)
+		if (mod.getHtMH().getCritExceeded()==2) {
 			fields[10].setForeground(Color.RED);
-		else if (mod.getHtMH().getCritExceeded()==1)
+			fields[10].setToolTipText(String.format("Cap permanently exceeded by %.2f%%", mod.getHtMH().getCritPermOverCap()*100));
+		} else if (mod.getHtMH().getCritExceeded()==1) {
 			fields[10].setForeground(new Color(255,150,0));
-		else
+			fields[10].setToolTipText(String.format("Cap temporarily exceeded by %.2f%%", mod.getHtMH().getCritProcOverCap()*100));
+		} else
 			fields[10].setForeground(Color.BLACK);
 		fields[11].setText(String.format("%.2f", mod.getHtMH().getCritCap()*100));
 		fields[12].setText(String.format("%.2f", mod.getSpellMissPercent()));
