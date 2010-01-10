@@ -170,8 +170,10 @@ public class CenterPanel extends JPanel {
 		} else if (mod.getHtMH().getCritExceeded()==1) {
 			fields[10].setForeground(new Color(255,150,0));
 			fields[10].setToolTipText(String.format("Cap temporarily exceeded by %.2f%%", mod.getHtMH().getCritProcOverCap()*100));
-		} else
+		} else {
 			fields[10].setForeground(Color.BLACK);
+			fields[10].setToolTipText(null);
+		}
 		fields[11].setText(String.format("%.2f", mod.getHtMH().getCritCap()*100));
 		fields[12].setText(String.format("%.2f", mod.getSpellMissPercent()));
 		fields[13].setText(String.format("%.2f", mod.getSpellCritPercent()));
