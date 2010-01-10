@@ -64,7 +64,7 @@ public class Modifiers {
 		gHst -= 1;
 		gHstGear = hst/cHST;
 		
-		mHit = hit/cPHIT + 0.04F + 0.03F;
+		mHit = hit/cPHIT + 0.04F + 0.03F - 0.03F;
 		mCri = cri/cCRIT + 0.05F + 0.05F + 0.03F;
 		
 		Weapon.weaponType wt1 = gear.getWeapon1().getType();

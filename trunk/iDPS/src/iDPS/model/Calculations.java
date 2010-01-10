@@ -86,7 +86,7 @@ public abstract class Calculations {
 	protected abstract void calcDPS();
 	
 	protected float calcEnvenomDamage() {
-		float dmg = (1075 + 0.09F*avgCpFin * totalATP)*(1+talents.getVilePoisons()+talents.getFindWeakness());
+		float dmg = (215*avgCpFin + 0.09F*avgCpFin * totalATP)*(1+talents.getVilePoisons()+talents.getFindWeakness());
 		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtMHS().crit;
 		// Global Mods
 		dmg *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;
@@ -175,7 +175,7 @@ public abstract class Calculations {
 		procsPerSec = ppsIP1+ppsIP2;
 		//System.out.println("IP pps: "+procsPerSec);
 		// Damage
-		damage = (300+0.09F*totalATP) * (1+talents.getVilePoisons()) * 0.971875F;
+		damage = (350+0.09F*totalATP) * (1+talents.getVilePoisons()) * 0.971875F;
 		damage += damage*(mod.getPoisonCritMult()-1)*(mod.getSpellCritPercent()/100F);
 		// Global Mods
 		damage *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;

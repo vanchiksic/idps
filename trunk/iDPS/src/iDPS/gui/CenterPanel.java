@@ -6,6 +6,7 @@ import iDPS.model.Calculations;
 import iDPS.model.Modifiers;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -87,9 +88,11 @@ public class CenterPanel extends JPanel {
 		label.setHorizontalAlignment(JLabel.CENTER);
 		add(label, c);
 		
+		c.insets = new Insets(5,0,0,0);
 		c.gridx = 3; c.gridy = 6; c.gridwidth = 2;
 		label = new JLabel("Spell");
 		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setVerticalAlignment(JLabel.BOTTOM);
 		add(label, c);
 		
 		c.gridx = 2; c.gridy = 1; c.gridheight = 4;
@@ -97,6 +100,7 @@ public class CenterPanel extends JPanel {
 		sep.setOrientation(SwingConstants.VERTICAL);
 		add(sep, c);
 		
+		c.insets = new Insets(10,0,0,0);
 		c.gridx = 0; c.gridy = 9; c.gridheight = 1; c.gridwidth = 5;
 		label = new JLabel("EP Values");
 		label.setHorizontalAlignment(JLabel.CENTER);
@@ -111,13 +115,17 @@ public class CenterPanel extends JPanel {
 		field.setEditable(false);
 		field.setColumns(cols);
 		field.setHorizontalAlignment(JTextField.RIGHT);
-		c.gridx = gridx; c.gridy = gridy; c.insets = new Insets(1,1,1,10);
+		Font f = field.getFont().deriveFont(12F);
+		field.setFont(f);
+		c.gridx = gridx; c.gridy = gridy; c.insets = new Insets(0,1,0,10);
 		add(field, c);
 		return field;
 	}
 	
 	private JLabel addLabel(String str, int gridx, int gridy) {
 		JLabel label = new JLabel(str);
+		Font f = label.getFont().deriveFont(12F);
+		label.setFont(f);
 		label.setHorizontalAlignment(JLabel.RIGHT);
 		c.gridx = gridx; c.gridy = gridy; c.insets = new Insets(1,1,1,5);
 		add(label, c);
