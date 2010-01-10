@@ -165,7 +165,7 @@ public abstract class Calculations {
 		//System.out.println("avg IP proc chance: "+ipProcChance);
 		dpProcChance  = 0.3F + 0.04F*talents.getImprovedPoisons();
 		dpProcChance += envenomUptime*0.15F;
-		hitChance = Math.min(1, 0.87F+mod.getSpellHitPercent()/100);
+		hitChance = Math.min(1, 0.83F+mod.getSpellHitPercent()/100);
 		// Primary Procs
 		ppsIP1  = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts())*ipProcChance*hitChance;
 		ppsIP1 += mhSPS*ipProcChance*hitChance;
