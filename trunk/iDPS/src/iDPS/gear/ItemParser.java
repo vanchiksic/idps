@@ -191,7 +191,7 @@ public class ItemParser {
 		parser.reset();
 		NodeFilter nf = new AndFilter(
 					new TagNameFilter("img"),
-					new HasAttributeFilter("src", "icon")
+					new HasAttributeFilter("class", "wsicon")
 					);
 		TagNode n = (TagNode) parser.extractAllNodesThatMatch(nf).elementAt(0);
 		item.setIcon(n.getAttribute("alt"));
@@ -220,13 +220,13 @@ public class ItemParser {
 		System.out.println(Item.getAll().size());
 		while (iter.hasNext()) {
 			Item itemOrg = iter.next();
+			System.out.println(itemOrg);
 			Item itemNew = ip.loadItem(itemOrg.getId());
 			if (itemOrg.getTag() != null)
 				itemNew.setTag(itemOrg.getTag());
 			if (itemOrg.getFaction() != Faction.Both)
 				itemNew.setFaction(itemOrg.getFaction());
 			Item.add(itemNew);
-			System.out.println("Done "+itemNew.getName());
 		}
 		Item.save();
 	}

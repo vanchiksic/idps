@@ -236,7 +236,7 @@ public class Item implements Comparable<Item>, Rateable {
 	}
 	
 	public String toString() {
-		return name+" ("+ilvl+")";
+		return name+" ("+id+")";
 	}
 	
 	public String getToolTip() {

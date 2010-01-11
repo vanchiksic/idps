@@ -3712,14 +3712,10 @@
     <slot>Finger</slot>
     <attributes>
       <agi>90</agi>
-      <atp>105</atp>
+      <atp>121</atp>
       <cri>60</cri>
-      <exp>52</exp>
+      <exp>60</exp>
     </attributes>
-    <sockets>
-      <socket index="0">Yellow</socket>
-      <bonus/>
-    </sockets>
     <lvl>264</lvl>
     <tag>rotface-25</tag>
     <icon>item_icecrownringc</icon>
@@ -3742,16 +3738,15 @@
     <slot>Legs</slot>
     <attributes>
       <agi>146</agi>
-      <atp>200</atp>
-      <hit>84</hit>
+      <atp>216</atp>
+      <hit>92</hit>
       <cri>108</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <socket index="2">Blue</socket>
       <bonus>
-        <agi>8</agi>
+        <agi>6</agi>
       </bonus>
     </sockets>
     <lvl>264</lvl>
@@ -5053,7 +5048,7 @@
       <hst>44</hst>
       <arp>36</arp>
     </attributes>
-    <lvl>264</lvl>
+    <lvl>251</lvl>
     <tag>rotface-10</tag>
     <icon>inv_weapon_hand_34</icon>
   </item>
