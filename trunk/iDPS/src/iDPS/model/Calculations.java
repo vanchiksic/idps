@@ -34,6 +34,11 @@ public abstract class Calculations {
 		talents = Player.getInstance().getTalents();
 	}
 	
+	private void reset() {
+		mhSPS = 0;
+		ohSPS = 0;
+	}
+	
 	protected float calcAtp(Attributes attr) {
 		float atp, agi, str;
 		atp = attr.getAtp();
@@ -99,37 +104,37 @@ public abstract class Calculations {
 		try {
 			c = getClass().newInstance();
 			Attributes attr = new Attributes();
-			//System.out.println("EP ATP");
+			System.out.println("EP ATP");
 			attr.setAtp(1);
 			c.calculate(attr);
 			dpsATP = c.total - total;
 			attr.clear();
-			//System.out.println("EP AGI");
+			System.out.println("EP AGI");
 			attr.setAgi(1);
 			c.calculate(attr);
 			epAGI = (c.total - total) / dpsATP;
 			attr.clear();
-			//System.out.println("EP HIT");
+			System.out.println("EP HIT");
 			attr.setHit(1);
 			c.calculate(attr);
 			epHIT = (c.total - total) / dpsATP;
 			attr.clear();
-			//System.out.println("EP CRI");
+			System.out.println("EP CRI");
 			attr.setCri(1);
 			c.calculate(attr);
 			epCRI = (c.total - total) / dpsATP;
 			attr.clear();
-			//System.out.println("EP HST");
+			System.out.println("EP HST");
 			attr.setHst(1);
 			c.calculate(attr);
 			epHST = (c.total - total) / dpsATP;
 			attr.clear();
-			//System.out.println("EP EXP");
+			System.out.println("EP EXP");
 			attr.setExp(1);
 			c.calculate(attr);
 			epEXP = (c.total - total) / dpsATP;
 			attr.clear();
-			//System.out.println("EP ARP");
+			System.out.println("EP ARP");
 			attr.setArp(1);
 			c.calculate(attr);
 			epARP = (c.total - total) / dpsATP;
@@ -422,6 +427,8 @@ public abstract class Calculations {
 	}
 	
 	public void calculate(Attributes a, Gear g) {
+		reset();
+		
 		attrTotal = new Attributes(a);
 		gear = g;
 		

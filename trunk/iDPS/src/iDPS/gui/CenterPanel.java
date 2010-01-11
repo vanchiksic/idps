@@ -88,7 +88,7 @@ public class CenterPanel extends JPanel {
 		label.setHorizontalAlignment(JLabel.CENTER);
 		add(label, c);
 		
-		c.insets = new Insets(5,0,0,0);
+		c.insets = new Insets(4,0,0,0);
 		c.gridx = 3; c.gridy = 6; c.gridwidth = 2;
 		label = new JLabel("Spell");
 		label.setHorizontalAlignment(JLabel.CENTER);
