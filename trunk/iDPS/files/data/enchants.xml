@@ -106,6 +106,14 @@
       <cri>22</cri>
     </attributes>
   </enchant>
+  <enchant id="3328" spellid="60584" profession="Leatherworking">
+    <name>Nerubian Leg Reinforcements</name>
+    <slot>Legs</slot>
+    <attributes>
+      <atp>75</atp>
+      <cri>22</cri>
+    </attributes>
+  </enchant>
   <enchant id="983" spellid="44589">
     <name>Enchant Boots - Superior Agility</name>
     <slot>Feet</slot>
