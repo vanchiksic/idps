@@ -8,7 +8,6 @@ import iDPS.model.Calculations;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 
 
 public class GemComparison {
@@ -27,7 +26,7 @@ public class GemComparison {
 		this.slot = slot;
 		this.index = index;
 		this.gear.setGem(slot, index, null);
-		this.comparedGems = new ArrayList<Gem>();
+		comparedGems = new ArrayList<Gem>();
 		runComparison(anyColor);
 	}
 	
@@ -43,10 +42,10 @@ public class GemComparison {
 		else
 			gems = Gem.findSocket(socket);
 		
-		Iterator<Gem> iter = gems.iterator();
-		while (iter.hasNext())  {
-			Gem gem = iter.next();
+		for (Gem gem: gems)  {
 			if (gem.getColor() == GemColor.Meta && socket.getType() != SocketType.Meta)
+				continue;
+			if (!gear.canAdd(gem))
 				continue;
 			gear.setGem(slot, index, gem);
 			m.calculate(gear);
@@ -58,6 +57,12 @@ public class GemComparison {
 	
 	public ArrayList<Gem> getComparedGems() {
 		return comparedGems;
+	}
+	
+	public Gem getBestGem() {
+		if (comparedGems.size()>0)
+			return comparedGems.get(0);
+		return null;
 	}
 	
 	public float getDefaultDPS() {

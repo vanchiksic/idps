@@ -121,7 +121,7 @@ public class MainFrame extends JFrame {
 		sideScroll.setPreferredSize(d);
 		add(sideScroll, BorderLayout.LINE_END);
 		
-		showGear(Player.getInstance().getEquipped());
+		showGear();
 		
     Dimension d1 = getToolkit().getScreenSize();
     Dimension d2 = getSize();
@@ -148,7 +148,8 @@ public class MainFrame extends JFrame {
 		centerP.showStats();
 	}
 	
-	public void showGear(Gear gear) {
+	public void showGear() {
+		Gear gear = Player.getInstance().getEquipped();
 		for (int i=0; i<=18; i++)
 			buttons[i].changeToItem(gear.getItem(i),gear.getGems(i));
 		centerP.showStats();
@@ -171,6 +172,10 @@ public class MainFrame extends JFrame {
 	
 	public void about() {
 		
+	}
+	
+	public MenuBar getMyMenuBar() {
+		return menuBar;
 	}
 
 }

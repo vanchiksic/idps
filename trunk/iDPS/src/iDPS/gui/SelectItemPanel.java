@@ -130,7 +130,8 @@ public class SelectItemPanel extends JPanel {
 			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
 			Player p = Player.getInstance();
 			p.getEquipped().setItem(slot, item);
-			MainFrame.getInstance().showItem(item, slot);
+			MainFrame.getInstance().refreshItem(slot);
+			MainFrame.getInstance().showStats();
 		}
 
 	}

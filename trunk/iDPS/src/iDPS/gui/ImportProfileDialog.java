@@ -122,6 +122,9 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         String realm = (String)mRealms.getSelectedItem();
         String character = mCharacterName.getText();
         
+        Gear gear = player.getEquipped().clone();
+        gear.reset();
+        
         try {
             String urlString = "http://";
             urlString += region.toLowerCase();
@@ -153,7 +156,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 int id = Integer.parseInt(element.getAttributeValue("id"));
                 int rawSlot = Integer.parseInt(element.getAttributeValue("slot"));
                 if (rawSlot < 0 || rawSlot >= chackifyBlizzardItemSlotId.length) {
-                    return;
+                    break;
                 }
                 int slot = chackifyBlizzardItemSlotId[rawSlot];
                 Vector<Integer> gemIds = new Vector<Integer>(3);
@@ -164,11 +167,11 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 
                 Item item = Item.find(id);
                 if (item != null) {
-                    player.getEquipped().setItem(slot, item);
+                    gear.setItem(slot, item);
                     
                     Enchant enchant = Enchant.find(enchantId);
                     if (enchant != null) {
-                        player.getEquipped().setEnchant(slot, enchant);
+                        gear.setEnchant(slot, enchant);
                     }
                     
                     ListIterator<Integer> gemIter = gemIds.listIterator();
@@ -178,20 +181,23 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                         if (gem != null) {
                             iDPS.gear.Socket socket = item.getSocket(socketIndex);
                             if (socket != null) {
-                                player.getEquipped().setGem(slot, socketIndex, gem);
+                                gear.setGem(slot, socketIndex, gem);
                             }
                         }
                         socketIndex++;
                     }
                 }
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(MainFrame.getInstance(), "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
             return;
         }
-
-        MainFrame.getInstance().showGear(player.getEquipped());
+        player.equipGear(gear);
+        MainFrame.getInstance().showGear();
+        Gear.add(gear);
+        MainFrame.getInstance().getMyMenuBar().createGearMenu();
         dispose();
     }
     

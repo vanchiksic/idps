@@ -56,14 +56,14 @@ public abstract class Calculations {
 	protected void calcBerserking() {
 		float attacksPerSec, uptime;
 		
-		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==59621) {
+		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==3789) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
 			uptime = gear.getWeapon1().getZerkUptime(attacksPerSec);
 			totalATP += uptime * 400;
 		}
 		
-		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==59621) {
+		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==3789) {
 			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
 			uptime = gear.getWeapon2().getZerkUptime(attacksPerSec);
@@ -186,12 +186,12 @@ public abstract class Calculations {
 	
 	protected void calcMongoose() {
 		float attacksPerSec, uptimeMH = 0, uptimeOH = 0;
-		if (gear.isEnchanted(16) && gear.getEnchant(16).getId()==27984) {
+		if (gear.isEnchanted(16) && gear.getEnchant(16).getId()==2673) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
 			uptimeMH = gear.getWeapon1().getZerkUptime(attacksPerSec);
 		}
-		if (gear.isEnchanted(17) && gear.getEnchant(17).getId()==27984) {
+		if (gear.isEnchanted(17) && gear.getEnchant(17).getId()==2673) {
 			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
 			uptimeOH = gear.getWeapon2().getZerkUptime(attacksPerSec);
@@ -219,11 +219,11 @@ public abstract class Calculations {
 		calcBerserking();
 		
 		// Hyperspeed Accelerators
-		if (gear.isEnchanted(8) && gear.getEnchant(8).getId()==54999)
+		if (gear.isEnchanted(8) && gear.getEnchant(8).getId()==3604)
 			mod.registerHasteProc(340, 12F/60F);
 		
 		// Swordguard Embroidery
-		if (gear.isEnchanted(3) && gear.getEnchant(3).getId()==55777)
+		if (gear.isEnchanted(3) && gear.getEnchant(3).getId()==3730)
 			totalATP += 400F*15F/62F;
 		
 		// Orc Racial

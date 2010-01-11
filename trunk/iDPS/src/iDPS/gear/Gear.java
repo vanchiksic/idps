@@ -20,17 +20,31 @@ public class Gear implements Comparable<Gear> {
 	private static HashMap<Integer,Gear> map = null;
 	private static int nextFreeId = 1;
 	
-	private Item[] items;
-	private Gem[][] gems;
-	private Enchant[] enchants;
-	private boolean[] socketBonus;
-	private int id = 0;
-	private String name;
 	private Attributes attr;
+	private HashMap<Integer,Integer> containsMap;
+	private Enchant[] enchants;
+	private Gem[][] gems;
+	private int id = 0;
+	private Item[] items;
+	private String name;
+	
+	private boolean[] socketBonus;
 	
 	private EnumMap<Item.Tier,Integer> tiers;
+	private HashMap<String, int[]> uniqueMap;
 	
-	private HashMap<Integer,Integer> containsMap;
+	public Gear() {
+		items = new Item[19];
+		gems = new Gem[19][3];
+		enchants = new Enchant[19];
+		socketBonus = new boolean[19];
+		attr = new Attributes();
+		containsMap = new HashMap<Integer,Integer>();
+		uniqueMap = new HashMap<String,int[]>();
+		tiers = new EnumMap<Item.Tier,Integer>(Item.Tier.class);
+		for (Item.Tier t: Item.Tier.values())
+			tiers.put(t, 0);
+	}
 	
 	@SuppressWarnings("unchecked")
 	public Gear(Element element) {
@@ -82,6 +96,8 @@ public class Gear implements Comparable<Gear> {
 	
 	public Gear(Gear copy) {
 		this();
+		id = copy.id;
+		name = copy.name;
 		items = copy.items.clone();
 		gems = copy.gems.clone();
 		for (int i=0; i<gems.length; i++)
@@ -90,6 +106,11 @@ public class Gear implements Comparable<Gear> {
 		socketBonus = copy.socketBonus.clone();
 		attr = copy.attr.clone();
 		containsMap = new HashMap<Integer,Integer>(copy.containsMap);
+		uniqueMap = new HashMap<String,int[]>();
+		for (String s: copy.uniqueMap.keySet()) {
+			int[] vect = copy.uniqueMap.get(s).clone();
+			uniqueMap.put(s, vect);
+		}
 		tiers = new EnumMap<Item.Tier,Integer>(copy.tiers);
 	}
 	
@@ -103,118 +124,94 @@ public class Gear implements Comparable<Gear> {
 		this.name = name;
 	}
 	
-	public Gear() {
-		items = new Item[19];
-		gems = new Gem[19][3];
-		enchants = new Enchant[19];
-		socketBonus = new boolean[19];
-		attr = new Attributes();
-		containsMap = new HashMap<Integer,Integer>();
-		tiers = new EnumMap<Item.Tier,Integer>(Item.Tier.class);
-		for (Item.Tier t: Item.Tier.values())
-			tiers.put(t, 0);
-	}
-	
-	public Item getItem(int slot) {
-		return items[slot];
-	}
-	
-	public void setItem(int slot, Item item) {
-		Item olditem = items[slot];
-		if (olditem != null) {
-			attr.sub(olditem.getAttributes());
-			//if (item == null)
-			//	attr.sub(getEnchant(olditem.getSlot()));
-			if (socketBonus[slot])
-				attr.sub(olditem.getSocketBonus());
-			socketBonus[slot] = false;
-			for (int index=0; index<=2; index++) {
-				if (gems[slot][index] == null)
-					continue;
-				attr.sub(gems[slot][index].getAttributes());
-				containsDec(gems[slot][index].getId());
-				gems[slot][index] = null;
+	public boolean canAdd(Gem g) {
+		if (g.getUniqueLimit()>0) {
+			int[] vect;
+			if (uniqueMap.containsKey(g.getUniqueName())) {
+				vect = uniqueMap.get(g.getUniqueName());
+				if (vect[0] >= vect[1])
+					return false;
 			}
-			if (olditem.getTier() != null)
-				tierDec(olditem.getTier());
-			containsDec(olditem.getId());
 		}
-		if (item != null) {
-			attr.add(item.getAttributes());
-			//if (olditem == null)
-			//	attr.add(getEnchant(item.getSlot()));
-			if (item.getTier() != null)
-				tierInc(item.getTier());
-			containsInc(item.getId());
-		}
-		items[slot] = item;
+		return true;
 	}
 	
-	public void setGem(int slot, int index, Gem gem) {
-		Item item = getItem(slot);
-		if (item ==  null)
-			return;
-		Socket socket = item.getSocket(index);
-		if (socket == null)
-			return;
-		Gem oldgem = getGem(slot, index);
-		if (oldgem != null) {
-			attr.sub(oldgem.getAttributes());
-			if (socketBonus[slot])
-				attr.sub(item.getSocketBonus());
-			socketBonus[slot] = false;
-			containsDec(oldgem.getId());
+	public void reset() {
+		for (int i=0; i<=18; i++) {
+			setItem(i, null);
+			setEnchant(i, null);
 		}
-		if (gem != null) {
-			attr.add(gem.getAttributes());
-			if (gem.isMatch(socket)) {
-				boolean bonus = true;
-				Socket s; Gem g;
-				for (int i=0; i<gems[slot].length; i++) {
-					if (i==index)
-						continue;
-					s = item.getSocket(i);
-					if (s == null) {
-						bonus = bonus && i != 0;
-						break;
-					}
-					g = gems[slot][i];
-					bonus = g != null && g.isMatch(s);
-					if (!bonus)
-						break;
-				}
-				if (bonus)
-					attr.add(item.getSocketBonus());
-				socketBonus[slot] = bonus;
+	}
+	
+	public Gear clone() {
+		return new Gear(this);
+	}
+	
+	public int compareTo(Gear o) {
+		return name.compareTo(o.name);
+	}
+	
+	public int contains(int id) {
+		if (containsMap.containsKey(id))
+			return containsMap.get(id);
+		return 0;
+	}
+	
+	public boolean containsAny(int... ids) {
+		for (int id: ids) {
+			if (containsMap.containsKey(id))
+				return true;
+		}
+		return false;
+	}
+	
+	private void containsDec(Gem g) {
+		if (g.getUniqueLimit()>0) {
+			int[] vect;
+			if (uniqueMap.containsKey(g.getUniqueName())) {
+				vect = uniqueMap.get(g.getUniqueName());
+				if (vect[0] > 0)
+					vect[0]--;
 			}
-			containsInc(gem.getId());
 		}
-		gems[slot][index] = gem;
+		if (containsMap.containsKey(g.getId())) {
+			int c = containsMap.get(g.getId())-1;
+			if (c>0)
+				containsMap.put(g.getId(), c--);
+			else
+				containsMap.remove(g.getId());
+		}
 	}
 	
-	public void setEnchant(int slot, Enchant enchant) {
-		Enchant oldenchant = enchants[slot];
-		if (oldenchant != null)
-			attr.sub(oldenchant.getAttributes());
-		if (enchant != null)
-			attr.add(enchant.getAttributes());
-		enchants[slot] = enchant;
+	private void containsDec(int id) {
+		if (containsMap.containsKey(id)) {
+			int c = containsMap.get(id)-1;
+			if (c>0)
+				containsMap.put(id, c--);
+			else
+				containsMap.remove(id);
+		}
 	}
 	
-	public Enchant getEnchant(int slot) {
-		return enchants[slot];
-	}
-	
-	public boolean isEnchanted(int slot) {
-		return (enchants[slot]!=null);
-	}
-	
-	public Gem getGem(int slot, int index) {
-		return gems[slot][index];
-	}
-	
-	public Gem[] getGems(int slot) {
-		return gems[slot];
+	private boolean containsInc(Gem g) {
+		if (g.getUniqueLimit()>0) {
+			int[] vect;
+			if (uniqueMap.containsKey(g.getUniqueName())) {
+				vect = uniqueMap.get(g.getUniqueName());
+				if (vect[0] >= vect[1])
+					return false;
+				vect[0]++;
+			} else {
+				vect = new int[2];
+				vect[1] = g.getUniqueLimit();
+				vect[0] = 1;
+				uniqueMap.put(g.getUniqueName(), vect);
+			}
+		}
+		int c = (containsMap.containsKey(g.getId())) ? containsMap.get(g.getId()) : 0;
+		c++;
+		containsMap.put(id, c);
+		return true;
 	}
 	
 	/*private Attributes getEnchant(SlotType st) {
@@ -259,62 +256,24 @@ public class Gear implements Comparable<Gear> {
 		containsMap.put(id, c);
 	}
 	
-	private void containsDec(int id) {
-		if (containsMap.containsKey(id)) {
-			int c = containsMap.get(id)-1;
-			if (c>0)
-				containsMap.put(id, c--);
-			else
-				containsMap.remove(id);
-		}
-	}
-	
-	private void tierDec(Item.Tier t) {
-		int c = tiers.get(t);
-		if (c > 0) {
-			c--;
-			tiers.put(t, c);
-		}
-	}
-	
-	private void tierInc(Item.Tier t) {
-		int c = tiers.get(t);
-		c++;
-		tiers.put(t, c);
-	}
-	
-	public int contains(int id) {
-		if (containsMap.containsKey(id))
-			return containsMap.get(id);
-		return 0;
-	}
-	
-	public boolean containsAny(int... ids) {
-		for (int id: ids) {
-			if (containsMap.containsKey(id))
-				return true;
-		}
-		return false;
-	}
-	
 	public void gemBest(int slot) {
 		Calculations m = Calculations.createInstance();
-		Gear gear; Gem gem;
+		Gear gear;
 		Item item = getItem(slot);
 		if (!item.hasSockets())
 			return;
-		Gem[] gemsAny, gemsMatch, gemsFinal;
-		gemsAny = new Gem[3];
-		gemsMatch = new Gem[3];
-		float dpsAny, dpsMatch;
+		m.calcEP();
+		Gem[] gemsAny = new Gem[3], gemsMatch = new Gem[3], gemsTemp, gemsFinal;
+		GemComparison gc;
+		float dpsAny = 0, dpsMatch = 0;
 		// Iteration 1: Any Color
 		gear = this.clone();
 		for (int index=0; index<=2; index++) {
 			if (item.getSocket(index) == null)
 				continue;
-			gem = gear.calcBestGem(slot, index, true);
-			gear.setGem(slot, index, gem);
-			gemsAny[index] = gem;
+			gc = new GemComparison(this, slot, index, true);
+			gear.setGem(slot, index, gc.getBestGem());
+			gemsAny[index] = gc.getBestGem();
 		}
 		m.calculate(gear);
 		dpsAny = m.getTotalDPS();
@@ -322,16 +281,29 @@ public class Gear implements Comparable<Gear> {
 			dpsMatch = dpsAny;
 		else {
 			// Iteration 2: Matching Color
-			gear = this.clone();
-			for (int index=0; index<=2; index++) {
-				if (item.getSocket(index) == null)
-					continue;
-				gem = gear.calcBestGem(slot, index, false);
-				gear.setGem(slot, index, gem);
-				gemsMatch[index] = gem;
+			int[][] runs;
+			if (this.getItem(slot).getMaxSocketIndex() == 1)
+				runs = new int[][] {{0}};
+			if (this.getItem(slot).getMaxSocketIndex() == 2)
+				runs = new int[][] {{0,1},{1,0}};
+			else
+				runs = new int[][] {{0,1,2},{0,2,1},{1,0,2},{1,2,0},{2,1,0},{2,0,1}};
+			for (int[] run: runs) {
+				gemsTemp = new Gem[3];
+				gear = this.clone();
+				for (int index: run) {
+					if (item.getSocket(index) == null)
+						continue;
+					gc = new GemComparison(this, slot, index, false);
+					gear.setGem(slot, index, gc.getBestGem());
+					gemsTemp[index] = gc.getBestGem();
+				}
+				m.calculate(gear);
+				if (m.getTotalDPS() > dpsMatch) {
+					dpsMatch = m.getTotalDPS();
+					gemsMatch = gemsTemp;
+				}
 			}
-			m.calculate(gear);
-			dpsMatch = m.getTotalDPS();
 		}
 		// Pick Best Setup
 		if (dpsAny > dpsMatch)
@@ -346,42 +318,40 @@ public class Gear implements Comparable<Gear> {
 		}
 	}
 	
-	private Gem calcBestGem(int slot, int index, boolean anyColor) {
-		GemComparison gc = new GemComparison(this, slot, index);
-		if (gc.getComparedGems().size()>0)
-			return gc.getComparedGems().get(0);
-		return null;
-	}
-	
-	public boolean isSocketBonusActive(int slot) {
-		if (!getItem(slot).hasSockets())
-			return false;
-		Gem[] gems = getGems(slot);
-		Socket socket;
-		int index = 0;
-		do {
-			socket = getItem(slot).getSocket(index);
-			if (gems[index] == null || !gems[index].isMatch(socket))
-				return false;
-			index++;
-		} while (socket != null);
-		return true;
-	}
-	
 	public Attributes getAttributes() {
 		return attr;
+	}
+	
+	public Enchant getEnchant(int slot) {
+		return enchants[slot];
+	}
+	
+	public Gem getGem(int slot, int index) {
+		return gems[slot][index];
+	}
+	
+	public Gem[] getGems(int slot) {
+		return gems[slot];
 	}
 	
 	public int getId() {
 		return id;
 	}
 	
+	public Item getItem(int slot) {
+		return items[slot];
+	}
+	
 	public String getName() {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
+	public int getTier10() {
+		return tiers.get(Item.Tier.Tier10);
+	}
+	
+	public int getTier9() {
+		return tiers.get(Item.Tier.Tier9);
 	}
 	
 	public Weapon getWeapon1() {
@@ -398,9 +368,27 @@ public class Gear implements Comparable<Gear> {
 		return weapon;
 	}
 	
-	public String toString() {
-		String s = "iDPS.Gear#"+id;
-		return s;
+	public boolean hasChaoticESD() {
+		return (contains(41398)>0);
+	}
+	
+	public boolean isEnchanted(int slot) {
+		return (enchants[slot]!=null);
+	}
+	
+	public boolean isSocketBonusActive(int slot) {
+		if (!getItem(slot).hasSockets())
+			return false;
+		Gem[] gems = getGems(slot);
+		Socket socket;
+		int index = 0;
+		do {
+			socket = getItem(slot).getSocket(index);
+			if (gems[index] == null || !gems[index].isMatch(socket))
+				return false;
+			index++;
+		} while (socket != null);
+		return true;
 	}
 	
 	public void print() {
@@ -431,8 +419,120 @@ public class Gear implements Comparable<Gear> {
 		}
 	}
 	
-	public Gear clone() {
-		return new Gear(this);
+	public void setEnchant(int slot, Enchant enchant) {
+		Enchant oldenchant = enchants[slot];
+		if (oldenchant != null)
+			attr.sub(oldenchant.getAttributes());
+		if (enchant != null)
+			attr.add(enchant.getAttributes());
+		enchants[slot] = enchant;
+	}
+	
+	public void setGem(int slot, int index, Gem gem) {
+		Item item = getItem(slot);
+		if (item ==  null)
+			return;
+		Socket socket = item.getSocket(index);
+		if (socket == null)
+			return;
+		Gem oldgem = getGem(slot, index);
+		if (oldgem != null) {
+			attr.sub(oldgem.getAttributes());
+			if (socketBonus[slot])
+				attr.sub(item.getSocketBonus());
+			socketBonus[slot] = false;
+			containsDec(oldgem);
+			gems[slot][index] = null;
+		}
+		if (gem != null) {
+			// Check if we can equip it
+			if (containsInc(gem)) {
+				attr.add(gem.getAttributes());
+				if (gem.isMatch(socket)) {
+					boolean bonus = true;
+					Socket s; Gem g;
+					for (int i=0; i<gems[slot].length; i++) {
+						if (i==index)
+							continue;
+						s = item.getSocket(i);
+						if (s == null) {
+							bonus = bonus && i != 0;
+							break;
+						}
+						g = gems[slot][i];
+						bonus = g != null && g.isMatch(s);
+						if (!bonus)
+							break;
+					}
+					if (bonus)
+						attr.add(item.getSocketBonus());
+					socketBonus[slot] = bonus;
+				}
+				gems[slot][index] = gem;
+			} else
+				System.out.println("Could not equip gem "+gem.getName());
+		}
+	}
+	
+	public void setItem(int slot, Item item) {
+		Item olditem = items[slot];
+		Gem[] oldgems = getGems(slot).clone();
+		if (olditem != null) {
+			attr.sub(olditem.getAttributes());
+			for (int index=0; index<=2; index++)
+				setGem(slot, index, null);
+			if (olditem.getTier() != null)
+				tierDec(olditem.getTier());
+			containsDec(olditem.getId());
+			items[slot] = null;
+		}
+		if (item != null) {
+			items[slot] = item;
+			attr.add(item.getAttributes());
+			for (int index=0; index<=item.getMaxSocketIndex(); index++)
+				setGem(slot, index, oldgems[index]);
+			if (item.getTier() != null)
+				tierInc(item.getTier());
+			containsInc(item.getId());
+		}
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	private void tierDec(Item.Tier t) {
+		int c = tiers.get(t);
+		if (c > 0) {
+			c--;
+			tiers.put(t, c);
+		}
+	}
+	
+	private void tierInc(Item.Tier t) {
+		int c = tiers.get(t);
+		c++;
+		tiers.put(t, c);
+	}
+	
+	public String toString() {
+		String s = "iDPS.Gear#"+id;
+		return s;
+	}
+	
+	public static void add(Gear s) {
+		if (map == null)
+			Gear.load();
+		if (s.id==0) {
+			s.id = Gear.nextFreeId;
+			Gear.nextFreeId++;
+		}
+		map.put(s.id, s);
+	}
+	
+	public static void clear() {
+		map.clear();
+		nextFreeId = 1;
 	}
 	
 	public static Gear find(int id) {
@@ -448,23 +548,7 @@ public class Gear implements Comparable<Gear> {
 			Gear.load();
 		return new ArrayList<Gear>(map.values());
 	}
-	
-	public static void add(Gear s) {
-		if (map == null)
-			Gear.load();
-		if (s.id==0) {
-			s.id = Gear.nextFreeId;
-			Gear.nextFreeId++;
-		}
-		map.put(s.id, s);
-	}
-	
-	public static void remove(Gear g) {
-		if (map == null)
-			Gear.load();
-		map.remove(g.id);
-	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static void load() {
 		map = new HashMap<Integer,Gear>();
@@ -486,7 +570,13 @@ public class Gear implements Comparable<Gear> {
 			}
 		}
 	}
-	
+
+	public static void remove(Gear g) {
+		if (map == null)
+			Gear.load();
+		map.remove(g.id);
+	}
+
 	@SuppressWarnings("unchecked")
 	public static void save() {
 		Element root, gearconfigs;
@@ -501,7 +591,7 @@ public class Gear implements Comparable<Gear> {
 			saveSetup(gearconfigs, i.next());
 		Persistency.saveXML(document, Persistency.FileType.Settings);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	private static void saveSetup(Element root, Gear gear) {
 		Element eSetup, eName, eItems, eItem, eGem, eEnchant, eEnchants;
@@ -540,27 +630,6 @@ public class Gear implements Comparable<Gear> {
 		}
 		eSetup.getChildren().add(eEnchants);
 		root.getChildren().add(eSetup);
-	}
-	
-	public static void clear() {
-		map.clear();
-		nextFreeId = 1;
-	}
-
-	public boolean hasChaoticESD() {
-		return (contains(41398)>0);
-	}
-
-	public int getTier9() {
-		return tiers.get(Item.Tier.Tier9);
-	}
-
-	public int getTier10() {
-		return tiers.get(Item.Tier.Tier10);
-	}
-
-	public int compareTo(Gear o) {
-		return name.compareTo(o.name);
 	}
 
 }

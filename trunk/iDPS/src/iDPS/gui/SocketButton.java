@@ -1,6 +1,10 @@
 package iDPS.gui;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
@@ -14,6 +18,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
 
 public class SocketButton extends JButton implements ActionListener {
 	
@@ -33,12 +38,15 @@ public class SocketButton extends JButton implements ActionListener {
 	protected void updateColor() {
 		Gear gear = Player.getInstance().getEquipped();
 		Socket socket = gear.getItem(slot).getSocket(index);
+		if (socket == null)
+			return;
 		URL url;
 		Border b, b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1), b2;
 		switch (socket.getType()) {
 			case Red:
 				url = InventoryButton.class.getResource("/images/Socket_Red.png");
 				b2 = BorderFactory.createLineBorder(Color.RED, 2);
+				//b2 = new DashBorder(Color.RED, 2);
 				break;
 			case Yellow:
 				url = InventoryButton.class.getResource("/images/Socket_Yellow.png");
@@ -65,33 +73,7 @@ public class SocketButton extends JButton implements ActionListener {
 			return;
 		}
 		setToolTipText(gem.getToolTip());
-		URL url = null;
-		switch (gem.getColor()) {
-			case Red:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_37.jpg");
-				break;
-			case Orange:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_39.jpg");
-				break;
-			case Yellow:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_38.jpg");
-				break;
-			case Purple:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_40.jpg");
-				break;
-			case Green:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_41.jpg");
-				break;
-			case Blue:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_gem_42.jpg");
-				break;
-			case Meta:
-				url = InventoryButton.class.getResource("/images/inv_jewelcrafting_shadowspirit_02.jpg");
-				break;
-			default:
-				url = InventoryButton.class.getResource("/images/inv_misc_gem_pearl_12.jpg");
-				break;
-		}
+		URL url = InventoryButton.class.getResource("/images/"+gem.getIcon()+".jpg");
 		setIcon(new ImageIcon(url));
 	}
 
@@ -99,6 +81,25 @@ public class SocketButton extends JButton implements ActionListener {
 		MainFrame f = MainFrame.getInstance();
 		SelectGemPanel ip = new SelectGemPanel(slot, index);
 		f.getSideScroll().setViewportView(ip);
+	}
+	
+	class DashBorder extends LineBorder {
+
+		//make getters and setters for stroke as exercise
+		BasicStroke stroke = new BasicStroke(2, BasicStroke.CAP_BUTT,
+				BasicStroke.JOIN_MITER, 5f, new float[]{5f}, 0);
+
+		public DashBorder(Color color, int thickness) {
+			super(color, thickness);
+			// TODO Auto-generated constructor stub
+		}
+
+		public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+			Graphics2D g2d = (Graphics2D) g.create();
+			g2d.setStroke(stroke);
+			super.paintBorder(c, g2d, x, y, width, height);
+			g2d.dispose();
+		}
 	}
 
 }

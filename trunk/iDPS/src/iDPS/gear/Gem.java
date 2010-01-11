@@ -28,6 +28,9 @@ public class Gem implements Comparable<Gem>, Rateable {
 	private GemColor color;
 	private float comparedDPS;
 	private String name;
+	private String icon;
+	private String unique_name;
+	private int unique_limit;
 	
 	@SuppressWarnings("unchecked")
 	private Gem(Element element) {
@@ -48,22 +51,14 @@ public class Gem implements Comparable<Gem>, Rateable {
 				name = e.getText();
 			else if (s.equals("color"))
 				color = GemColor.valueOf(e.getText());
-			else if (s.equals("agi"))
-				attr.setAgi(Float.parseFloat(e.getText()));
-			else if (s.equals("str"))
-				attr.setStr(Float.parseFloat(e.getText()));
-			else if (s.equals("arp"))
-				attr.setArp(Float.parseFloat(e.getText()));
-			else if (s.equals("atp"))
-				attr.setAtp(Float.parseFloat(e.getText()));
-			else if (s.equals("cri"))
-				attr.setCri(Float.parseFloat(e.getText()));
-			else if (s.equals("exp"))
-				attr.setExp(Float.parseFloat(e.getText()));
-			else if (s.equals("hit"))
-				attr.setHit(Float.parseFloat(e.getText()));
-			else if (s.equals("hst"))
-				attr.setHst(Float.parseFloat(e.getText()));
+			else if (s.equals("icon"))
+				icon = e.getText();
+			else if (s.equals("attributes"))
+				attr = new Attributes(e);
+			else if (s.equals("unique")) {
+				unique_name = e.getText();
+				unique_limit = Integer.parseInt(e.getAttributeValue("max"));
+			}
 		}
 	}
 	
@@ -179,6 +174,18 @@ public class Gem implements Comparable<Gem>, Rateable {
 			if (g.profession == null || Player.getInstance().hasProfession(g.profession))
 				map.put(g.id, g);
 		}
+	}
+
+	public String getUniqueName() {
+		return unique_name;
+	}
+
+	public int getUniqueLimit() {
+		return unique_limit;
+	}
+
+	public String getIcon() {
+		return icon;
 	}
 
 }

@@ -48,7 +48,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		add(mArmory);
 	}
 	
-	private void createGearMenu() {
+	public void createGearMenu() {
 		mGear.removeAll();
 		
 		iGearNew = new JMenuItem("New");
@@ -139,7 +139,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	
 	private void selectGearSetup(Gear setup) {
 		Player.getInstance().equipGear(setup);
-		MainFrame.getInstance().showGear(setup);
+		MainFrame.getInstance().showGear();
 	}
 	
 	private void selectTalents(Talents talents) {
@@ -287,7 +287,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 					gear.setGem(7, gear.getItem(7).getMaxSocketIndex(), null);
 					gear.setGem(8, gear.getItem(8).getMaxSocketIndex(), null);
 				}
-				MainFrame.getInstance().showGear(gear);
+				MainFrame.getInstance().showGear();
 				break;
 			case Enchanting:
 			case Engineering:

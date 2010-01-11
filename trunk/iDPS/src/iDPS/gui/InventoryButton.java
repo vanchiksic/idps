@@ -59,7 +59,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 	}
 	
 	public void changeToItem(Item item) {
-		Gem[] gems = new Gem[3];
+		Gem[] gems = Player.getInstance().getEquipped().getGems(slot);
 		changeToItem(item, gems);
 	}
 	
