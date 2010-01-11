@@ -31,6 +31,7 @@ public class GemComparison {
 	}
 	
 	private void runComparison(boolean anyColor) {
+		//System.out.println("  running gem comparison...");
 		Calculations m = Calculations.createInstance();
 		m.calculate(gear);
 		defaultDPS = m.getTotalDPS();
@@ -45,6 +46,7 @@ public class GemComparison {
 		for (Gem gem: gems)  {
 			if (gem.getColor() == GemColor.Meta && socket.getType() != SocketType.Meta)
 				continue;
+			gear.setGem(slot, index, null);
 			if (!gear.canAdd(gem))
 				continue;
 			gear.setGem(slot, index, gem);

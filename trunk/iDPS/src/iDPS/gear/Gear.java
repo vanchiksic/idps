@@ -203,8 +203,8 @@ public class Gear implements Comparable<Gear> {
 				vect[0]++;
 			} else {
 				vect = new int[2];
-				vect[1] = g.getUniqueLimit();
 				vect[0] = 1;
+				vect[1] = g.getUniqueLimit();
 				uniqueMap.put(g.getUniqueName(), vect);
 			}
 		}
@@ -469,8 +469,7 @@ public class Gear implements Comparable<Gear> {
 					socketBonus[slot] = bonus;
 				}
 				gems[slot][index] = gem;
-			} else
-				System.out.println("Could not equip gem "+gem.getName());
+			}
 		}
 	}
 	
@@ -515,10 +514,10 @@ public class Gear implements Comparable<Gear> {
 		tiers.put(t, c);
 	}
 	
-	public String toString() {
-		String s = "iDPS.Gear#"+id;
+	/*public String toString() {
+		String s = "iDPS.Gear#"+id+"#"+this.;
 		return s;
-	}
+	}*/
 	
 	public static void add(Gear s) {
 		if (map == null)
