@@ -381,13 +381,13 @@ public class Gear implements Comparable<Gear> {
 			return false;
 		Gem[] gems = getGems(slot);
 		Socket socket;
-		int index = 0;
-		do {
+		for (int index=0; index<=2; index++) {
 			socket = getItem(slot).getSocket(index);
+			if (socket == null)
+				break;
 			if (gems[index] == null || !gems[index].isMatch(socket))
 				return false;
-			index++;
-		} while (socket != null);
+		}
 		return true;
 	}
 	
