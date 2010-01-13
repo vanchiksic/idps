@@ -104,7 +104,7 @@ public abstract class Calculations {
 		try {
 			c = getClass().newInstance();
 			Attributes attr = new Attributes();
-			System.out.println("EP ATP");
+			//System.out.println("EP ATP");
 			attr.setAtp(1);
 			c.calculate(attr);
 			dpsATP = c.total - total;
@@ -162,20 +162,26 @@ public abstract class Calculations {
 	}
 	
 	protected float calcInstantPoisonDPS() {
-		if (gear.getWeapon1() == null)
-			return 0;
+		Weapon wip, wdp;
+		if (false && gear.getWeapon2().getSpeed() >= gear.getWeapon1().getSpeed()) {
+			wdp = gear.getWeapon1();
+			wip = gear.getWeapon2();
+		} else {
+			wip = gear.getWeapon1();
+			wdp = gear.getWeapon2();	
+		}
 		float ipProcChance, dpProcChance, hitChance, procsPerSec, damage;
-		ipProcChance  = gear.getWeapon1().getSpeed()/1.4F*(0.2F+0.02F*talents.getImprovedPoisons());
+		ipProcChance  = wip.getSpeed()/1.4F*(0.2F+0.02F*talents.getImprovedPoisons());
 		ipProcChance *= 1+(envenomUptime*0.75F);
 		//System.out.println("avg IP proc chance: "+ipProcChance);
 		dpProcChance  = 0.3F + 0.04F*talents.getImprovedPoisons();
 		dpProcChance += envenomUptime*0.15F;
 		hitChance = Math.min(1, 0.83F+mod.getSpellHitPercent()/100);
 		// Primary Procs
-		ppsIP1  = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts())*ipProcChance*hitChance;
+		ppsIP1  = wip.getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts())*ipProcChance*hitChance;
 		ppsIP1 += mhSPS*ipProcChance*hitChance;
 		// Secondary Procs
-		ppsIP2 = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts())*dpProcChance*hitChance;
+		ppsIP2 = wdp.getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts())*dpProcChance*hitChance;
 		ppsIP2 += ohSPS*dpProcChance*hitChance*hitChance;
 		procsPerSec = ppsIP1+ppsIP2;
 		//System.out.println("IP pps: "+procsPerSec);
