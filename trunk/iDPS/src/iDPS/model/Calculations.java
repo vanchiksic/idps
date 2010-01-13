@@ -163,7 +163,7 @@ public abstract class Calculations {
 	
 	protected float calcInstantPoisonDPS() {
 		Weapon wip, wdp;
-		if (false && gear.getWeapon2().getSpeed() >= gear.getWeapon1().getSpeed()) {
+		if (gear.getWeapon2().getSpeed() >= gear.getWeapon1().getSpeed()) {
 			wdp = gear.getWeapon1();
 			wip = gear.getWeapon2();
 		} else {
