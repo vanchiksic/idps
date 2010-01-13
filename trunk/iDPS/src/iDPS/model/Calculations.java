@@ -241,10 +241,13 @@ public abstract class Calculations {
 		if (Player.getInstance().getRace().getType() == Race.Type.Orc)
 			totalATP += 40.25F;
 		
+		// Grim Toll
+		if (gear.contains(40256)>0)
+			mod.registerArpProc(612, 10F/48F);
+		
 		// Tears of Bitter Anguish
-		if (gear.contains(43573)>0) {
+		if (gear.contains(43573)>0)
 			mod.registerHasteProc(410, 10F/56F);
-		}
 		
 		// Darkmoon Card: Greatness
 		if (gear.contains(44253)>0) {
@@ -328,7 +331,7 @@ public abstract class Calculations {
 		
 		// Needle-Encrusted Scorpion
 		if (gear.contains(50198)>0) {
-			mod.registerArpProc(678, 10F/54F);
+			mod.registerArpProc(678, 10F/57F);
 		}
 		
 		// Whispering Fanged Skull

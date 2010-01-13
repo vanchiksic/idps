@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+  <item id="40256">
+    <name><![CDATA[Grim Toll]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <hit>83</hit>
+    </attributes>
+    <lvl>213</lvl>
+    <icon>inv_trinket_naxxramas04</icon>
+  </item>
   <item id="40403">
     <name><![CDATA[Drape of the Deadly Foe]]></name>
     <slot>Back</slot>
@@ -233,6 +242,26 @@
     <lvl>226</lvl>
     <tag>algalon-10</tag>
     <icon>spell_shadow_seedofdestruction</icon>
+  </item>
+  <item id="46095">
+    <name><![CDATA[Soul-Devouring Cinch]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>85</agi>
+      <atp>114</atp>
+      <exp>56</exp>
+      <cri>53</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <atp>12</atp>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <tag>yoggsaron-10-heroic</tag>
+    <icon>inv_belt_37c</icon>
   </item>
   <item id="46958">
     <name><![CDATA[Steel Bladebreaker]]></name>
