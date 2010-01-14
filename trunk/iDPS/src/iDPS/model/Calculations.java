@@ -541,22 +541,25 @@ public abstract class Calculations {
 			dpsMH += ssDps;
 		}
 		if (gear.containsAny(50351,50706)) {
-			// I assume 50% per hit to get one anger mote
-			float ssDmg, pcMh, pcOh, ssPps, ssDps;
-			ssDmg  = gear.getWeapon1().getAverageDmg(totalATP)/2F;
-			//pcMh = 10/60F*gear.getWeapon1().getSpeed()/8F;
-			//pcOh = 10/60F*gear.getWeapon2().getSpeed()/8F;
-			pcMh = 0.5F/8F; pcOh = 0.5F/8F;
+			float ppsMH, ppsOH, moteFactor, dmgMH, dmgOH;
 			if (gear.containsAny(50706))
-				pcMh = 0.5F/7F; pcOh = 0.5F/7F;
-			ssPps  = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts())*pcMh;
-			ssPps += gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*pcOh;
-			ssPps += mhSPS * (pcMh);
-			ssPps += ohSPS * (pcOh);
-			mhSPS += ssPps * (htMH.getContacts());
-			ssDps  = ssDmg * ssPps;
-			ssDps *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
-			dpsMH += ssDps;
+				moteFactor = 1/7F;
+			else
+				moteFactor = 1/8F;
+			//System.out.println(">>MF: "+moteFactor);
+			ppsMH = (gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts()) + mhSPS)*0.5F*moteFactor;
+			ppsOH = (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts()) + ohSPS)*0.5F*moteFactor;
+			//System.out.println(">>Procs: MH: "+ppsMH+ " OH: "+ppsOH);
+			mhSPS += ppsMH;
+			ohSPS += ppsOH;
+			dmgMH = gear.getWeapon1().getAverageDmg(totalATP)/2F;
+			dmgMH = mod.getHtMHS().getHit()*dmgMH + mod.getHtMHS().getCrit()*dmgMH*mod.getPhysCritMult();
+			dmgOH = gear.getWeapon2().getAverageDmg(totalATP)/2F;
+			dmgOH = mod.getHtOHS().getHit()*dmgOH + mod.getHtOHS().getCrit()*dmgOH*mod.getPhysCritMult();
+			//System.out.println(">>Dmg: MH: "+dmgMH+ " OH: "+dmgOH);
+			//System.out.println(">>DPS added: "+(ppsMH*dmgMH+ppsOH*dmgOH));
+			dpsMH += ppsMH * dmgMH;
+			dpsOH += ppsMH * dmgOH;
 		}
 		// Global Mods
 		dpsMH *= 1.04F * talents.getHfb() * 1.03F * 1.04F;
