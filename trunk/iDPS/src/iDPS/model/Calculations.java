@@ -490,6 +490,15 @@ public abstract class Calculations {
 	private float combatPotencyRegen() {
 		float pps;
 		pps = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100);
+		// OH Hits from Tiny Abom
+		if (gear.containsAny(50351,50706)) {
+			float moteFactor;
+			if (gear.containsAny(50706))
+				moteFactor = 1/7F;
+			else
+				moteFactor = 1/8F;
+			pps += (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(mod.getHtOH().getContacts()) + ohSPS)*0.5F*moteFactor;
+		}
 		pps *= (mod.getHtOH().getContacts());
 		pps *= 0.2F;
 		return pps*((float) talents.getCombatPotency());
