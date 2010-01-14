@@ -64,14 +64,14 @@ public abstract class Calculations {
 		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==3789) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
-			uptime = gear.getWeapon1().getZerkUptime(attacksPerSec);
+			uptime = gear.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
 			totalATP += uptime * 400;
 		}
 		
 		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==3789) {
 			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
-			uptime = gear.getWeapon2().getZerkUptime(attacksPerSec);
+			uptime = gear.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
 			totalATP += uptime * 400;
 		}
 	}
@@ -200,12 +200,12 @@ public abstract class Calculations {
 		if (gear.isEnchanted(16) && gear.getEnchant(16).getId()==2673) {
 			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
-			uptimeMH = gear.getWeapon1().getZerkUptime(attacksPerSec);
+			uptimeMH = gear.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
 		}
 		if (gear.isEnchanted(17) && gear.getEnchant(17).getId()==2673) {
 			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
-			uptimeOH = gear.getWeapon2().getZerkUptime(attacksPerSec);
+			uptimeOH = gear.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
 		}
 		if ((uptimeMH+uptimeOH)>0) {
 		// mongoose ~73 cri & 132 ap
@@ -324,8 +324,13 @@ public abstract class Calculations {
 		}
 		
 		// Black Bruise
-		if (gear.containsAny(50035)) {
-			bbIncrease = 0.055F;
+		if (gear.containsAny(50035,50692)) {
+			float bbUptime = calcDWPPMUptime(1, 10);
+			//System.out.println("BB Uptime: "+bbUptime);
+			if(gear.containsAny(50692))
+				bbIncrease = bbUptime*0.10F;
+			else
+				bbIncrease =bbUptime*0.09F;
 		} else
 			bbIncrease = 0;
 		
@@ -379,33 +384,52 @@ public abstract class Calculations {
 		}
 	}
 	
+	protected float calcDWPPMUptime(float ppm, float buffLen) {
+		float apsMH, apsOH, utMH, utOH, ut;
+		
+		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		apsMH += mhSPS;
+		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		apsOH += ohSPS;
+		
+		utMH = gear.getWeapon1().getPPMUptime(ppm, buffLen, apsMH);
+		utOH = gear.getWeapon1().getPPMUptime(ppm, buffLen, apsOH);
+		ut = 1-((1-utMH)*(1-utOH));
+		
+		return ut;
+	}
+	
+	protected float calcDWUptime(float pProc, float buffLen) {
+		float apsMH, apsOH, utMH, utOH, ut;
+		
+		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		apsMH += mhSPS;
+		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		apsOH += ohSPS;
+		
+		utMH = gear.getWeapon1().getUptime(0.04F, buffLen, apsMH);
+		utOH = gear.getWeapon1().getUptime(0.04F, buffLen, apsOH);
+		ut = 1-((1-utMH)*(1-utOH));
+		
+		return ut;
+	}
+	
 	protected float calcHeartpierceRegen() {
 		float regen = 0;
-		
 		float apsMH, apsOH, pp2s;
-		calcInstantPoisonDPS();
 		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
-		apsMH += mhSPS + ppsIP1 + ppsIP2;
+		apsMH += mhSPS;
 		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
-		apsOH += ohSPS + ppsIP2;
+		apsOH += ohSPS;
 		pp2s = gear.getWeapon1().getPPMUptime(1, 2, apsMH);
 		pp2s += gear.getWeapon2().getPPMUptime(1, 2, apsOH);
 		pp2s = Math.min(pp2s, 1);
-		//System.out.println("  PP2S: "+pp2s);
 		if (gear.containsAny(49982)) {
-			float utMH = gear.getWeapon1().getPPMUptime(1, 10, apsMH);
-			float utOH = gear.getWeapon1().getPPMUptime(1, 10, apsOH);
-			float uptime = 1-((1-utMH)*(1-utOH));
-			//System.out.println("  Uptime Normal: "+uptime);
-			uptime = Math.min(uptime, 1);
+			float uptime = calcDWPPMUptime(1, 10);
 			regen += uptime*2*(1-pp2s);
 		}
 		if (gear.containsAny(50641)) {
-			float utMH = gear.getWeapon1().getPPMUptime(1, 12, apsMH);
-			float utOH = gear.getWeapon1().getPPMUptime(1, 12, apsOH);
-			float uptime = 1-((1-utMH)*(1-utOH));
-			//System.out.println("  Uptime Heroic: "+uptime);
-			uptime = Math.min(uptime, 1);
+			float uptime = calcDWPPMUptime(1, 12);
 			regen += uptime*2*(1-pp2s);
 		}
 		

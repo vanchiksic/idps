@@ -76,7 +76,7 @@
       </bonus>
     </sockets>
     <lvl>239</lvl>
-    <tag>hodir-25-hard</tag>
+    <tag>hodir-25-heroic</tag>
     <icon>inv_misc_cape_05</icon>
   </item>
   <item id="45517">
@@ -95,7 +95,7 @@
       </bonus>
     </sockets>
     <lvl>239</lvl>
-    <tag>generalvezax-25-hard</tag>
+    <tag>generalvezax-25-heroic</tag>
     <icon>inv_jewelry_necklace_45</icon>
   </item>
   <item id="45522">
@@ -211,7 +211,7 @@
       <cri>102</cri>
     </attributes>
     <lvl>226</lvl>
-    <tag>thorim-10-hard</tag>
+    <tag>thorim-10-heroic</tag>
     <icon>inv_misc_rune_11</icon>
   </item>
   <item id="46032">
@@ -299,7 +299,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>northrendbeasts-25-hard</tag>
+    <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
@@ -477,7 +477,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>jaraxxus-25-hard</tag>
+    <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
     <icon>inv_axe_105</icon>
   </item>
@@ -786,7 +786,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>anubarak-25-hard</tag>
+    <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
     <icon>inv_axe_105</icon>
   </item>
@@ -1072,7 +1072,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>northrendbeasts-25-hard</tag>
+    <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
@@ -1092,7 +1092,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>northrendbeasts-25-hard</tag>
+    <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_misc_cape_18</icon>
   </item>
@@ -1114,7 +1114,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>northrendbeasts-25-hard</tag>
+    <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
@@ -1137,7 +1137,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>jaraxxus-25-hard</tag>
+    <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_axe_104</icon>
   </item>
@@ -1160,7 +1160,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>jaraxxus-25-hard</tag>
+    <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_weapon_crossbow_35</icon>
   </item>
@@ -1182,7 +1182,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>jaraxxus-25-hard</tag>
+    <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
@@ -1202,7 +1202,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>jaraxxus-25-hard</tag>
+    <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_jewelry_necklace_34</icon>
   </item>
@@ -1222,7 +1222,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>factionchampions-25-hard</tag>
+    <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_jewelry_ring_65</icon>
   </item>
@@ -1243,7 +1243,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>factionchampions-25-hard</tag>
+    <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_boots_leather_04a</icon>
   </item>
@@ -1264,7 +1264,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>twinvalkyrs-25-hard</tag>
+    <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_belt_38b</icon>
   </item>
@@ -1287,7 +1287,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>twinvalkyrs-25-hard</tag>
+    <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
@@ -1298,7 +1298,7 @@
       <atp>288</atp>
     </attributes>
     <lvl>258</lvl>
-    <tag>twinvalkyrs-25-hard</tag>
+    <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
@@ -1319,7 +1319,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>anubarak-25-hard</tag>
+    <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_bracer_36a</icon>
   </item>
@@ -1342,7 +1342,7 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
-    <tag>anubarak-25-hard</tag>
+    <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
     <icon>inv_axe_104</icon>
   </item>
@@ -4455,7 +4455,7 @@
       <bonus />
     </sockets>
     <lvl>277</lvl>
-    <tag>morrowgar-25-heroic</tag>
+    <tag>marrowgar-25-heroic</tag>
     <icon>inv_jewelry_ring_83</icon>
   </item>
   <item id="50607">
@@ -4724,6 +4724,23 @@
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
     <icon>item_icecrownringc</icon>
+  </item>
+  <item id="50692">
+    <name><![CDATA[Black Bruise]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>250.6</dps>
+    <attributes>
+      <atp>72</atp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <lvl>277</lvl>
+    <tag>festergut-25-heroic</tag>
+    <icon>inv_weapon_hand_33</icon>
   </item>
   <item id="50697">
     <name><![CDATA[Gangrenous Leggings]]></name>
@@ -5661,7 +5678,7 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>rotface-10-hard</tag>
+    <tag>rotface-10-heroic</tag>
     <icon>inv_weapon_hand_34</icon>
   </item>
   <item id="51880">
@@ -5895,7 +5912,7 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>morrowgar-10-heroic</tag>
+    <tag>marrowgar-10-heroic</tag>
     <icon>inv_axe_113</icon>
   </item>
 </items>

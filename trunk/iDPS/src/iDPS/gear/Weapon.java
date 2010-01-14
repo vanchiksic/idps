@@ -57,13 +57,13 @@ public class Weapon extends Item {
 		return 1/speed*(1+haste);
 	}
 	
-	public float getZerkUptime(float attacksPerSec) {
-		return getPPMUptime(1F, 15F, attacksPerSec);
-	}
-	
 	public float getPPMUptime(float ppm, float procLength, float attacksPerSec) {
 		float procChance = Math.min((speed/60)*ppm,1);
-		return (float) (1-Math.pow((1-procChance), (procLength*attacksPerSec)));
+		return getUptime(procChance, procLength, attacksPerSec);
+	}
+	
+	public float getUptime(float pProc, float procLength, float attacksPerSec) {
+		return (float) (1-Math.pow((1-pProc), (procLength*attacksPerSec)));
 	}
 
 	public float getDps() {
