@@ -3547,6 +3547,19 @@
     <tag>onyxia</tag>
     <icon>inv_jewelry_necklace_09</icon>
   </item>
+  <item id="49792">
+    <name><![CDATA[Accursed Crawling Cape]]></name>
+    <slot>Back</slot>
+    <attributes>
+      <agi>59</agi>
+      <atp>85</atp>
+      <hit>41</hit>
+      <arp>37</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>forgeofsouls</tag>
+    <icon>inv_misc_cape_22</icon>
+  </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
     <slot>Feet</slot>
