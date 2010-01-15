@@ -210,12 +210,12 @@ public abstract class Calculations {
 		if ((uptimeMH+uptimeOH)>0) {
 		// mongoose ~73 cri & 132 ap
 			float uptimeD = uptimeMH * uptimeOH;
-			float uptimeS = uptimeMH+uptimeOH-uptimeD;
+			float uptimeS = (1-(1-uptimeMH)*(1-uptimeOH))-uptimeD;
 			mod.registerPhysCritProc(146, uptimeD);
-			mod.registerStaticHasteProc(0.04F, uptimeD);
-			totalATP += 264*uptimeD;
 			mod.registerPhysCritProc(73, uptimeS);
-			mod.registerStaticHasteProc(0.02F, uptimeS);
+			mod.registerStaticHasteProc(0.02F, uptimeMH);
+			mod.registerStaticHasteProc(0.02F, uptimeOH);
+			totalATP += 264*uptimeD;
 			totalATP += 132*uptimeS;
 		}
 	}
@@ -325,7 +325,7 @@ public abstract class Calculations {
 		
 		// Black Bruise
 		if (gear.containsAny(50035,50692)) {
-			float bbUptime = calcDWPPMUptime(1, 10);
+			float bbUptime = calcDWPPMUptime(0.6F, 10);
 			//System.out.println("BB Uptime: "+bbUptime);
 			if(gear.containsAny(50692))
 				bbIncrease = bbUptime*0.10F;
@@ -423,7 +423,6 @@ public abstract class Calculations {
 		apsOH += ohSPS;
 		pp2s = gear.getWeapon1().getPPMUptime(1, 2, apsMH);
 		pp2s += gear.getWeapon2().getPPMUptime(1, 2, apsOH);
-		pp2s = Math.min(pp2s, 1);
 		if (gear.containsAny(49982)) {
 			float uptime = calcDWPPMUptime(1, 10);
 			regen += uptime*2*(1-pp2s);
