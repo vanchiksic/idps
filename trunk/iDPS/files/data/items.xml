@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-  <item id="50315">
-    <tag>icc5-heroic</tag>
-  </item>
-  <item id="45870">
-    <tag>xt002deconstructor-10-heroic</tag>
-  </item>
-  <item id="51783">
-    <tag>sindragosa-10</tag>
-  </item>
-  <item id="51820">
-    <tag>sindragosa-10-heroic</tag>
-  </item>
   <item id="40256">
     <name><![CDATA[Grim Toll]]></name>
     <slot>Trinket</slot>
@@ -216,6 +204,27 @@
     <tag>emblems-conquest</tag>
     <icon>inv_pants_mail_25</icon>
   </item>
+  <item id="45870">
+    <name><![CDATA[Magnetized Projectile Emitter]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>187.1</dps>
+    <attributes>
+      <agi>29</agi>
+      <atp>66</atp>
+      <hit>27</hit>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>8</atp>
+      </bonus>
+    </sockets>
+    <lvl>232</lvl>
+    <tag>xt002deconstructor-10-heroic</tag>
+    <icon>inv_weapon_rifle_33</icon>
+  </item>
   <item id="45931">
     <name><![CDATA[Mjolnir Runestone]]></name>
     <slot>Trinket</slot>
@@ -261,8 +270,8 @@
     <attributes>
       <agi>85</agi>
       <atp>114</atp>
-      <exp>56</exp>
       <cri>53</cri>
+      <exp>56</exp>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3772,7 +3781,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus/>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-25</tag>
@@ -3854,7 +3865,9 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>professorputricide-25</tag>
@@ -4213,6 +4226,22 @@
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
     <icon>inv_boots_leather_8</icon>
+  </item>
+  <item id="50315">
+    <name><![CDATA[Seven-Fingered Claws]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
+    <attributes>
+      <agi>52</agi>
+      <atp>80</atp>
+      <hit>34</hit>
+      <cri>25</cri>
+    </attributes>
+    <lvl>232</lvl>
+    <tag>icc5-heroic</tag>
+    <icon>inv_weapon_hand_04</icon>
   </item>
   <item id="50319">
     <name><![CDATA[Unsharpened Ice Razor]]></name>
@@ -5124,7 +5153,7 @@
       <hst>44</hst>
       <arp>36</arp>
     </attributes>
-    <lvl>264</lvl>
+    <lvl>251</lvl>
     <tag>rotface-10</tag>
     <icon>inv_weapon_hand_34</icon>
   </item>
@@ -5156,7 +5185,9 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus />
+      <bonus>
+        <arp>8</arp>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>professorputricide-10</tag>
@@ -5498,6 +5529,40 @@
     <lvl>251</lvl>
     <tag>sindragosa-10</tag>
     <icon>inv_jewelry_amulet_06</icon>
+  </item>
+  <item id="51783">
+    <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>80</agi>
+      <atp>98</atp>
+      <cri>53</cri>
+      <hst>45</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>251</lvl>
+    <tag>sindragosa-10</tag>
+    <icon>inv_bracer_41</icon>
+  </item>
+  <item id="51820">
+    <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>90</agi>
+      <atp>113</atp>
+      <cri>60</cri>
+      <hst>52</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>264</lvl>
+    <tag>sindragosa-10-heroic</tag>
+    <icon>inv_bracer_41</icon>
   </item>
   <item id="51822">
     <name><![CDATA[Rimetooth Pendant]]></name>
