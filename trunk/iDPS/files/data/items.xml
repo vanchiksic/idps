@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+  <item id="50315">
+    <tag>icc5-heroic</tag>
+  </item>
+  <item id="45870">
+    <tag>xt002deconstructor-10-heroic</tag>
+  </item>
+  <item id="51783">
+    <tag>sindragosa-10</tag>
+  </item>
+  <item id="51820">
+    <tag>sindragosa-10-heroic</tag>
+  </item>
   <item id="40256">
     <name><![CDATA[Grim Toll]]></name>
     <slot>Trinket</slot>

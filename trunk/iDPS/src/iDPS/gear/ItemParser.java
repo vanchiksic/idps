@@ -191,7 +191,7 @@ public class ItemParser {
 		parser.reset();
 		NodeFilter nf = new AndFilter(
 					new TagNameFilter("img"),
-					new HasAttributeFilter("class", "wsicon")
+					new HasAttributeFilter("class", "wicon")
 					);
 		TagNode n = (TagNode) parser.extractAllNodesThatMatch(nf).elementAt(0);
 		item.setIcon(n.getAttribute("alt"));
