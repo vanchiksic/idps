@@ -43,8 +43,8 @@ Instant Poison in your slow weapon, Deadly in the fast one. If they have the sam
 
 == What do the talent specs stand for? ==
 
-MutilateRS: http://talent.mmo-champion.com/?rogue#34eJefKdIMH24,aYN,11159
-MutilateLR: http://talent.mmo-champion.com/?rogue#3hujfzr17Mx_V,aYN,11159
-CombatHnS: http://talent.mmo-champion.com/?rogue#l0cFDKbq2ucC1K,bJN,11159
-CombatCQC: http://talent.mmo-champion.com/?rogue#l0cFDKj6IhTk3K,bJN,11159
-CombatMace: http://talent.mmo-champion.com/?rogue#l0cFD2c7BJhfb_,bJN,11159
+ *  MutilateRS: [http://talent.mmo-champion.com/?rogue#34eJefKdIMH24,aYN,11159]
+ *  MutilateLR: [http://talent.mmo-champion.com/?rogue#3hujfzr17Mx_V,aYN,11159]
+ *  CombatHnS: [http://talent.mmo-champion.com/?rogue#l0cFDKbq2ucC1K,bJN,11159]
+ *  CombatCQC: [http://talent.mmo-champion.com/?rogue#l0cFDKj6IhTk3K,bJN,11159]
+ *  CombatMace: [http://talent.mmo-champion.com/?rogue#l0cFD2c7BJhfb_,bJN,11159]
