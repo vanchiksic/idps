@@ -1,6 +1,21 @@
 #labels Featured
 = FAQ =
 
+== What do i need to run this application? ==
+
+You need to have the Java Runtime Environment installed (JRE). You can download it at http://www.java.com/.
+
+
+== How do i start it? ==
+
+Usually doubleclicking is enough. If it's not, you maybe do not have Java installed properly.
+
+
+== I can not get it to start ==
+
+Start it from he command line to see what error messages you are getting. Open the command prompt/console and change directory to the folder where the iDPS jar is located. Then type "java -jar iDPSvXrX.jar" (fill in the proper version numbers). Then open a ticket here with a report & the error message you are getting.
+
+
 == My item X is missing ==
 
 I generally only added items with item level 232+. Only exceptions are very common/popular/easy to obtain items like DMC:G, Mjolnir Runstone, Badge Items etc.
@@ -19,3 +34,17 @@ Right click them.
 == My profession specific Enchant/Gem is missing ==
 
 Enable that profession in the menu bar.
+
+
+== My profession specific Enchant/Gem is missing ==
+
+Instant Poison in your slow weapon, Deadly in the fast one. If they have the same speed, Deadly is used in the Main Hand.
+
+
+== What do the talent specs stand for? ==
+
+MutilateRS: http://talent.mmo-champion.com/?rogue#34eJefKdIMH24,aYN,11159
+MutilateLR: http://talent.mmo-champion.com/?rogue#3hujfzr17Mx_V,aYN,11159
+CombatHnS: http://talent.mmo-champion.com/?rogue#l0cFDKbq2ucC1K,bJN,11159
+CombatCQC: http://talent.mmo-champion.com/?rogue#l0cFDKj6IhTk3K,bJN,11159
+CombatMace: http://talent.mmo-champion.com/?rogue#l0cFD2c7BJhfb_,bJN,11159
