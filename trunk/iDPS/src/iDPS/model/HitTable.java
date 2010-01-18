@@ -4,7 +4,7 @@ import iDPS.Talents;
 
 public class HitTable {
 		
-	enum Type { White, Special }
+	enum Type { White, Special, Finish }
 	private int critExceeded;
 	private int hitExceeded;
 	// crit  = real crit chance with avg procs
@@ -32,6 +32,16 @@ public class HitTable {
 				this.hit0 = this.hit;
 				break;
 			case Special:
+				this.miss = Math.max((0.08F-hit),0);
+				this.dodge = Math.max((0.065F-exp),0);
+				this.glance = 0;
+				this.crit = Math.min((1-this.miss-this.dodge),(cri-0.048F));
+				this.crit0 = this.crit;
+				this.hit = 1-this.miss-this.dodge-this.crit;
+				this.hit0 = this.hit;
+				this.critCap = 1-this.miss-this.dodge;
+				break;
+			case Finish:
 				this.miss = Math.max((0.08F-hit),0);
 				this.dodge = Math.max((0.065F-exp),0);
 				if (talents.getSupriseattacks())

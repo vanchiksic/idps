@@ -53,7 +53,6 @@ public abstract class Calculations {
 		agi *= 1.1F;
 		str *= 1.1F;
 		atp += agi + str;
-		atp *= 1.1F;
 		
 		return atp;
 	}
@@ -92,7 +91,7 @@ public abstract class Calculations {
 	
 	protected float calcEnvenomDamage() {
 		float dmg = (215*avgCpFin + 0.09F*avgCpFin * totalATP)*(1+talents.getVilePoisons()+talents.getFindWeakness());
-		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtMHS().crit;
+		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
 		// Global Mods
 		dmg *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;
 		return dmg;
@@ -152,7 +151,7 @@ public abstract class Calculations {
 		if (avgCpFin > 4)
 			baseDmg = 1607*(5-avgCpFin)+1977*(avgCpFin-4);
 		float dmg = (baseDmg + 0.07F*avgCpFin * totalATP)*(1+0.2F+0.15F);
-		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtMHS().crit;
+		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
 		// Global Mods
 		dmg *= 1.04F * 1.03F;
 		
@@ -187,6 +186,7 @@ public abstract class Calculations {
 		//System.out.println("IP pps: "+procsPerSec);
 		// Damage
 		damage = (350+0.09F*totalATP) * (1+talents.getVilePoisons()) * 0.971875F;
+		//System.out.println("IP Proc dmg: "+damage);
 		damage += damage*(mod.getPoisonCritMult()-1)*(mod.getSpellCritPercent()/100F);
 		// Global Mods
 		damage *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;
@@ -476,7 +476,8 @@ public abstract class Calculations {
 
 		calcCycle();
 		
-		totalATP *= 1.1F;
+		totalATP *= 1.1F * (1+0.02F*talents.getSavageCombat());
+		//System.out.println("AP: "+totalATP);
 		
 		calcDPS();
 	}
@@ -490,8 +491,8 @@ public abstract class Calculations {
 		
 		// Talents
 		eRegen += talents.getVitality();
-		if (talents.getAr())
-			eRegen += 150F/180F;
+		//if (talents.getAr())
+		//	eRegen += 150F/180F;
 		if (talents.getCombatPotency()>0)
 			eRegen += combatPotencyRegen();
 		if (talents.getFocusedAttacks()>0)
@@ -507,6 +508,7 @@ public abstract class Calculations {
 		if (gear.containsAny(49982,50641))
 			eRegen += calcHeartpierceRegen();
 		
+		//System.out.println("total regen: "+eRegen);
 		return eRegen;
 	}
 	
@@ -524,7 +526,10 @@ public abstract class Calculations {
 		}
 		pps *= (mod.getHtOH().getContacts());
 		pps *= 0.2F;
-		return pps*((float) talents.getCombatPotency());
+		
+		float regen = pps*((float) talents.getCombatPotency());
+		//System.out.println("cpt regen: "+regen);
+		return regen;
 	}
 	
 	protected float calcWhiteCritsPerSec() {

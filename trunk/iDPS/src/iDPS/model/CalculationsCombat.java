@@ -73,16 +73,17 @@ public class CalculationsCombat extends Calculations {
 			+ 4*(c0ss4cp+c1ss4cp+c2ss4cp+c3ss4cp+c4ss4cp);
 		float ssPerFin = 4*(c4ss4cp+c4ss5cp) + 3*(c3ss4cp+c3ss5cp) + 2*(c2ss4cp+c2ss5cp) + (c1ss4cp+c1ss5cp);
 		
-		float eRegen = calcERegen();
-		
 		float eCostSS, eCostEvi;
-		eCostSS = 40 *(0.8F+0.2F/(mod.getHtSS().getContacts()));
+		eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()))-5;
+		//System.out.println("ss cost: "+eCostSS);
 		eCostEvi = 35/(mod.getHtMHS().getContacts());
 		eCostEvi -= avgCpFin*0.2F*25;
 		
+		float eRegen = calcERegen();
+		
 		float avgSndLength = (avgCpFin*3+6)*1.5F;
 		//System.out.println("SND Length: "+avgSndLength);
-		sndPerCycle = (ssPerFin*eCostSS+eCostEvi)/(avgSndLength*eRegen+10);
+		sndPerCycle = (ssPerFin*eCostSS+eCostEvi)/((avgSndLength-0.5F)*eRegen+10);
 		//System.out.println("SND per C: "+sndPerCycle);
 		
 		float eCostCycle, eCostFin, lengthCycle;
@@ -94,6 +95,14 @@ public class CalculationsCombat extends Calculations {
 		ssPerSec = ssPerFin/lengthCycle;
 		eviPerSec = (1-sndPerCycle)/lengthCycle;
 		rupPerSec = rupPerCycle/lengthCycle;
+		
+		float eTotalCostEvi = ssPerFin*eCostSS+eCostEvi;
+		if (talents.getAr()) {
+			float extraCycle = 150/eTotalCostEvi;
+			ssPerSec += extraCycle * ssPerFin / 180F;
+			eviPerSec += extraCycle / 180F;
+		}
+		//System.out.println("SS per sec: "+ssPerSec);
 		
 		mhSPS = (ssPerSec+eviPerSec+rupPerSec);
 		ohSPS = 0;

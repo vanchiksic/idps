@@ -18,7 +18,7 @@ public class Talents {
 	private Calculations.ModelType model;
 	
 	private int lethality, vilepoisons, improvedpoisons, hfb, murder, fa, fweakness;
-	private int cqc, hns, mace, lightref, ar, compot, bf, vitality, expertise, sattacks, potw, ks;
+	private int cqc, hns, mace, lightref, ar, compot, bf, vitality, expertise, sattacks, potw, savage, ks;
 	private int rstrikes, opportunity;
 	
 	public Talents() {
@@ -70,6 +70,7 @@ public class Talents {
 				sattacks = 1;
 				potw = 5;
 				ks = 1;
+				savage = 2;
 				rstrikes = 0;
 				break;
 			case CombatHnS:
@@ -85,6 +86,7 @@ public class Talents {
 				expertise = 2;
 				sattacks = 1;
 				potw = 5;
+				savage = 2;
 				ks = 1;
 				break;
 			case CombatMace:
@@ -101,6 +103,7 @@ public class Talents {
 				expertise = 2;
 				sattacks = 1;
 				potw = 5;
+				savage = 2;
 				ks = 1;
 				break;
 		}
@@ -268,6 +271,10 @@ public class Talents {
 
 	public int getCombatPotency() {
 		return compot*3;
+	}
+	
+	public int getSavageCombat() {
+		return savage;
 	}
 	
 }

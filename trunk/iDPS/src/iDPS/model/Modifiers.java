@@ -23,7 +23,7 @@ public class Modifiers {
 	// Spell Mods (m for magic)
 	private float mCri, mHit;
 	// Hit Tables
-	private HitTable htMH, htOH, htMHS, htOHS, htSS, htMut;
+	private HitTable htMH, htOH, htMHS, htOHS, htSS, htMut, htFin;
 	// Armor
 	private float modArmorMH, modArmorOH;
 	private int arpExceeded;
@@ -110,6 +110,7 @@ public class Modifiers {
 		}
 		htMH = new HitTable(HitTable.Type.White, talents, gHit, tmpCri, tmpExp);
 		htMHS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
+		htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
 		if (gear.getTier9()>=4)
 			tmpCri += 0.05F;
 		htSS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
@@ -179,6 +180,7 @@ public class Modifiers {
 		htOHS.registerCritProc(cri/cCRIT, uptime);
 		htSS.registerCritProc(cri/cCRIT, uptime);
 		htMut.registerCritProc(cri/cCRIT, uptime);
+		htFin.registerCritProc(cri/cCRIT, uptime);
 	}
 
 	public float getHastePercent() {
@@ -233,6 +235,10 @@ public class Modifiers {
 
 	public HitTable getHtMut() {
 		return htMut;
+	}
+	
+	public HitTable getHtFin() {
+		return htFin;
 	}
 
 	public float getModArmorMH() {
