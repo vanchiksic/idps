@@ -3,7 +3,7 @@
 
 == What do i need to run this application? ==
 
-You need to have the Java Runtime Environment installed (JRE). You can download it at http://www.java.com/.
+You need to have the Java Runtime Environment installed (JRE). You can download it at http://www.java.com/. You need Java 6 (aka 1.6) or later to run this application without problems.
 
 
 == How do i start it? ==
@@ -14,6 +14,11 @@ Usually doubleclicking is enough. If it's not, you maybe do not have Java instal
 == I can not get it to start ==
 
 Start it from he command line to see what error messages you are getting. Open the command prompt/console and change directory to the folder where the iDPS jar is located. Then type "java -jar iDPSvXrX.jar" (fill in the proper version numbers). Then open a ticket here with a report & the error message you are getting.
+
+
+== It doesn't seem to work properly ==
+
+You need Java RE 6. Download the latest Java RE if your version is outdated.
 
 
 == My item X is missing ==
