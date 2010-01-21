@@ -1,0 +1,14 @@
+#labels Featured
+== Java Download ==
+
+Generally Java should already be preinstalled on OSX, but it might be an outdated version. On OSX you download Java from Apple and not from the official Java website. On the latest versions of OSX you should be able to get Java Updates to JRE6 through the OS System update. Otherwise you can manually download it on Apple support.
+
+For 10.5 you can get an update to JRE6 here:
+http://support.apple.com/downloads/Java_for_Mac_OS_X_10_5_Update_1
+
+As far as i know Snow Leopard (10.6) has JRE6 already included so you should not have to do anything.
+
+
+== Switching preferred Java Version ==
+
+You need to set your preferred Java Version to JRE6. Run Applications -> Utilities and set the preferred Java version to Java SE 6.
