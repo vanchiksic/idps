@@ -159,8 +159,9 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		if (e.getSource() == iGearSave)
 			Gear.save();
 		else if (e.getSource() == iGearDup) {
-			Gear g = new Gear(Player.getInstance().getEquipped());
-			g.setName(g.getName()+" Copy");
+			Gear g = Player.getInstance().getEquipped().clone();
+			g.clearId();
+			g.setName(Player.getInstance().getEquipped().getName()+" Copy");
 			Gear.add(g);
 			createGearMenu();
 			revalidate();

@@ -144,7 +144,12 @@ public class Gear implements Comparable<Gear> {
 	}
 	
 	public Gear clone() {
-		return new Gear(this);
+		Gear g = new Gear(this);
+		return g;
+	}
+	
+	public void clearId() {
+		id = 0;
 	}
 	
 	public int compareTo(Gear o) {
