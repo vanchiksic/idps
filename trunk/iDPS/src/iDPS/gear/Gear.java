@@ -3,6 +3,8 @@ package iDPS.gear;
 import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Player;
+import iDPS.Talents;
+import iDPS.gui.MainFrame;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;
@@ -25,24 +27,26 @@ public class Gear implements Comparable<Gear> {
 	private Enchant[] enchants;
 	private Gem[][] gems;
 	private int id = 0;
-	private Item[] items;
+	private Armor[] items;
 	private String name;
 	
+	private Talents talents;
+		
 	private boolean[] socketBonus;
 	
-	private EnumMap<Item.Tier,Integer> tiers;
+	private EnumMap<Armor.Tier,Integer> tiers;
 	private HashMap<String, int[]> uniqueMap;
 	
 	public Gear() {
-		items = new Item[19];
+		items = new Armor[19];
 		gems = new Gem[19][3];
 		enchants = new Enchant[19];
 		socketBonus = new boolean[19];
 		attr = new Attributes();
 		containsMap = new HashMap<Integer,Integer>();
 		uniqueMap = new HashMap<String,int[]>();
-		tiers = new EnumMap<Item.Tier,Integer>(Item.Tier.class);
-		for (Item.Tier t: Item.Tier.values())
+		tiers = new EnumMap<Armor.Tier,Integer>(Armor.Tier.class);
+		for (Armor.Tier t: Armor.Tier.values())
 			tiers.put(t, 0);
 	}
 	
@@ -62,13 +66,15 @@ public class Gear implements Comparable<Gear> {
 			String s = eGear.getName();
 			if (s.equals("name"))
 				name = eGear.getText();
+			else if (s.equals("talents"))
+				talents = Talents.find(Integer.parseInt(element.getAttributeValue("id")));
 			else if (s.equals("items")) {
 				Iterator<Element> iter2 = eGear.getChildren().iterator();
 				while (iter2.hasNext()) {
 					Element eItem = iter2.next();
 					int iid = Integer.parseInt(eItem.getAttributeValue("id"));
 					int slot = Integer.parseInt(eItem.getAttributeValue("slot"));
-					Item item = Item.find(iid);
+					Armor item = Armor.find(iid);
 					if (item!=null)
 						setItem(slot, item);
 					Iterator<Element> iter3 = eItem.getChildren().iterator();
@@ -111,7 +117,7 @@ public class Gear implements Comparable<Gear> {
 			int[] vect = copy.uniqueMap.get(s).clone();
 			uniqueMap.put(s, vect);
 		}
-		tiers = new EnumMap<Item.Tier,Integer>(copy.tiers);
+		tiers = new EnumMap<Armor.Tier,Integer>(copy.tiers);
 	}
 	
 	public Gear(String name) {
@@ -264,7 +270,7 @@ public class Gear implements Comparable<Gear> {
 	public void gemBest(int slot) {
 		Calculations m = Calculations.createInstance();
 		Gear gear;
-		Item item = getItem(slot);
+		Armor item = getItem(slot);
 		if (!item.hasSockets())
 			return;
 		m.calcEP();
@@ -343,7 +349,7 @@ public class Gear implements Comparable<Gear> {
 		return id;
 	}
 	
-	public Item getItem(int slot) {
+	public Armor getItem(int slot) {
 		return items[slot];
 	}
 	
@@ -352,11 +358,11 @@ public class Gear implements Comparable<Gear> {
 	}
 	
 	public int getTier10() {
-		return tiers.get(Item.Tier.Tier10);
+		return tiers.get(Armor.Tier.Tier10);
 	}
 	
 	public int getTier9() {
-		return tiers.get(Item.Tier.Tier9);
+		return tiers.get(Armor.Tier.Tier9);
 	}
 	
 	public Weapon getWeapon1() {
@@ -408,7 +414,7 @@ public class Gear implements Comparable<Gear> {
 	}
 	
 	public void printItem(int slot) {
-		Item item = getItem(slot);
+		Armor item = getItem(slot);
 		if (item == null)
 			return;
 		System.out.println("Slot "+slot+": "+item);
@@ -434,7 +440,7 @@ public class Gear implements Comparable<Gear> {
 	}
 	
 	public void setGem(int slot, int index, Gem gem) {
-		Item item = getItem(slot);
+		Armor item = getItem(slot);
 		if (item ==  null)
 			return;
 		Socket socket = item.getSocket(index);
@@ -442,7 +448,7 @@ public class Gear implements Comparable<Gear> {
 			return;
 		Gem oldgem = getGem(slot, index);
 		if (oldgem != null) {
-			attr.sub(oldgem.getAttributes());
+			attr.sub(oldgem.getAttr());
 			if (socketBonus[slot])
 				attr.sub(item.getSocketBonus());
 			socketBonus[slot] = false;
@@ -452,7 +458,7 @@ public class Gear implements Comparable<Gear> {
 		if (gem != null) {
 			// Check if we can equip it
 			if (containsInc(gem)) {
-				attr.add(gem.getAttributes());
+				attr.add(gem.getAttr());
 				if (gem.isMatch(socket)) {
 					boolean bonus = true;
 					Socket s; Gem g;
@@ -478,11 +484,11 @@ public class Gear implements Comparable<Gear> {
 		}
 	}
 	
-	public void setItem(int slot, Item item) {
-		Item olditem = items[slot];
+	public void setItem(int slot, Armor item) {
+		Armor olditem = items[slot];
 		Gem[] oldgems = getGems(slot).clone();
 		if (olditem != null) {
-			attr.sub(olditem.getAttributes());
+			attr.sub(olditem.getAttr());
 			for (int index=0; index<=2; index++)
 				setGem(slot, index, null);
 			if (olditem.getTier() != null)
@@ -492,7 +498,7 @@ public class Gear implements Comparable<Gear> {
 		}
 		if (item != null) {
 			items[slot] = item;
-			attr.add(item.getAttributes());
+			attr.add(item.getAttr());
 			for (int index=0; index<=item.getMaxSocketIndex(); index++)
 				setGem(slot, index, oldgems[index]);
 			if (item.getTier() != null)
@@ -505,7 +511,7 @@ public class Gear implements Comparable<Gear> {
 		this.name = name;
 	}
 	
-	private void tierDec(Item.Tier t) {
+	private void tierDec(Armor.Tier t) {
 		int c = tiers.get(t);
 		if (c > 0) {
 			c--;
@@ -513,7 +519,7 @@ public class Gear implements Comparable<Gear> {
 		}
 	}
 	
-	private void tierInc(Item.Tier t) {
+	private void tierInc(Armor.Tier t) {
 		int c = tiers.get(t);
 		c++;
 		tiers.put(t, c);
@@ -540,17 +546,15 @@ public class Gear implements Comparable<Gear> {
 	}
 	
 	public static Gear find(int id) {
-		if (map == null)
-			Gear.load();
 		if (map.containsKey(id))
 			return map.get(id);
 		return null;
 	}
 	
 	public static ArrayList<Gear> getAll() {
-		if (map == null)
-			Gear.load();
-		return new ArrayList<Gear>(map.values());
+		if (map != null)
+			return new ArrayList<Gear>(map.values());
+		return new ArrayList<Gear>();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -562,22 +566,20 @@ public class Gear implements Comparable<Gear> {
 		int defGear = Integer.valueOf(gearconfigs.getAttributeValue("default"));
 		List<Element> l = gearconfigs.getChildren();
 		Iterator<Element> li = l.iterator();
-		//TreeSet itemIds = new TreeSet();
 		while (li.hasNext()) {
 			Element e = li.next();
 			Gear s = new Gear(e);
 			if (s.getId()>0) {
 				map.put(s.getId(), s);
-				//itemIds.addAll(s.getItemIds());
 				if (s.getId()==defGear)
-					Player.getInstance().equipGear(s);
+					Player.getInstance().setSetup(s);
 			}
 		}
+		
+		MainFrame.getInstance().getMyMenuBar().createGearMenu();
 	}
 
 	public static void remove(Gear g) {
-		if (map == null)
-			Gear.load();
 		map.remove(g.id);
 	}
 
@@ -588,7 +590,7 @@ public class Gear implements Comparable<Gear> {
 		root = document.getRootElement();
 		root.removeChild("gearconfigs");
 		gearconfigs = new Element("gearconfigs");
-		gearconfigs.setAttribute("default", Integer.toString(Player.getInstance().getEquipped().getId()));
+		gearconfigs.setAttribute("default", Integer.toString(Player.getInstance().getSetup().getId()));
 		root.getChildren().add(gearconfigs);
 		Iterator<Gear> i = map.values().iterator();
 		while (i.hasNext())
@@ -601,9 +603,17 @@ public class Gear implements Comparable<Gear> {
 		Element eSetup, eName, eItems, eItem, eGem, eEnchant, eEnchants;
 		eSetup = new Element("gear");
 		eSetup.setAttribute("id", gear.getId()+"");
+		
 		eName = new Element("name");
 		eName.setText(gear.getName());
 		eSetup.getChildren().add(eName);
+		
+		if (gear.getTalents() != null) {
+			eName = new Element("talents");
+			eName.setAttribute("id", gear.getTalents().getId()+"");
+			eSetup.getChildren().add(eName);
+		}
+		
 		eItems = new Element("items");
 		for (int i=0; i<=18; i++) {
 			if (gear.getItem(i)==null)
@@ -634,6 +644,14 @@ public class Gear implements Comparable<Gear> {
 		}
 		eSetup.getChildren().add(eEnchants);
 		root.getChildren().add(eSetup);
+	}
+
+	public Talents getTalents() {
+		return talents;
+	}
+
+	public void setTalents(Talents talents) {
+		this.talents = talents;
 	}
 
 }
