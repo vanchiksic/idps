@@ -1,18 +1,20 @@
 package iDPS;
 
+import iDPS.gui.MainFrame;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
-import org.jdom.Document;
-import org.jdom.Element;
+import java.util.HashMap;
 
 
 public class Talents {
 	
 	public enum Spec { None, MutilateRS, MutilateLR, CombatCQC, CombatHnS, CombatMace };
-	private static ArrayList<Talents> all;
+	
+	private static HashMap<Integer,Talents> map = null;
+	
+	private int id;
+	private String name;
 	
 	private Spec spec;
 	private Calculations.ModelType model;
@@ -28,9 +30,11 @@ public class Talents {
 	public Talents(Spec s) {
 		this();
 		spec = s;
+		name = s.name();
 		model = Calculations.ModelType.Combat;
 		switch (s) {
 			case MutilateRS:
+				id = 1;
 				model = Calculations.ModelType.Mutilate;
 				lethality = 5;
 				vilepoisons = 3;
@@ -44,6 +48,7 @@ public class Talents {
 				opportunity = 2;
 				break;
 			case MutilateLR:
+				id = 2;
 				model = Calculations.ModelType.Mutilate;
 				lethality = 5;
 				vilepoisons = 3;
@@ -57,6 +62,7 @@ public class Talents {
 				rstrikes = 2;
 				break;
 			case CombatCQC:
+				id = 3;
 				lethality = 5;
 				vilepoisons = 2;
 				improvedpoisons = 3;
@@ -74,6 +80,7 @@ public class Talents {
 				rstrikes = 0;
 				break;
 			case CombatHnS:
+				id = 4;
 				lethality = 5;
 				vilepoisons = 2;
 				improvedpoisons = 3;
@@ -90,6 +97,7 @@ public class Talents {
 				ks = 1;
 				break;
 			case CombatMace:
+				id = 5;
 				lethality = 5;
 				vilepoisons = 2;
 				improvedpoisons = 3;
@@ -175,39 +183,36 @@ public class Talents {
 	}
 
 	public String getName() {
-		return spec.toString();
+		return name;
 	}
 	
 	public String toString() {
-		return spec.name();
+		return name;
 	}
 	
-	public static Collection<Talents> getAll() {
-		if (all == null)
-			load();
-		return all;
+	public static ArrayList<Talents> getAll() {
+		if (map != null)
+			return new ArrayList<Talents>(map.values());
+		return new ArrayList<Talents>();
+	}
+	
+	public static Talents find(int id) {
+		if (map.containsKey(id))
+			return map.get(id);
+		return null;
 	}
 	
 	public static void load() {
-		all = new ArrayList<Talents>();
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		String defSpec = doc.getRootElement().getChild("talentspecs").getAttributeValue("default");
+		map = new HashMap<Integer,Talents>();
 		Talents t;
 		for (Spec s: Spec.values()) {
 			if (s == Spec.None)
 				continue;
 			t = new Talents(s);
-			if (s.toString().equals(defSpec))
-				Player.getInstance().setTalents(t);
-			all.add(t);
+			map.put(t.id, t);
 		}
-	}
-	
-	public static void save() {
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element tspecs = doc.getRootElement().getChild("talentspecs");
-		tspecs.setAttribute("default", Player.getInstance().getTalents().getName());
-		Persistency.saveXML(doc, Persistency.FileType.Settings);
+		
+		MainFrame.getInstance().getMyMenuBar().createTalentsMenu();
 	}
 
 	public Calculations.ModelType getModel() {
@@ -275,6 +280,10 @@ public class Talents {
 	
 	public int getSavageCombat() {
 		return savage;
+	}
+
+	public int getId() {
+		return id;
 	}
 	
 }

@@ -44,6 +44,15 @@
     <unique max="3">Jeweler's Gems</unique>
     <icon>inv_jewelcrafting_dragonseye03</icon>
   </gem>
+  <gem id="56084" profession="Jewelcrafting">
+    <name>Rigid Dragon's Eye</name>
+    <attributes>
+      <hit>34</hit>
+    </attributes>
+    <color>Yellow</color>
+    <unique max="3">Jeweler's Gems</unique>
+    <icon>inv_jewelcrafting_dragonseye03</icon>
+  </gem>
   <gem id="40112">
     <name>Delicate Cardinal Ruby</name>
     <attributes>

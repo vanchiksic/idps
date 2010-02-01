@@ -4,7 +4,7 @@ import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Player;
 import iDPS.Player.Profession;
-import iDPS.gear.Item.SlotType;
+import iDPS.gear.Armor.SlotType;
 
 import java.util.ArrayList;
 import java.util.Collection;

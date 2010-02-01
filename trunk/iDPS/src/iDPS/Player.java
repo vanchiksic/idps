@@ -7,7 +7,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import iDPS.gear.Gear;
-import iDPS.gear.Item.Faction;
+import iDPS.gear.Armor.Faction;
 
 
 public class Player {
@@ -19,20 +19,18 @@ public class Player {
 	
 	private Race race;
 	private Gear equipped;
-	private Talents talents;
 	private EnumMap<Profession,Boolean> professions;
 	
 	private Player() {		
 		equipped = new Gear();
-		talents = new Talents();
 		professions = new EnumMap<Profession, Boolean>(Profession.class);
 	}
 	
-	public void equipGear(Gear gear) {
+	public void setSetup(Gear gear) {
 		equipped = gear;
 	}
 	
-	public Gear getEquipped() {
+	public Gear getSetup() {
 		return equipped;
 	}
 	
@@ -46,14 +44,6 @@ public class Player {
 		return instance;
 	}
 
-	public Talents getTalents() {
-		return talents;
-	}
-
-	public void setTalents(Talents talents) {
-		this.talents = talents;
-	}
-
 	public Race getRace() {
 		return race;
 	}
@@ -64,7 +54,8 @@ public class Player {
 	
 	public Attributes getAttr() {
 		Attributes attr = new Attributes();
-		attr.add(race.getAttr());
+		if (race != null)
+			attr.add(race.getAttr());
 		if (hasProfession(Profession.Skinning))
 			attr.incCri(40F);
 		return attr;

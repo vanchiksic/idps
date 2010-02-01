@@ -1,25 +1,18 @@
 package iDPS.gui;
 
 import iDPS.Player;
-import iDPS.gear.Item;
+import iDPS.gear.Armor;
 import iDPS.gear.ItemComparison;
-import iDPS.gear.Item.SlotType;
+import iDPS.gear.Armor.SlotType;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.CropImageFilter;
-import java.awt.image.FilteredImageSource;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -38,8 +31,8 @@ public class SelectItemPanel extends JPanel {
 				SlotType.MainHand, SlotType.OffHand, SlotType.Ranged,
 		};
 		
-		ItemComparison ic = new ItemComparison(Player.getInstance().getEquipped(), slot, slotMap[slot]);
-		ArrayList<Item> comparedItems = ic.getComparedItems();
+		ItemComparison ic = new ItemComparison(Player.getInstance().getSetup(), slot, slotMap[slot]);
+		ArrayList<Armor> comparedItems = ic.getComparedItems();
 		
 		setLayout(new GridBagLayout());
 		
@@ -47,9 +40,9 @@ public class SelectItemPanel extends JPanel {
 		c.anchor = GridBagConstraints.NORTH;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		
-		Iterator<Item> iter = comparedItems.iterator();
+		Iterator<Armor> iter = comparedItems.iterator();
 		int j = 0;
-		Item item, curItem = Player.getInstance().getEquipped().getItem(slot);
+		Armor item, curItem = Player.getInstance().getSetup().getItem(slot);
 
 		JLabel label;
 		SelectItemButton button;
@@ -65,7 +58,7 @@ public class SelectItemPanel extends JPanel {
 			c.gridx = 0; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
 			add(button, c);
 			
-			JLabel jl = new JLabel(new InventoryIcon(item));
+			JLabel jl = new InventoryIcon(item);
 			jl.setToolTipText(item.getToolTip());
 			c.insets = new Insets(0, 0, 0, 7);
 			c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
@@ -116,10 +109,10 @@ public class SelectItemPanel extends JPanel {
 	
 	private class SelectItemButton extends JRadioButton implements ActionListener {
 		
-		private Item item;
+		private Armor item;
 		private int slot;
 		
-		public SelectItemButton(Item item, int slot) {
+		public SelectItemButton(Armor item, int slot) {
 			this.item = item;
 			this.slot = slot;
 			setFocusable(false);
@@ -129,32 +122,11 @@ public class SelectItemPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
 			Player p = Player.getInstance();
-			p.getEquipped().setItem(slot, item);
+			p.getSetup().setItem(slot, item);
 			MainFrame.getInstance().refreshItem(slot);
 			MainFrame.getInstance().showStats();
 		}
 
-	}
-	
-	private class InventoryIcon extends ImageIcon {
-		
-		public InventoryIcon(Item item) {
-			super();
-			Image image;
-			URL url = SelectItemPanel.class.getResource("/images/"+item.getIcon()+".png");
-			if (url == null)
-				url = InventoryButton.class.getResource("/images/inv_misc_questionmark.png");
-			try {
-				image = ImageIO.read(url);
-				image = createImage(new FilteredImageSource(image.getSource(),
-		        new CropImageFilter(5, 5, 54, 54)));
-				setImage(image);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
 	}
 
 }

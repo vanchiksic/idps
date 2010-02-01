@@ -1,6 +1,7 @@
 package iDPS;
 
-import iDPS.gear.Item.Faction;
+import iDPS.gear.Armor.Faction;
+import iDPS.gui.MainFrame;
 
 import java.util.ArrayList;
 
@@ -76,6 +77,8 @@ public class Race {
 			if (r.getName().equals(defRace))
 				Player.getInstance().setRace(r);
 		}
+		
+		MainFrame.getInstance().getMyMenuBar().createRacesMenu();
 	}
 	
 	public static void save() {
@@ -86,7 +89,9 @@ public class Race {
 	}
 	
 	public static ArrayList<Race> getAll() {
-		return all;
+		if (all != null)
+			return all;
+		return new ArrayList<Race>();
 	}
 
 	public String getName() {

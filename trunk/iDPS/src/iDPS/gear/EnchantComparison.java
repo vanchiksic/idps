@@ -1,7 +1,7 @@
 package iDPS.gear;
 
 
-import iDPS.gear.Item.SlotType;
+import iDPS.gear.Armor.SlotType;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;

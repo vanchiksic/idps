@@ -34,15 +34,13 @@ public class Persistency {
 				root = new Element("idps");
 				document = new Document(root);
 			}
-			boolean foundGear = false, foundTalents = false,
+			boolean foundGear = false,
 				foundRaces = false, foundProfessions = false;
 			Iterator<Element> iter = root.getChildren().iterator();
 			while (iter.hasNext()) {
 				elem = iter.next();
 				if (elem.getName().equals("gearconfigs"))
 					foundGear = true;
-				else if (elem.getName().equals("talentspecs"))
-					foundTalents = true;
 				else if (elem.getName().equals("races"))
 					foundRaces = true;
 				else if (elem.getName().equals("professions"))
@@ -50,7 +48,7 @@ public class Persistency {
 				else
 					iter.remove();
 			}
-			if (foundGear && foundTalents && foundRaces && foundProfessions)
+			if (foundGear && foundRaces && foundProfessions)
 				return;
 			if (!foundGear) {
 				Element gearconfigs = new Element("gearconfigs");
@@ -60,11 +58,6 @@ public class Persistency {
 				gear1.getChildren().add(new Element("name").setText("default"));
 				gearconfigs.getChildren().add(gear1);
 				root.getChildren().add(gearconfigs);
-			}
-			if (!foundTalents) {
-				Element talentspecs = new Element("talentspecs");
-				talentspecs.setAttribute("default", "MutilateRS");
-				root.getChildren().add(talentspecs);
 			}
 			if (!foundRaces) {
 				Element races = new Element("races");

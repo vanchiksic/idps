@@ -32,7 +32,7 @@ public class SelectEnchantPanel extends JPanel {
 		
 		int j = 0;
 		Enchant e, curEnchant;
-		Gear gear = Player.getInstance().getEquipped();
+		Gear gear = Player.getInstance().getSetup();
 		curEnchant = gear.getEnchant(slot);
 		ec = new EnchantComparison(gear, slot);
 		ArrayList<Enchant> comparedEnchants = ec.getComparedEnchants();
@@ -123,7 +123,7 @@ public class SelectEnchantPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
 			Player p = Player.getInstance();
-			p.getEquipped().setEnchant(slot, enchant);
+			p.getSetup().setEnchant(slot, enchant);
 			MainFrame.getInstance().refreshItem(slot);
 			MainFrame.getInstance().showStats();
 		}

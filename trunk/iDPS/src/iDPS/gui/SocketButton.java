@@ -29,14 +29,17 @@ public class SocketButton extends JButton implements ActionListener {
 		this.slot = slot;
 		this.index = index;
 		URL url = InventoryButton.class.getResource("/images/Socket_Meta.png");
+		Border b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1);
+		Border b2 = BorderFactory.createLineBorder(Color.GRAY, 2);
 		setIcon(new ImageIcon(url));
-		//setBorder(new EmptyBorder(2,2,2,2));
+		Border b = BorderFactory.createCompoundBorder(b1, b2);
+		setBorder(b);
 		setFocusable(false);
 		addActionListener(this);
 	}
 	
 	protected void updateColor() {
-		Gear gear = Player.getInstance().getEquipped();
+		Gear gear = Player.getInstance().getSetup();
 		Socket socket = gear.getItem(slot).getSocket(index);
 		if (socket == null)
 			return;

@@ -15,27 +15,19 @@ import iDPS.Player.Profession;
 import iDPS.gear.Socket.SocketType;
 
 
-public class Gem implements Comparable<Gem>, Rateable {
+public class Gem extends Item {
 	
 	public enum GemColor { Orange, Red, Yellow, Purple, Blue, Green, Prismatic, Meta };
 	
 	private static HashMap<Integer,Gem> map = null;
 	private static HashMap<Integer,Gem> fullmap = null;
 	
-	private int id;
 	private Profession profession;
-	private Attributes attr;
 	private GemColor color;
-	private float comparedDPS;
-	private String name;
-	private String icon;
-	private String unique_name;
-	private int unique_limit;
 	
 	@SuppressWarnings("unchecked")
 	private Gem(Element element) {
-		this();
-		id = Integer.parseInt(element.getAttributeValue("id"));
+		super(element);
 		
 		if (element.getAttribute("profession") != null)
 			profession = Profession.valueOf(element.getAttributeValue("profession"));
@@ -47,54 +39,23 @@ public class Gem implements Comparable<Gem>, Rateable {
 		while (i.hasNext()) {
 			Element e = i.next();
 			String s = e.getName();
-			if (s.equals("name"))
-				name = e.getText();
-			else if (s.equals("color"))
+			if (s.equals("color"))
 				color = GemColor.valueOf(e.getText());
-			else if (s.equals("icon"))
-				icon = e.getText();
-			else if (s.equals("attributes"))
-				attr = new Attributes(e);
-			else if (s.equals("unique")) {
-				unique_name = e.getText();
-				unique_limit = Integer.parseInt(e.getAttributeValue("max"));
-			}
 		}
 	}
 	
 	private Gem(int id, String name, Attributes attr, GemColor color) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.attr = attr;
+		this();
 		this.color = color;
 	}
 	
 	private Gem() {
-		id = 0;
-		attr = new Attributes();
+		super();
 		color = GemColor.Prismatic;
-		comparedDPS = 0;
-	}
-	
-	public Attributes getAttributes() {
-		return attr;
 	}
 	
 	public GemColor getColor() {
 		return color;
-	}
-
-	public float getComparedDPS() {
-		return comparedDPS;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public int getId() {
-		return id;
 	}
 	
 	public boolean isMatch(Socket s) {
@@ -112,29 +73,6 @@ public class Gem implements Comparable<Gem>, Rateable {
 			default:
 				return true;
 		}
-	}
-
-	public void setComparedDPS(float comparedDPS) {
-		this.comparedDPS = comparedDPS;
-	}
-	
-	public String toString() {
-		return name;
-	}
-	
-	public String getToolTip() {
-		String s = "<html><b>"+name+"</b>";
-		s += attr.getToolTip();
-		s += "</html>";
-		return s;
-	}
-	
-	public int compareTo(Gem o) {
-		if (comparedDPS > o.comparedDPS)
-			return -1;
-		else if (comparedDPS < o.comparedDPS)
-			return 1;
-		return 0;
 	}
 
 	public static Gem find(int id) {
@@ -172,20 +110,8 @@ public class Gem implements Comparable<Gem>, Rateable {
 		map = new HashMap<Integer,Gem>();
 		for (Gem g: fullmap.values()) {
 			if (g.profession == null || Player.getInstance().hasProfession(g.profession))
-				map.put(g.id, g);
+				map.put(g.getId(), g);
 		}
-	}
-
-	public String getUniqueName() {
-		return unique_name;
-	}
-
-	public int getUniqueLimit() {
-		return unique_limit;
-	}
-
-	public String getIcon() {
-		return icon;
 	}
 
 }

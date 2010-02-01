@@ -32,7 +32,7 @@ public class SelectGemPanel extends JPanel {
 		
 		int j = 0;
 		Gem gem, curGem;
-		Gear gear = Player.getInstance().getEquipped();
+		Gear gear = Player.getInstance().getSetup();
 		curGem = gear.getGem(slot,index);
 		gc = new GemComparison(gear, slot, index);
 		ArrayList<Gem> comparedGems = gc.getComparedGems();
@@ -49,36 +49,51 @@ public class SelectGemPanel extends JPanel {
 				button.setSelected(true);
 			c.anchor = GridBagConstraints.WEST;
 			c.insets = new Insets(0, 0, 0, 10);
-			c.gridx = 0; c.gridy = j; c.gridheight = 2; c.gridwidth = 1;
+			c.gridx = 0; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
 			add(button, c);
+			
+			JLabel jl = new InventoryIcon(gem);
+			jl.setToolTipText(gem.getToolTip());
+			c.insets = new Insets(0, 0, 0, 7);
+			c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
+			add(jl, c);
 			
 			label = new JLabel(gem.getName());
 			c.insets = new Insets(0, 0, 0, 0);
-			c.gridx = 1; c.gridy = j; c.gridheight = 1;
+			c.gridx = 2; c.gridy = j; c.gridheight = 1;
+			add(label, c);
+			
+			label = new JLabel(String.format("%.2f", gem.getComparedDPS()));
+			label.setHorizontalAlignment(JLabel.RIGHT);
+			c.gridx = 3; c.gridy = j;
+			add(label, c);
+			
+			label = new JLabel(gem.getAttr().toString());
+			c.gridx = 2; c.gridy = j+1;
 			add(label, c);
 			
 			if (curGem != null)
 				diff = gem.getComparedDPS() - curGem.getComparedDPS();
 			else
 				diff = 0;
-			label = new JLabel(String.format("%.2f (%+.2f)", gem.getComparedDPS(), diff));
+			label = new JLabel(String.format("%+.2f", diff));
 			label.setHorizontalAlignment(JLabel.RIGHT);
-			c.gridx = 2; c.gridy = j;
+			c.gridx = 3; c.gridy = j+1;
 			add(label, c);
 			
 			c.insets = new Insets(5, 0, 0, 0);
-			c.gridx = 1; c.gridy = j+1; c.gridwidth = 2;
+			c.gridx = 2; c.gridy = j+2; c.gridwidth = 2;
 			add(new RatingPanel(gem, gc.getMaxDPS()), c);
 			
 			if (iter.hasNext()) {
 				JSeparator sep = new JSeparator();
 				c.insets = new Insets(3, 0, 0, 0);
-				c.gridx = 0; c.gridy = j+2; c.gridwidth = 3;
+				c.gridx = 0; c.gridy = j+3; c.gridwidth = 3;
 				add(sep, c);
 				j += 1;
 			}
 			
-			j += 2;
+			j += 3;
 		}
 		setBorder(new EmptyBorder(new Insets(3,6,6,6)));
 
@@ -100,7 +115,7 @@ public class SelectGemPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
 			Player p = Player.getInstance();
-			p.getEquipped().setGem(slot, index, gem);
+			p.getSetup().setGem(slot, index, gem);
 			MainFrame.getInstance().showGem(gem, slot, index);
 			MainFrame.getInstance().showStats();
 		}

@@ -3,7 +3,7 @@ package iDPS.gui;
 import iDPS.Player;
 import iDPS.gear.Gear;
 import iDPS.gear.Gem;
-import iDPS.gear.Item;
+import iDPS.gear.Armor;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -45,11 +45,12 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		socketButtons = new SocketButton[3];
 		for (int i=0; i<=2; i++) {
 			socketButtons[i] = new SocketButton(slot,i);
-			socketButtons[i].setVisible(false);
+			socketButtons[i].setVisible(true);
 		}
-		Border b1 = BorderFactory.createEmptyBorder(2, 2, 2, 2);
-		Border b2 = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
-		Border b = BorderFactory.createCompoundBorder(b1, b2);
+		Border b, b1, b2;
+		b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1);
+		b2 = BorderFactory.createLineBorder(Color.GRAY, 2);
+		b = BorderFactory.createCompoundBorder(b1, b2);
 		setBorder(b);
 		setFocusable(false);
 		addActionListener(this);
@@ -58,12 +59,12 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 			setEnabled(false);
 	}
 	
-	public void changeToItem(Item item) {
-		Gem[] gems = Player.getInstance().getEquipped().getGems(slot);
+	public void changeToItem(Armor item) {
+		Gem[] gems = Player.getInstance().getSetup().getGems(slot);
 		changeToItem(item, gems);
 	}
 	
-	public void changeToItem(Item item, Gem[] gems) {
+	public void changeToItem(Armor item, Gem[] gems) {
 		for (SocketButton sb: socketButtons)
 			sb.setVisible(false);
 		Border b, b1, b2;
@@ -80,7 +81,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		if (item.getIcon() != null)
 			changeIcon(item.getIcon());
 		String s = item.getToolTip();
-		Gear g = Player.getInstance().getEquipped();
+		Gear g = Player.getInstance().getSetup();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
 			s += "<span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";
@@ -88,7 +89,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		}
 		setToolTipText(s);
 
-		if (Player.getInstance().getEquipped().isEnchanted(slot)) {
+		if (Player.getInstance().getSetup().isEnchanted(slot)) {
 			b2 = BorderFactory.createLineBorder(Color.GREEN, 2);
 			b = BorderFactory.createCompoundBorder(b1, b2);
 			setBorder(b);

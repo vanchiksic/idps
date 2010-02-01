@@ -31,7 +31,9 @@ public abstract class Calculations {
 	protected ModelType type;
 	
 	public Calculations() {
-		talents = Player.getInstance().getTalents();
+		talents = Player.getInstance().getSetup().getTalents();
+		if (talents == null)
+			talents = new Talents();
 	}
 	
 	private void reset() {
@@ -447,11 +449,11 @@ public abstract class Calculations {
 	}
 	
 	public void calculate() {
-		calculate(null, Player.getInstance().getEquipped());
+		calculate(null, Player.getInstance().getSetup());
 	}
 	
 	public void calculate(Attributes a) {
-		calculate(a, Player.getInstance().getEquipped());
+		calculate(a, Player.getInstance().getSetup());
 	}
 	
 	public void calculate(Gear g) {
@@ -654,7 +656,14 @@ public abstract class Calculations {
 	}
 
 	public static Calculations createInstance() {
-		ModelType m = Player.getInstance().getTalents().getModel();
+		Gear s = Player.getInstance().getSetup();
+		ModelType m;
+		if (s.getTalents() != null)
+			m = s.getTalents().getModel();
+		else {
+			System.err.println("Setup \""+s.getName()+"\" has no talents.");
+			m = Calculations.ModelType.Combat;
+		}
 		switch (m) {
 			default:
 			case Combat:

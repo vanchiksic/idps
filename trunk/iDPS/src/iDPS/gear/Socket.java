@@ -5,10 +5,10 @@ public class Socket {
 	public enum SocketType { Red, Blue, Yellow, Meta, Prismatic };
 	
 	private SocketType type;
-	private Item item;
+	private Armor item;
 	private int index;
 	
-	public Socket(Item item, int index, SocketType type) {
+	public Socket(Armor item, int index, SocketType type) {
 		this.item = item;
 		this.type = type;
 		this.index = index;
@@ -18,7 +18,7 @@ public class Socket {
 		return type;
 	}
 	
-	public Item getItem() {
+	public Armor getItem() {
 		return item;
 	}
 	

@@ -5221,7 +5221,9 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>princevalanar-10</tag>
@@ -5456,7 +5458,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+        <atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>queenlanathel-10</tag>
@@ -5562,6 +5566,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_bracer_41</icon>
   </item>
   <item id="51822">
@@ -5579,6 +5584,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_jewelry_amulet_06</icon>
   </item>
   <item id="51830">
@@ -5597,6 +5603,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valithria-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="51841">
@@ -5615,7 +5622,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>queenlanathel-10-heroic</tag>
+    <tag>lanathel-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51843">
@@ -5632,7 +5640,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>queenlanathel-10-heroic</tag>
+    <tag>lanathel-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_jewelry_ring_70</icon>
   </item>
   <item id="51845">
@@ -5652,7 +5661,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>queenlanathel-10-heroic</tag>
+    <tag>lanathel-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_weapon_rifle_39</icon>
   </item>
   <item id="51846">
@@ -5672,7 +5682,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>queenlanathel-10-heroic</tag>
+    <tag>lanathel-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51856">
@@ -5690,7 +5701,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>princevalanar-10-heroic</tag>
+    <tag>valanar-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_boots_leather_07</icon>
   </item>
   <item id="51858">
@@ -5711,6 +5723,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valanar-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_sword_151</icon>
   </item>
   <item id="51866">
@@ -5728,7 +5741,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
-    <tag>professorputricide-10-heroic</tag>
+    <tag>putricide-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="51868">
@@ -5749,6 +5763,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>putricide-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51876">
@@ -5769,6 +5784,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_weapon_hand_34</icon>
   </item>
   <item id="51880">
@@ -5789,6 +5805,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_throwingknife_01</icon>
   </item>
   <item id="51889">
@@ -5810,6 +5827,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51890">
@@ -5827,6 +5845,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_jewelry_ring_78</icon>
   </item>
   <item id="51893">
@@ -5846,6 +5865,8 @@
       <bonus />
     </sockets>
     <lvl>264</lvl>
+    <tag>festergut-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_mace_114</icon>
   </item>
   <item id="51900">
@@ -5865,6 +5886,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>saurfang-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="51904">
@@ -5885,6 +5907,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>saurfang-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_gauntlets_79</icon>
   </item>
   <item id="51916">
@@ -5907,6 +5930,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>gunship-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_axe_113</icon>
   </item>
   <item id="51923">
@@ -5928,6 +5952,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="51925">
@@ -5946,6 +5971,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_belt_61</icon>
   </item>
   <item id="51927">
@@ -5966,6 +5992,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_weapon_bow_55</icon>
   </item>
   <item id="51933">
@@ -5983,6 +6010,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="51938">
@@ -6003,6 +6031,7 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>
+    <filter>icc10h</filter>
     <icon>inv_axe_113</icon>
   </item>
 </items>

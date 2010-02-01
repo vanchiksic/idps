@@ -122,7 +122,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         String realm = (String)mRealms.getSelectedItem();
         String character = mCharacterName.getText();
         
-        Gear gear = player.getEquipped().clone();
+        Gear gear = player.getSetup().clone();
         gear.reset();
         
         try {
@@ -165,7 +165,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 gemIds.add(Integer.parseInt(element.getAttributeValue("gem2Id")));
                 int enchantId = Integer.parseInt(element.getAttributeValue("permanentenchant"));
                 
-                Item item = Item.find(id);
+                Armor item = Armor.find(id);
                 if (item != null) {
                     gear.setItem(slot, item);
                     
@@ -194,7 +194,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             JOptionPane.showMessageDialog(MainFrame.getInstance(), "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
             return;
         }
-        player.equipGear(gear);
+        player.setSetup(gear);
         MainFrame.getInstance().showGear();
         Gear.add(gear);
         MainFrame.getInstance().getMyMenuBar().createGearMenu();

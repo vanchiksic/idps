@@ -1,8 +1,8 @@
 package iDPS.gear;
 
 import iDPS.Attributes;
-import iDPS.gear.Item.Faction;
-import iDPS.gear.Item.SlotType;
+import iDPS.gear.Armor.Faction;
+import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Socket.SocketType;
 import iDPS.gear.Weapon.weaponType;
 
@@ -21,7 +21,7 @@ public class ItemParser {
 	public ItemParser() {
 	}
 	
-	public Item loadItem(int id) {
+	public Armor loadItem(int id) {
 		 try {
 			Parser parser = new Parser("http://db.mmo-champion.com/i/"+id+"/");
 			
@@ -37,11 +37,11 @@ public class ItemParser {
 					break;
 				}
 			}
-			Item item;
+			Armor item;
 			if (isWeapon)
 				item = new Weapon(id);
 			else
-				item = new Item(id);
+				item = new Armor(id);
 			//if (id >= 0 && id <= 0 && item.getFaction() != Faction.Alliance)
 			//	item.setFaction(Faction.Horde);
 			fetchAttributes(parser, item);
@@ -54,7 +54,7 @@ public class ItemParser {
 		}
 	}
 	
-	private void fetchAttributes(Parser parser, Item item) throws ParserException {
+	private void fetchAttributes(Parser parser, Armor item) throws ParserException {
 		NodeFilter nf;
 		Node root, n;
 		NodeList nl;
@@ -93,7 +93,7 @@ public class ItemParser {
 		p1 = Pattern.compile("^\\+(\\d+) (\\w+)$");
 		p2 = Pattern.compile("^Equip: (?:Improves|Increases) (?:your )?([\\w\\s]+) by (\\d+).$");
 		Matcher m1, m2;
-		Attributes attr = item.getAttributes();
+		Attributes attr = item.getAttr();
 		attr.clear();
 		while (iter.hasMoreNodes()) {
 			n = iter.nextNode();
@@ -187,7 +187,7 @@ public class ItemParser {
 		item.setSockets(sockets);
 	}
 	
-	private void fetchNameIcon(Parser parser, Item item) throws ParserException {
+	private void fetchNameIcon(Parser parser, Armor item) throws ParserException {
 		parser.reset();
 		NodeFilter nf = new AndFilter(
 					new TagNameFilter("img"),
@@ -198,7 +198,7 @@ public class ItemParser {
 		item.setName(Translate.decode(n.getParent().getNextSibling().getText().trim()));
 	}
 	
-	private void fetchTag(Parser parser, Item item) throws ParserException {
+	private void fetchTag(Parser parser, Armor item) throws ParserException {
 		parser.reset();
 		NodeFilter nf = new HasParentFilter(new AndFilter(
 					new TagNameFilter("a"),
@@ -215,20 +215,22 @@ public class ItemParser {
 	public static void main(String[] args) {
 		ItemParser ip = new ItemParser();
 		//Race.load();
-		Item.load();
-		Iterator<Item> iter = Item.getAll().iterator();
-		System.out.println(Item.getAll().size());
+		Armor.load();
+		Iterator<Armor> iter = Armor.getAll().iterator();
+		System.out.println(Armor.getAll().size());
 		while (iter.hasNext()) {
-			Item itemOrg = iter.next();
+			Armor itemOrg = iter.next();
 			System.out.println(itemOrg);
-			Item itemNew = ip.loadItem(itemOrg.getId());
+			Armor itemNew = ip.loadItem(itemOrg.getId());
 			if (itemOrg.getTag() != null)
 				itemNew.setTag(itemOrg.getTag());
 			if (itemOrg.getFaction() != Faction.Both)
 				itemNew.setFaction(itemOrg.getFaction());
-			Item.add(itemNew);
+			if (itemOrg.getFilter() != null)
+				itemNew.setFilter(itemOrg.getFilter());
+			Armor.add(itemNew);
 		}
-		Item.save();
+		Armor.save();
 	}
 
 }

@@ -18,7 +18,7 @@ import javax.swing.border.EtchedBorder;
 import iDPS.Player;
 import iDPS.gear.Gear;
 import iDPS.gear.Gem;
-import iDPS.gear.Item;
+import iDPS.gear.Armor;
 
 public class MainFrame extends JFrame {
 	
@@ -66,9 +66,9 @@ public class MainFrame extends JFrame {
 		
 		centerP = new CenterPanel();
 		
-		c.gridx = 2; c.gridy = 0; c.gridwidth = 9; c.gridheight = 21;
+		c.gridx = 2; c.gridy = 0; c.gridwidth = 9; c.gridheight = 20;
 		c.insets = new Insets(0,0,0,0);
-		c.anchor = GridBagConstraints.NORTH;
+		c.anchor = GridBagConstraints.CENTER;
 		invPane.add(centerP, c);
 		c.anchor = GridBagConstraints.FIRST_LINE_START;
 		c.gridwidth = 1;
@@ -77,7 +77,7 @@ public class MainFrame extends JFrame {
 		// Inv 8-15
 		for (int i=0;i<=21;i+=3) {
 			buttons[i/3+8] = new InventoryButton(i/3+8);
-			c.gridx = 12; c.gridy = i; c.gridheight = 3;
+			c.gridx = 12; c.gridy = i; c.gridwidth = 1; c.gridheight = 3;
 			invPane.add(buttons[i/3+8],c);
 			c.gridx = 11; c.gridheight = 1;
 			invPane.add(buttons[i/3+8].getSocketButton(0),c);
@@ -96,32 +96,35 @@ public class MainFrame extends JFrame {
 			else
 				c.insets = new Insets(0,0,0,10);
 			buttons[i/3+16] = new InventoryButton(i/3+16);
-			c.anchor = GridBagConstraints.LAST_LINE_START;
-			c.gridy = 20; c.gridx = 2+i; c.gridwidth = 1; c.gridheight = 1;
-			invPane.add(buttons[i/3+16].getSocketButton(0),c);
-			c.gridx = 2+i+1;
-			invPane.add(buttons[i/3+16].getSocketButton(1),c);
-			c.gridx = 2+i+2;
-			invPane.add(buttons[i/3+16].getSocketButton(2),c);
 			c.anchor = GridBagConstraints.FIRST_LINE_START;
 			c.gridy = 21; c.gridx = 2+i; c.gridwidth = 3; c.gridheight = 3;
 			invPane.add(buttons[i/3+16],c);
+			if (i == 0)
+				c.insets = new Insets(0,40,0,0);
+			else
+				c.insets = new Insets(0,0,0,0);
+			c.anchor = GridBagConstraints.LAST_LINE_START;
+			c.gridy = 20; c.gridx = 2+i; c.gridwidth = 1; c.gridheight = 1;
+			invPane.add(buttons[i/3+16].getSocketButton(0),c);
+			c.gridx = 2+i+1; c.insets = new Insets(0,0,0,0);
+			invPane.add(buttons[i/3+16].getSocketButton(1),c);
+			c.gridx = 2+i+2;
+			invPane.add(buttons[i/3+16].getSocketButton(2),c);
+
 		}
 		Border b1 = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
 		Border b2 = new EmptyBorder(new Insets(0,7,0,7));
 		Border b3 = new CompoundBorder(b1,b2);
 		invPane.setBorder(b3);
+		invPane.setPreferredSize(new Dimension(450,500));
 		add(invPane, BorderLayout.CENTER);
-		pack();
 		
 		sideScroll = new JScrollPane(new JPanel());
 		sideScroll.getVerticalScrollBar().setUnitIncrement(10);
-		Dimension d = invPane.getSize();
-		d.width = 430;
-		sideScroll.setPreferredSize(d);
+		sideScroll.setPreferredSize(new Dimension(430,500));
 		add(sideScroll, BorderLayout.LINE_END);
 		
-		showGear();
+		pack();
 		
     Dimension d1 = getToolkit().getScreenSize();
     Dimension d2 = getSize();
@@ -132,12 +135,12 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void refreshItem(int slot) {
-		Item item = Player.getInstance().getEquipped().getItem(slot);
-		Gem[] gems = Player.getInstance().getEquipped().getGems(slot);
+		Armor item = Player.getInstance().getSetup().getItem(slot);
+		Gem[] gems = Player.getInstance().getSetup().getGems(slot);
 		buttons[slot].changeToItem(item, gems);
 	}
 	
-	public void showItem(Item item, int slot) {
+	public void showItem(Armor item, int slot) {
 		buttons[slot].changeToItem(item);
 		centerP.showStats();
 		pack();
@@ -149,11 +152,10 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void showGear() {
-		Gear gear = Player.getInstance().getEquipped();
+		Gear gear = Player.getInstance().getSetup();
 		for (int i=0; i<=18; i++)
 			buttons[i].changeToItem(gear.getItem(i),gear.getGems(i));
 		centerP.showStats();
-		pack();
 	}
 	
 	public void showStats() {

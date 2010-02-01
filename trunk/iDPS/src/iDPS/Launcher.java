@@ -3,7 +3,7 @@ package iDPS;
 import iDPS.gear.Enchant;
 import iDPS.gear.Gear;
 import iDPS.gear.Gem;
-import iDPS.gear.Item;
+import iDPS.gear.Armor;
 import iDPS.gui.MainFrame;
 
 public class Launcher {
@@ -13,15 +13,23 @@ public class Launcher {
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "iDPS");
 		}
+		MainFrame.getInstance();
 		Persistency.createXML();
 		Race.load();
+		System.out.println("Races loaded.");
 		Player.getInstance().loadProfessions();
 		Talents.load();
-		Item.load();
+		System.out.println("Talents loaded.");
+		Armor.load();
+		System.out.println("Items loaded.");
 		Gem.load();
+		System.out.println("Gems loaded.");
 		Enchant.load();
+		System.out.println("Enchants loaded.");
 		Gear.load();
-		MainFrame.getInstance();
+		System.out.println("Gears loaded.");
+		MainFrame.getInstance().showGear();
+		MainFrame.getInstance().getMyMenuBar().checkSetup(Player.getInstance().getSetup());
 	}
 
 }

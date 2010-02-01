@@ -1,5 +1,6 @@
 package iDPS;
 
+import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -175,26 +176,84 @@ public class Attributes {
 	}
 	
 	public String getToolTip() {
-		String s = "<font face=\"Monaco\"><pre>";
+		String s = "<p>";
 		if (agi > 0)
-			s += String.format("%3s %5.0f%n", "AGI", agi);
-		if (atp > 0)
-			s += String.format("%3s %5.0f%n", "ATP", atp);
-		if (arp > 0)
-			s += String.format("%3s %5.0f%n", "ARP", arp);
-		if (cri > 0)
-			s += String.format("%3s %5.0f%n", "CRI", cri);
-		if (exp > 0)
-			s += String.format("%3s %5.0f%n", "EXP", exp);
-		if (hit > 0)
-			s += String.format("%3s %5.0f%n", "HIT", hit);
-		if (hst > 0)
-			s += String.format("%3s %5.0f%n", "HST", hst);
+			s += String.format("+%.0f Agility<br/>", agi);
 		if (str > 0)
-			s += String.format("%3s %5.0f", "STR", str);
-		s += "</pre></font>";
+			s += String.format("+%.0f Strength<br/>", str);
+		s += "</p><p style=\"color:#00FF00;\">";
+		if (atp > 0)
+			s += String.format("Equip: Increases attack power by %.0f<br/>", atp);
+		if (arp > 0)
+			s += String.format("Equip: Increases armor penetration rating by %.0f<br/>", arp);
+		if (cri > 0)
+			s += String.format("Equip: Increases critical strike rating by %.0f<br/>", cri);
+		if (exp > 0)
+			s += String.format("Equip: Increases expertise rating by %.0f<br/>", exp);
+		if (hit > 0)
+			s += String.format("Equip: Increases hit rating by %.0f<br/>", hit);
+		if (hst > 0)
+			s += String.format("Equip: Increases haste rating by %.0f<br/>", hst);
+		s += "</p>";
 		return s;
 	}
+	
+	public String getMinToolTip() {
+		String s = "<p>";
+		if (agi > 0)
+			s += String.format("+%.0f Agility<br/>", agi);
+		if (str > 0)
+			s += String.format("+%.0f Strength<br/>", str);
+		if (atp > 0)
+			s += String.format("+%.0f Attack Power<br/>", atp);
+		if (arp > 0)
+			s += String.format("+%.0f Armor Pentration<br/>", arp);
+		if (cri > 0)
+			s += String.format("+%.0f Crit<br/>", cri);
+		if (exp > 0)
+			s += String.format("+%.0f Expertise<br/>", exp);
+		if (hit > 0)
+			s += String.format("+%.0f Hit<br/>", hit);
+		if (hst > 0)
+			s += String.format("+%.0f Haste<br/>", hst);
+		s += "</p>";
+		return s;
+	}
+	
+	public String toString() {
+		ArrayList<String> s = new ArrayList<String>();
+		if (agi > 0)
+			s.add(String.format("%.0f Agi", agi));
+		if (str > 0)
+			s.add(String.format("%.0f Str", str));
+		if (atp > 0)
+			s.add(String.format("%.0f Atp", atp));
+		if (arp > 0)
+			s.add(String.format("%.0f Arp", arp));
+		if (cri > 0)
+			s.add(String.format("%.0f Cri", cri));
+		if (exp > 0)
+			s.add(String.format("%.0f Exp", exp));
+		if (hit > 0)
+			s.add(String.format("%.0f Hit", hit));
+		if (hst > 0)
+			s.add(String.format("%.0f Hst", hst));
+		
+		return join(s, " / ");
+	}
+	
+	 private String join(AbstractCollection<String> s, String delimiter) {
+     StringBuffer buffer = new StringBuffer();
+     Iterator<String> iter = s.iterator();
+     if (iter.hasNext()) {
+         buffer.append(iter.next());
+         while (iter.hasNext()) {
+             buffer.append(delimiter);
+             buffer.append(iter.next());
+         }
+     }
+     return buffer.toString();
+ }
 	
 	public void add(Attributes inc) {
 		agi += inc.agi;
