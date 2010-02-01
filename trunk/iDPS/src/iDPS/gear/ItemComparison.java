@@ -11,13 +11,13 @@ import iDPS.model.Calculations.ModelType;
 
 public class ItemComparison {
 	
-	private Gear gear;
+	private Setup gear;
 	private int slotId;
 	private SlotType slotType;
 	private float defaultDPS;
 	private ArrayList<Armor> comparedItems;
 	
-	public ItemComparison(Gear gear, int slotId, SlotType slotType) {
+	public ItemComparison(Setup gear, int slotId, SlotType slotType) {
 		this.gear = gear.clone();
 		this.slotId = slotId;
 		this.gear.setItem(slotId, null);

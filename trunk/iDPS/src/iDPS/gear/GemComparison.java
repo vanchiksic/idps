@@ -12,16 +12,16 @@ import java.util.Collections;
 
 public class GemComparison {
 	
-	private Gear gear;
+	private Setup gear;
 	private int slot, index;
 	private float defaultDPS;
 	private ArrayList<Gem> comparedGems;
 	
-	public GemComparison(Gear gear, int slot, int index) {
+	public GemComparison(Setup gear, int slot, int index) {
 		this(gear, slot, index, true);
 	}
 	
-	public GemComparison(Gear gear, int slot, int index, boolean anyColor) {
+	public GemComparison(Setup gear, int slot, int index, boolean anyColor) {
 		this.gear = gear.clone();
 		this.slot = slot;
 		this.index = index;

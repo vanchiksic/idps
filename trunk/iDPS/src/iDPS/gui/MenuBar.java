@@ -5,7 +5,7 @@ import iDPS.Race;
 import iDPS.Talents;
 import iDPS.Player.Profession;
 import iDPS.gear.Enchant;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gear.Item.Filter;
@@ -25,7 +25,7 @@ import javax.swing.JRadioButtonMenuItem;
 
 public class MenuBar extends JMenuBar implements ActionListener {
 	
-	private JMenu mGear;
+	private JMenu mSetup;
 	private ItemSelectGear[] iSetups;
 	
 	private JMenu mArmory;
@@ -34,18 +34,20 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	
 	private JMenu mTalents;
 	private ItemSelectTalent[] iTalents;
+	private ButtonGroup gTalents;
 	
 	private JMenu mRaces;
 	private ItemSelectRace[] iRaces;
+	private ButtonGroup gRaces;
 	
 	private JMenu mProfessions;
 	
 	private EnumMap<Filter,Boolean> checkedFilters;
 	
 	public MenuBar() {
-		mGear = new JMenu("GearConfigs");
+		mSetup = new JMenu("Setups");
 		createGearMenu();
-		add(mGear);
+		add(mSetup);
 		
 		mTalents = new JMenu("TalentSpecs");
 		createTalentsMenu();
@@ -69,41 +71,41 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	}
 	
 	public void createGearMenu() {
-		mGear.removeAll();
+		mSetup.removeAll();
 		
 		iGearNew = new JMenuItem("New");
 		iGearNew.addActionListener(this);
-		mGear.add(iGearNew);
+		mSetup.add(iGearNew);
 		
 		iGearDel = new JMenuItem("Delete");
 		iGearDel.addActionListener(this);
-		mGear.add(iGearDel);
+		mSetup.add(iGearDel);
 		
 		iGearRename = new JMenuItem("Rename");
 		iGearRename.addActionListener(this);
-		mGear.add(iGearRename);
+		mSetup.add(iGearRename);
 		
 		iGearSave = new JMenuItem("Save");
 		iGearSave.addActionListener(this);
-		mGear.add(iGearSave);
+		mSetup.add(iGearSave);
 		
 		iGearSaveAs = new JMenuItem("Save As...");
 		iGearSaveAs.addActionListener(this);
-		mGear.add(iGearSaveAs);
+		mSetup.add(iGearSaveAs);
 		
-		mGear.addSeparator();
+		mSetup.addSeparator();
 		
-		ArrayList<Gear> setups = Gear.getAll();
+		ArrayList<Setup> setups = Setup.getAll();
 		Collections.sort(setups);
 		iSetups = new ItemSelectGear[setups.size()];
 		ButtonGroup group = new ButtonGroup();
 		for (int i=0; i<setups.size(); i++) {
 			iSetups[i] = new ItemSelectGear(setups.get(i));
 			group.add(iSetups[i]);
-			mGear.add(iSetups[i]);
+			mSetup.add(iSetups[i]);
 		}
 		
-		iGearDel.setEnabled(Gear.getAll().size()>1);
+		iGearDel.setEnabled(Setup.getAll().size()>1);
 	}
 	
 	public void createTalentsMenu() {
@@ -111,10 +113,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		
 		ArrayList<Talents> tSpecs = Talents.getAll();
 		iTalents = new ItemSelectTalent[tSpecs.size()];
-		ButtonGroup group = new ButtonGroup();
+		gTalents = new ButtonGroup();
 		for (int i=0; i<tSpecs.size(); i++) {
 			iTalents[i] = new ItemSelectTalent(tSpecs.get(i));
-			group.add(iTalents[i]);
+			gTalents.add(iTalents[i]);
 			mTalents.add(iTalents[i]);
 		}
 	}
@@ -124,11 +126,11 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		
 		ArrayList<Race> races = Race.getAll();
 		iRaces = new ItemSelectRace[races.size()];
-		ButtonGroup group = new ButtonGroup();
+		gRaces = new ButtonGroup();
 		for (int i=0; i<races.size(); i++) {
 			iRaces[i] = new ItemSelectRace(races.get(i));
-			group.add(iRaces[i]);
-			mTalents.add(iRaces[i]);
+			gRaces.add(iRaces[i]);
+			mRaces.add(iRaces[i]);
 		}
 	}
 	
@@ -169,14 +171,20 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		return false;
 	}
 	
-	public void checkSetup(Gear setup) {
+	public void checkSetup(Setup setup) {
 		for (ItemSelectGear iSetup: iSetups)
 			iSetup.setSelected(iSetup.getSetup() == setup);
+		
+		gTalents.clearSelection();
 		for (ItemSelectTalent iTalent: iTalents)
-			iTalent.setSelected(iTalent.getTalents() == setup.getTalents());
+			gTalents.setSelected(iTalent.getModel(), (iTalent.getTalents() == setup.getTalents()));
+		
+		gRaces.clearSelection();
+		for (ItemSelectRace iRace: iRaces)
+			gRaces.setSelected(iRace.getModel(), (iRace.getRace() == setup.getRace()));
 	}
 	
-	private void selectGearSetup(Gear setup) {
+	private void selectGearSetup(Setup setup) {
 		Player.getInstance().setSetup(setup);
 		MainFrame.getInstance().showGear();
 		checkSetup(setup);
@@ -188,17 +196,15 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	}
 	
 	private void selectRace(Race race) {
-		Player p = Player.getInstance();
-		p.setRace(race);
-		Race.save();
+		Player.getInstance().getSetup().setRace(race);
 		MainFrame.getInstance().showStats();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == iGearSave)
-			Gear.save();
+			Setup.save();
 		else if (e.getSource() == iGearSaveAs) {
-			Gear g = new Gear(Player.getInstance().getSetup());
+			Setup g = new Setup(Player.getInstance().getSetup());
 			String s = (String) JOptionPane.showInputDialog(
           MainFrame.getInstance(),
           null, "enter Name", JOptionPane.PLAIN_MESSAGE,
@@ -214,10 +220,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 					"Delete Gear Configuration '"+Player.getInstance().getSetup().getName()+"'",
 					JOptionPane.YES_NO_OPTION);
 			if (really == JOptionPane.OK_OPTION) {
-				Gear.remove(Player.getInstance().getSetup());
+				Setup.remove(Player.getInstance().getSetup());
 				createGearMenu();
 				revalidate();
-				ArrayList<Gear> gears = Gear.getAll();
+				ArrayList<Setup> gears = Setup.getAll();
 				Collections.sort(gears);
 				selectGearSetup(gears.get(0));
 			}
@@ -230,8 +236,8 @@ public class MenuBar extends JMenuBar implements ActionListener {
           JOptionPane.PLAIN_MESSAGE);
 			if (s == null || s.trim().isEmpty())
 				return;
-			Gear g = new Gear(s.trim());
-			Gear.add(g);
+			Setup g = new Setup(s.trim());
+			Setup.add(g);
 			createGearMenu();
 			revalidate();
 		}
@@ -258,15 +264,15 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	
 	private class ItemSelectGear extends JRadioButtonMenuItem implements ActionListener {
 		
-		private Gear setup;
+		private Setup setup;
 		
-		public ItemSelectGear(Gear setup) {
+		public ItemSelectGear(Setup setup) {
 			super(setup.getName());
 			this.setup = setup;
 			addActionListener(this);
 		}
 		
-		public Gear getSetup() {
+		public Setup getSetup() {
 			return setup;
 		}
 
@@ -305,6 +311,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			this.race = race;
 			addActionListener(this);
 		}
+		
+		public Race getRace() {
+			return race;
+		}
 
 		public void actionPerformed(ActionEvent e) {
 			selectRace(race);
@@ -327,7 +337,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			Player.getInstance().saveProfessions();
 			switch (profession) {
 			case Blacksmithing:
-				Gear gear = Player.getInstance().getSetup();
+				Setup gear = Player.getInstance().getSetup();
 				if (!isSelected()) {
 					gear.setGem(7, gear.getItem(7).getMaxSocketIndex(), null);
 					gear.setGem(8, gear.getItem(8).getMaxSocketIndex(), null);

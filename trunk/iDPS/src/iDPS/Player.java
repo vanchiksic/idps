@@ -6,36 +6,34 @@ import java.util.List;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Armor.Faction;
 
 
 public class Player {
 	
-	public enum Stat { Agi, Str, Atp, Arp, Cri, Exp, Hit, Hst };
 	public enum Profession { Alchemy, Blacksmithing, Enchanting, Engineering, Inscription,
 		Jewelcrafting, Leatherworking, Skinning, Tailoring };
 	private static Player instance;
 	
-	private Race race;
-	private Gear equipped;
+	private Setup equipped;
 	private EnumMap<Profession,Boolean> professions;
 	
 	private Player() {		
-		equipped = new Gear();
+		equipped = new Setup();
 		professions = new EnumMap<Profession, Boolean>(Profession.class);
 	}
 	
-	public void setSetup(Gear gear) {
+	public void setSetup(Setup gear) {
 		equipped = gear;
 	}
 	
-	public Gear getSetup() {
+	public Setup getSetup() {
 		return equipped;
 	}
 	
 	public Faction getFaction() {
-		return race.getFaction();
+		return equipped.getRace().getFaction();
 	}
 
 	public static Player getInstance() {
@@ -43,19 +41,11 @@ public class Player {
 			instance = new Player();
 		return instance;
 	}
-
-	public Race getRace() {
-		return race;
-	}
-
-	public void setRace(Race race) {
-		this.race = race;
-	}
 	
 	public Attributes getAttr() {
 		Attributes attr = new Attributes();
-		if (race != null)
-			attr.add(race.getAttr());
+		if (equipped.getRace() != null)
+			attr.add(equipped.getRace().getAttr());
 		if (hasProfession(Profession.Skinning))
 			attr.incCri(40F);
 		return attr;

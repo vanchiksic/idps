@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
 import iDPS.Player;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 
@@ -152,7 +152,7 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void showGear() {
-		Gear gear = Player.getInstance().getSetup();
+		Setup gear = Player.getInstance().getSetup();
 		for (int i=0; i<=18; i++)
 			buttons[i].changeToItem(gear.getItem(i),gear.getGems(i));
 		centerP.showStats();

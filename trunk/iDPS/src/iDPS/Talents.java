@@ -25,6 +25,7 @@ public class Talents {
 	
 	public Talents() {
 		spec = Spec.None;
+		model = Calculations.ModelType.Combat;
 	}
 	
 	public Talents(Spec s) {

@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 
 import iDPS.Player;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Socket;
 
@@ -39,7 +39,7 @@ public class SocketButton extends JButton implements ActionListener {
 	}
 	
 	protected void updateColor() {
-		Gear gear = Player.getInstance().getSetup();
+		Setup gear = Player.getInstance().getSetup();
 		Socket socket = gear.getItem(slot).getSocket(index);
 		if (socket == null)
 			return;

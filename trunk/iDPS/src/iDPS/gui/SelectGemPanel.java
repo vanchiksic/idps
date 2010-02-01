@@ -1,7 +1,7 @@
 package iDPS.gui;
 
 import iDPS.Player;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.GemComparison;
 
@@ -32,7 +32,7 @@ public class SelectGemPanel extends JPanel {
 		
 		int j = 0;
 		Gem gem, curGem;
-		Gear gear = Player.getInstance().getSetup();
+		Setup gear = Player.getInstance().getSetup();
 		curGem = gear.getGem(slot,index);
 		gc = new GemComparison(gear, slot, index);
 		ArrayList<Gem> comparedGems = gc.getComparedGems();

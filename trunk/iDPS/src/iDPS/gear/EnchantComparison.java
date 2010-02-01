@@ -11,12 +11,12 @@ import java.util.Collections;
 
 public class EnchantComparison {
 	
-	private Gear gear;
+	private Setup gear;
 	private int slot;
 	private float defaultDPS;
 	private ArrayList<Enchant> comparedEnchants;
 	
-	public EnchantComparison(Gear gear, int slot) {
+	public EnchantComparison(Setup gear, int slot) {
 		this.gear = gear.clone();
 		this.slot = slot;
 		this.gear.setEnchant(slot, null);

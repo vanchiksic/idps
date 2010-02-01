@@ -122,7 +122,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         String realm = (String)mRealms.getSelectedItem();
         String character = mCharacterName.getText();
         
-        Gear gear = player.getSetup().clone();
+        Setup gear = player.getSetup().clone();
         gear.reset();
         
         try {
@@ -196,7 +196,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         }
         player.setSetup(gear);
         MainFrame.getInstance().showGear();
-        Gear.add(gear);
+        Setup.add(gear);
         MainFrame.getInstance().getMyMenuBar().createGearMenu();
         dispose();
     }

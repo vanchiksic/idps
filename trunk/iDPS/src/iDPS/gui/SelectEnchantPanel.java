@@ -1,7 +1,7 @@
 package iDPS.gui;
 
 import iDPS.Player;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Enchant;
 import iDPS.gear.EnchantComparison;
 
@@ -32,7 +32,7 @@ public class SelectEnchantPanel extends JPanel {
 		
 		int j = 0;
 		Enchant e, curEnchant;
-		Gear gear = Player.getInstance().getSetup();
+		Setup gear = Player.getInstance().getSetup();
 		curEnchant = gear.getEnchant(slot);
 		ec = new EnchantComparison(gear, slot);
 		ArrayList<Enchant> comparedEnchants = ec.getComparedEnchants();

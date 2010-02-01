@@ -4,7 +4,7 @@ import iDPS.Attributes;
 import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Weapon.weaponType;
 
@@ -29,10 +29,10 @@ public class Modifiers {
 	private int arpExceeded;
 	
 	private Attributes attr;
-	private Gear gear;
+	private Setup gear;
 	private Talents talents;
 	
-	public Modifiers(Attributes attr, Talents tal, Gear gear) {
+	public Modifiers(Attributes attr, Talents tal, Setup gear) {
 		this.attr = attr;
 		this.gear = gear;
 		this.talents = tal;
@@ -51,7 +51,7 @@ public class Modifiers {
 		agi += 230;
 		agi *= 1.1F;
 				
-		float baseAgi = Player.getInstance().getRace().getAttr().getAgi()-166;
+		float baseAgi = Player.getInstance().getSetup().getRace().getAttr().getAgi()-166;
 		gHit = hit/cHIT + 0.05F;
 		gCri = (agi-baseAgi)/cAGI + cri/cCRIT + 0.13F;
 		gExp = exp/cEXP + 0.0025F * talents.getExpertise();
@@ -59,7 +59,7 @@ public class Modifiers {
 		gHst  = 1.4F * 1.2F * talents.getLightref();
 		if (talents.getBf())
 			gHst *= 1 + (0.2F * 15F/120F);
-		if (Player.getInstance().getRace().getType() == Race.Type.Troll)
+		if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Troll)
 			gHst *= 1 + (0.2F * 10F/180F);
 		gHst -= 1;
 		gHstGear = hst/cHST;
@@ -86,25 +86,25 @@ public class Modifiers {
 		float tmpCri = gCri, tmpExp = gExp;
 		switch (wt1) {
 			case Axe:
-				if (Player.getInstance().getRace().getType() == Race.Type.Orc)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
 				break;
 			case Dagger:
 				tmpCri += talents.getCQC()/100F;
 				break;
 			case Fist:
-				if (Player.getInstance().getRace().getType() == Race.Type.Orc)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
 				tmpCri += talents.getCQC()/100F;
 				break;
 			case Mace:
-				if (Player.getInstance().getRace().getType() == Race.Type.Dwarf)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Dwarf)
 					tmpExp += 0.0025F * 5;
-				if (Player.getInstance().getRace().getType() == Race.Type.Human)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Human)
 					tmpExp += 0.0025F * 3;
 				break;
 			case Sword:
-				if (Player.getInstance().getRace().getType() == Race.Type.Human)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Human)
 					tmpExp += 0.0025F * 3;
 				break;
 		}
@@ -119,14 +119,14 @@ public class Modifiers {
 		tmpCri = gCri; tmpExp = gExp;
 		switch (wt2) {
 			case Axe:
-				if (Player.getInstance().getRace().getType() == Race.Type.Orc)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
 				break;
 			case Dagger:
 				tmpCri += talents.getCQC()/100F;
 				break;
 			case Fist:
-				if (Player.getInstance().getRace().getType() == Race.Type.Orc)
+				if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
 				tmpCri += talents.getCQC()/100F;
 				break;

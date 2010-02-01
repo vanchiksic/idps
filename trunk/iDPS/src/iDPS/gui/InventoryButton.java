@@ -1,7 +1,7 @@
 package iDPS.gui;
 
 import iDPS.Player;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 
@@ -81,7 +81,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		if (item.getIcon() != null)
 			changeIcon(item.getIcon());
 		String s = item.getToolTip();
-		Gear g = Player.getInstance().getSetup();
+		Setup g = Player.getInstance().getSetup();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
 			s += "<span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";

@@ -1,7 +1,7 @@
 package iDPS;
 
 import iDPS.gear.Enchant;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.MainFrame;
@@ -26,7 +26,7 @@ public class Launcher {
 		System.out.println("Gems loaded.");
 		Enchant.load();
 		System.out.println("Enchants loaded.");
-		Gear.load();
+		Setup.load();
 		System.out.println("Gears loaded.");
 		MainFrame.getInstance().showGear();
 		MainFrame.getInstance().getMyMenuBar().checkSetup(Player.getInstance().getSetup());

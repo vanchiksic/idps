@@ -5,7 +5,7 @@ import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.Player.Profession;
-import iDPS.gear.Gear;
+import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Weapon.weaponType;
 
@@ -19,7 +19,7 @@ public abstract class Calculations {
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
-	protected Gear gear;
+	protected Setup gear;
 	protected float mhSPS, ohSPS;
 	protected Modifiers mod;
 	protected Talents talents;
@@ -32,8 +32,6 @@ public abstract class Calculations {
 	
 	public Calculations() {
 		talents = Player.getInstance().getSetup().getTalents();
-		if (talents == null)
-			talents = new Talents();
 	}
 	
 	private void reset() {
@@ -240,7 +238,7 @@ public abstract class Calculations {
 			totalATP += 400F*15F/62F;
 		
 		// Orc Racial
-		if (Player.getInstance().getRace().getType() == Race.Type.Orc)
+		if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
 			totalATP += 40.25F;
 		
 		// Grim Toll
@@ -456,11 +454,11 @@ public abstract class Calculations {
 		calculate(a, Player.getInstance().getSetup());
 	}
 	
-	public void calculate(Gear g) {
+	public void calculate(Setup g) {
 		calculate(null, g);
 	}
 	
-	public void calculate(Attributes a, Gear g) {
+	public void calculate(Attributes a, Setup g) {
 		reset();
 		
 		attrTotal = new Attributes(a);
@@ -488,7 +486,7 @@ public abstract class Calculations {
 		float eRegen = 10;
 		
 		// Racial
-		if (Player.getInstance().getRace().getType() == Race.Type.BloodElf)
+		if (Player.getInstance().getSetup().getRace().getType() == Race.Type.BloodElf)
 			eRegen += 15F/120F;
 		
 		// Talents
@@ -656,14 +654,8 @@ public abstract class Calculations {
 	}
 
 	public static Calculations createInstance() {
-		Gear s = Player.getInstance().getSetup();
-		ModelType m;
-		if (s.getTalents() != null)
-			m = s.getTalents().getModel();
-		else {
-			System.err.println("Setup \""+s.getName()+"\" has no talents.");
-			m = Calculations.ModelType.Combat;
-		}
+		Setup s = Player.getInstance().getSetup();
+		ModelType m = s.getTalents().getModel();
 		switch (m) {
 			default:
 			case Combat:
