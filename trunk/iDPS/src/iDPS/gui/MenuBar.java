@@ -49,13 +49,13 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	
 	public MenuBar(MainFrame mainFrame) {
 		this.mainFrame = mainFrame;
-		checkedFilters = EnumSet.noneOf(Filter.class);
+		checkedFilters = EnumSet.allOf(Filter.class);
 		
 		mSetup = new JMenu("Setups");
 		createGearMenu();
 		add(mSetup);
 		
-		mTalents = new JMenu("TalentSpecs");
+		mTalents = new JMenu("Talent Specs");
 		createTalentsMenu();
 		add(mTalents);
 		
@@ -67,7 +67,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		createProfessionsMenu();
 		add(mProfessions);
 		
-		mFilter = new JMenu("Filter");
+		mFilter = new JMenu("Loot Filter");
 		createFilterMenu();
 		add(mFilter);
 	}
@@ -164,8 +164,11 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 	}
 	
-	public void checkFilter(Filter f) {
-		checkedFilters.add(f);
+	public void setFilter(Filter f, boolean b) {
+		if (b)
+			checkedFilters.add(f);
+		else
+			checkedFilters.remove(f);
 	}
 	
 	public boolean isOneFilterChecked(EnumSet<Filter> fs) {
@@ -393,10 +396,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			if (isSelected())
-				checkedFilters.add(filter);
-			else
-				checkedFilters.remove(filter);
+			setFilter(filter, isSelected());
 			Armor.limit();
 			Item.saveFilter();
 		}

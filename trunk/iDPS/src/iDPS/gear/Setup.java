@@ -257,7 +257,6 @@ public class Setup implements Comparable<Setup> {
 		Armor item = getItem(slot);
 		if (!item.hasSockets())
 			return;
-		m.calcEP();
 		Gem[] gemsAny = new Gem[3], gemsMatch = new Gem[3], gemsTemp, gemsFinal;
 		GemComparison gc;
 		float dpsAny = 0, dpsMatch = 0;

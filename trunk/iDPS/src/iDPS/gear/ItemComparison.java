@@ -41,7 +41,6 @@ public class ItemComparison {
 		Iterator<Armor> iter = items.iterator();
 		while (iter.hasNext())  {
 			Armor item = iter.next();
-			//System.out.println("Testing "+item.getName());
 			gear.setItem(slotId, item);
 			gear.gemBest(slotId);
 			m.calculate(gear);

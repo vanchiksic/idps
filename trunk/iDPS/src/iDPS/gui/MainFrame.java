@@ -117,12 +117,12 @@ public class MainFrame extends JFrame {
 		Border b2 = new EmptyBorder(new Insets(0,0,0,0));
 		Border b3 = new CompoundBorder(b1,b2);
 		invPane.setBorder(b3);
-		invPane.setPreferredSize(new Dimension(430,480));
+		invPane.setPreferredSize(new Dimension(440,490));
 		add(invPane, BorderLayout.CENTER);
 		
 		sideScroll = new JScrollPane(new JPanel());
 		sideScroll.getVerticalScrollBar().setUnitIncrement(20);
-		sideScroll.setPreferredSize(new Dimension(430,480));
+		sideScroll.setPreferredSize(new Dimension(430,490));
 		add(sideScroll, BorderLayout.LINE_END);
 		
 		pack();

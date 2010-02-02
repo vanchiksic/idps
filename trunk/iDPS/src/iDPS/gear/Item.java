@@ -180,9 +180,13 @@ public class Item implements Comparable<Item>, Rateable {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element profs = doc.getRootElement().getChild("filters");
 		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
-		for (Element e: (List<Element>) profs.getChildren()) {
-			Filter f = Filter.valueOf(e.getText());
-			mb.checkFilter(f);
+		if (profs.getChildren().size()>0) {
+			for (Filter f: Filter.values())
+				mb.setFilter(f, false);
+			for (Element e: (List<Element>) profs.getChildren()) {
+				Filter f = Filter.valueOf(e.getText());
+				mb.setFilter(f, true);
+			}
 		}
 	}
 
