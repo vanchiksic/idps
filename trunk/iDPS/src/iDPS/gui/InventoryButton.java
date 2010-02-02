@@ -28,7 +28,6 @@ import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.border.Border;
-import javax.swing.border.EtchedBorder;
 
 public class InventoryButton extends JButton implements ActionListener, MouseListener {
 	

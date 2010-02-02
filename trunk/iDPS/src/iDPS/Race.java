@@ -6,9 +6,6 @@ import iDPS.gui.MainFrame;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.jdom.Document;
-import org.jdom.Element;
-
 public class Race {
 	
 	public enum Type { BloodElf, Dwarf, Gnome, Human, NightElf, Orc, Troll, Undead }

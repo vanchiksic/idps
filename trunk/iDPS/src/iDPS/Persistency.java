@@ -34,7 +34,8 @@ public class Persistency {
 				root = new Element("idps");
 				document = new Document(root);
 			}
-			boolean foundGear = false, foundFilters = false;
+			boolean foundGear = false, foundFilters = false,
+				foundImport = false;
 			Iterator<Element> iter = root.getChildren().iterator();
 			while (iter.hasNext()) {
 				elem = iter.next();
@@ -42,10 +43,12 @@ public class Persistency {
 					foundGear = true;
 				else if (elem.getName().equals("filters"))
 					foundFilters = true;
+				else if (elem.getName().equals("import"))
+					foundImport = true;
 				else
 					iter.remove();
 			}
-			if (foundGear && foundFilters)
+			if (foundGear && foundFilters && foundImport)
 				return;
 			if (!foundGear) {
 				Element gearconfigs = new Element("gearconfigs");
@@ -60,9 +63,13 @@ public class Persistency {
 				Element filters = new Element("filters");
 				root.getChildren().add(filters);
 			}
+			if (!foundImport) {
+				Element filters = new Element("import");
+				root.getChildren().add(filters);
+			}
 			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(file),"UTF-8");
-	    outputter.output(document,out);
-	    out.close();
+		    outputter.output(document,out);
+		    out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

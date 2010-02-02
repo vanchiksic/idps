@@ -1,17 +1,37 @@
 package iDPS.gui;
 
-import iDPS.*;
-import iDPS.gear.*;
+import iDPS.Persistency;
+import iDPS.Player;
+import iDPS.gear.Armor;
+import iDPS.gear.Enchant;
+import iDPS.gear.Gem;
+import iDPS.gear.Setup;
 
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.net.*;
-import java.util.*;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Vector;
 
-import org.jdom.*;
-import org.jdom.input.*;
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
 
 final class ImportProfileDialog extends JDialog implements ActionListener {
     
@@ -70,6 +90,8 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
 		int x = mainFrame.getLocation().x + mainFrame.getSize().width/2 - getSize().width/2;
 		int y = mainFrame.getLocation().y + mainFrame.getSize().height/2 - getSize().height/2;
 		setLocation(new Point(x,y));
+		
+		load();
     }
     
     public void actionPerformed(ActionEvent event) {
@@ -210,6 +232,62 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         Setup.add(gear);
         mainFrame.getMyMenuBar().createGearMenu();
         setVisible(false);
+        save();
+    }
+    
+    @SuppressWarnings("unchecked")
+	private void save() {
+		Document doc = Persistency.openXML(Persistency.FileType.Settings);
+		Element elem = doc.getRootElement().getChild("import");
+		elem.removeContent();
+		Element sub;
+		
+		sub = new Element("region");
+		sub.setText(mRegions.getSelectedItem().toString());
+		elem.getChildren().add(sub);
+		
+		sub = new Element("realm");
+		sub.setText(mRealms.getSelectedItem().toString());
+		elem.getChildren().add(sub);
+		
+		sub = new Element("character");
+		sub.setText(mCharacterName.getText());
+		elem.getChildren().add(sub);
+		
+		Persistency.saveXML(doc, Persistency.FileType.Settings);
+	}
+    
+    @SuppressWarnings("unchecked")
+	private void load() {
+		Document doc = Persistency.openXML(Persistency.FileType.Settings);
+		Element elem = doc.getRootElement().getChild("import");
+		for (Element e: (List<Element>) elem.getChildren()) {
+			String s = e.getName();
+			// Region
+			if (s.equals("region")) {
+				for (int i=0; i<mRegions.getModel().getSize(); i++) {
+					String tmp = (String) mRegions.getModel().getElementAt(i);
+					if (tmp.equals(e.getText())) {
+						mRegions.setSelectedIndex(i);
+						break;
+					}
+				}
+			}
+			// Realms
+			if (s.equals("realm")) {
+				for (int i=0; i<mRealms.getModel().getSize(); i++) {
+					String tmp = (String) mRealms.getModel().getElementAt(i);
+					if (tmp.equals(e.getText())) {
+						mRealms.setSelectedIndex(i);
+						break;
+					}
+				}
+			}
+			// Name
+			if (s.equals("character")) {
+				mCharacterName.setText(e.getText());
+			}
+		}
     }
     
 }

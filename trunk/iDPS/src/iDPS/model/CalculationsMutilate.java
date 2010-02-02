@@ -90,11 +90,11 @@ public class CalculationsMutilate extends Calculations {
 		
 		eCostEnv -= avgCpFin*talents.getRStrikes()*25;
 		
-		if (false) {
+		/*if (false) {
 			float avgRupLength = avgCpFin*2+10;
 			//System.out.println("Rupture Len: "+avgRupLength);
 			rupPerCycle = (mutPerFin*eCostMut+eCostEnv)/(avgRupLength*eRegen+10);
-		} else
+		} else*/
 			rupPerCycle = 0;
 		//System.out.println("Ruptures per C: "+rupPerCycle);
 		
