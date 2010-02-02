@@ -3,7 +3,7 @@ package iDPS.gear;
 import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Player;
-import iDPS.Player.Profession;
+import iDPS.gear.Setup.Profession;
 import iDPS.gear.Socket.SocketType;
 import iDPS.gui.MainFrame;
 import iDPS.gui.MenuBar;
@@ -83,7 +83,7 @@ public class Armor extends Item {
 		if (slot == SlotType.Waist)
 			setExtraSocket(true);
 		if (((slot == SlotType.Wrist) || (slot == SlotType.Hands))
-				&& Player.getInstance().hasProfession(Profession.Blacksmithing))
+				&& Player.getInstance().getSetup().hasProfession(Profession.Blacksmithing))
 			setExtraSocket(true);
 		
 		checkTierSet();
@@ -258,7 +258,7 @@ public class Armor extends Item {
 		map = new HashMap<Integer,Armor>();
 		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
 		for (Armor i: fullmap.values()) {
-			if (i.getFilter() == null || mb.isSelected(i.getFilter()))
+			if (i.getFilter().size() == 0 || mb.isOneFilterChecked(i.getFilter()))
 				map.put(i.getId(), i);
 		}
 	}
@@ -321,9 +321,16 @@ public class Armor extends Item {
 				eSub.setText(item.faction.name());
 				eItem.getChildren().add(eSub);
 			}
-			if (item.getFilter() != null) {
-				eSub = new Element("filter");
-				eSub.setText(item.getFilter().name());
+			System.out.println(item+" "+item.getFilter().size());
+			if (item.getFilter().size() > 0) {
+				System.out.println(item+" "+item.getFilter().size());
+				eSub = new Element("filters");
+				Element eSub2;
+				for (Filter f: item.getFilter()) {
+					eSub2 = new Element("filter");
+					eSub2.setText(f.name());
+					eSub.getChildren().add(eSub2);
+				}
 				eItem.getChildren().add(eSub);
 			}
 			eSub = new Element("icon");
@@ -332,6 +339,7 @@ public class Armor extends Item {
 			
 			root.getChildren().add(eItem);
 		}
+		System.out.println("items saved");
 		Persistency.saveXML(doc, Persistency.FileType.Items);
 	}
 	

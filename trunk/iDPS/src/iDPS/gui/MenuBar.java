@@ -3,20 +3,22 @@ package iDPS.gui;
 import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
-import iDPS.Player.Profession;
 import iDPS.gear.Enchant;
+import iDPS.gear.Item;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gear.Item.Filter;
+import iDPS.gear.Setup.Profession;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.EnumMap;
+import java.util.EnumSet;
 
 import javax.swing.ButtonGroup;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -25,11 +27,10 @@ import javax.swing.JRadioButtonMenuItem;
 
 public class MenuBar extends JMenuBar implements ActionListener {
 	
+	private MainFrame mainFrame;
+	
 	private JMenu mSetup;
 	private ItemSelectGear[] iSetups;
-	
-	private JMenu mArmory;
-	private JMenu mFilter;
 	private JMenuItem iGearNew, iGearRename, iGearSaveAs, iGearSave, iGearDel, iImportArmory;
 	
 	private JMenu mTalents;
@@ -41,10 +42,16 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	private ButtonGroup gRaces;
 	
 	private JMenu mProfessions;
+	private ItemSelectProfession[] iProfessions;
 	
-	private EnumMap<Filter,Boolean> checkedFilters;
+	private JMenu mFilter;
 	
-	public MenuBar() {
+	private EnumSet<Filter> checkedFilters;
+	
+	public MenuBar(MainFrame mainFrame) {
+		this.mainFrame = mainFrame;
+		checkedFilters = EnumSet.noneOf(Filter.class);
+		
 		mSetup = new JMenu("Setups");
 		createGearMenu();
 		add(mSetup);
@@ -60,10 +67,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mProfessions = new JMenu("Professions");
 		createProfessionsMenu();
 		add(mProfessions);
-		
-		mArmory = new JMenu("Armory");
-		createArmoryMenu();
-		add(mArmory);
 		
 		mFilter = new JMenu("Filter");
 		createFilterMenu();
@@ -93,14 +96,21 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		iGearSaveAs.addActionListener(this);
 		mSetup.add(iGearSaveAs);
 		
+	    iImportArmory = new JMenuItem("Armory...");
+	    iImportArmory.addActionListener(this);
+	    mSetup.add(iImportArmory);
+		
 		mSetup.addSeparator();
 		
 		ArrayList<Setup> setups = Setup.getAll();
+		Setup curSetup = Player.getInstance().getSetup();
 		Collections.sort(setups);
 		iSetups = new ItemSelectGear[setups.size()];
 		ButtonGroup group = new ButtonGroup();
 		for (int i=0; i<setups.size(); i++) {
 			iSetups[i] = new ItemSelectGear(setups.get(i));
+			if (curSetup == setups.get(i))
+				iSetups[i].setSelected(true);
 			group.add(iSetups[i]);
 			mSetup.add(iSetups[i]);
 		}
@@ -137,37 +147,33 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	public void createProfessionsMenu() {
 		mProfessions.removeAll();
 		
-		ItemSelectProfession iProf;
-		for (Profession p: Profession.values()) {
-			iProf = new ItemSelectProfession(p);
-			iProf.setSelected(Player.getInstance().hasProfession(p));
-			mProfessions.add(iProf);
+		iProfessions = new ItemSelectProfession[Profession.values().length];
+		for (int i=0; i<Profession.values().length; i++) {
+			iProfessions[i] = new ItemSelectProfession(Profession.values()[i]);
+			mProfessions.add(iProfessions[i]);
 		}
 	}
 	
-	private void createArmoryMenu() {
-	    mArmory.removeAll();
-	    
-	    iImportArmory = new JMenuItem("Import");
-	    iImportArmory.addActionListener(this);
-	    mArmory.add(iImportArmory);	    
-	}
-	
-	private void createFilterMenu() {
-		checkedFilters = new EnumMap<Filter,Boolean>(Filter.class);
+	public void createFilterMenu() {
 		mFilter.removeAll();
+		
 		ItemSelectFilter iFilter;
 		for (Filter f: Filter.values()) {
 			iFilter = new ItemSelectFilter(f.name(), f);
-			iFilter.setSelected(true);
-			checkedFilters.put(f, true);
+			iFilter.setSelected(checkedFilters.contains(f));
 			mFilter.add(iFilter);
 		}
 	}
 	
-	public boolean isSelected(Filter f) {
-		if (checkedFilters.containsKey(f))
-			return checkedFilters.get(f);
+	public void checkFilter(Filter f) {
+		checkedFilters.add(f);
+	}
+	
+	public boolean isOneFilterChecked(EnumSet<Filter> fs) {
+		for (Filter f: fs) {
+			if (checkedFilters.contains(f))
+				return true;
+		}
 		return false;
 	}
 	
@@ -182,22 +188,25 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		gRaces.clearSelection();
 		for (ItemSelectRace iRace: iRaces)
 			gRaces.setSelected(iRace.getModel(), (iRace.getRace() == setup.getRace()));
+		
+		for (ItemSelectProfession iProfession: iProfessions)
+			iProfession.setSelected(setup.hasProfession(iProfession.getProfession()));
 	}
 	
 	private void selectGearSetup(Setup setup) {
 		Player.getInstance().setSetup(setup);
-		MainFrame.getInstance().showGear();
+		mainFrame.showGear();
 		checkSetup(setup);
 	}
 	
 	private void selectTalents(Talents talents) {
 		Player.getInstance().getSetup().setTalents(talents);
-		MainFrame.getInstance().showStats();
+		mainFrame.showStats();
 	}
 	
 	private void selectRace(Race race) {
 		Player.getInstance().getSetup().setRace(race);
-		MainFrame.getInstance().showStats();
+		mainFrame.showStats();
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -205,17 +214,20 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			Setup.save();
 		else if (e.getSource() == iGearSaveAs) {
 			Setup g = new Setup(Player.getInstance().getSetup());
+			g.clearId();
 			String s = (String) JOptionPane.showInputDialog(
-          MainFrame.getInstance(),
-          null, "enter Name", JOptionPane.PLAIN_MESSAGE,
-          null, null, g.getName()+" Copy");
+					mainFrame,
+					null, "enter Name", JOptionPane.PLAIN_MESSAGE,
+					null, null, g.getName()+" Copy");
 			if (s == null || s.trim().isEmpty())
 				return;
 			g.setName(s);
+			Setup.add(g);
+			createGearMenu();
 		}
 		else if (e.getSource() == iGearDel) {
 			int really = JOptionPane.showConfirmDialog(
-					MainFrame.getInstance(),
+					mainFrame,
 					null,
 					"Delete Gear Configuration '"+Player.getInstance().getSetup().getName()+"'",
 					JOptionPane.YES_NO_OPTION);
@@ -230,10 +242,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 		else if (e.getSource() == iGearNew) {
 			String s = (String) JOptionPane.showInputDialog(
-          MainFrame.getInstance(),
-          null,
-          "enter Name",
-          JOptionPane.PLAIN_MESSAGE);
+					mainFrame,
+					null,
+					"enter Name",
+					JOptionPane.PLAIN_MESSAGE);
 			if (s == null || s.trim().isEmpty())
 				return;
 			Setup g = new Setup(s.trim());
@@ -243,13 +255,13 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 		else if (e.getSource() == iGearRename) {
 			String s = (String) JOptionPane.showInputDialog(
-          MainFrame.getInstance(),
-          null,
-          "enter new name",
-          JOptionPane.PLAIN_MESSAGE,
-          null,
-          null,
-          Player.getInstance().getSetup().getName());
+					mainFrame,
+					null,
+					"enter new name",
+					JOptionPane.PLAIN_MESSAGE,
+					null,
+					null,
+					Player.getInstance().getSetup().getName());
 			if (s == null || s.trim().isEmpty())
 				return;
 			Player.getInstance().getSetup().setName(s.trim());
@@ -257,9 +269,8 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			revalidate();
 		}
 		else if (e.getSource() == iImportArmory) {
-		    ImportProfileDialog dialog = new ImportProfileDialog();
-		    dialog.setVisible(true);
-		    }
+			mainFrame.createAndShowImportFrame();
+		}
 	}
 	
 	private class ItemSelectGear extends JRadioButtonMenuItem implements ActionListener {
@@ -322,7 +333,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		
 	}
 	
-	private class ItemSelectProfession extends JRadioButtonMenuItem implements ActionListener {
+	private class ItemSelectProfession extends JCheckBoxMenuItem implements ActionListener {
 		
 		private Profession profession;
 		
@@ -331,44 +342,48 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			this.profession = profession;
 			addActionListener(this);
 		}
+		
+		public Profession getProfession() {
+			return profession;
+		}
 
 		public void actionPerformed(ActionEvent e) {
-			Player.getInstance().setProfession(profession, this.isSelected());
-			Player.getInstance().saveProfessions();
+			Setup setup = Player.getInstance().getSetup();
+			setup.setProfession(profession, isSelected());
+			
 			switch (profession) {
-			case Blacksmithing:
-				Setup gear = Player.getInstance().getSetup();
-				if (!isSelected()) {
-					gear.setGem(7, gear.getItem(7).getMaxSocketIndex(), null);
-					gear.setGem(8, gear.getItem(8).getMaxSocketIndex(), null);
-				}
-				Armor.setBlacksmith(isSelected());
-				if (isSelected()) {
-					gear.setGem(7, gear.getItem(7).getMaxSocketIndex(), null);
-					gear.setGem(8, gear.getItem(8).getMaxSocketIndex(), null);
-				}
-				MainFrame.getInstance().showGear();
-				break;
-			case Enchanting:
-			case Engineering:
-			case Inscription:
-			case Leatherworking:
-			case Tailoring:
-				Enchant.limit();
-				break;
-			case Jewelcrafting:
-				Gem.limit();
-				break;
-			case Alchemy:
-			case Skinning:
-				MainFrame.getInstance().showStats();
-				break;
+				case Blacksmithing:
+					if (!isSelected()) {
+						setup.setGem(7, setup.getItem(7).getMaxSocketIndex(), null);
+						setup.setGem(8, setup.getItem(8).getMaxSocketIndex(), null);
+					}
+					Armor.setBlacksmith(isSelected());
+					if (isSelected()) {
+						setup.setGem(7, setup.getItem(7).getMaxSocketIndex(), null);
+						setup.setGem(8, setup.getItem(8).getMaxSocketIndex(), null);
+					}
+					mainFrame.showGear();
+					break;
+				case Enchanting:
+				case Engineering:
+				case Inscription:
+				case Leatherworking:
+				case Tailoring:
+					Enchant.limit();
+					break;
+				case Jewelcrafting:
+					Gem.limit();
+					break;
+				case Alchemy:
+				case Skinning:
+					mainFrame.showStats();
+					break;
 			}
 		}
 		
 	}
 	
-	private class ItemSelectFilter extends JRadioButtonMenuItem implements ActionListener {
+	private class ItemSelectFilter extends JCheckBoxMenuItem implements ActionListener {
 		
 		private Filter filter;
 		
@@ -379,8 +394,12 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			checkedFilters.put(filter, isSelected());
+			if (isSelected())
+				checkedFilters.add(filter);
+			else
+				checkedFilters.remove(filter);
 			Armor.limit();
+			Item.saveFilter();
 		}
 		
 	}

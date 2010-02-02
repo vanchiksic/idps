@@ -59,7 +59,7 @@ public class SelectEnchantPanel extends JPanel {
 			if (curEnchant != null)
 				diff = e.getComparedDPS() - curEnchant.getComparedDPS();
 			else
-				diff = 0;
+				diff = e.getComparedDPS();
 			label = new JLabel(String.format("%.2f (%+.2f)", e.getComparedDPS(), diff));
 			label.setHorizontalAlignment(JLabel.RIGHT);
 			c.gridx = 2; c.gridy = j;

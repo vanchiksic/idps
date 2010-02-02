@@ -183,17 +183,17 @@ public class Attributes {
 			s += String.format("+%.0f Strength<br/>", str);
 		s += "</p><p style=\"color:#00FF00;\">";
 		if (atp > 0)
-			s += String.format("Equip: Increases attack power by %.0f<br/>", atp);
+			s += String.format("Increases attack power by %.0f<br/>", atp);
 		if (arp > 0)
-			s += String.format("Equip: Increases armor penetration rating by %.0f<br/>", arp);
+			s += String.format("Increases armor penetration rating by %.0f<br/>", arp);
 		if (cri > 0)
-			s += String.format("Equip: Increases critical strike rating by %.0f<br/>", cri);
+			s += String.format("Increases critical strike rating by %.0f<br/>", cri);
 		if (exp > 0)
-			s += String.format("Equip: Increases expertise rating by %.0f<br/>", exp);
+			s += String.format("Increases expertise rating by %.0f<br/>", exp);
 		if (hit > 0)
-			s += String.format("Equip: Increases hit rating by %.0f<br/>", hit);
+			s += String.format("Increases hit rating by %.0f<br/>", hit);
 		if (hst > 0)
-			s += String.format("Equip: Increases haste rating by %.0f<br/>", hst);
+			s += String.format("Increases haste rating by %.0f<br/>", hst);
 		s += "</p>";
 		return s;
 	}

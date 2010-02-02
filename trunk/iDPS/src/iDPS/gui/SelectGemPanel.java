@@ -53,7 +53,6 @@ public class SelectGemPanel extends JPanel {
 			add(button, c);
 			
 			JLabel jl = new InventoryIcon(gem);
-			jl.setToolTipText(gem.getToolTip());
 			c.insets = new Insets(0, 0, 0, 7);
 			c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
 			add(jl, c);
@@ -75,7 +74,7 @@ public class SelectGemPanel extends JPanel {
 			if (curGem != null)
 				diff = gem.getComparedDPS() - curGem.getComparedDPS();
 			else
-				diff = 0;
+				diff = gem.getComparedDPS();
 			label = new JLabel(String.format("%+.2f", diff));
 			label.setHorizontalAlignment(JLabel.RIGHT);
 			c.gridx = 3; c.gridy = j+1;
@@ -85,18 +84,53 @@ public class SelectGemPanel extends JPanel {
 			c.gridx = 2; c.gridy = j+2; c.gridwidth = 2;
 			add(new RatingPanel(gem, gc.getMaxDPS()), c);
 			
-			if (iter.hasNext()) {
-				JSeparator sep = new JSeparator();
-				c.insets = new Insets(3, 0, 0, 0);
-				c.gridx = 0; c.gridy = j+3; c.gridwidth = 3;
-				add(sep, c);
-				j += 1;
-			}
+			JSeparator sep = new JSeparator();
+			c.insets = new Insets(3, 0, 3, 0);
+			c.gridx = 1; c.gridy = j+3; c.gridwidth = 3;
+			add(sep, c);
+			j += 1;
 			
 			j += 3;
 		}
+		
+		// None Button
+		button = new SelectGemButton(null, slot, index);
+		if (curGem == null)
+			button.setSelected(true);
+		c.anchor = GridBagConstraints.WEST;
+		c.insets = new Insets(0, 0, 0, 10);
+		c.gridx = 0; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
+		add(button, c);
+		
+		JLabel jl = new InventoryIcon(null);
+		c.insets = new Insets(0, 0, 0, 7);
+		c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
+		add(jl, c);
+		
+		label = new JLabel("None");
+		c.insets = new Insets(0, 0, 0, 0);
+		c.gridx = 2; c.gridy = j; c.gridheight = 1;
+		add(label, c);
+		
+		label = new JLabel(String.format("%.2f", 0F));
+		label.setHorizontalAlignment(JLabel.RIGHT);
+		c.gridx = 3; c.gridy = j;
+		add(label, c);
+		
+		if (curGem != null)
+			diff = - curGem.getComparedDPS();
+		else
+			diff = 0;
+		label = new JLabel(String.format("%+.2f", diff));
+		label.setHorizontalAlignment(JLabel.RIGHT);
+		c.gridx = 3; c.gridy = j+1;
+		add(label, c);
+		
+		c.insets = new Insets(5, 0, 0, 0);
+		c.gridx = 2; c.gridy = j+2; c.gridwidth = 3;
+		add(new RatingPanel(null, gc.getMaxDPS()), c);
+		
 		setBorder(new EmptyBorder(new Insets(3,6,6,6)));
-
 	}
 	
 	private class SelectGemButton extends JRadioButton implements ActionListener {

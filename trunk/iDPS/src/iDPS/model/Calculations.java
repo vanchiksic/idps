@@ -4,9 +4,9 @@ import iDPS.Attributes;
 import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
-import iDPS.Player.Profession;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
+import iDPS.gear.Setup.Profession;
 import iDPS.gear.Weapon.weaponType;
 
 public abstract class Calculations {
@@ -19,7 +19,7 @@ public abstract class Calculations {
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
-	protected Setup gear;
+	protected Setup setup;
 	protected float mhSPS, ohSPS;
 	protected Modifiers mod;
 	protected Talents talents;
@@ -48,7 +48,7 @@ public abstract class Calculations {
 		agi += 229;
 		str += 229;
 		atp += 687 + 260;
-		if (Player.getInstance().hasProfession(Profession.Alchemy))
+		if (Player.getInstance().getSetup().hasProfession(Profession.Alchemy))
 			atp += 80;
 		agi *= 1.1F;
 		str *= 1.1F;
@@ -60,17 +60,17 @@ public abstract class Calculations {
 	protected void calcBerserking() {
 		float attacksPerSec, uptime;
 		
-		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==3789) {
-			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		if (setup.getWeapon1() != null && setup.isEnchanted(16) && setup.getEnchant(16).getId()==3789) {
+			attacksPerSec = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
-			uptime = gear.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
+			uptime = setup.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
 			totalATP += uptime * 400;
 		}
 		
-		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==3789) {
-			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		if (setup.getWeapon2() != null && setup.isEnchanted(17) && setup.getEnchant(17).getId()==3789) {
+			attacksPerSec = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
-			uptime = gear.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
+			uptime = setup.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
 			totalATP += uptime * 400;
 		}
 	}
@@ -162,12 +162,12 @@ public abstract class Calculations {
 	
 	protected float calcInstantPoisonDPS() {
 		Weapon wip, wdp;
-		if (gear.getWeapon2().getSpeed() >= gear.getWeapon1().getSpeed()) {
-			wdp = gear.getWeapon1();
-			wip = gear.getWeapon2();
+		if (setup.getWeapon2().getSpeed() >= setup.getWeapon1().getSpeed()) {
+			wdp = setup.getWeapon1();
+			wip = setup.getWeapon2();
 		} else {
-			wip = gear.getWeapon1();
-			wdp = gear.getWeapon2();	
+			wip = setup.getWeapon1();
+			wdp = setup.getWeapon2();	
 		}
 		float ipProcChance, dpProcChance, hitChance, procsPerSec, damage;
 		ipProcChance  = wip.getSpeed()/1.4F*(0.2F+0.02F*talents.getImprovedPoisons());
@@ -197,15 +197,15 @@ public abstract class Calculations {
 	
 	protected void calcMongoose() {
 		float attacksPerSec, uptimeMH = 0, uptimeOH = 0;
-		if (gear.isEnchanted(16) && gear.getEnchant(16).getId()==2673) {
-			attacksPerSec = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		if (setup.isEnchanted(16) && setup.getEnchant(16).getId()==2673) {
+			attacksPerSec = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 			attacksPerSec += mhSPS;
-			uptimeMH = gear.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
+			uptimeMH = setup.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
 		}
-		if (gear.isEnchanted(17) && gear.getEnchant(17).getId()==2673) {
-			attacksPerSec = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		if (setup.isEnchanted(17) && setup.getEnchant(17).getId()==2673) {
+			attacksPerSec = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 			attacksPerSec += ohSPS;
-			uptimeOH = gear.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
+			uptimeOH = setup.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
 		}
 		if ((uptimeMH+uptimeOH)>0) {
 		// mongoose ~73 cri & 132 ap
@@ -230,11 +230,11 @@ public abstract class Calculations {
 		calcBerserking();
 		
 		// Hyperspeed Accelerators
-		if (gear.isEnchanted(8) && gear.getEnchant(8).getId()==3604)
+		if (setup.isEnchanted(8) && setup.getEnchant(8).getId()==3604)
 			mod.registerHasteProc(340, 12F/60F);
 		
 		// Swordguard Embroidery
-		if (gear.isEnchanted(3) && gear.getEnchant(3).getId()==3730)
+		if (setup.isEnchanted(3) && setup.getEnchant(3).getId()==3730)
 			totalATP += 400F*15F/62F;
 		
 		// Orc Racial
@@ -242,92 +242,92 @@ public abstract class Calculations {
 			totalATP += 40.25F;
 		
 		// Grim Toll
-		if (gear.contains(40256)>0)
+		if (setup.contains(40256)>0)
 			mod.registerArpProc(612, 10F/48F);
 		
 		// Tears of Bitter Anguish
-		if (gear.contains(43573)>0)
+		if (setup.contains(43573)>0)
 			mod.registerHasteProc(410, 10F/56F);
 		
 		// Darkmoon Card: Greatness
-		if (gear.contains(44253)>0) {
+		if (setup.contains(44253)>0) {
 			// 330 Agi = 181 cri + 330 atp
 			totalATP += 330F*15F/48F;
 			mod.registerPhysCritProc(181, 15F/48F);
 		}
 		
 		// Pyrite Infuser
-		if (gear.contains(45286)>0) {
+		if (setup.contains(45286)>0) {
 			totalATP += 1234F*10F/51F;
 		}
 		
 		// Blood of the Old God
-		if (gear.contains(45522)>0) {
+		if (setup.contains(45522)>0) {
 			totalATP += 1284F*10F/51F;
 		}
 		
 		// Comet's Trail
-		if (gear.contains(45609)>0) {
+		if (setup.contains(45609)>0) {
 			mod.registerHasteProc(726, 10F/48F);
 		}
 		
 		// Mjolnir Runestone
-		if (gear.contains(45931)>0) {
+		if (setup.contains(45931)>0) {
 			mod.registerArpProc(665, 10F/48F);
 		}
 		
 		// Dark Matter
-		if (gear.contains(46038)>0) {
+		if (setup.contains(46038)>0) {
 			mod.registerCritProc(612, 10F/48F);
 		}
 		
 		// Banner of Victory
-		if (gear.contains(47214)>0) {
+		if (setup.contains(47214)>0) {
 			totalATP += 1008F*10F/49F;
 		}
 		
 		// Death's Choice
-		if (gear.containsAny(47303,47115)) {
+		if (setup.containsAny(47303,47115)) {
 			// 495 Agi = 273 cri + 459 atp
 			totalATP += 495F*15F/48F;
 			mod.registerPhysCritProc(273, 15F/48F);
 		}
 		
 		// Death's Choice Heroic
-		if (gear.containsAny(47464,47131)) {
+		if (setup.containsAny(47464,47131)) {
 			// 561 Agi = 309 cri + 561 atp
 			totalATP += 561F*15F/48F;
 			mod.registerPhysCritProc(309, 15F/48F);
 		}
 		
 		// Mark of Supremacy
-		if (gear.contains(47734)>0) {
+		if (setup.contains(47734)>0) {
 			totalATP += 1024F*20F/120F;
 		}
 		
 		// Vengeance of the Forsaken
-		if (gear.containsAny(47881,47725)) {
+		if (setup.containsAny(47881,47725)) {
 			// proc average ~914AP for 20 sec every 120 sec
 			totalATP += 914F*20F/120F;
 		}
 		
 		// Vengeance of the Forsaken
-		if (gear.containsAny(48020,47948)) {
+		if (setup.containsAny(48020,47948)) {
 			// proc average ~1063AP for 20 sec every 120 sec
 			totalATP += 1063F*20F/120F;
 		}
 		
 		// Shard of the Crystal Heart
-		if (gear.contains(48722)>0) {
+		if (setup.contains(48722)>0) {
 			// 512 hst for 20 sec every 120 sec
 			mod.registerHasteProc(512, 20F/120F);
 		}
 		
 		// Black Bruise
-		if (gear.containsAny(50035,50692)) {
+		if (setup.containsAny(50035,50692)) {
 			float bbUptime = calcDWPPMUptime(0.6F, 10);
 			//System.out.println("BB Uptime: "+bbUptime);
-			if(gear.containsAny(50692))
+			if(setup.containsAny(50692))
 				bbIncrease = bbUptime*0.10F;
 			else
 				bbIncrease =bbUptime*0.09F;
@@ -335,29 +335,29 @@ public abstract class Calculations {
 			bbIncrease = 0;
 		
 		// Needle-Encrusted Scorpion
-		if (gear.contains(50198)>0) {
+		if (setup.contains(50198)>0) {
 			mod.registerArpProc(678, 10F/57F);
 		}
 		
 		// Whispering Fanged Skull
-		if (gear.contains(50342)>0) {
+		if (setup.contains(50342)>0) {
 			// proc 1100AP for 15 sec every 45 sec
 			totalATP += 1100*15F/48F;
 		}
 		
 		// Whispering Fanged Skull Heroic
-		if (gear.contains(50343)>0) {
+		if (setup.contains(50343)>0) {
 			// proc 1100AP for 15 sec every 45 sec
 			totalATP += 1250*15F/48F;
 		}
 		
 		// Herkuml War Token
-		if (gear.contains(50355)>0) {
+		if (setup.contains(50355)>0) {
 			totalATP += 340;
 		}
 		
 		// Deathbringer's Will
-		if (gear.contains(50362)>0) {
+		if (setup.contains(50362)>0) {
 			// random +600 proc for 30 sec every ~105 sec
 			// 1200 ap
 			// 600 arp
@@ -368,7 +368,7 @@ public abstract class Calculations {
 		}
 		
 		// Deathbringer's Will Heroic
-		if (gear.contains(50363)>0) {
+		if (setup.contains(50363)>0) {
 			// random +700 proc for 30 sec every ~105 sec
 			// 1400 atp
 			// 700 arp
@@ -379,7 +379,7 @@ public abstract class Calculations {
 		}
 		
 		// Ashen Band of ...
-		if (gear.containsAny(50401,50402)) {
+		if (setup.containsAny(50401,50402)) {
 			totalATP += 410F*10F/75F;
 		}
 	}
@@ -387,13 +387,13 @@ public abstract class Calculations {
 	protected float calcDWPPMUptime(float ppm, float buffLen) {
 		float apsMH, apsOH, utMH, utOH, ut;
 		
-		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		apsMH = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 		apsMH += mhSPS;
-		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		apsOH = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 		apsOH += ohSPS;
 		
-		utMH = gear.getWeapon1().getPPMUptime(ppm, buffLen, apsMH);
-		utOH = gear.getWeapon1().getPPMUptime(ppm, buffLen, apsOH);
+		utMH = setup.getWeapon1().getPPMUptime(ppm, buffLen, apsMH);
+		utOH = setup.getWeapon1().getPPMUptime(ppm, buffLen, apsOH);
 		ut = 1-((1-utMH)*(1-utOH));
 		
 		return ut;
@@ -402,13 +402,13 @@ public abstract class Calculations {
 	protected float calcDWUptime(float pProc, float buffLen) {
 		float apsMH, apsOH, utMH, utOH, ut;
 		
-		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		apsMH = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 		apsMH += mhSPS;
-		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		apsOH = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 		apsOH += ohSPS;
 		
-		utMH = gear.getWeapon1().getUptime(0.04F, buffLen, apsMH);
-		utOH = gear.getWeapon1().getUptime(0.04F, buffLen, apsOH);
+		utMH = setup.getWeapon1().getUptime(0.04F, buffLen, apsMH);
+		utOH = setup.getWeapon1().getUptime(0.04F, buffLen, apsOH);
 		ut = 1-((1-utMH)*(1-utOH));
 		
 		return ut;
@@ -417,17 +417,17 @@ public abstract class Calculations {
 	protected float calcHeartpierceRegen() {
 		float regen = 0;
 		float apsMH, apsOH, pp2s;
-		apsMH = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
+		apsMH = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
 		apsMH += mhSPS;
-		apsOH = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
+		apsOH = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
 		apsOH += ohSPS;
-		pp2s = gear.getWeapon1().getPPMUptime(1, 2, apsMH);
-		pp2s += gear.getWeapon2().getPPMUptime(1, 2, apsOH);
-		if (gear.containsAny(49982)) {
+		pp2s = setup.getWeapon1().getPPMUptime(1, 2, apsMH);
+		pp2s += setup.getWeapon2().getPPMUptime(1, 2, apsOH);
+		if (setup.containsAny(49982)) {
 			float uptime = calcDWPPMUptime(1, 10);
 			regen += uptime*2*(1-pp2s);
 		}
-		if (gear.containsAny(50641)) {
+		if (setup.containsAny(50641)) {
 			float uptime = calcDWPPMUptime(1, 12);
 			regen += uptime*2*(1-pp2s);
 		}
@@ -462,11 +462,10 @@ public abstract class Calculations {
 		reset();
 		
 		attrTotal = new Attributes(a);
-		gear = g;
+		setup = g;
 		
-		attrTotal.add(Player.getInstance().getAttr());
-		attrTotal.add(gear.getAttributes());
-		mod = new Modifiers(attrTotal, talents, gear);
+		attrTotal.add(setup.getAttributes());
+		mod = new Modifiers(attrTotal, talents, setup);
 		
 		calcCycle();
 		
@@ -500,12 +499,12 @@ public abstract class Calculations {
 		
 		// ToTT every 32 sec
 		float eLossTOT = 15F/32F;
-		if (gear.getTier10()>=2)
+		if (setup.getTier10()>=2)
 			eLossTOT *= -1F;
 		eRegen -= eLossTOT;
 		
 		// Heartpierce
-		if (gear.containsAny(49982,50641))
+		if (setup.containsAny(49982,50641))
 			eRegen += calcHeartpierceRegen();
 		
 		//System.out.println("total regen: "+eRegen);
@@ -514,15 +513,15 @@ public abstract class Calculations {
 	
 	private float combatPotencyRegen() {
 		float pps;
-		pps = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100);
+		pps = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100);
 		// OH Hits from Tiny Abom
-		if (gear.containsAny(50351,50706)) {
+		if (setup.containsAny(50351,50706)) {
 			float moteFactor;
-			if (gear.containsAny(50706))
+			if (setup.containsAny(50706))
 				moteFactor = 1/7F;
 			else
 				moteFactor = 1/8F;
-			pps += (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(mod.getHtOH().getContacts()) + ohSPS)*0.5F*moteFactor;
+			pps += (setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(mod.getHtOH().getContacts()) + ohSPS)*0.5F*moteFactor;
 		}
 		pps *= (mod.getHtOH().getContacts());
 		pps *= 0.2F;
@@ -534,10 +533,10 @@ public abstract class Calculations {
 	
 	protected float calcWhiteCritsPerSec() {
 		float critsPerSec = 0;
-		if (gear.getWeapon1() != null)
-			critsPerSec += gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtMH().crit;
-		if (gear.getWeapon2() != null)
-			critsPerSec += gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtOH().crit;
+		if (setup.getWeapon1() != null)
+			critsPerSec += setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtMH().crit;
+		if (setup.getWeapon2() != null)
+			critsPerSec += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtOH().crit;
 		return critsPerSec;
 	}
 	
@@ -546,22 +545,22 @@ public abstract class Calculations {
 		HitTable htOH = mod.getHtMH();
 		float dpsMH = 0, dpsOH = 0;
 		// Mainhand
-		if (gear.getWeapon1() != null) {
-			dpsMH += gear.getWeapon1().getDps() + ((float)totalATP/14F);
+		if (setup.getWeapon1() != null) {
+			dpsMH += setup.getWeapon1().getDps() + ((float)totalATP/14F);
 			dpsMH *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH *= mod.getHastePercent()/100F + 1;
 		}
 		// Offhand
-		if (gear.getWeapon2() != null) {
-			dpsOH += gear.getWeapon2().getDps() + ((float)totalATP/14F) * 0.75F;
+		if (setup.getWeapon2() != null) {
+			dpsOH += setup.getWeapon2().getDps() + ((float)totalATP/14F) * 0.75F;
 			dpsOH *= htOH.glance*0.75F + htOH.crit * mod.getPhysCritMult() + htOH.hit;
 			dpsOH *= mod.getHastePercent()/100F + 1;
 		}
 		// Sword Spec
 		if (talents.getHnS()>0) {
-			Weapon w1 = gear.getWeapon1(), w2 = gear.getWeapon2();
+			Weapon w1 = setup.getWeapon1(), w2 = setup.getWeapon2();
 			float ssDmg, ssPps = 0, ssDps;
-			ssDmg  = gear.getWeapon1().getAverageDmg(totalATP);
+			ssDmg  = setup.getWeapon1().getAverageDmg(totalATP);
 			// Mainhand Procs
 			if (w1.getType() == weaponType.Axe || w1.getType() == weaponType.Sword) {
 				ssPps += w1.getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts())*(talents.getHnS()/100F);
@@ -569,7 +568,7 @@ public abstract class Calculations {
 			}
 			// Offhand Procs
 			if (w2.getType() == weaponType.Axe || w2.getType() == weaponType.Sword) {
-				ssPps += gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getHnS()/100F);
+				ssPps += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getHnS()/100F);
 				ssPps += ohSPS * (talents.getHnS()/100F);
 			}
 			mhSPS += ssPps * htMH.getContacts();
@@ -577,21 +576,21 @@ public abstract class Calculations {
 			ssDps *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH += ssDps;
 		}
-		if (gear.containsAny(50351,50706)) {
+		if (setup.containsAny(50351,50706)) {
 			float ppsMH, ppsOH, moteFactor, dmgMH, dmgOH;
-			if (gear.containsAny(50706))
+			if (setup.containsAny(50706))
 				moteFactor = 1/7F;
 			else
 				moteFactor = 1/8F;
 			//System.out.println(">>MF: "+moteFactor);
-			ppsMH = (gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts()) + mhSPS)*0.5F*moteFactor;
-			ppsOH = (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts()) + ohSPS)*0.5F*moteFactor;
+			ppsMH = (setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts()) + mhSPS)*0.5F*moteFactor;
+			ppsOH = (setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts()) + ohSPS)*0.5F*moteFactor;
 			//System.out.println(">>Procs: MH: "+ppsMH+ " OH: "+ppsOH);
 			mhSPS += ppsMH;
 			ohSPS += ppsOH;
-			dmgMH = gear.getWeapon1().getAverageDmg(totalATP)/2F;
+			dmgMH = setup.getWeapon1().getAverageDmg(totalATP)/2F;
 			dmgMH = mod.getHtMHS().getHit()*dmgMH + mod.getHtMHS().getCrit()*dmgMH*mod.getPhysCritMult();
-			dmgOH = gear.getWeapon2().getAverageDmg(totalATP)/2F;
+			dmgOH = setup.getWeapon2().getAverageDmg(totalATP)/2F;
 			dmgOH = mod.getHtOHS().getHit()*dmgOH + mod.getHtOHS().getCrit()*dmgOH*mod.getPhysCritMult();
 			//System.out.println(">>Dmg: MH: "+dmgMH+ " OH: "+dmgOH);
 			//System.out.println(">>DPS added: "+(ppsMH*dmgMH+ppsOH*dmgOH));

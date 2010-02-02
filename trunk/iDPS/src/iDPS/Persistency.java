@@ -34,21 +34,18 @@ public class Persistency {
 				root = new Element("idps");
 				document = new Document(root);
 			}
-			boolean foundGear = false,
-				foundRaces = false, foundProfessions = false;
+			boolean foundGear = false, foundFilters = false;
 			Iterator<Element> iter = root.getChildren().iterator();
 			while (iter.hasNext()) {
 				elem = iter.next();
 				if (elem.getName().equals("gearconfigs"))
 					foundGear = true;
-				else if (elem.getName().equals("races"))
-					foundRaces = true;
-				else if (elem.getName().equals("professions"))
-					foundProfessions = true;
+				else if (elem.getName().equals("filters"))
+					foundFilters = true;
 				else
 					iter.remove();
 			}
-			if (foundGear && foundRaces && foundProfessions)
+			if (foundGear && foundFilters)
 				return;
 			if (!foundGear) {
 				Element gearconfigs = new Element("gearconfigs");
@@ -59,14 +56,9 @@ public class Persistency {
 				gearconfigs.getChildren().add(gear1);
 				root.getChildren().add(gearconfigs);
 			}
-			if (!foundRaces) {
-				Element races = new Element("races");
-				races.setAttribute("default", "BloodElf");
-				root.getChildren().add(races);
-			}
-			if (!foundProfessions) {
-				Element professions = new Element("professions");
-				root.getChildren().add(professions);
+			if (!foundFilters) {
+				Element filters = new Element("filters");
+				root.getChildren().add(filters);
 			}
 			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(file),"UTF-8");
 	    outputter.output(document,out);

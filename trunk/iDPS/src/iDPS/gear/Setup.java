@@ -10,6 +10,7 @@ import iDPS.model.Calculations;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
+import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +20,9 @@ import org.jdom.Element;
 
 
 public class Setup implements Comparable<Setup> {
+	
+	public enum Profession { Alchemy, Blacksmithing, Enchanting, Engineering, Inscription,
+		Jewelcrafting, Leatherworking, Skinning, Tailoring };
 	
 	private static HashMap<Integer,Setup> map = null;
 	private static int nextFreeId = 1;
@@ -33,6 +37,7 @@ public class Setup implements Comparable<Setup> {
 	
 	private Talents talents;
 	private Race race;
+	private EnumSet<Profession> professions;
 		
 	private boolean[] socketBonus;
 	
@@ -52,6 +57,7 @@ public class Setup implements Comparable<Setup> {
 			tiers.put(t, 0);
 		talents = new Talents();
 		race = new Race();
+		professions = EnumSet.noneOf(Profession.class);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -74,6 +80,13 @@ public class Setup implements Comparable<Setup> {
 				talents = Talents.find(Integer.parseInt(eGear.getAttributeValue("id")));
 			else if (s.equals("race"))
 				race = Race.find(Integer.parseInt(eGear.getAttributeValue("id")));
+			else if (s.equals("professions")) {
+				Iterator<Element> iter2 = eGear.getChildren().iterator();
+				while (iter2.hasNext()) {
+					Element eProf = iter2.next();
+					professions.add(Profession.valueOf(eProf.getText()));
+				}
+			}
 			else if (s.equals("items")) {
 				Iterator<Element> iter2 = eGear.getChildren().iterator();
 				while (iter2.hasNext()) {
@@ -124,6 +137,8 @@ public class Setup implements Comparable<Setup> {
 		}
 		tiers = new EnumMap<Armor.Tier,Integer>(copy.tiers);
 		talents = copy.talents;
+		race = copy.race;
+		professions = copy.professions.clone();
 	}
 	
 	public Setup(String name) {
@@ -231,42 +246,6 @@ public class Setup implements Comparable<Setup> {
 		return true;
 	}
 	
-	/*private Attributes getEnchant(SlotType st) {
-		Attributes attr = new Attributes();
-		switch (st) {
-			case Head:
-				attr.incAtp(50);
-				attr.incCri(20);
-				break;
-			case Shoulder:
-				attr.incAtp(40);
-				attr.incCri(15);
-				break;
-			case Back:
-				attr.incAgi(22);
-				break;
-			case Chest:
-				attr.incAgi(10);
-				attr.incStr(10);
-				break;
-			case Wrist:
-				attr.incAtp(130);
-				break;
-			case Hands:
-				attr.incAtp(44);
-				break;
-			case Legs:
-				attr.incAtp(75);
-				attr.incCri(22);
-				break;
-			case Feet:
-				attr.incHit(12);
-				attr.incCri(12);
-				break;
-		}
-		return attr;
-	}*/
-	
 	private void containsInc(int id) {
 		int c = (containsMap.containsKey(id)) ? containsMap.get(id) : 0;
 		c++;
@@ -336,6 +315,11 @@ public class Setup implements Comparable<Setup> {
 	}
 	
 	public Attributes getAttributes() {
+		Attributes attr = new Attributes(this.attr);
+		if (getRace() != null)
+			attr.add(getRace().getAttr());
+		if (hasProfession(Profession.Skinning))
+			attr.incCri(40F);
 		return attr;
 	}
 	
@@ -532,8 +516,6 @@ public class Setup implements Comparable<Setup> {
 	}
 	
 	public static void add(Setup s) {
-		if (map == null)
-			Setup.load();
 		if (s.id==0) {
 			s.id = Setup.nextFreeId;
 			Setup.nextFreeId++;
@@ -609,18 +591,32 @@ public class Setup implements Comparable<Setup> {
 		eName.setText(gear.getName());
 		eSetup.getChildren().add(eName);
 		
+		// TalentSpec
 		if (gear.getTalents() != null && gear.getTalents().getId() > 0) {
 			eName = new Element("talents");
 			eName.setAttribute("id", gear.getTalents().getId()+"");
 			eSetup.getChildren().add(eName);
 		}
 		
+		// Race
 		if (gear.getRace() != null && gear.getRace().getId() > 0) {
 			eName = new Element("race");
 			eName.setAttribute("id", gear.getRace().getId()+"");
 			eSetup.getChildren().add(eName);
 		}
 		
+		// Professions
+		eName = new Element("professions");
+		for (Profession p: Profession.values()) {
+			if (!gear.hasProfession(p))
+				continue;
+			Element eProf = new Element("profession");
+			eProf.setText(p.name());
+			eName.getChildren().add(eProf);
+		}
+		eSetup.getChildren().add(eName);
+		
+		// Items
 		eItems = new Element("items");
 		for (int i=0; i<=18; i++) {
 			if (gear.getItem(i)==null)
@@ -640,6 +636,8 @@ public class Setup implements Comparable<Setup> {
 			eItems.getChildren().add(eItem);
 		}
 		eSetup.getChildren().add(eItems);
+		
+		// Enchants
 		eEnchants = new Element("enchants");
 		for (int i=0; i<=18; i++) {
 			if (gear.getEnchant(i)==null)
@@ -667,6 +665,17 @@ public class Setup implements Comparable<Setup> {
 
 	public void setRace(Race race) {
 		this.race = race;
+	}
+	
+	public void setProfession(Profession p, boolean b) {
+		if (b)
+			professions.add(p);
+		else
+			professions.remove(p);
+	}
+	
+	public boolean hasProfession(Profession p) {
+		return professions.contains(p);
 	}
 
 }

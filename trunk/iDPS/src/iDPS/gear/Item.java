@@ -1,15 +1,20 @@
 package iDPS.gear;
 
+import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom.Document;
 import org.jdom.Element;
 
 import iDPS.Attributes;
+import iDPS.Persistency;
+import iDPS.gui.MainFrame;
+import iDPS.gui.MenuBar;
 
 public class Item implements Comparable<Item>, Rateable {
 	
-	public enum Filter { icc10n, icc10h, icc25n, icc25h }
+	public enum Filter { heroics, naxx25, uld10n, uld10h, uld25n, uld25h, toc10n, toc10h, toc25n, toc25h, icc10n, icc10h, icc25n, icc25h }
 	
 	private String icon;
 	private int id;
@@ -18,7 +23,7 @@ public class Item implements Comparable<Item>, Rateable {
 	private Attributes attr;
 	private float comparedDPS;
 	
-	private Filter filter;
+	private EnumSet<Filter> filter;
 	
 	private String uniqueName;
 	private int uniqueLimit;
@@ -37,8 +42,14 @@ public class Item implements Comparable<Item>, Rateable {
 				name = e.getText();
 			else if (s.equals("icon"))
 				icon = e.getText();
-			else if (s.equals("filter"))
-				filter = Filter.valueOf(e.getText());
+			else if (s.equals("filters")) {
+				List<Element> childs2 = e.getChildren();
+				Iterator<Element> i2 = childs2.iterator();
+				while (i2.hasNext()) {
+					Element e2 = i2.next();
+					filter.add(Filter.valueOf(e2.getText()));
+				}
+			}
 			else if (s.equals("attributes"))
 				attr = new Attributes(e);
 			else if (s.equals("lvl"))
@@ -53,7 +64,7 @@ public class Item implements Comparable<Item>, Rateable {
 	public Item() {
 		icon = null;
 		attr = new Attributes();
-		filter = null;
+		filter = EnumSet.noneOf(Filter.class);
 		comparedDPS = 0;
 	}
 			
@@ -140,12 +151,39 @@ public class Item implements Comparable<Item>, Rateable {
 		this.uniqueLimit = unique_limit;
 	}
 
-	public Filter getFilter() {
+	public EnumSet<Filter> getFilter() {
 		return filter;
 	}
-
-	protected void setFilter(Filter filter) {
+	
+	public void setFilter(EnumSet<Filter> filter) {
 		this.filter = filter;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static void saveFilter() {
+		Document doc = Persistency.openXML(Persistency.FileType.Settings);
+		Element filters = doc.getRootElement().getChild("filters");
+		filters.removeContent();
+		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
+		for (Filter f: Filter.values()) {
+			if (mb.isOneFilterChecked(EnumSet.of(f))) {
+				Element filter = new Element("filter");
+				filter.setText(f.name());
+				filters.getChildren().add(filter);
+			}
+		}
+		Persistency.saveXML(doc, Persistency.FileType.Settings);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static void loadFilter() {
+		Document doc = Persistency.openXML(Persistency.FileType.Settings);
+		Element profs = doc.getRootElement().getChild("filters");
+		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
+		for (Element e: (List<Element>) profs.getChildren()) {
+			Filter f = Filter.valueOf(e.getText());
+			mb.checkFilter(f);
+		}
 	}
 
 }

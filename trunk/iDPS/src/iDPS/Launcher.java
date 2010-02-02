@@ -1,6 +1,7 @@
 package iDPS;
 
 import iDPS.gear.Enchant;
+import iDPS.gear.Item;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
@@ -17,7 +18,6 @@ public class Launcher {
 		Persistency.createXML();
 		Race.load();
 		System.out.println("Races loaded.");
-		Player.getInstance().loadProfessions();
 		Talents.load();
 		System.out.println("Talents loaded.");
 		Armor.load();
@@ -28,6 +28,12 @@ public class Launcher {
 		System.out.println("Enchants loaded.");
 		Setup.load();
 		System.out.println("Gears loaded.");
+		
+		Item.loadFilter();
+		MainFrame.getInstance().getMyMenuBar().createFilterMenu();
+		Armor.limit();
+		System.out.println("Filters loaded.");
+		
 		MainFrame.getInstance().showGear();
 		MainFrame.getInstance().getMyMenuBar().checkSetup(Player.getInstance().getSetup());
 	}

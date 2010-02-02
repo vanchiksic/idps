@@ -59,7 +59,6 @@ public class SelectItemPanel extends JPanel {
 			add(button, c);
 			
 			JLabel jl = new InventoryIcon(item);
-			jl.setToolTipText(item.getToolTip());
 			c.insets = new Insets(0, 0, 0, 7);
 			c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
 			add(jl, c);
@@ -84,7 +83,7 @@ public class SelectItemPanel extends JPanel {
 			if (curItem != null)
 				diff = item.getComparedDPS() - curItem.getComparedDPS();
 			else
-				diff = 0;
+				diff = item.getComparedDPS();
 			label = new JLabel(String.format("%+.2f", diff));
 			label.setHorizontalAlignment(JLabel.RIGHT);
 			c.gridx = 3; c.gridy = j+1;

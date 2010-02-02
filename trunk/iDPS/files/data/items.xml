@@ -7,6 +7,10 @@
       <hit>83</hit>
     </attributes>
     <lvl>213</lvl>
+    <tag>naxxramas-25</tag>
+    <filters>
+      <filter>naxx25</filter>
+    </filters>
     <icon>inv_trinket_naxxramas04</icon>
   </item>
   <item id="40403">
@@ -18,6 +22,10 @@
       <hst>31</hst>
     </attributes>
     <lvl>226</lvl>
+    <tag>kelthuzad-25</tag>
+    <filters>
+      <filter>naxx25</filter>
+    </filters>
     <icon>inv_misc_cape_naxxramas_03</icon>
   </item>
   <item id="43573">
@@ -48,6 +56,10 @@
       <hst>46</hst>
     </attributes>
     <lvl>226</lvl>
+    <tag>ironcouncil-25</tag>
+    <filters>
+      <filter>uld25n</filter>
+    </filters>
     <icon>inv_misc_cape_02</icon>
   </item>
   <item id="45286">
@@ -58,6 +70,9 @@
     </attributes>
     <lvl>219</lvl>
     <tag>flameleviathan-10</tag>
+    <filters>
+      <filter>uld10n</filter>
+    </filters>
     <icon>spell_frost_fireresistancetotem</icon>
   </item>
   <item id="45461">
@@ -77,6 +92,9 @@
     </sockets>
     <lvl>239</lvl>
     <tag>hodir-25-heroic</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
     <icon>inv_misc_cape_05</icon>
   </item>
   <item id="45517">
@@ -96,6 +114,9 @@
     </sockets>
     <lvl>239</lvl>
     <tag>generalvezax-25-heroic</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
     <icon>inv_jewelry_necklace_45</icon>
   </item>
   <item id="45522">
@@ -105,7 +126,10 @@
       <hit>108</hit>
     </attributes>
     <lvl>226</lvl>
-    <tag>yogsaron-25</tag>
+    <tag>yoggsaron-25</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
     <icon>inv_misc_gem_bloodstone_03</icon>
   </item>
   <item id="45555">
@@ -156,6 +180,9 @@
     </attributes>
     <lvl>239</lvl>
     <tag>algalon-25</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
     <icon>spell_arcane_starfire</icon>
   </item>
   <item id="45829">
@@ -222,7 +249,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
-    <tag>xt002deconstructor-10-heroic</tag>
+    <tag>xt002-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
     <icon>inv_weapon_rifle_33</icon>
   </item>
   <item id="45931">
@@ -233,6 +263,9 @@
     </attributes>
     <lvl>226</lvl>
     <tag>thorim-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
     <icon>inv_misc_rune_11</icon>
   </item>
   <item id="46032">
@@ -252,6 +285,10 @@
       </bonus>
     </sockets>
     <lvl>226</lvl>
+    <tag>vezax-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
     <icon>inv_misc_cape_14</icon>
   </item>
   <item id="46038">
@@ -262,6 +299,9 @@
     </attributes>
     <lvl>226</lvl>
     <tag>algalon-10</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
     <icon>spell_shadow_seedofdestruction</icon>
   </item>
   <item id="46095">
@@ -282,6 +322,9 @@
     </sockets>
     <lvl>226</lvl>
     <tag>yoggsaron-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
     <icon>inv_belt_37c</icon>
   </item>
   <item id="46958">
@@ -299,6 +342,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="46969">
@@ -322,6 +368,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="46970">
@@ -336,6 +385,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="46971">
@@ -356,6 +408,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="46974">
@@ -377,6 +432,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_pants_leather_28</icon>
   </item>
   <item id="46975">
@@ -399,6 +457,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_pants_leather_28</icon>
   </item>
   <item id="46994">
@@ -416,6 +477,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_crossbow_34</icon>
   </item>
   <item id="46995">
@@ -439,6 +503,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_crossbow_34</icon>
   </item>
   <item id="46996">
@@ -456,6 +523,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47000">
@@ -477,6 +547,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="47001">
@@ -500,6 +573,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47004">
@@ -522,6 +598,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="47043">
@@ -536,6 +615,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_jewelry_necklace_34</icon>
   </item>
   <item id="47060">
@@ -556,6 +638,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_jewelry_necklace_34</icon>
   </item>
   <item id="47070">
@@ -570,6 +655,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_jewelry_ring_65</icon>
   </item>
   <item id="47071">
@@ -590,6 +678,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_boots_leather_02</icon>
   </item>
   <item id="47075">
@@ -610,6 +701,9 @@
     <lvl>258</lvl>
     <tag>factionchampions-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_jewelry_ring_65</icon>
   </item>
   <item id="47077">
@@ -631,6 +725,9 @@
     <lvl>258</lvl>
     <tag>factionchampions-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_boots_leather_02</icon>
   </item>
   <item id="47104">
@@ -648,6 +745,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47107">
@@ -668,6 +768,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_belt_37c</icon>
   </item>
   <item id="47112">
@@ -689,6 +792,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_belt_37c</icon>
   </item>
   <item id="47113">
@@ -712,6 +818,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47115">
@@ -723,6 +832,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="47131">
@@ -734,6 +846,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="47148">
@@ -751,6 +866,9 @@
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47151">
@@ -765,6 +883,9 @@
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_bracer_23b</icon>
   </item>
   <item id="47155">
@@ -786,6 +907,9 @@
     <lvl>258</lvl>
     <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_bracer_23b</icon>
   </item>
   <item id="47156">
@@ -809,6 +933,9 @@
     <lvl>258</lvl>
     <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47214">
@@ -818,6 +945,10 @@
       <arp>84</arp>
     </attributes>
     <lvl>200</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_bannerpvp_03</icon>
   </item>
   <item id="47251">
@@ -839,6 +970,9 @@
     <lvl>245</lvl>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_chest_mail_03</icon>
   </item>
   <item id="47255">
@@ -856,6 +990,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="47257">
@@ -870,6 +1007,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_misc_cape_18</icon>
   </item>
   <item id="47259">
@@ -891,6 +1031,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="47266">
@@ -908,6 +1051,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="47267">
@@ -925,6 +1071,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_crossbow_35</icon>
   </item>
   <item id="47270">
@@ -946,6 +1095,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="47272">
@@ -960,6 +1112,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_jewelry_necklace_34</icon>
   </item>
   <item id="47282">
@@ -974,6 +1129,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_jewelry_ring_65</icon>
   </item>
   <item id="47284">
@@ -994,6 +1152,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_boots_leather_04a</icon>
   </item>
   <item id="47299">
@@ -1014,6 +1175,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_belt_38b</icon>
   </item>
   <item id="47300">
@@ -1031,6 +1195,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="47303">
@@ -1041,6 +1208,9 @@
     </attributes>
     <lvl>245</lvl>
     <tag>twinvalkyrs-25</tag>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="47313">
@@ -1055,6 +1225,9 @@
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_bracer_36a</icon>
   </item>
   <item id="47314">
@@ -1072,6 +1245,9 @@
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="47416">
@@ -1095,6 +1271,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="47418">
@@ -1115,6 +1294,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_misc_cape_18</icon>
   </item>
   <item id="47420">
@@ -1137,6 +1319,9 @@
     <lvl>258</lvl>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="47427">
@@ -1160,6 +1345,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="47428">
@@ -1183,6 +1371,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_crossbow_35</icon>
   </item>
   <item id="47431">
@@ -1205,6 +1396,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="47433">
@@ -1225,6 +1419,9 @@
     <lvl>258</lvl>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_jewelry_necklace_34</icon>
   </item>
   <item id="47443">
@@ -1245,6 +1442,9 @@
     <lvl>258</lvl>
     <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_jewelry_ring_65</icon>
   </item>
   <item id="47445">
@@ -1266,6 +1466,9 @@
     <lvl>258</lvl>
     <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_boots_leather_04a</icon>
   </item>
   <item id="47460">
@@ -1287,6 +1490,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_belt_38b</icon>
   </item>
   <item id="47461">
@@ -1310,6 +1516,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="47464">
@@ -1321,6 +1530,9 @@
     <lvl>258</lvl>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="47474">
@@ -1342,6 +1554,9 @@
     <lvl>258</lvl>
     <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_bracer_36a</icon>
   </item>
   <item id="47475">
@@ -1365,6 +1580,9 @@
     <lvl>258</lvl>
     <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="47521">
@@ -1388,6 +1606,9 @@
     <lvl>258</lvl>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_rifle_35</icon>
   </item>
   <item id="47523">
@@ -1411,6 +1632,9 @@
     <lvl>258</lvl>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_weapon_rifle_36</icon>
   </item>
   <item id="47526">
@@ -1434,6 +1658,9 @@
     <lvl>258</lvl>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_mace_105</icon>
   </item>
   <item id="47528">
@@ -1457,6 +1684,9 @@
     <lvl>258</lvl>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_mace_101</icon>
   </item>
   <item id="47545">
@@ -1477,6 +1707,9 @@
     <lvl>272</lvl>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="47546">
@@ -1595,6 +1828,9 @@
     <lvl>232</lvl>
     <tag>northrendbeasts-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
   </item>
   <item id="47608">
@@ -1615,6 +1851,9 @@
     <lvl>232</lvl>
     <tag>northrendbeasts-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_boots_leather_02</icon>
   </item>
   <item id="47659">
@@ -1654,6 +1893,9 @@
     <lvl>232</lvl>
     <tag>jaraxxus-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47688">
@@ -1716,6 +1958,9 @@
     <lvl>232</lvl>
     <tag>jaraxxus-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_jewelry_ring_61</icon>
   </item>
   <item id="47708">
@@ -1776,6 +2021,9 @@
     <lvl>232</lvl>
     <tag>factionchampions-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_gauntlets_77a</icon>
   </item>
   <item id="47725">
@@ -1827,6 +2075,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47739">
@@ -1848,6 +2099,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="47740">
@@ -1871,6 +2125,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_rifle_35</icon>
   </item>
   <item id="47741">
@@ -1888,6 +2145,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_crossbow_34</icon>
   </item>
   <item id="47808">
@@ -1905,6 +2165,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47814">
@@ -1922,6 +2185,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_sword_145</icon>
   </item>
   <item id="47816">
@@ -1945,6 +2211,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_mace_105</icon>
   </item>
   <item id="47832">
@@ -1965,6 +2234,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_shoulder_89</icon>
   </item>
   <item id="47849">
@@ -1979,6 +2251,9 @@
     <lvl>232</lvl>
     <tag>northrendbeasts-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
   </item>
   <item id="47853">
@@ -1997,7 +2272,11 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <tag>northrendbeasts-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_boots_leather_03a</icon>
   </item>
   <item id="47868">
@@ -2018,6 +2297,9 @@
     <lvl>232</lvl>
     <tag>jaraxxus-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_jewelry_ring_61</icon>
   </item>
   <item id="47871">
@@ -2041,6 +2323,9 @@
     <lvl>232</lvl>
     <tag>jaraxxus-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_93</icon>
   </item>
   <item id="47878">
@@ -2061,6 +2346,9 @@
     <lvl>232</lvl>
     <tag>factionchampions-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_gauntlets_78a</icon>
   </item>
   <item id="47881">
@@ -2072,6 +2360,9 @@
     <lvl>232</lvl>
     <tag>factionchampions-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_misc_horn_04</icon>
   </item>
   <item id="47883">
@@ -2095,6 +2386,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_rifle_36</icon>
   </item>
   <item id="47886">
@@ -2112,6 +2406,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="47887">
@@ -2133,6 +2430,9 @@
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="47898">
@@ -2150,6 +2450,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="47903">
@@ -2167,6 +2470,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_sword_138</icon>
   </item>
   <item id="47904">
@@ -2187,6 +2493,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_shoulder_109a</icon>
   </item>
   <item id="47905">
@@ -2210,6 +2519,9 @@
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <icon>inv_mace_101</icon>
   </item>
   <item id="47915">
@@ -2230,6 +2542,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
   </item>
   <item id="47919">
@@ -2251,6 +2566,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_boots_leather_02</icon>
   </item>
   <item id="47934">
@@ -2271,6 +2589,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_jewelry_ring_61</icon>
   </item>
   <item id="47938">
@@ -2294,6 +2615,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47945">
@@ -2315,6 +2639,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_gauntlets_77a</icon>
   </item>
   <item id="47948">
@@ -2326,6 +2653,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_misc_horn_04</icon>
   </item>
   <item id="47950">
@@ -2349,6 +2679,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_rifle_35</icon>
   </item>
   <item id="47953">
@@ -2372,6 +2705,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_95</icon>
   </item>
   <item id="47954">
@@ -2394,6 +2730,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="47966">
@@ -2417,6 +2756,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_axe_105</icon>
   </item>
   <item id="47971">
@@ -2440,6 +2782,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_sword_145</icon>
   </item>
   <item id="47972">
@@ -2461,6 +2806,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_shoulder_89</icon>
   </item>
   <item id="47973">
@@ -2484,6 +2832,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_mace_105</icon>
   </item>
   <item id="47975">
@@ -2507,6 +2858,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_crossbow_34</icon>
   </item>
   <item id="47988">
@@ -2527,6 +2881,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_jewelry_necklace_ahnqiraj_02</icon>
   </item>
   <item id="47992">
@@ -2548,6 +2905,9 @@
     <lvl>245</lvl>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_boots_leather_03a</icon>
   </item>
   <item id="48007">
@@ -2568,6 +2928,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_jewelry_ring_61</icon>
   </item>
   <item id="48010">
@@ -2591,6 +2954,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_93</icon>
   </item>
   <item id="48017">
@@ -2612,6 +2978,9 @@
     <lvl>245</lvl>
     <tag>factionchampions-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_gauntlets_78a</icon>
   </item>
   <item id="48020">
@@ -2622,6 +2991,9 @@
     </attributes>
     <lvl>245</lvl>
     <tag>factionchampions-10-heroic</tag>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_misc_horn_04</icon>
   </item>
   <item id="48022">
@@ -2645,6 +3017,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_rifle_36</icon>
   </item>
   <item id="48025">
@@ -2668,6 +3043,9 @@
     <lvl>245</lvl>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_94</icon>
   </item>
   <item id="48026">
@@ -2690,6 +3068,9 @@
     <lvl>245</lvl>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="48043">
@@ -2713,6 +3094,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_axe_104</icon>
   </item>
   <item id="48048">
@@ -2736,6 +3120,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_sword_138</icon>
   </item>
   <item id="48049">
@@ -2757,6 +3144,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_shoulder_109a</icon>
   </item>
   <item id="48050">
@@ -2780,6 +3170,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_mace_101</icon>
   </item>
   <item id="48052">
@@ -2803,6 +3196,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_crossbow_35</icon>
   </item>
   <item id="48218">
@@ -2822,6 +3218,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_helmet_139</icon>
   </item>
@@ -2842,6 +3241,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_chest_leather_14</icon>
   </item>
@@ -2862,6 +3264,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_pants_leather_28</icon>
   </item>
@@ -2881,6 +3286,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_shoulder_89</icon>
   </item>
@@ -2900,6 +3308,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_gauntlets_77a</icon>
   </item>
@@ -2920,6 +3331,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_chest_leather_14</icon>
   </item>
@@ -2939,6 +3354,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_gauntlets_77a</icon>
   </item>
@@ -2959,6 +3378,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_helmet_139</icon>
   </item>
@@ -2979,6 +3402,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_pants_leather_28</icon>
   </item>
@@ -2998,6 +3425,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_shoulder_89</icon>
   </item>
@@ -3017,6 +3448,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_shoulder_89</icon>
   </item>
@@ -3037,6 +3471,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_pants_leather_28</icon>
   </item>
@@ -3057,6 +3494,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_helmet_139</icon>
   </item>
@@ -3076,6 +3516,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_gauntlets_77a</icon>
   </item>
@@ -3096,6 +3539,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Alliance</faction>
     <icon>inv_chest_leather_14</icon>
   </item>
@@ -3116,6 +3562,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
@@ -3135,6 +3584,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_gauntlets_78a</icon>
   </item>
@@ -3155,6 +3607,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_helmet_145a</icon>
   </item>
@@ -3175,6 +3630,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
@@ -3194,6 +3652,9 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <filters>
+      <filter>toc25h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_shoulder_109a</icon>
   </item>
@@ -3213,6 +3674,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_shoulder_109a</icon>
   </item>
@@ -3233,6 +3698,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
@@ -3253,6 +3722,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_helmet_145a</icon>
   </item>
@@ -3272,6 +3745,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_gauntlets_78a</icon>
   </item>
@@ -3292,6 +3769,10 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
+    <filters>
+      <filter>toc25n</filter>
+      <filter>toc10h</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
@@ -3312,6 +3793,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
@@ -3331,6 +3815,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_gauntlets_78a</icon>
   </item>
@@ -3351,6 +3838,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_helmet_145a</icon>
   </item>
@@ -3371,6 +3861,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
@@ -3390,6 +3883,9 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <filters>
+      <filter>toc10n</filter>
+    </filters>
     <faction>Horde</faction>
     <icon>inv_shoulder_109a</icon>
   </item>
@@ -3411,6 +3907,9 @@
     <lvl>258</lvl>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_misc_cape_18</icon>
   </item>
   <item id="48673">
@@ -3431,6 +3930,9 @@
     <lvl>258</lvl>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="48697">
@@ -3454,6 +3956,9 @@
     <lvl>245</lvl>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_bow_51</icon>
   </item>
   <item id="48703">
@@ -3477,6 +3982,9 @@
     <lvl>245</lvl>
     <tag>triumphchest-10</tag>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_hand_30</icon>
   </item>
   <item id="48711">
@@ -3500,6 +4008,9 @@
     <lvl>245</lvl>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_bow_52</icon>
   </item>
   <item id="48712">
@@ -3523,6 +4034,9 @@
     <lvl>245</lvl>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+    </filters>
     <icon>inv_weapon_hand_29</icon>
   </item>
   <item id="48722">
@@ -3579,6 +4093,9 @@
     </attributes>
     <lvl>219</lvl>
     <tag>forgeofsouls</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_misc_cape_22</icon>
   </item>
   <item id="49895">
@@ -3639,6 +4156,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_jewelry_ring_83</icon>
   </item>
   <item id="49950">
@@ -3659,6 +4179,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_boots_leather_07</icon>
   </item>
   <item id="49982">
@@ -3672,6 +4195,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>deathwhisper-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_103</icon>
   </item>
   <item id="49987">
@@ -3692,6 +4218,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="49998">
@@ -3711,6 +4240,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>gunship-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>item_icecrowncloak</icon>
   </item>
   <item id="50001">
@@ -3732,6 +4264,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>gunship-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="50016">
@@ -3748,6 +4283,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>rotface-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_105</icon>
   </item>
   <item id="50021">
@@ -3768,6 +4306,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_gauntlets_79</icon>
   </item>
   <item id="50025">
@@ -3787,6 +4328,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>item_icecrownringc</icon>
   </item>
   <item id="50035">
@@ -3800,6 +4344,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>festergut-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_weapon_hand_33</icon>
   </item>
   <item id="50042">
@@ -3821,6 +4368,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="50046">
@@ -3870,7 +4420,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
-    <tag>professorputricide-25</tag>
+    <tag>putricide-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_belt_61</icon>
   </item>
   <item id="50073">
@@ -3891,6 +4444,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>bloodprince-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="50087">
@@ -3910,6 +4466,9 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="50088">
@@ -3928,6 +4487,9 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_gauntlets_85</icon>
   </item>
   <item id="50089">
@@ -3947,6 +4509,9 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="50090">
@@ -3966,6 +4531,9 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="50105">
@@ -3984,6 +4552,9 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="50169">
@@ -4000,6 +4571,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>bronjahm-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_throwingknife_02</icon>
   </item>
   <item id="50183">
@@ -4016,6 +4590,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>valithria-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_105</icon>
   </item>
   <item id="50186">
@@ -4035,6 +4612,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valithria-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>item_icecrownringa</icon>
   </item>
   <item id="50191">
@@ -4051,6 +4631,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>bronjahm-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_axe_91</icon>
   </item>
   <item id="50198">
@@ -4061,6 +4644,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>devourerofsouls-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_qirajidol_onyx</icon>
   </item>
   <item id="50203">
@@ -4077,6 +4663,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>forgeofsouls-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_weapon_shortblade_77</icon>
   </item>
   <item id="50206">
@@ -4097,6 +4686,9 @@
     </sockets>
     <lvl>232</lvl>
     <tag>devourerofsouls-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_helmet_153</icon>
   </item>
   <item id="50228">
@@ -4110,6 +4702,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>pitofsaron-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_jewelry_necklace_22</icon>
   </item>
   <item id="50264">
@@ -4123,6 +4718,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>pitofsaron-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_bracer_23a</icon>
   </item>
   <item id="50269">
@@ -4136,6 +4734,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>tyrannus-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="50271">
@@ -4148,6 +4749,10 @@
       <arp>36</arp>
     </attributes>
     <lvl>232</lvl>
+    <tag>pitofsaron-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_jewelry_ring_12</icon>
   </item>
   <item id="50293">
@@ -4161,6 +4766,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>falric-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_shoulder_115</icon>
   </item>
   <item id="50300">
@@ -4180,6 +4788,9 @@
     </sockets>
     <lvl>232</lvl>
     <tag>marwyn-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_chest_leather_23</icon>
   </item>
   <item id="50302">
@@ -4196,6 +4807,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_sword_118</icon>
   </item>
   <item id="50303">
@@ -4212,6 +4826,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_mace_78</icon>
   </item>
   <item id="50308">
@@ -4225,6 +4842,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_boots_leather_8</icon>
   </item>
   <item id="50315">
@@ -4241,6 +4861,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>icc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_weapon_hand_04</icon>
   </item>
   <item id="50319">
@@ -4257,6 +4880,9 @@
     </attributes>
     <lvl>232</lvl>
     <tag>icc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
     <icon>inv_weapon_shortblade_61</icon>
   </item>
   <item id="50333">
@@ -4276,6 +4902,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>saurfang-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_bracer_41</icon>
   </item>
   <item id="50342">
@@ -4286,6 +4915,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>deathwhisper-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="50343">
@@ -4296,6 +4928,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_misc_bone_skull_02</icon>
   </item>
   <item id="50351">
@@ -4306,6 +4941,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>professorputricide-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_alchemy_enchantedvial</icon>
   </item>
   <item id="50355">
@@ -4326,6 +4964,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>saurfang-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_jewelry_trinket_04</icon>
   </item>
   <item id="50363">
@@ -4336,6 +4977,9 @@
     </attributes>
     <lvl>277</lvl>
     <tag>saurfang-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_jewelry_trinket_04</icon>
   </item>
   <item id="50376">
@@ -4406,6 +5050,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>gunship-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
   <item id="50412">
@@ -4422,6 +5069,9 @@
     </attributes>
     <lvl>264</lvl>
     <tag>saurfang-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_sword_154</icon>
   </item>
   <item id="50421">
@@ -4439,6 +5089,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_misc_monsterhorn_03</icon>
   </item>
   <item id="50452">
@@ -4458,6 +5111,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>icctrash-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_misc_pelt_wolf_ruin_01</icon>
   </item>
   <item id="50470">
@@ -4510,6 +5166,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>marrowgar-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_jewelry_ring_83</icon>
   </item>
   <item id="50607">
@@ -4528,6 +5187,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>marrowgar-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_boots_leather_07</icon>
   </item>
   <item id="50618">
@@ -4547,6 +5209,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>valithria-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>item_icecrownringa</icon>
   </item>
   <item id="50621">
@@ -4567,6 +5232,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>valithria-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_105</icon>
   </item>
   <item id="50633">
@@ -4584,6 +5252,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>sindragosa-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_misc_monsterhorn_03</icon>
   </item>
   <item id="50641">
@@ -4601,6 +5272,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>deathwhisper-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_103</icon>
   </item>
   <item id="50646">
@@ -4619,6 +5293,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>deathwhisper-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="50653">
@@ -4638,6 +5315,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>gunship-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>item_icecrowncloak</icon>
   </item>
   <item id="50654">
@@ -4660,6 +5340,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>gunship-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
   <item id="50656">
@@ -4681,6 +5364,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>gunship-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="50670">
@@ -4700,6 +5386,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>saurfang-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_bracer_41</icon>
   </item>
   <item id="50672">
@@ -4722,6 +5411,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>saurfang-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_sword_154</icon>
   </item>
   <item id="50675">
@@ -4740,6 +5432,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_gauntlets_79</icon>
   </item>
   <item id="50676">
@@ -4760,6 +5455,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_105</icon>
   </item>
   <item id="50678">
@@ -4777,6 +5475,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>item_icecrownringc</icon>
   </item>
   <item id="50692">
@@ -4794,6 +5495,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>festergut-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_weapon_hand_33</icon>
   </item>
   <item id="50697">
@@ -4813,6 +5517,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>festergut-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="50706">
@@ -4822,7 +5529,10 @@
       <hit>85</hit>
     </attributes>
     <lvl>277</lvl>
-    <tag>professorputricide-25-heroic</tag>
+    <tag>putricide-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_alchemy_enchantedvial</icon>
   </item>
   <item id="50707">
@@ -4840,7 +5550,10 @@
       <bonus />
     </sockets>
     <lvl>277</lvl>
-    <tag>professorputricide-25-heroic</tag>
+    <tag>putricide-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_belt_61</icon>
   </item>
   <item id="50713">
@@ -4859,6 +5572,9 @@
     </sockets>
     <lvl>277</lvl>
     <tag>blodprince-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="50759">
@@ -4875,6 +5591,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>marrowgar-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
   <item id="50764">
@@ -4894,6 +5613,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>marrowgar-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="50776">
@@ -4910,6 +5632,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>deathwhisper-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_weapon_bow_56</icon>
   </item>
   <item id="50778">
@@ -4930,6 +5655,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>deathwhisper-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_belt_61</icon>
   </item>
   <item id="50780">
@@ -4951,6 +5679,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>deathwhisper-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="50787">
@@ -4967,6 +5698,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>gunship-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
   <item id="50799">
@@ -4987,6 +5721,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>saurfang-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_gauntlets_79</icon>
   </item>
   <item id="50803">
@@ -5006,6 +5743,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>saurfang-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="50810">
@@ -5022,6 +5762,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>festergut-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_mace_114</icon>
   </item>
   <item id="50852">
@@ -5041,6 +5784,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>festergut-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_jewelry_ring_78</icon>
   </item>
   <item id="50858">
@@ -5062,6 +5808,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>festergut-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="50972">
@@ -5139,6 +5888,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>rotface-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_throwingknife_01</icon>
   </item>
   <item id="51003">
@@ -5155,6 +5907,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>rotface-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_weapon_hand_34</icon>
   </item>
   <item id="51011">
@@ -5171,6 +5926,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>putricide-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51013">
@@ -5190,7 +5948,10 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
-    <tag>professorputricide-10</tag>
+    <tag>putricide-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="51021">
@@ -5207,6 +5968,9 @@
     </attributes>
     <lvl>251</lvl>
     <tag>valanar-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_sword_151</icon>
   </item>
   <item id="51023">
@@ -5226,7 +5990,10 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
-    <tag>princevalanar-10</tag>
+    <tag>valanar-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_boots_leather_07</icon>
   </item>
   <item id="51185">
@@ -5245,6 +6012,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
+    <filters>
+      <filter>icc10h</filter>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="51186">
@@ -5264,6 +6035,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
+    <filters>
+      <filter>icc10h</filter>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51187">
@@ -5283,6 +6058,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
+    <filters>
+      <filter>icc10h</filter>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="51188">
@@ -5301,6 +6080,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
+    <filters>
+      <filter>icc10h</filter>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_gauntlets_85</icon>
   </item>
   <item id="51189">
@@ -5320,6 +6103,10 @@
       </bonus>
     </sockets>
     <lvl>264</lvl>
+    <filters>
+      <filter>icc10h</filter>
+      <filter>icc25n</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="51250">
@@ -5339,6 +6126,9 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="51251">
@@ -5357,6 +6147,9 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_gauntlets_85</icon>
   </item>
   <item id="51252">
@@ -5376,6 +6169,9 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="51253">
@@ -5395,6 +6191,9 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51254">
@@ -5413,6 +6212,9 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="51384">
@@ -5428,7 +6230,10 @@
       <hst>39</hst>
     </attributes>
     <lvl>251</lvl>
-    <tag>queenlanathel-10</tag>
+    <tag>lanathel-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51385">
@@ -5444,7 +6249,10 @@
       <arp>31</arp>
     </attributes>
     <lvl>251</lvl>
-    <tag>queenlanathel-10</tag>
+    <tag>lanathel-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_weapon_rifle_39</icon>
   </item>
   <item id="51387">
@@ -5463,7 +6271,10 @@
       </bonus>
     </sockets>
     <lvl>251</lvl>
-    <tag>queenlanathel-10</tag>
+    <tag>lanathel-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_jewelry_ring_70</icon>
   </item>
   <item id="51550">
@@ -5482,7 +6293,10 @@
       <bonus />
     </sockets>
     <lvl>251</lvl>
-    <tag>queenlanathel-10</tag>
+    <tag>lanathel-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51560">
@@ -5515,6 +6329,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>valithria-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="51779">
@@ -5532,6 +6349,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>sindragosa-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_jewelry_amulet_06</icon>
   </item>
   <item id="51783">
@@ -5549,6 +6369,9 @@
     </sockets>
     <lvl>251</lvl>
     <tag>sindragosa-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
     <icon>inv_bracer_41</icon>
   </item>
   <item id="51820">
@@ -5566,7 +6389,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_bracer_41</icon>
   </item>
   <item id="51822">
@@ -5584,7 +6409,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_jewelry_amulet_06</icon>
   </item>
   <item id="51830">
@@ -5603,7 +6430,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valithria-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_shoulder_112</icon>
   </item>
   <item id="51841">
@@ -5623,7 +6452,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51843">
@@ -5641,7 +6472,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_jewelry_ring_70</icon>
   </item>
   <item id="51845">
@@ -5662,7 +6495,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_weapon_rifle_39</icon>
   </item>
   <item id="51846">
@@ -5683,7 +6518,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51856">
@@ -5702,7 +6539,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valanar-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_boots_leather_07</icon>
   </item>
   <item id="51858">
@@ -5723,7 +6562,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>valanar-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_sword_151</icon>
   </item>
   <item id="51866">
@@ -5742,7 +6583,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>putricide-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_helmet_149</icon>
   </item>
   <item id="51868">
@@ -5763,7 +6606,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>putricide-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_weapon_shortblade_102</icon>
   </item>
   <item id="51876">
@@ -5784,7 +6629,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_weapon_hand_34</icon>
   </item>
   <item id="51880">
@@ -5805,7 +6652,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_throwingknife_01</icon>
   </item>
   <item id="51889">
@@ -5827,7 +6676,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_pants_leather_34</icon>
   </item>
   <item id="51890">
@@ -5845,7 +6696,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_jewelry_ring_78</icon>
   </item>
   <item id="51893">
@@ -5866,7 +6719,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_mace_114</icon>
   </item>
   <item id="51900">
@@ -5886,7 +6741,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>saurfang-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="51904">
@@ -5907,7 +6764,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>saurfang-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_gauntlets_79</icon>
   </item>
   <item id="51916">
@@ -5930,7 +6789,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>gunship-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
   <item id="51923">
@@ -5952,7 +6813,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_chest_leather_22</icon>
   </item>
   <item id="51925">
@@ -5971,7 +6834,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_belt_61</icon>
   </item>
   <item id="51927">
@@ -5992,7 +6857,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_weapon_bow_55</icon>
   </item>
   <item id="51933">
@@ -6010,7 +6877,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_misc_cape_16</icon>
   </item>
   <item id="51938">
@@ -6031,7 +6900,9 @@
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>
-    <filter>icc10h</filter>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
     <icon>inv_axe_113</icon>
   </item>
 </items>

@@ -11,7 +11,7 @@ import org.jdom.Element;
 import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Player;
-import iDPS.Player.Profession;
+import iDPS.gear.Setup.Profession;
 import iDPS.gear.Socket.SocketType;
 
 
@@ -109,7 +109,7 @@ public class Gem extends Item {
 	public static void limit() {
 		map = new HashMap<Integer,Gem>();
 		for (Gem g: fullmap.values()) {
-			if (g.profession == null || Player.getInstance().hasProfession(g.profession))
+			if (g.profession == null || Player.getInstance().getSetup().hasProfession(g.profession))
 				map.put(g.getId(), g);
 		}
 	}

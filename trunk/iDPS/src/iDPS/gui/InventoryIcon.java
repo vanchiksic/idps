@@ -17,7 +17,11 @@ public class InventoryIcon extends JLabel {
 	public InventoryIcon(Item item) {
 		super();
 		Image image;
-		URL url = SelectItemPanel.class.getResource("/images/"+item.getIcon()+".png");
+		URL url = null;
+		if (item != null) {
+			url = SelectItemPanel.class.getResource("/images/"+item.getIcon()+".png");
+			setToolTipText(item.getToolTip());
+		}
 		if (url == null)
 			url = InventoryButton.class.getResource("/images/inv_misc_questionmark.png");
 		try {

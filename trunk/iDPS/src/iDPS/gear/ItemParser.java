@@ -226,7 +226,7 @@ public class ItemParser {
 				itemNew.setTag(itemOrg.getTag());
 			if (itemOrg.getFaction() != Faction.Both)
 				itemNew.setFaction(itemOrg.getFaction());
-			if (itemOrg.getFilter() != null)
+			if (itemOrg.getFilter().size() > 0)
 				itemNew.setFilter(itemOrg.getFilter());
 			Armor.add(itemNew);
 		}

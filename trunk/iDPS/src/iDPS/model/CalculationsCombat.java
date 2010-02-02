@@ -40,7 +40,7 @@ public class CalculationsCombat extends Calculations {
 		float avgCpSS = 1+ss2cp;
 		
 		float pT10 = 0;
-		if (gear.getTier10()>=4)
+		if (setup.getTier10()>=4)
 			pT10 = 0.13F;
 		
 		float c0ss0cp, c0ss1cp, c0ss2cp, c0ss3cp, c0ss4cp, c0ss5cp;
@@ -109,7 +109,7 @@ public class CalculationsCombat extends Calculations {
 	}
 	
 	private float calcSinisterDamage() {
-		float dmg = gear.getWeapon1().getInstantDmg(totalATP) + 180;
+		float dmg = setup.getWeapon1().getInstantDmg(totalATP) + 180;
 		dmg *= 1+0.10F+0.10F+0.15F;
 		dmg *= ((mod.getComboMoveCritMult()-1)*mod.getHtSS().crit+1);
 		// Global Mods
@@ -124,9 +124,9 @@ public class CalculationsCombat extends Calculations {
 		float dps = 0;
 		if (talents.getKs()) {
 			float dmg, dmgMh, dmgOh;
-			dmgMh = gear.getWeapon1().getAverageDmg(totalATP)*mod.getModArmorMH();
+			dmgMh = setup.getWeapon1().getAverageDmg(totalATP)*mod.getModArmorMH();
 			dmgMh = dmgMh*mod.getHtMHS().hit + dmgMh*mod.getHtMHS().crit*mod.getPhysCritMult();
-			dmgOh = gear.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()*0.75F;
+			dmgOh = setup.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()*0.75F;
 			dmgOh = dmgOh*mod.getHtMHS().hit + dmgOh*mod.getHtMHS().crit*mod.getPhysCritMult();
 			dmg = (dmgMh + dmgOh) * 5 * 1.2F;
 			// Global Mods

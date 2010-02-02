@@ -40,8 +40,8 @@ public class CalculationsMutilate extends Calculations {
 		cMut3cp  = 1-cMut2cp;
 		avgCpMut = 2+cMut3cp;
 		
-		if (gear.getWeapon1().getType() != weaponType.Dagger
-				|| gear.getWeapon2().getType() != weaponType.Dagger) {
+		if (setup.getWeapon1().getType() != weaponType.Dagger
+				|| setup.getWeapon2().getType() != weaponType.Dagger) {
 			mutPerSec = 0;
 			envPerSec = 0;
 			rupPerSec = 0;
@@ -51,7 +51,7 @@ public class CalculationsMutilate extends Calculations {
 		}
 		
 		float pT10 = 0;
-		if (gear.getTier10()>=4)
+		if (setup.getTier10()>=4)
 			pT10 = 0.13F;
 		
 		float c0MutFin4, c1MutFin4, c1MutFin5, c2MutFin4, c2MutFin5, mutPerFin;
@@ -117,10 +117,10 @@ public class CalculationsMutilate extends Calculations {
 	
 	private float calcMutilateDamage() {
 		float dmg, dmg1, dmg2;
-		if (gear.getWeapon1().getType() != weaponType.Dagger || gear.getWeapon2().getType() != weaponType.Dagger)
+		if (setup.getWeapon1().getType() != weaponType.Dagger || setup.getWeapon2().getType() != weaponType.Dagger)
 			return 0;
-		dmg1 = gear.getWeapon1().getInstantDmg(totalATP) + 181;
-		dmg2 = (gear.getWeapon2().getInstantDmg(totalATP)*0.5F + 181)*1.5F;
+		dmg1 = setup.getWeapon1().getInstantDmg(totalATP) + 181;
+		dmg2 = (setup.getWeapon2().getInstantDmg(totalATP)*0.5F + 181)*1.5F;
 		// total * poisoned * critMod * Opp+FW 
 		dmg = (dmg1+dmg2) * 1.2F * ((mod.getComboMoveCritMult()-1)*mod.getHtMut().crit + 1);
 		dmg *= (1+talents.getOpportunity()+talents.getFindWeakness());

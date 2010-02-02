@@ -65,8 +65,8 @@ public class Talents {
 			case CombatCQC:
 				id = 3;
 				lethality = 5;
-				vilepoisons = 2;
-				improvedpoisons = 3;
+				vilepoisons = 1;
+				improvedpoisons = 4;
 				cqc = 5;
 				lightref = 3;
 				bf = 1;
@@ -83,8 +83,8 @@ public class Talents {
 			case CombatHnS:
 				id = 4;
 				lethality = 5;
-				vilepoisons = 2;
-				improvedpoisons = 3;
+				vilepoisons = 1;
+				improvedpoisons = 4;
 				hns = 5;
 				lightref = 3;
 				bf = 1;
@@ -100,8 +100,8 @@ public class Talents {
 			case CombatMace:
 				id = 5;
 				lethality = 5;
-				vilepoisons = 2;
-				improvedpoisons = 3;
+				vilepoisons = 1;
+				improvedpoisons = 4;
 				cqc = 1;
 				mace = 5;
 				lightref = 3;

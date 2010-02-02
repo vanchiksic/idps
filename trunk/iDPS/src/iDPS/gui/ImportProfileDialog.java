@@ -15,51 +15,61 @@ import javax.swing.*;
 
 final class ImportProfileDialog extends JDialog implements ActionListener {
     
+	private MainFrame mainFrame;
+	
     private JComboBox mRegions;
-    private JLabel mRegionsLabel;
-    
     private JComboBox mRealms;
-    private JLabel mRealmsLabel;
-    
     private JTextField mCharacterName;
-    private JLabel mCharacterNameLabel;
     
     private JButton mImportButton;
     
-    ImportProfileDialog() {
-        super(MainFrame.getInstance(), "Import Profile", true);
+    ImportProfileDialog(MainFrame mainFrame) {
+        super(mainFrame, "Import Profile", true);
+        this.mainFrame = mainFrame;
         
-        GridLayout layout = new GridLayout(0, 2);
-        setLayout(layout);
+        setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;  c.weighty = 0;
+        c.insets = new Insets(5, 5, 0, 5);
         
-        mRegionsLabel = new JLabel("Region:");
-        add(mRegionsLabel);
+        c.gridx = 0; c.gridy = 0;
+        add(new JLabel("Region:"), c);
         
         String regions[] = { "EU", "US", "CN", "KR", "TW" };
         mRegions = new JComboBox(regions);
         mRegions.addActionListener(this);
-        add(mRegions);
+        c.gridx = 1; c.gridy = 0;
+        add(mRegions, c);
         
-        mRealmsLabel = new JLabel("Realm:");
-        add(mRealmsLabel);
+        c.gridx = 0; c.gridy = 1;
+        add(new JLabel("Realm:"), c);
         
         mRealms = new JComboBox();
         mRealms.addActionListener(this);
-        add(mRealms);
+        c.gridx = 1; c.gridy = 1;
+        add(mRealms, c);
         
-        mCharacterNameLabel = new JLabel("Character:");
-        add(mCharacterNameLabel);
+        c.gridx = 0; c.gridy = 2;
+        add(new JLabel("Character:"), c);
         
-        mCharacterName = new JTextField();
-        add(mCharacterName);
+        mCharacterName = new JTextField(15);
+        mCharacterName.setPreferredSize(mRealms.getPreferredSize());
+        c.gridx = 1; c.gridy = 2;
+        add(mCharacterName, c);
         
         mImportButton = new JButton("Import");
         mImportButton.addActionListener(this);
-        add(mImportButton);
+        c.gridx = 0; c.gridy = 3; c.gridwidth = 3;
+        c.fill = GridBagConstraints.NONE; c.insets = new Insets(5, 5, 5, 5);
+        add(mImportButton, c);
         
         updateRealms();
-        
         pack();
+        
+		// put it in the center
+		int x = mainFrame.getLocation().x + mainFrame.getSize().width/2 - getSize().width/2;
+		int y = mainFrame.getLocation().y + mainFrame.getSize().height/2 - getSize().height/2;
+		setLocation(new Point(x,y));
     }
     
     public void actionPerformed(ActionEvent event) {
@@ -115,7 +125,8 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         }
     }
     
-    private void importCharacter() {
+    @SuppressWarnings("unchecked")
+	private void importCharacter() {
         Player player = Player.getInstance();
         
         String region = (String)mRegions.getSelectedItem();
@@ -195,10 +206,10 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             return;
         }
         player.setSetup(gear);
-        MainFrame.getInstance().showGear();
+        mainFrame.showGear();
         Setup.add(gear);
-        MainFrame.getInstance().getMyMenuBar().createGearMenu();
-        dispose();
+        mainFrame.getMyMenuBar().createGearMenu();
+        setVisible(false);
     }
     
 }

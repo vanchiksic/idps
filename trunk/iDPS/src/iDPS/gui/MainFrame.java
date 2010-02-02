@@ -25,15 +25,15 @@ public class MainFrame extends JFrame {
 	private static MainFrame instance;
 	
 	private MenuBar menuBar;
+	private ImportProfileDialog importFrame = null;
 	private CenterPanel centerP;
 	private InventoryButton[] buttons;
-	
 	private JScrollPane sideScroll;
 	
 	public MainFrame() {
 		super("iDPS");
 		
-		menuBar = new MenuBar();
+		menuBar = new MenuBar(this);
 		
 		setJMenuBar(menuBar);
 		
@@ -113,15 +113,15 @@ public class MainFrame extends JFrame {
 
 		}
 		Border b1 = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
-		Border b2 = new EmptyBorder(new Insets(0,7,0,7));
+		Border b2 = new EmptyBorder(new Insets(0,0,0,0));
 		Border b3 = new CompoundBorder(b1,b2);
 		invPane.setBorder(b3);
-		invPane.setPreferredSize(new Dimension(450,500));
+		invPane.setPreferredSize(new Dimension(430,480));
 		add(invPane, BorderLayout.CENTER);
 		
 		sideScroll = new JScrollPane(new JPanel());
-		sideScroll.getVerticalScrollBar().setUnitIncrement(10);
-		sideScroll.setPreferredSize(new Dimension(430,500));
+		sideScroll.getVerticalScrollBar().setUnitIncrement(20);
+		sideScroll.setPreferredSize(new Dimension(430,480));
 		add(sideScroll, BorderLayout.LINE_END);
 		
 		pack();
@@ -178,6 +178,12 @@ public class MainFrame extends JFrame {
 	
 	public MenuBar getMyMenuBar() {
 		return menuBar;
+	}
+	
+	public void createAndShowImportFrame() {
+		if (importFrame == null)
+			importFrame = new ImportProfileDialog(this);
+		importFrame.setVisible(true);
 	}
 
 }
