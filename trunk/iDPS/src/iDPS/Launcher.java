@@ -14,8 +14,12 @@ public class Launcher {
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "iDPS");
 		}
-		MainFrame.getInstance();
+		MainFrame mf = MainFrame.getInstance();
 		Persistency.createXML();
+		
+		Setup.load();
+		System.out.println("Setups loaded.");
+		
 		Race.load();
 		System.out.println("Races loaded.");
 		Talents.load();
@@ -27,15 +31,15 @@ public class Launcher {
 		Enchant.load();
 		System.out.println("Enchants loaded.");
 		Setup.load();
-		System.out.println("Gears loaded.");
+		System.out.println("Gears loaded again.");
 		
 		Item.loadFilter();
-		MainFrame.getInstance().getMyMenuBar().createFilterMenu();
+		mf.getMyMenuBar().createFilterMenu();
 		Armor.limit();
 		System.out.println("Filters loaded.");
 		
-		MainFrame.getInstance().showGear();
-		MainFrame.getInstance().getMyMenuBar().checkSetup(Player.getInstance().getSetup());
+		mf.showGear();
+		mf.getMyMenuBar().checkSetup(mf.getSetup());
 	}
 
 }

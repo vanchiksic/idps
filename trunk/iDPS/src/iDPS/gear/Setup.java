@@ -2,7 +2,6 @@ package iDPS.gear;
 
 import iDPS.Attributes;
 import iDPS.Persistency;
-import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gui.MainFrame;
@@ -555,7 +554,7 @@ public class Setup implements Comparable<Setup> {
 			if (s.getId()>0) {
 				map.put(s.getId(), s);
 				if (s.getId()==defGear)
-					Player.getInstance().setSetup(s);
+					MainFrame.getInstance().setSetup(s);
 			}
 		}
 		
@@ -573,7 +572,7 @@ public class Setup implements Comparable<Setup> {
 		root = document.getRootElement();
 		root.removeChild("gearconfigs");
 		gearconfigs = new Element("gearconfigs");
-		gearconfigs.setAttribute("default", Integer.toString(Player.getInstance().getSetup().getId()));
+		gearconfigs.setAttribute("default", Integer.toString(MainFrame.getInstance().getSetup().getId()));
 		root.getChildren().add(gearconfigs);
 		Iterator<Setup> i = map.values().iterator();
 		while (i.hasNext())

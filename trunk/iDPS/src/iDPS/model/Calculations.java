@@ -1,13 +1,13 @@
 package iDPS.model;
 
 import iDPS.Attributes;
-import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Setup.Profession;
 import iDPS.gear.Weapon.weaponType;
+import iDPS.gui.MainFrame;
 
 public abstract class Calculations {
 	
@@ -30,10 +30,6 @@ public abstract class Calculations {
 	
 	protected ModelType type;
 	
-	public Calculations() {
-		talents = Player.getInstance().getSetup().getTalents();
-	}
-	
 	private void reset() {
 		mhSPS = 0;
 		ohSPS = 0;
@@ -48,7 +44,7 @@ public abstract class Calculations {
 		agi += 229;
 		str += 229;
 		atp += 687 + 260;
-		if (Player.getInstance().getSetup().hasProfession(Profession.Alchemy))
+		if (setup.hasProfession(Profession.Alchemy))
 			atp += 80;
 		agi *= 1.1F;
 		str *= 1.1F;
@@ -105,37 +101,37 @@ public abstract class Calculations {
 			Attributes attr = new Attributes();
 			//System.out.println("EP ATP");
 			attr.setAtp(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			dpsATP = c.total - total;
 			attr.clear();
 			//System.out.println("EP AGI");
 			attr.setAgi(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epAGI = (c.total - total) / dpsATP;
 			attr.clear();
 			//System.out.println("EP HIT");
 			attr.setHit(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epHIT = (c.total - total) / dpsATP;
 			attr.clear();
 			//System.out.println("EP CRI");
 			attr.setCri(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epCRI = (c.total - total) / dpsATP;
 			attr.clear();
 			//System.out.println("EP HST");
 			attr.setHst(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epHST = (c.total - total) / dpsATP;
 			attr.clear();
 			//System.out.println("EP EXP");
 			attr.setExp(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epEXP = (c.total - total) / dpsATP;
 			attr.clear();
 			//System.out.println("EP ARP");
 			attr.setArp(1);
-			c.calculate(attr);
+			c.calculate(attr, setup);
 			epARP = (c.total - total) / dpsATP;
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
@@ -238,7 +234,7 @@ public abstract class Calculations {
 			totalATP += 400F*15F/62F;
 		
 		// Orc Racial
-		if (Player.getInstance().getSetup().getRace().getType() == Race.Type.Orc)
+		if (setup.getRace().getType() == Race.Type.Orc)
 			totalATP += 40.25F;
 		
 		// Grim Toll
@@ -446,26 +442,24 @@ public abstract class Calculations {
 		return avgTick/2;
 	}
 	
-	public void calculate() {
-		calculate(null, Player.getInstance().getSetup());
-	}
-	
-	public void calculate(Attributes a) {
-		calculate(a, Player.getInstance().getSetup());
-	}
-	
 	public void calculate(Setup g) {
 		calculate(null, g);
 	}
 	
 	public void calculate(Attributes a, Setup g) {
+		if (g ==null) {
+			System.err.println("Cant calc with no setup!");
+			return;
+		}
 		reset();
+		
+		talents = g.getTalents();
 		
 		attrTotal = new Attributes(a);
 		setup = g;
 		
 		attrTotal.add(setup.getAttributes());
-		mod = new Modifiers(attrTotal, talents, setup);
+		mod = new Modifiers(attrTotal, setup);
 		
 		calcCycle();
 		
@@ -485,7 +479,7 @@ public abstract class Calculations {
 		float eRegen = 10;
 		
 		// Racial
-		if (Player.getInstance().getSetup().getRace().getType() == Race.Type.BloodElf)
+		if (setup.getRace().getType() == Race.Type.BloodElf)
 			eRegen += 15F/120F;
 		
 		// Talents
@@ -653,7 +647,7 @@ public abstract class Calculations {
 	}
 
 	public static Calculations createInstance() {
-		Setup s = Player.getInstance().getSetup();
+		Setup s = MainFrame.getInstance().getSetup();
 		ModelType m = s.getTalents().getModel();
 		switch (m) {
 			default:

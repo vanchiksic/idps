@@ -2,9 +2,9 @@ package iDPS.gear;
 
 import iDPS.Attributes;
 import iDPS.Persistency;
-import iDPS.Player;
 import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Setup.Profession;
+import iDPS.gui.MainFrame;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -94,16 +94,17 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 	public static void limit() {
 		map = new HashMap<Integer,Enchant>();
 		for (Enchant e: fullmap.values()) {
-			if (e.profession == null || Player.getInstance().getSetup().hasProfession(e.profession))
+			if (e.profession == null || MainFrame.getInstance().getSetup().hasProfession(e.profession))
 				map.put(e.id, e);
 		}
 	}
 	
 	public static Enchant find(int id) {
-		if (fullmap.containsKey(id))
+		if (fullmap != null && fullmap.containsKey(id))
 			return fullmap.get(id);
-		else
+		else if (spellmap != null)
 			return spellmap.get(id);
+		return null;
 	}
 	
 	public static ArrayList<Enchant> findSlot(SlotType slotType) {

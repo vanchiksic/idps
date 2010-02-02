@@ -1,6 +1,5 @@
 package iDPS.gui;
 
-import iDPS.Player;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Enchant;
@@ -103,7 +102,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mSetup.addSeparator();
 		
 		ArrayList<Setup> setups = Setup.getAll();
-		Setup curSetup = Player.getInstance().getSetup();
+		Setup curSetup = mainFrame.getSetup();
 		Collections.sort(setups);
 		iSetups = new ItemSelectGear[setups.size()];
 		ButtonGroup group = new ButtonGroup();
@@ -194,18 +193,18 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	}
 	
 	private void selectGearSetup(Setup setup) {
-		Player.getInstance().setSetup(setup);
+		mainFrame.setSetup(setup);
 		mainFrame.showGear();
 		checkSetup(setup);
 	}
 	
 	private void selectTalents(Talents talents) {
-		Player.getInstance().getSetup().setTalents(talents);
+		mainFrame.getSetup().setTalents(talents);
 		mainFrame.showStats();
 	}
 	
 	private void selectRace(Race race) {
-		Player.getInstance().getSetup().setRace(race);
+		mainFrame.getSetup().setRace(race);
 		mainFrame.showStats();
 	}
 
@@ -213,7 +212,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		if (e.getSource() == iGearSave)
 			Setup.save();
 		else if (e.getSource() == iGearSaveAs) {
-			Setup g = new Setup(Player.getInstance().getSetup());
+			Setup g = new Setup(mainFrame.getSetup());
 			g.clearId();
 			String s = (String) JOptionPane.showInputDialog(
 					mainFrame,
@@ -229,10 +228,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			int really = JOptionPane.showConfirmDialog(
 					mainFrame,
 					null,
-					"Delete Gear Configuration '"+Player.getInstance().getSetup().getName()+"'",
+					"Delete Gear Configuration '"+mainFrame.getSetup().getName()+"'",
 					JOptionPane.YES_NO_OPTION);
 			if (really == JOptionPane.OK_OPTION) {
-				Setup.remove(Player.getInstance().getSetup());
+				Setup.remove(mainFrame.getSetup());
 				createGearMenu();
 				revalidate();
 				ArrayList<Setup> gears = Setup.getAll();
@@ -261,10 +260,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 					JOptionPane.PLAIN_MESSAGE,
 					null,
 					null,
-					Player.getInstance().getSetup().getName());
+					mainFrame.getSetup().getName());
 			if (s == null || s.trim().isEmpty())
 				return;
-			Player.getInstance().getSetup().setName(s.trim());
+			mainFrame.getSetup().setName(s.trim());
 			createGearMenu();
 			revalidate();
 		}
@@ -348,7 +347,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Setup setup = Player.getInstance().getSetup();
+			Setup setup = mainFrame.getSetup();
 			setup.setProfession(profession, isSelected());
 			
 			switch (profession) {

@@ -1,6 +1,5 @@
 package iDPS.gui;
 
-import iDPS.Player;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.GemComparison;
@@ -21,8 +20,11 @@ import javax.swing.border.EmptyBorder;
 
 public class SelectGemPanel extends JPanel {
 	
-	public SelectGemPanel(int slot, int index) {
+	private MainFrame mainFrame;
+	
+	public SelectGemPanel(MainFrame mainFrame, int slot, int index) {
 		super();
+		this.mainFrame = mainFrame;
 		GemComparison gc;
 		
 		setLayout(new GridBagLayout());
@@ -32,7 +34,7 @@ public class SelectGemPanel extends JPanel {
 		
 		int j = 0;
 		Gem gem, curGem;
-		Setup gear = Player.getInstance().getSetup();
+		Setup gear = mainFrame.getSetup();
 		curGem = gear.getGem(slot,index);
 		gc = new GemComparison(gear, slot, index);
 		ArrayList<Gem> comparedGems = gc.getComparedGems();
@@ -147,11 +149,10 @@ public class SelectGemPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
-			Player p = Player.getInstance();
-			p.getSetup().setGem(slot, index, gem);
-			MainFrame.getInstance().showGem(gem, slot, index);
-			MainFrame.getInstance().showStats();
+			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.getSetup().setGem(slot, index, gem);
+			mainFrame.showGem(gem, slot, index);
+			mainFrame.showStats();
 		}
 
 	}

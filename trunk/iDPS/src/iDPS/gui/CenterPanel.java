@@ -1,7 +1,6 @@
 package iDPS.gui;
 
 import iDPS.Attributes;
-import iDPS.Player;
 import iDPS.model.Calculations;
 import iDPS.model.Modifiers;
 
@@ -19,12 +18,14 @@ import javax.swing.SwingConstants;
 
 public class CenterPanel extends JPanel {
 	
-	GridBagConstraints c;
+	private GridBagConstraints c;
+	private MainFrame mainFrame;
+	private JTextField[] fields;
 	
-	JTextField[] fields;
-	
-	public CenterPanel() {
+	public CenterPanel(MainFrame mainFrame) {
 		super(new GridBagLayout());
+		this.mainFrame = mainFrame;
+		
 		c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
 		
@@ -134,14 +135,13 @@ public class CenterPanel extends JPanel {
 	
 	public void showStats() {
 		Calculations calcs = Calculations.createInstance();
-		calcs.calculate();
-		Player player = Player.getInstance();
+		calcs.calculate(mainFrame.getSetup());
 		Modifiers mod = calcs.getModifiers();
 		if (mod == null)
 			return;
 		
 		fields[0].setText(String.format("%.0f", calcs.getTotalDPS()));
-		Attributes attr = player.getSetup().getAttributes();
+		Attributes attr = mainFrame.getSetup().getAttributes();
 		float atp = attr.getAtp();
 		atp += attr.getAgi() + attr.getStr();
 		fields[1].setText(String.format("%.0f", attr.getAgi()));

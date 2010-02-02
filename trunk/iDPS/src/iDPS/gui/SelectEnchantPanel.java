@@ -1,6 +1,5 @@
 package iDPS.gui;
 
-import iDPS.Player;
 import iDPS.gear.Setup;
 import iDPS.gear.Enchant;
 import iDPS.gear.EnchantComparison;
@@ -21,8 +20,11 @@ import javax.swing.border.EmptyBorder;
 
 public class SelectEnchantPanel extends JPanel {
 	
-	public SelectEnchantPanel(int slot) {
+	private MainFrame mainFrame;
+	
+	public SelectEnchantPanel(MainFrame mainFrame, int slot) {
 		super();
+		this.mainFrame = mainFrame;
 		EnchantComparison ec;
 		
 		setLayout(new GridBagLayout());
@@ -32,7 +34,7 @@ public class SelectEnchantPanel extends JPanel {
 		
 		int j = 0;
 		Enchant e, curEnchant;
-		Setup gear = Player.getInstance().getSetup();
+		Setup gear = mainFrame.getSetup();
 		curEnchant = gear.getEnchant(slot);
 		ec = new EnchantComparison(gear, slot);
 		ArrayList<Enchant> comparedEnchants = ec.getComparedEnchants();
@@ -121,11 +123,10 @@ public class SelectEnchantPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
-			Player p = Player.getInstance();
-			p.getSetup().setEnchant(slot, enchant);
-			MainFrame.getInstance().refreshItem(slot);
-			MainFrame.getInstance().showStats();
+			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.getSetup().setEnchant(slot, enchant);
+			mainFrame.refreshItem(slot);
+			mainFrame.showStats();
 		}
 
 	}

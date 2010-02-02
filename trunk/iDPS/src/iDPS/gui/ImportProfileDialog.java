@@ -1,7 +1,6 @@
 package iDPS.gui;
 
 import iDPS.Persistency;
-import iDPS.Player;
 import iDPS.gear.Armor;
 import iDPS.gear.Enchant;
 import iDPS.gear.Gem;
@@ -149,13 +148,11 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
     
     @SuppressWarnings("unchecked")
 	private void importCharacter() {
-        Player player = Player.getInstance();
-        
         String region = (String)mRegions.getSelectedItem();
         String realm = (String)mRealms.getSelectedItem();
         String character = mCharacterName.getText();
         
-        Setup gear = player.getSetup().clone();
+        Setup gear = mainFrame.getSetup().clone();
         gear.reset();
         
         try {
@@ -227,7 +224,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             JOptionPane.showMessageDialog(MainFrame.getInstance(), "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
             return;
         }
-        player.setSetup(gear);
+        mainFrame.setSetup(gear);
         mainFrame.showGear();
         Setup.add(gear);
         mainFrame.getMyMenuBar().createGearMenu();

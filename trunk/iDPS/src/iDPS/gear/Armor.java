@@ -2,7 +2,6 @@ package iDPS.gear;
 
 import iDPS.Attributes;
 import iDPS.Persistency;
-import iDPS.Player;
 import iDPS.gear.Setup.Profession;
 import iDPS.gear.Socket.SocketType;
 import iDPS.gui.MainFrame;
@@ -83,7 +82,7 @@ public class Armor extends Item {
 		if (slot == SlotType.Waist)
 			setExtraSocket(true);
 		if (((slot == SlotType.Wrist) || (slot == SlotType.Hands))
-				&& Player.getInstance().getSetup().hasProfession(Profession.Blacksmithing))
+				&& MainFrame.getInstance().getSetup().hasProfession(Profession.Blacksmithing))
 			setExtraSocket(true);
 		
 		checkTierSet();
@@ -198,7 +197,7 @@ public class Armor extends Item {
 	}
 	
 	public static Armor find(int id) {
-		if (fullmap.containsKey(id))
+		if (fullmap != null && fullmap.containsKey(id))
 			return fullmap.get(id);
 		return null;
 	}
@@ -210,7 +209,7 @@ public class Armor extends Item {
 		while (iter.hasNext()) {
 			Armor item = iter.next();
 			if (item.matchesSlot(slotType) && (item.getFaction() == Faction.Both ||
-					(item.getFaction() == Player.getInstance().getFaction())))
+					(item.getFaction() == MainFrame.getInstance().getSetup().getRace().getFaction())))
 				matches.add(item);
 		}
 		return matches;
@@ -225,7 +224,7 @@ public class Armor extends Item {
 			if (item instanceof Weapon) {
 				Weapon weapon = (Weapon) item;
 				if (weapon.getType() == type && (item.getFaction() == Faction.Both ||
-						(item.getFaction() == Player.getInstance().getFaction())))
+						(item.getFaction() == MainFrame.getInstance().getSetup().getRace().getFaction())))
 					matches.add(item);
 			}
 		}

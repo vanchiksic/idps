@@ -198,7 +198,7 @@ public class Talents {
 	}
 	
 	public static Talents find(int id) {
-		if (map.containsKey(id))
+		if (map != null && map.containsKey(id))
 			return map.get(id);
 		return null;
 	}

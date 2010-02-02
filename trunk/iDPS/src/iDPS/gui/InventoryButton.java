@@ -1,6 +1,5 @@
 package iDPS.gui;
 
-import iDPS.Player;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
@@ -32,10 +31,13 @@ import javax.swing.border.Border;
 public class InventoryButton extends JButton implements ActionListener, MouseListener {
 	
 	private int slot;
+	private MainFrame mainFrame;
 	private SocketButton[] socketButtons;
 
-	public InventoryButton(int slot) {
+	public InventoryButton(MainFrame mainFrame, int slot) {
 		super();
+		this.mainFrame = mainFrame;
+		
 		URL url = InventoryButton.class.getResource("/images/inv_misc_questionmark.png");
 		if (url != null) {
 			setIcon(new InventoryIcon(url));
@@ -43,7 +45,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		this.slot = slot;
 		socketButtons = new SocketButton[3];
 		for (int i=0; i<=2; i++) {
-			socketButtons[i] = new SocketButton(slot,i);
+			socketButtons[i] = new SocketButton(mainFrame, slot, i);
 			socketButtons[i].setVisible(true);
 		}
 		Border b, b1, b2;
@@ -59,7 +61,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 	}
 	
 	public void changeToItem(Armor item) {
-		Gem[] gems = Player.getInstance().getSetup().getGems(slot);
+		Gem[] gems = mainFrame.getSetup().getGems(slot);
 		changeToItem(item, gems);
 	}
 	
@@ -80,7 +82,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		if (item.getIcon() != null)
 			changeIcon(item.getIcon());
 		String s = item.getToolTip();
-		Setup g = Player.getInstance().getSetup();
+		Setup g = mainFrame.getSetup();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
 			s += "<span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";
@@ -88,7 +90,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		}
 		setToolTipText(s);
 
-		if (Player.getInstance().getSetup().isEnchanted(slot)) {
+		if (mainFrame.getSetup().isEnchanted(slot)) {
 			b2 = BorderFactory.createLineBorder(Color.GREEN, 2);
 			b = BorderFactory.createCompoundBorder(b1, b2);
 			setBorder(b);
@@ -119,14 +121,14 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 
 	public void actionPerformed(ActionEvent e) {
 		MainFrame f = MainFrame.getInstance();
-		SelectItemPanel ip = new SelectItemPanel(slot);
+		SelectItemPanel ip = new SelectItemPanel(mainFrame, slot);
 		f.getSideScroll().setViewportView(ip);
 	}
 	
 	public void mouseClicked(MouseEvent e) {
 		if (SwingUtilities.isRightMouseButton(e)) {
 			MainFrame f = MainFrame.getInstance();
-			SelectEnchantPanel ep = new SelectEnchantPanel(slot);
+			SelectEnchantPanel ep = new SelectEnchantPanel(mainFrame, slot);
 			f.getSideScroll().setViewportView(ep);
 		}
 	}

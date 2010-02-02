@@ -1,6 +1,5 @@
 package iDPS.gui;
 
-import iDPS.Player;
 import iDPS.gear.Armor;
 import iDPS.gear.ItemComparison;
 import iDPS.gear.Armor.SlotType;
@@ -21,9 +20,11 @@ import javax.swing.border.EmptyBorder;
 
 public class SelectItemPanel extends JPanel {
 	
-	public SelectItemPanel(int slot) {
+	private MainFrame mainFrame;
+	
+	public SelectItemPanel(MainFrame mainFrame, int slot) {
 		super();
-		
+		this.mainFrame = mainFrame;
 		SlotType[] slotMap = {
 				SlotType.Head, SlotType.Neck, SlotType.Shoulder, SlotType.Back, SlotType.Chest, null,
 				null, SlotType.Wrist, SlotType.Hands, SlotType.Waist, SlotType.Legs, SlotType.Feet,
@@ -31,7 +32,7 @@ public class SelectItemPanel extends JPanel {
 				SlotType.MainHand, SlotType.OffHand, SlotType.Ranged,
 		};
 		
-		ItemComparison ic = new ItemComparison(Player.getInstance().getSetup(), slot, slotMap[slot]);
+		ItemComparison ic = new ItemComparison(mainFrame.getSetup(), slot, slotMap[slot]);
 		ArrayList<Armor> comparedItems = ic.getComparedItems();
 		
 		setLayout(new GridBagLayout());
@@ -42,7 +43,7 @@ public class SelectItemPanel extends JPanel {
 		
 		Iterator<Armor> iter = comparedItems.iterator();
 		int j = 0;
-		Armor item, curItem = Player.getInstance().getSetup().getItem(slot);
+		Armor item, curItem = mainFrame.getSetup().getItem(slot);
 
 		JLabel label;
 		SelectItemButton button;
@@ -119,11 +120,10 @@ public class SelectItemPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			MainFrame.getInstance().getSideScroll().setViewportView(new JPanel());
-			Player p = Player.getInstance();
-			p.getSetup().setItem(slot, item);
-			MainFrame.getInstance().refreshItem(slot);
-			MainFrame.getInstance().showStats();
+			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.getSetup().setItem(slot, item);
+			mainFrame.refreshItem(slot);
+			mainFrame.showStats();
 		}
 
 	}

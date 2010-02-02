@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-import iDPS.Player;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Socket;
@@ -24,10 +23,12 @@ public class SocketButton extends JButton implements ActionListener {
 	
 	private int slot;
 	private int index;
+	private MainFrame mainFrame;
 	
-	public SocketButton(int slot, int index) {
+	public SocketButton(MainFrame mainFrame, int slot, int index) {
 		this.slot = slot;
 		this.index = index;
+		this.mainFrame = mainFrame;
 		URL url = InventoryButton.class.getResource("/images/Socket_Meta.png");
 		Border b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1);
 		Border b2 = BorderFactory.createLineBorder(Color.GRAY, 2);
@@ -39,7 +40,7 @@ public class SocketButton extends JButton implements ActionListener {
 	}
 	
 	protected void updateColor() {
-		Setup gear = Player.getInstance().getSetup();
+		Setup gear = mainFrame.getSetup();
 		Socket socket = gear.getItem(slot).getSocket(index);
 		if (socket == null)
 			return;
@@ -82,7 +83,7 @@ public class SocketButton extends JButton implements ActionListener {
 
 	public void actionPerformed(ActionEvent e) {
 		MainFrame f = MainFrame.getInstance();
-		SelectGemPanel ip = new SelectGemPanel(slot, index);
+		SelectGemPanel ip = new SelectGemPanel(mainFrame, slot, index);
 		f.getSideScroll().setViewportView(ip);
 	}
 	

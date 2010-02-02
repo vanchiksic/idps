@@ -15,7 +15,6 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
-import iDPS.Player;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
@@ -30,6 +29,8 @@ public class MainFrame extends JFrame {
 	private InventoryButton[] buttons;
 	private JScrollPane sideScroll;
 	
+	private Setup setup;
+
 	public MainFrame() {
 		super("iDPS");
 		
@@ -53,7 +54,7 @@ public class MainFrame extends JFrame {
 		
 		// Inv 0-7
 		for (int i=0;i<=21;i+=3) {
-			buttons[i/3] = new InventoryButton(i/3);
+			buttons[i/3] = new InventoryButton(this, i/3);
 			c.gridx = 0; c.gridy = i; c.gridheight = 3;
 			invPane.add(buttons[i/3],c);
 			c.gridx = 1; c.gridheight = 1;
@@ -64,7 +65,7 @@ public class MainFrame extends JFrame {
 			invPane.add(buttons[i/3].getSocketButton(2),c);
 		}
 		
-		centerP = new CenterPanel();
+		centerP = new CenterPanel(this);
 		
 		c.gridx = 2; c.gridy = 0; c.gridwidth = 9; c.gridheight = 20;
 		c.insets = new Insets(0,0,0,0);
@@ -76,7 +77,7 @@ public class MainFrame extends JFrame {
 		
 		// Inv 8-15
 		for (int i=0;i<=21;i+=3) {
-			buttons[i/3+8] = new InventoryButton(i/3+8);
+			buttons[i/3+8] = new InventoryButton(this, i/3+8);
 			c.gridx = 12; c.gridy = i; c.gridwidth = 1; c.gridheight = 3;
 			invPane.add(buttons[i/3+8],c);
 			c.gridx = 11; c.gridheight = 1;
@@ -95,7 +96,7 @@ public class MainFrame extends JFrame {
 				c.insets = new Insets(0,0,0,40);
 			else
 				c.insets = new Insets(0,0,0,10);
-			buttons[i/3+16] = new InventoryButton(i/3+16);
+			buttons[i/3+16] = new InventoryButton(this, i/3+16);
 			c.anchor = GridBagConstraints.FIRST_LINE_START;
 			c.gridy = 21; c.gridx = 2+i; c.gridwidth = 3; c.gridheight = 3;
 			invPane.add(buttons[i/3+16],c);
@@ -135,8 +136,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void refreshItem(int slot) {
-		Armor item = Player.getInstance().getSetup().getItem(slot);
-		Gem[] gems = Player.getInstance().getSetup().getGems(slot);
+		Armor item = setup.getItem(slot);
+		Gem[] gems = setup.getGems(slot);
 		buttons[slot].changeToItem(item, gems);
 	}
 	
@@ -152,9 +153,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void showGear() {
-		Setup gear = Player.getInstance().getSetup();
 		for (int i=0; i<=18; i++)
-			buttons[i].changeToItem(gear.getItem(i),gear.getGems(i));
+			buttons[i].changeToItem(setup.getItem(i), setup.getGems(i));
 		centerP.showStats();
 	}
 	
@@ -184,6 +184,14 @@ public class MainFrame extends JFrame {
 		if (importFrame == null)
 			importFrame = new ImportProfileDialog(this);
 		importFrame.setVisible(true);
+	}
+	
+	public Setup getSetup() {
+		return setup;
+	}
+
+	public void setSetup(Setup setup) {
+		this.setup = setup;
 	}
 
 }

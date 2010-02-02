@@ -80,7 +80,7 @@ public class Race {
 	}
 	
 	public static Race find(int id) {
-		if (map.containsKey(id))
+		if (map != null && map.containsKey(id))
 			return map.get(id);
 		return null;
 	}
