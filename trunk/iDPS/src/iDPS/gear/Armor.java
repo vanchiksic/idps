@@ -320,9 +320,7 @@ public class Armor extends Item {
 				eSub.setText(item.faction.name());
 				eItem.getChildren().add(eSub);
 			}
-			System.out.println(item+" "+item.getFilter().size());
 			if (item.getFilter().size() > 0) {
-				System.out.println(item+" "+item.getFilter().size());
 				eSub = new Element("filters");
 				Element eSub2;
 				for (Filter f: item.getFilter()) {
@@ -338,7 +336,6 @@ public class Armor extends Item {
 			
 			root.getChildren().add(eItem);
 		}
-		System.out.println("items saved");
 		Persistency.saveXML(doc, Persistency.FileType.Items);
 	}
 	

@@ -948,6 +948,64 @@
     </filters>
     <icon>inv_axe_105</icon>
   </item>
+  <item id="47170">
+    <name><![CDATA[Belt of Fierce Competition]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>66</agi>
+      <atp>101</atp>
+      <cri>31</cri>
+      <arp>47</arp>
+    </attributes>
+    <lvl>200</lvl>
+    <tag>toc5</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_belt_26</icon>
+  </item>
+  <item id="47177">
+    <name><![CDATA[Gloves of the Argent Fanatic]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>66</agi>
+      <atp>73</atp>
+      <cri>45</cri>
+      <arp>34</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Blue</socket>
+      <bonus />
+    </sockets>
+    <lvl>200</lvl>
+    <tag>toc5</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_gauntlets_68</icon>
+  </item>
+  <item id="47202">
+    <name><![CDATA[Leggings of Brazen Trespass]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>89</agi>
+      <atp>128</atp>
+      <hit>64</hit>
+      <cri>52</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <atp>4</atp>
+      </bonus>
+    </sockets>
+    <lvl>200</lvl>
+    <tag>toc5</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_pants_leather_27</icon>
+  </item>
   <item id="47214">
     <name><![CDATA[Banner of Victory]]></name>
     <slot>Trinket</slot>
@@ -960,6 +1018,28 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_bannerpvp_03</icon>
+  </item>
+  <item id="47221">
+    <name><![CDATA[Shoulderpads of the Infamous Knave]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>62</agi>
+      <atp>101</atp>
+      <hit>27</hit>
+      <arp>47</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>200</lvl>
+    <tag>toc5</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_shoulder_105</icon>
   </item>
   <item id="47222">
     <name><![CDATA[Uruka's Band of Zeal]]></name>
@@ -976,6 +1056,28 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_jewelry_ring_79</icon>
+  </item>
+  <item id="47248">
+    <name><![CDATA[Treads of Dismal Fortune]]></name>
+    <slot>Feet</slot>
+    <attributes>
+      <agi>73</agi>
+      <atp>113</atp>
+      <cri>59</cri>
+      <exp>42</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_boots_mail_01</icon>
   </item>
   <item id="47251">
     <name><![CDATA[Cuirass of Cruel Intent]]></name>
@@ -1611,6 +1713,63 @@
     </filters>
     <icon>inv_axe_104</icon>
   </item>
+  <item id="47494">
+    <name><![CDATA[Ancient Pendant of Arathor]]></name>
+    <slot>Neck</slot>
+    <attributes>
+      <agi>42</agi>
+      <atp>119</atp>
+      <cri>44</cri>
+      <arp>33</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_jewelry_necklace_36</icon>
+  </item>
+  <item id="47496">
+    <name><![CDATA[Armbands of the Wary Lookout]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <agi>59</agi>
+      <atp>90</atp>
+      <hit>40</hit>
+      <arp>39</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_bracer_22b</icon>
+  </item>
+  <item id="47508">
+    <name><![CDATA[Aledar's Battlestar]]></name>
+    <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>73</atp>
+      <hit>13</hit>
+      <arp>31</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <hit>4</hit>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_mace_100</icon>
+  </item>
   <item id="47521">
     <name><![CDATA[BRK-1000]]></name>
     <slot>Ranged</slot>
@@ -1715,6 +1874,29 @@
     </filters>
     <icon>inv_mace_101</icon>
   </item>
+  <item id="47529">
+    <name><![CDATA[Mask of Distant Memory]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>142</atp>
+      <hit>64</hit>
+      <cri>61</cri>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <agi>8</agi>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_helmet_141</icon>
+  </item>
   <item id="47545">
     <name><![CDATA[Vereesa's Dexterity]]></name>
     <slot>Back</slot>
@@ -1757,6 +1939,24 @@
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
     <icon>inv_misc_cape_18</icon>
+  </item>
+  <item id="47568">
+    <name><![CDATA[True-aim Long Rifle]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>147.3</dps>
+    <attributes>
+      <agi>34</agi>
+      <atp>42</atp>
+      <arp>34</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_rifle_34</icon>
   </item>
   <item id="47581">
     <name><![CDATA[Bracers of Swift Death]]></name>
@@ -4108,6 +4308,60 @@
     <tag>onyxia</tag>
     <icon>inv_jewelry_necklace_09</icon>
   </item>
+  <item id="49682">
+    <name><![CDATA[Black Knight's Rondel]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>163.3</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>70</atp>
+      <hit>27</hit>
+      <cri>33</cri>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>toc5-heroic</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_94</icon>
+  </item>
+  <item id="49785">
+    <name><![CDATA[Bewildering Shoulderpads]]></name>
+    <slot>Shoulder</slot>
+    <attributes>
+      <agi>79</agi>
+      <atp>120</atp>
+      <cri>56</cri>
+      <hst>46</hst>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>forgeofsouls</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_shoulder_115</icon>
+  </item>
+  <item id="49789">
+    <name><![CDATA[Heartshiver]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>163.3</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>65</atp>
+      <cri>25</cri>
+      <hst>28</hst>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>forgeofsouls</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_80</icon>
+  </item>
   <item id="49792">
     <name><![CDATA[Accursed Crawling Cape]]></name>
     <slot>Back</slot>
@@ -4123,6 +4377,22 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_misc_cape_22</icon>
+  </item>
+  <item id="49803">
+    <name><![CDATA[Ring of Carnelian and Bone]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>59</agi>
+      <atp>87</atp>
+      <cri>38</cri>
+      <hst>41</hst>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_jewelry_ring_39</icon>
   </item>
   <item id="49806">
     <name><![CDATA[Flayer's Black Belt]]></name>
@@ -4145,6 +4415,175 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_belt_65</icon>
+  </item>
+  <item id="49807">
+    <name><![CDATA[Krick's Beetle Stabber]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.5</speed>
+    <dps>163.0</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>68</atp>
+      <hst>32</hst>
+      <arp>28</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_80</icon>
+  </item>
+  <item id="49813">
+    <name><![CDATA[Rimebane Rifle]]></name>
+    <slot>Ranged</slot>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>147.4</dps>
+    <attributes>
+      <agi>26</agi>
+      <atp>67</atp>
+      <cri>34</cri>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_rifle_13</icon>
+  </item>
+  <item id="49817">
+    <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
+    <slot>Legs</slot>
+    <attributes>
+      <agi>106</agi>
+      <atp>152</atp>
+      <cri>71</cri>
+      <arp>71</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_pants_leather_30a</icon>
+  </item>
+  <item id="49827">
+    <name><![CDATA[Ghoulslicer]]></name>
+    <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>70</atp>
+      <arp>33</arp>
+      <exp>27</exp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_sword_119</icon>
+  </item>
+  <item id="49830">
+    <name><![CDATA[Fallen Sentry's Hood]]></name>
+    <slot>Head</slot>
+    <attributes>
+      <cri>73</cri>
+      <hst>46</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Meta</socket>
+      <socket index="1">Red</socket>
+      <bonus>
+        <cri>8</cri>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_helmet_153</icon>
+  </item>
+  <item id="49838">
+    <name><![CDATA[Carpal Tunnelers]]></name>
+    <slot>Hands</slot>
+    <attributes>
+      <agi>79</agi>
+      <atp>120</atp>
+      <cri>56</cri>
+      <arp>47</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_gauntlets_62</icon>
+  </item>
+  <item id="49840">
+    <name><![CDATA[Hate-Forged Cleaver]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
+    <attributes>
+      <agi>46</agi>
+      <atp>66</atp>
+      <hst>28</hst>
+      <arp>32</arp>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_axe_94</icon>
+  </item>
+  <item id="49841">
+    <name><![CDATA[Blackened Geist Ribs]]></name>
+    <slot>Chest</slot>
+    <attributes>
+      <agi>98</agi>
+      <atp>154</atp>
+      <hit>63</hit>
+      <hst>71</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>hallsofreflection</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_chest_leather_23</icon>
+  </item>
+  <item id="49844">
+    <name><![CDATA[Crypt Fiend Slayer]]></name>
+    <slot>Ranged</slot>
+    <type>Bow</type>
+    <speed>3.0</speed>
+    <dps>147.3</dps>
+    <attributes>
+      <agi>34</agi>
+      <atp>51</atp>
+      <hit>20</hit>
+      <hst>24</hst>
+    </attributes>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_weapon_bow_44</icon>
   </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
@@ -4232,6 +4671,25 @@
     </filters>
     <icon>inv_boots_leather_07</icon>
   </item>
+  <item id="49981">
+    <name><![CDATA[Fal'inrush, Defender of Quel'thalas]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>272.8</dps>
+    <attributes>
+      <agi>54</agi>
+      <atp>72</atp>
+      <cri>36</cri>
+      <hst>36</hst>
+    </attributes>
+    <lvl>271</lvl>
+    <tag>lichking-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
+    <icon>inv_weapon_crossbow_38</icon>
+  </item>
   <item id="49982">
     <name><![CDATA[Heartpierce]]></name>
     <slot>OneHand</slot>
@@ -4316,6 +4774,25 @@
       <filter>icc25n</filter>
     </filters>
     <icon>inv_chest_leather_22</icon>
+  </item>
+  <item id="50012">
+    <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>239.2</dps>
+    <attributes>
+      <agi>74</agi>
+      <atp>99</atp>
+      <cri>49</cri>
+      <hst>49</hst>
+    </attributes>
+    <lvl>271</lvl>
+    <tag>lichking-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
+    <icon>inv_axe_113</icon>
   </item>
   <item id="50016">
     <name><![CDATA[Rib Spreader]]></name>
@@ -5142,6 +5619,25 @@
     </filters>
     <icon>inv_misc_monsterhorn_03</icon>
   </item>
+  <item id="50426">
+    <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>239.2</dps>
+    <attributes>
+      <agi>74</agi>
+      <atp>99</atp>
+      <cri>49</cri>
+      <arp>49</arp>
+    </attributes>
+    <lvl>271</lvl>
+    <tag>lichking-25</tag>
+    <filters>
+      <filter>icc25n</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_104</icon>
+  </item>
   <item id="50452">
     <name><![CDATA[Wodin's Lucky Necklace]]></name>
     <slot>Neck</slot>
@@ -5624,6 +6120,75 @@
       <filter>icc25h</filter>
     </filters>
     <icon>inv_helmet_149</icon>
+  </item>
+  <item id="50733">
+    <name><![CDATA[Fal'inrush, Defender of Quel'thalas]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>308.8</dps>
+    <attributes>
+      <agi>62</agi>
+      <atp>66</atp>
+      <cri>41</cri>
+      <hst>33</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>284</lvl>
+    <tag>lichking-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
+    <icon>inv_weapon_crossbow_38</icon>
+  </item>
+  <item id="50736">
+    <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>264.7</dps>
+    <attributes>
+      <agi>76</agi>
+      <atp>111</atp>
+      <cri>48</cri>
+      <arp>56</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>284</lvl>
+    <tag>lichking-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_104</icon>
+  </item>
+  <item id="50737">
+    <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
+    <slot>OneHand</slot>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>264.6</dps>
+    <attributes>
+      <agi>84</agi>
+      <atp>95</atp>
+      <cri>56</cri>
+      <hst>48</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>284</lvl>
+    <tag>lichking-25-heroic</tag>
+    <filters>
+      <filter>icc25h</filter>
+    </filters>
+    <icon>inv_axe_113</icon>
   </item>
   <item id="50759">
     <name><![CDATA[Bone Warden's Splitter]]></name>
@@ -6424,6 +6989,63 @@
     </filters>
     <icon>inv_bracer_41</icon>
   </item>
+  <item id="51800">
+    <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
+    <attributes>
+      <agi>66</agi>
+      <atp>100</atp>
+      <cri>44</cri>
+      <arp>44</arp>
+    </attributes>
+    <lvl>258</lvl>
+    <tag>lichking-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_105</icon>
+  </item>
+  <item id="51801">
+    <name><![CDATA[Pugius, Fist of Defiance]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
+    <attributes>
+      <agi>66</agi>
+      <atp>100</atp>
+      <cri>45</cri>
+      <hst>42</hst>
+    </attributes>
+    <lvl>258</lvl>
+    <tag>lichking-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
+    <icon>inv_weapon_hand_34</icon>
+  </item>
+  <item id="51802">
+    <name><![CDATA[Windrunner's Heartseeker]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>240.5</dps>
+    <attributes>
+      <agi>48</agi>
+      <atp>69</atp>
+      <cri>32</cri>
+      <arp>32</arp>
+    </attributes>
+    <lvl>258</lvl>
+    <tag>lichking-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
+    <icon>inv_weapon_crossbow_38</icon>
+  </item>
   <item id="51820">
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
     <slot>Wrist</slot>
@@ -6954,6 +7576,75 @@
       <filter>icc10h</filter>
     </filters>
     <icon>inv_axe_113</icon>
+  </item>
+  <item id="51940">
+    <name><![CDATA[Windrunner's Heartseeker]]></name>
+    <slot>Ranged</slot>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>270.8</dps>
+    <attributes>
+      <agi>54</agi>
+      <atp>61</atp>
+      <cri>28</cri>
+      <arp>36</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>271</lvl>
+    <tag>lichking-10-heroic</tag>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
+    <icon>inv_weapon_crossbow_38</icon>
+  </item>
+  <item id="51941">
+    <name><![CDATA[Pugius, Fist of Defiance]]></name>
+    <slot>MainHand</slot>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>239.0</dps>
+    <attributes>
+      <agi>66</agi>
+      <atp>113</atp>
+      <cri>51</cri>
+      <hst>39</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>271</lvl>
+    <tag>lichking-10-heroic</tag>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
+    <icon>inv_weapon_hand_34</icon>
+  </item>
+  <item id="51942">
+    <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
+    <slot>OneHand</slot>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>239.2</dps>
+    <attributes>
+      <agi>74</agi>
+      <atp>97</atp>
+      <cri>49</cri>
+      <arp>49</arp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>271</lvl>
+    <tag>lichking-10-heroic</tag>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
+    <icon>inv_weapon_shortblade_105</icon>
   </item>
 </items>
 
