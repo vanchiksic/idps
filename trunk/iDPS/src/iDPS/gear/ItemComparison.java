@@ -12,6 +12,7 @@ import iDPS.model.Calculations.ModelType;
 public class ItemComparison {
 	
 	private Setup gear;
+	private Armor orgItem;
 	private int slotId;
 	private SlotType slotType;
 	private float defaultDPS;
@@ -20,6 +21,7 @@ public class ItemComparison {
 	public ItemComparison(Setup gear, int slotId, SlotType slotType) {
 		this.gear = gear.clone();
 		this.slotId = slotId;
+		orgItem = gear.getItem(slotId);
 		this.gear.setItem(slotId, null);
 		this.slotType = slotType;
 		this.comparedItems = new ArrayList<Armor>();
@@ -37,6 +39,10 @@ public class ItemComparison {
 			items = Armor.findWeapon(weaponType.Dagger);
 		else
 			items = Armor.findSlot(slotType);
+		
+		// Make sure orgItem is in the list
+		if (!items.contains(orgItem))
+			items.add(orgItem);
 		
 		Iterator<Armor> iter = items.iterator();
 		while (iter.hasNext())  {

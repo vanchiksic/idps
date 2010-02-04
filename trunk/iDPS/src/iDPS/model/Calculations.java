@@ -243,8 +243,7 @@ public abstract class Calculations {
 		
 		// Mirror of Truth
 		if (setup.contains(40684)>0)
-			totalATP += 1000*15F/48F;
-		
+			totalATP += 1000*10F/57F;
 		
 		// Tears of Bitter Anguish
 		if (setup.contains(43573)>0)
