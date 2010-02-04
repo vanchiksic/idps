@@ -125,6 +125,8 @@ public class MainFrame extends JFrame {
 		sideScroll.setPreferredSize(new Dimension(430,490));
 		add(sideScroll, BorderLayout.LINE_END);
 		
+		//sideScroll.setViewportView(new SidePanel());
+		
 		pack();
 		
     Dimension d1 = getToolkit().getScreenSize();

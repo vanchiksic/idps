@@ -28,6 +28,16 @@
     </filters>
     <icon>inv_misc_cape_naxxramas_03</icon>
   </item>
+  <item id="40684">
+    <name><![CDATA[Mirror of Truth]]></name>
+    <slot>Trinket</slot>
+    <attributes>
+      <cri>84</cri>
+    </attributes>
+    <lvl>200</lvl>
+    <tag>emblems-heroism</tag>
+    <icon>inv_jewelry_talisman_08</icon>
+  </item>
   <item id="43573">
     <name><![CDATA[Tears of Bitter Anguish]]></name>
     <slot>Trinket</slot>
@@ -950,6 +960,22 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_bannerpvp_03</icon>
+  </item>
+  <item id="47222">
+    <name><![CDATA[Uruka's Band of Zeal]]></name>
+    <slot>Finger</slot>
+    <attributes>
+      <agi>36</agi>
+      <atp>100</atp>
+      <cri>34</cri>
+      <exp>32</exp>
+    </attributes>
+    <lvl>200</lvl>
+    <tag>toc5</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_jewelry_ring_79</icon>
   </item>
   <item id="47251">
     <name><![CDATA[Cuirass of Cruel Intent]]></name>
@@ -3218,10 +3244,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_helmet_139</icon>
   </item>
   <item id="48219">
@@ -3241,10 +3267,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="48220">
@@ -3264,10 +3290,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_pants_leather_28</icon>
   </item>
   <item id="48221">
@@ -3286,10 +3312,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_shoulder_89</icon>
   </item>
   <item id="48222">
@@ -3308,10 +3334,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_gauntlets_77a</icon>
   </item>
   <item id="48223">
@@ -3331,11 +3357,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="48224">
@@ -3354,11 +3380,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_gauntlets_77a</icon>
   </item>
   <item id="48225">
@@ -3378,11 +3404,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_helmet_139</icon>
   </item>
   <item id="48226">
@@ -3402,11 +3428,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_pants_leather_28</icon>
   </item>
   <item id="48227">
@@ -3425,11 +3451,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Alliance</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_shoulder_89</icon>
   </item>
   <item id="48228">
@@ -3448,10 +3474,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_shoulder_89</icon>
   </item>
   <item id="48229">
@@ -3471,10 +3497,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_pants_leather_28</icon>
   </item>
   <item id="48230">
@@ -3494,10 +3520,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_helmet_139</icon>
   </item>
   <item id="48231">
@@ -3516,10 +3542,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_gauntlets_77a</icon>
   </item>
   <item id="48232">
@@ -3539,10 +3565,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Alliance</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Alliance</faction>
     <icon>inv_chest_leather_14</icon>
   </item>
   <item id="48233">
@@ -3562,10 +3588,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="48234">
@@ -3584,10 +3610,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_gauntlets_78a</icon>
   </item>
   <item id="48235">
@@ -3607,10 +3633,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_helmet_145a</icon>
   </item>
   <item id="48236">
@@ -3630,10 +3656,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="48237">
@@ -3652,10 +3678,10 @@
       </bonus>
     </sockets>
     <lvl>258</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc25h</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_shoulder_109a</icon>
   </item>
   <item id="48238">
@@ -3674,11 +3700,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_shoulder_109a</icon>
   </item>
   <item id="48239">
@@ -3698,11 +3724,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="48240">
@@ -3722,11 +3748,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_helmet_145a</icon>
   </item>
   <item id="48241">
@@ -3745,11 +3771,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_gauntlets_78a</icon>
   </item>
   <item id="48242">
@@ -3769,11 +3795,11 @@
       </bonus>
     </sockets>
     <lvl>245</lvl>
-    <filters>
-      <filter>toc25n</filter>
-      <filter>toc10h</filter>
-    </filters>
     <faction>Horde</faction>
+    <filters>
+      <filter>toc10h</filter>
+      <filter>toc25n</filter>
+    </filters>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="48243">
@@ -3793,10 +3819,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_chest_leather_18a</icon>
   </item>
   <item id="48244">
@@ -3815,10 +3841,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_gauntlets_78a</icon>
   </item>
   <item id="48245">
@@ -3838,10 +3864,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_helmet_145a</icon>
   </item>
   <item id="48246">
@@ -3861,10 +3887,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_pants_leather_30a</icon>
   </item>
   <item id="48247">
@@ -3883,10 +3909,10 @@
       </bonus>
     </sockets>
     <lvl>232</lvl>
+    <faction>Horde</faction>
     <filters>
       <filter>toc10n</filter>
     </filters>
-    <faction>Horde</faction>
     <icon>inv_shoulder_109a</icon>
   </item>
   <item id="48668">
@@ -4097,6 +4123,28 @@
       <filter>heroics</filter>
     </filters>
     <icon>inv_misc_cape_22</icon>
+  </item>
+  <item id="49806">
+    <name><![CDATA[Flayer's Black Belt]]></name>
+    <slot>Waist</slot>
+    <attributes>
+      <agi>71</agi>
+      <atp>120</atp>
+      <cri>56</cri>
+      <exp>39</exp>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus>
+        <exp>4</exp>
+      </bonus>
+    </sockets>
+    <lvl>219</lvl>
+    <tag>pitofsaron</tag>
+    <filters>
+      <filter>heroics</filter>
+    </filters>
+    <icon>inv_belt_65</icon>
   </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
@@ -5264,7 +5312,7 @@
     <speed>1.8</speed>
     <dps>250.3</dps>
     <attributes>
-      <atp>125</atp>
+      <atp>95</atp>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5819,7 +5867,7 @@
     <attributes>
       <agi>162</agi>
       <atp>184</atp>
-      <cri>108</cri>
+      <cri>92</cri>
       <exp>92</exp>
     </attributes>
     <sockets>
@@ -6290,7 +6338,9 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>8</agi>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>lanathel-10</tag>

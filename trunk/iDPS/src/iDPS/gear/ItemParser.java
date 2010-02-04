@@ -214,7 +214,7 @@ public class ItemParser {
 	
 	public static void main(String[] args) {
 		ItemParser ip = new ItemParser();
-		//Race.load();
+		Setup.load();
 		Armor.load();
 		Iterator<Armor> iter = Armor.getAll().iterator();
 		System.out.println(Armor.getAll().size());

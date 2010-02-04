@@ -241,6 +241,11 @@ public abstract class Calculations {
 		if (setup.contains(40256)>0)
 			mod.registerArpProc(612, 10F/48F);
 		
+		// Mirror of Truth
+		if (setup.contains(40684)>0)
+			totalATP += 1000*15F/48F;
+		
+		
 		// Tears of Bitter Anguish
 		if (setup.contains(43573)>0)
 			mod.registerHasteProc(410, 10F/56F);
