@@ -5,7 +5,6 @@ import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
-import iDPS.gear.Setup.Profession;
 import iDPS.gear.Weapon.weaponType;
 import iDPS.gui.MainFrame;
 
@@ -20,7 +19,8 @@ public abstract class Calculations {
 	protected float envenomUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
 	protected Setup setup;
-	protected float mhSPS, ohSPS;
+	protected float mhSPS, ohSPS, mhSCPS, ohSCPS;
+	protected float mhWPS, ohWPS, mhWCPS, ohWCPS;
 	protected Modifiers mod;
 	protected Talents talents;
 	
@@ -28,51 +28,23 @@ public abstract class Calculations {
 	
 	protected float totalATP;
 	
+	protected float fightDuration = 300;
+	
 	protected ModelType type;
 	
 	private void reset() {
 		mhSPS = 0;
+		mhSCPS = 0;
 		ohSPS = 0;
-	}
-	
-	protected float calcAtp(Attributes attr) {
-		float atp, agi, str;
-		atp = attr.getAtp();
-		agi = attr.getAgi();
-		str = attr.getStr();
-		
-		agi += 229;
-		str += 229;
-		atp += 687 + 260;
-		if (setup.hasProfession(Profession.Alchemy))
-			atp += 80;
-		agi *= 1.1F;
-		str *= 1.1F;
-		atp += agi + str;
-		
-		return atp;
-	}
-	
-	protected void calcBerserking() {
-		float attacksPerSec, uptime;
-		
-		if (setup.getWeapon1() != null && setup.isEnchanted(16) && setup.getEnchant(16).getId()==3789) {
-			attacksPerSec = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
-			attacksPerSec += mhSPS;
-			uptime = setup.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
-			totalATP += uptime * 400;
-		}
-		
-		if (setup.getWeapon2() != null && setup.isEnchanted(17) && setup.getEnchant(17).getId()==3789) {
-			attacksPerSec = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
-			attacksPerSec += ohSPS;
-			uptime = setup.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
-			totalATP += uptime * 400;
-		}
+		ohSCPS = 0;
+		mhWPS = 0;
+		mhWCPS = 0;
+		ohWPS = 0;
+		ohWCPS = 0;
 	}
 	
 	protected abstract void calcCycle();
-	
+		
 	protected float calcDeadlyPoisonDPS() {
 		//System.out.println("dp ap: "+totalATP);
 		float dps = (296+0.108F*totalATP)/12*5 * (1+talents.getVilePoisons());
@@ -157,13 +129,17 @@ public abstract class Calculations {
 	}
 	
 	protected float calcInstantPoisonDPS() {
-		Weapon wip, wdp;
+		// possible procs per sec
+		float ip_ppps = 0, dp_ppps = 0;
+		Weapon wip;
 		if (setup.getWeapon2().getSpeed() >= setup.getWeapon1().getSpeed()) {
-			wdp = setup.getWeapon1();
 			wip = setup.getWeapon2();
+			ip_ppps = ohWPS + ohSPS;
+			dp_ppps = mhWPS + mhSPS;
 		} else {
 			wip = setup.getWeapon1();
-			wdp = setup.getWeapon2();	
+			ip_ppps = mhWPS + mhSPS;
+			dp_ppps = ohWPS + ohSPS;
 		}
 		float ipProcChance, dpProcChance, hitChance, procsPerSec, damage;
 		ipProcChance  = wip.getSpeed()/1.4F*(0.2F+0.02F*talents.getImprovedPoisons());
@@ -173,11 +149,9 @@ public abstract class Calculations {
 		dpProcChance += envenomUptime*0.15F;
 		hitChance = Math.min(1, 0.83F+mod.getSpellHitPercent()/100);
 		// Primary Procs
-		ppsIP1  = wip.getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts())*ipProcChance*hitChance;
-		ppsIP1 += mhSPS*ipProcChance*hitChance;
+		ppsIP1  = ip_ppps*ipProcChance*hitChance;
 		// Secondary Procs
-		ppsIP2 = wdp.getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts())*dpProcChance*hitChance;
-		ppsIP2 += ohSPS*dpProcChance*hitChance*hitChance;
+		ppsIP2 = dp_ppps*dpProcChance*hitChance;
 		procsPerSec = ppsIP1+ppsIP2;
 		//System.out.println("IP pps: "+procsPerSec);
 		// Damage
@@ -191,16 +165,14 @@ public abstract class Calculations {
 		return procsPerSec * damage;
 	}
 	
-	protected void calcMongoose() {
+	/*protected void calcMongoose() {
 		float attacksPerSec, uptimeMH = 0, uptimeOH = 0;
 		if (setup.isEnchanted(16) && setup.getEnchant(16).getId()==2673) {
-			attacksPerSec = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtMH().getContacts());
-			attacksPerSec += mhSPS;
+			attacksPerSec = mhWPS + mhSPS;
 			uptimeMH = setup.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
 		}
 		if (setup.isEnchanted(17) && setup.getEnchant(17).getId()==2673) {
-			attacksPerSec = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*(mod.getHtOH().getContacts());
-			attacksPerSec += ohSPS;
+			attacksPerSec = ohWPS + ohSPS;
 			uptimeOH = setup.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
 		}
 		if ((uptimeMH+uptimeOH)>0) {
@@ -214,118 +186,181 @@ public abstract class Calculations {
 			totalATP += 264*uptimeD;
 			totalATP += 132*uptimeS;
 		}
-	}
+	}*/
 	
-	protected void calcProcs() {		
-		// Note: Apply Kings to these Buffs, but not the 10% AP buff
-		
-		// Mongoose
-		calcMongoose();
-		
-		// Berserking
-		calcBerserking();
-		
-		// Hyperspeed Accelerators
-		if (setup.isEnchanted(8) && setup.getEnchant(8).getId()==3604)
-			mod.registerHasteProc(340, 12F/60F);
-		
-		// Swordguard Embroidery
-		if (setup.isEnchanted(3) && setup.getEnchant(3).getId()==3730)
-			totalATP += 400F*15F/62F;
+	protected void calcProcs() {
+		float hitsPerSec = mhWPS+ohWPS+mhSPS+ohSPS;
+		float critsPerSec = mhWCPS+ohWCPS+mhSCPS+ohSCPS;
+		Attributes a;
 		
 		// Orc Racial
-		if (setup.getRace().getType() == Race.Type.Orc)
-			totalATP += 40.25F;
+		if (setup.getRace().getType() == Race.Type.Orc) {
+			a = new Attributes(Attributes.Type.ATP, 322);
+			mod.registerProc(new ProcStatic(a, 15, 120, 1, 1));
+		}
+		
+		// Troll Racial
+		if (setup.getRace().getType() == Race.Type.Troll) {
+			float uptime = getMaxUses(180)*10F/fightDuration;
+			a = new Attributes(Attributes.Type.ATP, 322);
+			mod.registerStaticHasteProc(0.2F, uptime);
+		}
+		
+		// Blade Flurry
+		if (talents.getBf()) {
+			float uptime = getMaxUses(120)*15F/fightDuration;
+			mod.registerStaticHasteProc(0.2F, uptime);
+		}
+		
+		// Mongoose
+		a = new Attributes(Attributes.Type.AGI, 120);
+		if (setup.getWeapon1() != null && setup.isEnchanted(16) && setup.getEnchant(16).getId()==2673) {
+			Proc p = new ProcPerMinute(a, 15, 0, 1, 
+					setup.getWeapon1(), (mhWPS+mhSPS),
+					setup.getWeapon2(), 0);
+			mod.registerProc(p);
+			mod.registerStaticHasteProc(0.02F, p.getUptime());
+		}
+		if (setup.getWeapon2() != null && setup.isEnchanted(17) && setup.getEnchant(17).getId()==2673) {
+			Proc p = new ProcPerMinute(a, 15, 0, 1, 
+					setup.getWeapon1(), 0,
+					setup.getWeapon2(), (ohWPS+ohSPS));
+			mod.registerProc(p);
+			mod.registerStaticHasteProc(0.02F, p.getUptime());
+		}
+		
+		// Berserking
+		a = new Attributes(Attributes.Type.ATP, 400);
+		if (setup.getWeapon1() != null && setup.isEnchanted(16) && setup.getEnchant(16).getId()==3789) {
+			Proc p = new ProcPerMinute(a, 15, 0, 1, 
+					setup.getWeapon1(), (mhWPS+mhSPS),
+					setup.getWeapon2(), 0);
+			mod.registerProc(p);
+		}
+		if (setup.getWeapon2() != null && setup.isEnchanted(17) && setup.getEnchant(17).getId()==3789) {
+			Proc p = new ProcPerMinute(a, 15, 0, 1, 
+					setup.getWeapon1(), 0,
+					setup.getWeapon2(), (ohWPS+ohSPS));
+			mod.registerProc(p);
+		}
+		
+		// Hyperspeed Accelerators
+		if (setup.isEnchanted(8) && setup.getEnchant(8).getId()==3604) {
+			a = new Attributes(Attributes.Type.HST, 340);
+			mod.registerProc(new ProcStatic(a, 12, 60, 1, 1));
+		}
+		
+		// Swordguard Embroidery
+		if (setup.isEnchanted(3) && setup.getEnchant(3).getId()==3730) {
+			a = new Attributes(Attributes.Type.ATP, 400);
+			mod.registerProc(new ProcStatic(a, 15, 60, 0.25F, hitsPerSec));
+		}
 		
 		// Grim Toll
-		if (setup.contains(40256)>0)
-			mod.registerArpProc(612, 10F/48F);
+		if (setup.contains(40256)>0) {
+			a = new Attributes(Attributes.Type.ARP, 612);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.15F, hitsPerSec));
+		}
 		
 		// Mirror of Truth
-		if (setup.contains(40684)>0)
-			totalATP += 1000*10F/57F;
+		if (setup.contains(40684)>0) {
+			a = new Attributes(Attributes.Type.ATP, 1000);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.1F, critsPerSec));
+		}
 		
 		// Tears of Bitter Anguish
-		if (setup.contains(43573)>0)
-			mod.registerHasteProc(410, 10F/56F);
+		if (setup.contains(43573)>0) {
+			a = new Attributes(Attributes.Type.HST, 410);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.1F, critsPerSec));
+		}
 		
 		// Darkmoon Card: Greatness
 		if (setup.contains(44253)>0) {
-			// 330 Agi = 181 cri + 330 atp
-			totalATP += 330F*15F/48F;
-			mod.registerPhysCritProc(181, 15F/48F);
+			a = new Attributes(Attributes.Type.AGI, 300);
+			mod.registerProc(new ProcStatic(a, 15, 45, 0.35F, hitsPerSec));
 		}
 		
 		// Pyrite Infuser
 		if (setup.contains(45286)>0) {
-			totalATP += 1234F*10F/51F;
+			a = new Attributes(Attributes.Type.ATP, 1234);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.1F, critsPerSec));
 		}
 		
 		// Blood of the Old God
 		if (setup.contains(45522)>0) {
-			totalATP += 1284F*10F/51F;
+			a = new Attributes(Attributes.Type.ATP, 1284);
+			Proc p = new ProcStatic(a, 10, 45, 0.1F, critsPerSec);
+			mod.registerProc(p);
 		}
 		
 		// Comet's Trail
 		if (setup.contains(45609)>0) {
-			mod.registerHasteProc(726, 10F/48F);
+			a = new Attributes(Attributes.Type.HST, 726);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.15F, hitsPerSec));
 		}
 		
 		// Mjolnir Runestone
 		if (setup.contains(45931)>0) {
-			mod.registerArpProc(665, 10F/48F);
+			a = new Attributes(Attributes.Type.ARP, 665);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.15F, hitsPerSec));
 		}
 		
 		// Dark Matter
 		if (setup.contains(46038)>0) {
-			mod.registerCritProc(612, 10F/48F);
+			a = new Attributes(Attributes.Type.CRI, 612);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.15F, hitsPerSec));
 		}
 		
 		// Banner of Victory
 		if (setup.contains(47214)>0) {
-			totalATP += 1008F*10F/49F;
+			a = new Attributes(Attributes.Type.ATP, 1008);
+			mod.registerProc(new ProcStatic(a, 10, 45, 0.2F, hitsPerSec));
 		}
 		
 		// Death's Choice
 		if (setup.containsAny(47303,47115)) {
-			// 495 Agi = 273 cri + 459 atp
-			totalATP += 495F*15F/48F;
-			mod.registerPhysCritProc(273, 15F/48F);
+			a = new Attributes(Attributes.Type.AGI, 450);
+			mod.registerProc(new ProcStatic(a, 15, 45, 0.35F, hitsPerSec));
 		}
 		
 		// Death's Choice Heroic
 		if (setup.containsAny(47464,47131)) {
-			// 561 Agi = 309 cri + 561 atp
-			totalATP += 561F*15F/48F;
-			mod.registerPhysCritProc(309, 15F/48F);
+			a = new Attributes(Attributes.Type.AGI, 510);
+			Proc p = new ProcStatic(a, 15, 45, 0.35F, hitsPerSec);
+			mod.registerProc(p);
 		}
 		
 		// Mark of Supremacy
 		if (setup.contains(47734)>0) {
-			totalATP += 1024F*20F/120F;
+			a = new Attributes(Attributes.Type.ATP, 1024);
+			mod.registerProc(new ProcStatic(a, 20, 120, 1, 1));
 		}
 		
 		// Vengeance of the Forsaken
 		if (setup.containsAny(47881,47725)) {
-			// proc average ~914AP for 20 sec every 120 sec
-			totalATP += 914F*20F/120F;
+			float timeToCap = 5/hitsPerSec;
+			float avgAtp = (timeToCap*537.5F + (20-timeToCap)*1075F)/20F;
+			a = new Attributes(Attributes.Type.ATP, avgAtp);
+			mod.registerProc(new ProcStatic(a, 20, 120, 1, 1));
 		}
 		
 		// Vengeance of the Forsaken
 		if (setup.containsAny(48020,47948)) {
-			// proc average ~1063AP for 20 sec every 120 sec
-			totalATP += 1063F*20F/120F;
+			float timeToCap = 5/hitsPerSec;
+			float avgAtp = (timeToCap*625F + (20-timeToCap)*1250F)/20F;
+			a = new Attributes(Attributes.Type.ATP, avgAtp);
+			mod.registerProc(new ProcStatic(a, 20, 120, 1, 1));
 		}
 		
 		// Shard of the Crystal Heart
 		if (setup.contains(48722)>0) {
-			// 512 hst for 20 sec every 120 sec
-			mod.registerHasteProc(512, 20F/120F);
+			a = new Attributes(Attributes.Type.HST, 512);
+			mod.registerProc(new ProcStatic(a, 20, 120, 1, 1));
 		}
 		
 		// Black Bruise
 		if (setup.containsAny(50035,50692)) {
-			float bbUptime = calcDWPPMUptime(0.6F, 10);
+			float bbUptime = calcDWPPMUptime(0.3F, 10);
 			//System.out.println("BB Uptime: "+bbUptime);
 			if(setup.containsAny(50692))
 				bbIncrease = bbUptime*0.10F;
@@ -336,51 +371,54 @@ public abstract class Calculations {
 		
 		// Needle-Encrusted Scorpion
 		if (setup.contains(50198)>0) {
-			mod.registerArpProc(678, 10F/57F);
+			a = new Attributes(Attributes.Type.ARP, 678);
+			mod.registerProc(new ProcStatic(a, 10, 50, 0.1F, critsPerSec));
 		}
 		
 		// Whispering Fanged Skull
 		if (setup.contains(50342)>0) {
-			// proc 1100AP for 15 sec every 45 sec
-			totalATP += 1100*15F/48F;
+			a = new Attributes(Attributes.Type.ATP, 1100);
+			mod.registerProc(new ProcStatic(a, 15, 45, 0.35F, hitsPerSec));
 		}
 		
 		// Whispering Fanged Skull Heroic
 		if (setup.contains(50343)>0) {
-			// proc 1100AP for 15 sec every 45 sec
-			totalATP += 1250*15F/48F;
+			a = new Attributes(Attributes.Type.ATP, 1250);
+			mod.registerProc(new ProcStatic(a, 15, 45, 0.35F, hitsPerSec));
 		}
 		
 		// Herkuml War Token
 		if (setup.contains(50355)>0) {
-			totalATP += 340;
+			a = new Attributes(Attributes.Type.ATP, 340);
+			mod.registerProc(new ProcStatic(a, 1, 1, 1, 0)); // uptime = 100%
 		}
 		
 		// Deathbringer's Will
 		if (setup.contains(50362)>0) {
-			// random +600 proc for 30 sec every ~105 sec
-			// 1200 ap
-			// 600 arp
-			// 660 Agi = 364 cri + 660 atp
-			totalATP += 1860*30F/415F;
-			mod.registerHasteProc(600, 30F/318F);
-			mod.registerPhysCritProc(364, 30F/318F);
+			a = new Attributes(Attributes.Type.ATP, 1200);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
+			a = new Attributes(Attributes.Type.AGI, 600);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
+			a = new Attributes(Attributes.Type.HST, 600);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
 		}
 		
 		// Deathbringer's Will Heroic
 		if (setup.contains(50363)>0) {
-			// random +700 proc for 30 sec every ~105 sec
-			// 1400 atp
-			// 700 arp
-			// 770 Agi = 424 cri + 770 atp
-			totalATP += 2170*30F/415F;
-			mod.registerHasteProc(700, 30F/318F);
-			mod.registerPhysCritProc(424, 30F/318F);
+			a = new Attributes(Attributes.Type.ATP, 1400);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
+			a = new Attributes(Attributes.Type.AGI, 700);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
+			a = new Attributes(Attributes.Type.HST, 700);
+			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
 		}
 		
 		// Ashen Band of ...
 		if (setup.containsAny(50401,50402)) {
-			totalATP += 410F*10F/75F;
+			a = new Attributes(Attributes.Type.ATP, 480);
+			mod.registerProc(new ProcPerMinute(a, 10, 60, 1,
+					setup.getWeapon1(), (mhWPS+mhSPS),
+					setup.getWeapon2(), (ohWPS+ohSPS)));
 		}
 	}
 	
@@ -465,15 +503,22 @@ public abstract class Calculations {
 		attrTotal.add(setup.getAttributes());
 		mod = new Modifiers(attrTotal, setup);
 		
+		//System.out.println(">> Iteration 1");
 		calcCycle();
-		
-		totalATP = 0F;
-		totalATP += calcAtp(attrTotal);
 		calcProcs();
-
+		//System.out.println("  AP: "+mod.getTotalATP());
+		//System.out.println(">> Iteration 2");
 		calcCycle();
+		mod.calcMods();
+		calcProcs();
+		//System.out.println("  AP: "+mod.getTotalATP());
+		//System.out.println(">> Iteration 3");
+		calcCycle();
+		mod.calcMods();
+		calcProcs();
+		//System.out.println("  AP: "+mod.getTotalATP());
 		
-		totalATP *= 1.1F * (1+0.02F*talents.getSavageCombat());
+		totalATP = mod.getTotalATP();
 		//System.out.println("AP: "+totalATP);
 		
 		calcDPS();
@@ -485,15 +530,6 @@ public abstract class Calculations {
 		// Racial
 		if (setup.getRace().getType() == Race.Type.BloodElf)
 			eRegen += 15F/120F;
-		
-		// Talents
-		eRegen += talents.getVitality();
-		//if (talents.getAr())
-		//	eRegen += 150F/180F;
-		if (talents.getCombatPotency()>0)
-			eRegen += combatPotencyRegen();
-		if (talents.getFocusedAttacks()>0)
-			eRegen += calcWhiteCritsPerSec()*2F*talents.getFocusedAttacks();
 		
 		// ToTT every 32 sec
 		float eLossTOT = 15F/32F;
@@ -509,50 +545,27 @@ public abstract class Calculations {
 		return eRegen;
 	}
 	
-	private float combatPotencyRegen() {
-		float pps;
-		pps = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100);
-		// OH Hits from Tiny Abom
-		if (setup.containsAny(50351,50706)) {
-			float moteFactor;
-			if (setup.containsAny(50706))
-				moteFactor = 1/7F;
-			else
-				moteFactor = 1/8F;
-			pps += (setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(mod.getHtOH().getContacts()) + ohSPS)*0.5F*moteFactor;
-		}
-		pps *= (mod.getHtOH().getContacts());
-		pps *= 0.2F;
-		
-		float regen = pps*((float) talents.getCombatPotency());
-		//System.out.println("cpt regen: "+regen);
-		return regen;
-	}
-	
-	protected float calcWhiteCritsPerSec() {
-		float critsPerSec = 0;
-		if (setup.getWeapon1() != null)
-			critsPerSec += setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtMH().crit;
-		if (setup.getWeapon2() != null)
-			critsPerSec += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100)*mod.getHtOH().crit;
-		return critsPerSec;
-	}
-	
 	protected float calcWhiteDPS() {
 		HitTable htMH = mod.getHtMH();
 		HitTable htOH = mod.getHtMH();
 		float dpsMH = 0, dpsOH = 0;
+		mhWPS = 0; mhWCPS = 0;
+		ohWPS = 0; ohWCPS = 0;
 		// Mainhand
 		if (setup.getWeapon1() != null) {
 			dpsMH += setup.getWeapon1().getDps() + ((float)totalATP/14F);
 			dpsMH *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH *= mod.getHastePercent()/100F + 1;
+			mhWPS = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getContacts();
+			mhWCPS = setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getCrit();
 		}
 		// Offhand
 		if (setup.getWeapon2() != null) {
 			dpsOH += setup.getWeapon2().getDps() + ((float)totalATP/14F) * 0.75F;
 			dpsOH *= htOH.glance*0.75F + htOH.crit * mod.getPhysCritMult() + htOH.hit;
 			dpsOH *= mod.getHastePercent()/100F + 1;
+			ohWPS = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getContacts();
+			ohWCPS = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getCrit();
 		}
 		// Sword Spec
 		if (talents.getHnS()>0) {
@@ -569,7 +582,8 @@ public abstract class Calculations {
 				ssPps += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getHnS()/100F);
 				ssPps += ohSPS * (talents.getHnS()/100F);
 			}
-			mhSPS += ssPps * htMH.getContacts();
+			mhWPS += ssPps * htMH.getContacts();
+			mhWCPS += ssPps * htMH.getCrit();
 			ssDps  = ssDmg * ssPps;
 			ssDps *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH += ssDps;
@@ -584,8 +598,12 @@ public abstract class Calculations {
 			ppsMH = (setup.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts()) + mhSPS)*0.5F*moteFactor;
 			ppsOH = (setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts()) + ohSPS)*0.5F*moteFactor;
 			//System.out.println(">>Procs: MH: "+ppsMH+ " OH: "+ppsOH);
-			mhSPS += ppsMH;
-			ohSPS += ppsOH;
+			
+			mhSPS += ppsMH * mod.getHtMHS().getContacts();
+			ohSPS += ppsOH * mod.getHtOHS().getContacts();
+			mhSCPS += ppsMH * mod.getHtMHS().getCrit();
+			ohSCPS += ppsOH * mod.getHtOHS().getCrit();
+			
 			dmgMH = setup.getWeapon1().getAverageDmg(totalATP)/2F;
 			dmgMH = mod.getHtMHS().getHit()*dmgMH + mod.getHtMHS().getCrit()*dmgMH*mod.getPhysCritMult();
 			dmgOH = setup.getWeapon2().getAverageDmg(totalATP)/2F;
@@ -649,7 +667,11 @@ public abstract class Calculations {
 	public float getTotalDPS() {
 		return total;
 	}
-
+	
+	protected int getMaxUses(int cooldown) {
+		return 1 + ((int) fightDuration/cooldown);
+	}
+	
 	public static Calculations createInstance() {
 		Setup s = MainFrame.getInstance().getSetup();
 		ModelType m = s.getTalents().getModel();

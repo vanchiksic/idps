@@ -2,36 +2,30 @@ package iDPS;
 
 import java.util.AbstractCollection;
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.Iterator;
 
 import org.jdom.Element;
 
 public class Attributes {
-		
-	private float atp, agi, str, arp, cri, exp, hit, hst;
+	
+	public enum Type { ATP, AGI, STR, ARP, CRI, EXP, HIT, HST }
+	private EnumMap<Type,Float> values;
 	
 	public Attributes() {
-		atp = 0;
-		agi = 0;
-		str = 0;
-		arp = 0;
-		cri = 0;
-		exp = 0;
-		hit = 0;
-		hst = 0;
+		values = new EnumMap<Type,Float>(Type.class);
+	}
+	
+	public Attributes(Type t, float value) {
+		this();
+		values.put(t, value);
 	}
 	
 	public Attributes(Attributes copy) {
+		this();
 		if (copy == null)
 			return;
-		atp = copy.atp;
-		agi = copy.agi;
-		str = copy.str;
-		arp = copy.arp;
-		cri = copy.cri;
-		exp = copy.exp;
-		hit = copy.hit;
-		hst = copy.hst;
+		values = copy.values.clone();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -40,135 +34,126 @@ public class Attributes {
 		Iterator<Element> iter = elem.getChildren().iterator();
 		while (iter.hasNext()) {
 			Element sub = iter.next();
-			String s = sub.getName();
-			if (s.equals("agi"))
-				agi = Float.parseFloat(sub.getText());
-			else if (s.equals("arp"))
-				arp = Float.parseFloat(sub.getText());
-			else if (s.equals("atp"))
-				atp = Float.parseFloat(sub.getText());
-			else if (s.equals("cri"))
-				cri = Float.parseFloat(sub.getText());
-			else if (s.equals("exp"))
-				exp = Float.parseFloat(sub.getText());
-			else if (s.equals("hit"))
-				hit = Float.parseFloat(sub.getText());
-			else if (s.equals("hst"))
-				hst = Float.parseFloat(sub.getText());
-			else if (s.equals("str"))
-				str = Float.parseFloat(sub.getText());
+			String s = sub.getName().toUpperCase();
+			for (Type t: Type.values()) {
+				if (s.equals(t.name()))
+					set(t, Float.parseFloat(sub.getText()));
+			}
 		}
 	}
 	
+	public void set(Type t, float value) {
+		values.put(t, value);
+	}
+	
+	public void inc(Type t, float value) {
+		set(t, get(t)+value);
+	}
+	
+	public float get(Type t) {
+		if (values.containsKey(t))
+			return values.get(t);
+		return 0;
+	}
+	
 	public void clear() {
-		atp = 0;
-		agi = 0;
-		str = 0;
-		arp = 0;
-		cri = 0;
-		exp = 0;
-		hit = 0;
-		hst = 0;
+		values.clear();
 	}
 	
 	public float getAgi() {
-		return agi;
+		return get(Type.AGI);
 	}
 	
 	public float getArp() {
-		return arp;
+		return get(Type.ARP);
 	}
 
 	public float getAtp() {
-		return atp;
+		return get(Type.ATP);
 	}
 
 	public float getCri() {
-		return cri;
+		return get(Type.CRI);
 	}
 
 	public float getExp() {
-		return exp;
+		return get(Type.EXP);
 	}
 
 	public float getHit() {
-		return hit;
+		return get(Type.HIT);
 	}
 
 	public float getHst() {
-		return hst;
+		return get(Type.HST);
 	}
 
 	public float getStr() {
-		return str;
+		return get(Type.STR);
 	}
 	
-	public void incAgi(float agi) {
-		this.agi += agi;
+	public void incAgi(float value) {
+		inc(Type.AGI, value);
 	}
 
-	public void incArp(float arp) {
-		this.arp += arp;
+	public void incArp(float value) {
+		inc(Type.ARP, value);
 	}
 
-	public void incAtp(float atp) {
-		this.atp += atp;
+	public void incAtp(float value) {
+		inc(Type.ATP, value);
 	}
 
-	public void incCri(float cri) {
-		this.cri += cri;
+	public void incCri(float value) {
+		inc(Type.CRI, value);
 	}
 
-	public void incExp(float exp) {
-		this.exp += exp;
+	public void incExp(float value) {
+		inc(Type.EXP, value);
 	}
 
-	public void incHit(float hit) {
-		this.hit += hit;
+	public void incHit(float value) {
+		inc(Type.HIT, value);
 	}
 
-	public void incHst(float hst) {
-		this.hst += hst;
+	public void incHst(float value) {
+		inc(Type.HST, value);
 	}
 
-	public void incStr(float str) {
-		this.str += str;
+	public void incStr(float value) {
+		inc(Type.STR, value);
 	}
 
-	public void setAgi(float agi) {
-		this.agi = agi;
+	public void setAgi(float value) {
+		set(Type.AGI, value);
 	}
 
-	public void setArp(float arp) {
-		this.arp = arp;
+	public void setArp(float value) {
+		set(Type.ARP, value);
 	}
 
-	public void setAtp(float atp) {
-		this.atp = atp;
+	public void setAtp(float value) {
+		set(Type.ATP, value);
 	}
 
-	public void setCri(float cri) {
-		this.cri = cri;
+	public void setCri(float value) {
+		set(Type.CRI, value);
 	}
 
-	public void setExp(float exp) {
-		this.exp = exp;
+	public void setExp(float value) {
+		set(Type.EXP, value);
 	}
 
-	public void setHit(float hit) {
-		this.hit = hit;
+	public void setHit(float value) {
+		set(Type.HIT, value);
 	}
 
-	public void setHst(float hst) {
-		this.hst = hst;
+	public void setHst(float value) {
+		set(Type.HST, value);
 	}
 
-	public void setStr(float str) {
-		this.str = str;
-	}
-	
-	public boolean isInfluenceMods() {
-		return (agi>0||arp>0||cri>0||exp>0||hit>0||hst>0);
+	public void setStr(float value) {
+		set(Type.STR, value);
 	}
 	
 	public Attributes clone() {
@@ -177,67 +162,67 @@ public class Attributes {
 	
 	public String getToolTip() {
 		String s = "<p>";
-		if (agi > 0)
-			s += String.format("+%.0f Agility<br/>", agi);
-		if (str > 0)
-			s += String.format("+%.0f Strength<br/>", str);
+		if (getAgi() > 0)
+			s += String.format("+%.0f Agility<br/>", getAgi());
+		if (getStr() > 0)
+			s += String.format("+%.0f Strength<br/>", getStr());
 		s += "</p><p style=\"color:#00FF00;\">";
-		if (atp > 0)
-			s += String.format("Increases attack power by %.0f<br/>", atp);
-		if (arp > 0)
-			s += String.format("Increases armor penetration rating by %.0f<br/>", arp);
-		if (cri > 0)
-			s += String.format("Increases critical strike rating by %.0f<br/>", cri);
-		if (exp > 0)
-			s += String.format("Increases expertise rating by %.0f<br/>", exp);
-		if (hit > 0)
-			s += String.format("Increases hit rating by %.0f<br/>", hit);
-		if (hst > 0)
-			s += String.format("Increases haste rating by %.0f<br/>", hst);
+		if (getAtp() > 0)
+			s += String.format("Increases attack power by %.0f<br/>", getAtp());
+		if (getArp() > 0)
+			s += String.format("Increases armor penetration rating by %.0f<br/>", getArp());
+		if (getCri() > 0)
+			s += String.format("Increases critical strike rating by %.0f<br/>", getCri());
+		if (getExp() > 0)
+			s += String.format("Increases expertise rating by %.0f<br/>", getExp());
+		if (getHit() > 0)
+			s += String.format("Increases hit rating by %.0f<br/>", getHit());
+		if (getHst() > 0)
+			s += String.format("Increases haste rating by %.0f<br/>", getHst());
 		s += "</p>";
 		return s;
 	}
 	
 	public String getMinToolTip() {
 		String s = "<p>";
-		if (agi > 0)
-			s += String.format("+%.0f Agility<br/>", agi);
-		if (str > 0)
-			s += String.format("+%.0f Strength<br/>", str);
-		if (atp > 0)
-			s += String.format("+%.0f Attack Power<br/>", atp);
-		if (arp > 0)
-			s += String.format("+%.0f Armor Pentration<br/>", arp);
-		if (cri > 0)
-			s += String.format("+%.0f Crit<br/>", cri);
-		if (exp > 0)
-			s += String.format("+%.0f Expertise<br/>", exp);
-		if (hit > 0)
-			s += String.format("+%.0f Hit<br/>", hit);
-		if (hst > 0)
-			s += String.format("+%.0f Haste<br/>", hst);
+		if (getAgi() > 0)
+			s += String.format("+%.0f Agility<br/>", getAgi());
+		if (getStr() > 0)
+			s += String.format("+%.0f Strength<br/>", getStr());
+		if (getAtp() > 0)
+			s += String.format("+%.0f Attack Power<br/>", getAtp());
+		if (getArp() > 0)
+			s += String.format("+%.0f Armor Penetration<br/>", getArp());
+		if (getCri() > 0)
+			s += String.format("+%.0f Crit<br/>", getCri());
+		if (getExp() > 0)
+			s += String.format("+%.0f Expertise<br/>", getExp());
+		if (getHit() > 0)
+			s += String.format("+%.0f Hit<br/>", getHit());
+		if (getHst() > 0)
+			s += String.format("+%.0f Haste<br/>", getHst());
 		s += "</p>";
 		return s;
 	}
 	
 	public String toString() {
 		ArrayList<String> s = new ArrayList<String>();
-		if (agi > 0)
-			s.add(String.format("%.0f Agi", agi));
-		if (str > 0)
-			s.add(String.format("%.0f Str", str));
-		if (atp > 0)
-			s.add(String.format("%.0f Atp", atp));
-		if (arp > 0)
-			s.add(String.format("%.0f Arp", arp));
-		if (cri > 0)
-			s.add(String.format("%.0f Cri", cri));
-		if (exp > 0)
-			s.add(String.format("%.0f Exp", exp));
-		if (hit > 0)
-			s.add(String.format("%.0f Hit", hit));
-		if (hst > 0)
-			s.add(String.format("%.0f Hst", hst));
+		if (getAgi() > 0)
+			s.add(String.format("%.0f Agi", getAgi()));
+		if (getStr() > 0)
+			s.add(String.format("%.0f Str", getStr()));
+		if (getAtp() > 0)
+			s.add(String.format("%.0f Atp", getAtp()));
+		if (getArp() > 0)
+			s.add(String.format("%.0f Arp", getArp()));
+		if (getCri() > 0)
+			s.add(String.format("%.0f Cri", getCri()));
+		if (getExp() > 0)
+			s.add(String.format("%.0f Exp", getExp()));
+		if (getHit() > 0)
+			s.add(String.format("%.0f Hit", getHit()));
+		if (getHst() > 0)
+			s.add(String.format("%.0f Hst", getHst()));
 		
 		return join(s, " / ");
 	}
@@ -256,25 +241,15 @@ public class Attributes {
  }
 	
 	public void add(Attributes inc) {
-		agi += inc.agi;
-		arp += inc.arp;
-		atp += inc.atp;
-		cri += inc.cri;
-		exp += inc.exp;
-		hit += inc.hit;
-		hst += inc.hst;
-		str += inc.str;
+		for (Type t: Type.values()) {
+			inc(t, inc.get(t));
+		}
 	}
 	
 	public void sub(Attributes sub) {
-		agi -= sub.agi;
-		arp -= sub.arp;
-		atp -= sub.atp;
-		cri -= sub.cri;
-		exp -= sub.exp;
-		hit -= sub.hit;
-		hst -= sub.hst;
-		str -= sub.str;
+		for (Type t: Type.values()) {
+			inc(t, -sub.get(t));
+		}
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -283,34 +258,12 @@ public class Attributes {
 			name = "attributes";
 		Element ele, sub;
 		ele = new Element(name);
-		if (agi>0) {
-			sub = new Element("agi");
-			sub.setText(String.format("%.0f",agi));
-			ele.getChildren().add(sub);
-		} if (atp>0) {
-			sub = new Element("atp");
-			sub.setText(String.format("%.0f",atp));
-			ele.getChildren().add(sub);
-		} if (hit>0) {
-			sub = new Element("hit");
-			sub.setText(String.format("%.0f",hit));
-			ele.getChildren().add(sub);
-		} if (cri>0) {
-			sub = new Element("cri");
-			sub.setText(String.format("%.0f",cri));
-			ele.getChildren().add(sub);
-		} if (hst>0) {
-			sub = new Element("hst");
-			sub.setText(String.format("%.0f",hst));
-			ele.getChildren().add(sub);
-		} if (arp>0) {
-			sub = new Element("arp");
-			sub.setText(String.format("%.0f",arp));
-			ele.getChildren().add(sub);
-		} if (exp>0) {
-			sub = new Element("exp");
-			sub.setText(String.format("%.0f",exp));
-			ele.getChildren().add(sub);
+		for (Type t: Type.values()) {
+			if (get(t)>0) {
+				sub = new Element(t.name().toLowerCase());
+				sub.setText(String.format("%.0f",get(t)));
+				ele.getChildren().add(sub);
+			}
 		}
 		return ele;
 	}

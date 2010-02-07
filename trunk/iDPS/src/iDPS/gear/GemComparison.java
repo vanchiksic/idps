@@ -15,6 +15,7 @@ public class GemComparison {
 	private Setup gear;
 	private int slot, index;
 	private float defaultDPS;
+	private Gem orgGem;
 	private ArrayList<Gem> comparedGems;
 	
 	public GemComparison(Setup gear, int slot, int index) {
@@ -25,6 +26,7 @@ public class GemComparison {
 		this.gear = gear.clone();
 		this.slot = slot;
 		this.index = index;
+		orgGem = gear.getGem(slot, index);
 		this.gear.setGem(slot, index, null);
 		comparedGems = new ArrayList<Gem>();
 		runComparison(anyColor);
@@ -43,7 +45,13 @@ public class GemComparison {
 		else
 			gems = Gem.findSocket(socket);
 		
+		// Make sure orgGem is in the list
+		if (!gems.contains(orgGem))
+			gems.add(orgGem);
+		
 		for (Gem gem: gems)  {
+			if (gem == null)
+				continue;
 			if (gem.getColor() == GemColor.Meta && socket.getType() != SocketType.Meta)
 				continue;
 			gear.setGem(slot, index, null);

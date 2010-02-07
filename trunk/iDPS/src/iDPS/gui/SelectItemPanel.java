@@ -64,7 +64,10 @@ public class SelectItemPanel extends JPanel {
 			c.gridx = 1; c.gridy = j; c.gridheight = 3; c.gridwidth = 1;
 			add(jl, c);
 			
-			label = new JLabel(item.getName());
+			String name = item.getName();
+			if (name.length()>35)
+				name = name.substring(0,32)+"...";
+			label = new JLabel(name);
 			c.insets = new Insets(0, 0, 0, 0);
 			c.gridx = 2; c.gridy = j; c.gridheight = 1;
 			add(label, c);

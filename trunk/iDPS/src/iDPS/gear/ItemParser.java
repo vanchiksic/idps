@@ -222,6 +222,10 @@ public class ItemParser {
 			Armor itemOrg = iter.next();
 			System.out.println(itemOrg);
 			Armor itemNew = ip.loadItem(itemOrg.getId());
+			if (itemOrg.getUniqueLimit() != 0) {
+				itemNew.setUniqueLimit(itemOrg.getUniqueLimit());
+				itemNew.setUniqueName(itemOrg.getUniqueName());
+			}
 			if (itemOrg.getTag() != null)
 				itemNew.setTag(itemOrg.getTag());
 			if (itemOrg.getFaction() != Faction.Both)

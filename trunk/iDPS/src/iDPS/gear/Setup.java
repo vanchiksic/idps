@@ -150,11 +150,11 @@ public class Setup implements Comparable<Setup> {
 		this.name = name;
 	}
 	
-	public boolean canAdd(Gem g) {
-		if (g.getUniqueLimit()>0) {
+	public boolean canAdd(Item i) {
+		if (i.getUniqueLimit()>0) {
 			int[] vect;
-			if (uniqueMap.containsKey(g.getUniqueName())) {
-				vect = uniqueMap.get(g.getUniqueName());
+			if (uniqueMap.containsKey(i.getUniqueName())) {
+				vect = uniqueMap.get(i.getUniqueName());
 				if (vect[0] >= vect[1])
 					return false;
 			}
@@ -196,59 +196,43 @@ public class Setup implements Comparable<Setup> {
 		return false;
 	}
 	
-	private void containsDec(Gem g) {
-		if (g.getUniqueLimit()>0) {
+	private void containsDec(Item item) {
+		if (item.getUniqueLimit()>0) {
 			int[] vect;
-			if (uniqueMap.containsKey(g.getUniqueName())) {
-				vect = uniqueMap.get(g.getUniqueName());
+			if (uniqueMap.containsKey(item.getUniqueName())) {
+				vect = uniqueMap.get(item.getUniqueName());
 				if (vect[0] > 0)
 					vect[0]--;
 			}
 		}
-		if (containsMap.containsKey(g.getId())) {
-			int c = containsMap.get(g.getId())-1;
+		if (containsMap.containsKey(item.getId())) {
+			int c = containsMap.get(item.getId())-1;
 			if (c>0)
-				containsMap.put(g.getId(), c--);
+				containsMap.put(item.getId(), c--);
 			else
-				containsMap.remove(g.getId());
+				containsMap.remove(item.getId());
 		}
 	}
 	
-	private void containsDec(int id) {
-		if (containsMap.containsKey(id)) {
-			int c = containsMap.get(id)-1;
-			if (c>0)
-				containsMap.put(id, c--);
-			else
-				containsMap.remove(id);
-		}
-	}
-	
-	private boolean containsInc(Gem g) {
-		if (g.getUniqueLimit()>0) {
+	private boolean containsInc(Item item) {
+		if (item.getUniqueLimit()>0) {
 			int[] vect;
-			if (uniqueMap.containsKey(g.getUniqueName())) {
-				vect = uniqueMap.get(g.getUniqueName());
+			if (uniqueMap.containsKey(item.getUniqueName())) {
+				vect = uniqueMap.get(item.getUniqueName());
 				if (vect[0] >= vect[1])
 					return false;
 				vect[0]++;
 			} else {
 				vect = new int[2];
 				vect[0] = 1;
-				vect[1] = g.getUniqueLimit();
-				uniqueMap.put(g.getUniqueName(), vect);
+				vect[1] = item.getUniqueLimit();
+				uniqueMap.put(item.getUniqueName(), vect);
 			}
 		}
-		int c = (containsMap.containsKey(g.getId())) ? containsMap.get(g.getId()) : 0;
+		int c = (containsMap.containsKey(item.getId())) ? containsMap.get(item.getId()) : 0;
 		c++;
-		containsMap.put(id, c);
+		containsMap.put(item.getId(), c);
 		return true;
-	}
-	
-	private void containsInc(int id) {
-		int c = (containsMap.containsKey(id)) ? containsMap.get(id) : 0;
-		c++;
-		containsMap.put(id, c);
 	}
 	
 	public void gemBest(int slot) {
@@ -481,7 +465,7 @@ public class Setup implements Comparable<Setup> {
 				setGem(slot, index, null);
 			if (olditem.getTier() != null)
 				tierDec(olditem.getTier());
-			containsDec(olditem.getId());
+			containsDec(olditem);
 			items[slot] = null;
 		}
 		if (item != null) {
@@ -491,7 +475,7 @@ public class Setup implements Comparable<Setup> {
 				setGem(slot, index, oldgems[index]);
 			if (item.getTier() != null)
 				tierInc(item.getTier());
-			containsInc(item.getId());
+			containsInc(item);
 		}
 	}
 	

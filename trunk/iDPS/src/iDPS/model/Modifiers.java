@@ -5,17 +5,21 @@ import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
+import iDPS.gear.Setup.Profession;
 import iDPS.gear.Weapon.weaponType;
 
 public class Modifiers {
 	
-	private final float cAGI = 25000/3;
+	protected static final float cAGI = 25000/3;
 	private final float cARP = 1399.572719F;
 	private final float cHIT = 3278.998947F;
 	private final float cHST = 3278.998947F;
 	private final float cPHIT = 2623.199272F;
 	private final float cCRIT = 4590.598679F;
 	private final float cEXP = 3278.998947F;
+	
+	/** Total Attack Power */
+	private float totalATP;
 	
 	// Global Mods
 	private float gHit, gExp, gCri, gHst, gHstGear;
@@ -32,23 +36,33 @@ public class Modifiers {
 	private Talents talents;
 	
 	public Modifiers(Attributes attr, Setup setup) {
+		totalATP = 0;
 		this.attr = attr;
 		this.setup = setup;
 		this.talents = setup.getTalents();
 		calcMods();
 	}
 	
-	private void calcMods() {
-		float agi, hit, cri, exp, hst, arp;
+	public void calcMods() {
+		float atp, agi, str, hit, cri, exp, hst, arp;
+		atp = attr.getAtp();
 		agi = attr.getAgi();
+		str = attr.getStr();
 		hit = attr.getHit();
 		cri = attr.getCri();
 		exp = attr.getExp();
 		hst = attr.getHst();
 		arp = attr.getArp();
 		
-		agi += 230;
-		agi *= 1.1F;
+		// Apply Buffs
+		agi += 229; str += 229;
+		agi *= 1.1F; str *= 1.1F;
+		atp += 687 + 260;
+		if (setup.hasProfession(Profession.Alchemy))
+			atp += 80;
+		
+		// calc total atp
+		totalATP = (atp + agi + str);
 				
 		float baseAgi = setup.getRace().getAttr().getAgi()-166;
 		gHit = hit/cHIT + 0.05F;
@@ -56,10 +70,7 @@ public class Modifiers {
 		gExp = exp/cEXP + 0.0025F * talents.getExpertise();
 		
 		gHst  = 1.4F * 1.2F * talents.getLightref();
-		if (talents.getBf())
-			gHst *= 1 + (0.2F * 15F/120F);
-		if (setup.getRace().getType() == Race.Type.Troll)
-			gHst *= 1 + (0.2F * 10F/180F);
+	
 		gHst -= 1;
 		gHstGear = hst/cHST;
 		
@@ -81,7 +92,7 @@ public class Modifiers {
 			tmpArp += cARP*0.03F*talents.getMaceSpec();
 		modArmorOH = calcArmorMod(tmpArp);
 		
-		// Hit Tables
+		// Hit Tables MainHand
 		float tmpCri = gCri, tmpExp = gExp;
 		switch (wt1) {
 			case Axe:
@@ -114,7 +125,8 @@ public class Modifiers {
 			tmpCri += 0.05F;
 		htSS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
 		htMut = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri+0.15F, tmpExp);
-		// Offhand
+		
+		// Hit Tables Offhand
 		tmpCri = gCri; tmpExp = gExp;
 		switch (wt2) {
 			case Axe:
@@ -144,7 +156,7 @@ public class Modifiers {
 		return (1F-dr);
 	}
 	
-	public void registerArpProc(int arp, float uptime) {
+	public void registerArpProc(float arp, float uptime) {
 		Weapon.weaponType wt1 = setup.getWeapon1().getType();
 		Weapon.weaponType wt2 = setup.getWeapon2().getType();
 		float tmpArp = attr.getArp()+arp;
@@ -159,20 +171,20 @@ public class Modifiers {
 		modArmorOH = calcArmorMod(tmpArp)*uptime + modArmorOH*(1-uptime);
 	}
 	
-	public void registerHasteProc(int hst, float uptime) {
-		gHstGear += hst/3279F*uptime;
+	public void registerHasteProc(float hst, float uptime) {
+		gHstGear += hst/cHST*uptime;
 	}
 	
 	public void registerStaticHasteProc(float hst, float uptime) {
 		gHst = ((gHst+1)*(hst*uptime+1))-1;
 	}
 	
-	public void registerCritProc(int cri, float uptime) {
+	public void registerCritProc(float cri, float uptime) {
 		registerPhysCritProc(cri, uptime);
 		mCri += cri/cCRIT*uptime;
 	}
 	
-	public void registerPhysCritProc(int cri, float uptime) {
+	public void registerPhysCritProc(float cri, float uptime) {
 		htMH.registerCritProc(cri/cCRIT, uptime);
 		htOH.registerCritProc(cri/cCRIT, uptime);
 		htMHS.registerCritProc(cri/cCRIT, uptime);
@@ -180,6 +192,26 @@ public class Modifiers {
 		htSS.registerCritProc(cri/cCRIT, uptime);
 		htMut.registerCritProc(cri/cCRIT, uptime);
 		htFin.registerCritProc(cri/cCRIT, uptime);
+	}
+	
+	public void registerProc(Proc proc) {
+		
+		if (proc.isIncreaseCri())
+			registerCritProc(proc.getAttributes().getCri(), proc.getUptime());
+		
+		if (proc.isIncreaseAgi()) {
+			registerPhysCritProc(proc.getAttributes().getAgi()/cAGI*cCRIT, proc.getUptime());
+			totalATP += proc.getAttributes().getAgi()*1.1F * proc.getUptime();
+		}
+		
+		if (proc.isIncreaseAtp())
+			totalATP += proc.getAttributes().getAtp() * proc.getUptime();
+		
+		if (proc.isIncreaseHst())
+			registerHasteProc(proc.getAttributes().getHst(), proc.getUptime());
+		
+		if (proc.isIncreaseArp())
+			registerArpProc(proc.getAttributes().getArp(), proc.getUptime());
 	}
 
 	public float getHastePercent() {
@@ -255,6 +287,10 @@ public class Modifiers {
 	public void setArpExceeded(int arpExceeded) {
 		if (this.arpExceeded<arpExceeded)
 			this.arpExceeded = arpExceeded;
+	}
+	
+	public float getTotalATP() {
+		return totalATP * 1.1F * (1+0.02F*talents.getSavageCombat());
 	}
 
 }

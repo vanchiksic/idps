@@ -21,7 +21,7 @@ public class HitTable {
 					setHitExceeded(2);
 				this.dodge = Math.max((0.065F-exp),0);
 				this.glance = 0.24F;
-				this.critCap = 1-this.miss-this.dodge-this.glance-0.048F;
+				this.critCap = 1-this.miss-this.dodge-this.glance;
 				if ((cri-0.048F)>critCap)
 					setCritExceeded(2);
 				this.critU = cri-0.048F;

@@ -2,7 +2,6 @@ package iDPS.gear;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Weapon.weaponType;
@@ -44,9 +43,10 @@ public class ItemComparison {
 		if (!items.contains(orgItem))
 			items.add(orgItem);
 		
-		Iterator<Armor> iter = items.iterator();
-		while (iter.hasNext())  {
-			Armor item = iter.next();
+		for (Armor item: items)  {
+			gear.setItem(slotId, null);
+			if (!gear.canAdd(item))
+				continue;
 			gear.setItem(slotId, item);
 			gear.gemBest(slotId);
 			m.calculate(gear);

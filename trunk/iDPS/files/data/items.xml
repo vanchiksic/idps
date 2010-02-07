@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
+  <item id="45108">
+    <tag>flameleviathan-25</tag>
+    <filters>
+      <filter>uld25n</filter>
+    </filters>
+  </item>
+  <item id="45869">
+    <tag>xt002-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
+  </item>
+  <item id="45611">
+    <tag>algalon-25</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
+  </item>
   <item id="40256">
     <name><![CDATA[Grim Toll]]></name>
     <slot>Trinket</slot>
@@ -60,8 +78,8 @@
     <name><![CDATA[Drape of the Lithe]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>63</agi>
       <atp>84</atp>
+      <agi>63</agi>
       <hit>36</hit>
       <hst>46</hst>
     </attributes>
@@ -89,8 +107,8 @@
     <name><![CDATA[Drape of Icy Intent]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>64</agi>
       <atp>102</atp>
+      <agi>64</agi>
       <hit>40</hit>
       <hst>41</hst>
     </attributes>
@@ -111,8 +129,8 @@
     <name><![CDATA[Pendulum of Infinity]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>64</agi>
       <atp>86</atp>
+      <agi>64</agi>
       <cri>48</cri>
       <hst>41</hst>
     </attributes>
@@ -146,10 +164,10 @@
     <name><![CDATA[Death-warmed Belt]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>69</agi>
       <atp>112</atp>
-      <hit>40</hit>
+      <agi>69</agi>
       <cri>56</cri>
+      <hit>40</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -166,10 +184,10 @@
     <name><![CDATA[Footpads of Silence]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>69</agi>
       <atp>114</atp>
-      <hit>48</hit>
+      <agi>69</agi>
       <cri>56</cri>
+      <hit>48</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -199,10 +217,10 @@
     <name><![CDATA[Belt of the Twilight Assassin]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>84</agi>
       <atp>124</atp>
-      <hit>49</hit>
+      <agi>84</agi>
       <exp>57</exp>
+      <hit>49</hit>
     </attributes>
     <lvl>226</lvl>
     <tag>emblems-conquest</tag>
@@ -212,8 +230,8 @@
     <name><![CDATA[Gloves of the Blind Stalker]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>85</agi>
       <atp>120</atp>
+      <agi>85</agi>
       <cri>49</cri>
       <hst>57</hst>
     </attributes>
@@ -225,8 +243,8 @@
     <name><![CDATA[Leggings of Wavering Shadow]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>98</agi>
       <atp>136</atp>
+      <agi>98</agi>
       <hit>68</hit>
       <hst>75</hst>
     </attributes>
@@ -248,8 +266,8 @@
     <speed>3.0</speed>
     <dps>187.1</dps>
     <attributes>
-      <agi>29</agi>
       <atp>66</atp>
+      <agi>29</agi>
       <hit>27</hit>
     </attributes>
     <sockets>
@@ -282,10 +300,10 @@
     <name><![CDATA[Drape of the Faceless General]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>53</agi>
       <atp>92</atp>
-      <cri>40</cri>
+      <agi>53</agi>
       <arp>30</arp>
+      <cri>40</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -318,8 +336,8 @@
     <name><![CDATA[Soul-Devouring Cinch]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>85</agi>
       <atp>114</atp>
+      <agi>85</agi>
       <cri>53</cri>
       <exp>56</exp>
     </attributes>
@@ -344,10 +362,10 @@
     <speed>1.4</speed>
     <dps>196.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>89</atp>
-      <cri>44</cri>
+      <agi>58</agi>
       <arp>30</arp>
+      <cri>44</cri>
     </attributes>
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
@@ -364,10 +382,10 @@
     <speed>1.4</speed>
     <dps>216.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>84</atp>
-      <cri>50</cri>
+      <agi>58</agi>
       <arp>33</arp>
+      <cri>50</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -387,8 +405,8 @@
     <name><![CDATA[Drape of the Untamed Predator]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>50</cri>
       <hst>50</hst>
     </attributes>
@@ -404,8 +422,8 @@
     <name><![CDATA[Drape of the Untamed Predator]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>57</cri>
       <hst>57</hst>
     </attributes>
@@ -427,8 +445,8 @@
     <name><![CDATA[Leggings of the Broken Beast]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>128</agi>
       <atp>165</atp>
+      <agi>128</agi>
       <hit>74</hit>
       <hst>90</hst>
     </attributes>
@@ -451,8 +469,8 @@
     <name><![CDATA[Leggings of the Broken Beast]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <hit>86</hit>
       <hst>102</hst>
     </attributes>
@@ -479,10 +497,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>43</agi>
       <atp>57</atp>
-      <hst>28</hst>
+      <agi>43</agi>
       <arp>28</arp>
+      <hst>28</hst>
     </attributes>
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
@@ -499,10 +517,10 @@
     <speed>2.8</speed>
     <dps>240.7</dps>
     <attributes>
-      <agi>40</agi>
       <atp>49</atp>
-      <hst>32</hst>
+      <agi>40</agi>
       <arp>32</arp>
+      <hst>32</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -525,10 +543,10 @@
     <speed>1.5</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>78</atp>
-      <cri>39</cri>
+      <agi>58</agi>
       <arp>39</arp>
+      <cri>39</cri>
     </attributes>
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
@@ -542,8 +560,8 @@
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>120</agi>
       <atp>149</atp>
+      <agi>120</agi>
       <cri>90</cri>
       <hst>90</hst>
     </attributes>
@@ -569,10 +587,10 @@
     <speed>1.5</speed>
     <dps>216.7</dps>
     <attributes>
-      <agi>66</agi>
       <atp>72</atp>
-      <cri>36</cri>
+      <agi>66</agi>
       <arp>44</arp>
+      <cri>36</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -592,8 +610,8 @@
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <cri>86</cri>
       <hst>102</hst>
     </attributes>
@@ -617,8 +635,8 @@
     <name><![CDATA[Charge of the Demon Lord]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>54</cri>
       <hst>44</hst>
     </attributes>
@@ -634,8 +652,8 @@
     <name><![CDATA[Charge of the Demon Lord]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>61</cri>
       <hst>50</hst>
     </attributes>
@@ -657,8 +675,8 @@
     <name><![CDATA[Ring of Callous Aggression]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>54</cri>
       <hst>44</hst>
     </attributes>
@@ -674,10 +692,10 @@
     <name><![CDATA[Treads of the Icewalker]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
-      <hit>67</hit>
+      <agi>93</agi>
       <arp>59</arp>
+      <hit>67</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -697,8 +715,8 @@
     <name><![CDATA[Ring of Callous Aggression]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>61</cri>
       <hst>50</hst>
     </attributes>
@@ -720,10 +738,10 @@
     <name><![CDATA[Treads of the Icewalker]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>98</agi>
       <atp>135</atp>
-      <hit>76</hit>
+      <agi>98</agi>
       <arp>68</arp>
+      <hit>76</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -747,8 +765,8 @@
     <speed>1.8</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>89</atp>
+      <agi>58</agi>
       <hit>39</hit>
       <hst>39</hst>
     </attributes>
@@ -764,8 +782,8 @@
     <name><![CDATA[Belt of the Merciless Killer]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
+      <agi>93</agi>
       <hit>59</hit>
       <hst>67</hst>
     </attributes>
@@ -787,8 +805,8 @@
     <name><![CDATA[Belt of the Merciless Killer]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>98</agi>
       <atp>135</atp>
+      <agi>98</agi>
       <hit>68</hit>
       <hst>76</hst>
     </attributes>
@@ -814,8 +832,8 @@
     <speed>1.8</speed>
     <dps>216.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>84</atp>
+      <agi>58</agi>
       <hit>44</hit>
       <hst>44</hst>
     </attributes>
@@ -868,8 +886,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>78</atp>
+      <agi>58</agi>
       <hit>39</hit>
       <hst>39</hst>
     </attributes>
@@ -885,10 +903,10 @@
     <name><![CDATA[Bracers of Dark Determination]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
-      <hit>50</hit>
+      <agi>76</agi>
       <cri>50</cri>
+      <hit>50</hit>
     </attributes>
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
@@ -902,10 +920,10 @@
     <name><![CDATA[Bracers of Dark Determination]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>69</agi>
       <atp>98</atp>
-      <hit>49</hit>
+      <agi>69</agi>
       <cri>57</cri>
+      <hit>49</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -929,8 +947,8 @@
     <speed>2.6</speed>
     <dps>216.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>72</atp>
+      <agi>58</agi>
       <hit>44</hit>
       <hst>44</hst>
     </attributes>
@@ -952,10 +970,10 @@
     <name><![CDATA[Belt of Fierce Competition]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>66</agi>
       <atp>101</atp>
-      <cri>31</cri>
+      <agi>66</agi>
       <arp>47</arp>
+      <cri>31</cri>
     </attributes>
     <lvl>200</lvl>
     <tag>toc5</tag>
@@ -968,10 +986,10 @@
     <name><![CDATA[Gloves of the Argent Fanatic]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>66</agi>
       <atp>73</atp>
-      <cri>45</cri>
+      <agi>66</agi>
       <arp>34</arp>
+      <cri>45</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -988,10 +1006,10 @@
     <name><![CDATA[Leggings of Brazen Trespass]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>89</agi>
       <atp>128</atp>
-      <hit>64</hit>
+      <agi>89</agi>
       <cri>52</cri>
+      <hit>64</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -1023,10 +1041,10 @@
     <name><![CDATA[Shoulderpads of the Infamous Knave]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>62</agi>
       <atp>101</atp>
-      <hit>27</hit>
+      <agi>62</agi>
       <arp>47</arp>
+      <hit>27</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -1045,8 +1063,8 @@
     <name><![CDATA[Uruka's Band of Zeal]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>36</agi>
       <atp>100</atp>
+      <agi>36</agi>
       <cri>34</cri>
       <exp>32</exp>
     </attributes>
@@ -1061,8 +1079,8 @@
     <name><![CDATA[Treads of Dismal Fortune]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>73</agi>
       <atp>113</atp>
+      <agi>73</agi>
       <cri>59</cri>
       <exp>42</exp>
     </attributes>
@@ -1083,8 +1101,8 @@
     <name><![CDATA[Cuirass of Cruel Intent]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>74</agi>
       <atp>255</atp>
+      <agi>74</agi>
       <cri>82</cri>
       <hst>71</hst>
     </attributes>
@@ -1110,10 +1128,10 @@
     <speed>1.4</speed>
     <dps>196.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>89</atp>
-      <cri>44</cri>
+      <agi>58</agi>
       <arp>30</arp>
+      <cri>44</cri>
     </attributes>
     <lvl>245</lvl>
     <tag>northrendbeasts-25</tag>
@@ -1127,8 +1145,8 @@
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>50</cri>
       <hst>50</hst>
     </attributes>
@@ -1144,8 +1162,8 @@
     <name><![CDATA[Legwraps of the Broken Beast]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>128</agi>
       <atp>165</atp>
+      <agi>128</agi>
       <hit>74</hit>
       <hst>90</hst>
     </attributes>
@@ -1171,10 +1189,10 @@
     <speed>1.5</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>78</atp>
-      <cri>39</cri>
+      <agi>58</agi>
       <arp>39</arp>
+      <cri>39</cri>
     </attributes>
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
@@ -1191,10 +1209,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>43</agi>
       <atp>57</atp>
-      <hst>28</hst>
+      <agi>43</agi>
       <arp>28</arp>
+      <hst>28</hst>
     </attributes>
     <lvl>245</lvl>
     <tag>jaraxxus-25</tag>
@@ -1208,8 +1226,8 @@
     <name><![CDATA[Vest of Calamitous Fate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>120</agi>
       <atp>149</atp>
+      <agi>120</agi>
       <cri>90</cri>
       <hst>90</hst>
     </attributes>
@@ -1232,8 +1250,8 @@
     <name><![CDATA[Charge of the Eredar]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>54</cri>
       <hst>44</hst>
     </attributes>
@@ -1249,8 +1267,8 @@
     <name><![CDATA[Band of Callous Aggression]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
+      <agi>76</agi>
       <cri>54</cri>
       <hst>44</hst>
     </attributes>
@@ -1266,10 +1284,10 @@
     <name><![CDATA[Icewalker Treads]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
-      <hit>67</hit>
+      <agi>93</agi>
       <arp>59</arp>
+      <hit>67</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -1289,8 +1307,8 @@
     <name><![CDATA[Belt of the Pitiless Killer]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
+      <agi>93</agi>
       <hit>59</hit>
       <hst>67</hst>
     </attributes>
@@ -1315,8 +1333,8 @@
     <speed>1.8</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>89</atp>
+      <agi>58</agi>
       <hit>39</hit>
       <hst>39</hst>
     </attributes>
@@ -1345,10 +1363,10 @@
     <name><![CDATA[Armbands of Dark Determination]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
-      <hit>50</hit>
+      <agi>76</agi>
       <cri>50</cri>
+      <hit>50</hit>
     </attributes>
     <lvl>245</lvl>
     <tag>anubarak-25</tag>
@@ -1365,8 +1383,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>78</atp>
+      <agi>58</agi>
       <hit>39</hit>
       <hst>39</hst>
     </attributes>
@@ -1385,10 +1403,10 @@
     <speed>1.4</speed>
     <dps>216.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>84</atp>
-      <cri>50</cri>
+      <agi>58</agi>
       <arp>33</arp>
+      <cri>50</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -1408,8 +1426,8 @@
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>57</cri>
       <hst>57</hst>
     </attributes>
@@ -1431,8 +1449,8 @@
     <name><![CDATA[Legwraps of the Broken Beast]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <hit>86</hit>
       <hst>102</hst>
     </attributes>
@@ -1459,10 +1477,10 @@
     <speed>1.5</speed>
     <dps>216.7</dps>
     <attributes>
-      <agi>66</agi>
       <atp>72</atp>
-      <cri>36</cri>
+      <agi>66</agi>
       <arp>44</arp>
+      <cri>36</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -1485,10 +1503,10 @@
     <speed>2.8</speed>
     <dps>240.7</dps>
     <attributes>
-      <agi>40</agi>
       <atp>49</atp>
-      <hst>32</hst>
+      <agi>40</agi>
       <arp>32</arp>
+      <hst>32</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -1508,8 +1526,8 @@
     <name><![CDATA[Vest of Calamitous Fate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <cri>86</cri>
       <hst>102</hst>
     </attributes>
@@ -1533,8 +1551,8 @@
     <name><![CDATA[Charge of the Eredar]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>61</cri>
       <hst>50</hst>
     </attributes>
@@ -1556,8 +1574,8 @@
     <name><![CDATA[Band of Callous Aggression]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>77</agi>
       <atp>98</atp>
+      <agi>77</agi>
       <cri>61</cri>
       <hst>50</hst>
     </attributes>
@@ -1579,10 +1597,10 @@
     <name><![CDATA[Icewalker Treads]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>98</agi>
       <atp>135</atp>
-      <hit>76</hit>
+      <agi>98</agi>
       <arp>68</arp>
+      <hit>76</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -1603,8 +1621,8 @@
     <name><![CDATA[Belt of the Pitiless Killer]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>98</agi>
       <atp>135</atp>
+      <agi>98</agi>
       <hit>68</hit>
       <hst>76</hst>
     </attributes>
@@ -1630,8 +1648,8 @@
     <speed>1.8</speed>
     <dps>216.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>84</atp>
+      <agi>58</agi>
       <hit>44</hit>
       <hst>44</hst>
     </attributes>
@@ -1667,10 +1685,10 @@
     <name><![CDATA[Armbands of Dark Determination]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>69</agi>
       <atp>98</atp>
-      <hit>49</hit>
+      <agi>69</agi>
       <cri>57</cri>
+      <hit>49</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -1694,8 +1712,8 @@
     <speed>2.6</speed>
     <dps>216.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>72</atp>
+      <agi>58</agi>
       <hit>44</hit>
       <hst>44</hst>
     </attributes>
@@ -1717,10 +1735,10 @@
     <name><![CDATA[Ancient Pendant of Arathor]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>42</agi>
       <atp>119</atp>
-      <cri>44</cri>
+      <agi>42</agi>
       <arp>33</arp>
+      <cri>44</cri>
     </attributes>
     <lvl>219</lvl>
     <tag>toc5-heroic</tag>
@@ -1733,10 +1751,10 @@
     <name><![CDATA[Armbands of the Wary Lookout]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>59</agi>
       <atp>90</atp>
-      <hit>40</hit>
+      <agi>59</agi>
       <arp>39</arp>
+      <hit>40</hit>
     </attributes>
     <lvl>219</lvl>
     <tag>toc5-heroic</tag>
@@ -1752,10 +1770,10 @@
     <speed>2.6</speed>
     <dps>163.3</dps>
     <attributes>
-      <agi>46</agi>
       <atp>73</atp>
-      <hit>13</hit>
+      <agi>46</agi>
       <arp>31</arp>
+      <hit>13</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -1777,8 +1795,8 @@
     <speed>2.9</speed>
     <dps>240.7</dps>
     <attributes>
-      <agi>48</agi>
       <atp>49</atp>
+      <agi>48</agi>
       <cri>32</cri>
       <hst>24</hst>
     </attributes>
@@ -1803,8 +1821,8 @@
     <speed>2.9</speed>
     <dps>240.7</dps>
     <attributes>
-      <agi>48</agi>
       <atp>49</atp>
+      <agi>48</agi>
       <cri>32</cri>
       <hst>24</hst>
     </attributes>
@@ -1829,8 +1847,8 @@
     <speed>2.6</speed>
     <dps>216.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>88</atp>
+      <agi>58</agi>
       <cri>44</cri>
       <hst>36</hst>
     </attributes>
@@ -1855,8 +1873,8 @@
     <speed>2.6</speed>
     <dps>216.5</dps>
     <attributes>
-      <agi>58</agi>
       <atp>88</atp>
+      <agi>58</agi>
       <cri>44</cri>
       <hst>36</hst>
     </attributes>
@@ -1878,10 +1896,10 @@
     <name><![CDATA[Mask of Distant Memory]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>98</agi>
       <atp>142</atp>
-      <hit>64</hit>
+      <agi>98</agi>
       <cri>61</cri>
+      <hit>64</hit>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -1901,10 +1919,10 @@
     <name><![CDATA[Vereesa's Dexterity]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>97</agi>
       <atp>114</atp>
-      <cri>65</cri>
+      <agi>97</agi>
       <arp>57</arp>
+      <cri>65</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -1924,10 +1942,10 @@
     <name><![CDATA[Sylvanas' Cunning]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>97</agi>
       <atp>114</atp>
-      <cri>65</cri>
+      <agi>97</agi>
       <arp>57</arp>
+      <cri>65</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -1947,8 +1965,8 @@
     <speed>3.0</speed>
     <dps>147.3</dps>
     <attributes>
-      <agi>34</agi>
       <atp>42</atp>
+      <agi>34</agi>
       <arp>34</arp>
     </attributes>
     <lvl>219</lvl>
@@ -1962,10 +1980,10 @@
     <name><![CDATA[Bracers of Swift Death]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>68</agi>
       <atp>101</atp>
-      <hst>50</hst>
+      <agi>68</agi>
       <arp>42</arp>
+      <hst>50</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -1982,10 +2000,10 @@
     <name><![CDATA[Bracers of Swift Death]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>68</agi>
       <atp>101</atp>
-      <hst>50</hst>
+      <agi>68</agi>
       <arp>42</arp>
+      <hst>50</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -2002,10 +2020,10 @@
     <name><![CDATA[Knightbane Carapace]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>112</agi>
       <atp>181</atp>
-      <hit>82</hit>
+      <agi>112</agi>
       <arp>74</arp>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2024,10 +2042,10 @@
     <name><![CDATA[Knightbane Carapace]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>112</agi>
       <atp>181</atp>
-      <hit>82</hit>
+      <agi>112</agi>
       <arp>74</arp>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2046,10 +2064,10 @@
     <name><![CDATA[Collar of Ceaseless Torment]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>67</agi>
       <atp>97</atp>
-      <cri>46</cri>
+      <agi>67</agi>
       <arp>42</arp>
+      <cri>46</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>northrendbeasts-10</tag>
@@ -2063,10 +2081,10 @@
     <name><![CDATA[Acidmaw Boots]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>85</agi>
       <atp>118</atp>
-      <hit>63</hit>
+      <agi>85</agi>
       <exp>48</exp>
+      <hit>63</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2089,8 +2107,8 @@
     <speed>1.8</speed>
     <dps>255.6</dps>
     <attributes>
-      <agi>43</agi>
       <atp>57</atp>
+      <agi>43</agi>
       <arp>28</arp>
       <exp>28</exp>
     </attributes>
@@ -2105,8 +2123,8 @@
     <speed>1.4</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>62</atp>
+      <agi>52</agi>
       <hit>37</hit>
       <hst>22</hst>
     </attributes>
@@ -2128,10 +2146,10 @@
     <name><![CDATA[Mask of Lethal Intent]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>82</hit>
+      <agi>120</agi>
       <arp>74</arp>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -2149,10 +2167,10 @@
     <name><![CDATA[Hood of Lethal Intent]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>82</hit>
+      <agi>120</agi>
       <arp>74</arp>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -2170,10 +2188,10 @@
     <name><![CDATA[Planestalker Signet]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>61</agi>
       <atp>102</atp>
-      <hit>38</hit>
+      <agi>61</agi>
       <arp>39</arp>
+      <hit>38</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2193,10 +2211,10 @@
     <name><![CDATA[Duskstalker Shoulderpads]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
-      <cri>67</cri>
+      <agi>93</agi>
       <arp>59</arp>
+      <cri>67</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2213,10 +2231,10 @@
     <name><![CDATA[Duskstalker Pauldrons]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>93</agi>
       <atp>135</atp>
-      <cri>67</cri>
+      <agi>93</agi>
       <arp>59</arp>
+      <cri>67</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2233,10 +2251,10 @@
     <name><![CDATA[Gloves of the Silver Assassin]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>85</agi>
       <atp>139</atp>
-      <cri>54</cri>
+      <agi>85</agi>
       <arp>54</arp>
+      <cri>54</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -2267,10 +2285,10 @@
     <name><![CDATA[Dexterous Brightstone Ring]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>76</agi>
       <atp>101</atp>
-      <hst>50</hst>
+      <agi>76</agi>
       <arp>50</arp>
+      <hst>50</hst>
     </attributes>
     <lvl>245</lvl>
     <tag>emblems-triumph</tag>
@@ -2293,10 +2311,10 @@
     <speed>1.8</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>83</atp>
-      <cri>36</cri>
+      <agi>52</agi>
       <arp>32</arp>
+      <cri>36</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
@@ -2310,10 +2328,10 @@
     <name><![CDATA[Armor of Shifting Shadows]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>118</agi>
       <atp>140</atp>
-      <cri>81</cri>
+      <agi>118</agi>
       <arp>59</arp>
+      <cri>81</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2337,10 +2355,10 @@
     <speed>2.8</speed>
     <dps>187.1</dps>
     <attributes>
-      <agi>35</agi>
       <atp>59</atp>
-      <hit>15</hit>
+      <agi>35</agi>
       <cri>26</cri>
+      <hit>15</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2363,8 +2381,8 @@
     <speed>2.9</speed>
     <dps>187.2</dps>
     <attributes>
-      <agi>38</agi>
       <atp>50</atp>
+      <agi>38</agi>
       <cri>26</cri>
       <hst>23</hst>
     </attributes>
@@ -2383,8 +2401,8 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>52</agi>
       <atp>78</atp>
+      <agi>52</agi>
       <cri>38</cri>
       <hst>29</hst>
     </attributes>
@@ -2403,10 +2421,10 @@
     <speed>1.5</speed>
     <dps>178.7</dps>
     <attributes>
-      <agi>52</agi>
       <atp>74</atp>
-      <cri>29</cri>
+      <agi>52</agi>
       <arp>38</arp>
+      <cri>29</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
@@ -2423,8 +2441,8 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>48</agi>
       <atp>61</atp>
+      <agi>48</agi>
       <cri>35</cri>
       <hst>30</hst>
     </attributes>
@@ -2446,8 +2464,8 @@
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>84</agi>
       <atp>124</atp>
+      <agi>84</agi>
       <cri>51</cri>
       <hst>61</hst>
     </attributes>
@@ -2469,10 +2487,10 @@
     <name><![CDATA[Collar of Unending Torment]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>67</agi>
       <atp>97</atp>
-      <cri>46</cri>
+      <agi>67</agi>
       <arp>42</arp>
+      <cri>46</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>northrendbeasts-10</tag>
@@ -2486,10 +2504,10 @@
     <name><![CDATA[Acidmaw Treads]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>85</agi>
       <atp>118</atp>
-      <hit>63</hit>
+      <agi>85</agi>
       <exp>48</exp>
+      <hit>63</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2509,10 +2527,10 @@
     <name><![CDATA[Planestalker Band]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>61</agi>
       <atp>102</atp>
-      <hit>38</hit>
+      <agi>61</agi>
       <arp>39</arp>
+      <hit>38</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2535,8 +2553,8 @@
     <speed>1.4</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>62</atp>
+      <agi>52</agi>
       <hit>37</hit>
       <hst>22</hst>
     </attributes>
@@ -2558,10 +2576,10 @@
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>85</agi>
       <atp>139</atp>
-      <cri>54</cri>
+      <agi>85</agi>
       <arp>54</arp>
+      <cri>54</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -2598,10 +2616,10 @@
     <speed>2.8</speed>
     <dps>187.1</dps>
     <attributes>
-      <agi>35</agi>
       <atp>59</atp>
-      <hit>15</hit>
+      <agi>35</agi>
       <cri>26</cri>
+      <hit>15</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2624,10 +2642,10 @@
     <speed>1.8</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>83</atp>
-      <cri>36</cri>
+      <agi>52</agi>
       <arp>32</arp>
+      <cri>36</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>twinvalkyrs-10</tag>
@@ -2641,10 +2659,10 @@
     <name><![CDATA[Vest of Shifting Shadows]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>118</agi>
       <atp>140</atp>
-      <cri>81</cri>
+      <agi>118</agi>
       <arp>59</arp>
+      <cri>81</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2668,8 +2686,8 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>52</agi>
       <atp>78</atp>
+      <agi>52</agi>
       <cri>38</cri>
       <hst>29</hst>
     </attributes>
@@ -2688,10 +2706,10 @@
     <speed>1.5</speed>
     <dps>178.7</dps>
     <attributes>
-      <agi>52</agi>
       <atp>74</atp>
-      <cri>29</cri>
+      <agi>52</agi>
       <arp>38</arp>
+      <cri>29</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>anubarak-10</tag>
@@ -2705,8 +2723,8 @@
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>84</agi>
       <atp>124</atp>
+      <agi>84</agi>
       <cri>51</cri>
       <hst>61</hst>
     </attributes>
@@ -2731,8 +2749,8 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>48</agi>
       <atp>61</atp>
+      <agi>48</agi>
       <cri>35</cri>
       <hst>30</hst>
     </attributes>
@@ -2754,10 +2772,10 @@
     <name><![CDATA[Collar of Ceaseless Torment]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>70</agi>
       <atp>106</atp>
-      <cri>52</cri>
+      <agi>70</agi>
       <arp>40</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -2777,10 +2795,10 @@
     <name><![CDATA[Acidmaw Boots]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>93</agi>
       <atp>127</atp>
-      <hit>69</hit>
+      <agi>93</agi>
       <exp>51</exp>
+      <hit>69</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2801,10 +2819,10 @@
     <name><![CDATA[Planestalker Signet]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>70</agi>
       <atp>115</atp>
-      <hit>44</hit>
+      <agi>70</agi>
       <arp>44</arp>
+      <hit>44</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2827,8 +2845,8 @@
     <speed>1.4</speed>
     <dps>196.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>73</atp>
+      <agi>58</agi>
       <hit>42</hit>
       <hst>26</hst>
     </attributes>
@@ -2850,10 +2868,10 @@
     <name><![CDATA[Gloves of the Silver Assassin]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>97</agi>
       <atp>145</atp>
-      <cri>61</cri>
+      <agi>97</agi>
       <arp>61</arp>
+      <cri>61</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -2891,10 +2909,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>40</agi>
       <atp>66</atp>
-      <hit>18</hit>
+      <agi>40</agi>
       <cri>30</cri>
+      <hit>18</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2917,10 +2935,10 @@
     <speed>1.8</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>52</agi>
       <atp>74</atp>
-      <cri>41</cri>
+      <agi>52</agi>
       <arp>36</arp>
+      <cri>41</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -2940,10 +2958,10 @@
     <name><![CDATA[Armor of Shifting Shadows]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>126</agi>
       <atp>162</atp>
-      <cri>93</cri>
+      <agi>126</agi>
       <arp>67</arp>
+      <cri>93</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -2968,8 +2986,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>50</agi>
       <atp>89</atp>
+      <agi>50</agi>
       <cri>43</cri>
       <hst>24</hst>
     </attributes>
@@ -2994,10 +3012,10 @@
     <speed>1.5</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>67</atp>
-      <cri>24</cri>
+      <agi>58</agi>
       <arp>43</arp>
+      <cri>24</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3017,8 +3035,8 @@
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>91</agi>
       <atp>132</atp>
+      <agi>91</agi>
       <cri>52</cri>
       <hst>69</hst>
     </attributes>
@@ -3044,8 +3062,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>54</agi>
       <atp>70</atp>
+      <agi>54</agi>
       <cri>40</cri>
       <hst>35</hst>
     </attributes>
@@ -3070,8 +3088,8 @@
     <speed>2.9</speed>
     <dps>212.1</dps>
     <attributes>
-      <agi>35</agi>
       <atp>57</atp>
+      <agi>35</agi>
       <cri>30</cri>
       <hst>18</hst>
     </attributes>
@@ -3093,10 +3111,10 @@
     <name><![CDATA[Collar of Unending Torment]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>70</agi>
       <atp>106</atp>
-      <cri>52</cri>
+      <agi>70</agi>
       <arp>40</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3116,10 +3134,10 @@
     <name><![CDATA[Acidmaw Treads]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>93</agi>
       <atp>127</atp>
-      <hit>69</hit>
+      <agi>93</agi>
       <exp>51</exp>
+      <hit>69</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -3140,10 +3158,10 @@
     <name><![CDATA[Planestalker Band]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>70</agi>
       <atp>115</atp>
-      <hit>44</hit>
+      <agi>70</agi>
       <arp>44</arp>
+      <hit>44</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -3166,8 +3184,8 @@
     <speed>1.4</speed>
     <dps>196.4</dps>
     <attributes>
-      <agi>58</agi>
       <atp>73</atp>
+      <agi>58</agi>
       <hit>42</hit>
       <hst>26</hst>
     </attributes>
@@ -3189,10 +3207,10 @@
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>97</agi>
       <atp>145</atp>
-      <cri>61</cri>
+      <agi>97</agi>
       <arp>61</arp>
+      <cri>61</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3229,10 +3247,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>40</agi>
       <atp>66</atp>
-      <hit>18</hit>
+      <agi>40</agi>
       <cri>30</cri>
+      <hit>18</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -3255,10 +3273,10 @@
     <speed>1.8</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>52</agi>
       <atp>74</atp>
-      <cri>41</cri>
+      <agi>52</agi>
       <arp>36</arp>
+      <cri>41</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3278,10 +3296,10 @@
     <name><![CDATA[Vest of Shifting Shadows]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>126</agi>
       <atp>162</atp>
-      <cri>93</cri>
+      <agi>126</agi>
       <arp>67</arp>
+      <cri>93</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -3306,8 +3324,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>50</agi>
       <atp>89</atp>
+      <agi>50</agi>
       <cri>43</cri>
       <hst>24</hst>
     </attributes>
@@ -3332,10 +3350,10 @@
     <speed>1.5</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>67</atp>
-      <cri>24</cri>
+      <agi>58</agi>
       <arp>43</arp>
+      <cri>24</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3355,8 +3373,8 @@
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>91</agi>
       <atp>132</atp>
+      <agi>91</agi>
       <cri>52</cri>
       <hst>69</hst>
     </attributes>
@@ -3382,8 +3400,8 @@
     <speed>2.6</speed>
     <dps>196.5</dps>
     <attributes>
-      <agi>54</agi>
       <atp>70</atp>
+      <agi>54</agi>
       <cri>40</cri>
       <hst>35</hst>
     </attributes>
@@ -3408,8 +3426,8 @@
     <speed>2.9</speed>
     <dps>212.1</dps>
     <attributes>
-      <agi>35</agi>
       <atp>57</atp>
+      <agi>35</agi>
       <cri>30</cri>
       <hst>18</hst>
     </attributes>
@@ -3431,8 +3449,8 @@
     <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>104</agi>
       <atp>129</atp>
+      <agi>104</agi>
       <cri>80</cri>
       <exp>64</exp>
     </attributes>
@@ -3454,10 +3472,10 @@
     <name><![CDATA[VanCleef's Breastplate of Conquest]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>104</agi>
       <atp>145</atp>
-      <hit>72</hit>
+      <agi>104</agi>
       <cri>80</cri>
+      <hit>72</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3477,10 +3495,10 @@
     <name><![CDATA[VanCleef's Legplates of Conquest]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>104</agi>
       <atp>145</atp>
-      <hit>64</hit>
+      <agi>104</agi>
       <arp>72</arp>
+      <hit>64</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3500,8 +3518,8 @@
     <name><![CDATA[VanCleef's Pauldrons of Conquest]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>89</agi>
       <atp>103</atp>
+      <agi>89</agi>
       <arp>60</arp>
       <exp>52</exp>
     </attributes>
@@ -3522,10 +3540,10 @@
     <name><![CDATA[VanCleef's Gauntlets of Conquest]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>89</agi>
       <atp>103</atp>
-      <hit>52</hit>
+      <agi>89</agi>
       <cri>60</cri>
+      <hit>52</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3544,10 +3562,10 @@
     <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>82</hit>
+      <agi>120</agi>
       <cri>90</cri>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3568,10 +3586,10 @@
     <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>101</agi>
       <atp>119</atp>
-      <hit>59</hit>
+      <agi>101</agi>
       <cri>67</cri>
+      <hit>59</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3591,8 +3609,8 @@
     <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>120</agi>
       <atp>149</atp>
+      <agi>120</agi>
       <cri>90</cri>
       <exp>74</exp>
     </attributes>
@@ -3615,10 +3633,10 @@
     <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>74</hit>
+      <agi>120</agi>
       <arp>82</arp>
+      <hit>74</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3639,8 +3657,8 @@
     <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>101</agi>
       <atp>119</atp>
+      <agi>101</agi>
       <arp>67</arp>
       <exp>59</exp>
     </attributes>
@@ -3662,8 +3680,8 @@
     <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>114</agi>
       <atp>135</atp>
+      <agi>114</agi>
       <arp>76</arp>
       <exp>68</exp>
     </attributes>
@@ -3684,10 +3702,10 @@
     <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>137</agi>
       <atp>188</atp>
-      <hit>86</hit>
+      <agi>137</agi>
       <arp>94</arp>
+      <hit>86</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3707,8 +3725,8 @@
     <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <cri>102</cri>
       <exp>86</exp>
     </attributes>
@@ -3730,10 +3748,10 @@
     <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>114</agi>
       <atp>135</atp>
-      <hit>68</hit>
+      <agi>114</agi>
       <cri>76</cri>
+      <hit>68</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3752,10 +3770,10 @@
     <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>137</agi>
       <atp>188</atp>
-      <hit>94</hit>
+      <agi>137</agi>
       <cri>102</cri>
+      <hit>94</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3775,10 +3793,10 @@
     <name><![CDATA[Garona's Breastplate of Triumph]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>137</agi>
       <atp>188</atp>
-      <hit>94</hit>
+      <agi>137</agi>
       <cri>102</cri>
+      <hit>94</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3798,10 +3816,10 @@
     <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>114</agi>
       <atp>135</atp>
-      <hit>68</hit>
+      <agi>114</agi>
       <cri>76</cri>
+      <hit>68</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3820,8 +3838,8 @@
     <name><![CDATA[Garona's Helmet of Triumph]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>137</agi>
       <atp>172</atp>
+      <agi>137</agi>
       <cri>102</cri>
       <exp>86</exp>
     </attributes>
@@ -3843,10 +3861,10 @@
     <name><![CDATA[Garona's Legplates of Triumph]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>137</agi>
       <atp>188</atp>
-      <hit>86</hit>
+      <agi>137</agi>
       <arp>94</arp>
+      <hit>86</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3866,8 +3884,8 @@
     <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>114</agi>
       <atp>135</atp>
+      <agi>114</agi>
       <arp>76</arp>
       <exp>68</exp>
     </attributes>
@@ -3888,8 +3906,8 @@
     <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>101</agi>
       <atp>119</atp>
+      <agi>101</agi>
       <arp>67</arp>
       <exp>59</exp>
     </attributes>
@@ -3911,10 +3929,10 @@
     <name><![CDATA[Garona's Legplates of Triumph]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>74</hit>
+      <agi>120</agi>
       <arp>82</arp>
+      <hit>74</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -3935,8 +3953,8 @@
     <name><![CDATA[Garona's Helmet of Triumph]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>120</agi>
       <atp>149</atp>
+      <agi>120</agi>
       <cri>90</cri>
       <exp>74</exp>
     </attributes>
@@ -3959,10 +3977,10 @@
     <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>101</agi>
       <atp>119</atp>
-      <hit>59</hit>
+      <agi>101</agi>
       <cri>67</cri>
+      <hit>59</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -3982,10 +4000,10 @@
     <name><![CDATA[Garona's Breastplate of Triumph]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>120</agi>
       <atp>165</atp>
-      <hit>82</hit>
+      <agi>120</agi>
       <cri>90</cri>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4006,10 +4024,10 @@
     <name><![CDATA[Garona's Breastplate of Conquest]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>104</agi>
       <atp>145</atp>
-      <hit>72</hit>
+      <agi>104</agi>
       <cri>80</cri>
+      <hit>72</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4029,10 +4047,10 @@
     <name><![CDATA[Garona's Gauntlets of Conquest]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>89</agi>
       <atp>103</atp>
-      <hit>52</hit>
+      <agi>89</agi>
       <cri>60</cri>
+      <hit>52</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4051,8 +4069,8 @@
     <name><![CDATA[Garona's Helmet of Conquest]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>104</agi>
       <atp>129</atp>
+      <agi>104</agi>
       <cri>80</cri>
       <exp>64</exp>
     </attributes>
@@ -4074,10 +4092,10 @@
     <name><![CDATA[Garona's Legplates of Conquest]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>104</agi>
       <atp>145</atp>
-      <hit>64</hit>
+      <agi>104</agi>
       <arp>72</arp>
+      <hit>64</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -4097,8 +4115,8 @@
     <name><![CDATA[Garona's Pauldrons of Conquest]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>89</agi>
       <atp>103</atp>
+      <agi>89</agi>
       <arp>60</arp>
       <exp>52</exp>
     </attributes>
@@ -4119,10 +4137,10 @@
     <name><![CDATA[Cloak of Serrated Blades]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>85</agi>
       <atp>98</atp>
-      <cri>57</cri>
+      <agi>85</agi>
       <arp>49</arp>
+      <cri>57</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4142,10 +4160,10 @@
     <name><![CDATA[Cloak of the Silver Covenant]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>85</agi>
       <atp>98</atp>
-      <cri>57</cri>
+      <agi>85</agi>
       <arp>49</arp>
+      <cri>57</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4168,10 +4186,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>39</agi>
       <atp>57</atp>
-      <hit>24</hit>
+      <agi>39</agi>
       <arp>24</arp>
+      <hit>24</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -4194,10 +4212,10 @@
     <speed>2.6</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>73</atp>
-      <cri>39</cri>
+      <agi>58</agi>
       <arp>31</arp>
+      <cri>39</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4220,10 +4238,10 @@
     <speed>2.8</speed>
     <dps>212.2</dps>
     <attributes>
-      <agi>39</agi>
       <atp>57</atp>
-      <hit>24</hit>
+      <agi>39</agi>
       <arp>24</arp>
+      <hit>24</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -4246,10 +4264,10 @@
     <speed>2.6</speed>
     <dps>196.7</dps>
     <attributes>
-      <agi>58</agi>
       <atp>73</atp>
-      <cri>39</cri>
+      <agi>58</agi>
       <arp>31</arp>
+      <cri>39</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4279,10 +4297,10 @@
     <name><![CDATA[Bloodfang Hood]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>128</agi>
       <atp>190</atp>
-      <cri>68</cri>
+      <agi>128</agi>
       <arp>86</arp>
+      <cri>68</cri>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -4299,10 +4317,10 @@
     <name><![CDATA[Sparkling Onyxia Tooth Pendant]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>76</agi>
       <atp>96</atp>
-      <hit>48</hit>
+      <agi>76</agi>
       <cri>52</cri>
+      <hit>48</hit>
     </attributes>
     <lvl>245</lvl>
     <tag>onyxia</tag>
@@ -4315,10 +4333,10 @@
     <speed>1.8</speed>
     <dps>163.3</dps>
     <attributes>
-      <agi>46</agi>
       <atp>70</atp>
-      <hit>27</hit>
+      <agi>46</agi>
       <cri>33</cri>
+      <hit>27</hit>
     </attributes>
     <lvl>219</lvl>
     <tag>toc5-heroic</tag>
@@ -4331,8 +4349,8 @@
     <name><![CDATA[Bewildering Shoulderpads]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>79</agi>
       <atp>120</atp>
+      <agi>79</agi>
       <cri>56</cri>
       <hst>46</hst>
     </attributes>
@@ -4350,8 +4368,8 @@
     <speed>1.8</speed>
     <dps>163.3</dps>
     <attributes>
-      <agi>46</agi>
       <atp>65</atp>
+      <agi>46</agi>
       <cri>25</cri>
       <hst>28</hst>
     </attributes>
@@ -4366,10 +4384,10 @@
     <name><![CDATA[Accursed Crawling Cape]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>59</agi>
       <atp>85</atp>
-      <hit>41</hit>
+      <agi>59</agi>
       <arp>37</arp>
+      <hit>41</hit>
     </attributes>
     <lvl>219</lvl>
     <tag>forgeofsouls</tag>
@@ -4382,8 +4400,8 @@
     <name><![CDATA[Ring of Carnelian and Bone]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>59</agi>
       <atp>87</atp>
+      <agi>59</agi>
       <cri>38</cri>
       <hst>41</hst>
     </attributes>
@@ -4398,8 +4416,8 @@
     <name><![CDATA[Flayer's Black Belt]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>71</agi>
       <atp>120</atp>
+      <agi>71</agi>
       <cri>56</cri>
       <exp>39</exp>
     </attributes>
@@ -4423,10 +4441,10 @@
     <speed>1.5</speed>
     <dps>163.0</dps>
     <attributes>
-      <agi>46</agi>
       <atp>68</atp>
-      <hst>32</hst>
+      <agi>46</agi>
       <arp>28</arp>
+      <hst>32</hst>
     </attributes>
     <lvl>219</lvl>
     <tag>pitofsaron</tag>
@@ -4442,8 +4460,8 @@
     <speed>2.9</speed>
     <dps>147.4</dps>
     <attributes>
-      <agi>26</agi>
       <atp>67</atp>
+      <agi>26</agi>
       <cri>34</cri>
     </attributes>
     <lvl>219</lvl>
@@ -4457,10 +4475,10 @@
     <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>106</agi>
       <atp>152</atp>
-      <cri>71</cri>
+      <agi>106</agi>
       <arp>71</arp>
+      <cri>71</cri>
     </attributes>
     <lvl>219</lvl>
     <tag>pitofsaron</tag>
@@ -4476,8 +4494,8 @@
     <speed>2.6</speed>
     <dps>163.3</dps>
     <attributes>
-      <agi>46</agi>
       <atp>70</atp>
+      <agi>46</agi>
       <arp>33</arp>
       <exp>27</exp>
     </attributes>
@@ -4513,10 +4531,10 @@
     <name><![CDATA[Carpal Tunnelers]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>79</agi>
       <atp>120</atp>
-      <cri>56</cri>
+      <agi>79</agi>
       <arp>47</arp>
+      <cri>56</cri>
     </attributes>
     <lvl>219</lvl>
     <tag>pitofsaron</tag>
@@ -4532,10 +4550,10 @@
     <speed>2.6</speed>
     <dps>163.3</dps>
     <attributes>
-      <agi>46</agi>
       <atp>66</atp>
-      <hst>28</hst>
+      <agi>46</agi>
       <arp>32</arp>
+      <hst>28</hst>
     </attributes>
     <lvl>219</lvl>
     <tag>pitofsaron</tag>
@@ -4548,8 +4566,8 @@
     <name><![CDATA[Blackened Geist Ribs]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>98</agi>
       <atp>154</atp>
+      <agi>98</agi>
       <hit>63</hit>
       <hst>71</hst>
     </attributes>
@@ -4573,8 +4591,8 @@
     <speed>3.0</speed>
     <dps>147.3</dps>
     <attributes>
-      <agi>34</agi>
       <atp>51</atp>
+      <agi>34</agi>
       <hit>20</hit>
       <hst>24</hst>
     </attributes>
@@ -4589,8 +4607,8 @@
     <name><![CDATA[Footpads of Impending Death]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>120</agi>
       <atp>129</atp>
+      <agi>120</agi>
       <cri>80</cri>
       <exp>64</exp>
     </attributes>
@@ -4609,10 +4627,10 @@
     <name><![CDATA[Bladeborn Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>162</agi>
       <atp>168</atp>
-      <cri>92</cri>
+      <agi>162</agi>
       <arp>100</arp>
+      <cri>92</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4630,8 +4648,8 @@
     <name><![CDATA[Band of the Bone Colossus]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
+      <agi>90</agi>
       <hit>54</hit>
       <hst>57</hst>
     </attributes>
@@ -4652,10 +4670,10 @@
     <name><![CDATA[Frostbitten Fur Boots]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>104</agi>
       <atp>161</atp>
-      <cri>80</cri>
+      <agi>104</agi>
       <arp>64</arp>
+      <cri>80</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -4678,8 +4696,8 @@
     <speed>3.0</speed>
     <dps>272.8</dps>
     <attributes>
-      <agi>54</agi>
       <atp>72</atp>
+      <agi>54</agi>
       <cri>36</cri>
       <hst>36</hst>
     </attributes>
@@ -4710,8 +4728,8 @@
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>112</agi>
       <atp>145</atp>
+      <agi>112</agi>
       <cri>80</cri>
       <hst>64</hst>
     </attributes>
@@ -4733,8 +4751,8 @@
     <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
+      <agi>90</agi>
       <cri>52</cri>
       <hst>60</hst>
     </attributes>
@@ -4755,10 +4773,10 @@
     <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>146</agi>
       <atp>200</atp>
-      <hit>100</hit>
+      <agi>146</agi>
       <exp>92</exp>
+      <hit>100</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -4782,8 +4800,8 @@
     <speed>2.6</speed>
     <dps>239.2</dps>
     <attributes>
-      <agi>74</agi>
       <atp>99</atp>
+      <agi>74</agi>
       <cri>49</cri>
       <hst>49</hst>
     </attributes>
@@ -4801,8 +4819,8 @@
     <speed>1.8</speed>
     <dps>226.7</dps>
     <attributes>
-      <agi>69</agi>
       <atp>93</atp>
+      <agi>69</agi>
       <cri>46</cri>
       <hst>46</hst>
     </attributes>
@@ -4817,10 +4835,10 @@
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>112</agi>
       <atp>145</atp>
-      <hst>64</hst>
+      <agi>112</agi>
       <arp>80</arp>
+      <hst>64</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -4840,8 +4858,8 @@
     <name><![CDATA[Seal of Many Mouths]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
+      <agi>90</agi>
       <cri>60</cri>
       <exp>52</exp>
     </attributes>
@@ -4878,10 +4896,10 @@
     <name><![CDATA[Gangrenous Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>146</agi>
       <atp>200</atp>
-      <hit>84</hit>
+      <agi>146</agi>
       <cri>108</cri>
+      <hit>84</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -4905,10 +4923,10 @@
     <speed>2.7</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>88</atp>
-      <cri>42</cri>
+      <agi>62</agi>
       <arp>39</arp>
+      <cri>42</cri>
     </attributes>
     <lvl>251</lvl>
     <icon>inv_sword_155</icon>
@@ -4920,8 +4938,8 @@
     <speed>2.6</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>83</atp>
+      <agi>62</agi>
       <cri>42</cri>
       <hst>40</hst>
     </attributes>
@@ -4932,10 +4950,10 @@
     <name><![CDATA[Astrylian's Sutured Cinch]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>104</agi>
       <atp>161</atp>
-      <cri>80</cri>
+      <agi>104</agi>
       <arp>64</arp>
+      <cri>80</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -4955,10 +4973,10 @@
     <name><![CDATA[Geistlord's Punishment Sack]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>138</agi>
       <atp>216</atp>
-      <hit>84</hit>
+      <agi>138</agi>
       <cri>108</cri>
+      <hit>84</hit>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -4978,10 +4996,10 @@
     <name><![CDATA[Shadowblade Breastplate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>144</agi>
       <atp>159</atp>
-      <cri>96</cri>
+      <agi>144</agi>
       <arp>80</arp>
+      <cri>96</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5000,8 +5018,8 @@
     <name><![CDATA[Shadowblade Gauntlets]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>107</agi>
       <atp>126</atp>
+      <agi>107</agi>
       <cri>71</cri>
       <hst>63</hst>
     </attributes>
@@ -5021,10 +5039,10 @@
     <name><![CDATA[Shadowblade Helmet]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>144</agi>
       <atp>143</atp>
-      <cri>88</cri>
+      <agi>144</agi>
       <arp>80</arp>
+      <cri>88</cri>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -5043,8 +5061,8 @@
     <name><![CDATA[Shadowblade Legplates]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>144</agi>
       <atp>159</atp>
+      <agi>144</agi>
       <cri>96</cri>
       <exp>80</exp>
     </attributes>
@@ -5065,10 +5083,10 @@
     <name><![CDATA[Shadowblade Pauldrons]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>107</agi>
       <atp>126</atp>
-      <hit>63</hit>
+      <agi>107</agi>
       <cri>71</cri>
+      <hit>63</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5089,8 +5107,8 @@
     <speed>1.8</speed>
     <dps>232.8</dps>
     <attributes>
-      <agi>38</agi>
       <atp>54</atp>
+      <agi>38</agi>
       <cri>26</cri>
       <hst>23</hst>
     </attributes>
@@ -5108,10 +5126,10 @@
     <speed>1.4</speed>
     <dps>226.8</dps>
     <attributes>
-      <agi>69</agi>
       <atp>93</atp>
-      <cri>46</cri>
+      <agi>69</agi>
       <arp>46</arp>
+      <cri>46</cri>
     </attributes>
     <lvl>264</lvl>
     <tag>valithria-25</tag>
@@ -5124,10 +5142,10 @@
     <name><![CDATA[Frostbrood Sapphire Ring]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
-      <cri>52</cri>
+      <agi>90</agi>
       <arp>60</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5149,10 +5167,10 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>52</agi>
       <atp>78</atp>
-      <hst>34</hst>
+      <agi>52</agi>
       <arp>34</arp>
+      <hst>34</hst>
     </attributes>
     <lvl>232</lvl>
     <tag>bronjahm-heroic</tag>
@@ -5181,8 +5199,8 @@
     <speed>1.8</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>78</atp>
+      <agi>52</agi>
       <cri>30</cri>
       <hst>37</hst>
     </attributes>
@@ -5197,8 +5215,8 @@
     <name><![CDATA[Frayed Scoundrel's Cap]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>104</agi>
       <atp>167</atp>
+      <agi>104</agi>
       <cri>47</cri>
       <hst>90</hst>
     </attributes>
@@ -5220,8 +5238,8 @@
     <name><![CDATA[Barbed Ymirheim Choker]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>67</agi>
       <atp>99</atp>
+      <agi>67</agi>
       <cri>39</cri>
       <hst>48</hst>
     </attributes>
@@ -5236,10 +5254,10 @@
     <name><![CDATA[Chewed Leather Wristguards]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>67</agi>
       <atp>102</atp>
-      <hit>46</hit>
+      <agi>67</agi>
       <arp>41</arp>
+      <hit>46</hit>
     </attributes>
     <lvl>232</lvl>
     <tag>pitofsaron-heroic</tag>
@@ -5252,8 +5270,8 @@
     <name><![CDATA[Fleshwerk Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>120</agi>
       <atp>183</atp>
+      <agi>120</agi>
       <cri>80</cri>
       <hst>80</hst>
     </attributes>
@@ -5268,10 +5286,10 @@
     <name><![CDATA[Band of Stained Souls]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>67</agi>
       <atp>89</atp>
-      <cri>50</cri>
+      <agi>67</agi>
       <arp>36</arp>
+      <cri>50</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>pitofsaron-heroic</tag>
@@ -5284,10 +5302,10 @@
     <name><![CDATA[Spaulders of Black Betrayal]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>89</agi>
       <atp>128</atp>
-      <hit>57</hit>
+      <agi>89</agi>
       <cri>61</cri>
+      <hit>57</hit>
     </attributes>
     <lvl>232</lvl>
     <tag>falric-heroic</tag>
@@ -5300,10 +5318,10 @@
     <name><![CDATA[Choking Hauberk]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>112</agi>
       <atp>172</atp>
-      <hit>59</hit>
+      <agi>112</agi>
       <arp>89</arp>
+      <hit>59</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5325,8 +5343,8 @@
     <speed>1.5</speed>
     <dps>178.7</dps>
     <attributes>
-      <agi>52</agi>
       <atp>77</atp>
+      <agi>52</agi>
       <cri>34</cri>
       <exp>34</exp>
     </attributes>
@@ -5344,10 +5362,10 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>39</agi>
       <atp>103</atp>
-      <hit>29</hit>
+      <agi>39</agi>
       <cri>38</cri>
+      <hit>29</hit>
     </attributes>
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
@@ -5360,10 +5378,10 @@
     <name><![CDATA[Blighted Leather Footpads]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>89</agi>
       <atp>136</atp>
-      <cri>54</cri>
+      <agi>89</agi>
       <arp>63</arp>
+      <cri>54</cri>
     </attributes>
     <lvl>232</lvl>
     <tag>hallschest-heroic</tag>
@@ -5379,10 +5397,10 @@
     <speed>2.6</speed>
     <dps>178.8</dps>
     <attributes>
-      <agi>52</agi>
       <atp>80</atp>
-      <hit>34</hit>
+      <agi>52</agi>
       <cri>25</cri>
+      <hit>34</hit>
     </attributes>
     <lvl>232</lvl>
     <tag>icc5-heroic</tag>
@@ -5398,8 +5416,8 @@
     <speed>1.4</speed>
     <dps>178.9</dps>
     <attributes>
-      <agi>52</agi>
       <atp>74</atp>
+      <agi>52</agi>
       <arp>37</arp>
       <exp>30</exp>
     </attributes>
@@ -5414,10 +5432,10 @@
     <name><![CDATA[Toskk's Maximized Wristguards]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
-      <cri>52</cri>
+      <agi>90</agi>
       <arp>60</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5439,6 +5457,7 @@
       <cri>131</cri>
     </attributes>
     <lvl>251</lvl>
+    <unique max="1">Whispering Fanged Skull</unique>
     <tag>deathwhisper-10</tag>
     <filters>
       <filter>icc10n</filter>
@@ -5452,6 +5471,7 @@
       <cri>148</cri>
     </attributes>
     <lvl>264</lvl>
+    <unique max="1">Whispering Fanged Skull</unique>
     <tag>deathwhisper-10-heroic</tag>
     <filters>
       <filter>icc10h</filter>
@@ -5465,6 +5485,7 @@
       <hit>85</hit>
     </attributes>
     <lvl>264</lvl>
+    <unique max="1">Tiny Abomination in a Jar</unique>
     <tag>professorputricide-25</tag>
     <filters>
       <filter>icc25n</filter>
@@ -5478,6 +5499,7 @@
       <hst>153</hst>
     </attributes>
     <lvl>264</lvl>
+    <unique max="1">Herkuml War Token</unique>
     <tag>emblems-frost</tag>
     <icon>inv_misc_rune_12</icon>
   </item>
@@ -5488,6 +5510,7 @@
       <arp>155</arp>
     </attributes>
     <lvl>264</lvl>
+    <unique max="1">Deathbringer's Will</unique>
     <tag>saurfang-25</tag>
     <filters>
       <filter>icc25n</filter>
@@ -5501,6 +5524,7 @@
       <arp>167</arp>
     </attributes>
     <lvl>277</lvl>
+    <unique max="1">Deathbringer's Will</unique>
     <tag>saurfang-25-heroic</tag>
     <filters>
       <filter>icc25h</filter>
@@ -5511,46 +5535,49 @@
     <name><![CDATA[Ashen Band of Vengeance]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>80</agi>
       <atp>114</atp>
-      <hit>53</hit>
+      <agi>80</agi>
       <cri>53</cri>
+      <hit>53</hit>
     </attributes>
     <lvl>251</lvl>
+    <unique max="1">Ashen Band</unique>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="50387">
     <name><![CDATA[Ashen Band of Greater Vengeance]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>86</agi>
       <atp>123</atp>
-      <hit>57</hit>
+      <agi>86</agi>
       <cri>57</cri>
+      <hit>57</hit>
     </attributes>
     <lvl>259</lvl>
+    <unique max="1">Ashen Band</unique>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="50401">
     <name><![CDATA[Ashen Band of Unmatched Vengeance]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>88</agi>
       <atp>123</atp>
-      <hit>57</hit>
+      <agi>88</agi>
       <cri>57</cri>
+      <hit>57</hit>
     </attributes>
     <lvl>268</lvl>
+    <unique max="1">Ashen Band</unique>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="50402">
     <name><![CDATA[Ashen Band of Endless Vengeance]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>88</agi>
       <atp>135</atp>
-      <hit>59</hit>
+      <agi>88</agi>
       <cri>59</cri>
+      <hit>59</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5559,6 +5586,7 @@
       </bonus>
     </sockets>
     <lvl>277</lvl>
+    <unique max="1">Ashen Band</unique>
     <icon>inv_jewelry_ring_81</icon>
   </item>
   <item id="50411">
@@ -5568,10 +5596,10 @@
     <speed>1.5</speed>
     <dps>226.7</dps>
     <attributes>
-      <agi>69</agi>
       <atp>93</atp>
-      <cri>46</cri>
+      <agi>69</agi>
       <arp>46</arp>
+      <cri>46</cri>
     </attributes>
     <lvl>264</lvl>
     <tag>gunship-25</tag>
@@ -5587,10 +5615,10 @@
     <speed>2.6</speed>
     <dps>226.5</dps>
     <attributes>
-      <agi>69</agi>
       <atp>93</atp>
-      <hit>46</hit>
+      <agi>69</agi>
       <arp>46</arp>
+      <hit>46</hit>
     </attributes>
     <lvl>264</lvl>
     <tag>saurfang-25</tag>
@@ -5603,10 +5631,10 @@
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
-      <hst>52</hst>
+      <agi>90</agi>
       <arp>60</arp>
+      <hst>52</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -5626,10 +5654,10 @@
     <speed>1.8</speed>
     <dps>239.2</dps>
     <attributes>
-      <agi>74</agi>
       <atp>99</atp>
-      <cri>49</cri>
+      <agi>74</agi>
       <arp>49</arp>
+      <cri>49</cri>
     </attributes>
     <lvl>271</lvl>
     <tag>lichking-25</tag>
@@ -5642,10 +5670,10 @@
     <name><![CDATA[Wodin's Lucky Necklace]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
-      <hit>38</hit>
+      <agi>90</agi>
       <cri>69</cri>
+      <hit>38</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5664,10 +5692,10 @@
     <name><![CDATA[Recovered Scarlet Onslaught Cape]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>90</agi>
       <atp>105</atp>
-      <cri>60</cri>
+      <agi>90</agi>
       <arp>52</arp>
+      <cri>60</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -5686,8 +5714,8 @@
     <speed>1.8</speed>
     <dps>294.7</dps>
     <attributes>
-      <agi>51</agi>
       <atp>68</atp>
+      <agi>51</agi>
       <cri>34</cri>
       <hst>34</hst>
     </attributes>
@@ -5699,8 +5727,8 @@
     <name><![CDATA[Band of the Bone Colossus]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
+      <agi>102</agi>
       <hit>62</hit>
       <hst>65</hst>
     </attributes>
@@ -5719,10 +5747,10 @@
     <name><![CDATA[Frostbitten Fur Boots]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>120</agi>
       <atp>181</atp>
-      <cri>90</cri>
+      <agi>120</agi>
       <arp>74</arp>
+      <cri>90</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5740,10 +5768,10 @@
     <name><![CDATA[Frostbrood Sapphire Ring]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
-      <cri>60</cri>
+      <agi>102</agi>
       <arp>68</arp>
+      <cri>60</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5765,10 +5793,10 @@
     <speed>1.4</speed>
     <dps>250.4</dps>
     <attributes>
-      <agi>78</agi>
       <atp>88</atp>
-      <cri>52</cri>
+      <agi>78</agi>
       <arp>44</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5785,10 +5813,10 @@
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
-      <hst>60</hst>
+      <agi>102</agi>
       <arp>68</arp>
+      <hst>60</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -5825,8 +5853,8 @@
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>128</agi>
       <atp>165</atp>
+      <agi>128</agi>
       <cri>90</cri>
       <hst>74</hst>
     </attributes>
@@ -5846,8 +5874,8 @@
     <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
+      <agi>102</agi>
       <cri>60</cri>
       <hst>68</hst>
     </attributes>
@@ -5871,10 +5899,10 @@
     <speed>1.5</speed>
     <dps>250.7</dps>
     <attributes>
-      <agi>78</agi>
       <atp>88</atp>
-      <cri>52</cri>
+      <agi>78</agi>
       <arp>44</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5893,10 +5921,10 @@
     <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>167</agi>
       <atp>228</atp>
-      <hit>114</hit>
+      <agi>167</agi>
       <exp>106</exp>
+      <hit>114</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -5917,10 +5945,10 @@
     <name><![CDATA[Toskk's Maximized Wristguards]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
-      <cri>60</cri>
+      <agi>102</agi>
       <arp>68</arp>
+      <cri>60</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5942,10 +5970,10 @@
     <speed>2.6</speed>
     <dps>250.6</dps>
     <attributes>
-      <agi>70</agi>
       <atp>104</atp>
-      <hit>52</hit>
+      <agi>70</agi>
       <arp>44</arp>
+      <hit>52</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -5964,10 +5992,10 @@
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>128</agi>
       <atp>165</atp>
-      <hst>74</hst>
+      <agi>128</agi>
       <arp>90</arp>
+      <hst>74</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -5988,8 +6016,8 @@
     <speed>1.8</speed>
     <dps>250.3</dps>
     <attributes>
-      <agi>78</agi>
       <atp>88</atp>
+      <agi>78</agi>
       <cri>52</cri>
       <hst>44</hst>
     </attributes>
@@ -6008,8 +6036,8 @@
     <name><![CDATA[Seal of Many Mouths]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>102</agi>
       <atp>120</atp>
+      <agi>102</agi>
       <cri>68</cri>
       <exp>60</exp>
     </attributes>
@@ -6048,10 +6076,10 @@
     <name><![CDATA[Gangrenous Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>167</agi>
       <atp>228</atp>
-      <hit>98</hit>
+      <agi>167</agi>
       <cri>122</cri>
+      <hit>98</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6073,6 +6101,7 @@
       <hit>85</hit>
     </attributes>
     <lvl>277</lvl>
+    <unique max="1">Tiny Abomination in a Jar</unique>
     <tag>putricide-25-heroic</tag>
     <filters>
       <filter>icc25h</filter>
@@ -6083,10 +6112,10 @@
     <name><![CDATA[Astrylian's Sutured Cinch]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>120</agi>
       <atp>181</atp>
-      <cri>90</cri>
+      <agi>120</agi>
       <arp>74</arp>
+      <cri>90</cri>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -6104,10 +6133,10 @@
     <name><![CDATA[Geistlord's Punishment Sack]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>159</agi>
       <atp>244</atp>
-      <hit>98</hit>
+      <agi>159</agi>
       <cri>122</cri>
+      <hit>98</hit>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -6128,8 +6157,8 @@
     <speed>3.0</speed>
     <dps>308.8</dps>
     <attributes>
-      <agi>62</agi>
       <atp>66</atp>
+      <agi>62</agi>
       <cri>41</cri>
       <hst>33</hst>
     </attributes>
@@ -6151,10 +6180,10 @@
     <speed>1.8</speed>
     <dps>264.7</dps>
     <attributes>
-      <agi>76</agi>
       <atp>111</atp>
-      <cri>48</cri>
+      <agi>76</agi>
       <arp>56</arp>
+      <cri>48</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6174,8 +6203,8 @@
     <speed>2.6</speed>
     <dps>264.6</dps>
     <attributes>
-      <agi>84</agi>
       <atp>95</atp>
+      <agi>84</agi>
       <cri>56</cri>
       <hst>48</hst>
     </attributes>
@@ -6197,10 +6226,10 @@
     <speed>1.5</speed>
     <dps>205.3</dps>
     <attributes>
-      <agi>62</agi>
       <atp>82</atp>
-      <hst>41</hst>
+      <agi>62</agi>
       <arp>41</arp>
+      <hst>41</hst>
     </attributes>
     <lvl>251</lvl>
     <tag>marrowgar-10</tag>
@@ -6213,10 +6242,10 @@
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>72</agi>
       <atp>122</atp>
-      <hit>41</hit>
+      <agi>72</agi>
       <exp>56</exp>
+      <hit>41</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6238,10 +6267,10 @@
     <speed>2.9</speed>
     <dps>224.9</dps>
     <attributes>
-      <agi>45</agi>
       <atp>69</atp>
-      <hit>28</hit>
+      <agi>45</agi>
       <cri>31</cri>
+      <hit>28</hit>
     </attributes>
     <lvl>251</lvl>
     <tag>deathwhisper-10</tag>
@@ -6254,10 +6283,10 @@
     <name><![CDATA[Soulthief's Braided Belt]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>91</agi>
       <atp>162</atp>
-      <hit>46</hit>
+      <agi>91</agi>
       <cri>76</cri>
+      <hit>46</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -6277,10 +6306,10 @@
     <name><![CDATA[Chestguard of the Frigid Noose]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>132</agi>
       <atp>200</atp>
-      <hst>99</hst>
+      <agi>132</agi>
       <arp>79</arp>
+      <hst>99</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6304,10 +6333,10 @@
     <speed>2.6</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>94</atp>
-      <cri>45</cri>
+      <agi>62</agi>
       <arp>35</arp>
+      <cri>45</cri>
     </attributes>
     <lvl>251</lvl>
     <tag>gunship-10</tag>
@@ -6320,10 +6349,10 @@
     <name><![CDATA[Scourge Stranglers]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>107</agi>
       <atp>134</atp>
-      <cri>63</cri>
+      <agi>107</agi>
       <arp>63</arp>
+      <cri>63</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6343,10 +6372,10 @@
     <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>72</agi>
       <atp>114</atp>
-      <hst>45</hst>
+      <agi>72</agi>
       <arp>53</arp>
+      <hst>45</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6368,10 +6397,10 @@
     <speed>2.6</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>47</agi>
       <atp>123</atp>
-      <hit>39</hit>
+      <agi>47</agi>
       <cri>42</cri>
+      <hit>39</hit>
     </attributes>
     <lvl>251</lvl>
     <tag>festergut-10</tag>
@@ -6384,8 +6413,8 @@
     <name><![CDATA[Precious's Putrid Collar]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>72</agi>
       <atp>119</atp>
+      <agi>72</agi>
       <hit>55</hit>
       <hst>43</hst>
     </attributes>
@@ -6406,8 +6435,8 @@
     <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>144</agi>
       <atp>143</atp>
+      <agi>144</agi>
       <cri>72</cri>
       <hst>96</hst>
     </attributes>
@@ -6430,8 +6459,8 @@
     <name><![CDATA[Shadow Seeker's Tunic]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>162</agi>
       <atp>184</atp>
+      <agi>162</agi>
       <cri>92</cri>
       <exp>92</exp>
     </attributes>
@@ -6451,10 +6480,10 @@
     <name><![CDATA[Cat Burglar's Grips]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>120</agi>
       <atp>129</atp>
-      <cri>80</cri>
+      <agi>120</agi>
       <arp>64</arp>
+      <cri>80</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6471,10 +6500,10 @@
     <name><![CDATA[Vengeful Noose]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>120</agi>
       <atp>129</atp>
-      <hst>64</hst>
+      <agi>120</agi>
       <arp>80</arp>
+      <hst>64</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6494,10 +6523,10 @@
     <speed>1.8</speed>
     <dps>266.9</dps>
     <attributes>
-      <agi>45</agi>
       <atp>64</atp>
-      <hit>28</hit>
+      <agi>45</agi>
       <cri>31</cri>
+      <hit>28</hit>
     </attributes>
     <lvl>251</lvl>
     <tag>rotface-10</tag>
@@ -6513,10 +6542,10 @@
     <speed>2.6</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>94</atp>
-      <hst>44</hst>
+      <agi>62</agi>
       <arp>36</arp>
+      <hst>44</hst>
     </attributes>
     <lvl>251</lvl>
     <tag>rotface-10</tag>
@@ -6532,10 +6561,10 @@
     <speed>1.4</speed>
     <dps>205.4</dps>
     <attributes>
-      <agi>44</agi>
       <atp>123</atp>
-      <hst>36</hst>
+      <agi>44</agi>
       <arp>44</arp>
+      <hst>36</hst>
     </attributes>
     <lvl>251</lvl>
     <tag>putricide-10</tag>
@@ -6548,10 +6577,10 @@
     <name><![CDATA[Discarded Bag of Entrails]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>136</agi>
       <atp>202</atp>
-      <hst>80</hst>
+      <agi>136</agi>
       <arp>88</arp>
+      <hst>80</hst>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -6574,8 +6603,8 @@
     <speed>2.6</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>94</atp>
+      <agi>62</agi>
       <cri>43</cri>
       <hst>38</hst>
     </attributes>
@@ -6590,10 +6619,10 @@
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>91</agi>
       <atp>153</atp>
-      <cri>55</cri>
+      <agi>91</agi>
       <arp>71</arp>
+      <cri>55</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6613,10 +6642,10 @@
     <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>120</agi>
       <atp>145</atp>
-      <hit>72</hit>
+      <agi>120</agi>
       <cri>80</cri>
+      <hit>72</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6635,8 +6664,8 @@
     <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>162</agi>
       <atp>184</atp>
+      <agi>162</agi>
       <cri>108</cri>
       <exp>92</exp>
     </attributes>
@@ -6658,10 +6687,10 @@
     <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>162</agi>
       <atp>168</atp>
-      <cri>100</cri>
+      <agi>162</agi>
       <arp>92</arp>
+      <cri>100</cri>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -6681,8 +6710,8 @@
     <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>120</agi>
       <atp>145</atp>
+      <agi>120</agi>
       <cri>80</cri>
       <hst>72</hst>
     </attributes>
@@ -6703,10 +6732,10 @@
     <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>162</agi>
       <atp>184</atp>
-      <cri>108</cri>
+      <agi>162</agi>
       <arp>92</arp>
+      <cri>108</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6726,10 +6755,10 @@
     <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>183</agi>
       <atp>212</atp>
-      <cri>122</cri>
+      <agi>183</agi>
       <arp>106</arp>
+      <cri>122</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6748,8 +6777,8 @@
     <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>136</agi>
       <atp>165</atp>
+      <agi>136</agi>
       <cri>90</cri>
       <hst>82</hst>
     </attributes>
@@ -6769,10 +6798,10 @@
     <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>183</agi>
       <atp>196</atp>
-      <cri>114</cri>
+      <agi>183</agi>
       <arp>106</arp>
+      <cri>114</cri>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -6791,8 +6820,8 @@
     <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>183</agi>
       <atp>212</atp>
+      <agi>183</agi>
       <cri>122</cri>
       <exp>106</exp>
     </attributes>
@@ -6813,10 +6842,10 @@
     <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>136</agi>
       <atp>165</atp>
-      <hit>82</hit>
+      <agi>136</agi>
       <cri>90</cri>
+      <hit>82</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6837,8 +6866,8 @@
     <speed>1.8</speed>
     <dps>205.6</dps>
     <attributes>
-      <agi>62</agi>
       <atp>94</atp>
+      <agi>62</agi>
       <cri>42</cri>
       <hst>39</hst>
     </attributes>
@@ -6856,10 +6885,10 @@
     <speed>3.0</speed>
     <dps>222.7</dps>
     <attributes>
-      <agi>45</agi>
       <atp>70</atp>
-      <hst>28</hst>
+      <agi>45</agi>
       <arp>31</arp>
+      <hst>28</hst>
     </attributes>
     <lvl>251</lvl>
     <tag>lanathel-10</tag>
@@ -6872,8 +6901,8 @@
     <name><![CDATA[Seal of the Twilight Queen]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>72</agi>
       <atp>114</atp>
+      <agi>72</agi>
       <cri>45</cri>
       <hst>53</hst>
     </attributes>
@@ -6894,10 +6923,10 @@
     <name><![CDATA[Ivory-Inlaid Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>120</agi>
       <atp>206</atp>
-      <cri>103</cri>
+      <agi>120</agi>
       <arp>60</arp>
+      <cri>103</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6918,8 +6947,8 @@
     <name><![CDATA[Runed Band of the Kirin Tor]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>80</agi>
       <atp>107</atp>
+      <agi>80</agi>
       <cri>55</cri>
       <hst>51</hst>
     </attributes>
@@ -6930,10 +6959,10 @@
     <name><![CDATA[Skinned Whelp Shoulders]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>91</agi>
       <atp>162</atp>
-      <cri>55</cri>
+      <agi>91</agi>
       <arp>71</arp>
+      <cri>55</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6953,10 +6982,10 @@
     <name><![CDATA[Rimetooth Pendant]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>80</agi>
       <atp>98</atp>
-      <cri>45</cri>
+      <agi>80</agi>
       <arp>53</arp>
+      <cri>45</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -6973,8 +7002,8 @@
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>80</agi>
       <atp>98</atp>
+      <agi>80</agi>
       <cri>53</cri>
       <hst>45</hst>
     </attributes>
@@ -6996,10 +7025,10 @@
     <speed>1.8</speed>
     <dps>216.7</dps>
     <attributes>
-      <agi>66</agi>
       <atp>100</atp>
-      <cri>44</cri>
+      <agi>66</agi>
       <arp>44</arp>
+      <cri>44</cri>
     </attributes>
     <lvl>258</lvl>
     <tag>lichking-10</tag>
@@ -7015,8 +7044,8 @@
     <speed>2.6</speed>
     <dps>216.5</dps>
     <attributes>
-      <agi>66</agi>
       <atp>100</atp>
+      <agi>66</agi>
       <cri>45</cri>
       <hst>42</hst>
     </attributes>
@@ -7034,10 +7063,10 @@
     <speed>3.0</speed>
     <dps>240.5</dps>
     <attributes>
-      <agi>48</agi>
       <atp>69</atp>
-      <cri>32</cri>
+      <agi>48</agi>
       <arp>32</arp>
+      <cri>32</cri>
     </attributes>
     <lvl>258</lvl>
     <tag>lichking-10</tag>
@@ -7050,8 +7079,8 @@
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
     <slot>Wrist</slot>
     <attributes>
-      <agi>90</agi>
       <atp>113</atp>
+      <agi>90</agi>
       <cri>60</cri>
       <hst>52</hst>
     </attributes>
@@ -7070,10 +7099,10 @@
     <name><![CDATA[Rimetooth Pendant]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>90</agi>
       <atp>113</atp>
-      <cri>52</cri>
+      <agi>90</agi>
       <arp>60</arp>
+      <cri>52</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7090,10 +7119,10 @@
     <name><![CDATA[Skinned Whelp Shoulders]]></name>
     <slot>Shoulder</slot>
     <attributes>
-      <agi>104</agi>
       <atp>183</atp>
-      <cri>64</cri>
+      <agi>104</agi>
       <arp>80</arp>
+      <cri>64</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7111,10 +7140,10 @@
     <name><![CDATA[Ivory-Inlaid Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>138</agi>
       <atp>232</atp>
-      <cri>116</cri>
+      <agi>138</agi>
       <arp>71</arp>
+      <cri>116</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7133,8 +7162,8 @@
     <name><![CDATA[Seal of the Twilight Queen]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>82</agi>
       <atp>129</atp>
+      <agi>82</agi>
       <cri>52</cri>
       <hst>60</hst>
     </attributes>
@@ -7156,10 +7185,10 @@
     <speed>3.0</speed>
     <dps>253.3</dps>
     <attributes>
-      <agi>43</agi>
       <atp>79</atp>
-      <hst>23</hst>
+      <agi>43</agi>
       <arp>36</arp>
+      <hst>23</hst>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7179,8 +7208,8 @@
     <speed>1.8</speed>
     <dps>226.7</dps>
     <attributes>
-      <agi>69</agi>
       <atp>90</atp>
+      <agi>69</agi>
       <cri>40</cri>
       <hst>44</hst>
     </attributes>
@@ -7199,10 +7228,10 @@
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
     <slot>Feet</slot>
     <attributes>
-      <agi>104</agi>
       <atp>172</atp>
-      <cri>64</cri>
+      <agi>104</agi>
       <arp>80</arp>
+      <cri>64</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7223,8 +7252,8 @@
     <speed>2.6</speed>
     <dps>226.5</dps>
     <attributes>
-      <agi>61</agi>
       <atp>106</atp>
+      <agi>61</agi>
       <cri>40</cri>
       <hst>43</hst>
     </attributes>
@@ -7243,10 +7272,10 @@
     <name><![CDATA[Discarded Bag of Entrails]]></name>
     <slot>Head</slot>
     <attributes>
-      <agi>154</agi>
       <atp>230</atp>
-      <hst>92</hst>
+      <agi>154</agi>
       <arp>100</arp>
+      <hst>92</hst>
     </attributes>
     <sockets>
       <socket index="0">Meta</socket>
@@ -7267,10 +7296,10 @@
     <speed>1.4</speed>
     <dps>226.4</dps>
     <attributes>
-      <agi>42</agi>
       <atp>139</atp>
-      <hst>33</hst>
+      <agi>42</agi>
       <arp>50</arp>
+      <hst>33</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7290,10 +7319,10 @@
     <speed>2.6</speed>
     <dps>226.5</dps>
     <attributes>
-      <agi>61</agi>
       <atp>106</atp>
-      <hst>50</hst>
+      <agi>61</agi>
       <arp>33</arp>
+      <hst>50</hst>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7313,10 +7342,10 @@
     <speed>1.8</speed>
     <dps>294.7</dps>
     <attributes>
-      <agi>43</agi>
       <atp>72</atp>
-      <hit>31</hit>
+      <agi>43</agi>
       <cri>28</cri>
+      <hit>31</hit>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7333,8 +7362,8 @@
     <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
     <slot>Legs</slot>
     <attributes>
-      <agi>162</agi>
       <atp>168</atp>
+      <agi>162</agi>
       <cri>84</cri>
       <hst>108</hst>
     </attributes>
@@ -7357,8 +7386,8 @@
     <name><![CDATA[Precious's Putrid Collar]]></name>
     <slot>Neck</slot>
     <attributes>
-      <agi>82</agi>
       <atp>134</atp>
+      <agi>82</agi>
       <hit>62</hit>
       <hst>49</hst>
     </attributes>
@@ -7380,10 +7409,10 @@
     <speed>2.6</speed>
     <dps>226.5</dps>
     <attributes>
-      <agi>45</agi>
       <atp>139</atp>
-      <hit>36</hit>
+      <agi>45</agi>
       <cri>48</cri>
+      <hit>36</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7400,10 +7429,10 @@
     <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
     <slot>Finger</slot>
     <attributes>
-      <agi>82</agi>
       <atp>129</atp>
-      <hst>52</hst>
+      <agi>82</agi>
       <arp>60</arp>
+      <hst>52</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7422,10 +7451,10 @@
     <name><![CDATA[Scourge Stranglers]]></name>
     <slot>Hands</slot>
     <attributes>
-      <agi>120</agi>
       <atp>155</atp>
-      <cri>72</cri>
+      <agi>120</agi>
       <arp>72</arp>
+      <cri>72</cri>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7448,10 +7477,10 @@
     <speed>2.6</speed>
     <dps>226.5</dps>
     <attributes>
-      <agi>61</agi>
       <atp>106</atp>
-      <cri>50</cri>
+      <agi>61</agi>
       <arp>31</arp>
+      <cri>50</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7470,10 +7499,10 @@
     <name><![CDATA[Chestguard of the Frigid Noose]]></name>
     <slot>Chest</slot>
     <attributes>
-      <agi>150</agi>
       <atp>228</atp>
-      <hst>111</hst>
+      <agi>150</agi>
       <arp>91</arp>
+      <hst>111</hst>
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
@@ -7494,10 +7523,10 @@
     <name><![CDATA[Soulthief's Braided Belt]]></name>
     <slot>Waist</slot>
     <attributes>
-      <agi>104</agi>
       <atp>183</atp>
-      <hit>54</hit>
+      <agi>104</agi>
       <cri>86</cri>
+      <hit>54</hit>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -7518,10 +7547,10 @@
     <speed>2.9</speed>
     <dps>253.1</dps>
     <attributes>
-      <agi>43</agi>
       <atp>78</atp>
-      <hit>23</hit>
+      <agi>43</agi>
       <cri>36</cri>
+      <hit>23</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7538,10 +7567,10 @@
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
     <slot>Back</slot>
     <attributes>
-      <agi>82</agi>
       <atp>137</atp>
-      <hit>48</hit>
+      <agi>82</agi>
       <exp>63</exp>
+      <hit>48</hit>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7561,10 +7590,10 @@
     <speed>1.5</speed>
     <dps>226.7</dps>
     <attributes>
-      <agi>61</agi>
       <atp>93</atp>
-      <hst>46</hst>
+      <agi>61</agi>
       <arp>38</arp>
+      <hst>46</hst>
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
@@ -7584,10 +7613,10 @@
     <speed>3.0</speed>
     <dps>270.8</dps>
     <attributes>
-      <agi>54</agi>
       <atp>61</atp>
-      <cri>28</cri>
+      <agi>54</agi>
       <arp>36</arp>
+      <cri>28</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -7607,8 +7636,8 @@
     <speed>2.6</speed>
     <dps>239.0</dps>
     <attributes>
-      <agi>66</agi>
       <atp>113</atp>
+      <agi>66</agi>
       <cri>51</cri>
       <hst>39</hst>
     </attributes>
@@ -7630,10 +7659,10 @@
     <speed>1.8</speed>
     <dps>239.2</dps>
     <attributes>
-      <agi>74</agi>
       <atp>97</atp>
-      <cri>49</cri>
+      <agi>74</agi>
       <arp>49</arp>
+      <cri>49</cri>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>

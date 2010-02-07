@@ -115,6 +115,20 @@ public class CalculationsMutilate extends Calculations {
 		ohSPS = mutPerSec;
 	}
 	
+	protected float calcERegen() {
+		float eRegen = super.calcERegen();
+		
+		int overkills = 1+getMaxUses(120);
+		float okRegen = 60F*overkills/fightDuration;
+		okRegen = Math.min(okRegen, 3);
+		eRegen += okRegen;
+		calcWhiteDPS();
+		if (talents.getFocusedAttacks()>0)
+			eRegen += (mhWCPS+ohWCPS)*2F*talents.getFocusedAttacks();
+		
+		return eRegen;
+	}
+	
 	private float calcMutilateDamage() {
 		float dmg, dmg1, dmg2;
 		if (setup.getWeapon1().getType() != weaponType.Dagger || setup.getWeapon2().getType() != weaponType.Dagger)

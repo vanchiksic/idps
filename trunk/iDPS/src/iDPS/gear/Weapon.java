@@ -58,8 +58,12 @@ public class Weapon extends Armor {
 	}
 	
 	public float getPPMUptime(float ppm, float procLength, float attacksPerSec) {
-		float procChance = Math.min((speed/60)*ppm,1);
+		float procChance = getProcChancePPM(ppm);
 		return getUptime(procChance, procLength, attacksPerSec);
+	}
+	
+	public float getProcChancePPM(float ppm) {
+		return Math.min((speed/60)*ppm,1);
 	}
 	
 	public float getUptime(float pProc, float procLength, float attacksPerSec) {

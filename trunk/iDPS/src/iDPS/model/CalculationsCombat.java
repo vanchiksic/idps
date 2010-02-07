@@ -75,37 +75,67 @@ public class CalculationsCombat extends Calculations {
 		
 		float eCostSS, eCostEvi;
 		eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()))-5;
-		//System.out.println("ss cost: "+eCostSS);
 		eCostEvi = 35/(mod.getHtMHS().getContacts());
-		eCostEvi -= avgCpFin*0.2F*25;
+		eCostEvi -= avgCpFin*talents.getRStrikes();
 		
 		float eRegen = calcERegen();
 		
 		float avgSndLength = (avgCpFin*3+6)*1.5F;
-		//System.out.println("SND Length: "+avgSndLength);
-		sndPerCycle = (ssPerFin*eCostSS+eCostEvi)/((avgSndLength-0.5F)*eRegen+10);
-		//System.out.println("SND per C: "+sndPerCycle);
+		sndPerCycle = (ssPerFin*eCostSS+eCostEvi)/((avgSndLength-1F)*eRegen+10);
 		
 		float eCostCycle, eCostFin, lengthCycle;
 		eCostFin = eCostEvi - 10*sndPerCycle;
 		eCostCycle = ssPerFin*eCostSS + eCostFin;
 		lengthCycle = eCostCycle / eRegen;
-		//System.out.println("Cycle length: "+lengthCycle);
 		
 		ssPerSec = ssPerFin/lengthCycle;
 		eviPerSec = (1-sndPerCycle)/lengthCycle;
 		rupPerSec = rupPerCycle/lengthCycle;
 		
 		float eTotalCostEvi = ssPerFin*eCostSS+eCostEvi;
-		if (talents.getAr()) {
+		/*if (talents.getAr()) {
 			float extraCycle = 150/eTotalCostEvi;
 			ssPerSec += extraCycle * ssPerFin / 180F;
 			eviPerSec += extraCycle / 180F;
-		}
-		//System.out.println("SS per sec: "+ssPerSec);
+		}*/
 		
-		mhSPS = (ssPerSec+eviPerSec+rupPerSec);
+		mhSPS = ssPerSec+eviPerSec+rupPerSec;
+		mhSCPS = ssPerSec*mod.getHtSS().getCrit() + eviPerSec*mod.getHtFin().getCrit();
+		
 		ohSPS = 0;
+		ohSCPS = 0;
+	}
+	
+	protected float calcERegen() {
+		float eRegen = super.calcERegen();
+		
+		eRegen += talents.getVitality();
+		if (talents.getAr())
+			eRegen += 150F*getMaxUses(180)/fightDuration;
+		calcWhiteDPS();
+		if (talents.getCombatPotency()>0)
+			eRegen += combatPotencyRegen();
+		
+		return eRegen;
+	}
+	
+	private float combatPotencyRegen() {
+		float pps;
+		pps = ohWPS;
+		// OH Hits from Tiny Abom
+		if (setup.containsAny(50351,50706)) {
+			float moteFactor;
+			if (setup.containsAny(50706))
+				moteFactor = 1/7F;
+			else
+				moteFactor = 1/8F;
+			pps += (ohWPS+ohSPS)*0.5F*moteFactor*mod.getHtOHS().getContacts();
+		}
+		pps *= 0.2F;
+		
+		float regen = pps*((float) talents.getCombatPotency());
+		//System.out.println("cpt regen: "+regen);
+		return regen;
 	}
 	
 	private float calcSinisterDamage() {
@@ -132,8 +162,10 @@ public class CalculationsCombat extends Calculations {
 			// Global Mods
 			dmg *= 1.03F * 1.04F;
 			dps = dmg / 75F;
-			mhSPS += 5/75F * (mod.getHtMHS().getContacts());
-			ohSPS += 5/75F * (mod.getHtOHS().getContacts());
+			mhSPS += 5/75F * mod.getHtMHS().getContacts();
+			mhSCPS += 5/75F * mod.getHtMHS().getCrit();
+			ohSPS += 5/75F * mod.getHtOHS().getContacts();
+			ohSCPS += 5/75F * mod.getHtOHS().getCrit();
 			dps *= 1+bbIncrease;
 		}
 		return dps;

@@ -310,6 +310,12 @@ public class Armor extends Item {
 			eSub = new Element("lvl");
 			eSub.setText(String.valueOf(item.getLvl()));
 			eItem.getChildren().add(eSub);
+			if (item.getUniqueLimit()>0) {
+				eSub = new Element("unique");
+				eSub.setAttribute("max", String.valueOf(item.getUniqueLimit()));
+				eSub.setText(item.getUniqueName());
+				eItem.getChildren().add(eSub);
+			}
 			if (item.getTag() != null && item.getTag().length()>0) {
 				eSub = new Element("tag");
 				eSub.setText(item.getTag());
