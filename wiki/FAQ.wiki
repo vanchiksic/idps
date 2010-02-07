@@ -41,7 +41,7 @@ Right click them.
 Enable that profession in the menu bar.
 
 
-== My profession specific Enchant/Gem is missing ==
+== What poisons is iDPS using? ==
 
 Instant Poison in your slow weapon, Deadly in the fast one. If they have the same speed, Deadly is used in the Main Hand.
 
