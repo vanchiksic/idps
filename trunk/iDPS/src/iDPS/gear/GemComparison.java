@@ -46,7 +46,7 @@ public class GemComparison {
 			gems = Gem.findSocket(socket);
 		
 		// Make sure orgGem is in the list
-		if (!gems.contains(orgGem))
+		if (orgGem != null && !gems.contains(orgGem))
 			gems.add(orgGem);
 		
 		for (Gem gem: gems)  {

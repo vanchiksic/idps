@@ -151,6 +151,8 @@ public class Setup implements Comparable<Setup> {
 	}
 	
 	public boolean canAdd(Item i) {
+		if (i == null)
+			return true;
 		if (i.getUniqueLimit()>0) {
 			int[] vect;
 			if (uniqueMap.containsKey(i.getUniqueName())) {
@@ -239,7 +241,7 @@ public class Setup implements Comparable<Setup> {
 		Calculations m = Calculations.createInstance();
 		Setup gear;
 		Armor item = getItem(slot);
-		if (!item.hasSockets())
+		if (item == null || !item.hasSockets())
 			return;
 		Gem[] gemsAny = new Gem[3], gemsMatch = new Gem[3], gemsTemp, gemsFinal;
 		GemComparison gc;

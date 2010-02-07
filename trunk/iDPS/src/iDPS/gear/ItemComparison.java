@@ -40,7 +40,7 @@ public class ItemComparison {
 			items = Armor.findSlot(slotType);
 		
 		// Make sure orgItem is in the list
-		if (!items.contains(orgItem))
+		if (orgItem != null && !items.contains(orgItem))
 			items.add(orgItem);
 		
 		for (Armor item: items)  {
