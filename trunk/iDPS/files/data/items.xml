@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-  <item id="45108">
-    <tag>flameleviathan-25</tag>
-    <filters>
-      <filter>uld25n</filter>
-    </filters>
-  </item>
-  <item id="45869">
-    <tag>xt002-10-heroic</tag>
-    <filters>
-      <filter>uld10h</filter>
-    </filters>
-  </item>
-  <item id="45611">
-    <tag>algalon-25</tag>
-    <filters>
-      <filter>uld25h</filter>
-    </filters>
-  </item>
   <item id="40256">
     <name><![CDATA[Grim Toll]]></name>
     <slot>Trinket</slot>
@@ -73,6 +55,22 @@
     </attributes>
     <lvl>200</lvl>
     <icon>inv_inscription_tarotgreatness</icon>
+  </item>
+  <item id="45108">
+    <name><![CDATA[Mechanist's Bindings]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <atp>84</atp>
+      <agi>63</agi>
+      <cri>39</cri>
+      <hst>44</hst>
+    </attributes>
+    <lvl>226</lvl>
+    <tag>flameleviathan-25</tag>
+    <filters>
+      <filter>uld25n</filter>
+    </filters>
+    <icon>inv_bracer_23b</icon>
   </item>
   <item id="45224">
     <name><![CDATA[Drape of the Lithe]]></name>
@@ -213,6 +211,28 @@
     </filters>
     <icon>spell_arcane_starfire</icon>
   </item>
+  <item id="45611">
+    <name><![CDATA[Solar Bindings]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <atp>86</atp>
+      <agi>64</agi>
+      <exp>47</exp>
+      <hst>48</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>239</lvl>
+    <tag>algalon-25</tag>
+    <filters>
+      <filter>uld25h</filter>
+    </filters>
+    <icon>inv_bracer_26</icon>
+  </item>
   <item id="45829">
     <name><![CDATA[Belt of the Twilight Assassin]]></name>
     <slot>Waist</slot>
@@ -258,6 +278,28 @@
     <lvl>226</lvl>
     <tag>emblems-conquest</tag>
     <icon>inv_pants_mail_25</icon>
+  </item>
+  <item id="45869">
+    <name><![CDATA[Fluxing Energy Coils]]></name>
+    <slot>Wrist</slot>
+    <attributes>
+      <atp>72</atp>
+      <agi>63</agi>
+      <arp>30</arp>
+      <hit>46</hit>
+    </attributes>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus>
+        <agi>4</agi>
+      </bonus>
+    </sockets>
+    <lvl>226</lvl>
+    <tag>xt002-10-heroic</tag>
+    <filters>
+      <filter>uld10h</filter>
+    </filters>
+    <icon>inv_bracer_15</icon>
   </item>
   <item id="45870">
     <name><![CDATA[Magnetized Projectile Emitter]]></name>
