@@ -4741,7 +4741,7 @@
       <atp>72</atp>
       <agi>54</agi>
       <cri>36</cri>
-      <hst>36</hst>
+      <arp>36</arp>
     </attributes>
     <lvl>271</lvl>
     <tag>lichking-25</tag>
@@ -5698,7 +5698,7 @@
     <attributes>
       <atp>99</atp>
       <agi>74</agi>
-      <arp>49</arp>
+      <hst>49</hst>
       <cri>49</cri>
     </attributes>
     <lvl>271</lvl>
@@ -6202,7 +6202,7 @@
       <atp>66</atp>
       <agi>62</agi>
       <cri>41</cri>
-      <hst>33</hst>
+      <arp>33</arp>
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
@@ -6224,7 +6224,7 @@
     <attributes>
       <atp>111</atp>
       <agi>76</agi>
-      <arp>56</arp>
+      <hst>56</hst>
       <cri>48</cri>
     </attributes>
     <sockets>
@@ -7069,7 +7069,7 @@
     <attributes>
       <atp>100</atp>
       <agi>66</agi>
-      <arp>44</arp>
+      <hst>44</hst>
       <cri>44</cri>
     </attributes>
     <lvl>258</lvl>
@@ -7703,7 +7703,7 @@
     <attributes>
       <atp>97</atp>
       <agi>74</agi>
-      <arp>49</arp>
+      <hst>49</hst>
       <cri>49</cri>
     </attributes>
     <sockets>
