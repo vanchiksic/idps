@@ -69,6 +69,7 @@ public abstract class Calculations {
 		float dpsATP;
 		Calculations c;
 		try {
+			//System.out.println("EP Calcs");
 			c = getClass().newInstance();
 			Attributes attr = new Attributes();
 			//System.out.println("EP ATP");
@@ -193,6 +194,10 @@ public abstract class Calculations {
 		float critsPerSec = mhWCPS+ohWCPS+mhSCPS+ohSCPS;
 		Attributes a;
 		
+		// Bloodlust / Heroism
+		float uptime = 40/fightDuration;
+		mod.registerStaticHasteProc(0.3F, uptime);
+		
 		// Orc Racial
 		if (setup.getRace().getType() == Race.Type.Orc) {
 			a = new Attributes(Attributes.Type.ATP, 322);
@@ -201,14 +206,13 @@ public abstract class Calculations {
 		
 		// Troll Racial
 		if (setup.getRace().getType() == Race.Type.Troll) {
-			float uptime = getMaxUses(180)*10F/fightDuration;
-			a = new Attributes(Attributes.Type.ATP, 322);
+			uptime = getMaxUses(180)*10F/fightDuration;
 			mod.registerStaticHasteProc(0.2F, uptime);
 		}
 		
 		// Blade Flurry
 		if (talents.getBf()) {
-			float uptime = getMaxUses(120)*15F/fightDuration;
+			uptime = getMaxUses(120)*15F/fightDuration;
 			mod.registerStaticHasteProc(0.2F, uptime);
 		}
 		

@@ -150,8 +150,8 @@ public class Modifiers {
 		float armorC = (467.5F * 80F - 22167.5F);
 		int armorDefault = 10643;
 		float armor = (armorDefault * 0.8F * 0.95F);
-		float armorRemovable = Math.min(((armorC+armorDefault)/3F),armor);
-		armor = armor - (armorRemovable * Math.min(arp/1400F, 1F));
+		float armorRemovable = Math.min(((armorC+armor)/3F),armor);
+		armor = armor - (armorRemovable * Math.min(arp/cARP, 1F));
 		float dr = armor / (armor + (467.5F * 80F - 22167.5F));
 		return (1F-dr);
 	}

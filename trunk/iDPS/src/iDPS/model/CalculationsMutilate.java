@@ -77,7 +77,7 @@ public class CalculationsMutilate extends Calculations {
 		eCostEnv -= mod.getHtMHS().crit*2;
 		
 		// Average Envenom Length
-		// We allow to pool 20 energy
+		// We allow to pool no energy
 		float pool = 20;
 		float lE4M0 = Math.min((eCostEnv-4*25*talents.getRStrikes()+pool)/eRegen, 5);
 		float lE4M1 = Math.min((eCostEnv-4*25*talents.getRStrikes()+eCostMut+pool)/eRegen, 5);
