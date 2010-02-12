@@ -34,10 +34,11 @@ public class Attributes {
 		Iterator<Element> iter = elem.getChildren().iterator();
 		while (iter.hasNext()) {
 			Element sub = iter.next();
-			String s = sub.getName().toUpperCase();
-			for (Type t: Type.values()) {
-				if (s.equals(t.name()))
-					set(t, Float.parseFloat(sub.getText()));
+			try {
+				Type t = Type.valueOf(sub.getName().toUpperCase());
+				set(t, Float.parseFloat(sub.getText()));
+			} catch (IllegalArgumentException e) {
+				System.err.println("Cannot map Attribute "+sub.getName()+".");
 			}
 		}
 	}
