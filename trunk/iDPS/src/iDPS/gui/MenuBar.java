@@ -30,7 +30,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	
 	private JMenu mSetup;
 	private ItemSelectGear[] iSetups;
-	private JMenuItem iGearNew, iGearRename, iGearSaveAs, iGearSave, iGearDel, iImportArmory;
+	private JMenuItem iGearNew, iGearRename, iGearDup, iGearSave, iGearDel, iImportArmory;
 	
 	private JMenu mTalents;
 	private ItemSelectTalent[] iTalents;
@@ -50,6 +50,12 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	public MenuBar(MainFrame mainFrame) {
 		this.mainFrame = mainFrame;
 		checkedFilters = EnumSet.allOf(Filter.class);
+		
+    if (System.getProperty("mrj.version") == null) {   
+
+    } else {
+    	OSXAdapter.installAdapter();
+    }
 		
 		mSetup = new JMenu("Setups");
 		createGearMenu();
@@ -87,17 +93,19 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		iGearRename.addActionListener(this);
 		mSetup.add(iGearRename);
 		
-		iGearSave = new JMenuItem("Save");
+		iGearDup = new JMenuItem("Duplicate");
+		iGearDup.addActionListener(this);
+		mSetup.add(iGearDup);
+		
+	  iImportArmory = new JMenuItem("Armory...");
+	  iImportArmory.addActionListener(this);
+	  mSetup.add(iImportArmory);
+		
+		mSetup.addSeparator();
+		
+		iGearSave = new JMenuItem("Save all");
 		iGearSave.addActionListener(this);
 		mSetup.add(iGearSave);
-		
-		iGearSaveAs = new JMenuItem("Save As...");
-		iGearSaveAs.addActionListener(this);
-		mSetup.add(iGearSaveAs);
-		
-	    iImportArmory = new JMenuItem("Armory...");
-	    iImportArmory.addActionListener(this);
-	    mSetup.add(iImportArmory);
 		
 		mSetup.addSeparator();
 		
@@ -214,7 +222,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == iGearSave)
 			Setup.save();
-		else if (e.getSource() == iGearSaveAs) {
+		else if (e.getSource() == iGearDup) {
 			Setup g = new Setup(mainFrame.getSetup());
 			g.clearId();
 			String s = (String) JOptionPane.showInputDialog(
@@ -355,15 +363,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			
 			switch (profession) {
 				case Blacksmithing:
-					if (!isSelected()) {
-						setup.setGem(7, setup.getItem(7).getMaxSocketIndex(), null);
-						setup.setGem(8, setup.getItem(8).getMaxSocketIndex(), null);
-					}
-					Armor.setBlacksmith(isSelected());
-					if (isSelected()) {
-						setup.setGem(7, setup.getItem(7).getMaxSocketIndex(), null);
-						setup.setGem(8, setup.getItem(8).getMaxSocketIndex(), null);
-					}
 					mainFrame.showGear();
 					break;
 				case Enchanting:

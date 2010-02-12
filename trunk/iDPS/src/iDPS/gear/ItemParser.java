@@ -3,9 +3,10 @@ package iDPS.gear;
 import iDPS.Attributes;
 import iDPS.gear.Armor.Faction;
 import iDPS.gear.Armor.SlotType;
-import iDPS.gear.Socket.SocketType;
+import iDPS.gear.Armor.SocketType;
 import iDPS.gear.Weapon.weaponType;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -136,7 +137,7 @@ public class ItemParser {
 		
 		nf = new HasParentFilter(new HasAttributeFilter("class", "tti-sockets"));
 		nl = root.getChildren().extractAllNodesThatMatch(nf, true);
-		Socket[] sockets = new Socket[3];
+		ArrayList<SocketType> sockets = new ArrayList<SocketType>();
 		attr = item.getSocketBonus();
 		attr.clear();
 		iter = nl.elements();
@@ -148,13 +149,13 @@ public class ItemParser {
 				s = n.getFirstChild().getFirstChild().getText().trim();
 			//System.out.println(s);
 			if (s.equals("Meta Socket"))
-				sockets[i] = new Socket(item, i, SocketType.Meta);
+				sockets.add(SocketType.Meta);
 			else if (s.equals("Red Socket"))
-				sockets[i] = new Socket(item, i, SocketType.Red);
+				sockets.add(SocketType.Red);
 			else if (s.equals("Yellow Socket"))
-				sockets[i] = new Socket(item, i, SocketType.Yellow);
+				sockets.add(SocketType.Yellow);
 			else if (s.equals("Blue Socket"))
-				sockets[i] = new Socket(item, i, SocketType.Blue);
+				sockets.add(SocketType.Blue);
 			else if (s.equals("Socket Bonus:")) {
 				String bonus = n.getChildren().elementAt(1).getFirstChild().getText();
 				p1 = Pattern.compile("^\\+(\\d+) ([\\w\\s]+)$");

@@ -11,7 +11,7 @@ import java.net.URL;
 
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
-import iDPS.gear.Socket;
+import iDPS.gear.Armor.SocketType;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -41,16 +41,13 @@ public class SocketButton extends JButton implements ActionListener {
 	
 	protected void updateColor() {
 		Setup gear = mainFrame.getSetup();
-		Socket socket = gear.getItem(slot).getSocket(index);
-		if (socket == null)
-			return;
+		SocketType socket = gear.getItem(slot).getSocket(index);
 		URL url;
 		Border b, b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1), b2;
-		switch (socket.getType()) {
+		switch (socket) {
 			case Red:
 				url = InventoryButton.class.getResource("/images/Socket_Red.png");
 				b2 = BorderFactory.createLineBorder(Color.RED, 2);
-				//b2 = new DashBorder(Color.RED, 2);
 				break;
 			case Yellow:
 				url = InventoryButton.class.getResource("/images/Socket_Yellow.png");

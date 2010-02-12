@@ -88,7 +88,7 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 			if (en.getSpellId()>0)
 				spellmap.put(en.getSpellId(), en);
 		}
-		limit();
+		//limit();
 	}
 	
 	public static void limit() {

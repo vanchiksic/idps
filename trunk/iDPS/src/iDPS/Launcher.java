@@ -17,9 +17,6 @@ public class Launcher {
 		MainFrame mf = MainFrame.getInstance();
 		Persistency.createXML();
 		
-		Setup.load();
-		System.out.println("Setups loaded.");
-		
 		Race.load();
 		System.out.println("Races loaded.");
 		Talents.load();
@@ -31,7 +28,7 @@ public class Launcher {
 		Enchant.load();
 		System.out.println("Enchants loaded.");
 		Setup.load();
-		System.out.println("Gears loaded again.");
+		System.out.println("Setups loaded.");
 		
 		Item.loadFilter();
 		mf.getMyMenuBar().createFilterMenu();

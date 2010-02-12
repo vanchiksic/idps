@@ -2,7 +2,7 @@ package iDPS.gear;
 
 
 import iDPS.gear.Gem.GemColor;
-import iDPS.gear.Socket.SocketType;
+import iDPS.gear.Armor.SocketType;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;
@@ -39,8 +39,8 @@ public class GemComparison {
 		defaultDPS = m.getTotalDPS();
 		
 		Collection<Gem> gems;
-		Socket socket = gear.getItem(slot).getSocket(index);
-		if (anyColor && gear.getItem(slot).getSocket(index).getType() != SocketType.Meta)
+		SocketType socket = gear.getItem(slot).getSocket(index);
+		if (anyColor && socket != SocketType.Meta)
 			gems = Gem.getAll();
 		else
 			gems = Gem.findSocket(socket);
@@ -52,7 +52,7 @@ public class GemComparison {
 		for (Gem gem: gems)  {
 			if (gem == null)
 				continue;
-			if (gem.getColor() == GemColor.Meta && socket.getType() != SocketType.Meta)
+			if (gem.getColor() == GemColor.Meta && socket != SocketType.Meta)
 				continue;
 			gear.setGem(slot, index, null);
 			if (!gear.canAdd(gem))

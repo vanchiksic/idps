@@ -2,8 +2,6 @@ package iDPS.gear;
 
 import iDPS.Attributes;
 import iDPS.Persistency;
-import iDPS.gear.Setup.Profession;
-import iDPS.gear.Socket.SocketType;
 import iDPS.gui.MainFrame;
 import iDPS.gui.MenuBar;
 
@@ -25,6 +23,8 @@ public class Armor extends Item {
 		Legs, Neck, Ranged, Shoulder, Trinket, Waist, OneHand, MainHand, OffHand, Wrist }
 	public enum Faction { Both, Alliance, Horde }
 	public enum Tier { Tier9, Tier10 }
+	
+	public enum SocketType { Red, Blue, Yellow, Meta, Prismatic };
 
 	private static HashMap<Integer,Armor> map = null;
 	private static HashMap<Integer,Armor> fullmap = null;
@@ -35,14 +35,14 @@ public class Armor extends Item {
 	private Faction faction;
 	
 	private Attributes socketBonus;
-	private Socket[] sockets;
+	private ArrayList<SocketType> sockets;
 	
 	@SuppressWarnings("unchecked")
 	public Armor(Element element) {
 		super(element);
 		tier = null;
 		tag = null;
-		sockets = new Socket[3];
+		sockets = new ArrayList<SocketType>();
 		socketBonus = new Attributes();
 		faction = Faction.Both;
 		
@@ -65,25 +65,14 @@ public class Armor extends Item {
 					String s2 = e2.getName();
 					if (s2.equals("socket")) {		
 						int index = Integer.parseInt(e2.getAttributeValue("index"));
-						if (e2.getText().equals("Red"))
-							sockets[index] = new Socket(this, index, SocketType.Red);
-						else if (e2.getText().equals("Blue"))
-							sockets[index] = new Socket(this, index, SocketType.Blue);
-						else if (e2.getText().equals("Yellow"))
-							sockets[index] = new Socket(this, index, SocketType.Yellow);
-						else if (e2.getText().equals("Meta"))
-							sockets[index] = new Socket(this, index, SocketType.Meta);
+						SocketType type = SocketType.valueOf(e2.getText());
+						sockets.add(index, type);
 					} else if (s2.equals("bonus")) {
 						socketBonus = new Attributes(e2);
 					}
 				}
 			}
 		}
-		if (slot == SlotType.Waist)
-			setExtraSocket(true);
-		if (((slot == SlotType.Wrist) || (slot == SlotType.Hands))
-				&& MainFrame.getInstance().getSetup().hasProfession(Profession.Blacksmithing))
-			setExtraSocket(true);
 		
 		checkTierSet();
 	}
@@ -97,35 +86,13 @@ public class Armor extends Item {
 		super();
 		tier = null;
 		tag = null;
-		sockets = new Socket[3];
+		sockets = new ArrayList<SocketType>();
 		socketBonus = new Attributes();
 		faction = Faction.Both;
 	}
 	
-	private void setExtraSocket(boolean b) {
-		if (b) {
-			for (int j=0; j<=2; j++) {
-				if (sockets[j] == null || sockets[j].getType() == SocketType.Prismatic) {
-					sockets[j] = new Socket(this, j, SocketType.Prismatic);
-					break;
-				}
-			}
-		} else {
-			for (int j=2; j>=0; j--) {
-				if (sockets[j] != null && sockets[j].getType() == SocketType.Prismatic) {
-					sockets[j] = null;
-					break;
-				}
-			}
-		}
-	}
-	
 	public int getMaxSocketIndex() {
-		for (int i=0; i<=2; i++) {
-			if (sockets[i] == null)
-				return (i-1);
-		}
-		return 2;
+		return sockets.size()-1;
 	}
 	
 	private void checkTierSet() {
@@ -160,18 +127,14 @@ public class Armor extends Item {
 		return slot;
 	}
 	
-	public Socket getSocket(int index) {
-		if (sockets.length>index)
-			return sockets[index];
-		return null;
+	public SocketType getSocket(int index) {
+		if (sockets.size()>index)
+			return sockets.get(index);
+		return SocketType.Prismatic;
 	}
 	
 	public boolean hasSockets() {
-		for (Socket s: sockets) {
-			if (s != null)
-				return true;
-		}
-		return false;
+		return (sockets.size()>0);
 	}
 	
 	public boolean matchesSlot(SlotType st) {
@@ -294,13 +257,11 @@ public class Armor extends Item {
 			eItem.getChildren().add(eAttr);
 			if (item.hasSockets()) {
 				Element eSockets = new Element("sockets");
-				for (int index=0; index<=2; index++) {
-					Socket s = item.getSocket(index);
-					if (s == null)
-						break;
+				for (int index=0; index<=item.getMaxSocketIndex(); index++) {
+					SocketType s = item.getSocket(index);
 					Element eSocket = new Element("socket");
 					eSocket.setAttribute("index", String.valueOf(index));
-					eSocket.setText(s.getType().name());
+					eSocket.setText(s.name());
 					eSockets.getChildren().add(eSocket);
 				}
 				Element eBonus = item.getSocketBonus().toXML("bonus");
@@ -352,15 +313,6 @@ public class Armor extends Item {
 			Armor.load();
 		map.put(item.getId(), item);
 	}
-	
-	public static void setBlacksmith(boolean b) {
-		Collection<Armor> items, items1, items2;
-		items1 = findSlot(SlotType.Wrist);
-		items2 = findSlot(SlotType.Hands);
-		items = items1; items.addAll(items2);
-		for (Armor i: items)
-			i.setExtraSocket(b);
-	}
 
 	public Attributes getSocketBonus() {
 		return socketBonus;
@@ -372,10 +324,6 @@ public class Armor extends Item {
 
 	public void setSlot(SlotType slot) {
 		this.slot = slot;
-	}
-
-	public void setSockets(Socket[] sockets) {
-		this.sockets = sockets;
 	}
 
 	public String getTag() {
@@ -392,6 +340,10 @@ public class Armor extends Item {
 
 	public void setFaction(Faction faction) {
 		this.faction = faction;
+	}
+	
+	protected void setSockets(ArrayList<SocketType> sockets) {
+		this.sockets = sockets;
 	}
 
 }

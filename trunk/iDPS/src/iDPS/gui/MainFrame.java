@@ -15,6 +15,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
+import iDPS.gear.Enchant;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
@@ -194,6 +195,9 @@ public class MainFrame extends JFrame {
 
 	public void setSetup(Setup setup) {
 		this.setup = setup;
+		// Limit Gems and Enchants to our Professions
+		Gem.limit();
+		Enchant.limit();
 	}
 
 }

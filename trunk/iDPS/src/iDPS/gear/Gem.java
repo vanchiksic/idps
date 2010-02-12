@@ -11,7 +11,7 @@ import org.jdom.Element;
 import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.gear.Setup.Profession;
-import iDPS.gear.Socket.SocketType;
+import iDPS.gear.Armor.SocketType;
 import iDPS.gui.MainFrame;
 
 
@@ -58,10 +58,10 @@ public class Gem extends Item {
 		return color;
 	}
 	
-	public boolean isMatch(Socket s) {
+	public boolean isMatch(SocketType s) {
 		if (color == GemColor.Prismatic)
-			return (s.getType() != SocketType.Meta);
-		switch (s.getType()) {
+			return (s != SocketType.Meta);
+		switch (s) {
 			case Red:
 				return (color == GemColor.Red || color == GemColor.Orange || color == GemColor.Purple);
 			case Yellow:
@@ -81,7 +81,7 @@ public class Gem extends Item {
 		return null;
 	}
 	
-	public static ArrayList<Gem> findSocket(Socket s) {
+	public static ArrayList<Gem> findSocket(SocketType s) {
 		ArrayList<Gem> matches = new ArrayList<Gem>();
 		for (Gem gem: getAll()) {
 			if (gem.isMatch(s))
@@ -105,7 +105,7 @@ public class Gem extends Item {
 			if (gem.getId()>0)
 				fullmap.put(gem.getId(), gem);
 		}
-		limit();
+		//limit();
 	}
 	
 	public static void limit() {

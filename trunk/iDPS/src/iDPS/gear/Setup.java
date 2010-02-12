@@ -4,6 +4,7 @@ import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Race;
 import iDPS.Talents;
+import iDPS.gear.Armor.SocketType;
 import iDPS.gui.MainFrame;
 import iDPS.model.Calculations;
 
@@ -362,14 +363,15 @@ public class Setup implements Comparable<Setup> {
 	}
 	
 	public boolean isSocketBonusActive(int slot) {
-		if (!getItem(slot).hasSockets())
+		Armor item = getItem(slot);
+		if (item == null)
+			return false;
+		if (!item.hasSockets())
 			return false;
 		Gem[] gems = getGems(slot);
-		Socket socket;
-		for (int index=0; index<=2; index++) {
-			socket = getItem(slot).getSocket(index);
-			if (socket == null)
-				break;
+		SocketType socket;
+		for (int index=0; index<=item.getMaxSocketIndex(); index++) {
+			socket = item.getSocket(index);
 			if (gems[index] == null || !gems[index].isMatch(socket))
 				return false;
 		}
@@ -393,7 +395,7 @@ public class Setup implements Comparable<Setup> {
 			return;
 		System.out.println("Slot "+slot+": "+item);
 		for (int index=0; index<=2; index++) {
-			Socket socket = item.getSocket(index);
+			SocketType socket = item.getSocket(index);
 			if (socket == null)
 				continue;
 			Gem gem = getGem(slot,index);
@@ -417,15 +419,17 @@ public class Setup implements Comparable<Setup> {
 		Armor item = getItem(slot);
 		if (item ==  null)
 			return;
-		Socket socket = item.getSocket(index);
-		if (socket == null)
+		int max = item.getMaxSocketIndex();
+		if (hasExtraSocket(slot))
+			max++;
+		if (index > max)
 			return;
+		// Remove attributes from socket bonus
+		if (socketBonus[slot])
+			attr.sub(item.getSocketBonus());
 		Gem oldgem = getGem(slot, index);
 		if (oldgem != null) {
 			attr.sub(oldgem.getAttr());
-			if (socketBonus[slot])
-				attr.sub(item.getSocketBonus());
-			socketBonus[slot] = false;
 			containsDec(oldgem);
 			gems[slot][index] = null;
 		}
@@ -433,29 +437,14 @@ public class Setup implements Comparable<Setup> {
 			// Check if we can equip it
 			if (containsInc(gem)) {
 				attr.add(gem.getAttr());
-				if (gem.isMatch(socket)) {
-					boolean bonus = true;
-					Socket s; Gem g;
-					for (int i=0; i<gems[slot].length; i++) {
-						if (i==index)
-							continue;
-						s = item.getSocket(i);
-						if (s == null) {
-							bonus = bonus && i != 0;
-							break;
-						}
-						g = gems[slot][i];
-						bonus = g != null && g.isMatch(s);
-						if (!bonus)
-							break;
-					}
-					if (bonus)
-						attr.add(item.getSocketBonus());
-					socketBonus[slot] = bonus;
-				}
 				gems[slot][index] = gem;
 			}
 		}
+		// Check if socket bonus is active
+		socketBonus[slot] = isSocketBonusActive(slot);
+		// if yes add bonus attributes again
+		if (socketBonus[slot])
+			attr.add(item.getSocketBonus());
 	}
 	
 	public void setItem(int slot, Armor item) {
@@ -654,12 +643,26 @@ public class Setup implements Comparable<Setup> {
 	public void setProfession(Profession p, boolean b) {
 		if (b)
 			professions.add(p);
-		else
+		else {
+			// Remove Gems in sockets we dont have anymore
+			if (p == Profession.Blacksmithing) {
+				setGem(7, getItem(7).getMaxSocketIndex()+1, null);
+				setGem(8, getItem(8).getMaxSocketIndex()+1, null);
+			}
 			professions.remove(p);
+		}
 	}
 	
 	public boolean hasProfession(Profession p) {
 		return professions.contains(p);
+	}
+
+	public boolean hasExtraSocket(int slot) {
+		if (slot == 9)
+			return true;
+		if ((slot == 7 || slot == 8) && hasProfession(Profession.Blacksmithing))
+			return true;
+		return false;
 	}
 
 }

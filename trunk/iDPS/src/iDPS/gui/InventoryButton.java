@@ -96,12 +96,13 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 			setBorder(b);
 		}
 		
-		for (int i=0; i<=2; i++) {
-			if (item.getSocket(i) != null) {
-				socketButtons[i].updateColor();
-				socketButtons[i].socketGem(gems[i]);
-			  socketButtons[i].setVisible(true);
-			}
+		int max = item.getMaxSocketIndex();
+		if (mainFrame.getSetup().hasExtraSocket(slot))
+			max++;
+		for (int i=0; i<=max; i++) {
+			socketButtons[i].updateColor();
+			socketButtons[i].socketGem(gems[i]);
+			socketButtons[i].setVisible(true);
 		}
 			
 	}

@@ -227,7 +227,7 @@ public class Modifiers {
 	}
 	
 	public float getSpellMissPercent() {
-		return Math.max((0.13F-mHit),0)*100F;
+		return Math.max((0.17F-mHit),0)*100F;
 	}
 	
 	public float getPhysCritMult() {

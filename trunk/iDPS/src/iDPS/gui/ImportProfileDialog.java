@@ -209,10 +209,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                     while (gemIter.hasNext()) {
                         Gem gem = Gem.find(gemIter.next());
                         if (gem != null) {
-                            iDPS.gear.Socket socket = item.getSocket(socketIndex);
-                            if (socket != null) {
-                                gear.setGem(slot, socketIndex, gem);
-                            }
+                            gear.setGem(slot, socketIndex, gem);
                         }
                         socketIndex++;
                     }
