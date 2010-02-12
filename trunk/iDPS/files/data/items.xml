@@ -7069,7 +7069,7 @@
     <attributes>
       <atp>100</atp>
       <agi>66</agi>
-      <hst>44</hst>
+      <exp>44</exp>
       <cri>44</cri>
     </attributes>
     <lvl>258</lvl>
@@ -7703,7 +7703,7 @@
     <attributes>
       <atp>97</atp>
       <agi>74</agi>
-      <hst>49</hst>
+      <exp>49</exp>
       <cri>49</cri>
     </attributes>
     <sockets>
