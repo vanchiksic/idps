@@ -35,7 +35,7 @@ public class Attributes {
 		while (iter.hasNext()) {
 			Element sub = iter.next();
 			try {
-				Type t = Type.valueOf(sub.getName().toUpperCase());
+				Type t = Type.valueOf(sub.getName().toUpperCase(java.util.Locale.ENGLISH));
 				set(t, Float.parseFloat(sub.getText()));
 			} catch (IllegalArgumentException e) {
 				System.err.println("Cannot map Attribute "+sub.getName()+".");
