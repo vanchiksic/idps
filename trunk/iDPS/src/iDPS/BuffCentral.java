@@ -1,105 +1,59 @@
 package iDPS;
 
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.EnumMap;
+
 
 public class BuffCentral {
 	
+	public enum Buff { attackPower, attackPowerImp, damage, meleHaste, meleHasteImp,
+		physicalCrit, spellCrit, statsAdditive, statsAdditiveImp,
+		statsMultiplicative, agilityStrength, agilityStrengthImp };
+	public enum Debuff { armorMajor, armorMajorMaintain, armorMinor, crit, physicalDamage,
+		spellCrit, spellDamage, spellHit }
+	
 	private final PropertyChangeSupport pcs;
 	
-	/** -25% armor **/
-	private boolean armorMajor;
-	/** Rogue maintinaing EA **/
-	private boolean armorMaintain;
-	/** -5% armor **/
-	private boolean armorMinor;
-	/** +3% crit **/
-	private boolean critDebuff;
-	/** +3% spell hit **/
-	private boolean spellHitDebuff;
-	/** +5% spell crit **/
-	private boolean spellCritDebuff;
-	/** +4% physical damage **/
-	private boolean physicalDebuff;
-	/** +13% spell damage **/
-	private boolean spellDamageDebuff;
-	
-	/** Blessing of Kings **/
-	private boolean kings;
-	/** Blessing of Might, Battleshout **/
-	private boolean attackpowerBuff;
-	/** Imp. Blessing of Might, Imp. Battleshout **/
-	private boolean impAttackpowerBuff;
-	/** HotW, SoE Totem **/
-	private boolean strengthAgilityBuff;
-	/** Imp. SoE Totem **/
-	private boolean impStrengthAgilityBuff;
-	/** Mark of the Wild **/
-	private boolean additiveStatBuff;
-	/** Imp. Mark of the Wild **/
-	private boolean impAdditiveStatBuff;
-	/** +3% all damage **/
-	private boolean damageBuff;
-	/** 16% mele haste **/
-	private boolean meleHasteBuff;
-	/** 20% mele haste **/
-	private boolean impMeleHasteBuff;
-	/** 5% physical crit buff **/
-	private boolean physicalCritBuff;
-	/** 5% spell crit buff **/
-	private boolean spellCritBuff;
+	private EnumMap<Buff,Boolean> buffs;
+	private EnumMap<Debuff,Boolean> debuffs;
 	
 	public BuffCentral() {
 		pcs = new PropertyChangeSupport( this );
+		buffs = new EnumMap<Buff,Boolean>(Buff.class);
+		for (Buff b: Buff.values())
+			buffs.put(b, false);
+		debuffs = new EnumMap<Debuff,Boolean>(Debuff.class);
+		for (Debuff b: Debuff.values())
+			debuffs.put(b, false);
 	}
 	
-	public void setKings(boolean newValue) {
-		boolean oldValue = kings;
-		kings = newValue;
-		pcs.firePropertyChange("kings", oldValue, newValue);
+	public boolean hasBuff(Buff b) {
+		return buffs.get(b);
 	}
 	
-	public boolean isKings() {
-		return kings;
+	public void setBuff(Buff b, boolean newValue) {
+		boolean oldValue = buffs.get(b);
+		buffs.put(b, newValue);
+		pcs.firePropertyChange(b.name(), oldValue, newValue);
 	}
-
-	public boolean isArmorMajor() {
-		return armorMajor;
+	
+	public boolean hasDebuff(Debuff b) {
+		return debuffs.get(b);
 	}
-
-	public void setArmorMajor(boolean newValue) {
-		boolean oldValue = armorMajor;
-		armorMajor = newValue;
-		pcs.firePropertyChange("armorMajor", oldValue, newValue);
-		if (!newValue)
-			setArmorMaintain(false);
-	}
-
-	public boolean isArmorMaintain() {
-		return armorMaintain;
-	}
-
-	public void setArmorMaintain(boolean newValue) {
-		boolean oldValue = armorMaintain;
-		armorMaintain = newValue;
-		pcs.firePropertyChange("armorMaintain", oldValue, newValue);
-	}
-
-	public boolean isArmorMinor() {
-		return armorMinor;
-	}
-
-	public void setArmorMinor(boolean newValue) {
-		boolean oldValue = armorMinor;
-		armorMinor = newValue;
-		pcs.firePropertyChange("armorMinor", oldValue, newValue);
+	
+	public void setDebuff(Debuff b, boolean newValue) {
+		boolean oldValue = debuffs.get(b);
+		debuffs.put(b, newValue);
+		pcs.firePropertyChange(b.name(), oldValue, newValue);
 	}
 	
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
         pcs.addPropertyChangeListener(listener);
     }
 
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
+	public void removePropertyChangeListener(PropertyChangeListener listener) {
         pcs.removePropertyChangeListener(listener);
     }
 
