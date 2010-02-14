@@ -123,7 +123,7 @@ public class SelectItemPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.showBuffCentral();
 			mainFrame.getSetup().setItem(slot, item);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();

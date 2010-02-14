@@ -15,6 +15,7 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
+import iDPS.BuffCentral;
 import iDPS.gear.Enchant;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
@@ -25,6 +26,7 @@ public class MainFrame extends JFrame {
 	private static MainFrame instance;
 	
 	private MenuBar menuBar;
+	private BuffPanel buffPanel;
 	private ImportProfileDialog importFrame = null;
 	private CenterPanel centerP;
 	private InventoryButton[] buttons;
@@ -121,18 +123,20 @@ public class MainFrame extends JFrame {
 		invPane.setPreferredSize(new Dimension(440,490));
 		add(invPane, BorderLayout.CENTER);
 		
-		sideScroll = new JScrollPane(new JPanel());
+		sideScroll = new JScrollPane();
 		sideScroll.getVerticalScrollBar().setUnitIncrement(20);
 		sideScroll.setPreferredSize(new Dimension(430,490));
 		add(sideScroll, BorderLayout.LINE_END);
 		
-		//sideScroll.setViewportView(new SidePanel());
+		BuffCentral buffCentral = new BuffCentral();
+		buffPanel = new BuffPanel(buffCentral);
+		showBuffCentral();
 		
 		pack();
 		
-    Dimension d1 = getToolkit().getScreenSize();
-    Dimension d2 = getSize();
-    setLocation((int)((d1.width-d2.width)/3),(int)((d1.height-d2.height)/3));
+	    Dimension d1 = getToolkit().getScreenSize();
+	    Dimension d2 = getSize();
+	    setLocation((int)((d1.width-d2.width)/3),(int)((d1.height-d2.height)/3));
 		
 		setResizable(false);
 		setVisible(true);
@@ -173,6 +177,10 @@ public class MainFrame extends JFrame {
 
 	public JScrollPane getSideScroll() {
 		return sideScroll;
+	}
+	
+	public void showBuffCentral() {
+		sideScroll.setViewportView(buffPanel);
 	}
 	
 	public void about() {

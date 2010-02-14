@@ -149,7 +149,7 @@ public class SelectGemPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.showBuffCentral();
 			mainFrame.getSetup().setGem(slot, index, gem);
 			mainFrame.showGem(gem, slot, index);
 			mainFrame.showStats();

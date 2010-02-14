@@ -123,7 +123,7 @@ public class SelectEnchantPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			mainFrame.getSideScroll().setViewportView(new JPanel());
+			mainFrame.showBuffCentral();
 			mainFrame.getSetup().setEnchant(slot, enchant);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();
