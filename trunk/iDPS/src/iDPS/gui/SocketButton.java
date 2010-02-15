@@ -40,7 +40,7 @@ public class SocketButton extends JButton implements ActionListener {
 	}
 	
 	protected void updateColor() {
-		Setup gear = mainFrame.getSetup();
+		Setup gear = mainFrame.getApp().getSetup();
 		SocketType socket = gear.getItem(slot).getSocket(index);
 		URL url;
 		Border b, b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1), b2;
@@ -79,9 +79,8 @@ public class SocketButton extends JButton implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		MainFrame f = MainFrame.getInstance();
 		SelectGemPanel ip = new SelectGemPanel(mainFrame, slot, index);
-		f.getSideScroll().setViewportView(ip);
+		mainFrame.getSideScroll().setViewportView(ip);
 	}
 	
 	class DashBorder extends LineBorder {

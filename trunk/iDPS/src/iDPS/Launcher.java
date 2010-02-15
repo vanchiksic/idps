@@ -3,13 +3,13 @@ package iDPS;
 import javax.swing.JOptionPane;
 
 import iDPS.gear.Enchant;
-import iDPS.gear.Item;
-import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.MainFrame;
 
 public class Launcher {
+	
+	private static Application app;
 	
 	public static void main(String[] args) {
 		
@@ -26,7 +26,6 @@ public class Launcher {
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "iDPS");
 		}
-		MainFrame mf = MainFrame.getInstance();
 		Persistency.createXML();
 		
 		Race.load();
@@ -39,16 +38,21 @@ public class Launcher {
 		System.out.println("Gems loaded.");
 		Enchant.load();
 		System.out.println("Enchants loaded.");
-		Setup.load();
-		System.out.println("Setups loaded.");
 		
-		Item.loadFilter();
-		mf.getMyMenuBar().createFilterMenu();
-		Armor.limit();
-		System.out.println("Filters loaded.");
+		app = new Application();
+		app.initialize();
+				
+		MainFrame mf = new MainFrame(app);
+		mf.getMyMenuBar().createGearMenu();
+		mf.getMyMenuBar().createTalentsMenu();
+		mf.getMyMenuBar().createRacesMenu();
 		
 		mf.showGear();
-		mf.getMyMenuBar().checkSetup(mf.getSetup());
+		mf.getMyMenuBar().checkSetup(app.getSetup());
+	}
+	
+	public static Application getApp() {
+		return app;
 	}
 
 }

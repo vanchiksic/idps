@@ -22,11 +22,11 @@ public class HitTable {
 				this.dodge = Math.max((0.065F-exp),0);
 				this.glance = 0.24F;
 				this.critCap = 1-this.miss-this.dodge-this.glance;
-				if ((cri-0.048F)>critCap)
+				if (cri>critCap)
 					setCritExceeded(2);
-				this.critU = cri-0.048F;
+				this.critU = cri;
 				this.critP = critU;
-				this.crit = Math.min(critCap,(cri-0.048F));
+				this.crit = Math.min(critCap,cri);
 				this.crit0 = this.crit;
 				this.hit = 1-this.miss-this.dodge-this.glance-this.crit;
 				this.hit0 = this.hit;
@@ -35,7 +35,7 @@ public class HitTable {
 				this.miss = Math.max((0.08F-hit),0);
 				this.dodge = Math.max((0.065F-exp),0);
 				this.glance = 0;
-				this.crit = Math.min((1-this.miss-this.dodge),(cri-0.048F));
+				this.crit = Math.min((1-this.miss-this.dodge),cri);
 				this.crit0 = this.crit;
 				this.hit = 1-this.miss-this.dodge-this.crit;
 				this.hit0 = this.hit;
@@ -47,7 +47,7 @@ public class HitTable {
 				if (talents.getSupriseattacks())
 					this.dodge = 0;
 				this.glance = 0;
-				this.crit = Math.min((1-this.miss-this.dodge),(cri-0.048F));
+				this.crit = Math.min((1-this.miss-this.dodge),cri);
 				this.crit0 = this.crit;
 				this.hit = 1-this.miss-this.dodge-this.crit;
 				this.hit0 = this.hit;

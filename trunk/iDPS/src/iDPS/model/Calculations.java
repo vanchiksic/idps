@@ -1,12 +1,12 @@
 package iDPS.model;
 
 import iDPS.Attributes;
+import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Weapon.weaponType;
-import iDPS.gui.MainFrame;
 
 public abstract class Calculations {
 	
@@ -677,7 +677,7 @@ public abstract class Calculations {
 	}
 	
 	public static Calculations createInstance() {
-		Setup s = MainFrame.getInstance().getSetup();
+		Setup s = Launcher.getApp().getSetup();
 		ModelType m = s.getTalents().getModel();
 		switch (m) {
 			default:

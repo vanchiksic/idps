@@ -4,18 +4,13 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
-import org.jdom.Document;
 import org.jdom.Element;
 
 import iDPS.Attributes;
-import iDPS.Persistency;
-import iDPS.gui.MainFrame;
-import iDPS.gui.MenuBar;
+import iDPS.FilterController.Filter;
 
 public class Item implements Comparable<Item>, Rateable {
-	
-	public enum Filter { heroics, naxx25, uld10n, uld10h, uld25n, uld25h, toc10n, toc10h, toc25n, toc25h, icc10n, icc10h, icc25n, icc25h }
-	
+		
 	private String icon;
 	private int id;
 	private int lvl;
@@ -157,37 +152,6 @@ public class Item implements Comparable<Item>, Rateable {
 	
 	public void setFilter(EnumSet<Filter> filter) {
 		this.filter = filter;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public static void saveFilter() {
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element filters = doc.getRootElement().getChild("filters");
-		filters.removeContent();
-		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
-		for (Filter f: Filter.values()) {
-			if (mb.isOneFilterChecked(EnumSet.of(f))) {
-				Element filter = new Element("filter");
-				filter.setText(f.name());
-				filters.getChildren().add(filter);
-			}
-		}
-		Persistency.saveXML(doc, Persistency.FileType.Settings);
-	}
-	
-	@SuppressWarnings("unchecked")
-	public static void loadFilter() {
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element profs = doc.getRootElement().getChild("filters");
-		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
-		if (profs.getChildren().size()>0) {
-			for (Filter f: Filter.values())
-				mb.setFilter(f, false);
-			for (Element e: (List<Element>) profs.getChildren()) {
-				Filter f = Filter.valueOf(e.getText());
-				mb.setFilter(f, true);
-			}
-		}
 	}
 
 }

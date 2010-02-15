@@ -1,9 +1,10 @@
 package iDPS.gear;
 
 import iDPS.Attributes;
+import iDPS.FilterController;
 import iDPS.Persistency;
-import iDPS.gui.MainFrame;
-import iDPS.gui.MenuBar;
+import iDPS.Launcher;
+import iDPS.FilterController.Filter;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -172,7 +173,7 @@ public class Armor extends Item {
 		while (iter.hasNext()) {
 			Armor item = iter.next();
 			if (item.matchesSlot(slotType) && (item.getFaction() == Faction.Both ||
-					(item.getFaction() == MainFrame.getInstance().getSetup().getRace().getFaction())))
+					(item.getFaction() == Launcher.getApp().getSetup().getRace().getFaction())))
 				matches.add(item);
 		}
 		return matches;
@@ -187,7 +188,7 @@ public class Armor extends Item {
 			if (item instanceof Weapon) {
 				Weapon weapon = (Weapon) item;
 				if (weapon.getType() == type && (item.getFaction() == Faction.Both ||
-						(item.getFaction() == MainFrame.getInstance().getSetup().getRace().getFaction())))
+						(item.getFaction() == Launcher.getApp().getSetup().getRace().getFaction())))
 					matches.add(item);
 			}
 		}
@@ -213,14 +214,14 @@ public class Armor extends Item {
 			if (item.getId()>0)
 				fullmap.put(item.getId(), item);
 		}
-		limit();
 	}
 	
 	public static void limit() {
+		System.out.println("> Limiting Equippable Items");
 		map = new HashMap<Integer,Armor>();
-		MenuBar mb = MainFrame.getInstance().getMyMenuBar();
+		FilterController fc = Launcher.getApp().getFilterController();
 		for (Armor i: fullmap.values()) {
-			if (i.getFilter().size() == 0 || mb.isOneFilterChecked(i.getFilter()))
+			if (i.getFilter().size() == 0 || fc.isOneFilterChecked(i.getFilter()))
 				map.put(i.getId(), i);
 		}
 	}

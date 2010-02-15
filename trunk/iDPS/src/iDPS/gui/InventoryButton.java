@@ -61,7 +61,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 	}
 	
 	public void changeToItem(Armor item) {
-		Gem[] gems = mainFrame.getSetup().getGems(slot);
+		Gem[] gems = mainFrame.getApp().getSetup().getGems(slot);
 		changeToItem(item, gems);
 	}
 	
@@ -82,7 +82,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		if (item.getIcon() != null)
 			changeIcon(item.getIcon());
 		String s = item.getToolTip();
-		Setup g = mainFrame.getSetup();
+		Setup g = mainFrame.getApp().getSetup();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
 			s += "<span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";
@@ -90,14 +90,14 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		}
 		setToolTipText(s);
 
-		if (mainFrame.getSetup().isEnchanted(slot)) {
+		if (mainFrame.getApp().getSetup().isEnchanted(slot)) {
 			b2 = BorderFactory.createLineBorder(Color.GREEN, 2);
 			b = BorderFactory.createCompoundBorder(b1, b2);
 			setBorder(b);
 		}
 		
 		int max = item.getMaxSocketIndex();
-		if (mainFrame.getSetup().hasExtraSocket(slot))
+		if (mainFrame.getApp().getSetup().hasExtraSocket(slot))
 			max++;
 		for (int i=0; i<=max; i++) {
 			socketButtons[i].updateColor();
@@ -121,16 +121,14 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		MainFrame f = MainFrame.getInstance();
 		SelectItemPanel ip = new SelectItemPanel(mainFrame, slot);
-		f.getSideScroll().setViewportView(ip);
+		mainFrame.getSideScroll().setViewportView(ip);
 	}
 	
 	public void mouseClicked(MouseEvent e) {
 		if (SwingUtilities.isRightMouseButton(e)) {
-			MainFrame f = MainFrame.getInstance();
 			SelectEnchantPanel ep = new SelectEnchantPanel(mainFrame, slot);
-			f.getSideScroll().setViewportView(ep);
+			mainFrame.getSideScroll().setViewportView(ep);
 		}
 	}
 

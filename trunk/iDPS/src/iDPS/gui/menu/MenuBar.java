@@ -1,20 +1,18 @@
-package iDPS.gui;
+package iDPS.gui.menu;
 
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Enchant;
-import iDPS.gear.Item;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
-import iDPS.gear.Armor;
-import iDPS.gear.Item.Filter;
 import iDPS.gear.Setup.Profession;
+import iDPS.gui.MainFrame;
+import iDPS.gui.OSXAdapter;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.EnumSet;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JCheckBoxMenuItem;
@@ -44,22 +42,19 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	private ItemSelectProfession[] iProfessions;
 	
 	private JMenu mFilter;
-	
-	private EnumSet<Filter> checkedFilters;
-	
+		
 	public MenuBar(MainFrame mainFrame) {
 		this.mainFrame = mainFrame;
-		checkedFilters = EnumSet.allOf(Filter.class);
 		
 		boolean MAC_OS_X = (System.getProperty("os.name").toLowerCase().startsWith("mac os x"));
         if (MAC_OS_X) {
             try {
                 // Generate and register the OSXAdapter, passing it a hash of all the methods we wish to
                 // use as delegates for various com.apple.eawt.ApplicationListener methods
-                OSXAdapter.setQuitHandler(this, getClass().getDeclaredMethod("quit", (Class[])null));
-                OSXAdapter.setAboutHandler(this, getClass().getDeclaredMethod("about", (Class[])null));
-                OSXAdapter.setPreferencesHandler(this, getClass().getDeclaredMethod("preferences", (Class[])null));
-                OSXAdapter.setFileHandler(this, getClass().getDeclaredMethod("loadImageFile", new Class[] { String.class }));
+                OSXAdapter.setQuitHandler(mainFrame.getApp(), mainFrame.getApp().getClass().getDeclaredMethod("exit", (Class[]) null));
+                //OSXAdapter.setAboutHandler(this, getClass().getDeclaredMethod("about", (Class[])null));
+                //OSXAdapter.setPreferencesHandler(this, getClass().getDeclaredMethod("preferences", (Class[])null));
+                //OSXAdapter.setFileHandler(this, getClass().getDeclaredMethod("loadImageFile", new Class[] { String.class }));
             } catch (Exception e) {
                 System.err.println("Error while loading the OSXAdapter:");
                 e.printStackTrace();
@@ -82,8 +77,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		createProfessionsMenu();
 		add(mProfessions);
 		
-		mFilter = new JMenu("Loot Filter");
-		createFilterMenu();
+		mFilter = new MenuFilter(mainFrame.getApp().getFilterController());
 		add(mFilter);
 	}
 	
@@ -119,7 +113,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mSetup.addSeparator();
 		
 		ArrayList<Setup> setups = Setup.getAll();
-		Setup curSetup = mainFrame.getSetup();
+		Setup curSetup = mainFrame.getApp().getSetup();
 		Collections.sort(setups);
 		iSetups = new ItemSelectGear[setups.size()];
 		ButtonGroup group = new ButtonGroup();
@@ -170,32 +164,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 	}
 	
-	public void createFilterMenu() {
-		mFilter.removeAll();
-		
-		ItemSelectFilter iFilter;
-		for (Filter f: Filter.values()) {
-			iFilter = new ItemSelectFilter(f.name(), f);
-			iFilter.setSelected(checkedFilters.contains(f));
-			mFilter.add(iFilter);
-		}
-	}
-	
-	public void setFilter(Filter f, boolean b) {
-		if (b)
-			checkedFilters.add(f);
-		else
-			checkedFilters.remove(f);
-	}
-	
-	public boolean isOneFilterChecked(EnumSet<Filter> fs) {
-		for (Filter f: fs) {
-			if (checkedFilters.contains(f))
-				return true;
-		}
-		return false;
-	}
-	
 	public void checkSetup(Setup setup) {
 		for (ItemSelectGear iSetup: iSetups)
 			iSetup.setSelected(iSetup.getSetup() == setup);
@@ -213,26 +181,26 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	}
 	
 	private void selectGearSetup(Setup setup) {
-		mainFrame.setSetup(setup);
+		mainFrame.getApp().setSetup(setup);
 		mainFrame.showGear();
 		checkSetup(setup);
 	}
 	
 	private void selectTalents(Talents talents) {
-		mainFrame.getSetup().setTalents(talents);
+		mainFrame.getApp().getSetup().setTalents(talents);
 		mainFrame.showStats();
 	}
 	
 	private void selectRace(Race race) {
-		mainFrame.getSetup().setRace(race);
+		mainFrame.getApp().getSetup().setRace(race);
 		mainFrame.showStats();
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == iGearSave)
-			Setup.save();
+			mainFrame.getApp().saveAllSetups();
 		else if (e.getSource() == iGearDup) {
-			Setup g = new Setup(mainFrame.getSetup());
+			Setup g = new Setup(mainFrame.getApp().getSetup());
 			g.clearId();
 			String s = (String) JOptionPane.showInputDialog(
 					mainFrame,
@@ -248,10 +216,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 			int really = JOptionPane.showConfirmDialog(
 					mainFrame,
 					null,
-					"Delete Gear Configuration '"+mainFrame.getSetup().getName()+"'",
+					"Delete Gear Configuration '"+mainFrame.getApp().getSetup().getName()+"'",
 					JOptionPane.YES_NO_OPTION);
 			if (really == JOptionPane.OK_OPTION) {
-				Setup.remove(mainFrame.getSetup());
+				Setup.remove(mainFrame.getApp().getSetup());
 				createGearMenu();
 				revalidate();
 				ArrayList<Setup> gears = Setup.getAll();
@@ -280,10 +248,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 					JOptionPane.PLAIN_MESSAGE,
 					null,
 					null,
-					mainFrame.getSetup().getName());
+					mainFrame.getApp().getSetup().getName());
 			if (s == null || s.trim().isEmpty())
 				return;
-			mainFrame.getSetup().setName(s.trim());
+			mainFrame.getApp().getSetup().setName(s.trim());
 			createGearMenu();
 			revalidate();
 		}
@@ -367,7 +335,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			Setup setup = mainFrame.getSetup();
+			Setup setup = mainFrame.getApp().getSetup();
 			setup.setProfession(profession, isSelected());
 			
 			switch (profession) {
@@ -393,22 +361,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		
 	}
 	
-	private class ItemSelectFilter extends JCheckBoxMenuItem implements ActionListener {
-		
-		private Filter filter;
-		
-		public ItemSelectFilter(String name, Filter filter) {
-			super(name);
-			this.filter = filter;
-			addActionListener(this);
-		}
 
-		public void actionPerformed(ActionEvent e) {
-			setFilter(filter, isSelected());
-			Armor.limit();
-			Item.saveFilter();
-		}
-		
-	}
 
 }

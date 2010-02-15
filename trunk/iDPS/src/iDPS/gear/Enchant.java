@@ -1,10 +1,10 @@
 package iDPS.gear;
 
 import iDPS.Attributes;
+import iDPS.Launcher;
 import iDPS.Persistency;
 import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Setup.Profession;
-import iDPS.gui.MainFrame;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -94,7 +94,7 @@ public class Enchant implements Comparable<Enchant>, Rateable {
 	public static void limit() {
 		map = new HashMap<Integer,Enchant>();
 		for (Enchant e: fullmap.values()) {
-			if (e.profession == null || MainFrame.getInstance().getSetup().hasProfession(e.profession))
+			if (e.profession == null || Launcher.getApp().getSetup().hasProfession(e.profession))
 				map.put(e.id, e);
 		}
 	}

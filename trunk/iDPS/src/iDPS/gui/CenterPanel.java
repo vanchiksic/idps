@@ -135,13 +135,13 @@ public class CenterPanel extends JPanel {
 	
 	public void showStats() {
 		Calculations calcs = Calculations.createInstance();
-		calcs.calculate(mainFrame.getSetup());
+		calcs.calculate(mainFrame.getApp().getSetup());
 		Modifiers mod = calcs.getModifiers();
 		if (mod == null)
 			return;
 		
 		fields[0].setText(String.format("%.0f", calcs.getTotalDPS()));
-		Attributes attr = mainFrame.getSetup().getAttributes();
+		Attributes attr = mainFrame.getApp().getSetup().getAttributes();
 		float atp = attr.getAtp();
 		atp += attr.getAgi() + attr.getStr();
 		fields[1].setText(String.format("%.0f", attr.getAgi()));

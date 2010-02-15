@@ -34,7 +34,7 @@ public class SelectGemPanel extends JPanel {
 		
 		int j = 0;
 		Gem gem, curGem;
-		Setup gear = mainFrame.getSetup();
+		Setup gear = mainFrame.getApp().getSetup();
 		curGem = gear.getGem(slot,index);
 		gc = new GemComparison(gear, slot, index);
 		ArrayList<Gem> comparedGems = gc.getComparedGems();
@@ -150,7 +150,7 @@ public class SelectGemPanel extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			mainFrame.showBuffCentral();
-			mainFrame.getSetup().setGem(slot, index, gem);
+			mainFrame.getApp().getSetup().setGem(slot, index, gem);
 			mainFrame.showGem(gem, slot, index);
 			mainFrame.showStats();
 		}

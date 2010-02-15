@@ -1,6 +1,5 @@
 package iDPS;
 
-import iDPS.gui.MainFrame;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;
@@ -212,8 +211,6 @@ public class Talents {
 			t = new Talents(s);
 			map.put(t.id, t);
 		}
-		
-		MainFrame.getInstance().getMyMenuBar().createTalentsMenu();
 	}
 
 	public Calculations.ModelType getModel() {

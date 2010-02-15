@@ -15,16 +15,14 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
-import iDPS.BuffCentral;
-import iDPS.gear.Enchant;
-import iDPS.gear.Setup;
+import iDPS.Application;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
+import iDPS.gui.menu.MenuBar;
 
 public class MainFrame extends JFrame {
-	
-	private static MainFrame instance;
-	
+		
+	private Application app;
 	private MenuBar menuBar;
 	private BuffPanel buffPanel;
 	private ImportProfileDialog importFrame = null;
@@ -32,18 +30,16 @@ public class MainFrame extends JFrame {
 	private InventoryButton[] buttons;
 	private JScrollPane sideScroll;
 	
-	private Setup setup;
-
-	public MainFrame() {
+	public MainFrame(Application app) {
 		super("iDPS");
+		this.app = app;
 		
 		menuBar = new MenuBar(this);
-		
 		setJMenuBar(menuBar);
 		
 		buttons = new InventoryButton[19];
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		getContentPane().setLayout(new BorderLayout());
 		
@@ -128,8 +124,7 @@ public class MainFrame extends JFrame {
 		sideScroll.setPreferredSize(new Dimension(430,490));
 		add(sideScroll, BorderLayout.LINE_END);
 		
-		BuffCentral buffCentral = new BuffCentral();
-		buffPanel = new BuffPanel(buffCentral);
+		buffPanel = new BuffPanel(this, app.getBuffController());
 		showBuffCentral();
 		
 		pack();
@@ -143,8 +138,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void refreshItem(int slot) {
-		Armor item = setup.getItem(slot);
-		Gem[] gems = setup.getGems(slot);
+		Armor item = app.getSetup().getItem(slot);
+		Gem[] gems = app.getSetup().getGems(slot);
 		buttons[slot].changeToItem(item, gems);
 	}
 	
@@ -161,18 +156,12 @@ public class MainFrame extends JFrame {
 	
 	public void showGear() {
 		for (int i=0; i<=18; i++)
-			buttons[i].changeToItem(setup.getItem(i), setup.getGems(i));
+			buttons[i].changeToItem(app.getSetup().getItem(i), app.getSetup().getGems(i));
 		centerP.showStats();
 	}
 	
 	public void showStats() {
 		centerP.showStats();
-	}
-	
-	public static MainFrame getInstance() {
-		if (instance == null)
-			instance = new MainFrame();
-		return instance;
 	}
 
 	public JScrollPane getSideScroll() {
@@ -181,10 +170,6 @@ public class MainFrame extends JFrame {
 	
 	public void showBuffCentral() {
 		sideScroll.setViewportView(buffPanel);
-	}
-	
-	public void about() {
-		
 	}
 	
 	public MenuBar getMyMenuBar() {
@@ -196,16 +181,13 @@ public class MainFrame extends JFrame {
 			importFrame = new ImportProfileDialog(this);
 		importFrame.setVisible(true);
 	}
-	
-	public Setup getSetup() {
-		return setup;
-	}
 
-	public void setSetup(Setup setup) {
-		this.setup = setup;
-		// Limit Gems and Enchants to our Professions
-		Gem.limit();
-		Enchant.limit();
+	public Application getApp() {
+		return app;
+	}
+	
+	public void dispose() {
+		app.exit();
 	}
 
 }

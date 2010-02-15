@@ -34,7 +34,7 @@ public class SelectEnchantPanel extends JPanel {
 		
 		int j = 0;
 		Enchant e, curEnchant;
-		Setup gear = mainFrame.getSetup();
+		Setup gear = mainFrame.getApp().getSetup();
 		curEnchant = gear.getEnchant(slot);
 		ec = new EnchantComparison(gear, slot);
 		ArrayList<Enchant> comparedEnchants = ec.getComparedEnchants();
@@ -124,7 +124,7 @@ public class SelectEnchantPanel extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			mainFrame.showBuffCentral();
-			mainFrame.getSetup().setEnchant(slot, enchant);
+			mainFrame.getApp().getSetup().setEnchant(slot, enchant);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();
 		}

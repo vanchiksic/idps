@@ -1,8 +1,12 @@
 package iDPS.model;
 
 import iDPS.Attributes;
+import iDPS.BuffController;
+import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
+import iDPS.BuffController.Buff;
+import iDPS.BuffController.Debuff;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Setup.Profession;
@@ -34,12 +38,14 @@ public class Modifiers {
 	private Attributes attr;
 	private Setup setup;
 	private Talents talents;
+	private BuffController bc;
 	
 	public Modifiers(Attributes attr, Setup setup) {
 		totalATP = 0;
 		this.attr = attr;
 		this.setup = setup;
 		this.talents = setup.getTalents();
+		bc = Launcher.getApp().getBuffController();
 		calcMods();
 	}
 	
@@ -55,9 +61,59 @@ public class Modifiers {
 		arp = attr.getArp();
 		
 		// Apply Buffs
-		agi += 229; str += 229;
-		agi *= 1.1F; str *= 1.1F;
-		atp += 687 + 260;
+		
+		for (Buff b: Buff.values()) {
+			if (!bc.hasBuff(b))
+				continue;
+			switch (b) {
+			case agilityStrength:
+				agi += 155;
+				str += 155;
+				break;
+			case agilityStrengthImp:
+				agi += 23;
+				str += 23;
+				break;
+			case statsAdditive:
+				agi += 37;
+				str += 37;
+				break;
+			case statsAdditiveImp:
+				agi += 15;
+				str += 15;
+				break;
+			case attackPower:
+				atp += 550;
+				break;
+			case attackPowerImp:
+				atp += 138;
+				break;
+				
+			case foodAgi:
+				agi += 40;
+				break;
+			case foodArp:
+				arp += 40;
+				break;
+			case foodAtp:
+				atp += 80;
+				break;
+			case foodExp:
+				exp += 40;
+				break;
+			case foodHst:
+				hst += 40;
+				break;
+			}
+		}
+		
+		if (bc.hasBuff(Buff.statsMultiplicative)) {
+			agi *= 1.1F;
+			str *= 1.1F;
+		}
+			
+		// Flask
+		atp += 180;
 		if (setup.hasProfession(Profession.Alchemy))
 			atp += 80;
 		
@@ -66,16 +122,31 @@ public class Modifiers {
 				
 		float baseAgi = setup.getRace().getAttr().getAgi()-166;
 		gHit = hit/cHIT + 0.05F;
-		gCri = (agi-baseAgi)/cAGI + cri/cCRIT + 0.13F;
+		gCri = (agi-baseAgi)/cAGI + cri/cCRIT + 0.05F - 0.048F;
+		if (bc.hasBuff(Buff.physicalCrit))
+			gCri += 0.05F;
+		if (bc.hasDebuff(Debuff.crit))
+			gCri += 0.03F;
 		gExp = exp/cEXP + 0.0025F * talents.getExpertise();
 		
-		gHst  = 1.4F * 1.2F * talents.getLightref();
-	
+		gHst  = 1.4F * talents.getLightref();
+		if (bc.hasBuff(Buff.meleHasteImp))
+			gHst *= 1.2F;
+		else if (bc.hasBuff(Buff.meleHaste))
+			gHst *= 1.16F;
 		gHst -= 1;
 		gHstGear = hst/cHST;
 		
-		mHit = hit/cPHIT + 0.05F + 0.03F;
-		mCri = cri/cCRIT + 0.05F + 0.05F + 0.03F - 0.03F;
+		mHit = hit/cPHIT + 0.05F;
+		if (bc.hasDebuff(Debuff.spellHit))
+			mHit += 0.03F;
+		mCri = cri/cCRIT - 0.03F;
+		if (bc.hasBuff(Buff.spellCrit))
+			mCri += 0.05F;
+		if (bc.hasDebuff(Debuff.spellCrit))
+			mCri += 0.05F;
+		if (bc.hasDebuff(Debuff.crit))
+			mCri += 0.03F;
 		
 		Weapon.weaponType wt1 = setup.getWeapon1().getType();
 		Weapon.weaponType wt2 = setup.getWeapon2().getType();
@@ -149,7 +220,11 @@ public class Modifiers {
 	private float calcArmorMod(float arp) {
 		float armorC = (467.5F * 80F - 22167.5F);
 		int armorDefault = 10643;
-		float armor = (armorDefault * 0.8F * 0.95F);
+		float armor = armorDefault;
+		if (bc.hasDebuff(Debuff.armorMajor))
+			armor *= 0.8F;
+		if (bc.hasDebuff(Debuff.armorMinor))
+			armor *= 0.95F;
 		float armorRemovable = Math.min(((armorC+armor)/3F),armor);
 		armor = armor - (armorRemovable * Math.min(arp/cARP, 1F));
 		float dr = armor / (armor + (467.5F * 80F - 22167.5F));
@@ -290,7 +365,11 @@ public class Modifiers {
 	}
 	
 	public float getTotalATP() {
-		return totalATP * 1.1F * (1+0.02F*talents.getSavageCombat());
+		float ap = totalATP;
+		ap *= (1+0.02F*talents.getSavageCombat());
+		if (bc.hasBuff(Buff.attackPowerMult))
+			ap *= 1.1F;
+		return ap;
 	}
 
 }

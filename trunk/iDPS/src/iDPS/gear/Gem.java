@@ -9,10 +9,10 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import iDPS.Attributes;
+import iDPS.Launcher;
 import iDPS.Persistency;
 import iDPS.gear.Setup.Profession;
 import iDPS.gear.Armor.SocketType;
-import iDPS.gui.MainFrame;
 
 
 public class Gem extends Item {
@@ -111,7 +111,7 @@ public class Gem extends Item {
 	public static void limit() {
 		map = new HashMap<Integer,Gem>();
 		for (Gem g: fullmap.values()) {
-			if (g.profession == null || MainFrame.getInstance().getSetup().hasProfession(g.profession))
+			if (g.profession == null || Launcher.getApp().getSetup().hasProfession(g.profession))
 				map.put(g.getId(), g);
 		}
 	}

@@ -1,11 +1,11 @@
 package iDPS.gear;
 
+import iDPS.Application;
 import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.gear.Armor.SocketType;
-import iDPS.gui.MainFrame;
 import iDPS.model.Calculations;
 
 import java.util.ArrayList;
@@ -143,9 +143,6 @@ public class Setup implements Comparable<Setup> {
 	
 	public Setup(String name) {
 		this();
-		if (map == null)
-			Setup.load();
-		
 		this.id = Setup.nextFreeId;
 		Setup.nextFreeId++;
 		this.name = name;
@@ -512,9 +509,13 @@ public class Setup implements Comparable<Setup> {
 			return new ArrayList<Setup>(map.values());
 		return new ArrayList<Setup>();
 	}
+	
+	public static void load() {
+		load(null);
+	}
 
 	@SuppressWarnings("unchecked")
-	public static void load() {
+	public static void load(Application app) {
 		map = new HashMap<Integer,Setup>();
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element root = doc.getRootElement();
@@ -527,12 +528,10 @@ public class Setup implements Comparable<Setup> {
 			Setup s = new Setup(e);
 			if (s.getId()>0) {
 				map.put(s.getId(), s);
-				if (s.getId()==defGear)
-					MainFrame.getInstance().setSetup(s);
+				if (app != null && s.getId()==defGear)
+					app.setSetup(s);
 			}
 		}
-		
-		MainFrame.getInstance().getMyMenuBar().createGearMenu();
 	}
 
 	public static void remove(Setup g) {
@@ -540,13 +539,13 @@ public class Setup implements Comparable<Setup> {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static void save() {
+	public static void save(Application app) {
 		Element root, gearconfigs;
-    Document document = Persistency.openXML(Persistency.FileType.Settings);
+		Document document = Persistency.openXML(Persistency.FileType.Settings);
 		root = document.getRootElement();
 		root.removeChild("gearconfigs");
 		gearconfigs = new Element("gearconfigs");
-		gearconfigs.setAttribute("default", Integer.toString(MainFrame.getInstance().getSetup().getId()));
+		gearconfigs.setAttribute("default", Integer.toString(app.getSetup().getId()));
 		root.getChildren().add(gearconfigs);
 		Iterator<Setup> i = map.values().iterator();
 		while (i.hasNext())

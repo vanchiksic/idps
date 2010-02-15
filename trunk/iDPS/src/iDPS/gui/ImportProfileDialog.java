@@ -152,7 +152,7 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
         String realm = (String)mRealms.getSelectedItem();
         String character = mCharacterName.getText();
         
-        Setup gear = mainFrame.getSetup().clone();
+        Setup gear = mainFrame.getApp().getSetup().clone();
         gear.reset();
         
         try {
@@ -218,10 +218,10 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(MainFrame.getInstance(), "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
+            JOptionPane.showMessageDialog(mainFrame, "Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(), "Import failed", JOptionPane.ERROR_MESSAGE); 
             return;
         }
-        mainFrame.setSetup(gear);
+        mainFrame.getApp().setSetup(gear);
         mainFrame.showGear();
         Setup.add(gear);
         mainFrame.getMyMenuBar().createGearMenu();

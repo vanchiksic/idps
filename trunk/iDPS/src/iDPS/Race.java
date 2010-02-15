@@ -1,7 +1,6 @@
 package iDPS;
 
 import iDPS.gear.Armor.Faction;
-import iDPS.gui.MainFrame;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -91,8 +90,6 @@ public class Race {
 			Race r = new Race(t);
 			map.put(r.id, r);
 		}
-		
-		MainFrame.getInstance().getMyMenuBar().createRacesMenu();
 	}
 	
 	public static ArrayList<Race> getAll() {

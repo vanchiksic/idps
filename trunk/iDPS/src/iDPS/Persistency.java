@@ -35,7 +35,7 @@ public class Persistency {
 				document = new Document(root);
 			}
 			boolean foundGear = false, foundFilters = false,
-				foundImport = false;
+				foundImport = false, foundBuffs = false, foundDebuffs = false;
 			Iterator<Element> iter = root.getChildren().iterator();
 			while (iter.hasNext()) {
 				elem = iter.next();
@@ -45,11 +45,13 @@ public class Persistency {
 					foundFilters = true;
 				else if (elem.getName().equals("import"))
 					foundImport = true;
+				else if (elem.getName().equals("buffs"))
+					foundBuffs = true;
+				else if (elem.getName().equals("debuffs"))
+					foundDebuffs = true;
 				else
 					iter.remove();
 			}
-			if (foundGear && foundFilters && foundImport)
-				return;
 			if (!foundGear) {
 				Element gearconfigs = new Element("gearconfigs");
 				gearconfigs.setAttribute("default", "1");
@@ -65,6 +67,14 @@ public class Persistency {
 			}
 			if (!foundImport) {
 				Element filters = new Element("import");
+				root.getChildren().add(filters);
+			}
+			if (!foundBuffs) {
+				Element filters = new Element("buffs");
+				root.getChildren().add(filters);
+			}
+			if (!foundDebuffs) {
+				Element filters = new Element("debuffs");
 				root.getChildren().add(filters);
 			}
 			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(file),"UTF-8");
