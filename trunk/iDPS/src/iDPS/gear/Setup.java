@@ -569,8 +569,12 @@ public class Setup implements Comparable<Setup> {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element root = doc.getRootElement();
 		Element gearconfigs = root.getChild("gearconfigs");
-		if (gearconfigs == null)
+		if (gearconfigs == null) {
+			Setup s = new Setup("default");
+			Setup.add(s);
+			app.setSetup(s);
 			return;
+		}
 		int defGear = Integer.valueOf(gearconfigs.getAttributeValue("default"));
 		List<Element> l = gearconfigs.getChildren();
 		Iterator<Element> li = l.iterator();

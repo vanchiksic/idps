@@ -167,7 +167,7 @@ public class Modifiers {
 			mHit += 0.03F;
 		if (bc.hasBuff(Buff.partyHit))
 			mHit += 0.01F;
-		mCri = cri/cCRIT - 0.03F;
+		mCri = Math.max(0, (cri/cCRIT - 0.03F));
 		if (bc.hasBuff(Buff.spellCrit))
 			mCri += 0.05F;
 		if (bc.hasDebuff(Debuff.spellCrit))
