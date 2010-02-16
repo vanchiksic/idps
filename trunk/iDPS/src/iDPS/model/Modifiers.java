@@ -6,6 +6,7 @@ import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.BuffController.Buff;
+import iDPS.BuffController.Consumable;
 import iDPS.BuffController.Debuff;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
@@ -40,26 +41,18 @@ public class Modifiers {
 	private Talents talents;
 	private BuffController bc;
 	
-	public Modifiers(Attributes attr, Setup setup) {
+	public Modifiers(Attributes inject, Setup setup) {
 		totalATP = 0;
-		this.attr = attr;
+		attr = new Attributes(inject);
+		attr.add(setup.getAttributes());
 		this.setup = setup;
 		this.talents = setup.getTalents();
 		bc = Launcher.getApp().getBuffController();
+		calcAttributes();
 		calcMods();
 	}
 	
-	public void calcMods() {
-		float atp, agi, str, hit, cri, exp, hst, arp;
-		atp = attr.getAtp();
-		agi = attr.getAgi();
-		str = attr.getStr();
-		hit = attr.getHit();
-		cri = attr.getCri();
-		exp = attr.getExp();
-		hst = attr.getHst();
-		arp = attr.getArp();
-		
+	private void calcAttributes() {
 		// Apply Buffs
 		
 		for (Buff b: Buff.values()) {
@@ -67,58 +60,88 @@ public class Modifiers {
 				continue;
 			switch (b) {
 			case agilityStrength:
-				agi += 155;
-				str += 155;
+				attr.incAgi(155);
+				attr.incStr(155);
 				break;
 			case agilityStrengthImp:
-				agi += 23;
-				str += 23;
+				attr.incAgi(23);
+				attr.incStr(23);
 				break;
 			case statsAdditive:
-				agi += 37;
-				str += 37;
+				attr.incAgi(37);
+				attr.incStr(37);
 				break;
 			case statsAdditiveImp:
-				agi += 15;
-				str += 15;
+				attr.incAgi(15);
+				attr.incStr(15);
 				break;
 			case attackPower:
-				atp += 550;
+				attr.incAtp(550);
 				break;
 			case attackPowerImp:
-				atp += 138;
-				break;
-				
-			case foodAgi:
-				agi += 40;
-				break;
-			case foodArp:
-				arp += 40;
-				break;
-			case foodAtp:
-				atp += 80;
-				break;
-			case foodExp:
-				exp += 40;
-				break;
-			case foodHst:
-				hst += 40;
+				attr.incAtp(138);
 				break;
 			}
 		}
 		
+		for (Consumable c: Consumable.values()) {
+			if (!bc.hasConsumable(c))
+				continue;
+			switch (c) {
+			case flask:
+				attr.incAtp(180);
+				break;
+			case foodAgi:
+				attr.incAgi(40);
+				break;
+			case foodArp:
+				attr.incArp(40);
+				break;
+			case foodAtp:
+				attr.incAtp(80);
+				break;
+			case foodExp:
+				attr.incExp(40);
+				break;
+			case foodHit:
+				attr.incHit(40);
+				break;
+			case foodHst:
+				attr.incHst(40);
+				break;
+			}
+		}
+
+		// Flask of the North / Mixology
+		if (setup.hasProfession(Profession.Alchemy))
+			attr.incAtp(80);
+		
 		if (bc.hasBuff(Buff.statsMultiplicative)) {
-			agi *= 1.1F;
-			str *= 1.1F;
+			attr.applyStatMult();
 		}
 			
-		// Flask
-		atp += 180;
-		if (setup.hasProfession(Profession.Alchemy))
-			atp += 80;
+		if (bc.hasConsumable(Consumable.flask) && setup.hasProfession(Profession.Alchemy))
+			attr.incAtp(80);
 		
-		// calc total atp
-		totalATP = (atp + agi + str);
+		// Calc Total ATP
+		attr.finalizeStats();
+		if (bc.hasBuff(Buff.attackPowerMult))
+			attr.applyAtpMult(1.1F);
+		if (talents.getSavageCombat()>0) {
+			attr.applyAtpMult(1+0.02F*talents.getSavageCombat());
+		}
+	}
+	
+	public void calcMods() {
+		totalATP = attr.getAtp();
+		
+		float agi, hit, cri, exp, hst, arp;
+		agi = attr.getAgi();
+		hit = attr.getHit();
+		cri = attr.getCri();
+		exp = attr.getExp();
+		hst = attr.getHst();
+		arp = attr.getArp();
 				
 		float baseAgi = setup.getRace().getAttr().getAgi()-166;
 		gHit = hit/cHIT + 0.05F;
@@ -365,11 +388,11 @@ public class Modifiers {
 	}
 	
 	public float getTotalATP() {
-		float ap = totalATP;
-		ap *= (1+0.02F*talents.getSavageCombat());
-		if (bc.hasBuff(Buff.attackPowerMult))
-			ap *= 1.1F;
-		return ap;
+		return totalATP;
+	}
+
+	public Attributes getAttr() {
+		return attr;
 	}
 
 }

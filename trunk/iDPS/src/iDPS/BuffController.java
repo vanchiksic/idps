@@ -15,15 +15,17 @@ public class BuffController {
 	public enum Buff { attackPower, attackPowerImp, attackPowerMult,
 		damage, meleHaste, meleHasteImp,
 		physicalCrit, spellCrit, statsAdditive, statsAdditiveImp,
-		statsMultiplicative, agilityStrength, agilityStrengthImp,
-		food, foodAgi, foodArp, foodAtp, foodExp, foodHst }
+		statsMultiplicative, agilityStrength, agilityStrengthImp }
+	public enum Consumable { flask,
+		foodAgi, foodArp, foodAtp, foodExp, foodHit, foodHst }
 	public enum Debuff { armorMajor, armorMajorMaintain, armorMinor,
 		crit, physicalDamage, spellCrit, spellDamage, spellHit }
 	
 	private final PropertyChangeSupport pcs;
-	private final EnumSet<Buff> foodBuffs = EnumSet.range(Buff.foodAgi, Buff.foodHst);
+	private final EnumSet<Consumable> foodBuffs = EnumSet.range(Consumable.foodAgi, Consumable.foodHst);
 	
 	private EnumMap<Buff,Boolean> buffs;
+	private EnumMap<Consumable,Boolean> consumables;
 	private EnumMap<Debuff,Boolean> debuffs;
 	
 	public BuffController() {
@@ -31,6 +33,9 @@ public class BuffController {
 		buffs = new EnumMap<Buff,Boolean>(Buff.class);
 		for (Buff b: Buff.values())
 			buffs.put(b, false);
+		consumables = new EnumMap<Consumable,Boolean>(Consumable.class);
+		for (Consumable b: Consumable.values())
+			consumables.put(b, false);
 		debuffs = new EnumMap<Debuff,Boolean>(Debuff.class);
 		for (Debuff b: Debuff.values())
 			debuffs.put(b, false);
@@ -60,24 +65,23 @@ public class BuffController {
 			case agilityStrength:
 				setBuff(Buff.agilityStrengthImp, false);
 				break;
-			case food:
-				setBuff(Buff.foodAgi, false);
-				setBuff(Buff.foodArp, false);
-				setBuff(Buff.foodAtp, false);
-				setBuff(Buff.foodExp, false);
-				setBuff(Buff.foodHst, false);
-				break;
 			}
-		} else {
-			switch (b) {
-			case food:
-				setBuff(Buff.foodAtp, true);
-				break;
-			}
+		}
+	}
+	
+	public boolean hasConsumable(Consumable c) {
+		return consumables.get(c);
+	}
+	
+	public void setConsumable(Consumable b, boolean newValue) {
+		boolean oldValue = consumables.get(b);
+		consumables.put(b, newValue);
+		pcs.firePropertyChange(b.name(), oldValue, newValue);
+		if (newValue) {
 			if (foodBuffs.contains(b)) {
-				for (Buff fb: foodBuffs) {
+				for (Consumable fb: foodBuffs) {
 					if (fb != b)
-						setBuff(fb , false);
+						setConsumable(fb , false);
 				}
 			}
 		}
@@ -118,6 +122,16 @@ public class BuffController {
 				elem.getChildren().add(elem2);
 			}
 		}
+		// save Consumables
+		elem = doc.getRootElement().getChild("consumables");
+		elem.removeContent();
+		for (Consumable b: Consumable.values()) {
+			if (hasConsumable(b)) {
+				Element elem2 = new Element("consumable");
+				elem2.setText(b.name());
+				elem.getChildren().add(elem2);
+			}
+		}
 		// save Debuffs
 		elem = doc.getRootElement().getChild("debuffs");
 		elem.removeContent();
@@ -139,16 +153,30 @@ public class BuffController {
 		elem = doc.getRootElement().getChild("buffs");
 		if (elem.getChildren().size()>0) {
 			for (Element e: (List<Element>) elem.getChildren()) {
-				Buff b = Buff.valueOf(e.getText());
-				buffs.put(b, true);
+				try {
+					Buff b = Buff.valueOf(e.getText());
+					buffs.put(b, true);
+				} catch (IllegalArgumentException ex) { }
+			}
+		}
+		// load Consumables
+		elem = doc.getRootElement().getChild("consumables");
+		if (elem.getChildren().size()>0) {
+			for (Element e: (List<Element>) elem.getChildren()) {
+				try {
+					Consumable b = Consumable.valueOf(e.getText());
+					consumables.put(b, true);
+				} catch (IllegalArgumentException ex) { }
 			}
 		}
 		// load Debuffs
 		elem = doc.getRootElement().getChild("debuffs");
 		if (elem.getChildren().size()>0) {
 			for (Element e: (List<Element>) elem.getChildren()) {
-				Debuff b = Debuff.valueOf(e.getText());
-				debuffs.put(b, true);
+				try {
+					Debuff b = Debuff.valueOf(e.getText());
+					debuffs.put(b, true);
+				} catch (IllegalArgumentException ex) { }
 			}
 		}
 	}

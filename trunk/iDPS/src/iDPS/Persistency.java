@@ -35,7 +35,8 @@ public class Persistency {
 				document = new Document(root);
 			}
 			boolean foundGear = false, foundFilters = false,
-				foundImport = false, foundBuffs = false, foundDebuffs = false;
+				foundImport = false, foundBuffs = false, foundDebuffs = false,
+				foundConsumables = false;
 			Iterator<Element> iter = root.getChildren().iterator();
 			while (iter.hasNext()) {
 				elem = iter.next();
@@ -47,6 +48,8 @@ public class Persistency {
 					foundImport = true;
 				else if (elem.getName().equals("buffs"))
 					foundBuffs = true;
+				else if (elem.getName().equals("consumables"))
+					foundConsumables = true;
 				else if (elem.getName().equals("debuffs"))
 					foundDebuffs = true;
 				else
@@ -71,6 +74,10 @@ public class Persistency {
 			}
 			if (!foundBuffs) {
 				Element filters = new Element("buffs");
+				root.getChildren().add(filters);
+			}
+			if (!foundConsumables) {
+				Element filters = new Element("consumables");
 				root.getChildren().add(filters);
 			}
 			if (!foundDebuffs) {

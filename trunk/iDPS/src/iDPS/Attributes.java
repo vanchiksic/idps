@@ -11,8 +11,10 @@ public class Attributes {
 	
 	public enum Type { ATP, AGI, STR, ARP, CRI, EXP, HIT, HST }
 	private EnumMap<Type,Float> values;
+	private boolean finalized;
 	
 	public Attributes() {
+		finalized = false;
 		values = new EnumMap<Type,Float>(Type.class);
 	}
 	
@@ -42,12 +44,61 @@ public class Attributes {
 			}
 		}
 	}
+
+	/**
+	 * Finalizes the Attributes.
+	 * ATP, AGI and STR will be added up to the final ATP value.
+	 * Can only be called once, and blocks this Attribute object from Attribute changes.
+	 */
+	public void finalizeStats() {
+		if (finalized)
+			return;
+		float agi = get(Type.AGI);
+		float str = get(Type.STR);
+		float atp = get(Type.ATP);
+		atp = agi + str + atp;
+		set(Type.ATP, atp);
+		finalized = true;
+	}
 	
+	/**
+	 * Applys the 10% Stat multiplier.
+	 * Can only be called on unfinalized Attributes instances.
+	 */
+	public void applyStatMult() {
+		if (finalized)
+			return;
+		set(Type.AGI, get(Type.AGI)*1.1F);
+		set(Type.STR, get(Type.STR)*1.1F);
+	}
+	
+	/**
+	 * Applys an ATP multiplier.
+	 * Used for Buffs like Unleashed Rage and Savage Combat.
+	 * Can only be called on finalized Attributes instances.
+	 * @param mult Multiplier to apply to the ATP value
+	 */
+	public void applyAtpMult(float mult) {
+		if (!finalized)
+			return;
+		if (values.containsKey(Type.ATP))
+			values.put(Type.ATP, values.get(Type.ATP)*mult);
+	}
+	
+	/**
+	 * Sets the specified Attribute Type to the new value
+	 * @param t Attribute Type
+	 * @param value new Value
+	 */
 	public void set(Type t, float value) {
+		if (finalized)
+			return;
 		values.put(t, value);
 	}
 	
 	public void inc(Type t, float value) {
+		if (finalized)
+			return;
 		set(t, get(t)+value);
 	}
 	
@@ -229,25 +280,29 @@ public class Attributes {
 	}
 	
 	 private String join(AbstractCollection<String> s, String delimiter) {
-     StringBuffer buffer = new StringBuffer();
-     Iterator<String> iter = s.iterator();
-     if (iter.hasNext()) {
-         buffer.append(iter.next());
-         while (iter.hasNext()) {
-             buffer.append(delimiter);
-             buffer.append(iter.next());
-         }
-     }
-     return buffer.toString();
- }
+	     StringBuffer buffer = new StringBuffer();
+	     Iterator<String> iter = s.iterator();
+	     if (iter.hasNext()) {
+	         buffer.append(iter.next());
+	         while (iter.hasNext()) {
+	             buffer.append(delimiter);
+	             buffer.append(iter.next());
+	         }
+	     }
+	     return buffer.toString();
+	 }
 	
 	public void add(Attributes inc) {
+		if (finalized)
+			return;
 		for (Type t: Type.values()) {
 			inc(t, inc.get(t));
 		}
 	}
 	
 	public void sub(Attributes sub) {
+		if (finalized)
+			return;
 		for (Type t: Type.values()) {
 			inc(t, -sub.get(t));
 		}

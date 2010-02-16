@@ -80,7 +80,7 @@ public class CenterPanel extends JPanel {
 		c.insets = new Insets(10,0,0,0);
 		
 		c.gridx = 0; c.gridy = 1; c.gridwidth = 2;
-		label = new JLabel("Gear Stats");
+		label = new JLabel("Stats");
 		label.setHorizontalAlignment(JLabel.CENTER);
 		add(label, c);
 		
@@ -142,10 +142,9 @@ public class CenterPanel extends JPanel {
 		
 		fields[0].setText(String.format("%.0f", calcs.getTotalDPS()));
 		Attributes attr = mainFrame.getApp().getSetup().getAttributes();
-		float atp = attr.getAtp();
-		atp += attr.getAgi() + attr.getStr();
+		attr = mod.getAttr();
 		fields[1].setText(String.format("%.0f", attr.getAgi()));
-		fields[2].setText(String.format("%.0f", atp));
+		fields[2].setText(String.format("%.0f", attr.getAtp()));
 		fields[3].setText(String.format("%.0f", attr.getHit()));
 		fields[4].setText(String.format("%.0f", attr.getCri()));
 		fields[5].setText(String.format("%.0f", attr.getHst()));

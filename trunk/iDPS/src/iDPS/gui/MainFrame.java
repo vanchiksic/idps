@@ -10,6 +10,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -19,12 +20,15 @@ import iDPS.Application;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.menu.MenuBar;
+import iDPS.gui.sidepanel.BuffPanel;
+import iDPS.gui.sidepanel.ConsumablePanel;
+import iDPS.gui.sidepanel.DebuffPanel;
 
 public class MainFrame extends JFrame {
 		
 	private Application app;
 	private MenuBar menuBar;
-	private BuffPanel buffPanel;
+	private JPanel buffPanel;
 	private ImportProfileDialog importFrame = null;
 	private CenterPanel centerP;
 	private InventoryButton[] buttons;
@@ -124,7 +128,16 @@ public class MainFrame extends JFrame {
 		sideScroll.setPreferredSize(new Dimension(430,490));
 		add(sideScroll, BorderLayout.LINE_END);
 		
-		buffPanel = new BuffPanel(this, app.getBuffController());
+		buffPanel = new JPanel();
+		JTabbedPane tp = new JTabbedPane();
+		JPanel bp = new BuffPanel(this, app.getBuffController());
+		JPanel cp = new ConsumablePanel(this, app.getBuffController());
+		JPanel dbp = new DebuffPanel(this, app.getBuffController());
+		tp.addTab("Buffs", bp);
+		tp.addTab("Consumables", cp);
+		tp.addTab("Debuffs", dbp);
+		tp.setPreferredSize(new Dimension(250,400));
+		buffPanel.add(tp);
 		showBuffCentral();
 		
 		pack();

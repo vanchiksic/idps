@@ -11,7 +11,6 @@ import iDPS.gear.Weapon.weaponType;
 public abstract class Calculations {
 	
 	public enum ModelType { Combat, Mutilate };
-	protected Attributes attrTotal;
 	
 	protected float avgCpFin, rupPerCycle;
 	float ppsIP1, ppsIP2;
@@ -107,10 +106,8 @@ public abstract class Calculations {
 			c.calculate(attr, setup);
 			epARP = (c.total - total) / dpsATP;
 		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -492,7 +489,7 @@ public abstract class Calculations {
 		calculate(null, g);
 	}
 	
-	public void calculate(Attributes a, Setup g) {
+	public void calculate(Attributes inject, Setup g) {
 		if (g ==null) {
 			System.err.println("Cant calc with no setup!");
 			return;
@@ -501,11 +498,9 @@ public abstract class Calculations {
 		
 		talents = g.getTalents();
 		
-		attrTotal = new Attributes(a);
 		setup = g;
 		
-		attrTotal.add(setup.getAttributes());
-		mod = new Modifiers(attrTotal, setup);
+		mod = new Modifiers(inject, setup);
 		
 		//System.out.println(">> Iteration 1");
 		calcCycle();
