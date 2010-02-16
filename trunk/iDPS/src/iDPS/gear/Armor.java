@@ -207,7 +207,7 @@ public class Armor extends Item {
 		Element root = doc.getRootElement();
 		for (Element e: (List<Element>) root.getChildren()) {
 			String s = e.getChildText("slot");
-			if (s != null && (s.equals("MainHand") || s.equals("OneHand")))
+			if (s != null && (s.equals("MainHand") || s.equals("OneHand") || s.equals("OffHand")))
 				item = new Weapon(e);
 			else
 				item = new Armor(e);
@@ -217,7 +217,7 @@ public class Armor extends Item {
 	}
 	
 	public static void limit() {
-		System.out.println("> Limiting Equippable Items");
+		//System.out.println("> Limiting Equippable Items");
 		map = new HashMap<Integer,Armor>();
 		FilterController fc = Launcher.getApp().getFilterController();
 		for (Armor i: fullmap.values()) {

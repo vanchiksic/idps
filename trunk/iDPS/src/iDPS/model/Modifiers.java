@@ -145,6 +145,8 @@ public class Modifiers {
 				
 		float baseAgi = setup.getRace().getAttr().getAgi()-166;
 		gHit = hit/cHIT + 0.05F;
+		if (bc.hasBuff(Buff.partyHit))
+			gHit += 0.01F;
 		gCri = (agi-baseAgi)/cAGI + cri/cCRIT + 0.05F - 0.048F;
 		if (bc.hasBuff(Buff.physicalCrit))
 			gCri += 0.05F;
@@ -163,6 +165,8 @@ public class Modifiers {
 		mHit = hit/cPHIT + 0.05F;
 		if (bc.hasDebuff(Debuff.spellHit))
 			mHit += 0.03F;
+		if (bc.hasBuff(Buff.partyHit))
+			mHit += 0.01F;
 		mCri = cri/cCRIT - 0.03F;
 		if (bc.hasBuff(Buff.spellCrit))
 			mCri += 0.05F;

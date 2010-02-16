@@ -12,6 +12,7 @@ import java.net.URL;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor.SocketType;
+import iDPS.gui.sidepanel.SelectGemPanel;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;

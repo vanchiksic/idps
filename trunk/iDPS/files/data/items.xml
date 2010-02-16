@@ -7060,6 +7060,25 @@
     </filters>
     <icon>inv_bracer_41</icon>
   </item>
+  <item id="51784">
+    <name><![CDATA[Splintershard]]></name>
+    <slot>OffHand</slot>
+    <type>Fist</type>
+    <speed>1.5</speed>
+    <dps>205.3</dps>
+    <attributes>
+      <atp>82</atp>
+      <agi>62</agi>
+      <arp>41</arp>
+      <hst>41</hst>
+    </attributes>
+    <lvl>251</lvl>
+    <tag>sindragosa-10</tag>
+    <filters>
+      <filter>icc10n</filter>
+    </filters>
+    <icon>inv_weapon_hand_34</icon>
+  </item>
   <item id="51800">
     <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
     <slot>OneHand</slot>
@@ -7116,6 +7135,29 @@
       <filter>icc10n</filter>
     </filters>
     <icon>inv_weapon_crossbow_38</icon>
+  </item>
+  <item id="51819">
+    <name><![CDATA[Splintershard]]></name>
+    <slot>OffHand</slot>
+    <type>Fist</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
+    <attributes>
+      <atp>93</atp>
+      <agi>61</agi>
+      <arp>46</arp>
+      <hst>38</hst>
+    </attributes>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <lvl>258</lvl>
+    <tag>sindragosa-10-heroic</tag>
+    <filters>
+      <filter>icc10h</filter>
+    </filters>
+    <icon>inv_weapon_hand_34</icon>
   </item>
   <item id="51820">
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>

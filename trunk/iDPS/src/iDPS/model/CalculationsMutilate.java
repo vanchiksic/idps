@@ -1,6 +1,8 @@
 package iDPS.model;
 
 
+import iDPS.BuffController.Buff;
+import iDPS.BuffController.Debuff;
 import iDPS.gear.Weapon.weaponType;
 
 
@@ -76,40 +78,44 @@ public class CalculationsMutilate extends Calculations {
 		eCostEnv = 35/(mod.getHtMHS().getContacts());
 		eCostEnv -= mod.getHtMHS().crit*2;
 		
+		float eaPerCycle = 0;
+		if (bc.hasDebuff(Debuff.armorMajorMaintain)) {
+			float avgEALength = avgCpFin*6 - 2;
+			eaPerCycle = (mutPerFin*eCostMut+eCostEnv)/(avgEALength*eRegen+10);
+		}
+		
+		float envRatio = 1-eaPerCycle; 
+		
 		// Average Envenom Length
-		// We allow to pool no energy
-		float pool = 20;
-		float lE4M0 = Math.min((eCostEnv-4*25*talents.getRStrikes()+pool)/eRegen, 5);
-		float lE4M1 = Math.min((eCostEnv-4*25*talents.getRStrikes()+eCostMut+pool)/eRegen, 5);
-		float lE4M2 = Math.min((eCostEnv-4*25*talents.getRStrikes()+2*eCostMut+pool)/eRegen, 5);
-		float lE5M1 = Math.min((eCostEnv-4*25*talents.getRStrikes()+eCostMut+pool)/eRegen, 6);
-		float lE5M2 = Math.min((eCostEnv-4*25*talents.getRStrikes()+2*eCostMut+pool)/eRegen, 6);
+		// We let Envenom only last as long as it takes to regen the spent energy
+		// However there is a chane the following finisher will be EA
+		float lE4M0 = Math.min((eCostEnv-4*talents.getRStrikes()*25)/eRegen, 5);
+		lE4M0 = lE4M0 * (1-eaPerCycle) + 5 * eaPerCycle;
+		float lE4M1 = Math.min((eCostEnv-4*talents.getRStrikes()*25+eCostMut)/eRegen, 5);
+		lE4M1 = lE4M1 * (1-eaPerCycle) + 5 * eaPerCycle;
+		float lE4M2 = Math.min((eCostEnv-4*talents.getRStrikes()*25+2*eCostMut)/eRegen, 5);
+		lE4M2 = lE4M2 * (1-eaPerCycle) + 5 * eaPerCycle;
+		float lE5M1 = Math.min((eCostEnv-5*talents.getRStrikes()*25+eCostMut)/eRegen, 6);
+		lE5M1 = lE5M1 * (1-eaPerCycle) + 6 * eaPerCycle;
+		float lE5M2 = Math.min((eCostEnv-5*talents.getRStrikes()*25+2*eCostMut)/eRegen, 6);
+		lE5M2 = lE5M2 * (1-eaPerCycle) + 6 * eaPerCycle;
 		
 		float envLen = lE4M0*cFin4*cMut0 + lE4M1*cFin4*cMut1 + lE4M2*cFin4*cMut2
-								 + lE5M1*cFin5*cMut1 + lE5M2*cFin5*cMut2;
+						+ lE5M1*cFin5*cMut1 + lE5M2*cFin5*cMut2;
 		
 		eCostEnv -= avgCpFin*talents.getRStrikes()*25;
 		
-		/*if (false) {
-			float avgRupLength = avgCpFin*2+10;
-			//System.out.println("Rupture Len: "+avgRupLength);
-			rupPerCycle = (mutPerFin*eCostMut+eCostEnv)/(avgRupLength*eRegen+10);
-		} else*/
-			rupPerCycle = 0;
-		//System.out.println("Ruptures per C: "+rupPerCycle);
+
 		
 		float eCostCycle, eCostFin, lengthCycle;
-		eCostFin = eCostEnv - 10*rupPerCycle;
+		eCostFin = eCostEnv - 10*eaPerCycle;
 		eCostCycle = mutPerFin*eCostMut + eCostFin;
 		lengthCycle = eCostCycle / eRegen;
-		//System.out.println("Cycle length: "+lengthCycle);
-		
-		envenomUptime = envLen / lengthCycle;
-		//System.out.println("Envenom Uptime: "+envenomUptime);
 		
 		mutPerSec = mutPerFin/lengthCycle;
-		envPerSec = (1-rupPerCycle)/lengthCycle;
-		rupPerSec = rupPerCycle/lengthCycle;
+		envPerSec = (1-eaPerCycle)/lengthCycle;
+		
+		envenomUptime = envLen * envPerSec;
 		
 		mhSPS = (mutPerSec+envPerSec+rupPerSec);
 		ohSPS = mutPerSec;
@@ -139,9 +145,13 @@ public class CalculationsMutilate extends Calculations {
 		dmg = (dmg1+dmg2) * 1.2F * ((mod.getComboMoveCritMult()-1)*mod.getHtMut().crit + 1);
 		dmg *= (1+talents.getOpportunity()+talents.getFindWeakness());
 		// Global Mods
-		dmg *= talents.getMurder() * talents.getHfb() * 1.03F * 1.04F;
-		
+		dmg *= talents.getMurder() * talents.getHfb();
+		if (bc.hasDebuff(Debuff.physicalDamage))
+			dmg *= 1.04F;
+		if (bc.hasBuff(Buff.damage))
+			dmg *= 1.03F;
 		dmg *= mod.getModArmorMH();
+		
 		return dmg;
 	}
 

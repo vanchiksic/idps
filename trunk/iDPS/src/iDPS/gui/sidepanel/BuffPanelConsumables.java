@@ -17,14 +17,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 
-public class ConsumablePanel extends JPanel implements PropertyChangeListener {
+public class BuffPanelConsumables extends JPanel implements PropertyChangeListener {
 	
 	private MainFrame mainFrame;
 	private BuffController controller;
 	
 	private EnumMap<Consumable,JCheckBox> boxes;
 	
-	public ConsumablePanel(MainFrame mainFrame, BuffController buffController) {
+	public BuffPanelConsumables(MainFrame mainFrame, BuffController buffController) {
 		super(new GridBagLayout());
 		this.mainFrame = mainFrame;
 		controller = buffController;
@@ -89,12 +89,18 @@ public class ConsumablePanel extends JPanel implements PropertyChangeListener {
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
-		try {
-			Consumable b = Consumable.valueOf(evt.getPropertyName());
-			handleChange(b);
-			return;
-		} catch (IllegalArgumentException e) {
-			
+		if (evt.getSource() instanceof BuffController) {
+			if (evt.getPropertyName().equals("consumables")) {
+				for (Consumable b: Consumable.values())
+					handleChange(b);
+			} else if (evt.getPropertyName().startsWith("consumable_")) {
+				String s = evt.getPropertyName().substring(11);
+				try {
+					Consumable b = Consumable.valueOf(s);
+					handleChange(b);
+					return;
+				} catch (IllegalArgumentException e) {}
+			}
 		}
 	}
 	

@@ -1,8 +1,9 @@
-package iDPS.gui;
+package iDPS.gui.sidepanel;
 
 import iDPS.gear.Setup;
 import iDPS.gear.Enchant;
 import iDPS.gear.EnchantComparison;
+import iDPS.gui.MainFrame;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

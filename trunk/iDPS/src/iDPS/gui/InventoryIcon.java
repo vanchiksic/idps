@@ -1,6 +1,7 @@
 package iDPS.gui;
 
 import iDPS.gear.Item;
+import iDPS.gui.sidepanel.SelectItemPanel;
 
 import java.awt.Image;
 import java.awt.image.CropImageFilter;

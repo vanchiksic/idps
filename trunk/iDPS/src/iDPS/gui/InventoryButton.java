@@ -3,6 +3,8 @@ package iDPS.gui;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
+import iDPS.gui.sidepanel.SelectEnchantPanel;
+import iDPS.gui.sidepanel.SelectItemPanel;
 
 import java.awt.Color;
 import java.awt.Image;

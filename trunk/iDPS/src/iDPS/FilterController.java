@@ -50,13 +50,13 @@ public class FilterController {
 	@SuppressWarnings("unchecked")
 	public void save() {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element filters = doc.getRootElement().getChild("filters");
-		filters.removeContent();
+		Element elem = Persistency.getElement(doc, "filters");
+		elem.removeContent();
 		for (Filter f: Filter.values()) {
 			if (checkedFilters.contains(f)) {
 				Element filter = new Element("filter");
 				filter.setText(f.name());
-				filters.getChildren().add(filter);
+				elem.getChildren().add(filter);
 			}
 		}
 		Persistency.saveXML(doc, Persistency.FileType.Settings);
@@ -66,7 +66,7 @@ public class FilterController {
 	public void load() {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element elem = doc.getRootElement().getChild("filters");
-		if (elem.getChildren().size()>0) {
+		if (elem != null && elem.getChildren().size()>0) {
 			checkedFilters = EnumSet.noneOf(Filter.class);
 			for (Element e: (List<Element>) elem.getChildren()) {
 				Filter f = Filter.valueOf(e.getText());

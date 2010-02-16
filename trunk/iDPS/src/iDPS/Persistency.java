@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.net.URL;
-import java.util.Iterator;
 
 import org.jdom.Document;
 import org.jdom.Element;
@@ -18,80 +17,27 @@ public class Persistency {
 	
 	public enum FileType { Settings, Items, Gems, Enchants };
 	
-	@SuppressWarnings("unchecked")
 	public static void createXML() {
-		Element root, elem;
-    XMLOutputter outputter = new XMLOutputter();
-    File file;
-    Document document;
+		Element root;
+	    XMLOutputter outputter = new XMLOutputter();
+	    File file;
+	    Document document;
 		try {
 			file = new File(System.getProperty("user.home")+"/iDPS.xml");
 			if (file.exists()) {
-        SAXBuilder builder = new SAXBuilder();
-        document = builder.build(file);
-        root = document.getRootElement();
+		        SAXBuilder builder = new SAXBuilder();
+		        document = builder.build(file);
+		        root = document.getRootElement();
 			} else {
 				root = new Element("idps");
 				document = new Document(root);
-			}
-			boolean foundGear = false, foundFilters = false,
-				foundImport = false, foundBuffs = false, foundDebuffs = false,
-				foundConsumables = false;
-			Iterator<Element> iter = root.getChildren().iterator();
-			while (iter.hasNext()) {
-				elem = iter.next();
-				if (elem.getName().equals("gearconfigs"))
-					foundGear = true;
-				else if (elem.getName().equals("filters"))
-					foundFilters = true;
-				else if (elem.getName().equals("import"))
-					foundImport = true;
-				else if (elem.getName().equals("buffs"))
-					foundBuffs = true;
-				else if (elem.getName().equals("consumables"))
-					foundConsumables = true;
-				else if (elem.getName().equals("debuffs"))
-					foundDebuffs = true;
-				else
-					iter.remove();
-			}
-			if (!foundGear) {
-				Element gearconfigs = new Element("gearconfigs");
-				gearconfigs.setAttribute("default", "1");
-				Element gear1 = new Element("gear");
-				gear1.setAttribute("id", "1");
-				gear1.getChildren().add(new Element("name").setText("default"));
-				gearconfigs.getChildren().add(gear1);
-				root.getChildren().add(gearconfigs);
-			}
-			if (!foundFilters) {
-				Element filters = new Element("filters");
-				root.getChildren().add(filters);
-			}
-			if (!foundImport) {
-				Element filters = new Element("import");
-				root.getChildren().add(filters);
-			}
-			if (!foundBuffs) {
-				Element filters = new Element("buffs");
-				root.getChildren().add(filters);
-			}
-			if (!foundConsumables) {
-				Element filters = new Element("consumables");
-				root.getChildren().add(filters);
-			}
-			if (!foundDebuffs) {
-				Element filters = new Element("debuffs");
-				root.getChildren().add(filters);
 			}
 			OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(file),"UTF-8");
 		    outputter.output(document,out);
 		    out.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JDOMException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -129,16 +75,26 @@ public class Persistency {
 	}
 	
 	public static Document openXML(FileType fileDesc) {
-    Document document = null;
-    SAXBuilder builder = new SAXBuilder();
-    try {
-	    if (fileDesc == FileType.Settings) {
-	    	File file = new File(System.getProperty("user.home")+"/iDPS.xml");
-	    	document = builder.build(file);
-	    } else
-	    	document = builder.build(getURL(fileDesc));
-    } catch (Exception e) {}
-    return document;
+	    Document document = null;
+	    SAXBuilder builder = new SAXBuilder();
+	    try {
+		    if (fileDesc == FileType.Settings) {
+		    	File file = new File(System.getProperty("user.home")+"/iDPS.xml");
+		    	document = builder.build(file);
+		    } else
+		    	document = builder.build(getURL(fileDesc));
+	    } catch (Exception e) {}
+	    return document;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static Element getElement(Document doc, String name) {
+		Element elem = doc.getRootElement().getChild(name);
+		if (elem == null) {
+			elem = new Element(name);
+			doc.getRootElement().getChildren().add(elem);
+		}
+		return elem;
 	}
 	
 	private static URL getURL(FileType fileType) {

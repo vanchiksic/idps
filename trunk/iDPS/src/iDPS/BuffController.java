@@ -1,25 +1,25 @@
 package iDPS;
 
+import iDPS.gear.Setup;
+
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.EnumMap;
 import java.util.EnumSet;
-import java.util.List;
-
-import org.jdom.Document;
-import org.jdom.Element;
 
 
-public class BuffController {
+public class BuffController implements PropertyChangeListener {
 	
 	public enum Buff { attackPower, attackPowerImp, attackPowerMult,
-		damage, meleHaste, meleHasteImp,
-		physicalCrit, spellCrit, statsAdditive, statsAdditiveImp,
-		statsMultiplicative, agilityStrength, agilityStrengthImp }
+		damage, meleHaste, meleHasteImp, physicalCrit, spellCrit,
+		statsAdditive, statsAdditiveImp, statsMultiplicative,
+		agilityStrength, agilityStrengthImp, partyHit }
 	public enum Consumable { flask,
 		foodAgi, foodArp, foodAtp, foodExp, foodHit, foodHst }
 	public enum Debuff { armorMajor, armorMajorMaintain, armorMinor,
 		crit, physicalDamage, spellCrit, spellDamage, spellHit }
+	public enum Other { bloodlust }
 	
 	private final PropertyChangeSupport pcs;
 	private final EnumSet<Consumable> foodBuffs = EnumSet.range(Consumable.foodAgi, Consumable.foodHst);
@@ -27,19 +27,11 @@ public class BuffController {
 	private EnumMap<Buff,Boolean> buffs;
 	private EnumMap<Consumable,Boolean> consumables;
 	private EnumMap<Debuff,Boolean> debuffs;
+	private EnumMap<Other,Boolean> other;
 	
-	public BuffController() {
+	public BuffController(Application app) {
 		pcs = new PropertyChangeSupport(this);
-		buffs = new EnumMap<Buff,Boolean>(Buff.class);
-		for (Buff b: Buff.values())
-			buffs.put(b, false);
-		consumables = new EnumMap<Consumable,Boolean>(Consumable.class);
-		for (Consumable b: Consumable.values())
-			consumables.put(b, false);
-		debuffs = new EnumMap<Debuff,Boolean>(Debuff.class);
-		for (Debuff b: Debuff.values())
-			debuffs.put(b, false);
-		load();
+		app.addPropertyChangeListener(this);
 	}
 	
 	public boolean hasBuff(Buff b) {
@@ -49,8 +41,7 @@ public class BuffController {
 	public void setBuff(Buff b, boolean newValue) {
 		boolean oldValue = buffs.get(b);
 		buffs.put(b, newValue);
-		save();
-		pcs.firePropertyChange(b.name(), oldValue, newValue);
+		pcs.firePropertyChange("buff_"+b.name(), oldValue, newValue);
 		if (!newValue) {
 			switch (b) {
 			case attackPower:
@@ -76,7 +67,7 @@ public class BuffController {
 	public void setConsumable(Consumable b, boolean newValue) {
 		boolean oldValue = consumables.get(b);
 		consumables.put(b, newValue);
-		pcs.firePropertyChange(b.name(), oldValue, newValue);
+		pcs.firePropertyChange("consumable_"+b.name(), oldValue, newValue);
 		if (newValue) {
 			if (foodBuffs.contains(b)) {
 				for (Consumable fb: foodBuffs) {
@@ -94,10 +85,19 @@ public class BuffController {
 	public void setDebuff(Debuff b, boolean newValue) {
 		boolean oldValue = debuffs.get(b);
 		debuffs.put(b, newValue);
-		pcs.firePropertyChange(b.name(), oldValue, newValue);
-		save();
+		pcs.firePropertyChange("debuff_"+b.name(), oldValue, newValue);
 		if (!newValue && b == Debuff.armorMajor)
 			setDebuff(Debuff.armorMajorMaintain, false);
+	}
+	
+	public boolean hasOther(Other b) {
+		return other.get(b);
+	}
+	
+	public void setOther(Other b, boolean newValue) {
+		boolean oldValue = other.get(b);
+		other.put(b, newValue);
+		pcs.firePropertyChange("other_"+b.name(), oldValue, newValue);
 	}
 	
 	public void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -107,78 +107,26 @@ public class BuffController {
 	public void removePropertyChangeListener(PropertyChangeListener listener) {
         pcs.removePropertyChangeListener(listener);
     }
-	
-	@SuppressWarnings("unchecked")
-	public void save() {
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element elem;
-		// save Buffs
-		elem = doc.getRootElement().getChild("buffs");
-		elem.removeContent();
-		for (Buff b: Buff.values()) {
-			if (hasBuff(b)) {
-				Element elem2 = new Element("buff");
-				elem2.setText(b.name());
-				elem.getChildren().add(elem2);
+
+	public void propertyChange(PropertyChangeEvent evt) {
+		if (evt.getSource() instanceof Application) {
+			if (evt.getPropertyName() == "setup") {
+				Setup setup = (Setup) evt.getNewValue();
+				setSetupTo(setup);
 			}
 		}
-		// save Consumables
-		elem = doc.getRootElement().getChild("consumables");
-		elem.removeContent();
-		for (Consumable b: Consumable.values()) {
-			if (hasConsumable(b)) {
-				Element elem2 = new Element("consumable");
-				elem2.setText(b.name());
-				elem.getChildren().add(elem2);
-			}
-		}
-		// save Debuffs
-		elem = doc.getRootElement().getChild("debuffs");
-		elem.removeContent();
-		for (Debuff b: Debuff.values()) {
-			if (hasDebuff(b)) {
-				Element elem2 = new Element("debuff");
-				elem2.setText(b.name());
-				elem.getChildren().add(elem2);
-			}
-		}
-		Persistency.saveXML(doc, Persistency.FileType.Settings);
 	}
 	
-	@SuppressWarnings("unchecked")
-	public void load() {
-		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element elem;
-		// load Buffs
-		elem = doc.getRootElement().getChild("buffs");
-		if (elem.getChildren().size()>0) {
-			for (Element e: (List<Element>) elem.getChildren()) {
-				try {
-					Buff b = Buff.valueOf(e.getText());
-					buffs.put(b, true);
-				} catch (IllegalArgumentException ex) { }
-			}
-		}
-		// load Consumables
-		elem = doc.getRootElement().getChild("consumables");
-		if (elem.getChildren().size()>0) {
-			for (Element e: (List<Element>) elem.getChildren()) {
-				try {
-					Consumable b = Consumable.valueOf(e.getText());
-					consumables.put(b, true);
-				} catch (IllegalArgumentException ex) { }
-			}
-		}
-		// load Debuffs
-		elem = doc.getRootElement().getChild("debuffs");
-		if (elem.getChildren().size()>0) {
-			for (Element e: (List<Element>) elem.getChildren()) {
-				try {
-					Debuff b = Debuff.valueOf(e.getText());
-					debuffs.put(b, true);
-				} catch (IllegalArgumentException ex) { }
-			}
-		}
+	private void setSetupTo(Setup setup) {
+		buffs = setup.getBuffs();
+		consumables = setup.getConsumables();
+		debuffs = setup.getDebuffs();
+		other = setup.getOther();
+		
+		pcs.firePropertyChange("buffs", null, buffs);
+		pcs.firePropertyChange("consumables", null, consumables);
+		pcs.firePropertyChange("debuffs", null, debuffs);
+		pcs.firePropertyChange("other", null, other);
 	}
 
 }

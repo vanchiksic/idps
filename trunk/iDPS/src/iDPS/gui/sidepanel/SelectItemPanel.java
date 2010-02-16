@@ -1,8 +1,10 @@
-package iDPS.gui;
+package iDPS.gui.sidepanel;
 
 import iDPS.gear.Armor;
 import iDPS.gear.ItemComparison;
 import iDPS.gear.Armor.SlotType;
+import iDPS.gui.InventoryIcon;
+import iDPS.gui.MainFrame;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

@@ -17,14 +17,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 
-public class DebuffPanel extends JPanel implements PropertyChangeListener {
+public class BuffPanelDebuffs extends JPanel implements PropertyChangeListener {
 	
 	private MainFrame mainFrame;
 	private BuffController controller;
 	
 	private EnumMap<Debuff,JCheckBox> boxes;
 	
-	public DebuffPanel(MainFrame mainFrame, BuffController buffController) {
+	public BuffPanelDebuffs(MainFrame mainFrame, BuffController buffController) {
 		super(new GridBagLayout());
 		this.mainFrame = mainFrame;
 		controller = buffController;
@@ -94,12 +94,18 @@ public class DebuffPanel extends JPanel implements PropertyChangeListener {
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
-		try {
-			Debuff db = Debuff.valueOf(evt.getPropertyName());
-			handleChange(db);
-			return;
-		} catch (IllegalArgumentException e) {
-				
+		if (evt.getSource() instanceof BuffController) {
+			if (evt.getPropertyName().equals("debuffs")) {
+				for (Debuff b: Debuff.values())
+					handleChange(b);
+			} else if (evt.getPropertyName().startsWith("debuff_")) {
+				String s = evt.getPropertyName().substring(7);
+				try {
+					Debuff db = Debuff.valueOf(s);
+					handleChange(db);
+					return;
+				} catch (IllegalArgumentException e) {}
+			}
 		}
 	}
 	

@@ -17,14 +17,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 
-public class BuffPanel extends JPanel implements PropertyChangeListener {
+public class BuffPanelBuffs extends JPanel implements PropertyChangeListener {
 	
 	private MainFrame mainFrame;
 	private BuffController controller;
 	
 	private EnumMap<Buff,JCheckBox> boxes;
 	
-	public BuffPanel(MainFrame mainFrame, BuffController buffController) {
+	public BuffPanelBuffs(MainFrame mainFrame, BuffController buffController) {
 		super(new GridBagLayout());
 		this.mainFrame = mainFrame;
 		controller = buffController;
@@ -55,6 +55,10 @@ public class BuffPanel extends JPanel implements PropertyChangeListener {
 					tooltip = "Improved BoM, Imp. Battle Shout";
 					c.insets = new Insets(0,20,0,0);
 					enabled = controller.hasBuff(Buff.attackPower);
+					break;
+				case attackPowerMult:
+					name = "10% Attack Power Buff";
+					tooltip = "Unleashed Rage";
 					break;
 				case damage:
 					name = "3% Damage Buff";
@@ -102,6 +106,10 @@ public class BuffPanel extends JPanel implements PropertyChangeListener {
 					c.insets = new Insets(0,20,0,0);
 					enabled = controller.hasBuff(Buff.agilityStrength);
 					break;
+				case partyHit:
+					name = "1% Hit PartyBuff";
+					tooltip = "Heroic Presence";
+					break;
 			}
 			box = new BuffBox(b, name);
 			box.setEnabled(enabled);
@@ -117,12 +125,18 @@ public class BuffPanel extends JPanel implements PropertyChangeListener {
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
-		try {
-			Buff b = Buff.valueOf(evt.getPropertyName());
-			handleChange(b);
-			return;
-		} catch (IllegalArgumentException e) {
-			
+		if (evt.getSource() instanceof BuffController) {
+			if (evt.getPropertyName().equals("buffs")) {
+				for (Buff b: Buff.values())
+					handleChange(b);
+			} else if (evt.getPropertyName().startsWith("buff_")) {
+				String s = evt.getPropertyName().substring(5);
+				try {
+					Buff b = Buff.valueOf(s);
+					handleChange(b);
+					return;
+				} catch (IllegalArgumentException e) {}
+			}
 		}
 	}
 	

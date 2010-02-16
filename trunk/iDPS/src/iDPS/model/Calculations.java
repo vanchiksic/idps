@@ -1,9 +1,13 @@
 package iDPS.model;
 
 import iDPS.Attributes;
+import iDPS.BuffController;
 import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
+import iDPS.BuffController.Buff;
+import iDPS.BuffController.Debuff;
+import iDPS.BuffController.Other;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Weapon.weaponType;
@@ -12,7 +16,7 @@ public abstract class Calculations {
 	
 	public enum ModelType { Combat, Mutilate };
 	
-	protected float avgCpFin, rupPerCycle;
+	protected float avgCpFin;
 	float ppsIP1, ppsIP2;
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
@@ -22,6 +26,7 @@ public abstract class Calculations {
 	protected float mhWPS, ohWPS, mhWCPS, ohWCPS;
 	protected Modifiers mod;
 	protected Talents talents;
+	protected BuffController bc;
 	
 	protected float bbIncrease;
 	
@@ -48,9 +53,13 @@ public abstract class Calculations {
 		//System.out.println("dp ap: "+totalATP);
 		float dps = (296+0.108F*totalATP)/12*5 * (1+talents.getVilePoisons());
 		// Global Mods
-		dps *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F * 0.971875F;
+		dps *= talents.getMurder() * talents.getHfb() * 0.971875F;
 		if (talents.getKs())
 			dps *= 1 + (0.2F * 2.5F/75F);
+		if (bc.hasDebuff(Debuff.spellDamage))
+			dps *= 1.13F;
+		if (bc.hasBuff(Buff.damage))
+			dps *= 1.03F;
 		return dps;
 	}
 	
@@ -60,7 +69,11 @@ public abstract class Calculations {
 		float dmg = (215*avgCpFin + 0.09F*avgCpFin * totalATP)*(1+talents.getVilePoisons()+talents.getFindWeakness());
 		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
 		// Global Mods
-		dmg *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;
+		dmg *= talents.getMurder() * talents.getHfb();
+		if (bc.hasDebuff(Debuff.spellDamage))
+			dmg *= 1.13F;
+		if (bc.hasBuff(Buff.damage))
+			dmg *= 1.03F;
 		return dmg;
 	}
 	
@@ -119,10 +132,14 @@ public abstract class Calculations {
 		float dmg = (baseDmg + 0.07F*avgCpFin * totalATP)*(1+0.2F+0.15F);
 		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
 		// Global Mods
-		dmg *= 1.04F * 1.03F;
-		
+		dmg *= talents.getHfb() * talents.getMurder();
+		if (bc.hasDebuff(Debuff.physicalDamage))
+			dmg *= 1.04F;
+		if (bc.hasBuff(Buff.damage))
+			dmg *= 1.03F;
 		dmg *= mod.getModArmorMH();
 		dmg *= 1+bbIncrease;
+		
 		return dmg;
 	}
 	
@@ -157,43 +174,27 @@ public abstract class Calculations {
 		//System.out.println("IP Proc dmg: "+damage);
 		damage += damage*(mod.getPoisonCritMult()-1)*(mod.getSpellCritPercent()/100F);
 		// Global Mods
-		damage *= talents.getMurder() * talents.getHfb() * 1.03F * 1.13F;
+		damage *= talents.getMurder() * talents.getHfb();
 		if (talents.getKs())
 			damage *= 1 + (0.2F * 2.5F/75F);
+		if (bc.hasDebuff(Debuff.spellDamage))
+			damage *= 1.13F;
+		if (bc.hasBuff(Buff.damage))
+			damage *= 1.03F;
 		return procsPerSec * damage;
 	}
-	
-	/*protected void calcMongoose() {
-		float attacksPerSec, uptimeMH = 0, uptimeOH = 0;
-		if (setup.isEnchanted(16) && setup.getEnchant(16).getId()==2673) {
-			attacksPerSec = mhWPS + mhSPS;
-			uptimeMH = setup.getWeapon1().getPPMUptime(1, 15, attacksPerSec);
-		}
-		if (setup.isEnchanted(17) && setup.getEnchant(17).getId()==2673) {
-			attacksPerSec = ohWPS + ohSPS;
-			uptimeOH = setup.getWeapon2().getPPMUptime(1, 15, attacksPerSec);
-		}
-		if ((uptimeMH+uptimeOH)>0) {
-		// mongoose ~73 cri & 132 ap
-			float uptimeD = uptimeMH * uptimeOH;
-			float uptimeS = (1-(1-uptimeMH)*(1-uptimeOH))-uptimeD;
-			mod.registerPhysCritProc(146, uptimeD);
-			mod.registerPhysCritProc(73, uptimeS);
-			mod.registerStaticHasteProc(0.02F, uptimeMH);
-			mod.registerStaticHasteProc(0.02F, uptimeOH);
-			totalATP += 264*uptimeD;
-			totalATP += 132*uptimeS;
-		}
-	}*/
 	
 	protected void calcProcs() {
 		float hitsPerSec = mhWPS+ohWPS+mhSPS+ohSPS;
 		float critsPerSec = mhWCPS+ohWCPS+mhSCPS+ohSCPS;
 		Attributes a;
+		float uptime;
 		
 		// Bloodlust / Heroism
-		float uptime = 40/fightDuration;
-		mod.registerStaticHasteProc(0.3F, uptime);
+		if (bc.hasOther(Other.bloodlust)) {
+			uptime = 40/fightDuration;
+			mod.registerStaticHasteProc(0.3F, uptime);
+		}
 		
 		// Orc Racial
 		if (setup.getRace().getType() == Race.Type.Orc) {
@@ -475,14 +476,13 @@ public abstract class Calculations {
 	}
 	
 	protected float calcRuptureDPS() {
-		if (rupPerCycle==0)
 			return 0;
-		float tick4cp, tick5cp, avgTick;
+		/*float tick4cp, tick5cp, avgTick;
 		tick4cp = 199 + 0.03428571F*totalATP;
 		tick5cp = 217 + 0.0375F*totalATP;
 		avgTick = tick4cp*(5-avgCpFin)+tick5cp*(avgCpFin-4);
 		avgTick *= 1.42F* 1.04F * 1.18F * 1.03F * 1.3F;
-		return avgTick/2;
+		return avgTick/2;*/
 	}
 	
 	public void calculate(Setup g) {
@@ -499,6 +499,7 @@ public abstract class Calculations {
 		talents = g.getTalents();
 		
 		setup = g;
+		bc = Launcher.getApp().getBuffController();
 		
 		mod = new Modifiers(inject, setup);
 		
@@ -612,17 +613,19 @@ public abstract class Calculations {
 			dpsMH += ppsMH * dmgMH;
 			dpsOH += ppsMH * dmgOH;
 		}
-		// Global Mods
-		dpsMH *= 1.04F * talents.getHfb() * 1.03F * 1.04F;
-		dpsOH *= 1.04F * talents.getHfb() * 1.03F * 1.04F;
-		if (talents.getKs()) {
-			dpsMH *= 1 + (0.2F * 2.5F/75F);
-			dpsOH *= 1 + (0.2F * 2.5F/75F);
-		}
 		// Armor Reduction
 		dpsMH *= mod.getModArmorMH();
 		dpsOH *= mod.getModArmorOH();
 		float dps = dpsMH+dpsOH;
+		
+		// Global Mods
+		dps *= talents.getHfb() * talents.getMurder();
+		if (talents.getKs())
+			dps *= 1 + (0.2F * 2.5F/75F);
+		if (bc.hasDebuff(Debuff.physicalDamage))
+			dps *= 1.04F;
+		if (bc.hasBuff(Buff.damage))
+			dps *= 1.03F;
 		dps *= 1+bbIncrease;
 		return dps;
 	}

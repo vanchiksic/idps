@@ -20,9 +20,10 @@ import iDPS.Application;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.menu.MenuBar;
-import iDPS.gui.sidepanel.BuffPanel;
-import iDPS.gui.sidepanel.ConsumablePanel;
-import iDPS.gui.sidepanel.DebuffPanel;
+import iDPS.gui.sidepanel.BuffPanelBuffs;
+import iDPS.gui.sidepanel.BuffPanelConsumables;
+import iDPS.gui.sidepanel.BuffPanelDebuffs;
+import iDPS.gui.sidepanel.BuffPanelOther;
 
 public class MainFrame extends JFrame {
 		
@@ -130,13 +131,15 @@ public class MainFrame extends JFrame {
 		
 		buffPanel = new JPanel();
 		JTabbedPane tp = new JTabbedPane();
-		JPanel bp = new BuffPanel(this, app.getBuffController());
-		JPanel cp = new ConsumablePanel(this, app.getBuffController());
-		JPanel dbp = new DebuffPanel(this, app.getBuffController());
+		JPanel bp = new BuffPanelBuffs(this, app.getBuffController());
+		JPanel cp = new BuffPanelConsumables(this, app.getBuffController());
+		JPanel dp = new BuffPanelDebuffs(this, app.getBuffController());
+		JPanel op = new BuffPanelOther(this, app.getBuffController());
 		tp.addTab("Buffs", bp);
 		tp.addTab("Consumables", cp);
-		tp.addTab("Debuffs", dbp);
-		tp.setPreferredSize(new Dimension(250,400));
+		tp.addTab("Debuffs", dp);
+		tp.addTab("Other", op);
+		tp.setPreferredSize(new Dimension(400,400));
 		buffPanel.add(tp);
 		showBuffCentral();
 		

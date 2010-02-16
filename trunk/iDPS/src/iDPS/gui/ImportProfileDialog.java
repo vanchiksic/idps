@@ -232,7 +232,8 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
     @SuppressWarnings("unchecked")
 	private void save() {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
-		Element elem = doc.getRootElement().getChild("import");
+		
+		Element elem = Persistency.getElement(doc, "import");
 		elem.removeContent();
 		Element sub;
 		
@@ -255,6 +256,8 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
 	private void load() {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element elem = doc.getRootElement().getChild("import");
+		if (elem == null)
+			return;
 		for (Element e: (List<Element>) elem.getChildren()) {
 			String s = e.getName();
 			// Region

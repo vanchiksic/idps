@@ -1,10 +1,12 @@
 package iDPS.model;
 
+import iDPS.BuffController.Buff;
+import iDPS.BuffController.Debuff;
+
 public class CalculationsCombat extends Calculations {
 	
 	private float dpsSS, dpsEvi, dpsKS;
-	private float ssPerSec, eviPerSec, rupPerSec;
-	private float sndPerCycle;
+	private float ssPerSec, eviPerSec;
 	
 	protected CalculationsCombat() {
 		super();
@@ -73,33 +75,29 @@ public class CalculationsCombat extends Calculations {
 			+ 4*(c0ss4cp+c1ss4cp+c2ss4cp+c3ss4cp+c4ss4cp);
 		float ssPerFin = 4*(c4ss4cp+c4ss5cp) + 3*(c3ss4cp+c3ss5cp) + 2*(c2ss4cp+c2ss5cp) + (c1ss4cp+c1ss5cp);
 		
-		float eCostSS, eCostEvi;
-		eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()))-5;
-		eCostEvi = 35/(mod.getHtMHS().getContacts());
-		eCostEvi -= avgCpFin*talents.getRStrikes();
+		float eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()))-5;
+		float eCostFin = 35/(mod.getHtMHS().getContacts());
+		eCostFin -= avgCpFin*talents.getRStrikes();
 		
+		float sndLength = (avgCpFin*3+6)*1.5F;
+		float eaLength = avgCpFin*6;
 		float eRegen = calcERegen();
 		
-		float avgSndLength = (avgCpFin*3+6)*1.5F;
-		sndPerCycle = (ssPerFin*eCostSS+eCostEvi)/((avgSndLength-1F)*eRegen+10);
-		
-		float eCostCycle, eCostFin, lengthCycle;
-		eCostFin = eCostEvi - 10*sndPerCycle;
-		eCostCycle = ssPerFin*eCostSS + eCostFin;
-		lengthCycle = eCostCycle / eRegen;
-		
-		ssPerSec = ssPerFin/lengthCycle;
-		eviPerSec = (1-sndPerCycle)/lengthCycle;
-		rupPerSec = rupPerCycle/lengthCycle;
-		
-		float eTotalCostEvi = ssPerFin*eCostSS+eCostEvi;
-		/*if (talents.getAr()) {
-			float extraCycle = 150/eTotalCostEvi;
-			ssPerSec += extraCycle * ssPerFin / 180F;
-			eviPerSec += extraCycle / 180F;
-		}*/
-		
-		mhSPS = ssPerSec+eviPerSec+rupPerSec;
+		float cycleLength = Math.max(sndLength,eaLength);
+		float sndPerCycle = cycleLength/sndLength;
+		float eaPerCycle = 0;
+		if (bc.hasDebuff(Debuff.armorMajorMaintain))
+			eaPerCycle = cycleLength/eaLength;
+		float eCostSndCycle = ssPerFin*eCostSS + eCostFin-10;
+		float eCostEaCycle = ssPerFin*eCostSS + eCostFin-10;
+		float eCostEviCycle = ssPerFin*eCostSS + eCostFin;
+		eRegen -= (sndPerCycle*eCostSndCycle+eaPerCycle*eCostEaCycle)/cycleLength;
+		float eviPerCycle = eRegen*cycleLength/eCostEviCycle;
+		ssPerSec = ((sndPerCycle+eaPerCycle+eviPerCycle)*ssPerFin)/cycleLength;
+		eviPerSec = eviPerCycle/cycleLength;
+		float eaPerSec = eaPerCycle/cycleLength;
+				
+		mhSPS = ssPerSec+eviPerSec+eaPerSec;
 		mhSCPS = ssPerSec*mod.getHtSS().getCrit() + eviPerSec*mod.getHtFin().getCrit();
 		
 		ohSPS = 0;
@@ -143,9 +141,12 @@ public class CalculationsCombat extends Calculations {
 		dmg *= 1+0.10F+0.10F+0.15F;
 		dmg *= ((mod.getComboMoveCritMult()-1)*mod.getHtSS().crit+1);
 		// Global Mods
-		dmg *= 1.03F * 1.04F;
-
 		dmg *= mod.getModArmorMH();
+		if (bc.hasDebuff(Debuff.physicalDamage))
+			dmg *= 1.04F;
+		if (bc.hasBuff(Buff.damage))
+			dmg *= 1.03F;
+
 		dmg *= 1+bbIncrease;
 		return dmg;
 	}
@@ -160,13 +161,17 @@ public class CalculationsCombat extends Calculations {
 			dmgOh = dmgOh*mod.getHtMHS().hit + dmgOh*mod.getHtMHS().crit*mod.getPhysCritMult();
 			dmg = (dmgMh + dmgOh) * 5 * 1.2F;
 			// Global Mods
-			dmg *= 1.03F * 1.04F;
+			if (bc.hasDebuff(Debuff.physicalDamage))
+				dmg *= 1.04F;
+			if (bc.hasBuff(Buff.damage))
+				dmg *= 1.03F;
 			dps = dmg / 75F;
+			dps *= 1+bbIncrease;
+			
 			mhSPS += 5/75F * mod.getHtMHS().getContacts();
 			mhSCPS += 5/75F * mod.getHtMHS().getCrit();
 			ohSPS += 5/75F * mod.getHtOHS().getContacts();
 			ohSCPS += 5/75F * mod.getHtOHS().getCrit();
-			dps *= 1+bbIncrease;
 		}
 		return dps;
 	}

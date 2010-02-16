@@ -1,4 +1,4 @@
-package iDPS.gui;
+package iDPS.gui.sidepanel;
 
 import java.awt.Color;
 import java.awt.Graphics;

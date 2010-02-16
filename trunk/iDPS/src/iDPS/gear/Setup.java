@@ -5,6 +5,10 @@ import iDPS.Attributes;
 import iDPS.Persistency;
 import iDPS.Race;
 import iDPS.Talents;
+import iDPS.BuffController.Buff;
+import iDPS.BuffController.Consumable;
+import iDPS.BuffController.Debuff;
+import iDPS.BuffController.Other;
 import iDPS.gear.Armor.SocketType;
 import iDPS.model.Calculations;
 
@@ -38,6 +42,10 @@ public class Setup implements Comparable<Setup> {
 	private Talents talents;
 	private Race race;
 	private EnumSet<Profession> professions;
+	private EnumMap<Buff,Boolean> buffs;
+	private EnumMap<Consumable,Boolean> consumables;
+	private EnumMap<Debuff,Boolean> debuffs;
+	private EnumMap<Other,Boolean> other;
 		
 	private boolean[] socketBonus;
 	
@@ -58,6 +66,19 @@ public class Setup implements Comparable<Setup> {
 		talents = new Talents();
 		race = new Race();
 		professions = EnumSet.noneOf(Profession.class);
+		
+		buffs = new EnumMap<Buff,Boolean>(Buff.class);
+		for (Buff b: Buff.values())
+			buffs.put(b, false);
+		consumables = new EnumMap<Consumable,Boolean>(Consumable.class);
+		for (Consumable b: Consumable.values())
+			consumables.put(b, false);
+		debuffs = new EnumMap<Debuff,Boolean>(Debuff.class);
+		for (Debuff b: Debuff.values())
+			debuffs.put(b, false);
+		other = new EnumMap<Other,Boolean>(Other.class);
+		for (Other b: Other.values())
+			other.put(b, false);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -114,6 +135,30 @@ public class Setup implements Comparable<Setup> {
 					if (enchant!=null)
 						setEnchant(slot, enchant);
 				}
+			} else if (s.equals("buffs")) {
+				for (Element e: (List<Element>) eGear.getChildren()) {
+					if (e.getName().equals("buff")) {
+						try {
+							Buff b = Buff.valueOf(e.getText());
+							buffs.put(b, true);
+						} catch (IllegalArgumentException ex) {}
+					} else if (e.getName().equals("consumable")) {
+						try {
+							Consumable b = Consumable.valueOf(e.getText());
+							consumables.put(b, true);
+						} catch (IllegalArgumentException ex) { }	
+					} else if (e.getName().equals("debuff")) {
+						try {
+							Debuff b = Debuff.valueOf(e.getText());
+							debuffs.put(b, true);
+						} catch (IllegalArgumentException ex) { }
+					} else if (e.getName().equals("other")) {
+						try {
+							Other b = Other.valueOf(e.getText());
+							other.put(b, true);
+						} catch (IllegalArgumentException ex) { }
+					}
+				}
 			}
 		}
 	}
@@ -139,6 +184,10 @@ public class Setup implements Comparable<Setup> {
 		talents = copy.talents;
 		race = copy.race;
 		professions = copy.professions.clone();
+		buffs = copy.buffs.clone();
+		consumables = copy.consumables.clone();
+		debuffs = copy.debuffs.clone();
+		other = copy.other.clone();
 	}
 	
 	public Setup(String name) {
@@ -520,6 +569,8 @@ public class Setup implements Comparable<Setup> {
 		Document doc = Persistency.openXML(Persistency.FileType.Settings);
 		Element root = doc.getRootElement();
 		Element gearconfigs = root.getChild("gearconfigs");
+		if (gearconfigs == null)
+			return;
 		int defGear = Integer.valueOf(gearconfigs.getAttributeValue("default"));
 		List<Element> l = gearconfigs.getChildren();
 		Iterator<Element> li = l.iterator();
@@ -538,19 +589,15 @@ public class Setup implements Comparable<Setup> {
 		map.remove(g.id);
 	}
 
-	@SuppressWarnings("unchecked")
 	public static void save(Application app) {
-		Element root, gearconfigs;
-		Document document = Persistency.openXML(Persistency.FileType.Settings);
-		root = document.getRootElement();
-		root.removeChild("gearconfigs");
-		gearconfigs = new Element("gearconfigs");
-		gearconfigs.setAttribute("default", Integer.toString(app.getSetup().getId()));
-		root.getChildren().add(gearconfigs);
+		Document doc = Persistency.openXML(Persistency.FileType.Settings);
+		Element elem = Persistency.getElement(doc, "gearconfigs");
+		elem.removeContent();
+		elem.setAttribute("default", Integer.toString(app.getSetup().getId()));
 		Iterator<Setup> i = map.values().iterator();
 		while (i.hasNext())
-			saveSetup(gearconfigs, i.next());
-		Persistency.saveXML(document, Persistency.FileType.Settings);
+			saveSetup(elem, i.next());
+		Persistency.saveXML(doc, Persistency.FileType.Settings);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -621,6 +668,41 @@ public class Setup implements Comparable<Setup> {
 		}
 		eSetup.getChildren().add(eEnchants);
 		root.getChildren().add(eSetup);
+		
+		// save Buffs
+		eName = new Element("buffs");
+		for (Buff b: Buff.values()) {
+			if (gear.buffs.get(b)) {
+				Element elem2 = new Element("buff");
+				elem2.setText(b.name());
+				eName.getChildren().add(elem2);
+			}
+		}
+		// save Consumables
+		for (Consumable b: Consumable.values()) {
+			if (gear.consumables.get(b)) {
+				Element elem2 = new Element("consumable");
+				elem2.setText(b.name());
+				eName.getChildren().add(elem2);
+			}
+		}
+		// save Debuffs
+		for (Debuff b: Debuff.values()) {
+			if (gear.debuffs.get(b)) {
+				Element elem2 = new Element("debuff");
+				elem2.setText(b.name());
+				eName.getChildren().add(elem2);
+			}
+		}
+		// save Other
+		for (Other b: Other.values()) {
+			if (gear.other.get(b)) {
+				Element elem2 = new Element("other");
+				elem2.setText(b.name());
+				eName.getChildren().add(elem2);
+			}
+		}
+		eSetup.getChildren().add(eName);
 	}
 
 	public Talents getTalents() {
@@ -662,6 +744,22 @@ public class Setup implements Comparable<Setup> {
 		if ((slot == 7 || slot == 8) && hasProfession(Profession.Blacksmithing))
 			return true;
 		return false;
+	}
+
+	public EnumMap<Buff, Boolean> getBuffs() {
+		return buffs;
+	}
+
+	public EnumMap<Consumable, Boolean> getConsumables() {
+		return consumables;
+	}
+
+	public EnumMap<Debuff, Boolean> getDebuffs() {
+		return debuffs;
+	}
+	
+	public EnumMap<Other, Boolean> getOther() {
+		return other;
 	}
 
 }
