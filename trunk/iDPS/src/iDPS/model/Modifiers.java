@@ -119,9 +119,6 @@ public class Modifiers {
 		if (bc.hasBuff(Buff.statsMultiplicative)) {
 			attr.applyStatMult();
 		}
-			
-		if (bc.hasConsumable(Consumable.flask) && setup.hasProfession(Profession.Alchemy))
-			attr.incAtp(80);
 		
 		// Calc Total ATP
 		attr.finalizeStats();
