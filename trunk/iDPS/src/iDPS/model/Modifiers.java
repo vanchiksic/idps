@@ -116,9 +116,8 @@ public class Modifiers {
 		if (setup.hasProfession(Profession.Alchemy))
 			attr.incAtp(80);
 		
-		if (bc.hasBuff(Buff.statsMultiplicative)) {
+		if (bc.hasBuff(Buff.statsMultiplicative))
 			attr.applyStatMult();
-		}
 		
 		// Calc Total ATP
 		attr.finalizeStats();
