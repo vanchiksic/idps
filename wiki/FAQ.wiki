@@ -53,3 +53,13 @@ Instant Poison in your slow weapon, Deadly in the fast one. If they have the sam
  *  CombatHnS: [http://talent.mmo-champion.com/?rogue#l0cFDKpGJ1cC6o,bJN,11159]
  *  CombatCQC: [http://talent.mmo-champion.com/?rogue#l0cFDK58qlTwWK,bJN,11159]
  *  CombatMace: [http://talent.mmo-champion.com/?rogue#l0cFD2PzADEuzk,bJN,11159]
+
+
+== It is showing different stats then my paper doll ==
+
+Make sure all of your items/gems are in iDPS. If they aren't included, thei stats won't be added. Also make sure you have the right talents and professions selected. iDPS only imports your items and enchants, not your professions and/or talents.
+
+
+== It is showing a different crit rate then my paper doll ==
+
+iDPS shows your crit% vs a L83 target, which is 4.8% lower then your paper doll.
