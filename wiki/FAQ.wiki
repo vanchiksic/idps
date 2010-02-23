@@ -11,6 +11,12 @@ You need to have the Java Runtime Environment installed (JRE). You can download 
 Usually doubleclicking is enough. If it's not, you maybe do not have Java installed properly.
 
 
+== I have Java installed, but doubleclicking doesn't work ==
+
+Sometimes the jar extension does not get properly assigned to Java (or some other programs steal it like WinZip). Then you can try "Open With" -> java.exe or try this quick fix:
+http://www.softpedia.com/get/Others/Miscellaneous/Jarfix.shtml
+
+
 == I can not get it to start ==
 
 Start it from he command line to see what error messages you are getting. Open the command prompt/console and change directory to the folder where the iDPS jar is located. Then type "java -jar iDPSvXrX.jar" (fill in the proper version numbers). Then open a ticket here with a report & the error message you are getting.
