@@ -1,7 +1,6 @@
 package iDPS.gui.menu;
 
 import iDPS.Race;
-import iDPS.Talents;
 import iDPS.gear.Enchant;
 import iDPS.gear.Setup;
 import iDPS.gear.Gem;
@@ -29,10 +28,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	private JMenu mSetup;
 	private ItemSelectGear[] iSetups;
 	private JMenuItem iGearNew, iGearRename, iGearDup, iGearSave, iGearDel, iImportArmory;
-	
-	private JMenu mTalents;
-	private ItemSelectTalent[] iTalents;
-	private ButtonGroup gTalents;
 	
 	private JMenu mRaces;
 	private ItemSelectRace[] iRaces;
@@ -64,10 +59,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mSetup = new JMenu("Setups");
 		createGearMenu();
 		add(mSetup);
-		
-		mTalents = new JMenu("Talent Specs");
-		createTalentsMenu();
-		add(mTalents);
 		
 		mRaces = new JMenu("Race");
 		createRacesMenu();
@@ -128,19 +119,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		iGearDel.setEnabled(Setup.getAll().size()>1);
 	}
 	
-	public void createTalentsMenu() {
-		mTalents.removeAll();
-		
-		ArrayList<Talents> tSpecs = Talents.getAll();
-		iTalents = new ItemSelectTalent[tSpecs.size()];
-		gTalents = new ButtonGroup();
-		for (int i=0; i<tSpecs.size(); i++) {
-			iTalents[i] = new ItemSelectTalent(tSpecs.get(i));
-			gTalents.add(iTalents[i]);
-			mTalents.add(iTalents[i]);
-		}
-	}
-	
 	public void createRacesMenu() {
 		mRaces.removeAll();
 		
@@ -168,10 +146,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		for (ItemSelectGear iSetup: iSetups)
 			iSetup.setSelected(iSetup.getSetup() == setup);
 		
-		gTalents.clearSelection();
-		for (ItemSelectTalent iTalent: iTalents)
-			gTalents.setSelected(iTalent.getModel(), (iTalent.getTalents() == setup.getTalents()));
-		
 		gRaces.clearSelection();
 		for (ItemSelectRace iRace: iRaces)
 			gRaces.setSelected(iRace.getModel(), (iRace.getRace() == setup.getRace()));
@@ -184,11 +158,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mainFrame.getApp().setSetup(setup);
 		mainFrame.showGear();
 		checkSetup(setup);
-	}
-	
-	private void selectTalents(Talents talents) {
-		mainFrame.getApp().getSetup().setTalents(talents);
-		mainFrame.showStats();
 	}
 	
 	private void selectRace(Race race) {
@@ -276,26 +245,6 @@ public class MenuBar extends JMenuBar implements ActionListener {
 
 		public void actionPerformed(ActionEvent e) {
 			selectGearSetup(setup);
-		}
-		
-	}
-	
-	private class ItemSelectTalent extends JRadioButtonMenuItem implements ActionListener {
-		
-		private Talents talents;
-		
-		public ItemSelectTalent(Talents talents) {
-			super(talents.getName());
-			this.talents = talents;
-			addActionListener(this);
-		}
-		
-		public Talents getTalents() {
-			return talents;
-		}
-
-		public void actionPerformed(ActionEvent e) {
-			selectTalents(talents);
 		}
 		
 	}

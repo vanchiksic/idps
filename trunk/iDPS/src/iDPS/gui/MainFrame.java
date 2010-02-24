@@ -9,8 +9,6 @@ import java.awt.Insets;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -20,20 +18,16 @@ import iDPS.Application;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.menu.MenuBar;
-import iDPS.gui.sidepanel.BuffPanelBuffs;
-import iDPS.gui.sidepanel.BuffPanelConsumables;
-import iDPS.gui.sidepanel.BuffPanelDebuffs;
-import iDPS.gui.sidepanel.BuffPanelOther;
+import iDPS.gui.sidepanel.SidePanel;
 
 public class MainFrame extends JFrame {
 		
 	private Application app;
 	private MenuBar menuBar;
-	private JPanel buffPanel;
 	private ImportProfileDialog importFrame = null;
 	private CenterPanel centerP;
 	private InventoryButton[] buttons;
-	private JScrollPane sideScroll;
+	private SidePanel sidePanel;
 	
 	public MainFrame(Application app) {
 		super("iDPS");
@@ -124,24 +118,8 @@ public class MainFrame extends JFrame {
 		invPane.setPreferredSize(new Dimension(440,490));
 		add(invPane, BorderLayout.CENTER);
 		
-		sideScroll = new JScrollPane();
-		sideScroll.getVerticalScrollBar().setUnitIncrement(20);
-		sideScroll.setPreferredSize(new Dimension(430,490));
-		add(sideScroll, BorderLayout.LINE_END);
-		
-		buffPanel = new JPanel();
-		JTabbedPane tp = new JTabbedPane();
-		JPanel bp = new BuffPanelBuffs(this, app.getBuffController());
-		JPanel cp = new BuffPanelConsumables(this, app.getBuffController());
-		JPanel dp = new BuffPanelDebuffs(this, app.getBuffController());
-		JPanel op = new BuffPanelOther(this, app.getBuffController());
-		tp.addTab("Buffs", bp);
-		tp.addTab("Consumables", cp);
-		tp.addTab("Debuffs", dp);
-		tp.addTab("Other", op);
-		tp.setPreferredSize(new Dimension(400,400));
-		buffPanel.add(tp);
-		showBuffCentral();
+		sidePanel = new SidePanel(this);
+		add(sidePanel, BorderLayout.LINE_END);
 		
 		pack();
 		
@@ -180,13 +158,14 @@ public class MainFrame extends JFrame {
 		centerP.showStats();
 	}
 
-	public JScrollPane getSideScroll() {
-		return sideScroll;
+	public SidePanel getSideScroll() {
+		return sidePanel;
 	}
 	
-	public void showBuffCentral() {
-		sideScroll.setViewportView(buffPanel);
+	public void showSidePanel() {
+		sidePanel.showDefaultPanel();
 	}
+	
 	
 	public MenuBar getMyMenuBar() {
 		return menuBar;

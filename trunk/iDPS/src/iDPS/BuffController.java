@@ -17,10 +17,11 @@ public class BuffController implements PropertyChangeListener {
 		agilityStrength, agilityStrengthImp, partyHit }
 	public enum Consumable { flask,
 		foodAgi, foodArp, foodAtp, foodExp, foodHit, foodHst }
-	public enum Debuff { armorMajor, armorMajorMaintain, armorMinor,
-		crit, physicalDamage, spellCrit, spellDamage, spellHit }
+	public enum Debuff { armorMajor, armorMinor,
+		bleed, crit, physicalDamage, spellCrit, spellDamage, spellHit }
 	public enum Other { bloodlust }
 	
+	private final Application app;
 	private final PropertyChangeSupport pcs;
 	private final EnumSet<Consumable> foodBuffs = EnumSet.range(Consumable.foodAgi, Consumable.foodHst);
 	
@@ -30,6 +31,7 @@ public class BuffController implements PropertyChangeListener {
 	private EnumMap<Other,Boolean> other;
 	
 	public BuffController(Application app) {
+		this.app = app;
 		pcs = new PropertyChangeSupport(this);
 		app.addPropertyChangeListener(this);
 	}
@@ -86,8 +88,10 @@ public class BuffController implements PropertyChangeListener {
 		boolean oldValue = debuffs.get(b);
 		debuffs.put(b, newValue);
 		pcs.firePropertyChange("debuff_"+b.name(), oldValue, newValue);
-		if (!newValue && b == Debuff.armorMajor)
-			setDebuff(Debuff.armorMajorMaintain, false);
+		if (!newValue) {
+			if (b == Debuff.armorMajor)
+				app.setUseExpose(newValue);
+		}
 	}
 	
 	public boolean hasOther(Other b) {

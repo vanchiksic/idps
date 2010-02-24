@@ -68,21 +68,16 @@ public class BuffPanelOther extends JPanel implements PropertyChangeListener {
 		if (evt.getSource() instanceof BuffController) {
 			if (evt.getPropertyName().equals("other")) {
 				for (Other b: Other.values())
-					handleChange(b);
+					boxes.get(b).setSelected(controller.hasOther(b));
 			} else if (evt.getPropertyName().startsWith("other_")) {
 				String s = evt.getPropertyName().substring(6);
 				try {
 					Other b = Other.valueOf(s);
-					handleChange(b);
+					boxes.get(b).setSelected(controller.hasOther(b));
 					return;
 				} catch (IllegalArgumentException e) {}
 			}
 		}
-	}
-	
-	private void handleChange(Other b) {
-		boxes.get(b).setSelected(controller.hasOther(b));
-		mainFrame.showStats();
 	}
 	
 	private class OtherBox extends JCheckBox implements ActionListener {
@@ -99,6 +94,7 @@ public class BuffPanelOther extends JPanel implements PropertyChangeListener {
 
 		public void actionPerformed(ActionEvent arg0) {
 			controller.setOther(buff, isSelected());
+			mainFrame.showStats();
 		}
 		
 	}

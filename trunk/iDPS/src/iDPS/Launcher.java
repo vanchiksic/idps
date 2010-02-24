@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 import iDPS.gear.Enchant;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
-import iDPS.gui.MainFrame;
 
 public class Launcher {
 	
@@ -30,8 +29,6 @@ public class Launcher {
 		
 		Race.load();
 		System.out.println("Races loaded.");
-		Talents.load();
-		System.out.println("Talents loaded.");
 		Armor.load();
 		System.out.println("Items loaded.");
 		Gem.load();
@@ -41,14 +38,6 @@ public class Launcher {
 		
 		app = new Application();
 		app.initialize();
-				
-		MainFrame mf = new MainFrame(app);
-		mf.getMyMenuBar().createGearMenu();
-		mf.getMyMenuBar().createTalentsMenu();
-		mf.getMyMenuBar().createRacesMenu();
-		
-		mf.showGear();
-		mf.getMyMenuBar().checkSetup(app.getSetup());
 	}
 	
 	public static Application getApp() {

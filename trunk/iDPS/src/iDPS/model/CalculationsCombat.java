@@ -1,12 +1,12 @@
 package iDPS.model;
 
-import iDPS.BuffController.Buff;
-import iDPS.BuffController.Debuff;
+import iDPS.Launcher;
+import iDPS.Glyphs.Glyph;
 
 public class CalculationsCombat extends Calculations {
 	
 	private float dpsSS, dpsEvi, dpsKS;
-	private float ssPerSec, eviPerSec;
+	private float ssPerSec, eviPerSec, rupPerSec;
 	
 	protected CalculationsCombat() {
 		super();
@@ -17,10 +17,10 @@ public class CalculationsCombat extends Calculations {
 		dpsWH = calcWhiteDPS();
 		dpsKS = calcKillingSpreeDPS();
 		dpsSS = calcSinisterDamage() * ssPerSec;
-		dpsEvi = calcEviscerateDamage() * eviPerSec;
+		dpsEvi = calcEviscerateDamage(avgCP4Plus) * eviPerSec;
 		dpsDP = calcDeadlyPoisonDPS();
 		dpsIP = calcInstantPoisonDPS();
-		dpsRU = calcRuptureDPS();
+		dpsRU = calcDamageRupture(avgCP4Plus) * rupPerSec;
 		total = dpsWH + dpsSS + dpsKS + dpsEvi + dpsDP + dpsIP + dpsRU;
 		
 		/*System.out.format("%10s %10.4f dps%n", "White:", dpsWH);
@@ -29,75 +29,82 @@ public class CalculationsCombat extends Calculations {
 		System.out.format("%10s %10.4f dps%n", "Evisc:", dpsEvi);
 		System.out.format("%10s %10.4f dps%n", "DeadlyP:", dpsDP);
 		System.out.format("%10s %10.4f dps%n", "InstantP:", dpsIP);
-		//System.out.format("%10s %10.4f dps%n", "Rupture:", dpsRU);
+		System.out.format("%10s %10.4f dps%n", "Rupture:", dpsRU);
 		System.out.format("%10s %10.4f dps%n", "Total:", total);
 		System.out.println();*/
 	}
 	
-	@SuppressWarnings("unused")
 	protected void calcCycle() {
-		float ss1cp, ss2cp;
-		ss2cp = mod.getHtSS().crit*0.5F;
-		ss1cp = 1-ss2cp;
-		float avgCpSS = 1+ss2cp;
 		
 		float pT10 = 0;
 		if (setup.getTier10()>=4)
 			pT10 = 0.13F;
+		float pRuth = 0.2F*talents.getTalentPoints("Ruth");
 		
-		float c0ss0cp, c0ss1cp, c0ss2cp, c0ss3cp, c0ss4cp, c0ss5cp;
-		float c1ss1cp, c1ss2cp, c1ss3cp, c1ss4cp, c1ss5cp;
-		float c2ss2cp, c2ss3cp, c2ss4cp, c2ss5cp;
-		float c3ss3cp, c3ss4cp, c3ss5cp;
-		float c4ss4cp, c4ss5cp;
-		c0ss0cp = 0.4F*(1-pT10);
-		c0ss1cp = 0.6F*(1-pT10);
-		c0ss2cp = 0;
-		c0ss3cp = 0.4F*pT10;
-		c0ss4cp = 0.6F*pT10;
-		c0ss5cp = 0;
-		c1ss1cp = c0ss0cp*ss1cp;
-		c1ss2cp = c0ss0cp*ss2cp + c0ss1cp*ss1cp;
-		c1ss3cp = c0ss1cp*ss2cp + c0ss2cp*ss1cp;
-		c1ss4cp = c0ss2cp*ss2cp + c0ss3cp*ss1cp;
-		c1ss5cp = c0ss3cp*ss2cp;
-		c2ss2cp = c1ss1cp*ss1cp;
-		c2ss3cp = c1ss1cp*ss2cp + c1ss2cp*ss1cp;
-		c2ss4cp = c1ss2cp*ss2cp + c1ss3cp*ss1cp;
-		c2ss5cp = c1ss3cp*ss2cp;
-		c3ss3cp = c2ss2cp*ss1cp;
-		c3ss4cp = c2ss2cp*ss2cp + c2ss3cp*ss1cp;
-		c3ss5cp = c2ss3cp*ss2cp;
-		c4ss4cp = c3ss3cp*ss1cp;
-		c4ss5cp = c3ss3cp*ss2cp;
-
-		avgCpFin = 5*(c0ss5cp+c1ss5cp+c2ss5cp+c3ss5cp+c4ss5cp)
-			+ 4*(c0ss4cp+c1ss4cp+c2ss4cp+c3ss4cp+c4ss4cp);
-		float ssPerFin = 4*(c4ss4cp+c4ss5cp) + 3*(c3ss4cp+c3ss5cp) + 2*(c2ss4cp+c2ss5cp) + (c1ss4cp+c1ss5cp);
+		float cpPerSS = 1;
+		if (glyphs.has(Glyph.SS))
+			cpPerSS += mod.getHtSS().crit*0.5F;
+		avgCP4Plus = 5;
+			
+		float eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()));
+		if (talents.getTalentPoints("ISS")>0)
+			eCostSS -= 3;
+		if (talents.getTalentPoints("ISS")>1)
+			eCostSS -= 2;
+		float eCostEvi = 35/(mod.getHtMHS().getContacts())
+			- avgCP4Plus*talents.getTalentPoints("RStrikes");
+		float eCostRup = 25/(mod.getHtMHS().getContacts())
+			- avgCP4Plus*talents.getTalentPoints("RStrikes");
+		float eCostEA = eCostRup - 5 * talents.getTalentPoints("IEA");
 		
-		float eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()))-5;
-		float eCostFin = 35/(mod.getHtMHS().getContacts());
-		eCostFin -= avgCpFin*talents.getRStrikes();
-		
-		float sndLength = (avgCpFin*3+6)*1.5F;
-		float eaLength = avgCpFin*6;
 		float eRegen = calcERegen();
+		// Build Time EA
+		float btEA = ((5/cpPerSS-pRuth-3*pT10)*eCostSS+eCostEA)/eRegen;
+		// Build Time SnD
+		float btSnD = ((5/cpPerSS-pRuth-3*pT10)*eCostSS+25)/eRegen;
+		// Build Time Rupture
+		float btRup = ((5/cpPerSS-pRuth-3*pT10)*eCostSS+eCostRup)/eRegen;
+		// Build Time Evisc
+		float btEvi = ((5/cpPerSS-pRuth-3*pT10)*eCostSS+eCostEvi)/eRegen;
 		
-		float cycleLength = Math.max(sndLength,eaLength);
-		float sndPerCycle = cycleLength/sndLength;
-		float eaPerCycle = 0;
-		if (bc.hasDebuff(Debuff.armorMajorMaintain))
-			eaPerCycle = cycleLength/eaLength;
-		float eCostSndCycle = ssPerFin*eCostSS + eCostFin-10;
-		float eCostEaCycle = ssPerFin*eCostSS + eCostFin-10;
-		float eCostEviCycle = ssPerFin*eCostSS + eCostFin;
-		eRegen -= (sndPerCycle*eCostSndCycle+eaPerCycle*eCostEaCycle)/cycleLength;
-		float eviPerCycle = eRegen*cycleLength/eCostEviCycle;
-		ssPerSec = ((sndPerCycle+eaPerCycle+eviPerCycle)*ssPerFin)/cycleLength;
-		eviPerSec = eviPerCycle/cycleLength;
-		float eaPerSec = eaPerCycle/cycleLength;
+		float lEA = 30;
+		if (glyphs.has(Glyph.EA))
+			lEA += 10;
+		if (!Launcher.getApp().getUseExpose())
+			lEA = 0;
+		float lSnD = 21*(1+talents.getTalentPoints("ISnD")/4F);
+		float lRup = 16.5F;
+		if (glyphs.has(Glyph.Rup))
+			lRup += 4;
+		float lCycle = Math.max(lSnD,lEA);
+		float pcSnD = lCycle/lSnD;
+		float pcEA = 0;
+		
+		float timeLeft = lCycle - pcSnD*btSnD - 1; // add some slack
+		
+		if (Launcher.getApp().getUseExpose()) {
+			pcEA = lCycle/lEA;
+			timeLeft -= pcEA*btEA + 1; // add some slack
+		}
+		
+		float pcRup = 0;
+		if (Launcher.getApp().getUseRupture()) {
+			pcRup = lCycle/lRup;
+			if (timeLeft < (pcRup*btRup))
+				pcRup = timeLeft/btRup;
+			timeLeft -= pcRup*btRup + 1; // add some slack
+		}
+		
+		float pcEvi = timeLeft/btEvi;
 				
-		mhSPS = ssPerSec+eviPerSec+eaPerSec;
+		float sndPerSec = pcSnD/lCycle;
+		float eaPerSec = pcEA/lCycle;
+		rupPerSec = pcRup/lCycle;
+		eviPerSec = pcEvi/lCycle;
+		
+		ssPerSec = (sndPerSec+eaPerSec+rupPerSec+eviPerSec)*(5-pRuth-3*pT10)/cpPerSS;
+				
+		mhSPS = ssPerSec+eviPerSec+eaPerSec+rupPerSec;
 		mhSCPS = ssPerSec*mod.getHtSS().getCrit() + eviPerSec*mod.getHtFin().getCrit();
 		
 		ohSPS = 0;
@@ -107,11 +114,17 @@ public class CalculationsCombat extends Calculations {
 	protected float calcERegen() {
 		float eRegen = super.calcERegen();
 		
-		eRegen += talents.getVitality();
-		if (talents.getAr())
-			eRegen += 150F*getMaxUses(180)/fightDuration;
+		eRegen += 10/12F*talents.getTalentPoints("Vitality");
+		if (talents.getTalentPoints("AR")>0) {
+			if (glyphs.has(Glyph.AR))
+				eRegen += 200F*getMaxUses(180)/fightDuration;
+			else
+				eRegen += 150F*getMaxUses(180)/fightDuration;
+		}
+		if (talents.getTalentPoints("BF")>0 && !glyphs.has(Glyph.BF))
+			eRegen -= getMaxUses(120)*25/fightDuration;
 		calcWhiteDPS();
-		if (talents.getCombatPotency()>0)
+		if (talents.getTalentPoints("CPotency")>0)
 			eRegen += combatPotencyRegen();
 		
 		return eRegen;
@@ -131,21 +144,20 @@ public class CalculationsCombat extends Calculations {
 		}
 		pps *= 0.2F;
 		
-		float regen = pps*((float) talents.getCombatPotency());
+		float regen = pps * 3*talents.getTalentPoints("CPotency");
 		//System.out.println("cpt regen: "+regen);
 		return regen;
 	}
 	
 	private float calcSinisterDamage() {
 		float dmg = setup.getWeapon1().getInstantDmg(totalATP) + 180;
-		dmg *= 1+0.10F+0.10F+0.15F;
+		dmg *= 1 + 0.05F*talents.getTalentPoints("BTwist")
+			+ 0.10F*talents.getTalentPoints("SAttacks")
+			+ 0.03F*talents.getTalentPoints("Aggr");
 		dmg *= ((mod.getComboMoveCritMult()-1)*mod.getHtSS().crit+1);
 		// Global Mods
+		dmg *= getGlobalDmgMod(true, false);
 		dmg *= mod.getModArmorMH();
-		if (bc.hasDebuff(Debuff.physicalDamage))
-			dmg *= 1.04F;
-		if (bc.hasBuff(Buff.damage))
-			dmg *= 1.03F;
 
 		dmg *= 1+bbIncrease;
 		return dmg;
@@ -153,19 +165,21 @@ public class CalculationsCombat extends Calculations {
 	
 	private float calcKillingSpreeDPS() {
 		float dps = 0;
-		if (talents.getKs()) {
+		if (talents.getTalentPoints("KS")>0) {
 			float dmg, dmgMh, dmgOh;
 			dmgMh = setup.getWeapon1().getAverageDmg(totalATP)*mod.getModArmorMH();
 			dmgMh = dmgMh*mod.getHtMHS().hit + dmgMh*mod.getHtMHS().crit*mod.getPhysCritMult();
-			dmgOh = setup.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()*0.75F;
+			dmgOh = setup.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()
+				* 0.5F * (1+0.1F*talents.getTalentPoints("DWield"));
 			dmgOh = dmgOh*mod.getHtMHS().hit + dmgOh*mod.getHtMHS().crit*mod.getPhysCritMult();
 			dmg = (dmgMh + dmgOh) * 5 * 1.2F;
 			// Global Mods
-			if (bc.hasDebuff(Debuff.physicalDamage))
-				dmg *= 1.04F;
-			if (bc.hasBuff(Buff.damage))
-				dmg *= 1.03F;
-			dps = dmg / 75F;
+			dmg *= getGlobalDmgMod(true, false);
+
+			if (glyphs.has(Glyph.KS))
+				dps = dmg / 75F;
+			else
+				dps = dmg / 120F;
 			dps *= 1+bbIncrease;
 			
 			mhSPS += 5/75F * mod.getHtMHS().getContacts();

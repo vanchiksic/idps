@@ -13,7 +13,7 @@ public class HitTable {
 	// critP = uncapped depressed crit chance with procs
 	float miss, dodge, glance, crit, crit0, critU, critP, hit, hit0, critCap;
 	
-	public HitTable(Type t, Talents talents, float hit, float cri, float exp) {
+	public HitTable(Type t, Talents talents2, float hit, float cri, float exp) {
 		switch (t) {
 			case White:
 				this.miss = Math.max((0.27F-hit),0);
@@ -44,7 +44,7 @@ public class HitTable {
 			case Finish:
 				this.miss = Math.max((0.08F-hit),0);
 				this.dodge = Math.max((0.065F-exp),0);
-				if (talents.getSupriseattacks())
+				if (talents2.getTalentPoints("SAttacks")>0)
 					this.dodge = 0;
 				this.glance = 0;
 				this.crit = Math.min((1-this.miss-this.dodge),cri);

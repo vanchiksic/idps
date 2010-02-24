@@ -92,22 +92,16 @@ public class BuffPanelConsumables extends JPanel implements PropertyChangeListen
 		if (evt.getSource() instanceof BuffController) {
 			if (evt.getPropertyName().equals("consumables")) {
 				for (Consumable b: Consumable.values())
-					handleChange(b);
+					boxes.get(b).setSelected(controller.hasConsumable(b));
 			} else if (evt.getPropertyName().startsWith("consumable_")) {
 				String s = evt.getPropertyName().substring(11);
 				try {
 					Consumable b = Consumable.valueOf(s);
-					handleChange(b);
+					boxes.get(b).setSelected(controller.hasConsumable(b));
 					return;
 				} catch (IllegalArgumentException e) {}
 			}
 		}
-	}
-	
-	private void handleChange(Consumable b) {
-		boxes.get(b).setSelected(controller.hasConsumable(b));
-		
-		mainFrame.showStats();
 	}
 	
 	private class ConsumableBox extends JCheckBox implements ActionListener {
@@ -124,6 +118,7 @@ public class BuffPanelConsumables extends JPanel implements PropertyChangeListen
 
 		public void actionPerformed(ActionEvent arg0) {
 			controller.setConsumable(buff, isSelected());
+			mainFrame.showStats();
 		}
 		
 	}

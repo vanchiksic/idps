@@ -2,6 +2,7 @@ package iDPS.gear;
 
 import iDPS.Application;
 import iDPS.Attributes;
+import iDPS.Glyphs;
 import iDPS.Persistency;
 import iDPS.Race;
 import iDPS.Talents;
@@ -40,7 +41,11 @@ public class Setup implements Comparable<Setup> {
 	private String name;
 	
 	private Talents talents;
+	private Glyphs glyphs;
 	private Race race;
+	private boolean useTotT;
+	private boolean useRupture;
+	private boolean useExpose;
 	private EnumSet<Profession> professions;
 	private EnumMap<Buff,Boolean> buffs;
 	private EnumMap<Consumable,Boolean> consumables;
@@ -64,6 +69,7 @@ public class Setup implements Comparable<Setup> {
 		for (Armor.Tier t: Armor.Tier.values())
 			tiers.put(t, 0);
 		talents = new Talents();
+		glyphs = new Glyphs();
 		race = new Race();
 		professions = EnumSet.noneOf(Profession.class);
 		
@@ -98,7 +104,9 @@ public class Setup implements Comparable<Setup> {
 			if (s.equals("name"))
 				name = eGear.getText();
 			else if (s.equals("talents"))
-				talents = Talents.find(Integer.parseInt(eGear.getAttributeValue("id")));
+				talents = new Talents(eGear);
+			else if (s.equals("glyphs"))
+				glyphs = new Glyphs(eGear);
 			else if (s.equals("race"))
 				race = Race.find(Integer.parseInt(eGear.getAttributeValue("id")));
 			else if (s.equals("professions")) {
@@ -159,6 +167,15 @@ public class Setup implements Comparable<Setup> {
 						} catch (IllegalArgumentException ex) { }
 					}
 				}
+			} else if (s.equals("rotation")) {
+				for (Element e: (List<Element>) eGear.getChildren()) {
+					if (e.getName().equals("rupture"))
+						useRupture = Boolean.parseBoolean(e.getText());
+					if (e.getName().equals("tott"))
+						useTotT = Boolean.parseBoolean(e.getText());
+					if (e.getName().equals("expose"))
+						useExpose = Boolean.parseBoolean(e.getText());
+				}
 			}
 		}
 	}
@@ -181,13 +198,17 @@ public class Setup implements Comparable<Setup> {
 			uniqueMap.put(s, vect);
 		}
 		tiers = new EnumMap<Armor.Tier,Integer>(copy.tiers);
-		talents = copy.talents;
+		talents = copy.talents.clone();
+		glyphs = copy.glyphs.clone();
 		race = copy.race;
 		professions = copy.professions.clone();
 		buffs = copy.buffs.clone();
 		consumables = copy.consumables.clone();
 		debuffs = copy.debuffs.clone();
 		other = copy.other.clone();
+		useRupture = copy.useExpose;
+		useTotT = copy.useTotT;
+		useExpose = copy.useExpose;
 	}
 	
 	public Setup(String name) {
@@ -615,11 +636,10 @@ public class Setup implements Comparable<Setup> {
 		eSetup.getChildren().add(eName);
 		
 		// TalentSpec
-		if (gear.getTalents() != null && gear.getTalents().getId() > 0) {
-			eName = new Element("talents");
-			eName.setAttribute("id", gear.getTalents().getId()+"");
-			eSetup.getChildren().add(eName);
-		}
+		eSetup.getChildren().add(gear.getTalents().toXML());
+		
+		// Glyphs
+		eSetup.getChildren().add(gear.getGlyphs().toXML());
 		
 		// Race
 		if (gear.getRace() != null && gear.getRace().getId() > 0) {
@@ -707,14 +727,15 @@ public class Setup implements Comparable<Setup> {
 			}
 		}
 		eSetup.getChildren().add(eName);
-	}
-
-	public Talents getTalents() {
-		return talents;
-	}
-
-	public void setTalents(Talents talents) {
-		this.talents = talents;
+		// save Rotation
+		eName = new Element("rotation");
+		if (gear.useExpose)
+			eName.getChildren().add(new Element("expose").setText("true"));
+		if (gear.useRupture)
+			eName.getChildren().add(new Element("rupture").setText("true"));
+		if (gear.useTotT)
+			eName.getChildren().add(new Element("tott").setText("true"));
+		eSetup.getChildren().add(eName);
 	}
 
 	public Race getRace() {
@@ -764,6 +785,38 @@ public class Setup implements Comparable<Setup> {
 	
 	public EnumMap<Other, Boolean> getOther() {
 		return other;
+	}
+
+	public boolean isUseTotT() {
+		return useTotT;
+	}
+
+	public void setUseTotT(boolean useTotT) {
+		this.useTotT = useTotT;
+	}
+
+	public boolean isUseRupture() {
+		return useRupture;
+	}
+
+	public void setUseRupture(boolean useRupture) {
+		this.useRupture = useRupture;
+	}
+
+	public boolean isUseExpose() {
+		return useExpose;
+	}
+
+	public void setUseExpose(boolean useExpose) {
+		this.useExpose = useExpose;
+	}
+
+	public Talents getTalents() {
+		return talents;
+	}
+	
+	public Glyphs getGlyphs() {
+		return glyphs;
 	}
 
 }

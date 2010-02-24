@@ -50,14 +50,13 @@ public class BuffPanelDebuffs extends JPanel implements PropertyChangeListener {
 					name = "Major Armor Debuff";
 					tooltip = "Sunder Armor, Expose Armor";
 					break;
-				case armorMajorMaintain:
-					name = "Myself maintaining EA";
-					c.insets = new Insets(0,20,0,0);
-					enabled = controller.hasDebuff(Debuff.armorMajor);
-					break;
 				case armorMinor:
 					name = "Minor Armor Debuff";
 					tooltip = "Faerie Fire";
+					break;
+				case bleed:
+					name = "30% Bleed Damage";
+					tooltip = "Mangle";
 					break;
 				case crit:
 					name = "3% Crit Debuff";
@@ -97,24 +96,16 @@ public class BuffPanelDebuffs extends JPanel implements PropertyChangeListener {
 		if (evt.getSource() instanceof BuffController) {
 			if (evt.getPropertyName().equals("debuffs")) {
 				for (Debuff b: Debuff.values())
-					handleChange(b);
+					boxes.get(b).setSelected(controller.hasDebuff(b));
 			} else if (evt.getPropertyName().startsWith("debuff_")) {
 				String s = evt.getPropertyName().substring(7);
 				try {
 					Debuff db = Debuff.valueOf(s);
-					handleChange(db);
+					boxes.get(db).setSelected(controller.hasDebuff(db));
 					return;
 				} catch (IllegalArgumentException e) {}
 			}
 		}
-	}
-	
-	private void handleChange(Debuff b) {
-		boxes.get(b).setSelected(controller.hasDebuff(b));
-		if (b == Debuff.armorMajor)
-			boxes.get(Debuff.armorMajorMaintain).setEnabled(controller.hasDebuff(b));
-		
-		mainFrame.showStats();
 	}
 	
 	private class DebuffBox extends JCheckBox implements ActionListener {
@@ -131,6 +122,7 @@ public class BuffPanelDebuffs extends JPanel implements PropertyChangeListener {
 
 		public void actionPerformed(ActionEvent arg0) {
 			controller.setDebuff(debuff, isSelected());
+			mainFrame.showStats();
 		}
 		
 	}

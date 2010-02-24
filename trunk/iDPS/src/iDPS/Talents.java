@@ -1,287 +1,210 @@
 package iDPS;
 
 import iDPS.model.Calculations;
+import iDPS.model.Calculations.ModelType;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
+import org.jdom.Element;
 
-public class Talents {
+public class Talents implements Cloneable {
 	
-	public enum Spec { None, MutilateRS, MutilateLR, CombatCQC, CombatHnS, CombatMace };
+	public enum Tree { Assassination, Combat, Subtetly }
 	
-	private static HashMap<Integer,Talents> map = null;
-	
-	private int id;
-	private String name;
-	
-	private Spec spec;
-	private Calculations.ModelType model;
-	
-	private int lethality, vilepoisons, improvedpoisons, hfb, murder, fa, fweakness;
-	private int cqc, hns, mace, lightref, ar, compot, bf, vitality, expertise, sattacks, potw, savage, ks;
-	private int rstrikes, opportunity;
+	private ModelType model;
+	private static HashMap<String,Talent> talents;
+	private HashMap<Talent,Integer> distribution;
 	
 	public Talents() {
-		spec = Spec.None;
 		model = Calculations.ModelType.Combat;
+		distribution = new HashMap<Talent,Integer>();
+		for (Talent t: talents.values())
+			distribution.put(t, 0);
 	}
 	
-	public Talents(Spec s) {
+	@SuppressWarnings("unchecked")
+	public Talents(Element root) {
 		this();
-		spec = s;
-		name = s.name();
-		model = Calculations.ModelType.Combat;
-		switch (s) {
-			case MutilateRS:
-				id = 1;
-				model = Calculations.ModelType.Mutilate;
-				lethality = 5;
-				vilepoisons = 3;
-				improvedpoisons = 5;
-				murder = 2;
-				fweakness = 3;
-				fa = 3;
-				hfb = 1;
-				cqc = 3;
-				rstrikes = 5;
-				opportunity = 2;
-				break;
-			case MutilateLR:
-				id = 2;
-				model = Calculations.ModelType.Mutilate;
-				lethality = 5;
-				vilepoisons = 3;
-				improvedpoisons = 5;
-				murder = 2;
-				fweakness = 3;
-				fa = 3;
-				hfb = 1;
-				cqc = 5;
-				lightref = 3;
-				rstrikes = 2;
-				break;
-			case CombatCQC:
-				id = 3;
-				lethality = 5;
-				vilepoisons = 1;
-				improvedpoisons = 4;
-				cqc = 5;
-				lightref = 3;
-				bf = 1;
-				ar = 1;
-				compot = 5;
-				vitality = 3;
-				expertise = 2;
-				sattacks = 1;
-				potw = 5;
-				ks = 1;
-				savage = 2;
-				rstrikes = 0;
-				break;
-			case CombatHnS:
-				id = 4;
-				lethality = 5;
-				vilepoisons = 1;
-				improvedpoisons = 4;
-				hns = 5;
-				lightref = 3;
-				bf = 1;
-				ar = 1;
-				compot = 5;
-				vitality = 3;
-				expertise = 2;
-				sattacks = 1;
-				potw = 5;
-				savage = 2;
-				ks = 1;
-				break;
-			case CombatMace:
-				id = 5;
-				lethality = 5;
-				vilepoisons = 1;
-				improvedpoisons = 4;
-				cqc = 1;
-				mace = 5;
-				lightref = 3;
-				bf = 1;
-				ar = 1;
-				compot = 5;
-				vitality = 3;
-				expertise = 2;
-				sattacks = 1;
-				potw = 5;
-				savage = 2;
-				ks = 1;
-				break;
+		for (Element elem: (List<Element>) root.getChildren()) {
+			if (elem.getName().equals("ModelType")) {
+				model = ModelType.valueOf(elem.getText());
+			} else if (talents.containsKey(elem.getName())) {
+				Talent t = talents.get(elem.getName());
+				distribution.put(t, Integer.parseInt(elem.getText()));
+			}
 		}
 	}
-
-	public float getPotw() {
-		return 1+.04F*potw;
-	}
-
-	public float getLightref() {
-		switch (lightref) {
-			default:
-				return 1;
-			case 1:
-				return 1.04F;
-			case 2:
-				return 1.07F;
-			case 3:
-				return 1.1F;
+	
+	@SuppressWarnings("unchecked")
+	public Element toXML() {
+		Element elem = new Element("talents");
+		Element sub = new Element("ModelType");
+		sub.setText(model.name());
+		elem.getChildren().add(sub);
+		for (Talent t: getTalents()) {
+			int points = getTalentPoints(t);
+			if (points==0)
+				continue;
+			sub = new Element(t.getIdentifier());
+			sub.setText(String.valueOf(points));
+			elem.getChildren().add(sub);
 		}
-	}
-
-	public int getExpertise() {
-		return expertise*5;
-	}
-
-	public boolean getSupriseattacks() {
-		return sattacks>0;
-	}
-
-	public float getLethality() {
-		return 1+.06F*lethality;
-	}
-
-	public float getHfb() {
-		return 1+.08F*hfb;
-	}
-
-	public float getMurder() {
-		return 1+.02F*murder;
+		return elem;
 	}
 	
-	public float getRStrikes() {
-		return .04F*rstrikes;
+	public int getTalentPoints(String identifier) {
+		Talent t = talents.get(identifier);
+		if (t == null)
+			System.err.println("No such Talent: "+identifier);
+		return getTalentPoints(t);
 	}
 	
-	public float getOpportunity() {
-		return .1F*opportunity;
+	public int getTalentPoints(Talent t) {
+		if (distribution.containsKey(t))
+			return distribution.get(t);
+		return 0;
 	}
 	
-	public float getFindWeakness() {
-		return .02F*fweakness;
+	public void setTalentPoints(String identifier, int points) {
+		Talent t = talents.get(identifier);
+		distribution.put(t, points);
 	}
 	
-	public int getCQC() {
-		return cqc;
+	public void setTalentPoints(Talent t, int points) {
+		distribution.put(t, points);
 	}
 	
-	public int getHnS() {
-		return hns;
+	public Collection<Talent> getTalents(Tree tree) {
+		ArrayList<Talent> matches = new ArrayList<Talent>();
+		for (Talent t: talents.values()) {
+			if (t.tree == tree)
+				matches.add(t);
+		}
+		Collections.sort(matches);
+		return matches;
 	}
 	
-	public int getMaceSpec() {
-		return mace;
-	}
-
-	public Spec getSpec() {
-		return spec;
-	}
-
-	public String getName() {
-		return name;
-	}
-	
-	public String toString() {
-		return name;
-	}
-	
-	public static ArrayList<Talents> getAll() {
-		if (map != null)
-			return new ArrayList<Talents>(map.values());
-		return new ArrayList<Talents>();
-	}
-	
-	public static Talents find(int id) {
-		if (map != null && map.containsKey(id))
-			return map.get(id);
-		return null;
+	public Collection<Talent> getTalents() {
+		return talents.values();
 	}
 	
 	public static void load() {
-		map = new HashMap<Integer,Talents>();
-		Talents t;
-		for (Spec s: Spec.values()) {
-			if (s == Spec.None)
-				continue;
-			t = new Talents(s);
-			map.put(t.id, t);
+		talents = new HashMap<String,Talent>();
+		
+		createTalent("IEvisc", Tree.Assassination, 1, "Imp. Eviscerate", 3);
+		createTalent("Malice", Tree.Assassination, 1, "Malice", 5);
+		createTalent("Ruth", Tree.Assassination, 2, "Ruthlessness", 3);
+		createTalent("BSpatter", Tree.Assassination, 2, "Blood Spatter", 2);
+		createTalent("PWounds", Tree.Assassination, 2, "Puncturing Wounds", 3);
+		createTalent("IEA", Tree.Assassination, 3, "Imp. Expose Armor", 2);
+		createTalent("Lethality", Tree.Assassination, 3, "Lethality", 5);
+		createTalent("VPoisons", Tree.Assassination, 4, "Vile Poisons", 3);
+		createTalent("IPoisons", Tree.Assassination, 4, "Imp. Poisons", 5);
+		createTalent("SFate", Tree.Assassination, 6, "Seal Fate", 5);
+		createTalent("Murder", Tree.Assassination, 6, "Murder", 2);
+		createTalent("OKill", Tree.Assassination, 6, "Overkill", 1);
+		createTalent("FAttacks", Tree.Assassination, 8, "Focussed Attacks", 3);
+		createTalent("FWeakness", Tree.Assassination, 8, "Find Weakness", 3);
+		//createTalent("MPoisoner", Tree.Assassination, 9, "Master Poisoner", 3);
+		//createTalent("Mutilate", Tree.Assassination, 9, "Mutilate", 1);
+		//createTalent("TtT", Tree.Assassination, 9, "Turn the Tables", 3);
+		//createTalent("CttC", Tree.Assassination, 10, "Cut to the Chase", 5);
+		createTalent("HfB", Tree.Assassination, 11, "Hunger For Blood", 1);
+		
+		createTalent("ISS", Tree.Combat, 1, "Imp. Sinister Strike", 2);
+		createTalent("DWield", Tree.Combat, 1, "Dual Wield Spec.", 5);
+		createTalent("ISnD", Tree.Combat, 2, "Imp. Slice and Dice", 2);
+		createTalent("Precision", Tree.Combat, 2, "Precision", 5);
+		createTalent("CQC", Tree.Combat, 3, "Close Quarters Combat", 5);
+		createTalent("LR", Tree.Combat, 4, "Lighning Reflexes", 3);
+		createTalent("Aggr", Tree.Combat, 4, "Aggression", 5);
+		createTalent("Mace", Tree.Combat, 5, "Mace Spec.", 5);
+		createTalent("BF", Tree.Combat, 5, "Blade Flurry", 1);
+		createTalent("HnS", Tree.Combat, 5, "Hack and Slach", 5);
+		createTalent("WExp", Tree.Combat, 6, "Weapon Expertise", 2);
+		createTalent("BTwist", Tree.Combat, 6, "Blade Twisting", 2);
+		createTalent("Vitality", Tree.Combat, 7, "Vitality", 3);
+		createTalent("AR", Tree.Combat, 7, "Adrenaline Rush", 1);
+		createTalent("CPotency", Tree.Combat, 8, "Combat Potency", 5);
+		createTalent("SAttacks", Tree.Combat, 9, "Surprise Attacks", 1);
+		createTalent("SCombat", Tree.Combat, 9, "Savage Combat", 2);
+		createTalent("PotW", Tree.Combat, 10, "Prey on the Weak", 5);
+		createTalent("KS", Tree.Combat, 11, "Killing Spree", 1);
+		
+		createTalent("RStrikes", Tree.Subtetly, 1, "Relentless Strikes", 5);
+		createTalent("Opp", Tree.Subtetly, 1, "Opportunity", 2);
+		createTalent("SBlades", Tree.Subtetly, 3, "Serrated Blades", 3);
+	}
+	
+	private static void createTalent(String identifier, Tree tree, int rank, String name, int maxPoints) {
+		Talent t = new Talent(identifier, tree, rank, name, maxPoints);
+		talents.put(identifier, t);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Talents clone() {
+		Talents clone = new Talents();
+		clone.distribution = (HashMap<Talent, Integer>) this.distribution.clone();
+		clone.model = this.model;
+		return clone;
+	}
+	
+	public static class Talent implements Comparable<Talent> {
+
+		private String identifier;
+		private Tree tree;
+		private int rank;
+		private String name;
+		private int maxPoints;
+		
+		public Talent(String identifier, Tree tree, int rank, String name, int maxPoints) {
+			this.identifier = identifier;
+			this.tree = tree;
+			this.rank = rank;
+			this.name = name;
+			this.maxPoints = maxPoints;
 		}
+		
+		public String getIdentifier() {
+			return identifier;
+		}
+
+		public Tree getTree() {
+			return tree;
+		}
+
+		public int getRank() {
+			return rank;
+		}
+
+		public String getName() {
+			return name;
+		}
+
+		public int getMaxPoints() {
+			return maxPoints;
+		}
+		
+		public int compareTo(Talent t) {
+			if (rank > t.rank)
+				return 1;
+			else if (rank < t.rank)
+				return -1;
+			return 0;
+		}
+		
 	}
 
 	public Calculations.ModelType getModel() {
 		return model;
 	}
 
-	public float getVilePoisons() {
-		switch (vilepoisons) {
-			default:
-				return 0;
-			case 1:
-				return .07F;
-			case 2:
-				return .14F;
-			case 3:
-				return .2F;
-		}
-	}
-	
-	public float getVitality() {
-		switch (vitality) {
-			default:
-				return 0;
-			case 1:
-				return .8F;
-			case 2:
-				return 1.6F;
-			case 3:
-				return 2.5F;
-		}
-	}
-	
-	public float getFocusedAttacks() {
-		switch (fa) {
-			default:
-				return 0;
-			case 1:
-				return .33F;
-			case 2:
-				return .66F;
-			case 3:
-				return 1F;
-		}
+	public void setModel(Calculations.ModelType model) {
+		this.model = model;
 	}
 
-	public int getImprovedPoisons() {
-		return improvedpoisons;
-	}
-
-	public boolean getKs() {
-		return ks>0;
-	}
-
-	public boolean getAr() {
-		return ar>0;
-	}
-
-	public boolean getBf() {
-		return bf>0;
-	}
-
-	public int getCombatPotency() {
-		return compot*3;
-	}
-	
-	public int getSavageCombat() {
-		return savage;
-	}
-
-	public int getId() {
-		return id;
-	}
-	
 }

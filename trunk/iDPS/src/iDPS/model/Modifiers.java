@@ -2,12 +2,14 @@ package iDPS.model;
 
 import iDPS.Attributes;
 import iDPS.BuffController;
+import iDPS.Glyphs;
 import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.BuffController.Buff;
 import iDPS.BuffController.Consumable;
 import iDPS.BuffController.Debuff;
+import iDPS.Glyphs.Glyph;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Setup.Profession;
@@ -38,6 +40,7 @@ public class Modifiers {
 	
 	private Attributes attr;
 	private Setup setup;
+	private Glyphs glyphs;
 	private Talents talents;
 	private BuffController bc;
 	
@@ -46,6 +49,7 @@ public class Modifiers {
 		attr = new Attributes(inject);
 		attr.add(setup.getAttributes());
 		this.setup = setup;
+		this.glyphs = setup.getGlyphs();
 		this.talents = setup.getTalents();
 		bc = Launcher.getApp().getBuffController();
 		calcAttributes();
@@ -123,9 +127,8 @@ public class Modifiers {
 		attr.finalizeStats();
 		if (bc.hasBuff(Buff.attackPowerMult))
 			attr.applyAtpMult(1.1F);
-		if (talents.getSavageCombat()>0) {
-			attr.applyAtpMult(1+0.02F*talents.getSavageCombat());
-		}
+		if (talents.getTalentPoints("SCombat")>0)
+			attr.applyAtpMult(1+0.02F*talents.getTalentPoints("SCombat"));
 	}
 	
 	public void calcMods() {
@@ -140,17 +143,18 @@ public class Modifiers {
 		arp = attr.getArp();
 				
 		float baseAgi = setup.getRace().getAttr().getAgi()-166;
-		gHit = hit/cHIT + 0.05F;
+		gHit = hit/cHIT + 0.01F*talents.getTalentPoints("Precision");
 		if (bc.hasBuff(Buff.partyHit))
 			gHit += 0.01F;
-		gCri = (agi-baseAgi)/cAGI + cri/cCRIT + 0.05F - 0.048F;
+		gCri = (agi-baseAgi)/cAGI + cri/cCRIT
+				+ 0.01F*talents.getTalentPoints("Malice") - 0.048F;
 		if (bc.hasBuff(Buff.physicalCrit))
 			gCri += 0.05F;
 		if (bc.hasDebuff(Debuff.crit))
 			gCri += 0.03F;
-		gExp = exp/cEXP + 0.0025F * talents.getExpertise();
+		gExp = exp/cEXP + 0.0125F * talents.getTalentPoints("WExp");
 		
-		gHst  = 1.4F * talents.getLightref();
+		gHst  = 1.4F * (1+talents.getTalentPoints("LR")/30F);
 		if (bc.hasBuff(Buff.meleHasteImp))
 			gHst *= 1.2F;
 		else if (bc.hasBuff(Buff.meleHaste))
@@ -177,13 +181,13 @@ public class Modifiers {
 		// Arp
 		float tmpArp = arp;
 		if (wt1 == weaponType.Mace)
-			tmpArp += cARP*0.03F*talents.getMaceSpec();
+			tmpArp += cARP*0.03F*talents.getTalentPoints("Mace");
 		if (tmpArp>cARP)
 			setArpExceeded(2);
 		modArmorMH = calcArmorMod(tmpArp);
 		tmpArp = arp;
 		if (wt2 == weaponType.Mace)
-			tmpArp += cARP*0.03F*talents.getMaceSpec();
+			tmpArp += cARP*0.03F*talents.getTalentPoints("Mace");
 		modArmorOH = calcArmorMod(tmpArp);
 		
 		// Hit Tables MainHand
@@ -194,12 +198,12 @@ public class Modifiers {
 					tmpExp += 0.0025F * 5;
 				break;
 			case Dagger:
-				tmpCri += talents.getCQC()/100F;
+				tmpCri += talents.getTalentPoints("CQC")/100F;
 				break;
 			case Fist:
 				if (setup.getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
-				tmpCri += talents.getCQC()/100F;
+				tmpCri += talents.getTalentPoints("CQC")/100F;
 				break;
 			case Mace:
 				if (setup.getRace().getType() == Race.Type.Dwarf)
@@ -214,11 +218,15 @@ public class Modifiers {
 		}
 		htMH = new HitTable(HitTable.Type.White, talents, gHit, tmpCri, tmpExp);
 		htMHS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
-		htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
+		if (glyphs.has(Glyph.Evi))
+			htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri+0.1F, tmpExp);
+		else
+			htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
 		if (setup.getTier9()>=4)
 			tmpCri += 0.05F;
 		htSS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
-		htMut = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri+0.15F, tmpExp);
+		tmpCri += 0.05F*talents.getTalentPoints("PWounds");
+		htMut = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
 		
 		// Hit Tables Offhand
 		tmpCri = gCri; tmpExp = gExp;
@@ -228,12 +236,12 @@ public class Modifiers {
 					tmpExp += 0.0025F * 5;
 				break;
 			case Dagger:
-				tmpCri += talents.getCQC()/100F;
+				tmpCri += talents.getTalentPoints("CQC")/100F;
 				break;
 			case Fist:
 				if (setup.getRace().getType() == Race.Type.Orc)
 					tmpExp += 0.0025F * 5;
-				tmpCri += talents.getCQC()/100F;
+				tmpCri += talents.getTalentPoints("CQC")/100F;
 				break;
 		}
 		htOH = new HitTable(HitTable.Type.White, talents, gHit, tmpCri, tmpExp);
@@ -259,13 +267,13 @@ public class Modifiers {
 		Weapon.weaponType wt2 = setup.getWeapon2().getType();
 		float tmpArp = attr.getArp()+arp;
 		if (wt1 == weaponType.Mace)
-			tmpArp += cARP*0.03F*talents.getMaceSpec();
+			tmpArp += cARP*0.03F*talents.getTalentPoints("Mace");
 		if (tmpArp>cARP)
 			setArpExceeded(1);
 		modArmorMH = calcArmorMod(tmpArp)*uptime + modArmorMH*(1-uptime);
 		tmpArp = attr.getArp()+arp;
 		if (wt2 == weaponType.Mace)
-			tmpArp += cARP*0.03F*talents.getMaceSpec();
+			tmpArp += cARP*0.03F*talents.getTalentPoints("Mace");
 		modArmorOH = calcArmorMod(tmpArp)*uptime + modArmorOH*(1-uptime);
 	}
 	
@@ -330,16 +338,16 @@ public class Modifiers {
 	
 	public float getPhysCritMult() {
 		int cESD = (setup.hasChaoticESD()) ? 1 : 0;
-		return (2+0.06F*cESD) * talents.getPotw();
+		return (2+0.06F*cESD) * (1+0.04F*talents.getTalentPoints("PotW"));
 	}
 	
 	public float getComboMoveCritMult() {
-		return ((getPhysCritMult()-1) * talents.getLethality())+1;
+		return ((getPhysCritMult()-1) * (1+0.06F*talents.getTalentPoints("Lethality")))+1;
 	}
 	
 	public float getPoisonCritMult() {
 		int cESD = (setup.hasChaoticESD()) ? 1 : 0;
-		return (1.5F+0.045F*cESD) * talents.getPotw();
+		return (1.5F+0.045F*cESD) * (1+0.04F*talents.getTalentPoints("PotW"));
 	}
 
 	public HitTable getHtMH() {

@@ -125,7 +125,7 @@ public class SelectItemPanel extends JPanel {
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			mainFrame.showBuffCentral();
+			mainFrame.showSidePanel();
 			mainFrame.getApp().getSetup().setItem(slot, item);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();

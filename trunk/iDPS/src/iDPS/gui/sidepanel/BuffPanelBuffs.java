@@ -156,8 +156,6 @@ public class BuffPanelBuffs extends JPanel implements PropertyChangeListener {
 			boxes.get(Buff.agilityStrengthImp).setEnabled(controller.hasBuff(b));
 			break;
 		}
-		
-		mainFrame.showStats();
 	}
 	
 	private class BuffBox extends JCheckBox implements ActionListener {
@@ -174,6 +172,7 @@ public class BuffPanelBuffs extends JPanel implements PropertyChangeListener {
 
 		public void actionPerformed(ActionEvent arg0) {
 			controller.setBuff(buff, isSelected());
+			mainFrame.showStats();
 		}
 		
 	}

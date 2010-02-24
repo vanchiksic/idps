@@ -2,12 +2,14 @@ package iDPS.model;
 
 import iDPS.Attributes;
 import iDPS.BuffController;
+import iDPS.Glyphs;
 import iDPS.Launcher;
 import iDPS.Race;
 import iDPS.Talents;
 import iDPS.BuffController.Buff;
 import iDPS.BuffController.Debuff;
 import iDPS.BuffController.Other;
+import iDPS.Glyphs.Glyph;
 import iDPS.gear.Setup;
 import iDPS.gear.Weapon;
 import iDPS.gear.Weapon.weaponType;
@@ -16,16 +18,18 @@ public abstract class Calculations {
 	
 	public enum ModelType { Combat, Mutilate };
 	
-	protected float avgCpFin;
+	protected float avgCP4Plus;
 	float ppsIP1, ppsIP2;
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
+	protected float ruptureUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
 	protected Setup setup;
 	protected float mhSPS, ohSPS, mhSCPS, ohSCPS;
 	protected float mhWPS, ohWPS, mhWCPS, ohWCPS;
 	protected Modifiers mod;
 	protected Talents talents;
+	protected Glyphs glyphs;
 	protected BuffController bc;
 	
 	protected float bbIncrease;
@@ -51,10 +55,13 @@ public abstract class Calculations {
 		
 	protected float calcDeadlyPoisonDPS() {
 		//System.out.println("dp ap: "+totalATP);
-		float dps = (296+0.108F*totalATP)/12*5 * (1+talents.getVilePoisons());
+		float dps = (296+0.108F*totalATP)/12*5;
+		dps *= (1+2/30F*talents.getTalentPoints("VPoisons"));
 		// Global Mods
-		dps *= talents.getMurder() * talents.getHfb() * 0.971875F;
-		if (talents.getKs())
+		dps *= (1+0.02F*talents.getTalentPoints("Murder"));
+		dps *= (1+0.08F*talents.getTalentPoints("HfB"));
+		dps *= 0.971875F;
+		if (talents.getTalentPoints("KS")>0)
 			dps *= 1 + (0.2F * 2.5F/75F);
 		if (bc.hasDebuff(Debuff.spellDamage))
 			dps *= 1.13F;
@@ -64,18 +71,6 @@ public abstract class Calculations {
 	}
 	
 	protected abstract void calcDPS();
-	
-	protected float calcEnvenomDamage() {
-		float dmg = (215*avgCpFin + 0.09F*avgCpFin * totalATP)*(1+talents.getVilePoisons()+talents.getFindWeakness());
-		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
-		// Global Mods
-		dmg *= talents.getMurder() * talents.getHfb();
-		if (bc.hasDebuff(Debuff.spellDamage))
-			dmg *= 1.13F;
-		if (bc.hasBuff(Buff.damage))
-			dmg *= 1.03F;
-		return dmg;
-	}
 	
 	public void calcEP() {
 		float dpsATP;
@@ -125,18 +120,17 @@ public abstract class Calculations {
 		}
 	}
 	
-	protected float calcEviscerateDamage() {
+	protected float calcEviscerateDamage(float cp) {
 		float baseDmg = 0;
-		if (avgCpFin > 4)
-			baseDmg = 1607*(5-avgCpFin)+1977*(avgCpFin-4);
-		float dmg = (baseDmg + 0.07F*avgCpFin * totalATP)*(1+0.2F+0.15F);
+		if (cp >= 4)
+			baseDmg = 1607*(5-cp)+1977*(cp-4);
+		float dmg = (baseDmg + 0.07F*cp * totalATP)
+			* (1+2/30F*talents.getTalentPoints("IEvisc")
+					+ 0.03F*talents.getTalentPoints("Aggr"));
 		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
 		// Global Mods
-		dmg *= talents.getHfb() * talents.getMurder();
-		if (bc.hasDebuff(Debuff.physicalDamage))
-			dmg *= 1.04F;
-		if (bc.hasBuff(Buff.damage))
-			dmg *= 1.03F;
+		dmg *= getGlobalDmgMod(true, false);
+
 		dmg *= mod.getModArmorMH();
 		dmg *= 1+bbIncrease;
 		
@@ -157,10 +151,10 @@ public abstract class Calculations {
 			dp_ppps = ohWPS + ohSPS;
 		}
 		float ipProcChance, dpProcChance, hitChance, procsPerSec, damage;
-		ipProcChance  = wip.getSpeed()/1.4F*(0.2F+0.02F*talents.getImprovedPoisons());
+		ipProcChance  = wip.getSpeed()/1.4F*(0.2F+0.02F*talents.getTalentPoints("IPoisons"));
 		ipProcChance *= 1+(envenomUptime*0.75F);
 		//System.out.println("avg IP proc chance: "+ipProcChance);
-		dpProcChance  = 0.3F + 0.04F*talents.getImprovedPoisons();
+		dpProcChance  = 0.3F + 0.04F*talents.getTalentPoints("IPoisons");
 		dpProcChance += envenomUptime*0.15F;
 		hitChance = Math.min(1, 0.83F+mod.getSpellHitPercent()/100);
 		// Primary Procs
@@ -170,17 +164,14 @@ public abstract class Calculations {
 		procsPerSec = ppsIP1+ppsIP2;
 		//System.out.println("IP pps: "+procsPerSec);
 		// Damage
-		damage = (350+0.09F*totalATP) * (1+talents.getVilePoisons()) * 0.971875F;
+		damage = (350+0.09F*totalATP)
+			* (1+2/30F*talents.getTalentPoints("VPoisons"))
+			* 0.971875F;
 		//System.out.println("IP Proc dmg: "+damage);
 		damage += damage*(mod.getPoisonCritMult()-1)*(mod.getSpellCritPercent()/100F);
 		// Global Mods
-		damage *= talents.getMurder() * talents.getHfb();
-		if (talents.getKs())
-			damage *= 1 + (0.2F * 2.5F/75F);
-		if (bc.hasDebuff(Debuff.spellDamage))
-			damage *= 1.13F;
-		if (bc.hasBuff(Buff.damage))
-			damage *= 1.03F;
+		damage *= getGlobalDmgMod(false, true);
+
 		return procsPerSec * damage;
 	}
 	
@@ -209,7 +200,7 @@ public abstract class Calculations {
 		}
 		
 		// Blade Flurry
-		if (talents.getBf()) {
+		if (talents.getTalentPoints("BF")>0) {
 			uptime = getMaxUses(120)*15F/fightDuration;
 			mod.registerStaticHasteProc(0.2F, uptime);
 		}
@@ -475,14 +466,26 @@ public abstract class Calculations {
 		return regen;
 	}
 	
-	protected float calcRuptureDPS() {
-			return 0;
-		/*float tick4cp, tick5cp, avgTick;
+	protected float calcDamageRupture(float cp) {
+		float tick4cp, tick5cp, avgTick;
 		tick4cp = 199 + 0.03428571F*totalATP;
 		tick5cp = 217 + 0.0375F*totalATP;
-		avgTick = tick4cp*(5-avgCpFin)+tick5cp*(avgCpFin-4);
-		avgTick *= 1.42F* 1.04F * 1.18F * 1.03F * 1.3F;
-		return avgTick/2;*/
+		avgTick = 0;
+		if (cp>=4)
+			avgTick = tick4cp*(5-cp)+tick5cp*(cp-4);
+		avgTick += avgTick*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
+		avgTick *= 1 + 0.15F*talents.getTalentPoints("BSpatter")
+			+ 0.1F*talents.getTalentPoints("SBlades")
+			+ 0.02F*talents.getTalentPoints("FWeakness");
+		avgTick *= getGlobalDmgMod(true, true);
+
+		if (bc.hasDebuff(Debuff.bleed))
+			avgTick *= 1.3F;
+		
+		float dmg = avgTick*(3+cp);
+		if (glyphs.has(Glyph.Rup))
+			dmg += 2*avgTick;
+		return dmg;
 	}
 	
 	public void calculate(Setup g) {
@@ -497,6 +500,7 @@ public abstract class Calculations {
 		reset();
 		
 		talents = g.getTalents();
+		glyphs = g.getGlyphs();
 		
 		setup = g;
 		bc = Launcher.getApp().getBuffController();
@@ -532,16 +536,21 @@ public abstract class Calculations {
 			eRegen += 15F/120F;
 		
 		// ToTT every 32 sec
-		float eLossTOT = 15F/32F;
-		if (setup.getTier10()>=2)
-			eLossTOT *= -1F;
-		eRegen -= eLossTOT;
+		if (Launcher.getApp().getUseTotT()) {
+			float eLossTOT = 15F/32F;
+			if (setup.getTier10()>=2)
+				eLossTOT *= -1F;
+			eRegen -= eLossTOT;
+		}
+		
+		// 2P Tier9
+		if (setup.getTier9()>=2 && Launcher.getApp().getUseRupture())
+			eRegen += 0.4F * ruptureUptime;
 		
 		// Heartpierce
 		if (setup.containsAny(49982,50641))
 			eRegen += calcHeartpierceRegen();
 		
-		//System.out.println("total regen: "+eRegen);
 		return eRegen;
 	}
 	
@@ -561,26 +570,27 @@ public abstract class Calculations {
 		}
 		// Offhand
 		if (setup.getWeapon2() != null) {
-			dpsOH += setup.getWeapon2().getDps() + ((float)totalATP/14F) * 0.75F;
+			dpsOH += setup.getWeapon2().getDps() + ((float)totalATP/14F)
+				* 0.5F * (1+0.1F*talents.getTalentPoints("DWield"));
 			dpsOH *= htOH.glance*0.75F + htOH.crit * mod.getPhysCritMult() + htOH.hit;
 			dpsOH *= mod.getHastePercent()/100F + 1;
 			ohWPS = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getContacts();
 			ohWCPS = setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getCrit();
 		}
 		// Sword Spec
-		if (talents.getHnS()>0) {
+		if (talents.getTalentPoints("HnS")>0) {
 			Weapon w1 = setup.getWeapon1(), w2 = setup.getWeapon2();
 			float ssDmg, ssPps = 0, ssDps;
 			ssDmg  = setup.getWeapon1().getAverageDmg(totalATP);
 			// Mainhand Procs
 			if (w1.getType() == weaponType.Axe || w1.getType() == weaponType.Sword) {
-				ssPps += w1.getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts())*(talents.getHnS()/100F);
-				ssPps += mhSPS * (talents.getHnS()/100F);
+				ssPps += w1.getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts())*(talents.getTalentPoints("HnS")/100F);
+				ssPps += mhSPS * (talents.getTalentPoints("HnS")/100F);
 			}
 			// Offhand Procs
 			if (w2.getType() == weaponType.Axe || w2.getType() == weaponType.Sword) {
-				ssPps += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getHnS()/100F);
-				ssPps += ohSPS * (talents.getHnS()/100F);
+				ssPps += setup.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getTalentPoints("HnS")/100F);
+				ssPps += ohSPS * (talents.getTalentPoints("HnS")/100F);
 			}
 			mhWPS += ssPps * htMH.getContacts();
 			mhWCPS += ssPps * htMH.getCrit();
@@ -619,15 +629,37 @@ public abstract class Calculations {
 		float dps = dpsMH+dpsOH;
 		
 		// Global Mods
-		dps *= talents.getHfb() * talents.getMurder();
-		if (talents.getKs())
-			dps *= 1 + (0.2F * 2.5F/75F);
-		if (bc.hasDebuff(Debuff.physicalDamage))
-			dps *= 1.04F;
-		if (bc.hasBuff(Buff.damage))
-			dps *= 1.03F;
+		dps *= getGlobalDmgMod(true, true);
+
 		dps *= 1+bbIncrease;
 		return dps;
+	}
+	
+	protected float getGlobalDmgMod(boolean physical, boolean includeKS) {
+		float mod = 1;
+		mod *= (1+0.02F*talents.getTalentPoints("Murder"));
+		if (glyphs.has(Glyph.HfB))
+			mod *= (1+0.08F*talents.getTalentPoints("HfB"));
+		else
+			mod *= (1+0.05F*talents.getTalentPoints("HfB"));
+		if (bc.hasBuff(Buff.damage))
+			mod *= 1.03F;
+		if (physical) {
+			if (bc.hasDebuff(Debuff.physicalDamage))
+				mod *= 1.04F;
+		} else {
+			if (bc.hasDebuff(Debuff.spellDamage))
+				mod *= 1.13F;
+		}
+		if (includeKS) {
+			if (talents.getTalentPoints("KS")>0) {
+				if (glyphs.has(Glyph.KS))
+					mod *= 1 + (0.2F * 2.5F/75F);
+				else
+					mod *= 1 + (0.2F * 2.5F/120F);
+			}
+		}
+		return mod;
 	}
 	
 	public float getEpAGI() {
