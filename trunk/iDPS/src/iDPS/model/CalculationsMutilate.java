@@ -153,6 +153,9 @@ public class CalculationsMutilate extends Calculations {
 		if (talents.getTalentPoints("FAttacks")>0)
 			eRegen += (mhWCPS+ohWCPS)*2F/3F*talents.getTalentPoints("FAttacks");
 		
+		if (talents.getTalentPoints("HfB")>0)
+			eRegen -= 0.25F;
+		
 		return eRegen;
 	}
 	
