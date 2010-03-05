@@ -56,12 +56,16 @@ public class TalentPanel extends JPanel implements ActionListener, PropertyChang
 		c1.weightx = 0;
 		add(label, c1);
 		
-		String[] options = {"Combat", "Mutilate"};
+		String[] options = {"Combat", "Mutilate", "SubHemo", "SubBStab"};
 		modelSelect = new JComboBox(options);
 		modelSelect.setFocusable(false);
 		modelSelect.setAlignmentX(CENTER_ALIGNMENT);
 		if (tc.getModel() == ModelType.Mutilate)
 			modelSelect.setSelectedIndex(1);
+		else if (tc.getModel() == ModelType.SubHemo)
+			modelSelect.setSelectedIndex(2);
+		else if (tc.getModel() == ModelType.SubBStab)
+			modelSelect.setSelectedIndex(3);
 		else
 			modelSelect.setSelectedIndex(0);
 		modelSelect.addActionListener(this);
@@ -78,14 +82,13 @@ public class TalentPanel extends JPanel implements ActionListener, PropertyChang
 		
 		fields = new HashMap<String,TalentField>();
 		JTabbedPane tp = new JTabbedPane();
-		Talents talents2 = mainFrame.getApp().getSetup().getTalents();
 		Insets iLabel = new Insets(0,0,0,10);
 		Insets iField = new Insets(0,0,0,20);
 		for (Tree tree: Tree.values()) {
 			JPanel tab = new JPanel(new GridBagLayout());
 			GridBagConstraints c2 = new GridBagConstraints();
 
-			Collection<Talents.Talent> talents = talents2.getTalents(tree);
+			Collection<Talents.Talent> talents = Talents.getTalents(tree);
 			
 			int i = 0; boolean right = false;
 			for (Talent t: talents) {
@@ -136,9 +139,16 @@ public class TalentPanel extends JPanel implements ActionListener, PropertyChang
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() instanceof TalentsController) {
 			if (evt.getPropertyName().equals("modelType")) {
-				modelSelect.setSelectedItem(evt.getNewValue());
+				synchronized (this) {
+					// We do not want to fire the action listener
+					// from a change not caused by user input
+					modelSelect.removeActionListener(this);
+					ModelType mt = (ModelType) evt.getNewValue();
+					modelSelect.setSelectedItem(mt.name());
+					modelSelect.addActionListener(this);
+				}
 			}
-			if (fields.containsKey(evt.getPropertyName()))
+			else if (fields.containsKey(evt.getPropertyName()))
 				fields.get(evt.getPropertyName()).setValue((Integer) evt.getNewValue());
 		}
 	}

@@ -12,8 +12,6 @@ import java.awt.Insets;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -164,14 +162,15 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             urlString += URLEncoder.encode(character.toLowerCase(), "utf-8");
             
             URL url = new URL(urlString);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1");
-            connection.setRequestProperty("Cookie", "loginChecked=1");
-            System.out.println(connection.getResponseMessage()); 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.addRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1");
+            conn.setRequestProperty("Cookie", "loginChecked=1");
+            conn.connect();
+            System.out.println(conn.getResponseMessage()); 
+            //BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             
             SAXBuilder builder = new SAXBuilder();
-            Document document = builder.build(reader);
+            Document document = builder.build(conn.getInputStream());
             Element root = document.getRootElement();
             Element characterInfo = root.getChild("characterInfo");
             if (characterInfo.getChild("character").getAttributeValue("class").compareTo("Rogue") != 0) {

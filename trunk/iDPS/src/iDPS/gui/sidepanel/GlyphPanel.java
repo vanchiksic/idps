@@ -103,6 +103,9 @@ public class GlyphPanel extends JPanel implements ActionListener, PropertyChange
 			case BF:
 				setText("Blade Flurry");
 				break;
+			case SD:
+				setText("Shadow Dance");
+				break;
 			}
 			setSelected(ctrl.hasGlyph(glyph));
 			setFocusable(false);

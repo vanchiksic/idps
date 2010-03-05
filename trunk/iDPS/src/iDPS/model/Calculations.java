@@ -16,7 +16,7 @@ import iDPS.gear.Weapon.weaponType;
 
 public abstract class Calculations {
 	
-	public enum ModelType { Combat, Mutilate };
+	public enum ModelType { Combat, Mutilate, SubHemo, SubBStab };
 	
 	protected float avgCP4Plus;
 	float ppsIP1, ppsIP2;
@@ -57,16 +57,8 @@ public abstract class Calculations {
 		//System.out.println("dp ap: "+totalATP);
 		float dps = (296+0.108F*totalATP)/12*5;
 		dps *= (1+2/30F*talents.getTalentPoints("VPoisons"));
-		// Global Mods
-		dps *= (1+0.02F*talents.getTalentPoints("Murder"));
-		dps *= (1+0.08F*talents.getTalentPoints("HfB"));
 		dps *= 0.971875F;
-		if (talents.getTalentPoints("KS")>0)
-			dps *= 1 + (0.2F * 2.5F/75F);
-		if (bc.hasDebuff(Debuff.spellDamage))
-			dps *= 1.13F;
-		if (bc.hasBuff(Buff.damage))
-			dps *= 1.03F;
+		dps *= getGlobalDmgMod(false, true);
 		return dps;
 	}
 	
@@ -127,7 +119,7 @@ public abstract class Calculations {
 		float dmg = (baseDmg + 0.07F*cp * totalATP)
 			* (1+2/30F*talents.getTalentPoints("IEvisc")
 					+ 0.03F*talents.getTalentPoints("Aggr"));
-		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtFin().crit;
+		dmg += dmg*(mod.getPhysCritMult()-1)*mod.getHtEvi().crit;
 		// Global Mods
 		dmg *= getGlobalDmgMod(true, false);
 
@@ -234,6 +226,16 @@ public abstract class Calculations {
 			Proc p = new ProcPerMinute(a, 15, 0, 1, 
 					setup.getWeapon1(), 0,
 					setup.getWeapon2(), (ohWPS+ohSPS));
+			mod.registerProc(p);
+		}
+		
+		// Black Magic
+		a = new Attributes(Attributes.Type.HST, 250);
+		if ((setup.getWeapon1() != null && setup.isEnchanted(16) && setup.getEnchant(16).getId()==3790) ||
+				(setup.getWeapon2() != null && setup.isEnchanted(17) && setup.getEnchant(17).getId()==3790)) {
+			calcInstantPoisonDPS();
+			float poisonProcs = this.ppsIP1 + 2*ppsIP2;
+			Proc p = new ProcStatic(a, 10, 35, 0.35F, poisonProcs);
 			mod.registerProc(p);
 		}
 		
@@ -354,7 +356,6 @@ public abstract class Calculations {
 		// Black Bruise
 		if (setup.containsAny(50035,50692)) {
 			float bbUptime = calcDWPPMUptime(0.3F, 10);
-			//System.out.println("BB Uptime: "+bbUptime);
 			if(setup.containsAny(50692))
 				bbIncrease = bbUptime*0.10F;
 			else
@@ -383,7 +384,8 @@ public abstract class Calculations {
 		// Herkuml War Token
 		if (setup.contains(50355)>0) {
 			a = new Attributes(Attributes.Type.ATP, 340);
-			mod.registerProc(new ProcStatic(a, 1, 1, 1, 0)); // uptime = 100%
+			Proc p = new ProcStatic(a, 10, 1, 1, 1); // uptime = 100%
+			mod.registerProc(p);
 		}
 		
 		// Deathbringer's Will
@@ -466,6 +468,37 @@ public abstract class Calculations {
 		return regen;
 	}
 	
+	protected float calcDamageAmbush() {
+		if (setup.getWeapon1().getType() != weaponType.Dagger)
+			return 0;
+		float dmg = setup.getWeapon1().getInstantDmg(totalATP) * 2.75F + 907.5F;
+
+		dmg *= (mod.getPhysCritMult()-1)*mod.getHtAmb().crit + 1;
+		dmg *= (1+0.1F*talents.getTalentPoints("Opp")
+				+0.02F*talents.getTalentPoints("FWeakness"));
+		// Global Mods
+		dmg *= getGlobalDmgMod(true, false);
+
+		dmg *= mod.getModArmorMH();
+		return dmg;
+	}
+	
+	protected float calcDamageBackstab() {
+		if (setup.getWeapon1().getType() != weaponType.Dagger)
+			return 0;
+		float dmg = setup.getWeapon1().getInstantDmg(totalATP)
+			* (1.5F+0.02F*talents.getTalentPoints("SCalling")) + 465;
+
+		dmg *= (mod.getComboMoveCritMult()-1)*mod.getHtBS().crit + 1;
+		dmg *= (1+0.1F*talents.getTalentPoints("Opp")
+				+0.02F*talents.getTalentPoints("FWeakness"));
+		// Global Mods
+		dmg *= getGlobalDmgMod(true, false);
+
+		dmg *= mod.getModArmorMH();
+		return dmg;
+	}
+	
 	protected float calcDamageRupture(float cp) {
 		float tick4cp, tick5cp, avgTick;
 		tick4cp = 199 + 0.03428571F*totalATP;
@@ -485,6 +518,10 @@ public abstract class Calculations {
 		float dmg = avgTick*(3+cp);
 		if (glyphs.has(Glyph.Rup))
 			dmg += 2*avgTick;
+		
+		if (talents.getTalentPoints("SStep")>0 && glyphs.has(Glyph.Rup))
+			dmg *= 1.2F;
+		
 		return dmg;
 	}
 	
@@ -498,6 +535,7 @@ public abstract class Calculations {
 			return;
 		}
 		reset();
+		//System.out.println("Calculating...");
 		
 		talents = g.getTalents();
 		glyphs = g.getGlyphs();
@@ -508,15 +546,18 @@ public abstract class Calculations {
 		mod = new Modifiers(inject, setup);
 		
 		//System.out.println(">> Iteration 1");
+		calcWhiteDPS();
 		calcCycle();
 		calcProcs();
 		//System.out.println("  AP: "+mod.getTotalATP());
 		//System.out.println(">> Iteration 2");
+		calcWhiteDPS();
 		calcCycle();
 		mod.calcMods();
 		calcProcs();
 		//System.out.println("  AP: "+mod.getTotalATP());
 		//System.out.println(">> Iteration 3");
+		calcWhiteDPS();
 		calcCycle();
 		mod.calcMods();
 		calcProcs();
@@ -535,11 +576,13 @@ public abstract class Calculations {
 		if (setup.getRace().getType() == Race.Type.BloodElf)
 			eRegen += 15F/120F;
 		
-		// ToTT every 32 sec
+		// ToTT every 31 sec
 		if (Launcher.getApp().getUseTotT()) {
-			float eLossTOT = 15F/32F;
+			float eLossTOT;
+			eLossTOT = (15F-talents.getTalentPoints("FTricks")*5F)
+						/ (31F-talents.getTalentPoints("FTricks")*5F);
 			if (setup.getTier10()>=2)
-				eLossTOT *= -1F;
+				eLossTOT -= 30F/(31F-talents.getTalentPoints("FTricks")*5F);;
 			eRegen -= eLossTOT;
 		}
 		
@@ -551,12 +594,13 @@ public abstract class Calculations {
 		if (setup.containsAny(49982,50641))
 			eRegen += calcHeartpierceRegen();
 		
+		//System.out.println("ER: "+eRegen);
 		return eRegen;
 	}
 	
 	protected float calcWhiteDPS() {
 		HitTable htMH = mod.getHtMH();
-		HitTable htOH = mod.getHtMH();
+		HitTable htOH = mod.getHtOH();
 		float dpsMH = 0, dpsOH = 0;
 		mhWPS = 0; mhWCPS = 0;
 		ohWPS = 0; ohWCPS = 0;
@@ -638,15 +682,27 @@ public abstract class Calculations {
 	protected float getGlobalDmgMod(boolean physical, boolean includeKS) {
 		float mod = 1;
 		mod *= (1+0.02F*talents.getTalentPoints("Murder"));
+		mod *= (1+0.01F*talents.getTalentPoints("SftS"));
 		if (glyphs.has(Glyph.HfB))
 			mod *= (1+0.08F*talents.getTalentPoints("HfB"));
 		else
 			mod *= (1+0.05F*talents.getTalentPoints("HfB"));
 		if (bc.hasBuff(Buff.damage))
 			mod *= 1.03F;
+		if (bc.hasOther(Other.tott)) {
+			float duration = 6;
+			if (bc.hasOther(Other.tottglyphed))
+				duration += 4;
+			float cooldown = 30;
+			if (bc.hasOther(Other.totttalented))
+				cooldown -= 10;
+			mod *= 1 + 0.15F * duration/cooldown;
+		}
 		if (physical) {
 			if (bc.hasDebuff(Debuff.physicalDamage))
 				mod *= 1.04F;
+			if (bc.hasOther(Other.hysteria))
+				mod *= 1 + 1/30F;
 		} else {
 			if (bc.hasDebuff(Debuff.spellDamage))
 				mod *= 1.13F;
@@ -715,6 +771,10 @@ public abstract class Calculations {
 				return new CalculationsCombat();
 			case Mutilate:
 				return new CalculationsMutilate();
+			case SubHemo:
+				return new CalculationsSubHemo();
+			case SubBStab:
+				return new CalculationsSubBStab();
 		}
 	}
 

@@ -34,9 +34,12 @@ public class ItemComparison {
 		
 		ArrayList<Armor> items;
 		if ((slotId == 16 || slotId == 17) && 
-				gear.getTalents().getModel() == ModelType.Mutilate)
+			((gear.getTalents().getModel() == ModelType.Mutilate)
+				|| (gear.getTalents().getModel() == ModelType.SubBStab)
+				|| (gear.getTalents().getModel() == ModelType.SubHemo)
+			)) {
 			items = Armor.findWeapon(weaponType.Dagger);
-		else
+		} else
 			items = Armor.findSlot(slotType);
 		
 		// Make sure orgItem is in the list

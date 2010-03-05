@@ -75,10 +75,12 @@ public class CalculationsMutilate extends Calculations {
 		
 		float eRegen = calcERegen();
 		
-		float eCostMut, eCostEnv1;
-		eCostMut = 60 *(0.8F+0.2F/(mod.getHtMut().getContacts()));
+		float eCostEnv1;
+		float eCostMut = 60;
 		if (glyphs.has(Glyph.Mut))
 			eCostMut -= 5;
+		eCostMut = eCostMut*(0.8F+0.2F/(mod.getHtMut().getContacts()));
+		
 		eCostMut -= 2*mod.getHtMut().crit*2;
 		eCostEnv1 = 35/(mod.getHtMHS().getContacts());
 		eCostEnv1 -= mod.getHtMHS().crit*2;
@@ -145,10 +147,12 @@ public class CalculationsMutilate extends Calculations {
 	protected float calcERegen() {
 		float eRegen = super.calcERegen();
 		
-		int overkills = 1+getMaxUses(120);
-		float okRegen = 60F*overkills/fightDuration;
-		okRegen = Math.min(okRegen, 3);
-		eRegen += okRegen;
+		if (talents.getTalentPoints("OKill")>0) {
+			int overkills = 1+getMaxUses(120);
+			float okRegen = 60F*overkills/fightDuration;
+			okRegen = Math.min(okRegen, 3);
+			eRegen += okRegen;
+		}
 		calcWhiteDPS();
 		if (talents.getTalentPoints("FAttacks")>0)
 			eRegen += (mhWCPS+ohWCPS)*2F/3F*talents.getTalentPoints("FAttacks");

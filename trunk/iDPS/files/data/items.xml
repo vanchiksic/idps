@@ -5680,7 +5680,9 @@
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-25</tag>
@@ -5776,7 +5778,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>marrowgar-25-heroic</tag>
@@ -5797,7 +5801,9 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus />
+      <bonus>
+        <agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>marrowgar-25-heroic</tag>
@@ -5842,7 +5848,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>valithria-25-heroic</tag>
@@ -5862,7 +5870,9 @@
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>sindragosa-25-heroic</tag>
@@ -5882,7 +5892,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>deathwhisper-25-heroic</tag>
@@ -5903,7 +5915,9 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>deathwhisper-25-heroic</tag>
@@ -6042,7 +6056,9 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
@@ -6065,7 +6081,9 @@
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
@@ -6085,7 +6103,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>rotface-25-heroic</tag>
@@ -6105,7 +6125,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>festergut-25-heroic</tag>
@@ -6127,7 +6149,9 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus />
+      <bonus>
+      	<agi>8</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>festergut-25-heroic</tag>
@@ -6162,7 +6186,9 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>putricide-25-heroic</tag>
@@ -6183,7 +6209,9 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>8</agi>
+      </bonus>
     </sockets>
     <lvl>277</lvl>
     <tag>blodprince-25-heroic</tag>
@@ -7031,7 +7059,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>sindragosa-10</tag>
@@ -7051,7 +7081,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>251</lvl>
     <tag>sindragosa-10</tag>
@@ -7170,7 +7202,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
@@ -7190,7 +7224,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>sindragosa-10-heroic</tag>
@@ -7211,7 +7247,9 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+      	<arp>6</arp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>valithria-10-heroic</tag>
@@ -7233,7 +7271,9 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>8</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
@@ -7253,7 +7293,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
@@ -7276,7 +7318,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
@@ -7299,7 +7343,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>lanathel-10-heroic</tag>
@@ -7320,7 +7366,9 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>valanar-10-heroic</tag>
@@ -7343,7 +7391,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>valanar-10-heroic</tag>
@@ -7364,7 +7414,9 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<arp>8</arp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>putricide-10-heroic</tag>
@@ -7387,7 +7439,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>putricide-10-heroic</tag>
@@ -7410,7 +7464,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
@@ -7433,7 +7489,9 @@
     </attributes>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>rotface-10-heroic</tag>
@@ -7477,7 +7535,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
@@ -7500,7 +7560,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<cri>4</cri>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>festergut-10-heroic</tag>
@@ -7615,7 +7677,9 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Yellow</socket>
-      <bonus />
+      <bonus>
+      	<agi>6</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
@@ -7638,7 +7702,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>deathwhisper-10-heroic</tag>
@@ -7658,7 +7724,9 @@
     </attributes>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+      	<agi>4</agi>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>
@@ -7681,7 +7749,9 @@
     </attributes>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus />
+      <bonus>
+      	<atp>8</atp>
+      </bonus>
     </sockets>
     <lvl>264</lvl>
     <tag>marrowgar-10-heroic</tag>

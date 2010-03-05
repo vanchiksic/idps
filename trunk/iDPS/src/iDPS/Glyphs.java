@@ -7,7 +7,7 @@ import org.jdom.Element;
 
 public class Glyphs implements Cloneable {
 	
-	public enum Glyph { Mut, HfB, SS, KS, Rup, AR, Evi, EA, BF }
+	public enum Glyph { Mut, HfB, SS, KS, Rup, AR, Evi, EA, BF, SD }
 	
 	private EnumMap<Glyph,Boolean> glyphs;
 

@@ -62,14 +62,13 @@ public class Attributes {
 	}
 	
 	/**
-	 * Applys the 10% Stat multiplier.
+	 * Applys the a Stat multiplier.
 	 * Can only be called on unfinalized Attributes instances.
 	 */
-	public void applyStatMult() {
+	public void applyStatMult(Type t, float mult) {
 		if (finalized)
 			return;
-		set(Type.AGI, get(Type.AGI)*1.1F);
-		set(Type.STR, get(Type.STR)*1.1F);
+		set(t, get(t)*mult);
 	}
 	
 	/**

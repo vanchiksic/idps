@@ -170,7 +170,7 @@
       <cri>25</cri>
     </attributes>
   </enchant>
-  <enchant id="3788" spellid="60707">
+  <enchant id="3833" spellid="60707">
     <name>Enchant Weapon - Superior Potency</name>
     <slot>OneHand</slot>
     <attributes>
@@ -179,6 +179,11 @@
   </enchant>
   <enchant id="2673" spellid="27984">
     <name>Enchant Weapon - Mongoose</name>
+    <slot>OneHand</slot>
+    <attributes/>
+  </enchant>
+  <enchant id="3790" spellid="59625">
+    <name>Enchant Weapon - Black Magic</name>
     <slot>OneHand</slot>
     <attributes/>
   </enchant>

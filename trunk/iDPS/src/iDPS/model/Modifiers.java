@@ -33,7 +33,8 @@ public class Modifiers {
 	// Spell Mods (m for magic)
 	private float mCri, mHit;
 	// Hit Tables
-	private HitTable htMH, htOH, htMHS, htOHS, htSS, htMut, htFin;
+	private HitTable htMH, htOH, htMHS, htOHS, htSS, htBS,
+		htHemo, htMut, htFin, htEvi, htAmb;
 	// Armor
 	private float modArmorMH, modArmorOH;
 	private int arpExceeded;
@@ -115,13 +116,21 @@ public class Modifiers {
 				break;
 			}
 		}
-
+		
+		// Sinister Calling AGI
+		if (talents.getTalentPoints("SCalling")>0) {
+			float mult = 1+0.03F*talents.getTalentPoints("SCalling");
+			attr.applyStatMult(Attributes.Type.AGI, mult);
+		}
 		// Flask of the North / Mixology
 		if (setup.hasProfession(Profession.Alchemy))
 			attr.incAtp(80);
 		
-		if (bc.hasBuff(Buff.statsMultiplicative))
-			attr.applyStatMult();
+		// Kings
+		if (bc.hasBuff(Buff.statsMultiplicative)) {
+			attr.applyStatMult(Attributes.Type.AGI, 1.1F);
+			attr.applyStatMult(Attributes.Type.STR, 1.1F);
+		}
 		
 		// Calc Total ATP
 		attr.finalizeStats();
@@ -129,6 +138,9 @@ public class Modifiers {
 			attr.applyAtpMult(1.1F);
 		if (talents.getTalentPoints("SCombat")>0)
 			attr.applyAtpMult(1+0.02F*talents.getTalentPoints("SCombat"));
+		if (talents.getTalentPoints("Deadly")>0)
+			attr.applyAtpMult(1+0.02F*talents.getTalentPoints("Deadly"));
+		
 	}
 	
 	public void calcMods() {
@@ -179,6 +191,7 @@ public class Modifiers {
 		Weapon.weaponType wt2 = setup.getWeapon2().getType();
 		
 		// Arp
+		arp += cARP*0.03F*talents.getTalentPoints("SBlades");
 		float tmpArp = arp;
 		if (wt1 == weaponType.Mace)
 			tmpArp += cARP*0.03F*talents.getTalentPoints("Mace");
@@ -218,15 +231,21 @@ public class Modifiers {
 		}
 		htMH = new HitTable(HitTable.Type.White, talents, gHit, tmpCri, tmpExp);
 		htMHS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
+		htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
 		if (glyphs.has(Glyph.Evi))
-			htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri+0.1F, tmpExp);
+			htEvi = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri+0.1F, tmpExp);
 		else
-			htFin = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
+			htEvi = new HitTable(HitTable.Type.Finish, talents, gHit, tmpCri, tmpExp);
+		float criAmb = tmpCri + 0.25F * talents.getTalentPoints("IAmb");
+		htAmb = new HitTable(HitTable.Type.Special, talents, gHit, criAmb, tmpExp);
 		if (setup.getTier9()>=4)
 			tmpCri += 0.05F;
 		htSS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
+		htHemo = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
 		tmpCri += 0.05F*talents.getTalentPoints("PWounds");
 		htMut = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
+		tmpCri += 0.05F*talents.getTalentPoints("PWounds");
+		htBS = new HitTable(HitTable.Type.Special, talents, gHit, tmpCri, tmpExp);
 		
 		// Hit Tables Offhand
 		tmpCri = gCri; tmpExp = gExp;
@@ -297,27 +316,47 @@ public class Modifiers {
 		htOHS.registerCritProc(cri/cCRIT, uptime);
 		htSS.registerCritProc(cri/cCRIT, uptime);
 		htMut.registerCritProc(cri/cCRIT, uptime);
+		htBS.registerCritProc(cri/cCRIT, uptime);
+		htAmb.registerCritProc(cri/cCRIT, uptime);
 		htFin.registerCritProc(cri/cCRIT, uptime);
 	}
 	
 	public void registerProc(Proc proc) {
 		
+		Attributes attr = proc.getAttributes();
+		
+		// Sinister Calling AGI
+		if (talents.getTalentPoints("SCalling")>0)
+			attr.applyStatMult(Attributes.Type.AGI, (1+0.03F*talents.getTalentPoints("SCalling")));
+		// Kings
+		if (bc.hasBuff(Buff.statsMultiplicative)) {
+			attr.applyStatMult(Attributes.Type.AGI, 1.1F);
+			attr.applyStatMult(Attributes.Type.STR, 1.1F);
+		}
+		attr.finalizeStats();
+		if (bc.hasBuff(Buff.attackPowerMult))
+			attr.applyAtpMult(1.1F);
+		if (talents.getTalentPoints("SCombat")>0)
+			attr.applyAtpMult(1+0.02F*talents.getTalentPoints("SCombat"));
+		if (talents.getTalentPoints("Deadly")>0)
+			attr.applyAtpMult(1+0.02F*talents.getTalentPoints("Deadly"));
+		
 		if (proc.isIncreaseCri())
-			registerCritProc(proc.getAttributes().getCri(), proc.getUptime());
+			registerCritProc(attr.getCri(), proc.getUptime());
 		
 		if (proc.isIncreaseAgi()) {
-			registerPhysCritProc(proc.getAttributes().getAgi()/cAGI*cCRIT, proc.getUptime());
-			totalATP += proc.getAttributes().getAgi()*1.1F * proc.getUptime();
+			registerPhysCritProc(attr.getAgi()/cAGI*cCRIT, proc.getUptime());
+			totalATP += attr.getAtp() * proc.getUptime();
 		}
 		
 		if (proc.isIncreaseAtp())
-			totalATP += proc.getAttributes().getAtp() * proc.getUptime();
+			totalATP += attr.getAtp() * proc.getUptime();
 		
 		if (proc.isIncreaseHst())
-			registerHasteProc(proc.getAttributes().getHst(), proc.getUptime());
+			registerHasteProc(attr.getHst(), proc.getUptime());
 		
 		if (proc.isIncreaseArp())
-			registerArpProc(proc.getAttributes().getArp(), proc.getUptime());
+			registerArpProc(attr.getArp(), proc.getUptime());
 	}
 
 	public float getHastePercent() {
@@ -374,8 +413,24 @@ public class Modifiers {
 		return htMut;
 	}
 	
+	public HitTable getHtBS() {
+		return htBS;
+	}
+	
+	public HitTable getHtHemo() {
+		return htHemo;
+	}
+	
+	public HitTable getHtAmb() {
+		return htAmb;
+	}
+	
 	public HitTable getHtFin() {
 		return htFin;
+	}
+	
+	public HitTable getHtEvi() {
+		return htEvi;
 	}
 
 	public float getModArmorMH() {

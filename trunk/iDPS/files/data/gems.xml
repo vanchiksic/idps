@@ -44,7 +44,7 @@
     <unique max="3">Jeweler's Gems</unique>
     <icon>inv_jewelcrafting_dragonseye03</icon>
   </gem>
-  <gem id="56084" profession="Jewelcrafting">
+  <gem id="42156" profession="Jewelcrafting">
     <name>Rigid Dragon's Eye</name>
     <attributes>
       <hit>34</hit>

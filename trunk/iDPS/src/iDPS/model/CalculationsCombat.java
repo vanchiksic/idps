@@ -46,14 +46,15 @@ public class CalculationsCombat extends Calculations {
 			cpPerSS += mod.getHtSS().crit*0.5F;
 		avgCP4Plus = 5;
 			
-		float eCostSS = 45*(0.8F+0.2F/(mod.getHtSS().getContacts()));
+		float eCostSS = 45;
 		if (talents.getTalentPoints("ISS")>0)
 			eCostSS -= 3;
 		if (talents.getTalentPoints("ISS")>1)
 			eCostSS -= 2;
-		float eCostEvi = 35/(mod.getHtMHS().getContacts())
+		eCostSS += (eCostSS-45*0.8F)*(1-mod.getHtMHS().getContacts());
+		float eCostEvi = 35/(mod.getHtEvi().getContacts())
 			- avgCP4Plus*talents.getTalentPoints("RStrikes");
-		float eCostRup = 25/(mod.getHtMHS().getContacts())
+		float eCostRup = 25/(mod.getHtFin().getContacts())
 			- avgCP4Plus*talents.getTalentPoints("RStrikes");
 		float eCostEA = eCostRup - 5 * talents.getTalentPoints("IEA");
 		
@@ -78,10 +79,10 @@ public class CalculationsCombat extends Calculations {
 			lRup += 4;
 		float lCycle = Math.max(lSnD,lEA);
 		float pcSnD = lCycle/lSnD;
-		float pcEA = 0;
 		
 		float timeLeft = lCycle - pcSnD*btSnD - 1; // add some slack
 		
+		float pcEA = 0;
 		if (Launcher.getApp().getUseExpose()) {
 			pcEA = lCycle/lEA;
 			timeLeft -= pcEA*btEA + 1; // add some slack

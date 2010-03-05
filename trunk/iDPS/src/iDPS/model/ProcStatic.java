@@ -23,9 +23,12 @@ public class ProcStatic implements Proc {
 		increaseHst = (attr.getHst()>0);
 				
 		if (cooldown > 0)
-			uptime = duration/(cooldown+hitsPerSec/procChance);
+			uptime = duration/(cooldown+1/procChance/hitsPerSec);
 		else
 			uptime = (float) (1 - Math.pow(1-procChance,hitsPerSec*duration));
+		
+		if (uptime>1)
+			uptime = 1;
 	}
 	
 	public void calcUptime(float fightDuration) {

@@ -19,7 +19,7 @@ public class BuffController implements PropertyChangeListener {
 		foodAgi, foodArp, foodAtp, foodExp, foodHit, foodHst }
 	public enum Debuff { armorMajor, armorMinor,
 		bleed, crit, physicalDamage, spellCrit, spellDamage, spellHit }
-	public enum Other { bloodlust }
+	public enum Other { bloodlust, hysteria, tott, tottglyphed, totttalented }
 	
 	private final Application app;
 	private final PropertyChangeSupport pcs;
@@ -102,6 +102,14 @@ public class BuffController implements PropertyChangeListener {
 		boolean oldValue = other.get(b);
 		other.put(b, newValue);
 		pcs.firePropertyChange("other_"+b.name(), oldValue, newValue);
+		if (!newValue) {
+			switch (b) {
+			case tott:
+				setOther(Other.tottglyphed, false);
+				setOther(Other.totttalented, false);
+				break;
+			}
+		}
 	}
 	
 	public void addPropertyChangeListener(PropertyChangeListener listener) {

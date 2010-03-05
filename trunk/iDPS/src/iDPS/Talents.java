@@ -78,7 +78,7 @@ public class Talents implements Cloneable {
 		distribution.put(t, points);
 	}
 	
-	public Collection<Talent> getTalents(Tree tree) {
+	public static Collection<Talent> getTalents(Tree tree) {
 		ArrayList<Talent> matches = new ArrayList<Talent>();
 		for (Talent t: talents.values()) {
 			if (t.tree == tree)
@@ -88,7 +88,7 @@ public class Talents implements Cloneable {
 		return matches;
 	}
 	
-	public Collection<Talent> getTalents() {
+	public static Collection<Talent> getTalents() {
 		return talents.values();
 	}
 	
@@ -138,6 +138,17 @@ public class Talents implements Cloneable {
 		createTalent("RStrikes", Tree.Subtetly, 1, "Relentless Strikes", 5);
 		createTalent("Opp", Tree.Subtetly, 1, "Opportunity", 2);
 		createTalent("SBlades", Tree.Subtetly, 3, "Serrated Blades", 3);
+		createTalent("Init", Tree.Subtetly, 4, "Initiative", 3);
+		createTalent("IAmb", Tree.Subtetly, 4, "Imp. Ambush", 2);
+		createTalent("Prep", Tree.Subtetly, 5, "Preparation", 1);
+		createTalent("DDeeds", Tree.Subtetly, 5, "Dirty Deeds", 5);
+		createTalent("Deadly", Tree.Subtetly, 6, "Deadlyness", 5);
+		createTalent("SCalling", Tree.Subtetly, 8, "Sinister Calling", 5);
+		createTalent("HaT", Tree.Subtetly, 9, "Honor Among Thieves", 3);
+		createTalent("SStep", Tree.Subtetly, 9, "Shadow Step", 1);
+		createTalent("FTricks", Tree.Subtetly, 9, "Filthy Tricks", 3);
+		createTalent("SftS", Tree.Subtetly, 10, "Slaughter ft. Shadows", 5);
+		createTalent("SDance", Tree.Subtetly, 11, "Shadow Dance", 1);
 	}
 	
 	private static void createTalent(String identifier, Tree tree, int rank, String name, int maxPoints) {

@@ -50,6 +50,23 @@ public class BuffPanelOther extends JPanel implements PropertyChangeListener {
 					name = "Temporary Haste Raidbuff";
 					tooltip = "Bloodlust, Heroism";
 					break;
+				case hysteria:
+					name = "Hysteria on Cooldown";
+					tooltip = "Bloodlust, Heroism";
+					break;
+				case tott:
+					name = "Tricks of the Trade";
+					break;
+				case tottglyphed:
+					name = "Glyphed";
+					c.insets = new Insets(0,20,0,0);
+					enabled = controller.hasOther(Other.tott);
+					break;
+				case totttalented:
+					name = "Talented";
+					c.insets = new Insets(0,20,0,0);
+					enabled = controller.hasOther(Other.tott);
+					break;
 			}
 			box = new OtherBox(b, name);
 			box.setEnabled(enabled);
@@ -68,15 +85,25 @@ public class BuffPanelOther extends JPanel implements PropertyChangeListener {
 		if (evt.getSource() instanceof BuffController) {
 			if (evt.getPropertyName().equals("other")) {
 				for (Other b: Other.values())
-					boxes.get(b).setSelected(controller.hasOther(b));
+					handleChange(b);
 			} else if (evt.getPropertyName().startsWith("other_")) {
 				String s = evt.getPropertyName().substring(6);
 				try {
 					Other b = Other.valueOf(s);
-					boxes.get(b).setSelected(controller.hasOther(b));
+					handleChange(b);
 					return;
 				} catch (IllegalArgumentException e) {}
 			}
+		}
+	}
+	
+	private void handleChange(Other b) {
+		boxes.get(b).setSelected(controller.hasOther(b));
+		switch (b) {
+		case tott:
+			boxes.get(Other.tottglyphed).setEnabled(controller.hasOther(b));
+			boxes.get(Other.totttalented).setEnabled(controller.hasOther(b));
+			break;
 		}
 	}
 	

@@ -1,7 +1,6 @@
 package iDPS;
 
 import iDPS.Glyphs.Glyph;
-import iDPS.gear.Setup;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -11,7 +10,6 @@ public class GlyphsController implements PropertyChangeListener {
 	
 	private final Application app;
 	private final PropertyChangeSupport pcs;
-	private Glyphs glyphs;
 	
 	public GlyphsController(Application app) {
 		this.app = app;
@@ -20,12 +18,12 @@ public class GlyphsController implements PropertyChangeListener {
 	}
 	
 	public boolean hasGlyph(Glyph g) {
-		return glyphs.has(g);
+		return app.getSetup().getGlyphs().has(g);
 	}
 	
 	public void setGlyph(Glyph g, boolean newValue) {
-		boolean oldValue = glyphs.has(g);
-		glyphs.set(g, newValue);
+		boolean oldValue = app.getSetup().getGlyphs().has(g);
+		app.getSetup().getGlyphs().set(g, newValue);
 		pcs.firePropertyChange(g.name(), oldValue, newValue);
 	}
 	
@@ -40,8 +38,6 @@ public class GlyphsController implements PropertyChangeListener {
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() == app) {
 			if (evt.getPropertyName() == "setup") {
-				Setup setup = (Setup) evt.getNewValue();
-				glyphs = setup.getGlyphs();
 				for (Glyph g: Glyph.values())
 					pcs.firePropertyChange(g.name(), null, hasGlyph(g));
 			}
