@@ -53,6 +53,15 @@
     <unique max="3">Jeweler's Gems</unique>
     <icon>inv_jewelcrafting_dragonseye03</icon>
   </gem>
+  <gem id="42149" profession="Jewelcrafting">
+    <name>Smoth Dragon's Eye</name>
+    <attributes>
+      <cri>34</cri>
+    </attributes>
+    <color>Yellow</color>
+    <unique max="3">Jeweler's Gems</unique>
+    <icon>inv_jewelcrafting_dragonseye03</icon>
+  </gem>
   <gem id="40112">
     <name>Delicate Cardinal Ruby</name>
     <attributes>
