@@ -1,10 +1,15 @@
 package iDPS.gui;
 
+import iDPS.ArmoryInfo;
+import iDPS.ItemFinder;
 import iDPS.Persistency;
+import iDPS.TalentReader;
+import iDPS.Talents;
 import iDPS.gear.Armor;
 import iDPS.gear.Enchant;
 import iDPS.gear.Gem;
 import iDPS.gear.Setup;
+import iDPS.gear.Weapon;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -15,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Vector;
@@ -176,12 +182,17 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
             if (characterInfo.getChild("character").getAttributeValue("class").compareTo("Rogue") != 0) {
                 throw new Exception("Dear sir, I don't believe you are a Rogue at all!\r\n\"There's an old saying in Tennessee — I know it's in Texas, probably in Tennessee — that says, fool me once, shame on — shame on you. Fool me — you can't get fooled again.\"");
             }
+            
+            Element talents = new TalentReader(new ArmoryInfo(region, realm, character), 1).read();
+            gear.setTalents(new Talents(talents));
+            
             Element characterTab = characterInfo.getChild("characterTab");
             Element items = characterTab.getChild("items");
 
             int chackifyBlizzardItemSlotId[] = { 0, 1, 2, 5, 4, 9, 10, 11, 7, 8, 12, 13, 14, 15, 3, 16, 17, 18, 6 };
             
             ListIterator<Element> elementIter = items.getChildren().listIterator();
+            List<Element> newItemList = new ArrayList<Element>();
             while (elementIter.hasNext()) {
                 Element element = elementIter.next();
                 int id = Integer.parseInt(element.getAttributeValue("id"));
@@ -197,6 +208,23 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                 int enchantId = Integer.parseInt(element.getAttributeValue("permanentenchant"));
                 
                 Armor item = Armor.find(id);
+
+                if (item == null) {
+                	//System.out.println("ID nao encontrado: " + id);
+                	Element newItem = new ItemFinder(id, rawSlot, slot, new ArmoryInfo(region, realm, character)).find();
+                	if (newItem == null)
+                		continue;
+                	
+                	newItemList.add(newItem);
+                	String newItemSlot = newItem.getChildText("slot");
+                	if (newItemSlot != null && (newItemSlot.equals("MainHand") || newItemSlot.equals("OneHand") || newItemSlot.equals("OffHand")))
+        				item = new Weapon(newItem);
+        			else
+        				item = new Armor(newItem);
+                	
+                	Armor.add(item);
+                }
+
                 if (item != null) {
                     gear.setItem(slot, item);
                     
@@ -215,6 +243,22 @@ final class ImportProfileDialog extends JDialog implements ActionListener {
                         socketIndex++;
                     }
                 }
+            }
+            
+            //save unrecognized items to settings XML
+            if (!newItemList.isEmpty()) {
+    			Document doc = Persistency.openXML(Persistency.FileType.Settings);
+    			Element settingItems = doc.getRootElement().getChild("items");
+    			if (settingItems == null) {
+    				settingItems = new Element("items");
+    				doc.getRootElement().getChildren().add(settingItems);
+    			}
+
+	            for (int i = 0; i < newItemList.size(); i++) {
+	            	settingItems.getChildren().add(newItemList.get(i));
+				}
+				
+				Persistency.saveXML(doc, Persistency.FileType.Settings);
             }
             
         } catch (Exception e) {

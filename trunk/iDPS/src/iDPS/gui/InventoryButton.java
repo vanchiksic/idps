@@ -87,8 +87,9 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		Setup g = mainFrame.getApp().getSetup();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
-			s += "<span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";
-			s = "<html>"+s+"</html>";
+			s = s.replaceAll("</body>", "");
+			s += "<br><span style=\"text-decoration:none;\">"+g.getEnchant(slot).getName()+"</span>";
+			s = "<html>"+s+"</body></html>";
 		}
 		setToolTipText(s);
 

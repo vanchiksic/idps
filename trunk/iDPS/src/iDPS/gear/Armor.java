@@ -150,7 +150,8 @@ public class Armor extends Item {
 	}
 	
 	public String getToolTip() {
-		String s = "<html><body style=\"padding:4px;background-color:#070c20;color:white;font-family:Verdana,sans-serif;font-size:8px;\"><p style=\"font-weight:bold;font-size:8px;margin:0 0 6px 0;\">"+getName()+"</p>";
+		String s = "<html><body style=\"padding:4px;background-color:#070c20;color:white;font-family:Verdana,sans-serif;font-size:8px;\"><p style=\"font-weight:bold;font-size:8px;margin:0 0 0 0;\">"+getName()+"</p>";
+		s += "<p style=\"margin:0 0 6px 0;\">Level: " + getLvl() + "</p>";
 		s += getAttr().getToolTip();
 		if (hasSockets()) {
 			s += "<p style=\"margin:6px 0 0 0;\">Socket Bonus:</p>";
@@ -203,9 +204,19 @@ public class Armor extends Item {
 	public static void load() {
 		fullmap = new HashMap<Integer,Armor>();
 		Document doc = Persistency.openXML(Persistency.FileType.Items);
-		Armor item;
 		Element root = doc.getRootElement();
-		for (Element e: (List<Element>) root.getChildren()) {
+		mapItemList((List<Element>) root.getChildren());
+		
+		//Get custom items from settings file
+		Document docSettings = Persistency.openXML(Persistency.FileType.Settings);
+		Element itemSettings = docSettings.getRootElement().getChild("items");
+		if (itemSettings != null) 
+			mapItemList((List<Element>) itemSettings.getChildren());
+	}
+	
+	private static void mapItemList(List<Element> items) {
+		Armor item;
+		for (Element e: items) {
 			String s = e.getChildText("slot");
 			if (s != null && (s.equals("MainHand") || s.equals("OneHand") || s.equals("OffHand")))
 				item = new Weapon(e);
@@ -213,7 +224,7 @@ public class Armor extends Item {
 				item = new Armor(e);
 			if (item.getId()>0)
 				fullmap.put(item.getId(), item);
-		}
+		}		
 	}
 	
 	public static void limit() {

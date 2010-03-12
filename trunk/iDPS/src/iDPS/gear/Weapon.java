@@ -109,7 +109,8 @@ public class Weapon extends Armor {
 	}
 	
 	public String getToolTip() {
-		String s = "<html><body style=\"padding:4px;background-color:#070c20;color:white;font-family:Verdana,sans-serif;font-size:8px;\"><p style=\"font-weight:bold;font-size:8px;margin:0 0 6px 0;\">"+getName()+"</p>";
+		String s = "<html><body style=\"padding:4px;background-color:#070c20;color:white;font-family:Verdana,sans-serif;font-size:8px;\"><p style=\"font-weight:bold;font-size:8px;margin:0 0 0 0;\">"+getName()+"</p>";
+		s += "<p style=\"margin:0 0 6px 0;\">Level: " + getLvl() + "</p>";
 		s += "<table border=0 cellspacing=0 cellpadding=0 style=\"width:100%;margin-bottom:3px;\"><tr><td>"+type.name()+"</td><td style=\"text-align:center;\">"+String.format("(%.2f dps)", dps)+"</td><td></td><td style=\"text-align:right;\">"+String.format("Speed: %1.2f", speed)+"</td></tr></table>";
 		s += super.getAttr().getToolTip();
 		if (hasSockets()) {

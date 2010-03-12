@@ -815,6 +815,10 @@ public class Setup implements Comparable<Setup> {
 		return talents;
 	}
 	
+	public void setTalents(Talents talents) {
+		this.talents = talents;
+	}
+	
 	public Glyphs getGlyphs() {
 		return glyphs;
 	}
