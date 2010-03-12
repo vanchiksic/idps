@@ -206,7 +206,7 @@ public class Setup implements Comparable<Setup> {
 		consumables = copy.consumables.clone();
 		debuffs = copy.debuffs.clone();
 		other = copy.other.clone();
-		useRupture = copy.useExpose;
+		useRupture = copy.useRupture;
 		useTotT = copy.useTotT;
 		useExpose = copy.useExpose;
 	}

@@ -1,5 +1,6 @@
-package iDPS;
+package iDPS.armory;
 
+import iDPS.Talents;
 import iDPS.Talents.Talent;
 
 import java.io.BufferedReader;

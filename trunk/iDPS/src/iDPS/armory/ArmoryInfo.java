@@ -1,4 +1,4 @@
-package iDPS;
+package iDPS.armory;
 
 public class ArmoryInfo {
 	private String region;

@@ -80,7 +80,7 @@ public class SelectItemPanel extends JPanel {
 			add(label, c);
 			
 			if (item.getTag() != null)
-				label = new JLabel(item.getTag() + " (" + String.format("Level: %d", item.getLvl()) + ")");
+				label = new JLabel(item.getTag());
 			else
 				label = new JLabel(String.format("Level: %d", item.getLvl()));
 			c.gridx = 2; c.gridy = j+1;

@@ -15,7 +15,7 @@ import org.jdom.output.XMLOutputter;
 
 public class Persistency {
 	
-	public enum FileType { Settings, Items, Gems, Enchants };
+	public enum FileType { Settings, Items, Gems, Enchants, Realms };
 	
 	public static void createXML() {
 		Element root;
@@ -59,6 +59,10 @@ public class Persistency {
 				break;
 			case Enchants:
 				url = Persistency.class.getResource("/data/enchants.xml");
+				file = new File(url.getFile());
+				break;
+			case Realms:
+				url = Persistency.class.getResource("/data/realms.xml");
 				file = new File(url.getFile());
 				break;
 		}
@@ -108,6 +112,9 @@ public class Persistency {
 				break;
 			case Enchants:
 				url = Persistency.class.getResource("/data/enchants.xml");
+				break;
+			case Realms:
+				url = Persistency.class.getResource("/data/realms.xml");
 				break;
 		}
 		return url;

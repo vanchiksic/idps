@@ -35,7 +35,7 @@ public class Launcher {
 		System.out.println("Gems loaded.");
 		Enchant.load();
 		System.out.println("Enchants loaded.");
-		
+				
 		app = new Application();
 		app.initialize();
 	}

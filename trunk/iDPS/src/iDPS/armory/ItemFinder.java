@@ -1,4 +1,4 @@
-package iDPS;
+package iDPS.armory;
 
 import iDPS.gear.Armor.SlotType;
 
@@ -43,7 +43,6 @@ public class ItemFinder {
 		return item;
 	}
 
-	@SuppressWarnings("unchecked")
 	private void connectItemInfo(int id) {
 		try {
 			String urlString = "http://";
