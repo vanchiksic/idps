@@ -38,7 +38,7 @@ public final class ImportProfileDialog extends JDialog implements ActionListener
 
 	ImportProfileDialog(MainFrame mainFrame) {
 		super(mainFrame, "Import Profile", true);
-		
+
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.BOTH;  c.weighty = 0;
@@ -83,12 +83,12 @@ public final class ImportProfileDialog extends JDialog implements ActionListener
 
 		updateRealms();
 		pack();
-		
+
 		// put it in the center
 		int x = mainFrame.getLocation().x + mainFrame.getSize().width/2 - getSize().width/2;
 		int y = mainFrame.getLocation().y + mainFrame.getSize().height/2 - getSize().height/2;
 		setLocation(new Point(x,y));
-		
+
 		setResizable(false);
 
 		load();
@@ -111,22 +111,23 @@ public final class ImportProfileDialog extends JDialog implements ActionListener
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
-		if ("progress".equals(evt.getPropertyName())) {
-			progressBar.setIndeterminate(false);
-			progressBar.setValue((Integer) evt.getNewValue());
-		} else if ("state".equals(evt.getPropertyName())) {
-			if (evt.getNewValue() == StateValue.DONE) {
-				setProcessing(false);
-				setVisible(false);
-				importWorker = null;
+		if (evt.getSource() == importWorker) {
+			if ("progress".equals(evt.getPropertyName())) {
+				progressBar.setIndeterminate(false);
+				progressBar.setValue((Integer) evt.getNewValue());
+			} else if ("state".equals(evt.getPropertyName())) {
+				if (evt.getNewValue() == StateValue.DONE) {
+					setProcessing(false);
+					setVisible(false);
+					importWorker = null;
+				}
 			}
 		}
 	}
 
 	public void setProcessing(boolean b) {
 		progressBar.setValue(0);
-		if (b)
-			progressBar.setIndeterminate(b);
+		progressBar.setIndeterminate(b);
 		mImportButton.setEnabled(!b);
 	}
 

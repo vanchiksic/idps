@@ -3,6 +3,7 @@ package iDPS.armory;
 import iDPS.Application;
 import iDPS.Glyphs;
 import iDPS.Launcher;
+import iDPS.Persistency;
 import iDPS.Race;
 import iDPS.Setup;
 import iDPS.Talents;
@@ -25,8 +26,10 @@ import java.util.ListIterator;
 import java.util.Vector;
 import java.util.concurrent.ExecutionException;
 
+import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
 
+import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -69,8 +72,11 @@ public class ImportWorker extends SwingWorker<Setup,Void> {
 			setProgress(100);
 			Thread.sleep(100);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(Launcher.getApp().getMainFrame(),
+					"Looks like there was a minor setback when importing the character:\r\n"+e.getLocalizedMessage(),
+					"Import failed",
+					JOptionPane.ERROR_MESSAGE);
 		}
 
 		return setup;
@@ -113,15 +119,18 @@ public class ImportWorker extends SwingWorker<Setup,Void> {
 		Element root = document.getRootElement();
 
 		Element characterInfo = root.getChild("characterInfo");
+		Attribute aErrCode = characterInfo.getAttribute("errCode");
+		if (aErrCode != null && aErrCode.getValue().equals("noCharacter"))
+			throw new Exception("Character not found.");
 		Element eCharacter = characterInfo.getChild("character");
 		if (!eCharacter.getAttributeValue("class").equals("Rogue"))
-			throw new Exception("Dear sir, I don't believe you are a Rogue at all!\r\n\"There's an old saying in Tennessee — I know it's in Texas, probably in Tennessee — that says, fool me once, shame on — shame on you. Fool me — you can't get fooled again.\"");
+			throw new Exception("I don't believe you are a Rogue at all!");
 		int raceId = Integer.valueOf(eCharacter.getAttributeValue("raceId"));
 		setup.setRace(Race.find(raceId));
 
 		Element characterTab = characterInfo.getChild("characterTab");
-		
-		
+
+
 		// Professions
 		for (Profession p: Profession.values())
 			setup.setProfession(p, false);
@@ -268,10 +277,22 @@ public class ImportWorker extends SwingWorker<Setup,Void> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void importItems() throws Exception {
 		int count = 0;
 		for (int itemId: importItemIds) {
 			Armor item = importItem(itemId);
+
+			Document doc = Persistency.openXML(Persistency.FileType.Settings);
+			Element eItems = doc.getRootElement().getChild("items");
+			if (eItems == null) {
+				eItems = new Element("items");
+				doc.getRootElement().getChildren().add(eItems);
+			}
+			Element eItem = item.toXML();
+			eItems.getChildren().add(eItem);
+			Persistency.saveXML(doc, Persistency.FileType.Settings);
+
 			Armor.add(item);
 			count++;
 			double progress = ((count+1D)/(importItemIds.size()+2D))*100D;

@@ -133,6 +133,9 @@ public class Armor extends Item {
 		case 13:
 			slot = SlotType.OneHand;
 			break;
+		case 16:
+			slot = SlotType.Back;
+			break;
 		case 21:
 			slot = SlotType.MainHand;
 			break;
@@ -180,6 +183,7 @@ public class Armor extends Item {
 	
 	@SuppressWarnings("unchecked")
 	public Element toXML() {
+		System.out.println(getName());
 		Element eSub, eItem = super.toXML();
 		
 		eSub = new Element("slot");
