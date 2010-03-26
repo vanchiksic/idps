@@ -109,7 +109,7 @@ public class Talents implements Cloneable {
 		createTalent("SFate", Tree.Assassination, 6, 15, "Seal Fate", 5);
 		createTalent("Murder", Tree.Assassination, 6, 16, "Murder", 2);
 		createTalent("OKill", Tree.Assassination, 7, 18, "Overkill", 1);
-		createTalent("FAttacks", Tree.Assassination, 8, 20, "Focussed Attacks", 3);
+		createTalent("FAttacks", Tree.Assassination, 8, 20, "Focused Attacks", 3);
 		createTalent("FWeakness", Tree.Assassination, 8, 21, "Find Weakness", 3);
 		//createTalent("MPoisoner", Tree.Assassination, 9, "Master Poisoner", 3);
 		//createTalent("Mutilate", Tree.Assassination, 9, "Mutilate", 1);
