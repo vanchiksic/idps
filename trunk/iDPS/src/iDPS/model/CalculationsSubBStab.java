@@ -1,6 +1,5 @@
 package iDPS.model;
 
-import iDPS.Launcher;
 import iDPS.Glyphs.Glyph;
 
 public class CalculationsSubBStab extends Calculations {
@@ -85,15 +84,20 @@ public class CalculationsSubBStab extends Calculations {
 		float btEvi = (eCostEA+bsPerEvi*eCostBS)/eRegen;
 		
 		float lEA = 0;
-		if (Launcher.getApp().getUseExpose()) {
+		if (setup.isUseExpose()) {
 			lEA = 30;
 			if (glyphs.has(Glyph.EA))
 				lEA += 10;
 		}
-		float lSnD = 21*(1+talents.getTalentPoints("ISnD")/4F);
-		float lRup = 16.5F;
+		float lSnD = 21;
+		if (setup.getGlyphs().has(Glyph.SnD))
+			lSnD += 3;
+		lSnD *= (1+talents.getTalentPoints("ISnD")/4F);
+		float lRup = 16F;
 		if (glyphs.has(Glyph.Rup))
 			lRup += 4;
+		if (setup.getRuptureUptime()>0)
+			lRup /= setup.getRuptureUptime();
 		float lCycle = Math.max(lSnD,lEA);
 		
 		float pcSnD = lCycle/lSnD;
@@ -102,14 +106,14 @@ public class CalculationsSubBStab extends Calculations {
 		//System.out.println("TL after SnD: "+timeLeft);
 		
 		float pcEA = 0;
-		if (Launcher.getApp().getUseExpose()) {
+		if (setup.isUseExpose()) {
 			pcEA = lCycle/lEA;
 			timeLeft -= pcEA*btEA + 2; // add some slack
 		}
 		//System.out.println("TL after EA: "+timeLeft);
 		
 		float pcRup = 0;
-		if (Launcher.getApp().getUseRupture()) {
+		if (setup.isUseRupture() && setup.getRuptureUptime()>0) {
 			pcRup = lCycle/lRup;
 			if (timeLeft < (pcRup*btRup))
 				pcRup = timeLeft/btRup;

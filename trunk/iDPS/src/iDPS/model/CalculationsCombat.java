@@ -1,6 +1,5 @@
 package iDPS.model;
 
-import iDPS.Launcher;
 import iDPS.Glyphs.Glyph;
 
 public class CalculationsCombat extends Calculations {
@@ -71,29 +70,34 @@ public class CalculationsCombat extends Calculations {
 		float lEA = 30;
 		if (glyphs.has(Glyph.EA))
 			lEA += 10;
-		if (!Launcher.getApp().getUseExpose())
+		if (!setup.isUseExpose())
 			lEA = 0;
-		float lSnD = 21*(1+talents.getTalentPoints("ISnD")/4F);
-		float lRup = 16.5F;
+		float lSnD = 21;
+		if (setup.getGlyphs().has(Glyph.SnD))
+			lSnD += 3;
+		lSnD *= (1+talents.getTalentPoints("ISnD")/4F);
+		float lRup = 16;
 		if (glyphs.has(Glyph.Rup))
 			lRup += 4;
+		if (setup.getRuptureUptime()>0)
+			lRup /= setup.getRuptureUptime();
 		float lCycle = Math.max(lSnD,lEA);
 		float pcSnD = lCycle/lSnD;
 		
 		float timeLeft = lCycle - pcSnD*btSnD - 1; // add some slack
 		
 		float pcEA = 0;
-		if (Launcher.getApp().getUseExpose()) {
+		if (setup.isUseExpose()) {
 			pcEA = lCycle/lEA;
 			timeLeft -= pcEA*btEA + 1; // add some slack
 		}
 		
 		float pcRup = 0;
-		if (Launcher.getApp().getUseRupture()) {
+		if (setup.isUseRupture() && setup.getRuptureUptime()>0) {
 			pcRup = lCycle/lRup;
 			if (timeLeft < (pcRup*btRup))
 				pcRup = timeLeft/btRup;
-			timeLeft -= pcRup*btRup + 1; // add some slack
+			timeLeft -= pcRup*btRup + setup.getRuptureUptime(); // add some slack
 		}
 		
 		float pcEvi = timeLeft/btEvi;
@@ -102,6 +106,8 @@ public class CalculationsCombat extends Calculations {
 		float eaPerSec = pcEA/lCycle;
 		rupPerSec = pcRup/lCycle;
 		eviPerSec = pcEvi/lCycle;
+		
+		//System.out.println("RUT: "+(rupPerSec*(lRup-0.5F)));
 		
 		ssPerSec = (sndPerSec+eaPerSec+rupPerSec+eviPerSec)*(5-pRuth-3*pT10)/cpPerSS;
 				

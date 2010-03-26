@@ -5,10 +5,15 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -30,7 +35,7 @@ public class MainFrame extends JFrame {
 	private SidePanel sidePanel;
 	
 	public MainFrame(Application app) {
-		super("iDPS");
+		super("iDPS");		
 		this.app = app;
 		
 		menuBar = new MenuBar(this);
@@ -118,7 +123,7 @@ public class MainFrame extends JFrame {
 		invPane.setPreferredSize(new Dimension(440,490));
 		add(invPane, BorderLayout.CENTER);
 		
-		sidePanel = new SidePanel(this);
+		sidePanel = new SidePanel(this, app.getCycleController());
 		add(sidePanel, BorderLayout.LINE_END);
 		
 		pack();
@@ -127,6 +132,16 @@ public class MainFrame extends JFrame {
 	    Dimension d2 = getSize();
 	    setLocation((int)((d1.width-d2.width)/3),(int)((d1.height-d2.height)/3));
 		
+		ActionListener escListener = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showSidePanel();
+			}
+	    };
+
+	    getRootPane().registerKeyboardAction(escListener,
+	            KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
+	            JComponent.WHEN_IN_FOCUSED_WINDOW);
+	    
 		setResizable(false);
 		setVisible(true);
 	}

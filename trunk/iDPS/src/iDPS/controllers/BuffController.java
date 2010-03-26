@@ -92,7 +92,7 @@ public class BuffController implements PropertyChangeListener {
 		pcs.firePropertyChange("debuff_"+b.name(), oldValue, newValue);
 		if (!newValue) {
 			if (b == Debuff.armorMajor)
-				app.setUseExpose(newValue);
+				app.getCycleController().setUseExpose(newValue);
 		}
 	}
 	

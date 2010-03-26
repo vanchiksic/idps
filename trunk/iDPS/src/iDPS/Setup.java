@@ -33,6 +33,7 @@ public class Setup implements Cloneable, Comparable<Setup> {
 	private Race race;
 	private boolean useTotT;
 	private boolean useRupture;
+	private float ruptureUptime;
 	private boolean useExpose;
 	private EnumSet<Profession> professions;
 	private EnumMap<Buff,Boolean> buffs;
@@ -119,9 +120,11 @@ public class Setup implements Cloneable, Comparable<Setup> {
 				for (Element e: (List<Element>) eGear.getChildren()) {
 					if (e.getName().equals("rupture"))
 						useRupture = Boolean.parseBoolean(e.getText());
-					if (e.getName().equals("tott"))
+					else if (e.getName().equals("ruptureUptime"))
+						ruptureUptime = Float.parseFloat(e.getText());
+					else if (e.getName().equals("tott"))
 						useTotT = Boolean.parseBoolean(e.getText());
-					if (e.getName().equals("expose"))
+					else if (e.getName().equals("expose"))
 						useExpose = Boolean.parseBoolean(e.getText());
 				}
 			}
@@ -149,6 +152,7 @@ public class Setup implements Cloneable, Comparable<Setup> {
 		clone.debuffs = debuffs.clone();
 		clone.other = other.clone();
 		clone.useRupture = useRupture;
+		clone.ruptureUptime = ruptureUptime;
 		clone.useTotT = useTotT;
 		clone.useExpose = useExpose;
 		return clone;
@@ -234,6 +238,7 @@ public class Setup implements Cloneable, Comparable<Setup> {
 			eSub.getChildren().add(new Element("rupture").setText("true"));
 		if (useTotT)
 			eSub.getChildren().add(new Element("tott").setText("true"));
+		eSub.getChildren().add(new Element("ruptureUptime").setText(String.valueOf(ruptureUptime)));
 		eSetup.getChildren().add(eSub);
 		
 		return eSetup;
@@ -424,6 +429,14 @@ public class Setup implements Cloneable, Comparable<Setup> {
 
 	public void setGlyphs(Glyphs glyphs) {
 		this.glyphs = glyphs;
+	}
+
+	public float getRuptureUptime() {
+		return ruptureUptime;
+	}
+
+	public void setRuptureUptime(float ruptureUptime) {
+		this.ruptureUptime = ruptureUptime;
 	}
 
 }

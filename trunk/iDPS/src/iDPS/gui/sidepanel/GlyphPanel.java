@@ -88,6 +88,9 @@ public class GlyphPanel extends JPanel implements ActionListener, PropertyChange
 			case KS:
 				setText("Killing Spree");
 				break;
+			case SnD:
+				setText("Slice and Dice");
+				break;
 			case AR:
 				setText("Adrenaline Rush");
 				break;

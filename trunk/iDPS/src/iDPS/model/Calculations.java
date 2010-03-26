@@ -23,7 +23,6 @@ public abstract class Calculations {
 	float ppsIP1, ppsIP2;
 	float dpsWH, dpsDP, dpsIP, dpsRU, total;
 	protected float envenomUptime;
-	protected float ruptureUptime;
 	float epAGI, epHIT, epCRI, epHST, epARP, epEXP;
 	protected Setup setup;
 	protected Gear gear;
@@ -589,7 +588,7 @@ public abstract class Calculations {
 			eRegen += 15F/120F;
 		
 		// ToTT every 31 sec
-		if (Launcher.getApp().getUseTotT()) {
+		if (setup.isUseTotT()) {
 			float eLossTOT;
 			eLossTOT = (15F-talents.getTalentPoints("FTricks")*5F)
 						/ (31F-talents.getTalentPoints("FTricks")*5F);
@@ -599,8 +598,8 @@ public abstract class Calculations {
 		}
 		
 		// 2P Tier9
-		if (gear.getTier9()>=2 && Launcher.getApp().getUseRupture())
-			eRegen += 0.4F * ruptureUptime;
+		if (gear.getTier9()>=2 && setup.isUseRupture())
+			eRegen += 0.4F * setup.getRuptureUptime();
 		
 		// Heartpierce
 		if (gear.containsAny(49982,50641))

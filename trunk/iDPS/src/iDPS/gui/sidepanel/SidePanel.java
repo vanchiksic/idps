@@ -1,6 +1,6 @@
 package iDPS.gui.sidepanel;
 
-import iDPS.Application;
+import iDPS.controllers.CycleController;
 import iDPS.gui.MainFrame;
 
 import java.awt.Dimension;
@@ -15,13 +15,19 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
-public class SidePanel extends JScrollPane implements ActionListener, PropertyChangeListener {
+public class SidePanel extends JScrollPane implements ActionListener, PropertyChangeListener, ChangeListener {
 	
+	private CycleController cycleController;
 	private MainFrame mainFrame;
+	
 	private JPanel defaultPanel;
 	private JPanel buffPanel;
 	private JPanel talentPanel;
@@ -30,14 +36,16 @@ public class SidePanel extends JScrollPane implements ActionListener, PropertyCh
 	private JCheckBox boxTotT;
 	private JCheckBox boxRupture;
 	private JCheckBox boxExpose;
+	private JSlider slideRupture;
 	private JButton buffsButton;
 	private JButton talentButton;
 	private JButton glyphButton;
 	private JButton doneBuffs;
 	
-	public SidePanel(MainFrame mainFrame) {
+	public SidePanel(MainFrame mainFrame, CycleController cycleController) {
 		this.mainFrame = mainFrame;
-		mainFrame.getApp().addPropertyChangeListener(this);
+		this.cycleController = cycleController;
+		cycleController.addPropertyChangeListener(this);
 		getVerticalScrollBar().setUnitIncrement(20);
 		setPreferredSize(new Dimension(430,490));
 		createDefaultPanel();
@@ -49,72 +57,86 @@ public class SidePanel extends JScrollPane implements ActionListener, PropertyCh
 	}
 	
 	private void createDefaultPanel() {
-		defaultPanel = new JPanel(new GridBagLayout());
+		defaultPanel = new JPanel();
+		defaultPanel.setLayout(new BoxLayout(defaultPanel, BoxLayout.PAGE_AXIS));
+		defaultPanel.add(Box.createRigidArea(new Dimension(0,50)));
+		defaultPanel.add(Box.createVerticalGlue());
+		
+		JPanel defaultPanel1 = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.anchor = GridBagConstraints.LINE_START;
-		
-		c.gridwidth = 1; c.gridheight = 3; c.weightx = 1;		
-		c.gridx = 0; c.gridy = 1;
-		defaultPanel.add(Box.createGlue(), c);
-		c.gridx = 4; c.gridy = 1;
-		defaultPanel.add(Box.createGlue(), c);
-		
-		c.fill = GridBagConstraints.NONE;
-		c.weightx = 0; c.gridheight = 1; c.gridwidth = 3;
+		//c.fill = GridBagConstraints.BOTH;
 		
 		boxTotT = new JCheckBox("Use TotT every CD");
 		boxTotT.setFocusable(false);
 		boxTotT.addActionListener(this);
-		boxTotT.setSelected(mainFrame.getApp().getUseTotT());
+		boxTotT.setSelected(cycleController.getUseTotT());
 		c.gridx = 1; c.gridy = 1;
-		defaultPanel.add(boxTotT, c);
-		
-		boxRupture = new JCheckBox("Use Rupture");
-		boxRupture.setFocusable(false);
-		boxRupture.addActionListener(this);
-		boxRupture.setSelected(mainFrame.getApp().getUseRupture());
-		c.gridx = 1; c.gridy = 2;
-		defaultPanel.add(boxRupture, c);
+		defaultPanel1.add(boxTotT, c);
 		
 		boxExpose = new JCheckBox("Maintain Expose Armor");
 		boxExpose.setFocusable(false);
 		boxExpose.addActionListener(this);
-		boxExpose.setSelected(mainFrame.getApp().getUseExpose());
+		boxExpose.setSelected(cycleController.getUseExpose());
+		c.gridx = 1; c.gridy = 2;
+		defaultPanel1.add(boxExpose, c);
+		
+		boxRupture = new JCheckBox("Use Rupture");
+		boxRupture.setFocusable(false);
+		boxRupture.addActionListener(this);
+		boxRupture.setSelected(cycleController.getUseRupture());
 		c.gridx = 1; c.gridy = 3;
-		defaultPanel.add(boxExpose, c);
+		defaultPanel1.add(boxRupture, c);
 		
 		c.gridx = 1; c.gridy = 4;
-		defaultPanel.add(Box.createRigidArea(new Dimension(100,20)), c);
+		defaultPanel1.add(Box.createRigidArea(new Dimension(100,15)), c);
 		
-		c.gridwidth = 1; c.gridheight = 2; c.weightx = 0.001;
-		c.gridx = 1; c.gridy = 5;
-		defaultPanel.add(Box.createGlue(), c);
-		c.gridx = 3; c.gridy = 5;
-		defaultPanel.add(Box.createGlue(), c);
+		JLabel sliderLabel = new JLabel("Projected Rupture Uptime %");
+		sliderLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+		c.gridx = 1; c.gridy = 5; c.anchor = GridBagConstraints.CENTER;
+		defaultPanel1.add(sliderLabel, c);
 		
-		c.weightx = 0; c.gridwidth = 1; c.gridheight = 1;
-		c.anchor = GridBagConstraints.CENTER;
+		int val = (int) (cycleController.getRuptureUptime()*100F);
+		slideRupture = new JSlider(JSlider.HORIZONTAL, 0, 100, val);
+		slideRupture.setEnabled(cycleController.getUseRupture());
+		slideRupture.setFocusable(false);
+		slideRupture.setSnapToTicks(true);
+		slideRupture.addChangeListener(this);
+		slideRupture.setMinorTickSpacing(5);
+		slideRupture.setMajorTickSpacing(25);
+		slideRupture.setPaintTicks(true);
+		slideRupture.setPaintLabels(true);
+		c.gridx = 1; c.gridy = 6;
+		defaultPanel1.add(slideRupture, c);
+		
+		defaultPanel.add(defaultPanel1);
+		defaultPanel.add(Box.createRigidArea(new Dimension(0,20)));
+		
+		JPanel defaultPanel2 = new JPanel(new GridBagLayout());
+		c.anchor = GridBagConstraints.LINE_START;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		
 		buffsButton = new JButton("Set Buffs/Debuffs");
 		buffsButton.setFocusable(false);
 		buffsButton.addActionListener(this);
-		c.gridx = 2; c.gridy = 5;
-		defaultPanel.add(buffsButton, c);
+		c.gridx = 1; c.gridy = 1;
+		defaultPanel2.add(buffsButton, c);
 		
 		talentButton = new JButton("Set Talents");
 		talentButton.setFocusable(false);
 		talentButton.addActionListener(this);
-		talentButton.setSize(buffsButton.getPreferredSize());
-		c.gridx = 2; c.gridy = 6;
-		defaultPanel.add(talentButton, c);
+		c.gridx = 1; c.gridy = 2;
+		defaultPanel2.add(talentButton, c);
 		
 		glyphButton = new JButton("Set Glyphs");
 		glyphButton.setFocusable(false);
 		glyphButton.addActionListener(this);
-		glyphButton.setSize(buffsButton.getPreferredSize());
-		c.gridx = 2; c.gridy = 7;
-		defaultPanel.add(glyphButton, c);
+		c.gridx = 1; c.gridy = 3;
+		defaultPanel2.add(glyphButton, c);
+		
+		defaultPanel.add(defaultPanel2);
+		defaultPanel.add(Box.createVerticalGlue());
+		defaultPanel.add(Box.createRigidArea(new Dimension(0,50)));
 	}
 	
 	private void createBuffPanel() {
@@ -164,13 +186,13 @@ public class SidePanel extends JScrollPane implements ActionListener, PropertyCh
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == boxRupture) {
-			mainFrame.getApp().setUseRupture(boxRupture.isSelected());
+			cycleController.setUseRupture(boxRupture.isSelected());
 			mainFrame.showStats();
 		} else if (e.getSource() == boxTotT) {
-			mainFrame.getApp().setUseTotT(boxTotT.isSelected());
+			cycleController.setUseTotT(boxTotT.isSelected());
 			mainFrame.showStats();
 		} else if (e.getSource() == boxExpose) {
-			mainFrame.getApp().setUseExpose(boxExpose.isSelected());
+			cycleController.setUseExpose(boxExpose.isSelected());
 			mainFrame.showStats();
 		} else if (e.getSource() == buffsButton) {
 			showBuffPanel();
@@ -185,13 +207,29 @@ public class SidePanel extends JScrollPane implements ActionListener, PropertyCh
 	}
 
 	public void propertyChange(PropertyChangeEvent evt) {
-		if (evt.getSource() instanceof Application) {
-			if (evt.getPropertyName().equals("useRupture"))
-				boxRupture.setSelected((Boolean) evt.getNewValue());
-			if (evt.getPropertyName().equals("useTotT"))
+		if (evt.getSource() == cycleController) {
+			if (evt.getPropertyName().equals("useRupture")) {
+				boolean val = (Boolean) evt.getNewValue();
+				boxRupture.setSelected(val);
+				slideRupture.setEnabled(val);
+			} else if (evt.getPropertyName().equals("ruptureUptime")) {
+				int val = (int) (((Float) evt.getNewValue())*100);
+				slideRupture.setValue(val);
+			} else if (evt.getPropertyName().equals("useTotT"))
 				boxTotT.setSelected((Boolean) evt.getNewValue());
-			if (evt.getPropertyName().equals("useExpose"))
+			else if (evt.getPropertyName().equals("useExpose"))
 				boxExpose.setSelected((Boolean) evt.getNewValue());
+		}
+	}
+
+	public void stateChanged(ChangeEvent e) {
+		if (e.getSource() == slideRupture) {
+			JSlider source = (JSlider) e.getSource();
+		    if (!source.getValueIsAdjusting()) {
+		        float val = ((int) source.getValue())/100F;
+		        cycleController.setRuptureUptime(val);
+		        mainFrame.showStats();
+		    }
 		}
 	}
 
