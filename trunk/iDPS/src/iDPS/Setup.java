@@ -352,8 +352,10 @@ public class Setup implements Cloneable, Comparable<Setup> {
 		else {
 			// Remove Gems in sockets we dont have anymore
 			if (p == Profession.Blacksmithing) {
-				gear.setGem(7, gear.getItem(7).getMaxSocketIndex()+1, null);
-				gear.setGem(8, gear.getItem(8).getMaxSocketIndex()+1, null);
+				if (gear.getItem(7) != null)
+					gear.setGem(7, gear.getItem(7).getMaxSocketIndex()+1, null);
+				if (gear.getItem(8) != null)
+					gear.setGem(8, gear.getItem(8).getMaxSocketIndex()+1, null);
 			}
 			professions.remove(p);
 		}
