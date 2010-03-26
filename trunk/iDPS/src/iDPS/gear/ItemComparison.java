@@ -3,42 +3,46 @@ package iDPS.gear;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import iDPS.Setup;
 import iDPS.gear.Armor.SlotType;
-import iDPS.gear.Weapon.weaponType;
+import iDPS.gear.Weapon.WeaponType;
 import iDPS.model.Calculations;
 import iDPS.model.Calculations.ModelType;
 
 public class ItemComparison {
 	
-	private Setup gear;
+	private Gear gear;
+	private Setup setup;
 	private Armor orgItem;
 	private int slotId;
 	private SlotType slotType;
 	private float defaultDPS;
 	private ArrayList<Armor> comparedItems;
 	
-	public ItemComparison(Setup gear, int slotId, SlotType slotType) {
+	public ItemComparison(Setup setup, Gear gear, int slotId, SlotType slotType) {
+		this.setup = setup;
 		this.gear = gear.clone();
 		this.slotId = slotId;
-		orgItem = gear.getItem(slotId);
+		orgItem = this.gear.getItem(slotId);
 		this.gear.setItem(slotId, null);
+		this.gear.printItem(slotId);
 		this.slotType = slotType;
-		this.comparedItems = new ArrayList<Armor>();
+		comparedItems = new ArrayList<Armor>();
 		runComparison();
 	}
 	
 	private void runComparison() {
 		Calculations m = Calculations.createInstance();
-		m.calculate(gear);
+		m.calculate(setup, gear);
 		defaultDPS = m.getTotalDPS();
 		
 		ArrayList<Armor> items;
 		if ((slotId == 16 || slotId == 17) && 
-			((gear.getTalents().getModel() == ModelType.Mutilate)
-				|| (gear.getTalents().getModel() == ModelType.SubBStab)
-				|| (gear.getTalents().getModel() == ModelType.SubHemo)
+			((setup.getTalents().getModel() == ModelType.Mutilate)
+				|| (setup.getTalents().getModel() == ModelType.SubBStab)
+				|| (setup.getTalents().getModel() == ModelType.SubHemo)
 			)) {
-			items = Armor.findWeapon(weaponType.Dagger);
+			items = Armor.findWeapon(WeaponType.Dagger);
 		} else
 			items = Armor.findSlot(slotType);
 		
@@ -52,7 +56,7 @@ public class ItemComparison {
 				continue;
 			gear.setItem(slotId, item);
 			gear.gemBest(slotId);
-			m.calculate(gear);
+			m.calculate(setup, gear);
 			item.setComparedDPS(m.getTotalDPS()-defaultDPS);
 			comparedItems.add(item);
 		}

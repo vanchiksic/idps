@@ -37,7 +37,7 @@ public class CalculationsCombat extends Calculations {
 	protected void calcCycle() {
 		
 		float pT10 = 0;
-		if (setup.getTier10()>=4)
+		if (gear.getTier10()>=4)
 			pT10 = 0.13F;
 		float pRuth = 0.2F*talents.getTalentPoints("Ruth");
 		
@@ -135,9 +135,9 @@ public class CalculationsCombat extends Calculations {
 		float pps;
 		pps = ohWPS;
 		// OH Hits from Tiny Abom
-		if (setup.containsAny(50351,50706)) {
+		if (gear.containsAny(50351,50706)) {
 			float moteFactor;
-			if (setup.containsAny(50706))
+			if (gear.containsAny(50706))
 				moteFactor = 1/7F;
 			else
 				moteFactor = 1/8F;
@@ -151,7 +151,7 @@ public class CalculationsCombat extends Calculations {
 	}
 	
 	private float calcSinisterDamage() {
-		float dmg = setup.getWeapon1().getInstantDmg(totalATP) + 180;
+		float dmg = gear.getWeapon1().getInstantDmg(totalATP) + 180;
 		dmg *= 1 + 0.05F*talents.getTalentPoints("BTwist")
 			+ 0.10F*talents.getTalentPoints("SAttacks")
 			+ 0.03F*talents.getTalentPoints("Aggr");
@@ -168,9 +168,9 @@ public class CalculationsCombat extends Calculations {
 		float dps = 0;
 		if (talents.getTalentPoints("KS")>0) {
 			float dmg, dmgMh, dmgOh;
-			dmgMh = setup.getWeapon1().getAverageDmg(totalATP)*mod.getModArmorMH();
+			dmgMh = gear.getWeapon1().getAverageDmg(totalATP)*mod.getModArmorMH();
 			dmgMh = dmgMh*mod.getHtMHS().hit + dmgMh*mod.getHtMHS().crit*mod.getPhysCritMult();
-			dmgOh = setup.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()
+			dmgOh = gear.getWeapon2().getAverageDmg(totalATP)*mod.getModArmorOH()
 				* 0.5F * (1+0.1F*talents.getTalentPoints("DWield"));
 			dmgOh = dmgOh*mod.getHtMHS().hit + dmgOh*mod.getHtMHS().crit*mod.getPhysCritMult();
 			dmg = (dmgMh + dmgOh) * 5 * 1.2F;

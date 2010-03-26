@@ -1,7 +1,7 @@
 package iDPS.gui.sidepanel;
 
-import iDPS.BuffController;
-import iDPS.BuffController.Debuff;
+import iDPS.controllers.BuffController;
+import iDPS.controllers.BuffController.Debuff;
 import iDPS.gui.MainFrame;
 
 import java.awt.GridBagConstraints;

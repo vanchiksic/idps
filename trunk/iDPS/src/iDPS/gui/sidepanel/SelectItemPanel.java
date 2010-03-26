@@ -1,5 +1,6 @@
 package iDPS.gui.sidepanel;
 
+import iDPS.Setup;
 import iDPS.gear.Armor;
 import iDPS.gear.ItemComparison;
 import iDPS.gear.Armor.SlotType;
@@ -34,7 +35,8 @@ public class SelectItemPanel extends JPanel {
 				SlotType.MainHand, SlotType.OffHand, SlotType.Ranged,
 		};
 		
-		ItemComparison ic = new ItemComparison(mainFrame.getApp().getSetup(), slot, slotMap[slot]);
+		Setup setup = mainFrame.getApp().getSetup();
+		ItemComparison ic = new ItemComparison(setup, setup.getGear(), slot, slotMap[slot]);
 		ArrayList<Armor> comparedItems = ic.getComparedItems();
 		
 		setLayout(new GridBagLayout());
@@ -45,7 +47,7 @@ public class SelectItemPanel extends JPanel {
 		
 		Iterator<Armor> iter = comparedItems.iterator();
 		int j = 0;
-		Armor item, curItem = mainFrame.getApp().getSetup().getItem(slot);
+		Armor item, curItem = mainFrame.getApp().getSetup().getGear().getItem(slot);
 
 		JLabel label;
 		SelectItemButton button;
@@ -126,7 +128,7 @@ public class SelectItemPanel extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			mainFrame.showSidePanel();
-			mainFrame.getApp().getSetup().setItem(slot, item);
+			mainFrame.getApp().getSetup().getGear().setItem(slot, item);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();
 		}

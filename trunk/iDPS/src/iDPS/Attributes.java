@@ -4,6 +4,7 @@ import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.Iterator;
+import java.util.List;
 
 import org.jdom.Element;
 
@@ -41,6 +42,41 @@ public class Attributes {
 				set(t, Float.parseFloat(sub.getText()));
 			} catch (IllegalArgumentException e) {
 				System.err.println("Cannot map Attribute "+sub.getName()+".");
+			}
+		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void loadFromArmoryXML(Element toolTip) {
+		List<Element> children = toolTip.getChildren();
+		for (Element child: children) {
+			if (child.getName().startsWith("bonus")) {
+				String name = child.getName().substring(5);
+				int bonus = Integer.parseInt(child.getText());
+				if (name.equals("Agility"))
+					set(Type.AGI, bonus);
+				else if (name.equals("Strength"))
+					set(Type.STR, bonus);
+				else if (name.equals("Stamina")) {
+					// do nothing
+				} else if (name.equals("AttackPower"))
+					set(Type.ATP, bonus);
+				else if (name.equals("HitRating"))
+					set(Type.HIT, bonus);
+				else if (name.equals("CritRating"))
+					set(Type.CRI, bonus);
+				else if (name.equals("ArmorPenetration"))
+					set(Type.ARP, bonus);
+				else if (name.equals("HasteRating"))
+					set(Type.HST, bonus);
+				else if (name.equals("ExpertiseRating"))
+					set(Type.EXP, bonus);
+				else if (name.equals("ResilienceRating")) {
+					// do nothing
+				} else {
+					System.err.println("Error parsing attriutes from armory xml");
+					System.err.println(name+" not recognized");
+				}
 			}
 		}
 	}

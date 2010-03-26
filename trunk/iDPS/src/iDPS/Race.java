@@ -27,38 +27,37 @@ public class Race {
 		name = r.name();
 		switch (r) {
 			case BloodElf:
-				id = 1;
+				id = 10;
 				faction = Faction.Horde;
 				attr.setAgi(191);
 				attr.setStr(110);
 				break;
 			case Dwarf:
-				id = 2;
+				id = 3;
 				faction = Faction.Alliance;
 				attr.setAgi(185);
 				attr.setStr(115);
 				break;
 			case Gnome:
-				id = 3;
+				id = 7;
 				faction = Faction.Alliance;
 				attr.setAgi(192);
 				attr.setStr(108);
 				break;
-			// Gnome id = 4
 			case Human:
-				id = 5;
+				id = 1;
 				faction = Faction.Alliance;
 				attr.setAgi(189);
 				attr.setStr(113);
 				break;
 			case NightElf:
-				id = 6;
+				id = 4;
 				faction = Faction.Alliance;
 				attr.setAgi(194);
 				attr.setStr(110);
 				break;
 			case Orc:
-				id = 7;
+				id = 2;
 				faction = Faction.Horde;
 				attr.setAgi(191);
 				attr.setStr(110);
@@ -70,7 +69,7 @@ public class Race {
 				attr.setStr(114);
 				break;
 			case Undead:
-				id = 9;
+				id = 5;
 				faction = Faction.Horde;
 				attr.setAgi(187);
 				attr.setStr(112);

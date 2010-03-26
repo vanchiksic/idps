@@ -1,20 +1,19 @@
 package iDPS.gear;
 
-
 import org.jdom.Element;
 
 public class Weapon extends Armor {
 	
-	public enum weaponType { Axe, Dagger, Sword, Fist, Mace, Thrown, Gun, Bow, Crossbow }
+	public enum WeaponType { Axe, Dagger, Sword, Fist, Mace, Thrown, Gun, Bow, Crossbow }
 	
-	private weaponType type;
+	private WeaponType type;
 	private float speed;
 	private float dps;
 	
 	public Weapon(Element element) {
 		super(element);
 		if (element.getChild("type") != null)
-			type = weaponType.valueOf(element.getChildText("type"));
+			type = WeaponType.valueOf(element.getChildText("type"));
 		speed = 1.7F;
 		dps = 0;
 		Element e;
@@ -26,7 +25,7 @@ public class Weapon extends Armor {
 			dps = Float.parseFloat(e.getText());
 	}
 	
-	public Weapon(weaponType type) {
+	public Weapon(WeaponType type) {
 		this();
 		this.type = type;
 		speed = 1.7F;
@@ -40,8 +39,35 @@ public class Weapon extends Armor {
 	public Weapon() {
 		super();
 	}
+	
+	public void loadFromArmoryXML(Element armoryTooltip) {
+		super.loadFromArmoryXML(armoryTooltip);
+		String typeString = armoryTooltip.getChild("equipData").getChildText("subclassName");
+		if (typeString.equals("Fist Weapon"))
+			typeString = "Fist";
+		type = WeaponType.valueOf(typeString);
+		speed = Float.parseFloat(armoryTooltip.getChild("damageData").getChildText("speed"));
+		dps = Float.parseFloat(armoryTooltip.getChild("damageData").getChildText("dps"));
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Element toXML() {
+		Element eItem = super.toXML();
+		
+		Element eSub = new Element("type");
+		eSub.setText(type.name());
+		eItem.getChildren().add(eSub);
+		eSub = new Element("speed");
+		eSub.setText(String.valueOf(speed));
+		eItem.getChildren().add(eSub);
+		eSub = new Element("dps");
+		eSub.setText(String.valueOf(dps));
+		eItem.getChildren().add(eSub);
+		
+		return eItem;
+	}
 
-	public weaponType getType() {
+	public WeaponType getType() {
 		return type;
 	}
 
@@ -96,7 +122,7 @@ public class Weapon extends Armor {
 		return dmg;
 	}
 
-	public void setType(weaponType type) {
+	public void setType(WeaponType type) {
 		this.type = type;
 	}
 

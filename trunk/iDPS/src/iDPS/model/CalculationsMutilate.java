@@ -3,7 +3,7 @@ package iDPS.model;
 
 import iDPS.Launcher;
 import iDPS.Glyphs.Glyph;
-import iDPS.gear.Weapon.weaponType;
+import iDPS.gear.Weapon.WeaponType;
 
 
 public class CalculationsMutilate extends Calculations {
@@ -41,8 +41,8 @@ public class CalculationsMutilate extends Calculations {
 		cMut2cp  = (float) Math.pow((1-mod.getHtMut().crit*pCritCp), 2);
 		cMut3cp  = 1-cMut2cp;
 		
-		if (setup.getWeapon1().getType() != weaponType.Dagger
-				|| setup.getWeapon2().getType() != weaponType.Dagger) {
+		if (gear.getWeapon1().getType() != WeaponType.Dagger
+				|| gear.getWeapon2().getType() != WeaponType.Dagger) {
 			mutPerSec = 0;
 			envPerSec = 0;
 			rupPerSec = 0;
@@ -52,7 +52,7 @@ public class CalculationsMutilate extends Calculations {
 		}
 		
 		float pT10 = 0;
-		if (setup.getTier10()>=4)
+		if (gear.getTier10()>=4)
 			pT10 = 0.13F;
 		float pRuth = 0.2F * talents.getTalentPoints("Ruth");
 		
@@ -176,10 +176,10 @@ public class CalculationsMutilate extends Calculations {
 	
 	private float calcDamageMutilate() {
 		float dmg, dmg1, dmg2;
-		if (setup.getWeapon1().getType() != weaponType.Dagger || setup.getWeapon2().getType() != weaponType.Dagger)
+		if (gear.getWeapon1().getType() != WeaponType.Dagger || gear.getWeapon2().getType() != WeaponType.Dagger)
 			return 0;
-		dmg1 = setup.getWeapon1().getInstantDmg(totalATP) + 181;
-		dmg2 = (setup.getWeapon2().getInstantDmg(totalATP)*0.5F + 181)
+		dmg1 = gear.getWeapon1().getInstantDmg(totalATP) + 181;
+		dmg2 = (gear.getWeapon2().getInstantDmg(totalATP)*0.5F + 181)
 			* (1+0.1F*talents.getTalentPoints("DWield"));
 		// total * poisoned * critMod * Opp+FW 
 		dmg = (dmg1+dmg2) * 1.2F * ((mod.getComboMoveCritMult()-1)*mod.getHtMut().crit + 1);

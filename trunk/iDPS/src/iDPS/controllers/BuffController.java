@@ -1,6 +1,8 @@
-package iDPS;
+package iDPS.controllers;
 
-import iDPS.gear.Setup;
+
+import iDPS.Application;
+import iDPS.Setup;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

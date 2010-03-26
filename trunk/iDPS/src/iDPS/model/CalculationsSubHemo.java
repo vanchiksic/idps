@@ -2,7 +2,7 @@ package iDPS.model;
 
 import iDPS.Launcher;
 import iDPS.Glyphs.Glyph;
-import iDPS.gear.Weapon.weaponType;
+import iDPS.gear.Weapon.WeaponType;
 
 public class CalculationsSubHemo extends Calculations {
 	
@@ -34,7 +34,7 @@ public class CalculationsSubHemo extends Calculations {
 	@Override
 	protected void calcCycle() {
 		float pT10 = 0;
-		if (setup.getTier10()>=4)
+		if (gear.getTier10()>=4)
 			pT10 = 0.13F;
 		float pRuth = 0.2F*talents.getTalentPoints("Ruth");
 		
@@ -59,7 +59,7 @@ public class CalculationsSubHemo extends Calculations {
 			if (glyphs.has(Glyph.SD))
 				sdLength += 2;
 			int ambushes = 3;
-			if (glyphs.has(Glyph.SD) && setup.getTier10()>=2)
+			if (glyphs.has(Glyph.SD) && gear.getTier10()>=2)
 				ambushes++;
 			ambPerSec = ambushes/60F;
 			float cpAmbush = ambushes * (2+talents.getTalentPoints("Init")/3F);
@@ -141,8 +141,8 @@ public class CalculationsSubHemo extends Calculations {
 	}
 	
 	protected float calcDamageHemo() {
-		float dmg = setup.getWeapon1().getInstantDmg(totalATP);
-		if (setup.getWeapon1().getType() != weaponType.Dagger)
+		float dmg = gear.getWeapon1().getInstantDmg(totalATP);
+		if (gear.getWeapon1().getType() != WeaponType.Dagger)
 			dmg *= (1.6F+0.02F*talents.getTalentPoints("SCalling"));
 		else
 			dmg *= (1.1F+0.02F*talents.getTalentPoints("SCalling"));

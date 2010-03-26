@@ -1,5 +1,7 @@
-package iDPS;
+package iDPS.controllers;
 
+import iDPS.Application;
+import iDPS.Talents;
 import iDPS.Talents.Talent;
 import iDPS.model.Calculations.ModelType;
 

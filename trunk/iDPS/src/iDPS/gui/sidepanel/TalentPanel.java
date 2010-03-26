@@ -15,9 +15,9 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import iDPS.Talents;
-import iDPS.TalentsController;
 import iDPS.Talents.Talent;
 import iDPS.Talents.Tree;
+import iDPS.controllers.TalentsController;
 import iDPS.gui.MainFrame;
 import iDPS.model.Calculations.ModelType;
 

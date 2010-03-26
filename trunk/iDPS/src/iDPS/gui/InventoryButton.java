@@ -1,6 +1,6 @@
 package iDPS.gui;
 
-import iDPS.gear.Setup;
+import iDPS.gear.Gear;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor;
 import iDPS.gui.sidepanel.SelectEnchantPanel;
@@ -63,7 +63,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 	}
 	
 	public void changeToItem(Armor item) {
-		Gem[] gems = mainFrame.getApp().getSetup().getGems(slot);
+		Gem[] gems = mainFrame.getApp().getSetup().getGear().getGems(slot);
 		changeToItem(item, gems);
 	}
 	
@@ -84,7 +84,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		if (item.getIcon() != null)
 			changeIcon(item.getIcon());
 		String s = item.getToolTip();
-		Setup g = mainFrame.getApp().getSetup();
+		Gear g = mainFrame.getApp().getSetup().getGear();
 		if (g.isEnchanted(slot)) {
 			s = s.replaceAll("</?html>", "");
 			s = s.replaceAll("</body>", "");
@@ -93,7 +93,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 		}
 		setToolTipText(s);
 
-		if (mainFrame.getApp().getSetup().isEnchanted(slot)) {
+		if (mainFrame.getApp().getSetup().getGear().isEnchanted(slot)) {
 			b2 = BorderFactory.createLineBorder(Color.GREEN, 2);
 			b = BorderFactory.createCompoundBorder(b1, b2);
 			setBorder(b);

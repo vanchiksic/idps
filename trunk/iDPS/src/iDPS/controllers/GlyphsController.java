@@ -1,5 +1,6 @@
-package iDPS;
+package iDPS.controllers;
 
+import iDPS.Application;
 import iDPS.Glyphs.Glyph;
 
 import java.beans.PropertyChangeEvent;

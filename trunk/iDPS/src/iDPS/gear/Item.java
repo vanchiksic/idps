@@ -4,10 +4,11 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom.CDATA;
 import org.jdom.Element;
 
 import iDPS.Attributes;
-import iDPS.FilterController.Filter;
+import iDPS.controllers.FilterController.Filter;
 
 public class Item implements Comparable<Item>, Rateable {
 		
@@ -61,6 +62,54 @@ public class Item implements Comparable<Item>, Rateable {
 		attr = new Attributes();
 		filter = EnumSet.noneOf(Filter.class);
 		comparedDPS = 0;
+	}
+	
+	public void loadFromArmoryXML(Element armoryTooltip) {
+		id = Integer.parseInt(armoryTooltip.getChildText("id"));
+		lvl	= Integer.parseInt(armoryTooltip.getChildText("itemLevel"));
+		name = armoryTooltip.getChildText("name");
+		icon = armoryTooltip.getChildText("icon");
+		attr.loadFromArmoryXML(armoryTooltip);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Element toXML() {
+		Element eSub, eItem = new Element("item");
+		eItem.setAttribute("id", String.valueOf(id));
+		
+		eSub = new Element("name");
+		eSub.addContent(new CDATA(name));
+		eItem.getChildren().add(eSub);
+		
+		eSub = attr.toXML(null);
+		eItem.getChildren().add(eSub);
+		
+		eSub = new Element("lvl");
+		eSub.setText(String.valueOf(lvl));
+		eItem.getChildren().add(eSub);
+		
+		if (uniqueLimit>0) {
+			eSub = new Element("unique");
+			eSub.setAttribute("max", String.valueOf(uniqueLimit));
+			eSub.setText(uniqueName);
+			eItem.getChildren().add(eSub);
+		}
+
+		if (filter.size() > 0) {
+			eSub = new Element("filters");
+			Element eSub2;
+			for (Filter f: filter) {
+				eSub2 = new Element("filter");
+				eSub2.setText(f.name());
+				eSub.getChildren().add(eSub2);
+			}
+			eItem.getChildren().add(eSub);
+		}
+		eSub = new Element("icon");
+		eSub.setText(icon);
+		eItem.getChildren().add(eSub);
+		
+		return eItem;
 	}
 			
 	public String getToolTip() {
@@ -153,5 +202,4 @@ public class Item implements Comparable<Item>, Rateable {
 	public void setFilter(EnumSet<Filter> filter) {
 		this.filter = filter;
 	}
-
 }

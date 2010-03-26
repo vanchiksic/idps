@@ -1,6 +1,7 @@
 package iDPS.gear;
 
 
+import iDPS.Setup;
 import iDPS.gear.Gem.GemColor;
 import iDPS.gear.Armor.SocketType;
 import iDPS.model.Calculations;
@@ -12,21 +13,23 @@ import java.util.Collections;
 
 public class GemComparison {
 	
-	private Setup gear;
+	private Gear gear;
+	private Setup setup;
 	private int slot, index;
 	private float defaultDPS;
 	private Gem orgGem;
 	private ArrayList<Gem> comparedGems;
 	
-	public GemComparison(Setup gear, int slot, int index) {
-		this(gear, slot, index, true);
+	public GemComparison(Setup setup, Gear gear, int slot, int index) {
+		this(setup, gear, slot, index, true);
 	}
 	
-	public GemComparison(Setup gear, int slot, int index, boolean anyColor) {
+	public GemComparison(Setup setup, Gear gear, int slot, int index, boolean anyColor) {
+		this.setup = setup;
 		this.gear = gear.clone();
 		this.slot = slot;
 		this.index = index;
-		orgGem = gear.getGem(slot, index);
+		orgGem = this.gear.getGem(slot, index);
 		this.gear.setGem(slot, index, null);
 		comparedGems = new ArrayList<Gem>();
 		runComparison(anyColor);
@@ -35,7 +38,7 @@ public class GemComparison {
 	private void runComparison(boolean anyColor) {
 		//System.out.println("  running gem comparison...");
 		Calculations m = Calculations.createInstance();
-		m.calculate(gear);
+		m.calculate(setup, gear);
 		defaultDPS = m.getTotalDPS();
 		
 		Collection<Gem> gems;
@@ -58,7 +61,7 @@ public class GemComparison {
 			if (!gear.canAdd(gem))
 				continue;
 			gear.setGem(slot, index, gem);
-			m.calculate(gear);
+			m.calculate(setup, gear);
 			gem.setComparedDPS(m.getTotalDPS()-defaultDPS);
 			comparedGems.add(gem);
 		}

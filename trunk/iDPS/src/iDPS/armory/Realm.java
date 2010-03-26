@@ -157,5 +157,9 @@ public class Realm implements Comparable<Realm> {
 		
 		Persistency.saveXML(doc, Persistency.FileType.Realms);
 	}
+	
+	public String toString() {
+		return name;
+	}
 
 }

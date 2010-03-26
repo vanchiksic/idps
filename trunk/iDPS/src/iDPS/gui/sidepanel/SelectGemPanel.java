@@ -1,6 +1,6 @@
 package iDPS.gui.sidepanel;
 
-import iDPS.gear.Setup;
+import iDPS.Setup;
 import iDPS.gear.Gem;
 import iDPS.gear.GemComparison;
 import iDPS.gui.InventoryIcon;
@@ -36,9 +36,9 @@ public class SelectGemPanel extends JPanel {
 		
 		int j = 0;
 		Gem gem, curGem;
-		Setup gear = mainFrame.getApp().getSetup();
-		curGem = gear.getGem(slot,index);
-		gc = new GemComparison(gear, slot, index);
+		Setup setup = mainFrame.getApp().getSetup();
+		curGem = setup.getGear().getGem(slot,index);
+		gc = new GemComparison(setup, setup.getGear(), slot, index);
 		ArrayList<Gem> comparedGems = gc.getComparedGems();
 		Iterator<Gem> iter = comparedGems.iterator();
 
@@ -152,7 +152,7 @@ public class SelectGemPanel extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			mainFrame.showSidePanel();
-			mainFrame.getApp().getSetup().setGem(slot, index, gem);
+			mainFrame.getApp().getSetup().getGear().setGem(slot, index, gem);
 			mainFrame.showGem(gem, slot, index);
 			mainFrame.showStats();
 		}

@@ -1,6 +1,6 @@
 package iDPS.gui.sidepanel;
 
-import iDPS.gear.Setup;
+import iDPS.Setup;
 import iDPS.gear.Enchant;
 import iDPS.gear.EnchantComparison;
 import iDPS.gui.MainFrame;
@@ -35,9 +35,9 @@ public class SelectEnchantPanel extends JPanel {
 		
 		int j = 0;
 		Enchant e, curEnchant;
-		Setup gear = mainFrame.getApp().getSetup();
-		curEnchant = gear.getEnchant(slot);
-		ec = new EnchantComparison(gear, slot);
+		Setup setup = mainFrame.getApp().getSetup();
+		curEnchant = setup.getGear().getEnchant(slot);
+		ec = new EnchantComparison(setup, setup.getGear(), slot);
 		ArrayList<Enchant> comparedEnchants = ec.getComparedEnchants();
 		Iterator<Enchant> iter = comparedEnchants.iterator();
 
@@ -125,7 +125,7 @@ public class SelectEnchantPanel extends JPanel {
 
 		public void actionPerformed(ActionEvent e) {
 			mainFrame.showSidePanel();
-			mainFrame.getApp().getSetup().setEnchant(slot, enchant);
+			mainFrame.getApp().getSetup().getGear().setEnchant(slot, enchant);
 			mainFrame.refreshItem(slot);
 			mainFrame.showStats();
 		}

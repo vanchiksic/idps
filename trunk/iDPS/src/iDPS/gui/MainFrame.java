@@ -132,8 +132,8 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void refreshItem(int slot) {
-		Armor item = app.getSetup().getItem(slot);
-		Gem[] gems = app.getSetup().getGems(slot);
+		Armor item = app.getSetup().getGear().getItem(slot);
+		Gem[] gems = app.getSetup().getGear().getGems(slot);
 		buttons[slot].changeToItem(item, gems);
 	}
 	
@@ -150,7 +150,7 @@ public class MainFrame extends JFrame {
 	
 	public void showGear() {
 		for (int i=0; i<=18; i++)
-			buttons[i].changeToItem(app.getSetup().getItem(i), app.getSetup().getGems(i));
+			buttons[i].changeToItem(app.getSetup().getGear().getItem(i), app.getSetup().getGear().getGems(i));
 		centerP.showStats();
 	}
 	

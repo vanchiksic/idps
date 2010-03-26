@@ -11,7 +11,7 @@ import org.jdom.Element;
 import iDPS.Attributes;
 import iDPS.Launcher;
 import iDPS.Persistency;
-import iDPS.gear.Setup.Profession;
+import iDPS.Setup.Profession;
 import iDPS.gear.Armor.SocketType;
 
 

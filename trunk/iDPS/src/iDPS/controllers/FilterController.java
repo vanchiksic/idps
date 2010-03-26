@@ -1,5 +1,6 @@
-package iDPS;
+package iDPS.controllers;
 
+import iDPS.Persistency;
 import iDPS.gear.Armor;
 
 import java.beans.PropertyChangeListener;

@@ -9,8 +9,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.EnumMap;
 
-import iDPS.GlyphsController;
 import iDPS.Glyphs.Glyph;
+import iDPS.controllers.GlyphsController;
 import iDPS.gui.MainFrame;
 
 import javax.swing.Box;

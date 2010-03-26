@@ -141,8 +141,7 @@ public class CenterPanel extends JPanel {
 			return;
 		
 		fields[0].setText(String.format("%.0f", calcs.getTotalDPS()));
-		Attributes attr = mainFrame.getApp().getSetup().getAttributes();
-		attr = mod.getAttr();
+		Attributes attr = mod.getAttr();
 		fields[1].setText(String.format("%.0f", attr.getAgi()));
 		fields[2].setText(String.format("%.0f", attr.getAtp()));
 		fields[3].setText(String.format("%.0f", attr.getHit()));

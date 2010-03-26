@@ -1,6 +1,7 @@
 package iDPS.gear;
 
 
+import iDPS.Setup;
 import iDPS.gear.Armor.SlotType;
 import iDPS.model.Calculations;
 
@@ -11,22 +12,24 @@ import java.util.Collections;
 
 public class EnchantComparison {
 	
-	private Setup gear;
+	private Gear gear;
+	private Setup setup;
 	private int slot;
 	private float defaultDPS;
 	private ArrayList<Enchant> comparedEnchants;
 	
-	public EnchantComparison(Setup gear, int slot) {
+	public EnchantComparison(Setup setup, Gear gear, int slot) {
+		this.setup = setup;
 		this.gear = gear.clone();
 		this.slot = slot;
 		this.gear.setEnchant(slot, null);
-		this.comparedEnchants = new ArrayList<Enchant>();
+		comparedEnchants = new ArrayList<Enchant>();
 		runComparison();
 	}
 	
 	private void runComparison() {
 		Calculations m = Calculations.createInstance();
-		m.calculate(gear);
+		m.calculate(setup, gear);
 		defaultDPS = m.getTotalDPS();
 		
 		Collection<Enchant> enchants;
@@ -69,7 +72,7 @@ public class EnchantComparison {
 
 		for (Enchant e: enchants)  {
 			gear.setEnchant(slot, e);
-			m.calculate(gear);
+			m.calculate(setup, gear);
 			e.setComparedDPS(m.getTotalDPS()-defaultDPS);
 			comparedEnchants.add(e);
 		}

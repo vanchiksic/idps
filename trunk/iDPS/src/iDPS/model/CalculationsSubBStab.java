@@ -33,7 +33,7 @@ public class CalculationsSubBStab extends Calculations {
 	@Override
 	protected void calcCycle() {
 		float pT10 = 0;
-		if (setup.getTier10()>=4)
+		if (gear.getTier10()>=4)
 			pT10 = 0.13F;
 		float pRuth = 0.2F*talents.getTalentPoints("Ruth");
 		
@@ -58,7 +58,7 @@ public class CalculationsSubBStab extends Calculations {
 			if (glyphs.has(Glyph.SD))
 				sdLength += 2;
 			int ambushes = 3;
-			if (glyphs.has(Glyph.SD) && setup.getTier10()>=2)
+			if (glyphs.has(Glyph.SD) && gear.getTier10()>=2)
 				ambushes++;
 			ambPerSec = ambushes/60F;
 			float cpAmbush = ambushes * (2+talents.getTalentPoints("Init")/3F);

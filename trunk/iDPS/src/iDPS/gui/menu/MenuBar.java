@@ -1,10 +1,6 @@
 package iDPS.gui.menu;
 
-import iDPS.Race;
-import iDPS.gear.Enchant;
-import iDPS.gear.Setup;
-import iDPS.gear.Gem;
-import iDPS.gear.Setup.Profession;
+import iDPS.Setup;
 import iDPS.gui.MainFrame;
 import iDPS.gui.OSXAdapter;
 
@@ -14,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -30,12 +25,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 	private JMenuItem iGearNew, iGearRename, iGearDup, iGearSave, iGearDel, iImportArmory;
 	
 	private JMenu mRaces;
-	private ItemSelectRace[] iRaces;
-	private ButtonGroup gRaces;
-	
 	private JMenu mProfessions;
-	private ItemSelectProfession[] iProfessions;
-	
 	private JMenu mFilter;
 		
 	public MenuBar(MainFrame mainFrame) {
@@ -60,12 +50,10 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		createGearMenu();
 		add(mSetup);
 		
-		mRaces = new JMenu("Race");
-		createRacesMenu();
+		mRaces = new MenuRaces(mainFrame.getApp().getRaceController());
 		add(mRaces);
 		
-		mProfessions = new JMenu("Professions");
-		createProfessionsMenu();
+		mProfessions = new MenuProfessions(mainFrame.getApp().getProfessionController());
 		add(mProfessions);
 		
 		mFilter = new MenuFilter(mainFrame.getApp().getFilterController());
@@ -119,39 +107,9 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		iGearDel.setEnabled(Setup.getAll().size()>1);
 	}
 	
-	public void createRacesMenu() {
-		mRaces.removeAll();
-		
-		ArrayList<Race> races = Race.getAll();
-		iRaces = new ItemSelectRace[races.size()];
-		gRaces = new ButtonGroup();
-		for (int i=0; i<races.size(); i++) {
-			iRaces[i] = new ItemSelectRace(races.get(i));
-			gRaces.add(iRaces[i]);
-			mRaces.add(iRaces[i]);
-		}
-	}
-	
-	public void createProfessionsMenu() {
-		mProfessions.removeAll();
-		
-		iProfessions = new ItemSelectProfession[Profession.values().length];
-		for (int i=0; i<Profession.values().length; i++) {
-			iProfessions[i] = new ItemSelectProfession(Profession.values()[i]);
-			mProfessions.add(iProfessions[i]);
-		}
-	}
-	
 	public void checkSetup(Setup setup) {
 		for (ItemSelectGear iSetup: iSetups)
 			iSetup.setSelected(iSetup.getSetup() == setup);
-		
-		gRaces.clearSelection();
-		for (ItemSelectRace iRace: iRaces)
-			gRaces.setSelected(iRace.getModel(), (iRace.getRace() == setup.getRace()));
-		
-		for (ItemSelectProfession iProfession: iProfessions)
-			iProfession.setSelected(setup.hasProfession(iProfession.getProfession()));
 	}
 	
 	private void selectGearSetup(Setup setup) {
@@ -159,17 +117,12 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		mainFrame.showGear();
 		checkSetup(setup);
 	}
-	
-	private void selectRace(Race race) {
-		mainFrame.getApp().getSetup().setRace(race);
-		mainFrame.showStats();
-	}
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == iGearSave)
 			mainFrame.getApp().saveAllSetups();
 		else if (e.getSource() == iGearDup) {
-			Setup g = new Setup(mainFrame.getApp().getSetup());
+			Setup g = mainFrame.getApp().getSetup().clone();
 			g.clearId();
 			String s = (String) JOptionPane.showInputDialog(
 					mainFrame,
@@ -248,68 +201,5 @@ public class MenuBar extends JMenuBar implements ActionListener {
 		}
 		
 	}
-	
-	private class ItemSelectRace extends JRadioButtonMenuItem implements ActionListener {
-		
-		private Race race;
-		
-		public ItemSelectRace(Race race) {
-			super(race.getName());
-			this.race = race;
-			addActionListener(this);
-		}
-		
-		public Race getRace() {
-			return race;
-		}
-
-		public void actionPerformed(ActionEvent e) {
-			selectRace(race);
-		}
-		
-	}
-	
-	private class ItemSelectProfession extends JCheckBoxMenuItem implements ActionListener {
-		
-		private Profession profession;
-		
-		public ItemSelectProfession(Profession profession) {
-			super(profession.name());
-			this.profession = profession;
-			addActionListener(this);
-		}
-		
-		public Profession getProfession() {
-			return profession;
-		}
-
-		public void actionPerformed(ActionEvent e) {
-			Setup setup = mainFrame.getApp().getSetup();
-			setup.setProfession(profession, isSelected());
-			
-			switch (profession) {
-				case Blacksmithing:
-					mainFrame.showGear();
-					break;
-				case Enchanting:
-				case Engineering:
-				case Inscription:
-				case Leatherworking:
-				case Tailoring:
-					Enchant.limit();
-					break;
-				case Jewelcrafting:
-					Gem.limit();
-					break;
-				case Alchemy:
-				case Skinning:
-					mainFrame.showStats();
-					break;
-			}
-		}
-		
-	}
-	
-
 
 }

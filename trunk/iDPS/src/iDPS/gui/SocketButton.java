@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-import iDPS.gear.Setup;
+import iDPS.gear.Gear;
 import iDPS.gear.Gem;
 import iDPS.gear.Armor.SocketType;
 import iDPS.gui.sidepanel.SelectGemPanel;
@@ -41,7 +41,7 @@ public class SocketButton extends JButton implements ActionListener {
 	}
 	
 	protected void updateColor() {
-		Setup gear = mainFrame.getApp().getSetup();
+		Gear gear = mainFrame.getApp().getSetup().getGear();
 		SocketType socket = gear.getItem(slot).getSocket(index);
 		URL url;
 		Border b, b1 = BorderFactory.createEmptyBorder(1, 1, 1, 1), b2;

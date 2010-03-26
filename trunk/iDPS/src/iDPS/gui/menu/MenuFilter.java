@@ -6,8 +6,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.EnumMap;
 
-import iDPS.FilterController;
-import iDPS.FilterController.Filter;
+import iDPS.controllers.FilterController;
+import iDPS.controllers.FilterController.Filter;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenu;

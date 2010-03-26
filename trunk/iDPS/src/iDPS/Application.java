@@ -3,10 +3,15 @@ package iDPS;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-import iDPS.BuffController.Debuff;
+import iDPS.controllers.BuffController;
+import iDPS.controllers.FilterController;
+import iDPS.controllers.GlyphsController;
+import iDPS.controllers.ProfessionController;
+import iDPS.controllers.RaceController;
+import iDPS.controllers.TalentsController;
+import iDPS.controllers.BuffController.Debuff;
 import iDPS.gear.Enchant;
 import iDPS.gear.Gem;
-import iDPS.gear.Setup;
 import iDPS.gui.MainFrame;
 
 public class Application {
@@ -18,6 +23,8 @@ public class Application {
 	private final FilterController filterController;
 	private final TalentsController talentsController;
 	private final GlyphsController glyphsController;
+	private final ProfessionController professionsController;
+	private final RaceController raceController;
 	
 	private Setup setup;
 	private boolean useTotT;
@@ -34,6 +41,10 @@ public class Application {
 		talentsController = new TalentsController(this);
 		// Create Glyphs Controller
 		glyphsController = new GlyphsController(this);
+		// Create Professions Controller
+		professionsController = new ProfessionController(this);
+		// Create Race Controller
+		raceController = new RaceController(this);
 	}
 	
 	public void initialize() {
@@ -50,7 +61,6 @@ public class Application {
 		// Start GUI
 		mainFrame = new MainFrame(this);
 		mainFrame.getMyMenuBar().createGearMenu();
-		mainFrame.getMyMenuBar().createRacesMenu();
 		
 		mainFrame.showGear();
 		mainFrame.getMyMenuBar().checkSetup(getSetup());
@@ -70,6 +80,14 @@ public class Application {
 	
 	public GlyphsController getGlyphsController() {
 		return glyphsController;
+	}
+	
+	public ProfessionController getProfessionController() {
+		return professionsController;
+	}
+	
+	public RaceController getRaceController() {
+		return raceController;
 	}
 	
 	public Setup getSetup() {
@@ -144,5 +162,9 @@ public class Application {
 	public void removePropertyChangeListener(PropertyChangeListener listener) {
         pcs.removePropertyChangeListener(listener);
     }
+
+	public MainFrame getMainFrame() {
+		return mainFrame;
+	}
 
 }

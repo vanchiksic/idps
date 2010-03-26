@@ -1,10 +1,11 @@
 package iDPS.gear;
 
 import iDPS.Attributes;
+import iDPS.Setup;
 import iDPS.gear.Armor.Faction;
 import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Armor.SocketType;
-import iDPS.gear.Weapon.weaponType;
+import iDPS.gear.Weapon.WeaponType;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -70,7 +71,7 @@ public class ItemParser {
 			String type = n.getFirstChild().getText();
 			if (type.equals("Fist Weapon"))
 				type = "Fist";
-			w.setType(weaponType.valueOf(type));
+			w.setType(WeaponType.valueOf(type));
 			
 			nf = new HasParentFilter(new HasAttributeFilter("class", "tti-speed"));
 			n = root.getChildren().extractAllNodesThatMatch(nf, true).elementAt(0);
