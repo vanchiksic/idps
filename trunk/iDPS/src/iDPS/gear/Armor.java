@@ -148,13 +148,16 @@ public class Armor extends Item {
 			slot = SlotType.Ranged;
 			break;
 		}
-
+		
 		// Loading Sockets
 		Element socketData = armoryTooltip.getChild("socketData");
 		if (socketData != null && socketData.getChildren().size() > 0) {
 			ArrayList<SocketType> sockets = new ArrayList<SocketType>();
-			for (Element eSocket: (Collection<Element>) socketData.getChildren())
+			for (Element eSocket: (Collection<Element>) socketData.getChildren()) {
+				if (eSocket.getName().equals("socketMatchEnchant"))
+					continue;
 				sockets.add(SocketType.valueOf(eSocket.getAttributeValue("color")));
+			}
 
 			String bonusStr = socketData.getChildText("socketMatchEnchant");
 			if (bonusStr != null) {

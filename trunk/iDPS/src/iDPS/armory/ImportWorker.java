@@ -57,7 +57,7 @@ public class ImportWorker extends SwingWorker<Setup,Void> {
 		try {
 			importCharacter();
 			if (importItemIds.size()>0) {
-				System.out.println(importItemIds);
+				//System.out.println(importItemIds);
 				double progress = (1D/(importItemIds.size()+2D))*100D;
 				setProgress((int) Math.floor(progress));
 				Thread.sleep(500);

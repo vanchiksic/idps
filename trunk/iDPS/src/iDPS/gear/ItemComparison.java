@@ -38,10 +38,12 @@ public class ItemComparison {
 		
 		ArrayList<Armor> items;
 		if ((slotId == 16 || slotId == 17) && 
-			((setup.getTalents().getModel() == ModelType.Mutilate)
-				|| (setup.getTalents().getModel() == ModelType.SubBStab)
+			(setup.getTalents().getModel() == ModelType.Mutilate)) {
+			items = Armor.findWeapon(WeaponType.Dagger);
+		} else if ((slotId == 16) && 
+				((setup.getTalents().getModel() == ModelType.SubBStab)
 				|| (setup.getTalents().getModel() == ModelType.SubHemo)
-			)) {
+				)) {
 			items = Armor.findWeapon(WeaponType.Dagger);
 		} else
 			items = Armor.findSlot(slotType);
