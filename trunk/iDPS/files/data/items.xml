@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
   <item id="40256">
-    <name />
+    <name><![CDATA[Grim Toll]]></name>
     <attributes>
       <hit>83</hit>
     </attributes>
@@ -14,7 +14,7 @@
     <tag>naxxramas-25</tag>
   </item>
   <item id="40403">
-    <name />
+    <name><![CDATA[Drape of the Deadly Foe]]></name>
     <attributes>
       <agi>42</agi>
       <cri>49</cri>
@@ -29,7 +29,7 @@
     <tag>kelthuzad-25</tag>
   </item>
   <item id="40684">
-    <name />
+    <name><![CDATA[Mirror of Truth]]></name>
     <attributes>
       <cri>84</cri>
     </attributes>
@@ -39,7 +39,7 @@
     <tag>emblems-heroism</tag>
   </item>
   <item id="43573">
-    <name />
+    <name><![CDATA[Tears of Bitter Anguish]]></name>
     <attributes>
       <hst>73</hst>
     </attributes>
@@ -48,7 +48,7 @@
     <slot>Trinket</slot>
   </item>
   <item id="44253">
-    <name />
+    <name><![CDATA[Darkmoon Card: Greatness]]></name>
     <attributes>
       <agi>90</agi>
     </attributes>
@@ -57,7 +57,7 @@
     <slot>Trinket</slot>
   </item>
   <item id="45108">
-    <name />
+    <name><![CDATA[Mechanist's Bindings]]></name>
     <attributes>
       <atp>84</atp>
       <agi>63</agi>
@@ -73,7 +73,7 @@
     <tag>flameleviathan-25</tag>
   </item>
   <item id="45224">
-    <name />
+    <name><![CDATA[Drape of the Lithe]]></name>
     <attributes>
       <atp>84</atp>
       <agi>63</agi>
@@ -89,7 +89,7 @@
     <tag>ironcouncil-25</tag>
   </item>
   <item id="45286">
-    <name />
+    <name><![CDATA[Pyrite Infuser]]></name>
     <attributes>
       <hit>95</hit>
     </attributes>
@@ -102,7 +102,7 @@
     <tag>flameleviathan-10</tag>
   </item>
   <item id="45461">
-    <name />
+    <name><![CDATA[Drape of Icy Intent]]></name>
     <attributes>
       <atp>102</atp>
       <agi>64</agi>
@@ -124,7 +124,7 @@
     <tag>hodir-25-heroic</tag>
   </item>
   <item id="45517">
-    <name />
+    <name><![CDATA[Pendulum of Infinity]]></name>
     <attributes>
       <atp>86</atp>
       <agi>64</agi>
@@ -146,7 +146,7 @@
     <tag>generalvezax-25-heroic</tag>
   </item>
   <item id="45522">
-    <name />
+    <name><![CDATA[Blood of the Old God]]></name>
     <attributes>
       <hit>108</hit>
     </attributes>
@@ -159,7 +159,7 @@
     <tag>yoggsaron-25</tag>
   </item>
   <item id="45555">
-    <name />
+    <name><![CDATA[Death-warmed Belt]]></name>
     <attributes>
       <atp>112</atp>
       <agi>69</agi>
@@ -179,7 +179,7 @@
     <tag>tier8-craft</tag>
   </item>
   <item id="45564">
-    <name />
+    <name><![CDATA[Footpads of Silence]]></name>
     <attributes>
       <atp>114</atp>
       <agi>69</agi>
@@ -199,7 +199,7 @@
     <tag>tier8-craft</tag>
   </item>
   <item id="45609">
-    <name />
+    <name><![CDATA[Comet's Trail]]></name>
     <attributes>
       <atp>240</atp>
     </attributes>
@@ -212,7 +212,7 @@
     <tag>algalon-25</tag>
   </item>
   <item id="45611">
-    <name />
+    <name><![CDATA[Solar Bindings]]></name>
     <attributes>
       <atp>86</atp>
       <agi>64</agi>
@@ -234,7 +234,7 @@
     <tag>algalon-25</tag>
   </item>
   <item id="45829">
-    <name />
+    <name><![CDATA[Belt of the Twilight Assassin]]></name>
     <attributes>
       <atp>124</atp>
       <agi>84</agi>
@@ -247,7 +247,7 @@
     <tag>emblems-conquest</tag>
   </item>
   <item id="45838">
-    <name />
+    <name><![CDATA[Gloves of the Blind Stalker]]></name>
     <attributes>
       <atp>120</atp>
       <agi>85</agi>
@@ -260,7 +260,7 @@
     <tag>emblems-conquest</tag>
   </item>
   <item id="45846">
-    <name />
+    <name><![CDATA[Leggings of Wavering Shadow]]></name>
     <attributes>
       <atp>136</atp>
       <agi>98</agi>
@@ -280,7 +280,7 @@
     <tag>emblems-conquest</tag>
   </item>
   <item id="45869">
-    <name />
+    <name><![CDATA[Fluxing Energy Coils]]></name>
     <attributes>
       <atp>72</atp>
       <agi>63</agi>
@@ -302,7 +302,7 @@
     <tag>xt002-10-heroic</tag>
   </item>
   <item id="45870">
-    <name />
+    <name><![CDATA[Magnetized Projectile Emitter]]></name>
     <attributes>
       <atp>66</atp>
       <agi>29</agi>
@@ -323,7 +323,7 @@
     <tag>xt002-10-heroic</tag>
   </item>
   <item id="45931">
-    <name />
+    <name><![CDATA[Mjolnir Runestone]]></name>
     <attributes>
       <cri>102</cri>
     </attributes>
@@ -336,7 +336,7 @@
     <tag>thorim-10-heroic</tag>
   </item>
   <item id="46032">
-    <name />
+    <name><![CDATA[Drape of the Faceless General]]></name>
     <attributes>
       <atp>92</atp>
       <agi>53</agi>
@@ -359,7 +359,7 @@
     <tag>vezax-10-heroic</tag>
   </item>
   <item id="46038">
-    <name />
+    <name><![CDATA[Dark Matter]]></name>
     <attributes>
       <atp>222</atp>
     </attributes>
@@ -372,7 +372,7 @@
     <tag>algalon-10</tag>
   </item>
   <item id="46095">
-    <name />
+    <name><![CDATA[Soul-Devouring Cinch]]></name>
     <attributes>
       <atp>114</atp>
       <agi>85</agi>
@@ -395,7 +395,7 @@
     <tag>yoggsaron-10-heroic</tag>
   </item>
   <item id="46958">
-    <name />
+    <name><![CDATA[Steel Bladebreaker]]></name>
     <attributes>
       <atp>89</atp>
       <agi>58</agi>
@@ -412,7 +412,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46969">
-    <name />
+    <name><![CDATA[Steel Bladebreaker]]></name>
     <attributes>
       <atp>84</atp>
       <agi>58</agi>
@@ -435,7 +435,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46970">
-    <name />
+    <name><![CDATA[Drape of the Untamed Predator]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -452,7 +452,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46971">
-    <name />
+    <name><![CDATA[Drape of the Untamed Predator]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -475,7 +475,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46974">
-    <name />
+    <name><![CDATA[Leggings of the Broken Beast]]></name>
     <attributes>
       <atp>165</atp>
       <agi>128</agi>
@@ -499,7 +499,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46975">
-    <name />
+    <name><![CDATA[Leggings of the Broken Beast]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -524,7 +524,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46994">
-    <name />
+    <name><![CDATA[Talonstrike]]></name>
     <attributes>
       <atp>57</atp>
       <agi>43</agi>
@@ -541,7 +541,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46995">
-    <name />
+    <name><![CDATA[Talonstrike]]></name>
     <attributes>
       <atp>49</atp>
       <agi>40</agi>
@@ -564,7 +564,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="46996">
-    <name />
+    <name><![CDATA[Lionhead Slasher]]></name>
     <attributes>
       <atp>78</atp>
       <agi>58</agi>
@@ -581,7 +581,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47000">
-    <name />
+    <name><![CDATA[Cuirass of Calamitous Fate]]></name>
     <attributes>
       <atp>149</atp>
       <agi>120</agi>
@@ -605,7 +605,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47001">
-    <name />
+    <name><![CDATA[Lionhead Slasher]]></name>
     <attributes>
       <atp>72</atp>
       <agi>66</agi>
@@ -628,7 +628,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47004">
-    <name />
+    <name><![CDATA[Cuirass of Calamitous Fate]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -653,7 +653,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47043">
-    <name />
+    <name><![CDATA[Charge of the Demon Lord]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -670,7 +670,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47060">
-    <name />
+    <name><![CDATA[Charge of the Demon Lord]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -693,7 +693,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47070">
-    <name />
+    <name><![CDATA[Ring of Callous Aggression]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -710,7 +710,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47071">
-    <name />
+    <name><![CDATA[Treads of the Icewalker]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -733,7 +733,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47075">
-    <name />
+    <name><![CDATA[Ring of Callous Aggression]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -756,7 +756,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47077">
-    <name />
+    <name><![CDATA[Treads of the Icewalker]]></name>
     <attributes>
       <atp>135</atp>
       <agi>98</agi>
@@ -780,7 +780,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47104">
-    <name />
+    <name><![CDATA[Twin Spike]]></name>
     <attributes>
       <atp>89</atp>
       <agi>58</agi>
@@ -797,7 +797,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47107">
-    <name />
+    <name><![CDATA[Belt of the Merciless Killer]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -820,7 +820,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47112">
-    <name />
+    <name><![CDATA[Belt of the Merciless Killer]]></name>
     <attributes>
       <atp>135</atp>
       <agi>98</agi>
@@ -844,7 +844,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47113">
-    <name />
+    <name><![CDATA[Twin Spike]]></name>
     <attributes>
       <atp>84</atp>
       <agi>58</agi>
@@ -867,7 +867,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47115">
-    <name />
+    <name><![CDATA[Death's Verdict]]></name>
     <attributes>
       <atp>256</atp>
     </attributes>
@@ -881,7 +881,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47131">
-    <name />
+    <name><![CDATA[Death's Verdict]]></name>
     <attributes>
       <atp>288</atp>
     </attributes>
@@ -895,7 +895,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47148">
-    <name />
+    <name><![CDATA[Stormpike Cleaver]]></name>
     <attributes>
       <atp>78</atp>
       <agi>58</agi>
@@ -912,7 +912,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47151">
-    <name />
+    <name><![CDATA[Bracers of Dark Determination]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -929,7 +929,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47155">
-    <name />
+    <name><![CDATA[Bracers of Dark Determination]]></name>
     <attributes>
       <atp>98</atp>
       <agi>69</agi>
@@ -953,7 +953,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47156">
-    <name />
+    <name><![CDATA[Stormpike Cleaver]]></name>
     <attributes>
       <atp>72</atp>
       <agi>58</agi>
@@ -976,7 +976,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47170">
-    <name />
+    <name><![CDATA[Belt of Fierce Competition]]></name>
     <attributes>
       <atp>101</atp>
       <agi>66</agi>
@@ -992,7 +992,7 @@
     <tag>toc5</tag>
   </item>
   <item id="47177">
-    <name />
+    <name><![CDATA[Gloves of the Argent Fanatic]]></name>
     <attributes>
       <atp>73</atp>
       <agi>66</agi>
@@ -1012,7 +1012,7 @@
     <tag>toc5</tag>
   </item>
   <item id="47202">
-    <name />
+    <name><![CDATA[Leggings of Brazen Trespass]]></name>
     <attributes>
       <atp>128</atp>
       <agi>89</agi>
@@ -1034,7 +1034,7 @@
     <tag>toc5</tag>
   </item>
   <item id="47214">
-    <name />
+    <name><![CDATA[Banner of Victory]]></name>
     <attributes>
       <arp>84</arp>
     </attributes>
@@ -1047,7 +1047,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47221">
-    <name />
+    <name><![CDATA[Shoulderpads of the Infamous Knave]]></name>
     <attributes>
       <atp>101</atp>
       <agi>62</agi>
@@ -1069,7 +1069,7 @@
     <tag>toc5</tag>
   </item>
   <item id="47222">
-    <name />
+    <name><![CDATA[Uruka's Band of Zeal]]></name>
     <attributes>
       <atp>100</atp>
       <agi>36</agi>
@@ -1085,7 +1085,7 @@
     <tag>toc5</tag>
   </item>
   <item id="47248">
-    <name />
+    <name><![CDATA[Treads of Dismal Fortune]]></name>
     <attributes>
       <atp>113</atp>
       <agi>73</agi>
@@ -1107,7 +1107,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47251">
-    <name />
+    <name><![CDATA[Cuirass of Cruel Intent]]></name>
     <attributes>
       <atp>255</atp>
       <agi>74</agi>
@@ -1131,7 +1131,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47255">
-    <name />
+    <name><![CDATA[Stygian Bladebreaker]]></name>
     <attributes>
       <atp>89</atp>
       <agi>58</agi>
@@ -1148,7 +1148,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47257">
-    <name />
+    <name><![CDATA[Cloak of the Untamed Predator]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -1165,7 +1165,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47259">
-    <name />
+    <name><![CDATA[Legwraps of the Broken Beast]]></name>
     <attributes>
       <atp>165</atp>
       <agi>128</agi>
@@ -1189,7 +1189,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47266">
-    <name />
+    <name><![CDATA[Blood Fury]]></name>
     <attributes>
       <atp>78</atp>
       <agi>58</agi>
@@ -1206,7 +1206,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47267">
-    <name />
+    <name><![CDATA[Death's Head Crossbow]]></name>
     <attributes>
       <atp>57</atp>
       <agi>43</agi>
@@ -1223,7 +1223,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47270">
-    <name />
+    <name><![CDATA[Vest of Calamitous Fate]]></name>
     <attributes>
       <atp>149</atp>
       <agi>120</agi>
@@ -1247,7 +1247,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47272">
-    <name />
+    <name><![CDATA[Charge of the Eredar]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -1264,7 +1264,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47282">
-    <name />
+    <name><![CDATA[Band of Callous Aggression]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -1281,7 +1281,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47284">
-    <name />
+    <name><![CDATA[Icewalker Treads]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -1304,7 +1304,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47299">
-    <name />
+    <name><![CDATA[Belt of the Pitiless Killer]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -1327,7 +1327,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47300">
-    <name />
+    <name><![CDATA[Gouge of the Frigid Heart]]></name>
     <attributes>
       <atp>89</atp>
       <agi>58</agi>
@@ -1344,7 +1344,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47303">
-    <name />
+    <name><![CDATA[Death's Choice]]></name>
     <attributes>
       <atp>256</atp>
     </attributes>
@@ -1357,7 +1357,7 @@
     <tag>twinvalkyrs-25</tag>
   </item>
   <item id="47313">
-    <name />
+    <name><![CDATA[Armbands of Dark Determination]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -1374,7 +1374,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47314">
-    <name />
+    <name><![CDATA[Hellscream Slicer]]></name>
     <attributes>
       <atp>78</atp>
       <agi>58</agi>
@@ -1391,7 +1391,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47416">
-    <name />
+    <name><![CDATA[Stygian Bladebreaker]]></name>
     <attributes>
       <atp>84</atp>
       <agi>58</agi>
@@ -1414,7 +1414,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47418">
-    <name />
+    <name><![CDATA[Cloak of the Untamed Predator]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -1437,7 +1437,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47420">
-    <name />
+    <name><![CDATA[Legwraps of the Broken Beast]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -1462,7 +1462,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47427">
-    <name />
+    <name><![CDATA[Blood Fury]]></name>
     <attributes>
       <atp>72</atp>
       <agi>66</agi>
@@ -1485,7 +1485,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47428">
-    <name />
+    <name><![CDATA[Death's Head Crossbow]]></name>
     <attributes>
       <atp>49</atp>
       <agi>40</agi>
@@ -1508,7 +1508,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47431">
-    <name />
+    <name><![CDATA[Vest of Calamitous Fate]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -1533,7 +1533,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47433">
-    <name />
+    <name><![CDATA[Charge of the Eredar]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -1556,7 +1556,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47443">
-    <name />
+    <name><![CDATA[Band of Callous Aggression]]></name>
     <attributes>
       <atp>98</atp>
       <agi>77</agi>
@@ -1579,7 +1579,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47445">
-    <name />
+    <name><![CDATA[Icewalker Treads]]></name>
     <attributes>
       <atp>135</atp>
       <agi>98</agi>
@@ -1603,7 +1603,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47460">
-    <name />
+    <name><![CDATA[Belt of the Pitiless Killer]]></name>
     <attributes>
       <atp>135</atp>
       <agi>98</agi>
@@ -1627,7 +1627,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47461">
-    <name />
+    <name><![CDATA[Gouge of the Frigid Heart]]></name>
     <attributes>
       <atp>84</atp>
       <agi>58</agi>
@@ -1650,7 +1650,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47464">
-    <name />
+    <name><![CDATA[Death's Choice]]></name>
     <attributes>
       <atp>288</atp>
     </attributes>
@@ -1664,7 +1664,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47474">
-    <name />
+    <name><![CDATA[Armbands of Dark Determination]]></name>
     <attributes>
       <atp>98</atp>
       <agi>69</agi>
@@ -1688,7 +1688,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47475">
-    <name />
+    <name><![CDATA[Hellscream Slicer]]></name>
     <attributes>
       <atp>72</atp>
       <agi>58</agi>
@@ -1711,7 +1711,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47494">
-    <name />
+    <name><![CDATA[Ancient Pendant of Arathor]]></name>
     <attributes>
       <atp>119</atp>
       <agi>42</agi>
@@ -1727,7 +1727,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47496">
-    <name />
+    <name><![CDATA[Armbands of the Wary Lookout]]></name>
     <attributes>
       <atp>90</atp>
       <agi>59</agi>
@@ -1743,7 +1743,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47508">
-    <name />
+    <name><![CDATA[Aledar's Battlestar]]></name>
     <attributes>
       <atp>73</atp>
       <agi>46</agi>
@@ -1765,7 +1765,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47521">
-    <name />
+    <name><![CDATA[BRK-1000]]></name>
     <attributes>
       <atp>49</atp>
       <agi>48</agi>
@@ -1788,7 +1788,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47523">
-    <name />
+    <name><![CDATA[Fezzik's Autocannon]]></name>
     <attributes>
       <atp>49</atp>
       <agi>48</agi>
@@ -1811,7 +1811,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47526">
-    <name />
+    <name><![CDATA[Remorseless]]></name>
     <attributes>
       <atp>88</atp>
       <agi>58</agi>
@@ -1834,7 +1834,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47528">
-    <name />
+    <name><![CDATA[Cudgel of the Damned]]></name>
     <attributes>
       <atp>88</atp>
       <agi>58</agi>
@@ -1857,7 +1857,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47529">
-    <name />
+    <name><![CDATA[Mask of Distant Memory]]></name>
     <attributes>
       <atp>142</atp>
       <agi>98</agi>
@@ -1880,7 +1880,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47545">
-    <name />
+    <name><![CDATA[Vereesa's Dexterity]]></name>
     <attributes>
       <atp>114</atp>
       <agi>97</agi>
@@ -1903,7 +1903,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47546">
-    <name />
+    <name><![CDATA[Sylvanas' Cunning]]></name>
     <attributes>
       <atp>114</atp>
       <agi>97</agi>
@@ -1923,7 +1923,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47568">
-    <name />
+    <name><![CDATA[True-aim Long Rifle]]></name>
     <attributes>
       <atp>42</atp>
       <agi>34</agi>
@@ -1938,7 +1938,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="47581">
-    <name />
+    <name><![CDATA[Bracers of Swift Death]]></name>
     <attributes>
       <atp>101</atp>
       <agi>68</agi>
@@ -1958,7 +1958,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47582">
-    <name />
+    <name><![CDATA[Bracers of Swift Death]]></name>
     <attributes>
       <atp>101</atp>
       <agi>68</agi>
@@ -1978,7 +1978,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47599">
-    <name />
+    <name><![CDATA[Knightbane Carapace]]></name>
     <attributes>
       <atp>181</atp>
       <agi>112</agi>
@@ -2000,7 +2000,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47600">
-    <name />
+    <name><![CDATA[Knightbane Carapace]]></name>
     <attributes>
       <atp>181</atp>
       <agi>112</agi>
@@ -2022,7 +2022,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47607">
-    <name />
+    <name><![CDATA[Collar of Ceaseless Torment]]></name>
     <attributes>
       <atp>97</atp>
       <agi>67</agi>
@@ -2039,7 +2039,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47608">
-    <name />
+    <name><![CDATA[Acidmaw Boots]]></name>
     <attributes>
       <atp>118</atp>
       <agi>85</agi>
@@ -2062,7 +2062,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47659">
-    <name />
+    <name><![CDATA[Crimson Star]]></name>
     <attributes>
       <atp>57</atp>
       <agi>43</agi>
@@ -2075,7 +2075,7 @@
     <tag>emblems-triumph</tag>
   </item>
   <item id="47676">
-    <name />
+    <name><![CDATA[Dirk of the Night Watch]]></name>
     <attributes>
       <atp>62</atp>
       <agi>52</agi>
@@ -2098,7 +2098,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47688">
-    <name />
+    <name><![CDATA[Mask of Lethal Intent]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -2119,7 +2119,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47689">
-    <name />
+    <name><![CDATA[Hood of Lethal Intent]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -2140,7 +2140,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47703">
-    <name />
+    <name><![CDATA[Planestalker Signet]]></name>
     <attributes>
       <atp>102</atp>
       <agi>61</agi>
@@ -2163,7 +2163,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47708">
-    <name />
+    <name><![CDATA[Duskstalker Shoulderpads]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -2183,7 +2183,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47709">
-    <name />
+    <name><![CDATA[Duskstalker Pauldrons]]></name>
     <attributes>
       <atp>135</atp>
       <agi>93</agi>
@@ -2203,7 +2203,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47719">
-    <name />
+    <name><![CDATA[Gloves of the Silver Assassin]]></name>
     <attributes>
       <atp>139</atp>
       <agi>85</agi>
@@ -2226,7 +2226,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47725">
-    <name />
+    <name><![CDATA[Victor's Call]]></name>
     <attributes>
       <exp>83</exp>
     </attributes>
@@ -2237,7 +2237,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47730">
-    <name />
+    <name><![CDATA[Dexterous Brightstone Ring]]></name>
     <attributes>
       <atp>101</atp>
       <agi>76</agi>
@@ -2250,7 +2250,7 @@
     <tag>emblems-triumph</tag>
   </item>
   <item id="47734">
-    <name />
+    <name><![CDATA[Mark of Supremacy]]></name>
     <attributes>
       <hit>128</hit>
     </attributes>
@@ -2260,7 +2260,7 @@
     <tag>emblems-triumph</tag>
   </item>
   <item id="47736">
-    <name />
+    <name><![CDATA[Icefall Blade]]></name>
     <attributes>
       <atp>83</atp>
       <agi>52</agi>
@@ -2277,7 +2277,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47739">
-    <name />
+    <name><![CDATA[Armor of Shifting Shadows]]></name>
     <attributes>
       <atp>140</atp>
       <agi>118</agi>
@@ -2301,7 +2301,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47740">
-    <name />
+    <name><![CDATA[The Diplomat]]></name>
     <attributes>
       <atp>59</atp>
       <agi>35</agi>
@@ -2324,7 +2324,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47741">
-    <name />
+    <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
     <attributes>
       <atp>50</atp>
       <agi>38</agi>
@@ -2341,7 +2341,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47808">
-    <name />
+    <name><![CDATA[The Lion's Maw]]></name>
     <attributes>
       <atp>78</atp>
       <agi>52</agi>
@@ -2358,7 +2358,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47814">
-    <name />
+    <name><![CDATA[Westfall Saber]]></name>
     <attributes>
       <atp>74</atp>
       <agi>52</agi>
@@ -2375,7 +2375,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47816">
-    <name />
+    <name><![CDATA[The Grinder]]></name>
     <attributes>
       <atp>61</atp>
       <agi>48</agi>
@@ -2398,7 +2398,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47832">
-    <name />
+    <name><![CDATA[Spaulders of the Snow Bandit]]></name>
     <attributes>
       <atp>124</atp>
       <agi>84</agi>
@@ -2421,7 +2421,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47849">
-    <name />
+    <name><![CDATA[Collar of Unending Torment]]></name>
     <attributes>
       <atp>97</atp>
       <agi>67</agi>
@@ -2438,7 +2438,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47853">
-    <name />
+    <name><![CDATA[Acidmaw Treads]]></name>
     <attributes>
       <atp>118</atp>
       <agi>85</agi>
@@ -2461,7 +2461,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47868">
-    <name />
+    <name><![CDATA[Planestalker Band]]></name>
     <attributes>
       <atp>102</atp>
       <agi>61</agi>
@@ -2484,7 +2484,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47871">
-    <name />
+    <name><![CDATA[Orcish Deathblade]]></name>
     <attributes>
       <atp>62</atp>
       <agi>52</agi>
@@ -2507,7 +2507,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47878">
-    <name />
+    <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
     <attributes>
       <atp>139</atp>
       <agi>85</agi>
@@ -2530,7 +2530,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47881">
-    <name />
+    <name><![CDATA[Vengeance of the Forsaken]]></name>
     <attributes>
       <exp>83</exp>
     </attributes>
@@ -2544,7 +2544,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47883">
-    <name />
+    <name><![CDATA[Widebarrel Flintlock]]></name>
     <attributes>
       <atp>59</atp>
       <agi>35</agi>
@@ -2567,7 +2567,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47886">
-    <name />
+    <name><![CDATA[Nemesis Blade]]></name>
     <attributes>
       <atp>83</atp>
       <agi>52</agi>
@@ -2584,7 +2584,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47887">
-    <name />
+    <name><![CDATA[Vest of Shifting Shadows]]></name>
     <attributes>
       <atp>140</atp>
       <agi>118</agi>
@@ -2608,7 +2608,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47898">
-    <name />
+    <name><![CDATA[Frostblade Hatchet]]></name>
     <attributes>
       <atp>78</atp>
       <agi>52</agi>
@@ -2625,7 +2625,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47903">
-    <name />
+    <name><![CDATA[Forsaken Bonecarver]]></name>
     <attributes>
       <atp>74</atp>
       <agi>52</agi>
@@ -2642,7 +2642,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47904">
-    <name />
+    <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
     <attributes>
       <atp>124</atp>
       <agi>84</agi>
@@ -2665,7 +2665,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47905">
-    <name />
+    <name><![CDATA[Blackhorn Bludgeon]]></name>
     <attributes>
       <atp>61</atp>
       <agi>48</agi>
@@ -2688,7 +2688,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47915">
-    <name />
+    <name><![CDATA[Collar of Ceaseless Torment]]></name>
     <attributes>
       <atp>106</atp>
       <agi>70</agi>
@@ -2711,7 +2711,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47919">
-    <name />
+    <name><![CDATA[Acidmaw Boots]]></name>
     <attributes>
       <atp>127</atp>
       <agi>93</agi>
@@ -2735,7 +2735,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47934">
-    <name />
+    <name><![CDATA[Planestalker Signet]]></name>
     <attributes>
       <atp>115</atp>
       <agi>70</agi>
@@ -2758,7 +2758,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47938">
-    <name />
+    <name><![CDATA[Dirk of the Night Watch]]></name>
     <attributes>
       <atp>73</atp>
       <agi>58</agi>
@@ -2781,7 +2781,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47945">
-    <name />
+    <name><![CDATA[Gloves of the Silver Assassin]]></name>
     <attributes>
       <atp>145</atp>
       <agi>97</agi>
@@ -2805,7 +2805,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47948">
-    <name />
+    <name><![CDATA[Victor's Call]]></name>
     <attributes>
       <exp>83</exp>
     </attributes>
@@ -2819,7 +2819,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47950">
-    <name />
+    <name><![CDATA[The Diplomat]]></name>
     <attributes>
       <atp>66</atp>
       <agi>40</agi>
@@ -2842,7 +2842,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47953">
-    <name />
+    <name><![CDATA[Icefall Blade]]></name>
     <attributes>
       <atp>74</atp>
       <agi>52</agi>
@@ -2865,7 +2865,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47954">
-    <name />
+    <name><![CDATA[Armor of Shifting Shadows]]></name>
     <attributes>
       <atp>162</atp>
       <agi>126</agi>
@@ -2890,7 +2890,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47966">
-    <name />
+    <name><![CDATA[The Lion's Maw]]></name>
     <attributes>
       <atp>89</atp>
       <agi>50</agi>
@@ -2913,7 +2913,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47971">
-    <name />
+    <name><![CDATA[Westfall Saber]]></name>
     <attributes>
       <atp>67</atp>
       <agi>58</agi>
@@ -2936,7 +2936,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47972">
-    <name />
+    <name><![CDATA[Spaulders of the Snow Bandit]]></name>
     <attributes>
       <atp>132</atp>
       <agi>91</agi>
@@ -2960,7 +2960,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47973">
-    <name />
+    <name><![CDATA[The Grinder]]></name>
     <attributes>
       <atp>70</atp>
       <agi>54</agi>
@@ -2983,7 +2983,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47975">
-    <name />
+    <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
     <attributes>
       <atp>57</atp>
       <agi>35</agi>
@@ -3006,7 +3006,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="47988">
-    <name />
+    <name><![CDATA[Collar of Unending Torment]]></name>
     <attributes>
       <atp>106</atp>
       <agi>70</agi>
@@ -3029,7 +3029,7 @@
     <faction>Horde</faction>
   </item>
   <item id="47992">
-    <name />
+    <name><![CDATA[Acidmaw Treads]]></name>
     <attributes>
       <atp>127</atp>
       <agi>93</agi>
@@ -3053,7 +3053,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48007">
-    <name />
+    <name><![CDATA[Planestalker Band]]></name>
     <attributes>
       <atp>115</atp>
       <agi>70</agi>
@@ -3076,7 +3076,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48010">
-    <name />
+    <name><![CDATA[Orcish Deathblade]]></name>
     <attributes>
       <atp>73</atp>
       <agi>58</agi>
@@ -3099,7 +3099,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48017">
-    <name />
+    <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
     <attributes>
       <atp>145</atp>
       <agi>97</agi>
@@ -3123,7 +3123,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48020">
-    <name />
+    <name><![CDATA[Vengeance of the Forsaken]]></name>
     <attributes>
       <exp>83</exp>
     </attributes>
@@ -3136,7 +3136,7 @@
     <tag>factionchampions-10-heroic</tag>
   </item>
   <item id="48022">
-    <name />
+    <name><![CDATA[Widebarrel Flintlock]]></name>
     <attributes>
       <atp>66</atp>
       <agi>40</agi>
@@ -3159,7 +3159,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48025">
-    <name />
+    <name><![CDATA[Nemesis Blade]]></name>
     <attributes>
       <atp>74</atp>
       <agi>52</agi>
@@ -3182,7 +3182,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48026">
-    <name />
+    <name><![CDATA[Vest of Shifting Shadows]]></name>
     <attributes>
       <atp>162</atp>
       <agi>126</agi>
@@ -3207,7 +3207,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48043">
-    <name />
+    <name><![CDATA[Frostblade Hatchet]]></name>
     <attributes>
       <atp>89</atp>
       <agi>50</agi>
@@ -3230,7 +3230,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48048">
-    <name />
+    <name><![CDATA[Forsaken Bonecarver]]></name>
     <attributes>
       <atp>67</atp>
       <agi>58</agi>
@@ -3253,7 +3253,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48049">
-    <name />
+    <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
     <attributes>
       <atp>132</atp>
       <agi>91</agi>
@@ -3277,7 +3277,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48050">
-    <name />
+    <name><![CDATA[Blackhorn Bludgeon]]></name>
     <attributes>
       <atp>70</atp>
       <agi>54</agi>
@@ -3300,7 +3300,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48052">
-    <name />
+    <name><![CDATA[Darkmaw Crossbow]]></name>
     <attributes>
       <atp>57</atp>
       <agi>35</agi>
@@ -3323,7 +3323,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48218">
-    <name />
+    <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
     <attributes>
       <atp>129</atp>
       <agi>104</agi>
@@ -3346,7 +3346,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48219">
-    <name />
+    <name><![CDATA[VanCleef's Breastplate of Conquest]]></name>
     <attributes>
       <atp>145</atp>
       <agi>104</agi>
@@ -3369,7 +3369,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48220">
-    <name />
+    <name><![CDATA[VanCleef's Legplates of Conquest]]></name>
     <attributes>
       <atp>145</atp>
       <agi>104</agi>
@@ -3392,7 +3392,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48221">
-    <name />
+    <name><![CDATA[VanCleef's Pauldrons of Conquest]]></name>
     <attributes>
       <atp>103</atp>
       <agi>89</agi>
@@ -3414,7 +3414,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48222">
-    <name />
+    <name><![CDATA[VanCleef's Gauntlets of Conquest]]></name>
     <attributes>
       <atp>103</atp>
       <agi>89</agi>
@@ -3436,7 +3436,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48223">
-    <name />
+    <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -3460,7 +3460,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48224">
-    <name />
+    <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
     <attributes>
       <atp>119</atp>
       <agi>101</agi>
@@ -3483,7 +3483,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48225">
-    <name />
+    <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
     <attributes>
       <atp>149</atp>
       <agi>120</agi>
@@ -3507,7 +3507,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48226">
-    <name />
+    <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -3531,7 +3531,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48227">
-    <name />
+    <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
     <attributes>
       <atp>119</atp>
       <agi>101</agi>
@@ -3554,7 +3554,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48228">
-    <name />
+    <name><![CDATA[VanCleef's Pauldrons of Triumph]]></name>
     <attributes>
       <atp>135</atp>
       <agi>114</agi>
@@ -3576,7 +3576,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48229">
-    <name />
+    <name><![CDATA[VanCleef's Legplates of Triumph]]></name>
     <attributes>
       <atp>188</atp>
       <agi>137</agi>
@@ -3599,7 +3599,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48230">
-    <name />
+    <name><![CDATA[VanCleef's Helmet of Triumph]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -3622,7 +3622,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48231">
-    <name />
+    <name><![CDATA[VanCleef's Gauntlets of Triumph]]></name>
     <attributes>
       <atp>135</atp>
       <agi>114</agi>
@@ -3644,7 +3644,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48232">
-    <name />
+    <name><![CDATA[VanCleef's Breastplate of Triumph]]></name>
     <attributes>
       <atp>188</atp>
       <agi>137</agi>
@@ -3667,7 +3667,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48233">
-    <name />
+    <name><![CDATA[Garona's Breastplate of Triumph]]></name>
     <attributes>
       <atp>188</atp>
       <agi>137</agi>
@@ -3690,7 +3690,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48234">
-    <name />
+    <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
     <attributes>
       <atp>135</atp>
       <agi>114</agi>
@@ -3712,7 +3712,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48235">
-    <name />
+    <name><![CDATA[Garona's Helmet of Triumph]]></name>
     <attributes>
       <atp>172</atp>
       <agi>137</agi>
@@ -3735,7 +3735,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48236">
-    <name />
+    <name><![CDATA[Garona's Legplates of Triumph]]></name>
     <attributes>
       <atp>188</atp>
       <agi>137</agi>
@@ -3758,7 +3758,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48237">
-    <name />
+    <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
     <attributes>
       <atp>135</atp>
       <agi>114</agi>
@@ -3780,7 +3780,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48238">
-    <name />
+    <name><![CDATA[Garona's Pauldrons of Triumph]]></name>
     <attributes>
       <atp>119</atp>
       <agi>101</agi>
@@ -3803,7 +3803,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48239">
-    <name />
+    <name><![CDATA[Garona's Legplates of Triumph]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -3827,7 +3827,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48240">
-    <name />
+    <name><![CDATA[Garona's Helmet of Triumph]]></name>
     <attributes>
       <atp>149</atp>
       <agi>120</agi>
@@ -3851,7 +3851,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48241">
-    <name />
+    <name><![CDATA[Garona's Gauntlets of Triumph]]></name>
     <attributes>
       <atp>119</atp>
       <agi>101</agi>
@@ -3874,7 +3874,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48242">
-    <name />
+    <name><![CDATA[Garona's Breastplate of Triumph]]></name>
     <attributes>
       <atp>165</atp>
       <agi>120</agi>
@@ -3898,7 +3898,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48243">
-    <name />
+    <name><![CDATA[Garona's Breastplate of Conquest]]></name>
     <attributes>
       <atp>145</atp>
       <agi>104</agi>
@@ -3921,7 +3921,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48244">
-    <name />
+    <name><![CDATA[Garona's Gauntlets of Conquest]]></name>
     <attributes>
       <atp>103</atp>
       <agi>89</agi>
@@ -3943,7 +3943,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48245">
-    <name />
+    <name><![CDATA[Garona's Helmet of Conquest]]></name>
     <attributes>
       <atp>129</atp>
       <agi>104</agi>
@@ -3966,7 +3966,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48246">
-    <name />
+    <name><![CDATA[Garona's Legplates of Conquest]]></name>
     <attributes>
       <atp>145</atp>
       <agi>104</agi>
@@ -3989,7 +3989,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48247">
-    <name />
+    <name><![CDATA[Garona's Pauldrons of Conquest]]></name>
     <attributes>
       <atp>103</atp>
       <agi>89</agi>
@@ -4011,7 +4011,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48668">
-    <name />
+    <name><![CDATA[Cloak of Serrated Blades]]></name>
     <attributes>
       <atp>98</atp>
       <agi>85</agi>
@@ -4034,7 +4034,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48673">
-    <name />
+    <name><![CDATA[Cloak of the Silver Covenant]]></name>
     <attributes>
       <atp>98</atp>
       <agi>85</agi>
@@ -4057,7 +4057,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48697">
-    <name />
+    <name><![CDATA[Frenzystrike Longbow]]></name>
     <attributes>
       <atp>57</atp>
       <agi>39</agi>
@@ -4080,7 +4080,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48703">
-    <name />
+    <name><![CDATA[The Facebreaker]]></name>
     <attributes>
       <atp>73</atp>
       <agi>58</agi>
@@ -4103,7 +4103,7 @@
     <faction>Horde</faction>
   </item>
   <item id="48711">
-    <name />
+    <name><![CDATA[Rhok'shalla, the Shadow's Bane]]></name>
     <attributes>
       <atp>57</atp>
       <agi>39</agi>
@@ -4126,7 +4126,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48712">
-    <name />
+    <name><![CDATA[The Spinebreaker]]></name>
     <attributes>
       <atp>73</atp>
       <agi>58</agi>
@@ -4149,7 +4149,7 @@
     <faction>Alliance</faction>
   </item>
   <item id="48722">
-    <name />
+    <name><![CDATA[Shard of the Crystal Heart]]></name>
     <attributes>
       <hit>128</hit>
     </attributes>
@@ -4159,7 +4159,7 @@
     <tag>emblems-triumph</tag>
   </item>
   <item id="49477">
-    <name />
+    <name><![CDATA[Bloodfang Hood]]></name>
     <attributes>
       <atp>190</atp>
       <agi>128</agi>
@@ -4179,7 +4179,7 @@
     <tag>onyxia-25</tag>
   </item>
   <item id="49485">
-    <name />
+    <name><![CDATA[Sparkling Onyxia Tooth Pendant]]></name>
     <attributes>
       <atp>96</atp>
       <agi>76</agi>
@@ -4192,7 +4192,7 @@
     <tag>onyxia</tag>
   </item>
   <item id="49682">
-    <name />
+    <name><![CDATA[Black Knight's Rondel]]></name>
     <attributes>
       <atp>70</atp>
       <agi>46</agi>
@@ -4208,7 +4208,7 @@
     <tag>toc5-heroic</tag>
   </item>
   <item id="49785">
-    <name />
+    <name><![CDATA[Bewildering Shoulderpads]]></name>
     <attributes>
       <atp>120</atp>
       <agi>79</agi>
@@ -4224,7 +4224,7 @@
     <tag>forgeofsouls</tag>
   </item>
   <item id="49789">
-    <name />
+    <name><![CDATA[Heartshiver]]></name>
     <attributes>
       <atp>65</atp>
       <agi>46</agi>
@@ -4240,7 +4240,7 @@
     <tag>forgeofsouls</tag>
   </item>
   <item id="49792">
-    <name />
+    <name><![CDATA[Accursed Crawling Cape]]></name>
     <attributes>
       <atp>85</atp>
       <agi>59</agi>
@@ -4256,7 +4256,7 @@
     <tag>forgeofsouls</tag>
   </item>
   <item id="49803">
-    <name />
+    <name><![CDATA[Ring of Carnelian and Bone]]></name>
     <attributes>
       <atp>87</atp>
       <agi>59</agi>
@@ -4272,7 +4272,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49806">
-    <name />
+    <name><![CDATA[Flayer's Black Belt]]></name>
     <attributes>
       <atp>120</atp>
       <agi>71</agi>
@@ -4294,7 +4294,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49807">
-    <name />
+    <name><![CDATA[Krick's Beetle Stabber]]></name>
     <attributes>
       <atp>68</atp>
       <agi>46</agi>
@@ -4310,7 +4310,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49813">
-    <name />
+    <name><![CDATA[Rimebane Rifle]]></name>
     <attributes>
       <atp>67</atp>
       <agi>26</agi>
@@ -4325,7 +4325,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49817">
-    <name />
+    <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
     <attributes>
       <atp>152</atp>
       <agi>106</agi>
@@ -4341,7 +4341,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49827">
-    <name />
+    <name><![CDATA[Ghoulslicer]]></name>
     <attributes>
       <atp>70</atp>
       <agi>46</agi>
@@ -4357,7 +4357,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49830">
-    <name />
+    <name><![CDATA[Fallen Sentry's Hood]]></name>
     <attributes>
       <cri>73</cri>
       <hst>46</hst>
@@ -4378,7 +4378,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49838">
-    <name />
+    <name><![CDATA[Carpal Tunnelers]]></name>
     <attributes>
       <atp>120</atp>
       <agi>79</agi>
@@ -4394,7 +4394,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49840">
-    <name />
+    <name><![CDATA[Hate-Forged Cleaver]]></name>
     <attributes>
       <atp>66</atp>
       <agi>46</agi>
@@ -4410,7 +4410,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49841">
-    <name />
+    <name><![CDATA[Blackened Geist Ribs]]></name>
     <attributes>
       <atp>154</atp>
       <agi>98</agi>
@@ -4432,7 +4432,7 @@
     <tag>hallsofreflection</tag>
   </item>
   <item id="49844">
-    <name />
+    <name><![CDATA[Crypt Fiend Slayer]]></name>
     <attributes>
       <atp>51</atp>
       <agi>34</agi>
@@ -4448,7 +4448,7 @@
     <tag>pitofsaron</tag>
   </item>
   <item id="49895">
-    <name />
+    <name><![CDATA[Footpads of Impending Death]]></name>
     <attributes>
       <atp>129</atp>
       <agi>120</agi>
@@ -4468,7 +4468,7 @@
     <tag>tier10-craft</tag>
   </item>
   <item id="49899">
-    <name />
+    <name><![CDATA[Bladeborn Leggings]]></name>
     <attributes>
       <atp>168</atp>
       <agi>162</agi>
@@ -4489,7 +4489,7 @@
     <tag>tier10-craft</tag>
   </item>
   <item id="49949">
-    <name />
+    <name><![CDATA[Band of the Bone Colossus]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -4511,7 +4511,7 @@
     <tag>marrowgar-25</tag>
   </item>
   <item id="49950">
-    <name />
+    <name><![CDATA[Frostbitten Fur Boots]]></name>
     <attributes>
       <atp>161</atp>
       <agi>104</agi>
@@ -4534,7 +4534,7 @@
     <tag>marrowgar-25</tag>
   </item>
   <item id="49981">
-    <name />
+    <name><![CDATA[Fal'inrush, Defender of Quel'thalas]]></name>
     <attributes>
       <atp>72</atp>
       <agi>54</agi>
@@ -4550,7 +4550,7 @@
     <tag>lichking-25</tag>
   </item>
   <item id="49982">
-    <name />
+    <name><![CDATA[Heartpierce]]></name>
     <attributes>
       <atp>93</atp>
     </attributes>
@@ -4563,7 +4563,7 @@
     <tag>deathwhisper-25</tag>
   </item>
   <item id="49987">
-    <name />
+    <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
     <attributes>
       <atp>145</atp>
       <agi>112</agi>
@@ -4586,7 +4586,7 @@
     <tag>deathwhisper-25</tag>
   </item>
   <item id="49998">
-    <name />
+    <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -4608,7 +4608,7 @@
     <tag>gunship-25</tag>
   </item>
   <item id="50001">
-    <name />
+    <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
     <attributes>
       <atp>200</atp>
       <agi>146</agi>
@@ -4632,7 +4632,7 @@
     <tag>gunship-25</tag>
   </item>
   <item id="50012">
-    <name />
+    <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
     <attributes>
       <atp>99</atp>
       <agi>74</agi>
@@ -4648,7 +4648,7 @@
     <tag>lichking-25</tag>
   </item>
   <item id="50016">
-    <name />
+    <name><![CDATA[Rib Spreader]]></name>
     <attributes>
       <atp>93</atp>
       <agi>69</agi>
@@ -4664,7 +4664,7 @@
     <tag>rotface-25</tag>
   </item>
   <item id="50021">
-    <name />
+    <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
     <attributes>
       <atp>145</atp>
       <agi>112</agi>
@@ -4687,7 +4687,7 @@
     <tag>rotface-25</tag>
   </item>
   <item id="50025">
-    <name />
+    <name><![CDATA[Seal of Many Mouths]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -4709,7 +4709,7 @@
     <tag>rotface-25</tag>
   </item>
   <item id="50035">
-    <name />
+    <name><![CDATA[Black Bruise]]></name>
     <attributes>
       <atp>93</atp>
     </attributes>
@@ -4722,7 +4722,7 @@
     <tag>festergut-25</tag>
   </item>
   <item id="50042">
-    <name />
+    <name><![CDATA[Gangrenous Leggings]]></name>
     <attributes>
       <atp>200</atp>
       <agi>146</agi>
@@ -4746,7 +4746,7 @@
     <tag>festergut-25</tag>
   </item>
   <item id="50046">
-    <name />
+    <name><![CDATA[Quel'Delar, Cunning of the Shadows]]></name>
     <attributes>
       <atp>88</atp>
       <agi>62</agi>
@@ -4758,7 +4758,7 @@
     <slot>OneHand</slot>
   </item>
   <item id="50050">
-    <name />
+    <name><![CDATA[Cudgel of Furious Justice]]></name>
     <attributes>
       <atp>83</atp>
       <agi>62</agi>
@@ -4770,7 +4770,7 @@
     <slot>OneHand</slot>
   </item>
   <item id="50067">
-    <name />
+    <name><![CDATA[Astrylian's Sutured Cinch]]></name>
     <attributes>
       <atp>161</atp>
       <agi>104</agi>
@@ -4793,7 +4793,7 @@
     <tag>putricide-25</tag>
   </item>
   <item id="50073">
-    <name />
+    <name><![CDATA[Geistlord's Punishment Sack]]></name>
     <attributes>
       <atp>216</atp>
       <agi>138</agi>
@@ -4816,7 +4816,7 @@
     <tag>bloodprince-25</tag>
   </item>
   <item id="50087">
-    <name />
+    <name><![CDATA[Shadowblade Breastplate]]></name>
     <attributes>
       <atp>159</atp>
       <agi>144</agi>
@@ -4838,7 +4838,7 @@
     </sockets>
   </item>
   <item id="50088">
-    <name />
+    <name><![CDATA[Shadowblade Gauntlets]]></name>
     <attributes>
       <atp>126</atp>
       <agi>107</agi>
@@ -4859,7 +4859,7 @@
     </sockets>
   </item>
   <item id="50089">
-    <name />
+    <name><![CDATA[Shadowblade Helmet]]></name>
     <attributes>
       <atp>143</atp>
       <agi>144</agi>
@@ -4881,7 +4881,7 @@
     </sockets>
   </item>
   <item id="50090">
-    <name />
+    <name><![CDATA[Shadowblade Legplates]]></name>
     <attributes>
       <atp>159</atp>
       <agi>144</agi>
@@ -4903,7 +4903,7 @@
     </sockets>
   </item>
   <item id="50105">
-    <name />
+    <name><![CDATA[Shadowblade Pauldrons]]></name>
     <attributes>
       <atp>126</atp>
       <agi>107</agi>
@@ -4924,7 +4924,7 @@
     </sockets>
   </item>
   <item id="50169">
-    <name />
+    <name><![CDATA[Papa's Brand New Knife]]></name>
     <attributes>
       <atp>54</atp>
       <agi>38</agi>
@@ -4940,7 +4940,7 @@
     <tag>bronjahm-heroic</tag>
   </item>
   <item id="50183">
-    <name />
+    <name><![CDATA[Lungbreaker]]></name>
     <attributes>
       <atp>93</atp>
       <agi>69</agi>
@@ -4956,7 +4956,7 @@
     <tag>valithria-25</tag>
   </item>
   <item id="50186">
-    <name />
+    <name><![CDATA[Frostbrood Sapphire Ring]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -4978,7 +4978,7 @@
     <tag>valithria-25</tag>
   </item>
   <item id="50191">
-    <name />
+    <name><![CDATA[Nighttime]]></name>
     <attributes>
       <atp>78</atp>
       <agi>52</agi>
@@ -4994,7 +4994,7 @@
     <tag>bronjahm-heroic</tag>
   </item>
   <item id="50198">
-    <name />
+    <name><![CDATA[Needle-Encrusted Scorpion]]></name>
     <attributes>
       <cri>114</cri>
     </attributes>
@@ -5007,7 +5007,7 @@
     <tag>devourerofsouls-heroic</tag>
   </item>
   <item id="50203">
-    <name />
+    <name><![CDATA[Blood Weeper]]></name>
     <attributes>
       <atp>78</atp>
       <agi>52</agi>
@@ -5023,7 +5023,7 @@
     <tag>forgeofsouls-heroic</tag>
   </item>
   <item id="50206">
-    <name />
+    <name><![CDATA[Frayed Scoundrel's Cap]]></name>
     <attributes>
       <atp>167</atp>
       <agi>104</agi>
@@ -5046,7 +5046,7 @@
     <tag>devourerofsouls-heroic</tag>
   </item>
   <item id="50228">
-    <name />
+    <name><![CDATA[Barbed Ymirheim Choker]]></name>
     <attributes>
       <atp>99</atp>
       <agi>67</agi>
@@ -5062,7 +5062,7 @@
     <tag>pitofsaron-heroic</tag>
   </item>
   <item id="50264">
-    <name />
+    <name><![CDATA[Chewed Leather Wristguards]]></name>
     <attributes>
       <atp>102</atp>
       <agi>67</agi>
@@ -5078,7 +5078,7 @@
     <tag>pitofsaron-heroic</tag>
   </item>
   <item id="50269">
-    <name />
+    <name><![CDATA[Fleshwerk Leggings]]></name>
     <attributes>
       <atp>183</atp>
       <agi>120</agi>
@@ -5094,7 +5094,7 @@
     <tag>tyrannus-heroic</tag>
   </item>
   <item id="50271">
-    <name />
+    <name><![CDATA[Band of Stained Souls]]></name>
     <attributes>
       <atp>89</atp>
       <agi>67</agi>
@@ -5110,7 +5110,7 @@
     <tag>pitofsaron-heroic</tag>
   </item>
   <item id="50293">
-    <name />
+    <name><![CDATA[Spaulders of Black Betrayal]]></name>
     <attributes>
       <atp>128</atp>
       <agi>89</agi>
@@ -5126,7 +5126,7 @@
     <tag>falric-heroic</tag>
   </item>
   <item id="50300">
-    <name />
+    <name><![CDATA[Choking Hauberk]]></name>
     <attributes>
       <atp>172</atp>
       <agi>112</agi>
@@ -5148,7 +5148,7 @@
     <tag>marwyn-heroic</tag>
   </item>
   <item id="50302">
-    <name />
+    <name><![CDATA[Liar's Tongue]]></name>
     <attributes>
       <atp>77</atp>
       <agi>52</agi>
@@ -5164,7 +5164,7 @@
     <tag>hallschest-heroic</tag>
   </item>
   <item id="50303">
-    <name />
+    <name><![CDATA[Black Icicle]]></name>
     <attributes>
       <atp>103</atp>
       <agi>39</agi>
@@ -5180,7 +5180,7 @@
     <tag>hallschest-heroic</tag>
   </item>
   <item id="50308">
-    <name />
+    <name><![CDATA[Blighted Leather Footpads]]></name>
     <attributes>
       <atp>136</atp>
       <agi>89</agi>
@@ -5196,7 +5196,7 @@
     <tag>hallschest-heroic</tag>
   </item>
   <item id="50315">
-    <name />
+    <name><![CDATA[Seven-Fingered Claws]]></name>
     <attributes>
       <atp>80</atp>
       <agi>52</agi>
@@ -5212,7 +5212,7 @@
     <tag>icc5-heroic</tag>
   </item>
   <item id="50319">
-    <name />
+    <name><![CDATA[Unsharpened Ice Razor]]></name>
     <attributes>
       <atp>74</atp>
       <agi>52</agi>
@@ -5228,7 +5228,7 @@
     <tag>icc5-heroic</tag>
   </item>
   <item id="50333">
-    <name />
+    <name><![CDATA[Toskk's Maximized Wristguards]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -5250,7 +5250,7 @@
     <tag>saurfang-25</tag>
   </item>
   <item id="50342">
-    <name />
+    <name><![CDATA[Whispering Fanged Skull]]></name>
     <attributes>
       <cri>131</cri>
     </attributes>
@@ -5264,7 +5264,7 @@
     <tag>deathwhisper-10</tag>
   </item>
   <item id="50343">
-    <name />
+    <name><![CDATA[Whispering Fanged Skull]]></name>
     <attributes>
       <cri>148</cri>
     </attributes>
@@ -5278,7 +5278,7 @@
     <tag>deathwhisper-10-heroic</tag>
   </item>
   <item id="50351">
-    <name />
+    <name><![CDATA[Tiny Abomination in a Jar]]></name>
     <attributes>
       <hit>85</hit>
     </attributes>
@@ -5292,7 +5292,7 @@
     <tag>professorputricide-25</tag>
   </item>
   <item id="50355">
-    <name />
+    <name><![CDATA[Herkuml War Token]]></name>
     <attributes>
       <hst>153</hst>
     </attributes>
@@ -5303,7 +5303,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50362">
-    <name />
+    <name><![CDATA[Deathbringer's Will]]></name>
     <attributes>
       <arp>155</arp>
     </attributes>
@@ -5317,7 +5317,7 @@
     <tag>saurfang-25</tag>
   </item>
   <item id="50363">
-    <name />
+    <name><![CDATA[Deathbringer's Will]]></name>
     <attributes>
       <arp>167</arp>
     </attributes>
@@ -5331,7 +5331,7 @@
     <tag>saurfang-25-heroic</tag>
   </item>
   <item id="50376">
-    <name />
+    <name><![CDATA[Ashen Band of Vengeance]]></name>
     <attributes>
       <atp>114</atp>
       <agi>80</agi>
@@ -5344,7 +5344,7 @@
     <slot>Finger</slot>
   </item>
   <item id="50387">
-    <name />
+    <name><![CDATA[Ashen Band of Greater Vengeance]]></name>
     <attributes>
       <atp>123</atp>
       <agi>86</agi>
@@ -5357,7 +5357,7 @@
     <slot>Finger</slot>
   </item>
   <item id="50401">
-    <name />
+    <name><![CDATA[Ashen Band of Unmatched Vengeance]]></name>
     <attributes>
       <atp>123</atp>
       <agi>88</agi>
@@ -5370,7 +5370,7 @@
     <slot>Finger</slot>
   </item>
   <item id="50402">
-    <name />
+    <name><![CDATA[Ashen Band of Endless Vengeance]]></name>
     <attributes>
       <atp>135</atp>
       <agi>88</agi>
@@ -5389,7 +5389,7 @@
     </sockets>
   </item>
   <item id="50411">
-    <name />
+    <name><![CDATA[Scourgeborne Waraxe]]></name>
     <attributes>
       <atp>93</atp>
       <agi>69</agi>
@@ -5405,7 +5405,7 @@
     <tag>gunship-25</tag>
   </item>
   <item id="50412">
-    <name />
+    <name><![CDATA[Bloodvenom Blade]]></name>
     <attributes>
       <atp>93</atp>
       <agi>69</agi>
@@ -5421,7 +5421,7 @@
     <tag>saurfang-25</tag>
   </item>
   <item id="50421">
-    <name />
+    <name><![CDATA[Sindragosa's Cruel Claw]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -5443,7 +5443,7 @@
     <tag>sindragosa-25</tag>
   </item>
   <item id="50426">
-    <name />
+    <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
     <attributes>
       <atp>99</atp>
       <agi>74</agi>
@@ -5459,7 +5459,7 @@
     <tag>lichking-25</tag>
   </item>
   <item id="50452">
-    <name />
+    <name><![CDATA[Wodin's Lucky Necklace]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -5481,7 +5481,7 @@
     <tag>icctrash-25</tag>
   </item>
   <item id="50470">
-    <name />
+    <name><![CDATA[Recovered Scarlet Onslaught Cape]]></name>
     <attributes>
       <atp>105</atp>
       <agi>90</agi>
@@ -5500,7 +5500,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50474">
-    <name />
+    <name><![CDATA[Shrapnel Star]]></name>
     <attributes>
       <atp>68</atp>
       <agi>51</agi>
@@ -5513,7 +5513,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50604">
-    <name />
+    <name><![CDATA[Band of the Bone Colossus]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5535,7 +5535,7 @@
     <tag>marrowgar-25-heroic</tag>
   </item>
   <item id="50607">
-    <name />
+    <name><![CDATA[Frostbitten Fur Boots]]></name>
     <attributes>
       <atp>181</atp>
       <agi>120</agi>
@@ -5558,7 +5558,7 @@
     <tag>marrowgar-25-heroic</tag>
   </item>
   <item id="50618">
-    <name />
+    <name><![CDATA[Frostbrood Sapphire Ring]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5580,7 +5580,7 @@
     <tag>valithria-25-heroic</tag>
   </item>
   <item id="50621">
-    <name />
+    <name><![CDATA[Lungbreaker]]></name>
     <attributes>
       <atp>88</atp>
       <agi>78</agi>
@@ -5602,7 +5602,7 @@
     <tag>valithria-25-heroic</tag>
   </item>
   <item id="50633">
-    <name />
+    <name><![CDATA[Sindragosa's Cruel Claw]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5624,7 +5624,7 @@
     <tag>sindragosa-25-heroic</tag>
   </item>
   <item id="50641">
-    <name />
+    <name><![CDATA[Heartpierce]]></name>
     <attributes>
       <atp>95</atp>
     </attributes>
@@ -5643,7 +5643,7 @@
     <tag>deathwhisper-25-heroic</tag>
   </item>
   <item id="50646">
-    <name />
+    <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
     <attributes>
       <atp>165</atp>
       <agi>128</agi>
@@ -5666,7 +5666,7 @@
     <tag>deathwhisper-25-heroic</tag>
   </item>
   <item id="50653">
-    <name />
+    <name><![CDATA[Shadowvault Slayer's Cloak]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5688,7 +5688,7 @@
     <tag>gunship-25-heroic</tag>
   </item>
   <item id="50654">
-    <name />
+    <name><![CDATA[Scourgeborne Waraxe]]></name>
     <attributes>
       <atp>88</atp>
       <agi>78</agi>
@@ -5710,7 +5710,7 @@
     <tag>gunship-25-heroic</tag>
   </item>
   <item id="50656">
-    <name />
+    <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
     <attributes>
       <atp>228</atp>
       <agi>167</agi>
@@ -5734,7 +5734,7 @@
     <tag>gunship-25-heroic</tag>
   </item>
   <item id="50670">
-    <name />
+    <name><![CDATA[Toskk's Maximized Wristguards]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5756,7 +5756,7 @@
     <tag>saurfang-25-heroic</tag>
   </item>
   <item id="50672">
-    <name />
+    <name><![CDATA[Bloodvenom Blade]]></name>
     <attributes>
       <atp>104</atp>
       <agi>70</agi>
@@ -5778,7 +5778,7 @@
     <tag>saurfang-25-heroic</tag>
   </item>
   <item id="50675">
-    <name />
+    <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
     <attributes>
       <atp>165</atp>
       <agi>128</agi>
@@ -5801,7 +5801,7 @@
     <tag>rotface-25-heroic</tag>
   </item>
   <item id="50676">
-    <name />
+    <name><![CDATA[Rib Spreader]]></name>
     <attributes>
       <atp>88</atp>
       <agi>78</agi>
@@ -5823,7 +5823,7 @@
     <tag>rotface-25-heroic</tag>
   </item>
   <item id="50678">
-    <name />
+    <name><![CDATA[Seal of Many Mouths]]></name>
     <attributes>
       <atp>120</atp>
       <agi>102</agi>
@@ -5845,7 +5845,7 @@
     <tag>rotface-25-heroic</tag>
   </item>
   <item id="50692">
-    <name />
+    <name><![CDATA[Black Bruise]]></name>
     <attributes>
       <atp>72</atp>
     </attributes>
@@ -5864,7 +5864,7 @@
     <tag>festergut-25-heroic</tag>
   </item>
   <item id="50697">
-    <name />
+    <name><![CDATA[Gangrenous Leggings]]></name>
     <attributes>
       <atp>228</atp>
       <agi>167</agi>
@@ -5888,7 +5888,7 @@
     <tag>festergut-25-heroic</tag>
   </item>
   <item id="50706">
-    <name />
+    <name><![CDATA[Tiny Abomination in a Jar]]></name>
     <attributes>
       <hit>85</hit>
     </attributes>
@@ -5902,7 +5902,7 @@
     <tag>putricide-25-heroic</tag>
   </item>
   <item id="50707">
-    <name />
+    <name><![CDATA[Astrylian's Sutured Cinch]]></name>
     <attributes>
       <atp>181</atp>
       <agi>120</agi>
@@ -5925,7 +5925,7 @@
     <tag>putricide-25-heroic</tag>
   </item>
   <item id="50713">
-    <name />
+    <name><![CDATA[Geistlord's Punishment Sack]]></name>
     <attributes>
       <atp>244</atp>
       <agi>159</agi>
@@ -5948,7 +5948,7 @@
     <tag>blodprince-25-heroic</tag>
   </item>
   <item id="50733">
-    <name />
+    <name><![CDATA[Fal'inrush, Defender of Quel'thalas]]></name>
     <attributes>
       <atp>66</atp>
       <agi>62</agi>
@@ -5968,7 +5968,7 @@
     <tag>lichking-25-heroic</tag>
   </item>
   <item id="50736">
-    <name />
+    <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
     <attributes>
       <atp>111</atp>
       <agi>76</agi>
@@ -5988,7 +5988,7 @@
     <tag>lichking-25-heroic</tag>
   </item>
   <item id="50737">
-    <name />
+    <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
     <attributes>
       <atp>95</atp>
       <agi>84</agi>
@@ -6008,7 +6008,7 @@
     <tag>lichking-25-heroic</tag>
   </item>
   <item id="50759">
-    <name />
+    <name><![CDATA[Bone Warden's Splitter]]></name>
     <attributes>
       <atp>82</atp>
       <agi>62</agi>
@@ -6024,7 +6024,7 @@
     <tag>marrowgar-10</tag>
   </item>
   <item id="50764">
-    <name />
+    <name><![CDATA[Shawl of Nerubian Silk]]></name>
     <attributes>
       <atp>122</atp>
       <agi>72</agi>
@@ -6046,7 +6046,7 @@
     <tag>marrowgar-10</tag>
   </item>
   <item id="50776">
-    <name />
+    <name><![CDATA[Njorndar Bone Bow]]></name>
     <attributes>
       <atp>69</atp>
       <agi>45</agi>
@@ -6062,7 +6062,7 @@
     <tag>deathwhisper-10</tag>
   </item>
   <item id="50778">
-    <name />
+    <name><![CDATA[Soulthief's Braided Belt]]></name>
     <attributes>
       <atp>162</atp>
       <agi>91</agi>
@@ -6085,7 +6085,7 @@
     <tag>deathwhisper-10</tag>
   </item>
   <item id="50780">
-    <name />
+    <name><![CDATA[Chestguard of the Frigid Noose]]></name>
     <attributes>
       <atp>200</atp>
       <agi>132</agi>
@@ -6109,7 +6109,7 @@
     <tag>deathwhisper-10</tag>
   </item>
   <item id="50787">
-    <name />
+    <name><![CDATA[Frost Giant's Cleaver]]></name>
     <attributes>
       <atp>94</atp>
       <agi>62</agi>
@@ -6125,7 +6125,7 @@
     <tag>gunship-10</tag>
   </item>
   <item id="50799">
-    <name />
+    <name><![CDATA[Scourge Stranglers]]></name>
     <attributes>
       <atp>134</atp>
       <agi>107</agi>
@@ -6148,7 +6148,7 @@
     <tag>saurfang-10</tag>
   </item>
   <item id="50803">
-    <name />
+    <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
     <attributes>
       <atp>114</atp>
       <agi>72</agi>
@@ -6170,7 +6170,7 @@
     <tag>saurfang-10</tag>
   </item>
   <item id="50810">
-    <name />
+    <name><![CDATA[Gutbuster]]></name>
     <attributes>
       <atp>123</atp>
       <agi>47</agi>
@@ -6186,7 +6186,7 @@
     <tag>festergut-10</tag>
   </item>
   <item id="50852">
-    <name />
+    <name><![CDATA[Precious's Putrid Collar]]></name>
     <attributes>
       <atp>119</atp>
       <agi>72</agi>
@@ -6208,7 +6208,7 @@
     <tag>festergut-10</tag>
   </item>
   <item id="50858">
-    <name />
+    <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
     <attributes>
       <atp>143</atp>
       <agi>144</agi>
@@ -6232,7 +6232,7 @@
     <tag>festergut-10</tag>
   </item>
   <item id="50972">
-    <name />
+    <name><![CDATA[Shadow Seeker's Tunic]]></name>
     <attributes>
       <atp>184</atp>
       <agi>162</agi>
@@ -6253,7 +6253,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50982">
-    <name />
+    <name><![CDATA[Cat Burglar's Grips]]></name>
     <attributes>
       <atp>129</atp>
       <agi>120</agi>
@@ -6273,7 +6273,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50995">
-    <name />
+    <name><![CDATA[Vengeful Noose]]></name>
     <attributes>
       <atp>129</atp>
       <agi>120</agi>
@@ -6293,7 +6293,7 @@
     <tag>emblems-frost</tag>
   </item>
   <item id="50999">
-    <name />
+    <name><![CDATA[Gluth's Fetching Knife]]></name>
     <attributes>
       <atp>64</atp>
       <agi>45</agi>
@@ -6309,7 +6309,7 @@
     <tag>rotface-10</tag>
   </item>
   <item id="51003">
-    <name />
+    <name><![CDATA[Abomination Knuckles]]></name>
     <attributes>
       <atp>94</atp>
       <agi>62</agi>
@@ -6325,7 +6325,7 @@
     <tag>rotface-10</tag>
   </item>
   <item id="51011">
-    <name />
+    <name><![CDATA[Flesh-Carving Scalpel]]></name>
     <attributes>
       <atp>123</atp>
       <agi>44</agi>
@@ -6341,7 +6341,7 @@
     <tag>putricide-10</tag>
   </item>
   <item id="51013">
-    <name />
+    <name><![CDATA[Discarded Bag of Entrails]]></name>
     <attributes>
       <atp>202</atp>
       <agi>136</agi>
@@ -6364,7 +6364,7 @@
     <tag>putricide-10</tag>
   </item>
   <item id="51021">
-    <name />
+    <name><![CDATA[Soulbreaker]]></name>
     <attributes>
       <atp>94</atp>
       <agi>62</agi>
@@ -6380,7 +6380,7 @@
     <tag>valanar-10</tag>
   </item>
   <item id="51023">
-    <name />
+    <name><![CDATA[Taldaram's Soft Slippers]]></name>
     <attributes>
       <atp>153</atp>
       <agi>91</agi>
@@ -6403,7 +6403,7 @@
     <tag>valanar-10</tag>
   </item>
   <item id="51185">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
     <attributes>
       <atp>145</atp>
       <agi>120</agi>
@@ -6425,7 +6425,7 @@
     </sockets>
   </item>
   <item id="51186">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
     <attributes>
       <atp>184</atp>
       <agi>162</agi>
@@ -6448,7 +6448,7 @@
     </sockets>
   </item>
   <item id="51187">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
     <attributes>
       <atp>168</atp>
       <agi>162</agi>
@@ -6471,7 +6471,7 @@
     </sockets>
   </item>
   <item id="51188">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
     <attributes>
       <atp>145</atp>
       <agi>120</agi>
@@ -6493,7 +6493,7 @@
     </sockets>
   </item>
   <item id="51189">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
     <attributes>
       <atp>184</atp>
       <agi>162</agi>
@@ -6516,7 +6516,7 @@
     </sockets>
   </item>
   <item id="51250">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Breastplate]]></name>
     <attributes>
       <atp>212</atp>
       <agi>183</agi>
@@ -6538,7 +6538,7 @@
     </sockets>
   </item>
   <item id="51251">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Gauntlets]]></name>
     <attributes>
       <atp>165</atp>
       <agi>136</agi>
@@ -6559,7 +6559,7 @@
     </sockets>
   </item>
   <item id="51252">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Helmet]]></name>
     <attributes>
       <atp>196</atp>
       <agi>183</agi>
@@ -6581,7 +6581,7 @@
     </sockets>
   </item>
   <item id="51253">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Legplates]]></name>
     <attributes>
       <atp>212</atp>
       <agi>183</agi>
@@ -6603,7 +6603,7 @@
     </sockets>
   </item>
   <item id="51254">
-    <name />
+    <name><![CDATA[Sanctified Shadowblade Pauldrons]]></name>
     <attributes>
       <atp>165</atp>
       <agi>136</agi>
@@ -6624,7 +6624,7 @@
     </sockets>
   </item>
   <item id="51384">
-    <name />
+    <name><![CDATA[Bloodsipper]]></name>
     <attributes>
       <atp>94</atp>
       <agi>62</agi>
@@ -6640,7 +6640,7 @@
     <tag>lanathel-10</tag>
   </item>
   <item id="51385">
-    <name />
+    <name><![CDATA[Stakethrower]]></name>
     <attributes>
       <atp>70</atp>
       <agi>45</agi>
@@ -6656,7 +6656,7 @@
     <tag>lanathel-10</tag>
   </item>
   <item id="51387">
-    <name />
+    <name><![CDATA[Seal of the Twilight Queen]]></name>
     <attributes>
       <atp>114</atp>
       <agi>72</agi>
@@ -6678,7 +6678,7 @@
     <tag>lanathel-10</tag>
   </item>
   <item id="51550">
-    <name />
+    <name><![CDATA[Ivory-Inlaid Leggings]]></name>
     <attributes>
       <atp>206</atp>
       <agi>120</agi>
@@ -6702,7 +6702,7 @@
     <tag>lanathel-10</tag>
   </item>
   <item id="51560">
-    <name />
+    <name><![CDATA[Runed Band of the Kirin Tor]]></name>
     <attributes>
       <atp>107</atp>
       <agi>80</agi>
@@ -6714,7 +6714,7 @@
     <slot>Finger</slot>
   </item>
   <item id="51565">
-    <name />
+    <name><![CDATA[Skinned Whelp Shoulders]]></name>
     <attributes>
       <atp>162</atp>
       <agi>91</agi>
@@ -6737,7 +6737,7 @@
     <tag>valithria-10</tag>
   </item>
   <item id="51779">
-    <name />
+    <name><![CDATA[Rimetooth Pendant]]></name>
     <attributes>
       <atp>98</atp>
       <agi>80</agi>
@@ -6759,7 +6759,7 @@
     <tag>sindragosa-10</tag>
   </item>
   <item id="51783">
-    <name />
+    <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
     <attributes>
       <atp>98</atp>
       <agi>80</agi>
@@ -6781,7 +6781,7 @@
     <tag>sindragosa-10</tag>
   </item>
   <item id="51784">
-    <name />
+    <name><![CDATA[Splintershard]]></name>
     <attributes>
       <atp>82</atp>
       <agi>62</agi>
@@ -6797,7 +6797,7 @@
     <tag>sindragosa-10</tag>
   </item>
   <item id="51800">
-    <name />
+    <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
     <attributes>
       <atp>100</atp>
       <agi>66</agi>
@@ -6813,7 +6813,7 @@
     <tag>lichking-10</tag>
   </item>
   <item id="51801">
-    <name />
+    <name><![CDATA[Pugius, Fist of Defiance]]></name>
     <attributes>
       <atp>100</atp>
       <agi>66</agi>
@@ -6829,7 +6829,7 @@
     <tag>lichking-10</tag>
   </item>
   <item id="51802">
-    <name />
+    <name><![CDATA[Windrunner's Heartseeker]]></name>
     <attributes>
       <atp>69</atp>
       <agi>48</agi>
@@ -6845,7 +6845,7 @@
     <tag>lichking-10</tag>
   </item>
   <item id="51819">
-    <name />
+    <name><![CDATA[Splintershard]]></name>
     <attributes>
       <atp>93</atp>
       <agi>61</agi>
@@ -6867,7 +6867,7 @@
     <tag>sindragosa-10-heroic</tag>
   </item>
   <item id="51820">
-    <name />
+    <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
     <attributes>
       <atp>113</atp>
       <agi>90</agi>
@@ -6889,7 +6889,7 @@
     <tag>sindragosa-10-heroic</tag>
   </item>
   <item id="51822">
-    <name />
+    <name><![CDATA[Rimetooth Pendant]]></name>
     <attributes>
       <atp>113</atp>
       <agi>90</agi>
@@ -6911,7 +6911,7 @@
     <tag>sindragosa-10-heroic</tag>
   </item>
   <item id="51830">
-    <name />
+    <name><![CDATA[Skinned Whelp Shoulders]]></name>
     <attributes>
       <atp>183</atp>
       <agi>104</agi>
@@ -6934,7 +6934,7 @@
     <tag>valithria-10-heroic</tag>
   </item>
   <item id="51841">
-    <name />
+    <name><![CDATA[Ivory-Inlaid Leggings]]></name>
     <attributes>
       <atp>232</atp>
       <agi>138</agi>
@@ -6958,7 +6958,7 @@
     <tag>lanathel-10-heroic</tag>
   </item>
   <item id="51843">
-    <name />
+    <name><![CDATA[Seal of the Twilight Queen]]></name>
     <attributes>
       <atp>129</atp>
       <agi>82</agi>
@@ -6980,7 +6980,7 @@
     <tag>lanathel-10-heroic</tag>
   </item>
   <item id="51845">
-    <name />
+    <name><![CDATA[Stakethrower]]></name>
     <attributes>
       <atp>79</atp>
       <agi>43</agi>
@@ -7002,7 +7002,7 @@
     <tag>lanathel-10-heroic</tag>
   </item>
   <item id="51846">
-    <name />
+    <name><![CDATA[Bloodsipper]]></name>
     <attributes>
       <atp>90</atp>
       <agi>69</agi>
@@ -7024,7 +7024,7 @@
     <tag>lanathel-10-heroic</tag>
   </item>
   <item id="51856">
-    <name />
+    <name><![CDATA[Taldaram's Soft Slippers]]></name>
     <attributes>
       <atp>172</atp>
       <agi>104</agi>
@@ -7047,7 +7047,7 @@
     <tag>valanar-10-heroic</tag>
   </item>
   <item id="51858">
-    <name />
+    <name><![CDATA[Soulbreaker]]></name>
     <attributes>
       <atp>106</atp>
       <agi>61</agi>
@@ -7069,7 +7069,7 @@
     <tag>valanar-10-heroic</tag>
   </item>
   <item id="51866">
-    <name />
+    <name><![CDATA[Discarded Bag of Entrails]]></name>
     <attributes>
       <atp>230</atp>
       <agi>154</agi>
@@ -7092,7 +7092,7 @@
     <tag>putricide-10-heroic</tag>
   </item>
   <item id="51868">
-    <name />
+    <name><![CDATA[Flesh-Carving Scalpel]]></name>
     <attributes>
       <atp>139</atp>
       <agi>42</agi>
@@ -7114,7 +7114,7 @@
     <tag>putricide-10-heroic</tag>
   </item>
   <item id="51876">
-    <name />
+    <name><![CDATA[Abomination Knuckles]]></name>
     <attributes>
       <atp>106</atp>
       <agi>61</agi>
@@ -7136,7 +7136,7 @@
     <tag>rotface-10-heroic</tag>
   </item>
   <item id="51880">
-    <name />
+    <name><![CDATA[Gluth's Fetching Knife]]></name>
     <attributes>
       <atp>72</atp>
       <agi>43</agi>
@@ -7158,7 +7158,7 @@
     <tag>rotface-10-heroic</tag>
   </item>
   <item id="51889">
-    <name />
+    <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
     <attributes>
       <atp>168</atp>
       <agi>162</agi>
@@ -7182,7 +7182,7 @@
     <tag>festergut-10-heroic</tag>
   </item>
   <item id="51890">
-    <name />
+    <name><![CDATA[Precious's Putrid Collar]]></name>
     <attributes>
       <atp>134</atp>
       <agi>82</agi>
@@ -7204,7 +7204,7 @@
     <tag>festergut-10-heroic</tag>
   </item>
   <item id="51893">
-    <name />
+    <name><![CDATA[Gutbuster]]></name>
     <attributes>
       <atp>139</atp>
       <agi>45</agi>
@@ -7226,7 +7226,7 @@
     <tag>festergut-10-heroic</tag>
   </item>
   <item id="51900">
-    <name />
+    <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
     <attributes>
       <atp>129</atp>
       <agi>82</agi>
@@ -7248,7 +7248,7 @@
     <tag>saurfang-10-heroic</tag>
   </item>
   <item id="51904">
-    <name />
+    <name><![CDATA[Scourge Stranglers]]></name>
     <attributes>
       <atp>155</atp>
       <agi>120</agi>
@@ -7271,7 +7271,7 @@
     <tag>saurfang-10-heroic</tag>
   </item>
   <item id="51916">
-    <name />
+    <name><![CDATA[Frost Giant's Cleaver]]></name>
     <attributes>
       <atp>106</atp>
       <agi>61</agi>
@@ -7293,7 +7293,7 @@
     <tag>gunship-10-heroic</tag>
   </item>
   <item id="51923">
-    <name />
+    <name><![CDATA[Chestguard of the Frigid Noose]]></name>
     <attributes>
       <atp>228</atp>
       <agi>150</agi>
@@ -7317,7 +7317,7 @@
     <tag>deathwhisper-10-heroic</tag>
   </item>
   <item id="51925">
-    <name />
+    <name><![CDATA[Soulthief's Braided Belt]]></name>
     <attributes>
       <atp>183</atp>
       <agi>104</agi>
@@ -7340,7 +7340,7 @@
     <tag>deathwhisper-10-heroic</tag>
   </item>
   <item id="51927">
-    <name />
+    <name><![CDATA[Njorndar Bone Bow]]></name>
     <attributes>
       <atp>78</atp>
       <agi>43</agi>
@@ -7362,7 +7362,7 @@
     <tag>deathwhisper-10-heroic</tag>
   </item>
   <item id="51933">
-    <name />
+    <name><![CDATA[Shawl of Nerubian Silk]]></name>
     <attributes>
       <atp>137</atp>
       <agi>82</agi>
@@ -7384,7 +7384,7 @@
     <tag>marrowgar-10-heroic</tag>
   </item>
   <item id="51938">
-    <name />
+    <name><![CDATA[Bone Warden's Splitter]]></name>
     <attributes>
       <atp>93</atp>
       <agi>61</agi>
@@ -7406,7 +7406,7 @@
     <tag>marrowgar-10-heroic</tag>
   </item>
   <item id="51940">
-    <name />
+    <name><![CDATA[Windrunner's Heartseeker]]></name>
     <attributes>
       <atp>61</atp>
       <agi>54</agi>
@@ -7428,7 +7428,7 @@
     <tag>lichking-10-heroic</tag>
   </item>
   <item id="51941">
-    <name />
+    <name><![CDATA[Pugius, Fist of Defiance]]></name>
     <attributes>
       <atp>113</atp>
       <agi>66</agi>
@@ -7450,7 +7450,7 @@
     <tag>lichking-10-heroic</tag>
   </item>
   <item id="51942">
-    <name />
+    <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
     <attributes>
       <atp>97</atp>
       <agi>74</agi>

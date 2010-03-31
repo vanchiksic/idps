@@ -201,7 +201,7 @@ public class ItemParser {
 		TagNode n = (TagNode) parser.extractAllNodesThatMatch(nf).elementAt(0);
 		String url = n.getAttribute("href");
 		item.setIcon(url.substring(12));
-		item.setName(Translate.decode(n.getParent().getNextSibling().getText().trim()));
+		item.setName(Translate.decode(n.getParent().getLastChild().getText().trim()));
 	}
 	
 	private void fetchTag(Parser parser, Armor item) throws ParserException {
