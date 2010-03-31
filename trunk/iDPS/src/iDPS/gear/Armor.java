@@ -326,7 +326,7 @@ public class Armor extends Item {
 	}
 
 	public static ArrayList<Armor> getAll() {
-		return new ArrayList<Armor>(map.values());
+		return new ArrayList<Armor>(fullmap.values());
 	}
 
 	@SuppressWarnings("unchecked")
@@ -371,9 +371,9 @@ public class Armor extends Item {
 		Document doc = Persistency.openXML(Persistency.FileType.Items);
 		Element root = doc.getRootElement();
 		root.removeContent();
-		TreeSet<Integer> keys = new TreeSet<Integer>(map.keySet());
+		TreeSet<Integer> keys = new TreeSet<Integer>(fullmap.keySet());
 		for (Integer key: keys) {
-			Armor item = map.get(key);
+			Armor item = fullmap.get(key);
 			Element eItem = item.toXML();
 			root.getChildren().add(eItem);
 		}

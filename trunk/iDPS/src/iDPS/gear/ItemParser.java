@@ -2,6 +2,7 @@ package iDPS.gear;
 
 import iDPS.Attributes;
 import iDPS.Setup;
+import iDPS.Talents;
 import iDPS.gear.Armor.Faction;
 import iDPS.gear.Armor.SlotType;
 import iDPS.gear.Armor.SocketType;
@@ -126,7 +127,9 @@ public class ItemParser {
 			slot = "OneHand";
 		else if (slot.equals("Main Hand"))
 			slot = "MainHand";
-		if (slot.equals("Thrown") || slot.equals("Gun") || slot.equals("Bow") || slot.equals("Crossbow"))
+		else if (slot.equals("Off-Hand"))
+			slot = "OffHand";
+		else if (slot.equals("Thrown") || slot.equals("Gun") || slot.equals("Bow") || slot.equals("Crossbow"))
 			slot = "Ranged";
 		item.setSlot(SlotType.valueOf(slot));
 		nf = new HasParentFilter(new HasAttributeFilter("class", "tti-level"));
@@ -192,11 +195,12 @@ public class ItemParser {
 	private void fetchNameIcon(Parser parser, Armor item) throws ParserException {
 		parser.reset();
 		NodeFilter nf = new AndFilter(
-					new TagNameFilter("img"),
-					new HasAttributeFilter("class", "wicon")
+					new TagNameFilter("a"),
+					new HasParentFilter(new TagNameFilter("h1"))
 					);
 		TagNode n = (TagNode) parser.extractAllNodesThatMatch(nf).elementAt(0);
-		item.setIcon(n.getAttribute("alt"));
+		String url = n.getAttribute("href");
+		item.setIcon(url.substring(12));
 		item.setName(Translate.decode(n.getParent().getNextSibling().getText().trim()));
 	}
 	
@@ -216,6 +220,7 @@ public class ItemParser {
 	
 	public static void main(String[] args) {
 		ItemParser ip = new ItemParser();
+		Talents.load();
 		Setup.load();
 		Armor.load();
 		Iterator<Armor> iter = Armor.getAll().iterator();
