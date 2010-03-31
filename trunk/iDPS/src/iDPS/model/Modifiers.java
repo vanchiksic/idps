@@ -183,7 +183,7 @@ public class Modifiers {
 		gHst -= 1;
 		gHstGear = hst/cHST;
 
-		mHit = hit/cPHIT + 0.05F;
+		mHit = hit/cPHIT + 0.01F*talents.getTalentPoints("Precision");
 		if (bc.hasDebuff(Debuff.spellHit))
 			mHit += 0.03F;
 		if (bc.hasBuff(Buff.partyHit))
