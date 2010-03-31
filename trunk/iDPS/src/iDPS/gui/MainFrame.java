@@ -35,7 +35,10 @@ public class MainFrame extends JFrame {
 	private SidePanel sidePanel;
 	
 	public MainFrame(Application app) {
-		super("iDPS");		
+		super("iDPS");
+		if (app.getSetup() != null && app.getSetup().getName() != null)
+			setTitle("iDPS - "+app.getSetup().getName());	
+	
 		this.app = app;
 		
 		menuBar = new MenuBar(this);

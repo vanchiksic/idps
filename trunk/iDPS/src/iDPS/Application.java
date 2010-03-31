@@ -106,6 +106,8 @@ public class Application {
 		Setup oldSetup = this.setup;
 		this.setup = newSetup;
 		pcs.firePropertyChange("setup", oldSetup, newSetup);
+		if (mainFrame != null && setup.getName() != null)
+			mainFrame.setTitle("iDPS - "+setup.getName());
 		// Limit Gems and Enchants to our Professions
 		Gem.limit();
 		Enchant.limit();

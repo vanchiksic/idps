@@ -191,12 +191,68 @@
     <unique max="1">Nightmare Tear</unique>
     <icon>inv_misc_gem_pearl_12</icon>
   </gem>
-   <gem id="41398">
+  <gem id="41398">
     <name>Relentless Earthsiege Diamond</name>
     <attributes>
       <agi>21</agi>
     </attributes>
     <color>Meta</color>
     <icon>inv_jewelcrafting_shadowspirit_02</icon>
+  </gem>
+  <gem id="40136">
+    <name>Balanced Dreadstone</name>
+    <attributes>
+      <atp>20</atp>
+    </attributes>
+    <color>Purple</color>
+    <icon>inv_jewelcrafting_gem_40</icon>
+  </gem>
+  <gem id="40141">
+    <name>Guardian's Dreadstone</name>
+    <attributes>
+      <exp>10</exp>
+    </attributes>
+    <color>Purple</color>
+    <icon>inv_jewelcrafting_gem_40</icon>
+  </gem>
+  <gem id="40140">
+    <name>Puissant's Dreadstone</name>
+    <attributes>
+      <arp>10</arp>
+    </attributes>
+    <color>Purple</color>
+    <icon>inv_jewelcrafting_gem_40</icon>
+  </gem>
+  <gem id="40130">
+    <name>Shifting Dreadstone</name>
+    <attributes>
+      <agi>10</agi>
+    </attributes>
+    <color>Purple</color>
+    <icon>inv_jewelcrafting_gem_40</icon>
+  </gem>
+  <gem id="40169">
+    <name>Forceful Eye of Zul</name>
+    <attributes>
+      <hst>10</hst>
+    </attributes>
+    <color>Green</color>
+    <icon>inv_jewelcrafting_gem_41</icon>
+  </gem>
+  <gem id="40165">
+    <name>Jagged Eye of Zul</name>
+    <attributes>
+      <cri>10</cri>
+    </attributes>
+    <color>Green</color>
+    <icon>inv_jewelcrafting_gem_41</icon>
+  </gem>
+  <gem id="40166">
+    <name>Vivid Eye of Zul</name>
+    <attributes>
+      <hit>10</hit>
+    </attributes>
+    <color>Green</color>
+    <icon>inv_jewelcrafting_gem_41</icon>
   </gem>
 </gems>
