@@ -8,6 +8,8 @@ http://support.apple.com/downloads/Java_for_Mac_OS_X_10_5_Update_1
 
 As far as i know Snow Leopard (10.6) has JRE6 already included so you should not have to do anything.
 
+Sadly there is no Java 6 for OSX Tiger (10.4) or older as far as i know, so if you use that operating system you are out of luck :(
+
 
 == Switching preferred Java Version ==
 
