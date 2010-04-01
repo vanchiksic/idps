@@ -321,6 +321,9 @@
       </bonus>
     </sockets>
     <tag>xt002-10-heroic</tag>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>187.1</dps>
   </item>
   <item id="45931">
     <name><![CDATA[Mjolnir Runestone]]></name>
@@ -410,6 +413,9 @@
     <slot>OneHand</slot>
     <tag>northrendbeasts-25</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
   </item>
   <item id="46969">
     <name><![CDATA[Steel Bladebreaker]]></name>
@@ -433,6 +439,9 @@
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>216.4</dps>
   </item>
   <item id="46970">
     <name><![CDATA[Drape of the Untamed Predator]]></name>
@@ -539,6 +548,9 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="46995">
     <name><![CDATA[Talonstrike]]></name>
@@ -562,6 +574,9 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>240.7</dps>
   </item>
   <item id="46996">
     <name><![CDATA[Lionhead Slasher]]></name>
@@ -579,6 +594,9 @@
     <slot>OneHand</slot>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47000">
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
@@ -626,6 +644,9 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>216.7</dps>
   </item>
   <item id="47004">
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
@@ -795,6 +816,9 @@
     <slot>OneHand</slot>
     <tag>twinvalkyrs-25</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47107">
     <name><![CDATA[Belt of the Merciless Killer]]></name>
@@ -865,6 +889,9 @@
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
   </item>
   <item id="47115">
     <name><![CDATA[Death's Verdict]]></name>
@@ -910,6 +937,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-25</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="47151">
     <name><![CDATA[Bracers of Dark Determination]]></name>
@@ -974,6 +1004,9 @@
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
   </item>
   <item id="47170">
     <name><![CDATA[Belt of Fierce Competition]]></name>
@@ -1146,6 +1179,9 @@
     <slot>OneHand</slot>
     <tag>northrendbeasts-25</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
   </item>
   <item id="47257">
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
@@ -1204,6 +1240,9 @@
     <slot>OneHand</slot>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47267">
     <name><![CDATA[Death's Head Crossbow]]></name>
@@ -1221,6 +1260,9 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="47270">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1342,6 +1384,9 @@
     <slot>OneHand</slot>
     <tag>twinvalkyrs-25</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47303">
     <name><![CDATA[Death's Choice]]></name>
@@ -1389,6 +1434,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-25</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="47416">
     <name><![CDATA[Stygian Bladebreaker]]></name>
@@ -1412,6 +1460,9 @@
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>216.4</dps>
   </item>
   <item id="47418">
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
@@ -1483,6 +1534,9 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>216.7</dps>
   </item>
   <item id="47428">
     <name><![CDATA[Death's Head Crossbow]]></name>
@@ -1506,6 +1560,9 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
+    <type>Crossbow</type>
+    <speed>2.8</speed>
+    <dps>240.7</dps>
   </item>
   <item id="47431">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1648,6 +1705,9 @@
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
   </item>
   <item id="47464">
     <name><![CDATA[Death's Choice]]></name>
@@ -1709,6 +1769,9 @@
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
   </item>
   <item id="47494">
     <name><![CDATA[Ancient Pendant of Arathor]]></name>
@@ -1763,6 +1826,9 @@
       </bonus>
     </sockets>
     <tag>toc5-heroic</tag>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
   </item>
   <item id="47521">
     <name><![CDATA[BRK-1000]]></name>
@@ -1786,6 +1852,9 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>240.7</dps>
   </item>
   <item id="47523">
     <name><![CDATA[Fezzik's Autocannon]]></name>
@@ -1809,6 +1878,9 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>240.7</dps>
   </item>
   <item id="47526">
     <name><![CDATA[Remorseless]]></name>
@@ -1832,6 +1904,9 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
   </item>
   <item id="47528">
     <name><![CDATA[Cudgel of the Damned]]></name>
@@ -1855,6 +1930,9 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
   </item>
   <item id="47529">
     <name><![CDATA[Mask of Distant Memory]]></name>
@@ -1936,6 +2014,9 @@
     <icon>inv_weapon_rifle_34</icon>
     <slot>Ranged</slot>
     <tag>toc5-heroic</tag>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>147.3</dps>
   </item>
   <item id="47581">
     <name><![CDATA[Bracers of Swift Death]]></name>
@@ -2073,6 +2154,9 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-triumph</tag>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>255.6</dps>
   </item>
   <item id="47676">
     <name><![CDATA[Dirk of the Night Watch]]></name>
@@ -2096,6 +2180,9 @@
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
   </item>
   <item id="47688">
     <name><![CDATA[Mask of Lethal Intent]]></name>
@@ -2275,6 +2362,9 @@
     <slot>OneHand</slot>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
   </item>
   <item id="47739">
     <name><![CDATA[Armor of Shifting Shadows]]></name>
@@ -2322,6 +2412,9 @@
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>187.1</dps>
   </item>
   <item id="47741">
     <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
@@ -2339,6 +2432,9 @@
     <slot>Ranged</slot>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>187.2</dps>
   </item>
   <item id="47808">
     <name><![CDATA[The Lion's Maw]]></name>
@@ -2356,6 +2452,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="47814">
     <name><![CDATA[Westfall Saber]]></name>
@@ -2373,6 +2472,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
   </item>
   <item id="47816">
     <name><![CDATA[The Grinder]]></name>
@@ -2396,6 +2498,9 @@
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="47832">
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
@@ -2505,6 +2610,9 @@
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
   </item>
   <item id="47878">
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
@@ -2565,6 +2673,9 @@
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>187.1</dps>
   </item>
   <item id="47886">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -2582,6 +2693,9 @@
     <slot>OneHand</slot>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
   </item>
   <item id="47887">
     <name><![CDATA[Vest of Shifting Shadows]]></name>
@@ -2623,6 +2737,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="47903">
     <name><![CDATA[Forsaken Bonecarver]]></name>
@@ -2640,6 +2757,9 @@
     <slot>OneHand</slot>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
   </item>
   <item id="47904">
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
@@ -2686,6 +2806,9 @@
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="47915">
     <name><![CDATA[Collar of Ceaseless Torment]]></name>
@@ -2779,6 +2902,9 @@
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
   </item>
   <item id="47945">
     <name><![CDATA[Gloves of the Silver Assassin]]></name>
@@ -2840,6 +2966,9 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="47953">
     <name><![CDATA[Icefall Blade]]></name>
@@ -2863,6 +2992,9 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47954">
     <name><![CDATA[Armor of Shifting Shadows]]></name>
@@ -2911,6 +3043,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="47971">
     <name><![CDATA[Westfall Saber]]></name>
@@ -2934,6 +3069,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
   </item>
   <item id="47972">
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
@@ -2981,6 +3119,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="47975">
     <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
@@ -3004,6 +3145,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>212.1</dps>
   </item>
   <item id="47988">
     <name><![CDATA[Collar of Unending Torment]]></name>
@@ -3097,6 +3241,9 @@
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>196.4</dps>
   </item>
   <item id="48017">
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
@@ -3157,6 +3304,9 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Gun</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="48025">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -3180,6 +3330,9 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>196.7</dps>
   </item>
   <item id="48026">
     <name><![CDATA[Vest of Shifting Shadows]]></name>
@@ -3228,6 +3381,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="48048">
     <name><![CDATA[Forsaken Bonecarver]]></name>
@@ -3251,6 +3407,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>196.7</dps>
   </item>
   <item id="48049">
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
@@ -3298,6 +3457,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>196.5</dps>
   </item>
   <item id="48052">
     <name><![CDATA[Darkmaw Crossbow]]></name>
@@ -3321,6 +3483,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
+    <type>Crossbow</type>
+    <speed>2.9</speed>
+    <dps>212.1</dps>
   </item>
   <item id="48218">
     <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
@@ -4078,6 +4243,9 @@
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
+    <type>Bow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="48703">
     <name><![CDATA[The Facebreaker]]></name>
@@ -4101,6 +4269,9 @@
     </sockets>
     <tag>triumphchest-10</tag>
     <faction>Horde</faction>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>196.7</dps>
   </item>
   <item id="48711">
     <name><![CDATA[Rhok'shalla, the Shadow's Bane]]></name>
@@ -4124,6 +4295,9 @@
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
+    <type>Bow</type>
+    <speed>2.8</speed>
+    <dps>212.2</dps>
   </item>
   <item id="48712">
     <name><![CDATA[The Spinebreaker]]></name>
@@ -4147,6 +4321,9 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>196.7</dps>
   </item>
   <item id="48722">
     <name><![CDATA[Shard of the Crystal Heart]]></name>
@@ -4206,6 +4383,9 @@
     <icon>inv_weapon_shortblade_94</icon>
     <slot>OneHand</slot>
     <tag>toc5-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>163.3</dps>
   </item>
   <item id="49785">
     <name><![CDATA[Bewildering Shoulderpads]]></name>
@@ -4238,6 +4418,9 @@
     <icon>inv_weapon_shortblade_80</icon>
     <slot>OneHand</slot>
     <tag>forgeofsouls</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>163.3</dps>
   </item>
   <item id="49792">
     <name><![CDATA[Accursed Crawling Cape]]></name>
@@ -4308,6 +4491,9 @@
     <icon>inv_weapon_shortblade_80</icon>
     <slot>OneHand</slot>
     <tag>pitofsaron</tag>
+    <type>Dagger</type>
+    <speed>1.5</speed>
+    <dps>163.0</dps>
   </item>
   <item id="49813">
     <name><![CDATA[Rimebane Rifle]]></name>
@@ -4323,6 +4509,9 @@
     <icon>inv_weapon_rifle_13</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
+    <type>Gun</type>
+    <speed>2.9</speed>
+    <dps>147.4</dps>
   </item>
   <item id="49817">
     <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
@@ -4355,6 +4544,9 @@
     <icon>inv_sword_119</icon>
     <slot>OneHand</slot>
     <tag>pitofsaron</tag>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
   </item>
   <item id="49830">
     <name><![CDATA[Fallen Sentry's Hood]]></name>
@@ -4408,6 +4600,9 @@
     <icon>inv_axe_94</icon>
     <slot>OneHand</slot>
     <tag>pitofsaron</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>163.3</dps>
   </item>
   <item id="49841">
     <name><![CDATA[Blackened Geist Ribs]]></name>
@@ -4446,6 +4641,9 @@
     <icon>inv_weapon_bow_44</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
+    <type>Bow</type>
+    <speed>3.0</speed>
+    <dps>147.3</dps>
   </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
@@ -4548,6 +4746,9 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-25</tag>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>496.0</dps>
   </item>
   <item id="49982">
     <name><![CDATA[Heartpierce]]></name>
@@ -4561,6 +4762,9 @@
     <icon>inv_weapon_shortblade_103</icon>
     <slot>OneHand</slot>
     <tag>deathwhisper-25</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
   </item>
   <item id="49987">
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
@@ -4646,6 +4850,9 @@
     <icon>inv_axe_113</icon>
     <slot>OneHand</slot>
     <tag>lichking-25</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>239.2</dps>
   </item>
   <item id="50016">
     <name><![CDATA[Rib Spreader]]></name>
@@ -4662,6 +4869,9 @@
     <icon>inv_weapon_shortblade_105</icon>
     <slot>OneHand</slot>
     <tag>rotface-25</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
   </item>
   <item id="50021">
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
@@ -4720,6 +4930,9 @@
     <icon>inv_weapon_hand_33</icon>
     <slot>MainHand</slot>
     <tag>festergut-25</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="50042">
     <name><![CDATA[Gangrenous Leggings]]></name>
@@ -4756,6 +4969,9 @@
     <lvl>251</lvl>
     <icon>inv_sword_155</icon>
     <slot>OneHand</slot>
+    <type>Sword</type>
+    <speed>2.7</speed>
+    <dps>205.6</dps>
   </item>
   <item id="50050">
     <name><![CDATA[Cudgel of Furious Justice]]></name>
@@ -4768,6 +4984,9 @@
     <lvl>251</lvl>
     <icon>inv_mace_48</icon>
     <slot>OneHand</slot>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
   </item>
   <item id="50067">
     <name><![CDATA[Astrylian's Sutured Cinch]]></name>
@@ -4938,6 +5157,9 @@
     <icon>inv_throwingknife_02</icon>
     <slot>Ranged</slot>
     <tag>bronjahm-heroic</tag>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>232.8</dps>
   </item>
   <item id="50183">
     <name><![CDATA[Lungbreaker]]></name>
@@ -4954,6 +5176,9 @@
     <icon>inv_weapon_shortblade_105</icon>
     <slot>OneHand</slot>
     <tag>valithria-25</tag>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>226.8</dps>
   </item>
   <item id="50186">
     <name><![CDATA[Frostbrood Sapphire Ring]]></name>
@@ -4992,6 +5217,9 @@
     <icon>inv_axe_91</icon>
     <slot>OneHand</slot>
     <tag>bronjahm-heroic</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="50198">
     <name><![CDATA[Needle-Encrusted Scorpion]]></name>
@@ -5021,6 +5249,9 @@
     <icon>inv_weapon_shortblade_77</icon>
     <slot>OneHand</slot>
     <tag>forgeofsouls-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>178.9</dps>
   </item>
   <item id="50206">
     <name><![CDATA[Frayed Scoundrel's Cap]]></name>
@@ -5162,6 +5393,9 @@
     <icon>inv_sword_118</icon>
     <slot>OneHand</slot>
     <tag>hallschest-heroic</tag>
+    <type>Sword</type>
+    <speed>1.5</speed>
+    <dps>178.7</dps>
   </item>
   <item id="50303">
     <name><![CDATA[Black Icicle]]></name>
@@ -5178,6 +5412,9 @@
     <icon>inv_mace_78</icon>
     <slot>OneHand</slot>
     <tag>hallschest-heroic</tag>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="50308">
     <name><![CDATA[Blighted Leather Footpads]]></name>
@@ -5210,6 +5447,9 @@
     <icon>inv_weapon_hand_04</icon>
     <slot>MainHand</slot>
     <tag>icc5-heroic</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>178.8</dps>
   </item>
   <item id="50319">
     <name><![CDATA[Unsharpened Ice Razor]]></name>
@@ -5226,6 +5466,9 @@
     <icon>inv_weapon_shortblade_61</icon>
     <slot>OneHand</slot>
     <tag>icc5-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>178.9</dps>
   </item>
   <item id="50333">
     <name><![CDATA[Toskk's Maximized Wristguards]]></name>
@@ -5403,6 +5646,9 @@
     <icon>inv_axe_113</icon>
     <slot>OneHand</slot>
     <tag>gunship-25</tag>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
   </item>
   <item id="50412">
     <name><![CDATA[Bloodvenom Blade]]></name>
@@ -5419,6 +5665,9 @@
     <icon>inv_sword_154</icon>
     <slot>OneHand</slot>
     <tag>saurfang-25</tag>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="50421">
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
@@ -5457,6 +5706,9 @@
     <icon>inv_weapon_shortblade_104</icon>
     <slot>OneHand</slot>
     <tag>lichking-25</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>239.2</dps>
   </item>
   <item id="50452">
     <name><![CDATA[Wodin's Lucky Necklace]]></name>
@@ -5511,6 +5763,9 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-frost</tag>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>294.7</dps>
   </item>
   <item id="50604">
     <name><![CDATA[Band of the Bone Colossus]]></name>
@@ -5600,6 +5855,9 @@
       </bonus>
     </sockets>
     <tag>valithria-25-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>250.4</dps>
   </item>
   <item id="50633">
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
@@ -5641,6 +5899,9 @@
       </bonus>
     </sockets>
     <tag>deathwhisper-25-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>250.3</dps>
   </item>
   <item id="50646">
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
@@ -5708,6 +5969,9 @@
       </bonus>
     </sockets>
     <tag>gunship-25-heroic</tag>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>250.7</dps>
   </item>
   <item id="50656">
     <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
@@ -5776,6 +6040,9 @@
       </bonus>
     </sockets>
     <tag>saurfang-25-heroic</tag>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>250.6</dps>
   </item>
   <item id="50675">
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
@@ -5821,6 +6088,9 @@
       </bonus>
     </sockets>
     <tag>rotface-25-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>250.3</dps>
   </item>
   <item id="50678">
     <name><![CDATA[Seal of Many Mouths]]></name>
@@ -5862,6 +6132,9 @@
       </bonus>
     </sockets>
     <tag>festergut-25-heroic</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>250.6</dps>
   </item>
   <item id="50697">
     <name><![CDATA[Gangrenous Leggings]]></name>
@@ -5966,6 +6239,9 @@
       <bonus />
     </sockets>
     <tag>lichking-25-heroic</tag>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>308.8</dps>
   </item>
   <item id="50736">
     <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
@@ -5986,6 +6262,9 @@
       <bonus />
     </sockets>
     <tag>lichking-25-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>264.7</dps>
   </item>
   <item id="50737">
     <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
@@ -6006,6 +6285,9 @@
       <bonus />
     </sockets>
     <tag>lichking-25-heroic</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>264.6</dps>
   </item>
   <item id="50759">
     <name><![CDATA[Bone Warden's Splitter]]></name>
@@ -6022,6 +6304,9 @@
     <icon>inv_axe_113</icon>
     <slot>OneHand</slot>
     <tag>marrowgar-10</tag>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>205.3</dps>
   </item>
   <item id="50764">
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
@@ -6060,6 +6345,9 @@
     <icon>inv_weapon_bow_56</icon>
     <slot>Ranged</slot>
     <tag>deathwhisper-10</tag>
+    <type>Bow</type>
+    <speed>2.9</speed>
+    <dps>224.9</dps>
   </item>
   <item id="50778">
     <name><![CDATA[Soulthief's Braided Belt]]></name>
@@ -6123,6 +6411,9 @@
     <icon>inv_axe_113</icon>
     <slot>OneHand</slot>
     <tag>gunship-10</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
   </item>
   <item id="50799">
     <name><![CDATA[Scourge Stranglers]]></name>
@@ -6184,6 +6475,9 @@
     <icon>inv_mace_114</icon>
     <slot>OneHand</slot>
     <tag>festergut-10</tag>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
   </item>
   <item id="50852">
     <name><![CDATA[Precious's Putrid Collar]]></name>
@@ -6307,6 +6601,9 @@
     <icon>inv_throwingknife_01</icon>
     <slot>Ranged</slot>
     <tag>rotface-10</tag>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>266.9</dps>
   </item>
   <item id="51003">
     <name><![CDATA[Abomination Knuckles]]></name>
@@ -6323,6 +6620,9 @@
     <icon>inv_weapon_hand_34</icon>
     <slot>MainHand</slot>
     <tag>rotface-10</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
   </item>
   <item id="51011">
     <name><![CDATA[Flesh-Carving Scalpel]]></name>
@@ -6339,6 +6639,9 @@
     <icon>inv_weapon_shortblade_102</icon>
     <slot>OneHand</slot>
     <tag>putricide-10</tag>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>205.4</dps>
   </item>
   <item id="51013">
     <name><![CDATA[Discarded Bag of Entrails]]></name>
@@ -6378,6 +6681,9 @@
     <icon>inv_sword_151</icon>
     <slot>OneHand</slot>
     <tag>valanar-10</tag>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>205.6</dps>
   </item>
   <item id="51023">
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
@@ -6638,6 +6944,9 @@
     <icon>inv_weapon_shortblade_102</icon>
     <slot>OneHand</slot>
     <tag>lanathel-10</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>205.6</dps>
   </item>
   <item id="51385">
     <name><![CDATA[Stakethrower]]></name>
@@ -6654,6 +6963,9 @@
     <icon>inv_weapon_rifle_39</icon>
     <slot>Ranged</slot>
     <tag>lanathel-10</tag>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>222.7</dps>
   </item>
   <item id="51387">
     <name><![CDATA[Seal of the Twilight Queen]]></name>
@@ -6795,6 +7107,9 @@
     <icon>inv_weapon_hand_34</icon>
     <slot>OffHand</slot>
     <tag>sindragosa-10</tag>
+    <type>Fist</type>
+    <speed>1.5</speed>
+    <dps>205.3</dps>
   </item>
   <item id="51800">
     <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
@@ -6811,6 +7126,9 @@
     <icon>inv_weapon_shortblade_105</icon>
     <slot>OneHand</slot>
     <tag>lichking-10</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>216.7</dps>
   </item>
   <item id="51801">
     <name><![CDATA[Pugius, Fist of Defiance]]></name>
@@ -6827,6 +7145,9 @@
     <icon>inv_weapon_hand_34</icon>
     <slot>MainHand</slot>
     <tag>lichking-10</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>216.5</dps>
   </item>
   <item id="51802">
     <name><![CDATA[Windrunner's Heartseeker]]></name>
@@ -6843,6 +7164,9 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-10</tag>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>240.6</dps>
   </item>
   <item id="51819">
     <name><![CDATA[Splintershard]]></name>
@@ -6865,6 +7189,9 @@
       </bonus>
     </sockets>
     <tag>sindragosa-10-heroic</tag>
+    <type>Fist</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
   </item>
   <item id="51820">
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
@@ -7000,6 +7327,9 @@
       </bonus>
     </sockets>
     <tag>lanathel-10-heroic</tag>
+    <type>Gun</type>
+    <speed>3.0</speed>
+    <dps>253.2</dps>
   </item>
   <item id="51846">
     <name><![CDATA[Bloodsipper]]></name>
@@ -7022,6 +7352,9 @@
       </bonus>
     </sockets>
     <tag>lanathel-10-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>226.7</dps>
   </item>
   <item id="51856">
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
@@ -7067,6 +7400,9 @@
       </bonus>
     </sockets>
     <tag>valanar-10-heroic</tag>
+    <type>Sword</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="51866">
     <name><![CDATA[Discarded Bag of Entrails]]></name>
@@ -7112,6 +7448,9 @@
       </bonus>
     </sockets>
     <tag>putricide-10-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.4</speed>
+    <dps>226.4</dps>
   </item>
   <item id="51876">
     <name><![CDATA[Abomination Knuckles]]></name>
@@ -7134,6 +7473,9 @@
       </bonus>
     </sockets>
     <tag>rotface-10-heroic</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="51880">
     <name><![CDATA[Gluth's Fetching Knife]]></name>
@@ -7156,6 +7498,9 @@
       </bonus>
     </sockets>
     <tag>rotface-10-heroic</tag>
+    <type>Thrown</type>
+    <speed>1.8</speed>
+    <dps>294.7</dps>
   </item>
   <item id="51889">
     <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
@@ -7224,6 +7569,9 @@
       </bonus>
     </sockets>
     <tag>festergut-10-heroic</tag>
+    <type>Mace</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="51900">
     <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
@@ -7291,6 +7639,9 @@
       </bonus>
     </sockets>
     <tag>gunship-10-heroic</tag>
+    <type>Axe</type>
+    <speed>2.6</speed>
+    <dps>226.5</dps>
   </item>
   <item id="51923">
     <name><![CDATA[Chestguard of the Frigid Noose]]></name>
@@ -7360,6 +7711,9 @@
       </bonus>
     </sockets>
     <tag>deathwhisper-10-heroic</tag>
+    <type>Bow</type>
+    <speed>2.9</speed>
+    <dps>253.1</dps>
   </item>
   <item id="51933">
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
@@ -7404,6 +7758,9 @@
       </bonus>
     </sockets>
     <tag>marrowgar-10-heroic</tag>
+    <type>Axe</type>
+    <speed>1.5</speed>
+    <dps>226.7</dps>
   </item>
   <item id="51940">
     <name><![CDATA[Windrunner's Heartseeker]]></name>
@@ -7426,6 +7783,9 @@
       </bonus>
     </sockets>
     <tag>lichking-10-heroic</tag>
+    <type>Crossbow</type>
+    <speed>3.0</speed>
+    <dps>270.8</dps>
   </item>
   <item id="51941">
     <name><![CDATA[Pugius, Fist of Defiance]]></name>
@@ -7448,6 +7808,9 @@
       </bonus>
     </sockets>
     <tag>lichking-10-heroic</tag>
+    <type>Fist</type>
+    <speed>2.6</speed>
+    <dps>239.0</dps>
   </item>
   <item id="51942">
     <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
@@ -7470,6 +7833,9 @@
       </bonus>
     </sockets>
     <tag>lichking-10-heroic</tag>
+    <type>Dagger</type>
+    <speed>1.8</speed>
+    <dps>239.2</dps>
   </item>
 </items>
 

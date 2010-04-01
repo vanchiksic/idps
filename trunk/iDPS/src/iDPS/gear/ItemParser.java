@@ -35,7 +35,7 @@ public class ItemParser {
 			while (iter.hasMoreNodes()) {
 				Node n = iter.nextNode().getFirstChild();
 				
-				if (n != null && n.getText().equals("Weapons")) {
+				if (n != null && n.getText().equals("Weapon")) {
 					isWeapon = true;
 					break;
 				}
@@ -233,6 +233,8 @@ public class ItemParser {
 				itemNew.setUniqueLimit(itemOrg.getUniqueLimit());
 				itemNew.setUniqueName(itemOrg.getUniqueName());
 			}
+			if (itemOrg.getIcon() != null)
+				itemNew.setIcon(itemOrg.getIcon());
 			if (itemOrg.getTag() != null)
 				itemNew.setTag(itemOrg.getTag());
 			if (itemOrg.getFaction() != Faction.Both)
