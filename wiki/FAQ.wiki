@@ -27,6 +27,11 @@ Start it from he command line to see what error messages you are getting. Open t
 You need Java RE 6. Download the latest Java RE if your version is outdated.
 
 
+== Where can i report Bugs? ==
+
+Please use the "Issues" feature of this site at the top. Bug reports in coments on the wiki pages will most likely be ignored and deleted.
+
+
 == My item X is missing ==
 
 I generally only added items with item level 232+. Only exceptions are very common/popular/easy to obtain items like DMC:G, Mjolnir Runstone, Badge Items etc.
