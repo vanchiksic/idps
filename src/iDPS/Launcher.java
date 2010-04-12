@@ -21,6 +21,12 @@ public class Launcher {
 		  return;
 		}
 		
+		try {
+			javax.swing.UIManager.setLookAndFeel(
+					javax.swing.UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {}
+
+		
 		if (System.getProperty("os.name").startsWith("Mac")) {
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", "iDPS");
