@@ -21,10 +21,10 @@ public class Launcher {
 		  return;
 		}
 		
-		try {
+		/*try {
 			javax.swing.UIManager.setLookAndFeel(
 					javax.swing.UIManager.getSystemLookAndFeelClassName());
-		} catch (Exception e) {}
+		} catch (Exception e) {}*/
 
 		
 		if (System.getProperty("os.name").startsWith("Mac")) {
