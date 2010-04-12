@@ -198,6 +198,11 @@ public class Modifiers {
 
 		Weapon.WeaponType wt1 = gear.getWeapon1().getType();
 		Weapon.WeaponType wt2 = gear.getWeapon2().getType();
+		// Failsave weaponTypes
+		if (wt1 == null)
+			wt1 = Weapon.WeaponType.Dagger;
+		if (wt2 == null)
+			wt2 = Weapon.WeaponType.Dagger;
 
 		// Arp
 		arp += cARP*0.03F*talents.getTalentPoints("SBlades");
