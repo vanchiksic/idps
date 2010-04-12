@@ -47,22 +47,26 @@ public class BuffPanelBuffs extends JPanel implements PropertyChangeListener {
 			enabled = true;
 			switch (b) {
 				case attackPower:
-					name = "Attack Power Buff";
+					name = "Attack Power";
 					tooltip = "Blessing of Might, Battle Shout";
 					break;
 				case attackPowerImp:
-					name = "Imp. Attack Power Buff";
+					name = "Imp. Attack Power";
 					tooltip = "Improved BoM, Imp. Battle Shout";
 					c.insets = new Insets(0,20,0,0);
 					enabled = controller.hasBuff(Buff.attackPower);
 					break;
 				case attackPowerMult:
-					name = "10% Attack Power Buff";
+					name = "10% Attack Power";
 					tooltip = "Unleashed Rage";
 					break;
 				case damage:
 					name = "3% Damage Buff";
-					tooltip = "Ferocious Inspiration";
+					tooltip = "Arcane Empowerment, Ferocious Inspiration, Sanctified Retribution";
+					break;
+				case haste:
+					name = "3% Haste";
+					tooltip = "Swift Retribution, Imp. Moonkin Form";
 					break;
 				case meleHaste:
 					name = "16% Mele Haste";
@@ -75,39 +79,39 @@ public class BuffPanelBuffs extends JPanel implements PropertyChangeListener {
 					enabled = controller.hasBuff(Buff.meleHaste);
 					break;
 				case spellCrit:
-					name = "5% Spell Crit Buff";
+					name = "5% Spell Crit";
 					tooltip = "Moonkin Aura, Elemental Oath";
 					break;
 				case physicalCrit:
-					name = "5% Physical Crit Buff";
+					name = "5% Physical Crit";
 					tooltip = "Leader of the Pact, Rampage";
 					break;
 				case statsAdditive:
-					name = "Additive Stats Buff";
+					name = "Additive Stats";
 					tooltip = "Mark of the Wild";
 					break;
 				case statsAdditiveImp:
-					name = "Imp. Additive Stats Buff";
+					name = "Imp. Additive Stats";
 					tooltip = "Imp. Mark of the Wild";
 					c.insets = new Insets(0,20,0,0);
 					enabled = controller.hasBuff(Buff.statsAdditive);
 					break;
 				case statsMultiplicative:
-					name = "10% Stats Buff";
+					name = "10% Stats";
 					tooltip = "Blessing of Kings";
 					break;
 				case agilityStrength:
-					name = "Agility/Strength Buff";
+					name = "Agility/Strength";
 					tooltip = "SoE Totem, Horn of the Winter";
 					break;
 				case agilityStrengthImp:
-					name = "Imp. Agility/Strength Buff";
+					name = "Imp. Agility/Strength";
 					tooltip = "Improved SoE Totem";
 					c.insets = new Insets(0,20,0,0);
 					enabled = controller.hasBuff(Buff.agilityStrength);
 					break;
 				case partyHit:
-					name = "1% Hit PartyBuff";
+					name = "1% Hit Party";
 					tooltip = "Heroic Presence";
 					break;
 			}

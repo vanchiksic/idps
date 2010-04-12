@@ -14,7 +14,7 @@ import java.util.EnumSet;
 public class BuffController implements PropertyChangeListener {
 	
 	public enum Buff { attackPower, attackPowerImp, attackPowerMult,
-		damage, meleHaste, meleHasteImp, physicalCrit, spellCrit,
+		damage, haste, meleHaste, meleHasteImp, physicalCrit, spellCrit,
 		statsAdditive, statsAdditiveImp, statsMultiplicative,
 		agilityStrength, agilityStrengthImp, partyHit }
 	public enum Consumable { flask,

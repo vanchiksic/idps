@@ -176,6 +176,8 @@ public class Modifiers {
 		gExp = exp/cEXP + 0.0125F * talents.getTalentPoints("WExp");
 
 		gHst  = 1.4F * (1+talents.getTalentPoints("LR")/30F);
+		if (bc.hasBuff(Buff.haste))
+			gHst *= 1.03F;
 		if (bc.hasBuff(Buff.meleHasteImp))
 			gHst *= 1.2F;
 		else if (bc.hasBuff(Buff.meleHaste))
