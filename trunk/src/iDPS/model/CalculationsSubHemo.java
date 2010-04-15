@@ -134,13 +134,10 @@ public class CalculationsSubHemo extends Calculations {
 		
 		eviPerSec += sdEvisc/60F;
 		
-		mhSPS = hemoPerSec+eviPerSec+eaPerSec+rupPerSec+ambPerSec;
-		mhSCPS = hemoPerSec*mod.getHtSS().getCrit()
+		mhSPS  += hemoPerSec+eviPerSec+eaPerSec+rupPerSec+ambPerSec;
+		mhSCPS += hemoPerSec*mod.getHtSS().getCrit()
 					+ eviPerSec*mod.getHtFin().getCrit()
 					+ ambPerSec*mod.getHtAmb().getCrit();
-		
-		ohSPS = 0;
-		ohSCPS = 0;
 		
 	}
 	
