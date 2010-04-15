@@ -133,13 +133,10 @@ public class CalculationsSubBStab extends Calculations {
 		
 		eviPerSec += sdEvisc/60F;
 		
-		mhSPS = bsPerSec+eviPerSec+eaPerSec+rupPerSec+ambPerSec;
-		mhSCPS = bsPerSec*mod.getHtSS().getCrit()
+		mhSPS  += bsPerSec+eviPerSec+eaPerSec+rupPerSec+ambPerSec;
+		mhSCPS += bsPerSec*mod.getHtSS().getCrit()
 					+ eviPerSec*mod.getHtFin().getCrit()
 					+ ambPerSec*mod.getHtAmb().getCrit();
-		
-		ohSPS = 0;
-		ohSCPS = 0;
 		
 	}
 
