@@ -106,16 +106,11 @@ public class CalculationsCombat extends Calculations {
 		float eaPerSec = pcEA/lCycle;
 		rupPerSec = pcRup/lCycle;
 		eviPerSec = pcEvi/lCycle;
-		
-		//System.out.println("RUT: "+(rupPerSec*(lRup-0.5F)));
-		
+				
 		ssPerSec = (sndPerSec+eaPerSec+rupPerSec+eviPerSec)*(5-pRuth-3*pT10)/cpPerSS;
 				
-		mhSPS = ssPerSec+eviPerSec+eaPerSec+rupPerSec;
-		mhSCPS = ssPerSec*mod.getHtSS().getCrit() + eviPerSec*mod.getHtFin().getCrit();
-		
-		ohSPS = 0;
-		ohSCPS = 0;
+		mhSPS  += ssPerSec+eviPerSec+eaPerSec+rupPerSec;
+		mhSCPS += ssPerSec*mod.getHtSS().getCrit() + eviPerSec*mod.getHtFin().getCrit();
 	}
 	
 	protected float calcERegen() {
@@ -139,16 +134,7 @@ public class CalculationsCombat extends Calculations {
 	
 	private float combatPotencyRegen() {
 		float pps;
-		pps = ohWPS;
-		// OH Hits from Tiny Abom
-		if (gear.containsAny(50351,50706)) {
-			float moteFactor;
-			if (gear.containsAny(50706))
-				moteFactor = 1/7F;
-			else
-				moteFactor = 1/8F;
-			pps += (ohWPS+ohSPS)*0.5F*moteFactor*mod.getHtOHS().getContacts();
-		}
+		pps = ohWPS + ohSPS;
 		pps *= 0.2F;
 		
 		float regen = pps * 3*talents.getTalentPoints("CPotency");

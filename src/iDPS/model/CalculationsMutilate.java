@@ -80,9 +80,7 @@ public class CalculationsMutilate extends Calculations {
 			eCostMut -= 5;
 		eCostMut = eCostMut*(0.8F+0.2F/(mod.getHtMut().getContacts()));
 
-		eCostMut -= 2*mod.getHtMut().crit*2;
 		eCostEnv1 = 35/(mod.getHtMHS().getContacts());
-		eCostEnv1 -= mod.getHtMHS().crit*2;
 		float eCostEnv = eCostEnv1
 		- avgCP4Plus*talents.getTalentPoints("RStrikes");
 		float eCostRup = 25/(mod.getHtMHS().getContacts())
@@ -140,8 +138,11 @@ public class CalculationsMutilate extends Calculations {
 
 		envenomUptime = envLen * envPerSec;
 
-		mhSPS = (mutPerSec+envPerSec+rupPerSec);
-		ohSPS = mutPerSec;
+		mhSPS  += (mutPerSec+envPerSec+rupPerSec);
+		mhSCPS += mutPerSec * mod.getHtMut().crit;
+		mhSCPS += envPerSec * mod.getHtFin().crit;
+		ohSPS  += mutPerSec;
+		ohSCPS += mutPerSec * mod.getHtMut().crit;
 	}
 
 	protected float calcERegen() {
@@ -154,8 +155,10 @@ public class CalculationsMutilate extends Calculations {
 			eRegen += okRegen;
 		}
 		calcWhiteDPS();
-		if (talents.getTalentPoints("FAttacks")>0)
-			eRegen += (mhWCPS+ohWCPS)*2F/3F*talents.getTalentPoints("FAttacks");
+		if (talents.getTalentPoints("FAttacks")>0) {
+			float crits = mhWCPS+mhSCPS+ohWCPS+ohSCPS;
+			eRegen += crits*2F/3F*talents.getTalentPoints("FAttacks");
+		}
 
 		if (talents.getTalentPoints("HfB")>0)
 			eRegen -= 0.25F;

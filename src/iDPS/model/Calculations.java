@@ -177,6 +177,8 @@ public abstract class Calculations {
 	protected void calcProcs() {
 		float hitsPerSec = mhWPS+ohWPS+mhSPS+ohSPS;
 		float critsPerSec = mhWCPS+ohWCPS+mhSCPS+ohSCPS;
+		HitTable htMH = mod.getHtMH();
+		HitTable htOH = mod.getHtOH();
 		Attributes a;
 		float uptime;
 		
@@ -417,6 +419,25 @@ public abstract class Calculations {
 			mod.registerProc(new ProcStatic(a, 30, 315, 0.5F, hitsPerSec));
 		}
 		
+		// Tiny Abomination
+		if (gear.containsAny(50351,50706)) {
+			float ppsMH, ppsOH, moteFactor;
+			if (gear.containsAny(50706))
+				moteFactor = 1/7F;
+			else
+				moteFactor = 1/8F;
+
+			ppsMH = (gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*htMH.getContacts() + mhSPS)*0.5F*moteFactor;
+			ppsOH = (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*htOH.getContacts() + ohSPS)*0.5F*moteFactor;
+			
+			mhSPS  += ppsMH * mod.getHtMHS().getContacts();
+			ohSPS  += ppsOH * mod.getHtOHS().getContacts();
+			mhSCPS += ppsMH * mod.getHtMHS().getCrit();
+			ohSCPS += ppsOH * mod.getHtOHS().getCrit();
+			
+			// direct damage calculated in calcWhiteDPS()
+		}
+		
 		// Ashen Band of ...
 		if (gear.containsAny(50401,50402)) {
 			a = new Attributes(Attributes.Type.ATP, 480);
@@ -551,8 +572,6 @@ public abstract class Calculations {
 			System.err.println("Cant calc with no setup!");
 			return;
 		}
-		reset();
-		//System.out.println("Calculating...");
 		
 		this.setup = setup;
 		this.gear = gear;
@@ -564,26 +583,28 @@ public abstract class Calculations {
 		
 		mod = new Modifiers(inject, setup, gear);
 		
-		//System.out.println(">> Iteration 1");
-		calcWhiteDPS();
-		calcCycle();
-		calcProcs();
-		//System.out.println("  AP: "+mod.getTotalATP());
-		//System.out.println(">> Iteration 2");
-		calcWhiteDPS();
+		// Iteration 1
+		reset();
+		calcWhiteHits();
 		calcCycle();
 		mod.calcMods();
 		calcProcs();
-		//System.out.println("  AP: "+mod.getTotalATP());
-		//System.out.println(">> Iteration 3");
-		calcWhiteDPS();
+		
+		// Iteration 2
+		reset();
+		calcWhiteHits();
 		calcCycle();
 		mod.calcMods();
 		calcProcs();
-		//System.out.println("  AP: "+mod.getTotalATP());
+		
+		// Iteration 3
+		reset();
+		calcWhiteHits();
+		calcCycle();
+		mod.calcMods();
+		calcProcs();
 		
 		totalATP = mod.getTotalATP();
-		//System.out.println("AP: "+totalATP);
 		
 		calcDPS();
 	}
@@ -617,19 +638,51 @@ public abstract class Calculations {
 		return eRegen;
 	}
 	
+	/**
+	 * Calculates HitsPerSecond from White Attacks
+	 * Used to determine things like CombatPotency/FocussedAttacks
+	 */
+	protected void calcWhiteHits() {
+		HitTable htMH = mod.getHtMH();
+		HitTable htOH = mod.getHtOH();
+		// Mainhand
+		if (gear.getWeapon1() != null) {
+			mhWPS  = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getContacts();
+			mhWCPS = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getCrit();
+		}
+		// Offhand
+		if (gear.getWeapon2() != null) {
+			ohWPS  = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getContacts();
+			ohWCPS = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getCrit();
+		}
+		// Sword Spec
+		if (talents.getTalentPoints("HnS")>0) {
+			Weapon w1 = gear.getWeapon1(), w2 = gear.getWeapon2();
+			float ssPps = 0;
+			// Mainhand Procs
+			if (w1.getType() == WeaponType.Axe || w1.getType() == WeaponType.Sword) {
+				ssPps += w1.getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts())*(talents.getTalentPoints("HnS")/100F);
+				ssPps += mhSPS * (talents.getTalentPoints("HnS")/100F);
+			}
+			// Offhand Procs
+			if (w2.getType() == WeaponType.Axe || w2.getType() == WeaponType.Sword) {
+				ssPps += gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getTalentPoints("HnS")/100F);
+				ssPps += ohSPS * (talents.getTalentPoints("HnS")/100F);
+			}
+			mhWPS  += ssPps * htMH.getContacts();
+			mhWCPS += ssPps * htMH.getCrit();
+		}
+	}
+	
 	protected float calcWhiteDPS() {
 		HitTable htMH = mod.getHtMH();
 		HitTable htOH = mod.getHtOH();
 		float dpsMH = 0, dpsOH = 0;
-		mhWPS = 0; mhWCPS = 0;
-		ohWPS = 0; ohWCPS = 0;
 		// Mainhand
 		if (gear.getWeapon1() != null) {
 			dpsMH += gear.getWeapon1().getDps() + ((float)totalATP/14F);
 			dpsMH *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH *= mod.getHastePercent()/100F + 1;
-			mhWPS = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getContacts();
-			mhWCPS = gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtMH().getCrit();
 		}
 		// Offhand
 		if (gear.getWeapon2() != null) {
@@ -637,8 +690,6 @@ public abstract class Calculations {
 				* 0.5F * (1+0.1F*talents.getTalentPoints("DWield"));
 			dpsOH *= htOH.glance*0.75F + htOH.crit * mod.getPhysCritMult() + htOH.hit;
 			dpsOH *= mod.getHastePercent()/100F + 1;
-			ohWPS = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getContacts();
-			ohWCPS = gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*mod.getHtOH().getCrit();
 		}
 		// Sword Spec
 		if (talents.getTalentPoints("HnS")>0) {
@@ -655,37 +706,30 @@ public abstract class Calculations {
 				ssPps += gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts())*(talents.getTalentPoints("HnS")/100F);
 				ssPps += ohSPS * (talents.getTalentPoints("HnS")/100F);
 			}
-			mhWPS += ssPps * htMH.getContacts();
-			mhWCPS += ssPps * htMH.getCrit();
 			ssDps  = ssDmg * ssPps;
 			ssDps *= htMH.glance*0.75F + htMH.crit * mod.getPhysCritMult() + htMH.hit;
 			dpsMH += ssDps;
 		}
+		// Tiny Abomination
 		if (gear.containsAny(50351,50706)) {
 			float ppsMH, ppsOH, moteFactor, dmgMH, dmgOH;
 			if (gear.containsAny(50706))
 				moteFactor = 1/7F;
 			else
 				moteFactor = 1/8F;
-			//System.out.println(">>MF: "+moteFactor);
-			ppsMH = (gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*(htMH.getContacts()) + mhSPS)*0.5F*moteFactor;
-			ppsOH = (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*(htOH.getContacts()) + ohSPS)*0.5F*moteFactor;
-			//System.out.println(">>Procs: MH: "+ppsMH+ " OH: "+ppsOH);
-			
-			mhSPS += ppsMH * mod.getHtMHS().getContacts();
-			ohSPS += ppsOH * mod.getHtOHS().getContacts();
-			mhSCPS += ppsMH * mod.getHtMHS().getCrit();
-			ohSCPS += ppsOH * mod.getHtOHS().getCrit();
+
+			ppsMH = (gear.getWeapon1().getEffectiveAPS(mod.getHastePercent()/100F)*htMH.getContacts() + mhSPS)*0.5F*moteFactor;
+			ppsOH = (gear.getWeapon2().getEffectiveAPS(mod.getHastePercent()/100F)*htOH.getContacts() + ohSPS)*0.5F*moteFactor;
 			
 			dmgMH = gear.getWeapon1().getAverageDmg(totalATP)/2F;
 			dmgMH = mod.getHtMHS().getHit()*dmgMH + mod.getHtMHS().getCrit()*dmgMH*mod.getPhysCritMult();
 			dmgOH = gear.getWeapon2().getAverageDmg(totalATP)/2F;
 			dmgOH = mod.getHtOHS().getHit()*dmgOH + mod.getHtOHS().getCrit()*dmgOH*mod.getPhysCritMult();
-			//System.out.println(">>Dmg: MH: "+dmgMH+ " OH: "+dmgOH);
-			//System.out.println(">>DPS added: "+(ppsMH*dmgMH+ppsOH*dmgOH));
+			
 			dpsMH += ppsMH * dmgMH;
-			dpsOH += ppsMH * dmgOH;
+			dpsOH += ppsOH * dmgOH;
 		}
+
 		// Armor Reduction
 		dpsMH *= mod.getModArmorMH();
 		dpsOH *= mod.getModArmorOH();
