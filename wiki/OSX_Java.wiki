@@ -1,14 +1,19 @@
 #labels Featured
-== Java Download ==
+== OSX and Java ==
 
 Generally Java should already be preinstalled on OSX, but it might be an outdated version. On OSX you download Java from Apple and not from the official Java website. On the latest versions of OSX you should be able to get Java Updates to JRE6 through the OS System update. Otherwise you can manually download it on Apple support.
 
-For 10.5 you can get an update to JRE6 here:
+This application needs Java 6. However Java 6 is not running on all releases of OSX. Here is a short overview:
+  *  10.4 Tiger: No Java 6
+  *  10.5 Leopard: Java 6 only on Intel Macs as a System Update
+  *  10.6 Snow Leopard: Java 6 Preinstalled
+
+Yes this means if you are using a PPC Mac there is nothing you can do to get this application to work, except buying a new computer.
+
+== Java Download ==
+
+For Intel Macs running 10.5 you can get an update to JRE6 here, tho I suggest using the system update service.
 http://support.apple.com/downloads/Java_for_Mac_OS_X_10_5_Update_1
-
-As far as i know Snow Leopard (10.6) has JRE6 already included so you should not have to do anything.
-
-Sadly there is no Java 6 for OSX Tiger (10.4) or older as far as i know, so if you use that operating system you are out of luck :(
 
 
 == Switching preferred Java Version ==
