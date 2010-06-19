@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="iDPS" default="default" basedir=".">
+    <description>Builds, tests, and runs the project iDPS.</description>
+    <import file="nbproject/build-impl.xml"/>
+    <target name="-post-jar">
+        <jar jarfile="dist/iDPSv0.17.jar">
+            <zipfileset src="${dist.jar}" excludes="META-INF/*" />
+            <zipfileset src="lib/htmllexer.jar" excludes="META-INF/*" />
+            <zipfileset src="lib/htmlparser.jar" excludes="META-INF/*" />
+            <zipfileset src="lib/jdom.jar" excludes="META-INF/*" />
+            <zipfileset src="lib/sax2.jar" excludes="META-INF/*" />
+            <manifest>
+                <attribute name="Main-Class" value="iDPS.Launcher"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
