@@ -209,19 +209,19 @@ public abstract class Calculations {
 		// Mongoose
 		if (gear.getWeapon1() != null && gear.isEnchanted(16) && gear.getEnchant(16).getId()==2673) {
 			a = new Attributes(Attributes.Type.AGI, 120);
+			a.set(Attributes.Type.HST, 30);
 			Proc p = new ProcPerMinute(a, 15, 0, 1, 
 					gear.getWeapon1(), (mhWPS+mhSPS),
 					gear.getWeapon2(), 0);
 			mod.registerProc(p);
-			mod.registerStaticHasteProc(0.02F, p.getUptime());
 		}
 		if (gear.getWeapon2() != null && gear.isEnchanted(17) && gear.getEnchant(17).getId()==2673) {
 			a = new Attributes(Attributes.Type.AGI, 120);
+			a.set(Attributes.Type.HST, 30);
 			Proc p = new ProcPerMinute(a, 15, 0, 1, 
 					gear.getWeapon1(), 0,
 					gear.getWeapon2(), (ohWPS+ohSPS));
 			mod.registerProc(p);
-			mod.registerStaticHasteProc(0.02F, p.getUptime());
 		}
 		
 		// Berserking
