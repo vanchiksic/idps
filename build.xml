@@ -7,7 +7,7 @@
 
 	<target name="compile">
 		<mkdir dir="build"/>
-		<javac srcdir="src" destdir="build">
+		<javac srcdir="src" destdir="build" debug="on" debuglevel="lines,vars,source">
 			<classpath>
 				<pathelement path="${classpath}"/>
 				<fileset dir="lib">
@@ -18,6 +18,17 @@
 		<copy todir="build">
 			<fileset dir="files"/>
 		</copy>
+	</target>
+
+	<target name="run" depends="compile">
+		<java dir="build" classname="iDPS.Launcher" fork="true">
+			<classpath>
+				<pathelement path="build"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
 	</target>
 
 	<target name="jar" depends="compile">
@@ -33,7 +44,7 @@
 		</jar>
 	</target>
 
-	<target name="run" depends="jar">
+	<target name="test" depends="jar">
 		<java jar="dist/iDPS.jar" fork="true"/>
 	</target>
 
