@@ -82,12 +82,13 @@ public class ImportWorker extends SwingWorker<Setup,Void> {
 		return setup;
 	}
 
+	@Override
 	public void done() {
 		Application app = Launcher.getApp();
 		try {
-			Setup setup = get();
-			Setup.add(setup);
-			app.setSetup(setup);
+			Setup setupComplete = get();
+			Setup.add(setupComplete);
+			app.setSetup(setupComplete);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {

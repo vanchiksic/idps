@@ -17,6 +17,7 @@ import javax.swing.JMenu;
 public class MenuRaces extends JMenu implements PropertyChangeListener {
 
 	private RaceController controller;
+	ButtonGroup gRaces;
 	private HashMap<Race,ItemSelectRace> boxes;
 
 	public MenuRaces(RaceController controller) {
@@ -25,7 +26,7 @@ public class MenuRaces extends JMenu implements PropertyChangeListener {
 		controller.addPropertyChangeListener(this);
 		
 		ArrayList<Race> races = Race.getAll();
-		ButtonGroup gRaces = new ButtonGroup();
+		gRaces = new ButtonGroup();
 		boxes = new HashMap<Race,ItemSelectRace>();
 		for (int i=0; i<races.size(); i++) {
 			ItemSelectRace isr = new ItemSelectRace(races.get(i));
@@ -39,7 +40,11 @@ public class MenuRaces extends JMenu implements PropertyChangeListener {
 		if (evt.getSource() == controller) {
 			if (evt.getPropertyName().equals("race")) {
 				Race r = (Race) evt.getNewValue();
-				boxes.get(r).setSelected(true);
+				gRaces.clearSelection();
+				if (boxes.get(r) != null) {
+					gRaces.setSelected(boxes.get(r).getModel(), true);
+					//boxes.get(r).setSelected(true);
+				}
 			}
 		}
 	}

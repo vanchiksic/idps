@@ -40,7 +40,7 @@ public class RaceController implements PropertyChangeListener {
 
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() == app) {
-			if (evt.getPropertyName() == "setup")
+			if (evt.getPropertyName().equals("setup"))
 				pcs.firePropertyChange("race", null, app.getSetup().getRace());
 		}
 	}

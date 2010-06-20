@@ -132,7 +132,9 @@ public class MenuBar extends JMenuBar implements ActionListener {
 				return;
 			g.setName(s);
 			Setup.add(g);
+			mainFrame.getApp().setSetup(g);
 			createGearMenu();
+			revalidate();
 		}
 		else if (e.getSource() == iGearDel) {
 			int really = JOptionPane.showConfirmDialog(
@@ -159,6 +161,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
 				return;
 			Setup g = new Setup(s.trim());
 			Setup.add(g);
+			mainFrame.getApp().setSetup(g);
 			createGearMenu();
 			revalidate();
 		}
