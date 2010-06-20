@@ -1,0 +1,40 @@
+<project>
+  
+  <target name="clean">
+    <delete dir="build"/>
+	<delete dir="dist"/>
+  </target>
+  
+	<target name="compile">
+		<mkdir dir="build"/>
+		<javac srcdir="src" destdir="build">
+			<classpath>
+				<pathelement path="${classpath}"/>
+        <fileset dir="lib">
+          <include name="**/*.jar"/>
+        </fileset>
+			</classpath>
+		</javac>
+		<copy todir="build">
+			<fileset dir="files"/>
+		</copy>
+	</target>
+  
+  <target name="jar" depends="compile">
+    <mkdir dir="dist"/>
+    <jar destfile="dist/iDPS.jar" basedir="build">
+      <zipfileset src="lib/htmllexer.jar" excludes="META-INF/*" />
+      <zipfileset src="lib/htmlparser.jar" excludes="META-INF/*" />
+      <zipfileset src="lib/jdom.jar" excludes="META-INF/*" />
+      <zipfileset src="lib/sax2.jar" excludes="META-INF/*" />
+      <manifest>
+        <attribute name="Main-Class" value="iDPS.Launcher"/>
+      </manifest>
+    </jar>
+  </target>
+  
+  <target name="run" depends="jar">
+    <java jar="dist/iDPS.jar" fork="true"/>
+  </target>
+  
+</project>
