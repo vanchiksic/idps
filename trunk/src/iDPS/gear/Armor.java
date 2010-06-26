@@ -91,6 +91,7 @@ public class Armor extends Item {
 	}
 
 	@SuppressWarnings("unchecked")
+	@Override
 	public void loadFromArmoryXML(Element armoryTooltip) {
 		super.loadFromArmoryXML(armoryTooltip);
 
@@ -185,8 +186,8 @@ public class Armor extends Item {
 	}
 	
 	@SuppressWarnings("unchecked")
+	@Override
 	public Element toXML() {
-		System.out.println(getName());
 		Element eSub, eItem = super.toXML();
 		
 		eSub = new Element("slot");
@@ -278,6 +279,7 @@ public class Armor extends Item {
 		return false;
 	}
 
+	@Override
 	public String getToolTip() {
 		String s = "<html><body style=\"padding:4px;background-color:#070c20;color:white;font-family:Verdana,sans-serif;font-size:8px;\"><p style=\"font-weight:bold;font-size:8px;margin:0 0 0 0;\">"+getName()+"</p>";
 		s += "<p style=\"margin:0 0 6px 0;\">Level: " + getLvl() + "</p>";

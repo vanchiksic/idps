@@ -445,6 +445,15 @@ public abstract class Calculations {
 					gear.getWeapon1(), (mhWPS+mhSPS),
 					gear.getWeapon2(), (ohWPS+ohSPS)));
 		}
+
+		// Sharpened Twilight Scale
+		if (gear.containsAny(54569,54590)) {
+			if (gear.contains(54590)>0)
+				a = new Attributes(Attributes.Type.ATP, 1472);
+			else
+				a = new Attributes(Attributes.Type.ATP, 1304);
+			mod.registerProc(new ProcStatic(a, 15, 45, 0.35F, hitsPerSec));
+		}
 	}
 	
 	protected float calcDWPPMUptime(float ppm, float buffLen) {

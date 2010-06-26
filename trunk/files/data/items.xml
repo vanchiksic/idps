@@ -117,9 +117,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>hodir-25-heroic</tag>
   </item>
@@ -139,9 +137,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>generalvezax-25-heroic</tag>
   </item>
@@ -172,9 +168,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier8-craft</tag>
   </item>
@@ -192,9 +186,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier8-craft</tag>
   </item>
@@ -227,9 +219,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>algalon-25</tag>
   </item>
@@ -273,9 +263,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-conquest</tag>
   </item>
@@ -295,9 +283,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>xt002-10-heroic</tag>
   </item>
@@ -316,14 +302,9 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>xt002-10-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>187.1</dps>
   </item>
   <item id="45931">
     <name><![CDATA[Mjolnir Runestone]]></name>
@@ -355,9 +336,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>vezax-10-heroic</tag>
   </item>
@@ -391,9 +370,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>yoggsaron-10-heroic</tag>
   </item>
@@ -415,7 +392,7 @@
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>196.4</dps>
+    <dps>196.43</dps>
   </item>
   <item id="46969">
     <name><![CDATA[Steel Bladebreaker]]></name>
@@ -433,15 +410,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>216.4</dps>
+    <dps>216.43</dps>
   </item>
   <item id="46970">
     <name><![CDATA[Drape of the Untamed Predator]]></name>
@@ -476,9 +451,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
@@ -500,9 +473,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25</tag>
     <faction>Alliance</faction>
@@ -525,9 +496,7 @@
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
       <socket index="2">Yellow</socket>
-      <bonus>
-        <atp>16</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Alliance</faction>
@@ -548,9 +517,6 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="46995">
     <name><![CDATA[Talonstrike]]></name>
@@ -568,15 +534,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>240.7</dps>
   </item>
   <item id="46996">
     <name><![CDATA[Lionhead Slasher]]></name>
@@ -596,7 +557,7 @@
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47000">
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
@@ -615,9 +576,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
@@ -638,15 +597,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>216.7</dps>
+    <dps>216.67</dps>
   </item>
   <item id="47004">
     <name><![CDATA[Cuirass of Calamitous Fate]]></name>
@@ -666,9 +623,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
@@ -706,9 +661,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
@@ -746,9 +699,7 @@
     <slot>Feet</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25</tag>
     <faction>Alliance</faction>
@@ -769,9 +720,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25-heroic</tag>
     <faction>Alliance</faction>
@@ -793,9 +742,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25-heroic</tag>
     <faction>Alliance</faction>
@@ -818,7 +765,7 @@
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47107">
     <name><![CDATA[Belt of the Merciless Killer]]></name>
@@ -836,9 +783,7 @@
     <slot>Waist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25</tag>
     <faction>Alliance</faction>
@@ -860,9 +805,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
@@ -883,15 +826,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>216.7</dps>
+    <dps>216.67</dps>
   </item>
   <item id="47115">
     <name><![CDATA[Death's Verdict]]></name>
@@ -939,7 +880,7 @@
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="47151">
     <name><![CDATA[Bracers of Dark Determination]]></name>
@@ -975,9 +916,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
@@ -998,15 +937,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>216.5</dps>
+    <dps>216.54</dps>
   </item>
   <item id="47170">
     <name><![CDATA[Belt of Fierce Competition]]></name>
@@ -1060,9 +997,7 @@
     <slot>Legs</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>4</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>toc5</tag>
   </item>
@@ -1095,9 +1030,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>toc5</tag>
   </item>
@@ -1133,35 +1066,9 @@
     <slot>Feet</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>toc5-heroic</tag>
-  </item>
-  <item id="47251">
-    <name><![CDATA[Cuirass of Cruel Intent]]></name>
-    <attributes>
-      <atp>255</atp>
-      <agi>74</agi>
-      <cri>82</cri>
-      <hst>71</hst>
-    </attributes>
-    <lvl>245</lvl>
-    <filters>
-      <filter>toc25h</filter>
-    </filters>
-    <icon>inv_chest_mail_03</icon>
-    <slot>Chest</slot>
-    <sockets>
-      <socket index="0">Red</socket>
-      <socket index="1">Blue</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
-    </sockets>
-    <tag>tributechest-25</tag>
-    <faction>Alliance</faction>
   </item>
   <item id="47255">
     <name><![CDATA[Stygian Bladebreaker]]></name>
@@ -1181,7 +1088,7 @@
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>196.4</dps>
+    <dps>196.43</dps>
   </item>
   <item id="47257">
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
@@ -1217,9 +1124,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25</tag>
     <faction>Horde</faction>
@@ -1242,7 +1147,7 @@
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47267">
     <name><![CDATA[Death's Head Crossbow]]></name>
@@ -1260,9 +1165,6 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="47270">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1281,9 +1183,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
@@ -1338,9 +1238,7 @@
     <slot>Feet</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25</tag>
     <faction>Horde</faction>
@@ -1361,9 +1259,7 @@
     <slot>Waist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25</tag>
     <faction>Horde</faction>
@@ -1386,7 +1282,7 @@
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47303">
     <name><![CDATA[Death's Choice]]></name>
@@ -1436,7 +1332,7 @@
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="47416">
     <name><![CDATA[Stygian Bladebreaker]]></name>
@@ -1454,15 +1350,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>216.4</dps>
+    <dps>216.43</dps>
   </item>
   <item id="47418">
     <name><![CDATA[Cloak of the Untamed Predator]]></name>
@@ -1480,9 +1374,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
@@ -1505,9 +1397,7 @@
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
       <socket index="2">Yellow</socket>
-      <bonus>
-        <atp>16</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-25-heroic</tag>
     <faction>Horde</faction>
@@ -1528,15 +1418,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>216.7</dps>
+    <dps>216.67</dps>
   </item>
   <item id="47428">
     <name><![CDATA[Death's Head Crossbow]]></name>
@@ -1554,15 +1442,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>240.7</dps>
   </item>
   <item id="47431">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1582,9 +1465,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <atp>12</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
@@ -1605,9 +1486,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
@@ -1628,9 +1507,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
@@ -1652,9 +1529,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-25-heroic</tag>
     <faction>Horde</faction>
@@ -1676,9 +1551,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
@@ -1699,15 +1572,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-25-heroic</tag>
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>216.7</dps>
+    <dps>216.67</dps>
   </item>
   <item id="47464">
     <name><![CDATA[Death's Choice]]></name>
@@ -1740,9 +1611,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
@@ -1763,15 +1632,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-25-heroic</tag>
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>216.5</dps>
+    <dps>216.54</dps>
   </item>
   <item id="47494">
     <name><![CDATA[Ancient Pendant of Arathor]]></name>
@@ -1821,14 +1688,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <hit>4</hit>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>toc5-heroic</tag>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>163.3</dps>
+    <dps>163.27</dps>
   </item>
   <item id="47521">
     <name><![CDATA[BRK-1000]]></name>
@@ -1846,15 +1711,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>240.7</dps>
   </item>
   <item id="47523">
     <name><![CDATA[Fezzik's Autocannon]]></name>
@@ -1872,15 +1732,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>240.7</dps>
   </item>
   <item id="47526">
     <name><![CDATA[Remorseless]]></name>
@@ -1898,15 +1753,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>216.5</dps>
+    <dps>216.54</dps>
   </item>
   <item id="47528">
     <name><![CDATA[Cudgel of the Damned]]></name>
@@ -1924,15 +1777,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>216.5</dps>
+    <dps>216.54</dps>
   </item>
   <item id="47529">
     <name><![CDATA[Mask of Distant Memory]]></name>
@@ -1951,9 +1802,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>toc5-heroic</tag>
   </item>
@@ -1973,9 +1822,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
@@ -1993,9 +1840,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
@@ -2014,9 +1859,6 @@
     <icon>inv_weapon_rifle_34</icon>
     <slot>Ranged</slot>
     <tag>toc5-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>147.3</dps>
   </item>
   <item id="47581">
     <name><![CDATA[Bracers of Swift Death]]></name>
@@ -2031,9 +1873,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier9-craft</tag>
     <faction>Alliance</faction>
@@ -2051,9 +1891,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier9-craft</tag>
     <faction>Horde</faction>
@@ -2073,9 +1911,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <atp>16</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier9-craft</tag>
     <faction>Alliance</faction>
@@ -2095,9 +1931,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <atp>16</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier9-craft</tag>
     <faction>Horde</faction>
@@ -2135,9 +1969,7 @@
     <slot>Feet</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <cri>4</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10</tag>
     <faction>Alliance</faction>
@@ -2154,9 +1986,6 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-triumph</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>255.6</dps>
   </item>
   <item id="47676">
     <name><![CDATA[Dirk of the Night Watch]]></name>
@@ -2174,15 +2003,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>178.9</dps>
+    <dps>178.93</dps>
   </item>
   <item id="47688">
     <name><![CDATA[Mask of Lethal Intent]]></name>
@@ -2198,9 +2025,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-triumph</tag>
     <faction>Horde</faction>
@@ -2219,9 +2044,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-triumph</tag>
     <faction>Alliance</faction>
@@ -2242,9 +2065,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Alliance</faction>
@@ -2262,9 +2083,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-triumph</tag>
     <faction>Alliance</faction>
@@ -2282,9 +2101,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-triumph</tag>
     <faction>Horde</faction>
@@ -2305,9 +2122,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-10</tag>
     <faction>Alliance</faction>
@@ -2364,7 +2179,7 @@
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>178.9</dps>
+    <dps>178.89</dps>
   </item>
   <item id="47739">
     <name><![CDATA[Armor of Shifting Shadows]]></name>
@@ -2383,9 +2198,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
@@ -2406,15 +2219,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>187.1</dps>
   </item>
   <item id="47741">
     <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
@@ -2432,9 +2240,6 @@
     <slot>Ranged</slot>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>187.2</dps>
   </item>
   <item id="47808">
     <name><![CDATA[The Lion's Maw]]></name>
@@ -2454,7 +2259,7 @@
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="47814">
     <name><![CDATA[Westfall Saber]]></name>
@@ -2474,7 +2279,7 @@
     <faction>Alliance</faction>
     <type>Sword</type>
     <speed>1.5</speed>
-    <dps>178.7</dps>
+    <dps>178.67</dps>
   </item>
   <item id="47816">
     <name><![CDATA[The Grinder]]></name>
@@ -2492,15 +2297,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="47832">
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
@@ -2518,9 +2321,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <hst>4</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
@@ -2558,9 +2359,7 @@
     <slot>Feet</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <cri>4</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10</tag>
     <faction>Horde</faction>
@@ -2581,9 +2380,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Horde</faction>
@@ -2604,15 +2401,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10</tag>
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>178.9</dps>
+    <dps>178.93</dps>
   </item>
   <item id="47878">
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
@@ -2630,9 +2425,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-10</tag>
     <faction>Horde</faction>
@@ -2667,15 +2460,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>187.1</dps>
   </item>
   <item id="47886">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -2695,7 +2483,7 @@
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>178.9</dps>
+    <dps>178.89</dps>
   </item>
   <item id="47887">
     <name><![CDATA[Vest of Shifting Shadows]]></name>
@@ -2714,9 +2502,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
@@ -2739,7 +2525,7 @@
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="47903">
     <name><![CDATA[Forsaken Bonecarver]]></name>
@@ -2759,7 +2545,7 @@
     <faction>Horde</faction>
     <type>Sword</type>
     <speed>1.5</speed>
-    <dps>178.7</dps>
+    <dps>178.67</dps>
   </item>
   <item id="47904">
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
@@ -2777,9 +2563,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <hst>4</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
@@ -2800,15 +2584,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10</tag>
     <faction>Horde</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="47915">
     <name><![CDATA[Collar of Ceaseless Torment]]></name>
@@ -2826,9 +2608,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Alliance</faction>
@@ -2850,9 +2630,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <cri>6</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Alliance</faction>
@@ -2873,9 +2651,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Alliance</faction>
@@ -2896,15 +2672,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>196.4</dps>
+    <dps>196.43</dps>
   </item>
   <item id="47945">
     <name><![CDATA[Gloves of the Silver Assassin]]></name>
@@ -2923,9 +2697,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-10-heroic</tag>
     <faction>Alliance</faction>
@@ -2960,15 +2732,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="47953">
     <name><![CDATA[Icefall Blade]]></name>
@@ -2986,15 +2753,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47954">
     <name><![CDATA[Armor of Shifting Shadows]]></name>
@@ -3014,9 +2779,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
@@ -3037,15 +2800,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="47971">
     <name><![CDATA[Westfall Saber]]></name>
@@ -3063,15 +2824,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Sword</type>
     <speed>1.5</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="47972">
     <name><![CDATA[Spaulders of the Snow Bandit]]></name>
@@ -3090,9 +2849,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <hst>6</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
@@ -3113,15 +2870,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="47975">
     <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
@@ -3139,15 +2894,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>212.1</dps>
   </item>
   <item id="47988">
     <name><![CDATA[Collar of Unending Torment]]></name>
@@ -3165,9 +2915,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Horde</faction>
@@ -3189,9 +2937,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <cri>6</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>northrendbeasts-10-heroic</tag>
     <faction>Horde</faction>
@@ -3212,9 +2958,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
@@ -3235,15 +2979,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>196.4</dps>
+    <dps>196.43</dps>
   </item>
   <item id="48017">
     <name><![CDATA[Sunreaver Assassin's Gloves]]></name>
@@ -3262,9 +3004,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>factionchampions-10-heroic</tag>
     <faction>Horde</faction>
@@ -3298,15 +3038,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="48025">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -3324,15 +3059,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="48026">
     <name><![CDATA[Vest of Shifting Shadows]]></name>
@@ -3352,9 +3085,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>jaraxxus-10-heroic</tag>
     <faction>Horde</faction>
@@ -3375,15 +3106,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="48048">
     <name><![CDATA[Forsaken Bonecarver]]></name>
@@ -3401,15 +3130,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
     <type>Sword</type>
     <speed>1.5</speed>
-    <dps>196.7</dps>
+    <dps>196.67</dps>
   </item>
   <item id="48049">
     <name><![CDATA[Shoulderpads of the Snow Bandit]]></name>
@@ -3428,9 +3155,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <hst>6</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
@@ -3451,15 +3176,13 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>196.5</dps>
+    <dps>196.54</dps>
   </item>
   <item id="48052">
     <name><![CDATA[Darkmaw Crossbow]]></name>
@@ -3477,15 +3200,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>212.1</dps>
   </item>
   <item id="48218">
     <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
@@ -3504,9 +3222,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3527,9 +3243,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3550,9 +3264,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3572,9 +3284,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3594,9 +3304,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3618,9 +3326,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3641,9 +3347,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3665,9 +3369,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3689,9 +3391,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3712,9 +3412,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3734,9 +3432,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3757,9 +3453,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3780,9 +3474,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3802,9 +3494,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3825,9 +3515,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Alliance</faction>
   </item>
@@ -3848,9 +3536,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3870,9 +3556,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3893,9 +3577,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3916,9 +3598,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3938,9 +3618,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3961,9 +3639,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -3985,9 +3661,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4009,9 +3683,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4032,9 +3704,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4056,9 +3726,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4079,9 +3747,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4101,9 +3767,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4124,9 +3788,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4147,9 +3809,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4169,9 +3829,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <faction>Horde</faction>
   </item>
@@ -4191,9 +3849,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
@@ -4214,9 +3870,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
@@ -4237,15 +3891,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <hit>4</hit>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
-    <type>Bow</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="48703">
     <name><![CDATA[The Facebreaker]]></name>
@@ -4263,15 +3912,13 @@
     <slot>MainHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>triumphchest-10</tag>
     <faction>Horde</faction>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>196.7</dps>
+    <dps>196.73</dps>
   </item>
   <item id="48711">
     <name><![CDATA[Rhok'shalla, the Shadow's Bane]]></name>
@@ -4289,15 +3936,10 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <hit>4</hit>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
-    <type>Bow</type>
-    <speed>2.8</speed>
-    <dps>212.2</dps>
   </item>
   <item id="48712">
     <name><![CDATA[The Spinebreaker]]></name>
@@ -4315,15 +3957,13 @@
     <slot>MainHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>196.7</dps>
+    <dps>196.73</dps>
   </item>
   <item id="48722">
     <name><![CDATA[Shard of the Crystal Heart]]></name>
@@ -4349,9 +3989,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <arp>8</arp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>onyxia-25</tag>
   </item>
@@ -4385,7 +4023,7 @@
     <tag>toc5-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>163.3</dps>
+    <dps>163.33</dps>
   </item>
   <item id="49785">
     <name><![CDATA[Bewildering Shoulderpads]]></name>
@@ -4420,7 +4058,7 @@
     <tag>forgeofsouls</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>163.3</dps>
+    <dps>163.33</dps>
   </item>
   <item id="49792">
     <name><![CDATA[Accursed Crawling Cape]]></name>
@@ -4470,9 +4108,7 @@
     <slot>Waist</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <exp>4</exp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>pitofsaron</tag>
   </item>
@@ -4509,9 +4145,6 @@
     <icon>inv_weapon_rifle_13</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>147.4</dps>
   </item>
   <item id="49817">
     <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
@@ -4546,7 +4179,7 @@
     <tag>pitofsaron</tag>
     <type>Sword</type>
     <speed>2.6</speed>
-    <dps>163.3</dps>
+    <dps>163.27</dps>
   </item>
   <item id="49830">
     <name><![CDATA[Fallen Sentry's Hood]]></name>
@@ -4563,9 +4196,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <cri>8</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>pitofsaron</tag>
   </item>
@@ -4602,7 +4233,7 @@
     <tag>pitofsaron</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>163.3</dps>
+    <dps>163.27</dps>
   </item>
   <item id="49841">
     <name><![CDATA[Blackened Geist Ribs]]></name>
@@ -4620,9 +4251,7 @@
     <slot>Chest</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>hallsofreflection</tag>
   </item>
@@ -4641,9 +4270,6 @@
     <icon>inv_weapon_bow_44</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
-    <type>Bow</type>
-    <speed>3.0</speed>
-    <dps>147.3</dps>
   </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
@@ -4659,9 +4285,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier10-craft</tag>
   </item>
@@ -4680,9 +4304,7 @@
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>tier10-craft</tag>
   </item>
@@ -4702,9 +4324,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-25</tag>
   </item>
@@ -4725,9 +4345,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-25</tag>
   </item>
@@ -4746,9 +4364,6 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-25</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>496.0</dps>
   </item>
   <item id="49982">
     <name><![CDATA[Heartpierce]]></name>
@@ -4764,7 +4379,7 @@
     <tag>deathwhisper-25</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="49987">
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
@@ -4783,9 +4398,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-25</tag>
   </item>
@@ -4805,9 +4418,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-25</tag>
   </item>
@@ -4829,9 +4440,7 @@
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-25</tag>
   </item>
@@ -4852,7 +4461,7 @@
     <tag>lichking-25</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>239.2</dps>
+    <dps>239.23</dps>
   </item>
   <item id="50016">
     <name><![CDATA[Rib Spreader]]></name>
@@ -4871,7 +4480,7 @@
     <tag>rotface-25</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="50021">
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
@@ -4890,9 +4499,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-25</tag>
   </item>
@@ -4912,9 +4519,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-25</tag>
   </item>
@@ -4932,7 +4537,7 @@
     <tag>festergut-25</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="50042">
     <name><![CDATA[Gangrenous Leggings]]></name>
@@ -4952,9 +4557,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-25</tag>
   </item>
@@ -4971,7 +4574,7 @@
     <slot>OneHand</slot>
     <type>Sword</type>
     <speed>2.7</speed>
-    <dps>205.6</dps>
+    <dps>205.56</dps>
   </item>
   <item id="50050">
     <name><![CDATA[Cudgel of Furious Justice]]></name>
@@ -4986,7 +4589,7 @@
     <slot>OneHand</slot>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>205.6</dps>
+    <dps>205.58</dps>
   </item>
   <item id="50067">
     <name><![CDATA[Astrylian's Sutured Cinch]]></name>
@@ -5005,9 +4608,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>putricide-25</tag>
   </item>
@@ -5028,9 +4629,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>bloodprince-25</tag>
   </item>
@@ -5051,9 +4650,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50088">
@@ -5072,9 +4669,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50089">
@@ -5094,9 +4689,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50090">
@@ -5116,9 +4709,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50105">
@@ -5137,9 +4728,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50169">
@@ -5157,9 +4746,6 @@
     <icon>inv_throwingknife_02</icon>
     <slot>Ranged</slot>
     <tag>bronjahm-heroic</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>232.8</dps>
   </item>
   <item id="50183">
     <name><![CDATA[Lungbreaker]]></name>
@@ -5178,7 +4764,7 @@
     <tag>valithria-25</tag>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>226.8</dps>
+    <dps>226.79</dps>
   </item>
   <item id="50186">
     <name><![CDATA[Frostbrood Sapphire Ring]]></name>
@@ -5196,9 +4782,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valithria-25</tag>
   </item>
@@ -5219,7 +4803,7 @@
     <tag>bronjahm-heroic</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="50198">
     <name><![CDATA[Needle-Encrusted Scorpion]]></name>
@@ -5251,7 +4835,7 @@
     <tag>forgeofsouls-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>178.9</dps>
+    <dps>178.89</dps>
   </item>
   <item id="50206">
     <name><![CDATA[Frayed Scoundrel's Cap]]></name>
@@ -5270,9 +4854,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <hst>8</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>devourerofsouls-heroic</tag>
   </item>
@@ -5372,9 +4954,7 @@
     <slot>Chest</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <hit>4</hit>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marwyn-heroic</tag>
   </item>
@@ -5395,7 +4975,7 @@
     <tag>hallschest-heroic</tag>
     <type>Sword</type>
     <speed>1.5</speed>
-    <dps>178.7</dps>
+    <dps>178.67</dps>
   </item>
   <item id="50303">
     <name><![CDATA[Black Icicle]]></name>
@@ -5414,7 +4994,7 @@
     <tag>hallschest-heroic</tag>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="50308">
     <name><![CDATA[Blighted Leather Footpads]]></name>
@@ -5449,7 +5029,7 @@
     <tag>icc5-heroic</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>178.8</dps>
+    <dps>178.85</dps>
   </item>
   <item id="50319">
     <name><![CDATA[Unsharpened Ice Razor]]></name>
@@ -5468,7 +5048,7 @@
     <tag>icc5-heroic</tag>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>178.9</dps>
+    <dps>178.93</dps>
   </item>
   <item id="50333">
     <name><![CDATA[Toskk's Maximized Wristguards]]></name>
@@ -5486,9 +5066,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-25</tag>
   </item>
@@ -5626,9 +5204,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="50411">
@@ -5648,7 +5224,7 @@
     <tag>gunship-25</tag>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="50412">
     <name><![CDATA[Bloodvenom Blade]]></name>
@@ -5667,7 +5243,7 @@
     <tag>saurfang-25</tag>
     <type>Sword</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="50421">
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
@@ -5685,9 +5261,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-25</tag>
   </item>
@@ -5708,7 +5282,7 @@
     <tag>lichking-25</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>239.2</dps>
+    <dps>239.17</dps>
   </item>
   <item id="50452">
     <name><![CDATA[Wodin's Lucky Necklace]]></name>
@@ -5726,9 +5300,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>icctrash-25</tag>
   </item>
@@ -5745,9 +5317,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-frost</tag>
   </item>
@@ -5763,9 +5333,6 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-frost</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>294.7</dps>
   </item>
   <item id="50604">
     <name><![CDATA[Band of the Bone Colossus]]></name>
@@ -5783,9 +5350,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-25-heroic</tag>
   </item>
@@ -5806,9 +5371,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-25-heroic</tag>
   </item>
@@ -5828,9 +5391,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <cri>4</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valithria-25-heroic</tag>
   </item>
@@ -5850,14 +5411,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valithria-25-heroic</tag>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>250.4</dps>
+    <dps>250.36</dps>
   </item>
   <item id="50633">
     <name><![CDATA[Sindragosa's Cruel Claw]]></name>
@@ -5875,9 +5434,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-25-heroic</tag>
   </item>
@@ -5894,14 +5451,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-25-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>250.3</dps>
+    <dps>250.28</dps>
   </item>
   <item id="50646">
     <name><![CDATA[Cultist's Bloodsoaked Spaulders]]></name>
@@ -5920,9 +5475,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-25-heroic</tag>
   </item>
@@ -5942,9 +5495,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-25-heroic</tag>
   </item>
@@ -5964,14 +5515,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-25-heroic</tag>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>250.7</dps>
+    <dps>250.67</dps>
   </item>
   <item id="50656">
     <name><![CDATA[Ikfirus's Sack of Wonder]]></name>
@@ -5991,9 +5540,7 @@
       <socket index="0">Red</socket>
       <socket index="1">Blue</socket>
       <socket index="2">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-25-heroic</tag>
   </item>
@@ -6013,9 +5560,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-25-heroic</tag>
   </item>
@@ -6035,14 +5580,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-25-heroic</tag>
     <type>Sword</type>
     <speed>2.6</speed>
-    <dps>250.6</dps>
+    <dps>250.58</dps>
   </item>
   <item id="50675">
     <name><![CDATA[Aldriana's Gloves of Secrecy]]></name>
@@ -6061,9 +5604,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-25-heroic</tag>
   </item>
@@ -6083,14 +5624,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-25-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>250.3</dps>
+    <dps>250.28</dps>
   </item>
   <item id="50678">
     <name><![CDATA[Seal of Many Mouths]]></name>
@@ -6108,9 +5647,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-25-heroic</tag>
   </item>
@@ -6127,14 +5664,12 @@
     <slot>MainHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-25-heroic</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>250.6</dps>
+    <dps>250.58</dps>
   </item>
   <item id="50697">
     <name><![CDATA[Gangrenous Leggings]]></name>
@@ -6154,9 +5689,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-25-heroic</tag>
   </item>
@@ -6191,9 +5724,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>putricide-25-heroic</tag>
   </item>
@@ -6214,9 +5745,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>blodprince-25-heroic</tag>
   </item>
@@ -6225,8 +5754,8 @@
     <attributes>
       <atp>66</atp>
       <agi>62</agi>
-      <cri>41</cri>
       <arp>33</arp>
+      <cri>41</cri>
     </attributes>
     <lvl>284</lvl>
     <filters>
@@ -6239,17 +5768,14 @@
       <bonus />
     </sockets>
     <tag>lichking-25-heroic</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>308.8</dps>
   </item>
   <item id="50736">
     <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
     <attributes>
       <atp>111</atp>
       <agi>76</agi>
-      <hst>56</hst>
       <cri>48</cri>
+      <hst>56</hst>
     </attributes>
     <lvl>284</lvl>
     <filters>
@@ -6264,7 +5790,7 @@
     <tag>lichking-25-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>264.7</dps>
+    <dps>264.72</dps>
   </item>
   <item id="50737">
     <name><![CDATA[Havoc's Call, Blade of Lordaeron Kings]]></name>
@@ -6287,7 +5813,7 @@
     <tag>lichking-25-heroic</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>264.6</dps>
+    <dps>264.62</dps>
   </item>
   <item id="50759">
     <name><![CDATA[Bone Warden's Splitter]]></name>
@@ -6306,7 +5832,7 @@
     <tag>marrowgar-10</tag>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>205.3</dps>
+    <dps>205.33</dps>
   </item>
   <item id="50764">
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
@@ -6324,9 +5850,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-10</tag>
   </item>
@@ -6345,9 +5869,6 @@
     <icon>inv_weapon_bow_56</icon>
     <slot>Ranged</slot>
     <tag>deathwhisper-10</tag>
-    <type>Bow</type>
-    <speed>2.9</speed>
-    <dps>224.9</dps>
   </item>
   <item id="50778">
     <name><![CDATA[Soulthief's Braided Belt]]></name>
@@ -6366,9 +5887,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-10</tag>
   </item>
@@ -6390,9 +5909,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-10</tag>
   </item>
@@ -6413,7 +5930,7 @@
     <tag>gunship-10</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>205.6</dps>
+    <dps>205.58</dps>
   </item>
   <item id="50799">
     <name><![CDATA[Scourge Stranglers]]></name>
@@ -6432,9 +5949,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-10</tag>
   </item>
@@ -6454,9 +5969,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-10</tag>
   </item>
@@ -6477,7 +5990,7 @@
     <tag>festergut-10</tag>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>205.6</dps>
+    <dps>205.58</dps>
   </item>
   <item id="50852">
     <name><![CDATA[Precious's Putrid Collar]]></name>
@@ -6495,9 +6008,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-10</tag>
   </item>
@@ -6519,9 +6030,7 @@
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <hst>8</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-10</tag>
   </item>
@@ -6540,9 +6049,7 @@
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-frost</tag>
   </item>
@@ -6560,9 +6067,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-frost</tag>
   </item>
@@ -6580,9 +6085,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>emblems-frost</tag>
   </item>
@@ -6601,9 +6104,6 @@
     <icon>inv_throwingknife_01</icon>
     <slot>Ranged</slot>
     <tag>rotface-10</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>266.9</dps>
   </item>
   <item id="51003">
     <name><![CDATA[Abomination Knuckles]]></name>
@@ -6622,7 +6122,7 @@
     <tag>rotface-10</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>205.6</dps>
+    <dps>205.58</dps>
   </item>
   <item id="51011">
     <name><![CDATA[Flesh-Carving Scalpel]]></name>
@@ -6641,7 +6141,7 @@
     <tag>putricide-10</tag>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>205.4</dps>
+    <dps>205.36</dps>
   </item>
   <item id="51013">
     <name><![CDATA[Discarded Bag of Entrails]]></name>
@@ -6660,9 +6160,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <arp>8</arp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>putricide-10</tag>
   </item>
@@ -6683,7 +6181,7 @@
     <tag>valanar-10</tag>
     <type>Sword</type>
     <speed>2.6</speed>
-    <dps>205.6</dps>
+    <dps>205.58</dps>
   </item>
   <item id="51023">
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
@@ -6702,9 +6200,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valanar-10</tag>
   </item>
@@ -6725,9 +6221,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51186">
@@ -6748,9 +6242,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51187">
@@ -6771,9 +6263,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51188">
@@ -6793,9 +6283,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51189">
@@ -6816,9 +6304,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51250">
@@ -6838,9 +6324,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51251">
@@ -6859,9 +6343,7 @@
     <slot>Hands</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51252">
@@ -6881,9 +6363,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51253">
@@ -6903,9 +6383,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51254">
@@ -6924,9 +6402,7 @@
     <slot>Shoulder</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
   </item>
   <item id="51384">
@@ -6946,7 +6422,7 @@
     <tag>lanathel-10</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>205.6</dps>
+    <dps>205.56</dps>
   </item>
   <item id="51385">
     <name><![CDATA[Stakethrower]]></name>
@@ -6963,9 +6439,6 @@
     <icon>inv_weapon_rifle_39</icon>
     <slot>Ranged</slot>
     <tag>lanathel-10</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>222.7</dps>
   </item>
   <item id="51387">
     <name><![CDATA[Seal of the Twilight Queen]]></name>
@@ -6983,9 +6456,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10</tag>
   </item>
@@ -7007,9 +6478,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10</tag>
   </item>
@@ -7042,9 +6511,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <arp>6</arp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valithria-10</tag>
   </item>
@@ -7064,9 +6531,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-10</tag>
   </item>
@@ -7086,9 +6551,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-10</tag>
   </item>
@@ -7109,7 +6572,7 @@
     <tag>sindragosa-10</tag>
     <type>Fist</type>
     <speed>1.5</speed>
-    <dps>205.3</dps>
+    <dps>205.33</dps>
   </item>
   <item id="51800">
     <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
@@ -7128,7 +6591,7 @@
     <tag>lichking-10</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>216.7</dps>
+    <dps>216.67</dps>
   </item>
   <item id="51801">
     <name><![CDATA[Pugius, Fist of Defiance]]></name>
@@ -7147,7 +6610,7 @@
     <tag>lichking-10</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>216.5</dps>
+    <dps>216.54</dps>
   </item>
   <item id="51802">
     <name><![CDATA[Windrunner's Heartseeker]]></name>
@@ -7164,9 +6627,6 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-10</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>240.6</dps>
   </item>
   <item id="51819">
     <name><![CDATA[Splintershard]]></name>
@@ -7184,14 +6644,12 @@
     <slot>OffHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-10-heroic</tag>
     <type>Fist</type>
     <speed>1.5</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="51820">
     <name><![CDATA[Vambraces of the Frost Wyrm Queen]]></name>
@@ -7209,9 +6667,7 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-10-heroic</tag>
   </item>
@@ -7231,9 +6687,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>sindragosa-10-heroic</tag>
   </item>
@@ -7254,9 +6708,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <arp>6</arp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valithria-10-heroic</tag>
   </item>
@@ -7278,9 +6730,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10-heroic</tag>
   </item>
@@ -7300,9 +6750,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10-heroic</tag>
   </item>
@@ -7322,14 +6770,9 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>253.2</dps>
   </item>
   <item id="51846">
     <name><![CDATA[Bloodsipper]]></name>
@@ -7347,14 +6790,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lanathel-10-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="51856">
     <name><![CDATA[Taldaram's Soft Slippers]]></name>
@@ -7373,9 +6814,7 @@
     <sockets>
       <socket index="0">Red</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valanar-10-heroic</tag>
   </item>
@@ -7395,14 +6834,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>valanar-10-heroic</tag>
     <type>Sword</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="51866">
     <name><![CDATA[Discarded Bag of Entrails]]></name>
@@ -7421,9 +6858,7 @@
     <sockets>
       <socket index="0">Meta</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <arp>8</arp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>putricide-10-heroic</tag>
   </item>
@@ -7443,14 +6878,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>putricide-10-heroic</tag>
     <type>Dagger</type>
     <speed>1.4</speed>
-    <dps>226.4</dps>
+    <dps>226.43</dps>
   </item>
   <item id="51876">
     <name><![CDATA[Abomination Knuckles]]></name>
@@ -7468,14 +6901,12 @@
     <slot>MainHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-10-heroic</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="51880">
     <name><![CDATA[Gluth's Fetching Knife]]></name>
@@ -7493,14 +6924,9 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>rotface-10-heroic</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>294.7</dps>
   </item>
   <item id="51889">
     <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
@@ -7520,9 +6946,7 @@
       <socket index="0">Blue</socket>
       <socket index="1">Red</socket>
       <socket index="2">Red</socket>
-      <bonus>
-        <hst>8</hst>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-10-heroic</tag>
   </item>
@@ -7542,9 +6966,7 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-10-heroic</tag>
   </item>
@@ -7564,14 +6986,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <cri>4</cri>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>festergut-10-heroic</tag>
     <type>Mace</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="51900">
     <name><![CDATA[Saurfang's Cold-Forged Band]]></name>
@@ -7589,9 +7009,7 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-10-heroic</tag>
   </item>
@@ -7612,9 +7030,7 @@
     <sockets>
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>saurfang-10-heroic</tag>
   </item>
@@ -7634,14 +7050,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>gunship-10-heroic</tag>
     <type>Axe</type>
     <speed>2.6</speed>
-    <dps>226.5</dps>
+    <dps>226.54</dps>
   </item>
   <item id="51923">
     <name><![CDATA[Chestguard of the Frigid Noose]]></name>
@@ -7661,9 +7075,7 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus>
-        <agi>8</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-10-heroic</tag>
   </item>
@@ -7684,9 +7096,7 @@
     <sockets>
       <socket index="0">Blue</socket>
       <socket index="1">Yellow</socket>
-      <bonus>
-        <agi>6</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-10-heroic</tag>
   </item>
@@ -7706,14 +7116,9 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>deathwhisper-10-heroic</tag>
-    <type>Bow</type>
-    <speed>2.9</speed>
-    <dps>253.1</dps>
   </item>
   <item id="51933">
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
@@ -7731,9 +7136,7 @@
     <slot>Back</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-10-heroic</tag>
   </item>
@@ -7753,14 +7156,12 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Blue</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>marrowgar-10-heroic</tag>
     <type>Axe</type>
     <speed>1.5</speed>
-    <dps>226.7</dps>
+    <dps>226.67</dps>
   </item>
   <item id="51940">
     <name><![CDATA[Windrunner's Heartseeker]]></name>
@@ -7778,14 +7179,9 @@
     <slot>Ranged</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lichking-10-heroic</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>270.8</dps>
   </item>
   <item id="51941">
     <name><![CDATA[Pugius, Fist of Defiance]]></name>
@@ -7803,14 +7199,12 @@
     <slot>MainHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <atp>8</atp>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lichking-10-heroic</tag>
     <type>Fist</type>
     <speed>2.6</speed>
-    <dps>239.0</dps>
+    <dps>239.04</dps>
   </item>
   <item id="51942">
     <name><![CDATA[Stormfury, Black Blade of the Betrayer]]></name>
@@ -7828,14 +7222,202 @@
     <slot>OneHand</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus>
-        <agi>4</agi>
-      </bonus>
+      <bonus />
     </sockets>
     <tag>lichking-10-heroic</tag>
     <type>Dagger</type>
     <speed>1.8</speed>
-    <dps>239.2</dps>
+    <dps>239.17</dps>
+  </item>
+  <item id="53103">
+    <name><![CDATA[Baltharus' Gift]]></name>
+    <attributes>
+      <atp>122</atp>
+      <agi>85</agi>
+      <cri>57</cri>
+      <exp>41</exp>
+    </attributes>
+    <lvl>258</lvl>
+    <filters>
+      <filter>ruby10n</filter>
+    </filters>
+    <icon>inv_jewelry_amulet_06</icon>
+    <slot>Neck</slot>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-10</tag>
+  </item>
+  <item id="53114">
+    <name><![CDATA[Gloaming Sark]]></name>
+    <attributes>
+      <atp>201</atp>
+      <agi>153</agi>
+      <cri>94</cri>
+      <exp>86</exp>
+    </attributes>
+    <lvl>258</lvl>
+    <filters>
+      <filter>ruby10n</filter>
+    </filters>
+    <icon>inv_chest_leather_22</icon>
+    <slot>Chest</slot>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-10</tag>
+  </item>
+  <item id="53126">
+    <name><![CDATA[Umbrage Armbands]]></name>
+    <attributes>
+      <atp>96</atp>
+      <agi>96</agi>
+      <cri>64</cri>
+      <hst>64</hst>
+    </attributes>
+    <lvl>271</lvl>
+    <filters>
+      <filter>ruby25n</filter>
+    </filters>
+    <icon>inv_bracer_41</icon>
+    <slot>Wrist</slot>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-25</tag>
+  </item>
+  <item id="53133">
+    <name><![CDATA[Signet of Twilight]]></name>
+    <attributes>
+      <atp>128</atp>
+      <agi>96</agi>
+      <cri>64</cri>
+      <hit>48</hit>
+    </attributes>
+    <lvl>271</lvl>
+    <filters>
+      <filter>ruby25n</filter>
+    </filters>
+    <icon>item_icecrownringc</icon>
+    <slot>Finger</slot>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-25</tag>
+  </item>
+  <item id="54557">
+    <name><![CDATA[Baltharus' Gift]]></name>
+    <attributes>
+      <atp>138</atp>
+      <agi>96</agi>
+      <cri>64</cri>
+      <exp>48</exp>
+    </attributes>
+    <lvl>271</lvl>
+    <filters>
+      <filter>ruby10h</filter>
+    </filters>
+    <icon>inv_jewelry_amulet_06</icon>
+    <slot>Neck</slot>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-10-heroic</tag>
+  </item>
+  <item id="54561">
+    <name><![CDATA[Gloaming Sark]]></name>
+    <attributes>
+      <atp>231</atp>
+      <agi>173</agi>
+      <cri>107</cri>
+      <exp>99</exp>
+    </attributes>
+    <lvl>271</lvl>
+    <filters>
+      <filter>ruby10h</filter>
+    </filters>
+    <icon>inv_chest_leather_22</icon>
+    <slot>Chest</slot>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <socket index="1">Red</socket>
+      <socket index="2">Blue</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-10-heroic</tag>
+  </item>
+  <item id="54569">
+    <name><![CDATA[Sharpened Twilight Scale]]></name>
+    <attributes>
+      <arp>163</arp>
+    </attributes>
+    <lvl>271</lvl>
+    <filters>
+      <filter>ruby25n</filter>
+    </filters>
+    <icon>inv_misc_rubysanctum4</icon>
+    <slot>Trinket</slot>
+    <tag>rubysanctum-25</tag>
+  </item>
+  <item id="54576">
+    <name><![CDATA[Signet of Twilight]]></name>
+    <attributes>
+      <atp>145</atp>
+      <agi>109</agi>
+      <cri>73</cri>
+      <hit>57</hit>
+    </attributes>
+    <lvl>284</lvl>
+    <filters>
+      <filter>ruby25h</filter>
+    </filters>
+    <icon>item_icecrownringc</icon>
+    <slot>Finger</slot>
+    <sockets>
+      <socket index="0">Yellow</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-25-heroic</tag>
+  </item>
+  <item id="54580">
+    <name><![CDATA[Umbrage Armbands]]></name>
+    <attributes>
+      <atp>113</atp>
+      <agi>109</agi>
+      <cri>73</cri>
+      <hst>73</hst>
+    </attributes>
+    <lvl>284</lvl>
+    <filters>
+      <filter>ruby25h</filter>
+    </filters>
+    <icon>inv_bracer_41</icon>
+    <slot>Wrist</slot>
+    <sockets>
+      <socket index="0">Red</socket>
+      <bonus />
+    </sockets>
+    <tag>rubysanctum-25-heroic</tag>
+  </item>
+  <item id="54590">
+    <name><![CDATA[Sharpened Twilight Scale]]></name>
+    <attributes>
+      <arp>184</arp>
+    </attributes>
+    <lvl>284</lvl>
+    <filters>
+      <filter>ruby25h</filter>
+    </filters>
+    <icon>inv_misc_rubysanctum4</icon>
+    <slot>Trinket</slot>
+    <tag>rubysanctum-25-heroic</tag>
   </item>
 </items>
 
