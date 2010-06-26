@@ -16,7 +16,8 @@ public class FilterController {
 	public enum Filter { heroics, naxx25,
 		uld10n, uld10h, uld25n, uld25h,
 		toc10n, toc10h, toc25n, toc25h,
-		icc10n, icc10h, icc25n, icc25h }
+		icc10n, icc10h, icc25n, icc25h,
+		ruby10n, ruby10h, ruby25n, ruby25h }
 	
 	private final PropertyChangeSupport pcs;
 	private EnumSet<Filter> checkedFilters;

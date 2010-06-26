@@ -163,7 +163,7 @@ public class InventoryButton extends JButton implements ActionListener, MouseLis
 					url = url2;
 					setIcon(new InventoryIcon(ImageIO.read(url)));
 					ReadableByteChannel rbc = Channels.newChannel(url2.openStream());
-					FileOutputStream fos = new FileOutputStream(new File("./files/images/"+name+".png"));
+					FileOutputStream fos = new FileOutputStream(new File("./images/"+name+".png"));
 					fos.getChannel().transferFrom(rbc, 0, 1 << 24);
 				}
 				catch (MalformedURLException e) {}

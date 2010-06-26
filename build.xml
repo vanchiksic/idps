@@ -5,7 +5,7 @@
 		<delete dir="dist"/>
 	</target>
 
-	<target name="compile">
+	<target name="build">
 		<mkdir dir="build"/>
 		<javac srcdir="src" destdir="build" debug="on" debuglevel="lines,vars,source">
 			<classpath>
@@ -20,7 +20,18 @@
 		</copy>
 	</target>
 
-	<target name="run" depends="compile">
+	<target name="import" depends="build">
+		<java dir="build" classname="iDPS.gear.ItemParser" fork="true">
+			<classpath>
+				<pathelement path="build"/>
+				<fileset dir="lib">
+					<include name="**/*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="run" depends="build">
 		<java dir="build" classname="iDPS.Launcher" fork="true">
 			<classpath>
 				<pathelement path="build"/>
@@ -31,7 +42,7 @@
 		</java>
 	</target>
 
-	<target name="jar" depends="compile">
+	<target name="jar" depends="build">
 		<mkdir dir="dist"/>
 		<jar destfile="dist/iDPS.jar" basedir="build">
 			<zipfileset src="lib/htmllexer.jar" excludes="META-INF/*" />
