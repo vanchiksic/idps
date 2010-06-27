@@ -321,9 +321,6 @@
       </bonus>
     </sockets>
     <tag>xt002-10-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>187.07</dps>
   </item>
   <item id="45931">
     <name><![CDATA[Mjolnir Runestone]]></name>
@@ -548,9 +545,6 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="46995">
     <name><![CDATA[Talonstrike]]></name>
@@ -574,9 +568,6 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>240.71</dps>
   </item>
   <item id="46996">
     <name><![CDATA[Lionhead Slasher]]></name>
@@ -1236,9 +1227,6 @@
     <slot>Ranged</slot>
     <tag>jaraxxus-25</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="47270">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1536,9 +1524,6 @@
     </sockets>
     <tag>jaraxxus-25-heroic</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.8</speed>
-    <dps>240.71</dps>
   </item>
   <item id="47431">
     <name><![CDATA[Vest of Calamitous Fate]]></name>
@@ -1828,9 +1813,6 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>240.69</dps>
   </item>
   <item id="47523">
     <name><![CDATA[Fezzik's Autocannon]]></name>
@@ -1854,9 +1836,6 @@
     </sockets>
     <tag>tributechest-25</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>240.69</dps>
   </item>
   <item id="47526">
     <name><![CDATA[Remorseless]]></name>
@@ -1990,9 +1969,6 @@
     <icon>inv_weapon_rifle_34</icon>
     <slot>Ranged</slot>
     <tag>toc5-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>147.33</dps>
   </item>
   <item id="47581">
     <name><![CDATA[Bracers of Swift Death]]></name>
@@ -2130,9 +2106,6 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-triumph</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>255.56</dps>
   </item>
   <item id="47676">
     <name><![CDATA[Dirk of the Night Watch]]></name>
@@ -2388,9 +2361,6 @@
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>187.11</dps>
   </item>
   <item id="47741">
     <name><![CDATA[Baelgun's Heavy Crossbow]]></name>
@@ -2408,9 +2378,6 @@
     <slot>Ranged</slot>
     <tag>anubarak-10</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>187.22</dps>
   </item>
   <item id="47808">
     <name><![CDATA[The Lion's Maw]]></name>
@@ -2649,9 +2616,6 @@
     </sockets>
     <tag>twinvalkyrs-10</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>187.11</dps>
   </item>
   <item id="47886">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -2942,9 +2906,6 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Alliance</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="47953">
     <name><![CDATA[Icefall Blade]]></name>
@@ -3121,9 +3082,6 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Alliance</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>212.09</dps>
   </item>
   <item id="47988">
     <name><![CDATA[Collar of Unending Torment]]></name>
@@ -3280,9 +3238,6 @@
     </sockets>
     <tag>twinvalkyrs-10-heroic</tag>
     <faction>Horde</faction>
-    <type>Gun</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="48025">
     <name><![CDATA[Nemesis Blade]]></name>
@@ -3459,9 +3414,6 @@
     </sockets>
     <tag>anubarak-10-heroic</tag>
     <faction>Horde</faction>
-    <type>Crossbow</type>
-    <speed>2.9</speed>
-    <dps>212.09</dps>
   </item>
   <item id="48218">
     <name><![CDATA[VanCleef's Helmet of Conquest]]></name>
@@ -4219,9 +4171,6 @@
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Horde</faction>
-    <type>Bow</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="48703">
     <name><![CDATA[The Facebreaker]]></name>
@@ -4271,9 +4220,6 @@
     </sockets>
     <tag>tributechest-10</tag>
     <faction>Alliance</faction>
-    <type>Bow</type>
-    <speed>2.8</speed>
-    <dps>212.18</dps>
   </item>
   <item id="48712">
     <name><![CDATA[The Spinebreaker]]></name>
@@ -4485,9 +4431,6 @@
     <icon>inv_weapon_rifle_13</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
-    <type>Gun</type>
-    <speed>2.9</speed>
-    <dps>147.41</dps>
   </item>
   <item id="49817">
     <name><![CDATA[Shaggy Wyrmleather Leggings]]></name>
@@ -4596,9 +4539,6 @@
     <icon>inv_weapon_bow_44</icon>
     <slot>Ranged</slot>
     <tag>pitofsaron</tag>
-    <type>Bow</type>
-    <speed>3.0</speed>
-    <dps>147.33</dps>
   </item>
   <item id="49895">
     <name><![CDATA[Footpads of Impending Death]]></name>
@@ -4701,9 +4641,6 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-25</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>272.69</dps>
   </item>
   <item id="49982">
     <name><![CDATA[Heartpierce]]></name>
@@ -5112,9 +5049,6 @@
     <icon>inv_throwingknife_02</icon>
     <slot>Ranged</slot>
     <tag>bronjahm-heroic</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>232.78</dps>
   </item>
   <item id="50183">
     <name><![CDATA[Lungbreaker]]></name>
@@ -5718,9 +5652,6 @@
     <icon>inv_throwingknife_07</icon>
     <slot>Ranged</slot>
     <tag>emblems-frost</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>294.72</dps>
   </item>
   <item id="50604">
     <name><![CDATA[Band of the Bone Colossus]]></name>
@@ -6194,9 +6125,6 @@
       <bonus />
     </sockets>
     <tag>lichking-25-heroic</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>308.93</dps>
   </item>
   <item id="50736">
     <name><![CDATA[Heaven's Fall, Kryss of a Thousand Lies]]></name>
@@ -6304,9 +6232,6 @@
     <icon>inv_weapon_bow_56</icon>
     <slot>Ranged</slot>
     <tag>deathwhisper-10</tag>
-    <type>Bow</type>
-    <speed>2.9</speed>
-    <dps>224.89</dps>
   </item>
   <item id="50778">
     <name><![CDATA[Soulthief's Braided Belt]]></name>
@@ -6560,9 +6485,6 @@
     <icon>inv_throwingknife_01</icon>
     <slot>Ranged</slot>
     <tag>rotface-10</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>266.94</dps>
   </item>
   <item id="51003">
     <name><![CDATA[Abomination Knuckles]]></name>
@@ -6922,9 +6844,6 @@
     <icon>inv_weapon_rifle_39</icon>
     <slot>Ranged</slot>
     <tag>lanathel-10</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>222.73</dps>
   </item>
   <item id="51387">
     <name><![CDATA[Seal of the Twilight Queen]]></name>
@@ -7123,9 +7042,6 @@
     <icon>inv_weapon_crossbow_38</icon>
     <slot>Ranged</slot>
     <tag>lichking-10</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>240.63</dps>
   </item>
   <item id="51819">
     <name><![CDATA[Splintershard]]></name>
@@ -7286,9 +7202,6 @@
       </bonus>
     </sockets>
     <tag>lanathel-10-heroic</tag>
-    <type>Gun</type>
-    <speed>3.0</speed>
-    <dps>253.24</dps>
   </item>
   <item id="51846">
     <name><![CDATA[Bloodsipper]]></name>
@@ -7457,9 +7370,6 @@
       </bonus>
     </sockets>
     <tag>rotface-10-heroic</tag>
-    <type>Thrown</type>
-    <speed>1.8</speed>
-    <dps>294.72</dps>
   </item>
   <item id="51889">
     <name><![CDATA[Plague-Soaked Leather Leggings]]></name>
@@ -7670,9 +7580,6 @@
       </bonus>
     </sockets>
     <tag>deathwhisper-10-heroic</tag>
-    <type>Bow</type>
-    <speed>2.9</speed>
-    <dps>253.06</dps>
   </item>
   <item id="51933">
     <name><![CDATA[Shawl of Nerubian Silk]]></name>
@@ -7742,9 +7649,6 @@
       </bonus>
     </sockets>
     <tag>lichking-10-heroic</tag>
-    <type>Crossbow</type>
-    <speed>3.0</speed>
-    <dps>270.79</dps>
   </item>
   <item id="51941">
     <name><![CDATA[Pugius, Fist of Defiance]]></name>
@@ -7812,7 +7716,9 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-10</tag>
   </item>
@@ -7834,7 +7740,9 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus />
+      <bonus>
+        <agi>8</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-10</tag>
   </item>
@@ -7854,7 +7762,9 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-25</tag>
   </item>
