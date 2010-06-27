@@ -7806,7 +7806,9 @@
     <slot>Neck</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-10-heroic</tag>
   </item>
@@ -7828,7 +7830,9 @@
       <socket index="0">Yellow</socket>
       <socket index="1">Red</socket>
       <socket index="2">Blue</socket>
-      <bonus />
+      <bonus>
+        <agi>8</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-10-heroic</tag>
   </item>
@@ -7861,7 +7865,9 @@
     <slot>Finger</slot>
     <sockets>
       <socket index="0">Yellow</socket>
-      <bonus />
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-25-heroic</tag>
   </item>
@@ -7881,7 +7887,9 @@
     <slot>Wrist</slot>
     <sockets>
       <socket index="0">Red</socket>
-      <bonus />
+      <bonus>
+        <agi>4</agi>
+      </bonus>
     </sockets>
     <tag>rubysanctum-25-heroic</tag>
   </item>
